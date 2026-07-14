@@ -50,9 +50,8 @@ comments) so they can be layered on without a rewrite.
 ## Deploying to GitHub Pages
 
 1. Push this repo to GitHub.
-2. In `vite.config.ts`, the `base` path is already set to `/outliner-app/`
-   when `GITHUB_PAGES=true` — update that string if your repo has a
-   different name.
+2. In `vite.config.ts`, the `base` path is set to `/clemnotes/` when
+   `GITHUB_PAGES=true` — update that string if you ever rename the repo.
 3. In your repo settings, enable **Pages → Source: GitHub Actions**.
 4. Push to `main` — the included workflow (`.github/workflows/deploy.yml`)
    builds and deploys automatically.
