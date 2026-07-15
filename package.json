@@ -1,49 +1,37 @@
-import Dexie, { type Table } from 'dexie';
-import type { OutlinerNode } from './schema';
-
-export class OutlinerDB extends Dexie {
-  nodes!: Table<OutlinerNode, string>;
-
-  constructor() {
-    super('outliner-app-db');
-
-    // Indexes: id (primary key), parentId (fetch children fast),
-    // isPage (fetch sidebar list fast), updatedAt (future sync support)
-    this.version(1).stores({
-      nodes: 'id, parentId, isPage, updatedAt',
-    });
-
-    // v2: add a multiEntry index on outboundLinks so "who links to node X"
-    // (backlinks) is an indexed lookup instead of a full table scan.
-    this.version(2)
-      .stores({
-        nodes: 'id, parentId, isPage, updatedAt, *outboundLinks',
-      })
-      .upgrade(async (tx) => {
-        await tx
-          .table('nodes')
-          .toCollection()
-          .modify((node) => {
-            if (!node.outboundLinks) node.outboundLinks = [];
-          });
-      });
-
-    // v3: add portal fields (isPortal, portalTargetId) for embedding a live
-    // view of one node inside another.
-    this.version(3)
-      .stores({
-        nodes: 'id, parentId, isPage, updatedAt, *outboundLinks',
-      })
-      .upgrade(async (tx) => {
-        await tx
-          .table('nodes')
-          .toCollection()
-          .modify((node) => {
-            if (node.isPortal === undefined) node.isPortal = false;
-            if (node.portalTargetId === undefined) node.portalTargetId = null;
-          });
-      });
+{
+  "name": "outliner-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tiptap/core": "^3.27.4",
+    "@tiptap/extension-placeholder": "^3.27.4",
+    "@tiptap/pm": "^3.27.4",
+    "@tiptap/react": "^3.27.4",
+    "@tiptap/starter-kit": "^3.27.4",
+    "dexie": "^4.4.4",
+    "dexie-react-hooks": "^4.4.0",
+    "flexsearch": "^0.8.212",
+    "jotai": "^2.20.1",
+    "katex": "^0.17.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "uuid": "^14.0.1"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.8",
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "oxlint": "^1.71.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1"
   }
 }
-
-export const db = new OutlinerDB();

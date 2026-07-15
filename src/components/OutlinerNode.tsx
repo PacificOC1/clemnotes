@@ -1,97 +1,162 @@
-import { useRef, useState, useEffect, type KeyboardEvent } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
+import { useEditor, EditorContent } from '@tiptap/react';
+import StarterKit from '@tiptap/starter-kit';
+import Placeholder from '@tiptap/extension-placeholder';
 import {
   getChildren,
   getNode,
   createSiblingAfter,
   createFirstChild,
+  createPortalChild,
   updateContent,
   toggleCollapsed,
   indentNode,
   outdentNode,
   mergeWithPreviousSibling,
+  deleteNode,
 } from '../db/repository';
+import { WikiLink } from '../tiptap/WikiLinkNode';
+import { Math } from '../tiptap/MathNode';
+import { parseDoc, docToPlainText, isDocEmpty, EMPTY_DOC, type DocNode } from '../tiptap/docUtils';
+import { SearchOmnibar } from './SearchOmnibar';
 
 interface OutlinerNodeProps {
   nodeId: string;
   depth: number;
-  /** Called with the id of a newly created/focused node so the parent can focus it. */
   onFocusRequest: (nodeId: string) => void;
   focusedNodeId: string | null;
+  onZoomTo: (pageId: string) => void;
 }
 
-export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId }: OutlinerNodeProps) {
+export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZoomTo }: OutlinerNodeProps) {
   const node = useLiveQuery(() => getNode(nodeId), [nodeId]);
   const children = useLiveQuery(() => getChildren(nodeId), [nodeId, node?.childrenIds.join(',')]) ?? [];
+  const portalTarget = useLiveQuery(
+    () => (node?.isPortal && node.portalTargetId ? getNode(node.portalTargetId) : Promise.resolve(undefined)),
+    [node?.isPortal, node?.portalTargetId]
+  );
 
-  const [draft, setDraft] = useState(node?.content ?? '');
-  const inputRef = useRef<HTMLTextAreaElement>(null);
+  const [showEmbedPicker, setShowEmbedPicker] = useState(false);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hasHydrated = useRef(false);
 
-  // Keep local draft in sync when the underlying node changes externally
-  // (e.g. after a merge), but don't fight the user's live typing.
+  const editor = useEditor({
+    extensions: [
+      StarterKit.configure({
+        heading: false,
+        bulletList: false,
+        orderedList: false,
+        blockquote: false,
+        horizontalRule: false,
+      }),
+      Placeholder.configure({ placeholder: 'Type something... [[link]] or $math$' }),
+      WikiLink,
+      Math,
+    ],
+    content: EMPTY_DOC,
+    onFocus: () => onFocusRequest(nodeId),
+    onUpdate: ({ editor }) => {
+      const json = editor.getJSON() as DocNode;
+      const docJson = JSON.stringify(json);
+      const plainText = docToPlainText(json);
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+      debounceRef.current = setTimeout(() => {
+        updateContent(nodeId, docJson, plainText);
+      }, 300);
+    },
+    editorProps: {
+      attributes: { class: 'outliner-editor-content' },
+      handleKeyDown: (view, event) => {
+        if (event.key === 'Enter' && !event.shiftKey) {
+          event.preventDefault();
+          createSiblingAfter(nodeId).then((n) => onFocusRequest(n.id));
+          return true;
+        }
+        if (event.key === 'Tab') {
+          event.preventDefault();
+          const action = event.shiftKey ? outdentNode(nodeId) : indentNode(nodeId);
+          action.then(() => onFocusRequest(nodeId));
+          return true;
+        }
+        if (event.key === 'Backspace') {
+          const { selection } = view.state;
+          const atStart = selection.empty && selection.from <= 1;
+          const empty = isDocEmpty(view.state.doc.toJSON() as DocNode);
+          if (atStart && empty) {
+            event.preventDefault();
+            mergeWithPreviousSibling(nodeId).then((targetId) => {
+              if (targetId) onFocusRequest(targetId);
+            });
+            return true;
+          }
+        }
+        return false;
+      },
+    },
+  }, []);
+
+  // Hydrate the editor with this node's real content once it loads, and
+  // keep it in sync with external changes (e.g. after a merge) — but only
+  // when the editor doesn't currently have focus, so we don't fight the
+  // user's live typing.
   useEffect(() => {
-    if (node && node.content !== draft && document.activeElement !== inputRef.current) {
-      setDraft(node.content);
+    if (!editor || !node) return;
+    if (editor.isFocused) return;
+    const incoming = parseDoc(node.content);
+    const incomingStr = JSON.stringify(incoming);
+    const currentStr = JSON.stringify(editor.getJSON());
+    if (!hasHydrated.current || incomingStr !== currentStr) {
+      editor.commands.setContent(incoming, { emitUpdate: false });
+      hasHydrated.current = true;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [node?.content]);
+  }, [editor, node?.content]);
 
   useEffect(() => {
-    if (focusedNodeId === nodeId && inputRef.current) {
-      inputRef.current.focus();
-      const len = inputRef.current.value.length;
-      inputRef.current.setSelectionRange(len, len);
+    if (focusedNodeId === nodeId && editor) {
+      editor.commands.focus('end');
     }
-  }, [focusedNodeId, nodeId]);
+  }, [focusedNodeId, nodeId, editor]);
 
   if (!node) return null;
-
-  function handleChange(value: string) {
-    setDraft(value);
-    if (debounceRef.current) clearTimeout(debounceRef.current);
-    debounceRef.current = setTimeout(() => {
-      updateContent(nodeId, value);
-    }, 300);
-  }
-
-  async function handleKeyDown(e: KeyboardEvent<HTMLTextAreaElement>) {
-    const el = inputRef.current;
-    const atStart = el?.selectionStart === 0 && el?.selectionEnd === 0;
-
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      const newNode = await createSiblingAfter(nodeId);
-      onFocusRequest(newNode.id);
-      return;
-    }
-
-    if (e.key === 'Tab') {
-      e.preventDefault();
-      if (e.shiftKey) {
-        await outdentNode(nodeId);
-      } else {
-        await indentNode(nodeId);
-      }
-      onFocusRequest(nodeId);
-      return;
-    }
-
-    if (e.key === 'Backspace' && atStart && draft === '') {
-      e.preventDefault();
-      const targetId = await mergeWithPreviousSibling(nodeId);
-      if (targetId) onFocusRequest(targetId);
-      return;
-    }
-
-    if (e.key === 'Tab' && e.altKey) {
-      // reserved for future: alt+tab style navigation
-    }
-  }
 
   async function handleAddChild() {
     const child = await createFirstChild(nodeId);
     onFocusRequest(child.id);
+  }
+
+  async function handleEmbedSelect(targetId: string) {
+    await createPortalChild(nodeId, targetId);
+  }
+
+  // Portal nodes render a live, editable embed of another node's subtree
+  // instead of their own text — the embedded OutlinerNode is the exact
+  // same component/subtree bound to the target id, so edits made inside
+  // the portal write straight back to the real node.
+  if (node.isPortal && node.portalTargetId) {
+    return (
+      <div className="outliner-node" style={{ marginLeft: depth === 0 ? 0 : 20 }}>
+        <div className="portal-embed">
+          <div className="portal-header">
+            <span className="portal-header-label" onClick={() => onZoomTo(node.portalTargetId!)}>
+              ↗ {portalTarget?.plainText || 'Untitled'}
+            </span>
+            <button className="portal-remove-btn" onClick={() => deleteNode(nodeId)} title="Remove embed">
+              ×
+            </button>
+          </div>
+          <div className="portal-body">
+            <OutlinerNode
+              nodeId={node.portalTargetId}
+              depth={0}
+              onFocusRequest={onFocusRequest}
+              focusedNodeId={focusedNodeId}
+              onZoomTo={onZoomTo}
+            />
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -108,16 +173,17 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId }: O
         ) : (
           <span className="bullet">•</span>
         )}
-        <textarea
-          ref={inputRef}
-          className="outliner-input"
-          rows={1}
-          value={draft}
-          onChange={(e) => handleChange(e.target.value)}
-          onKeyDown={handleKeyDown}
-          onFocus={() => onFocusRequest(nodeId)}
-          placeholder="Type something..."
-        />
+
+        <div className="outliner-input-wrapper">
+          <EditorContent editor={editor} />
+        </div>
+
+        <button className="embed-btn" onClick={() => setShowEmbedPicker(true)} title="Embed a page or bullet (portal)">
+          ⧉
+        </button>
+        <button className="zoom-in-btn" onClick={() => onZoomTo(nodeId)} title="Zoom into this bullet">
+          ⤢
+        </button>
         <button className="add-child-btn" onClick={handleAddChild} title="Add child">
           +
         </button>
@@ -131,8 +197,17 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId }: O
             depth={depth + 1}
             onFocusRequest={onFocusRequest}
             focusedNodeId={focusedNodeId}
+            onZoomTo={onZoomTo}
           />
         ))}
+
+      {showEmbedPicker && (
+        <SearchOmnibar
+          onClose={() => setShowEmbedPicker(false)}
+          onSelect={handleEmbedSelect}
+          placeholder="Embed a page or bullet..."
+        />
+      )}
     </div>
   );
 }

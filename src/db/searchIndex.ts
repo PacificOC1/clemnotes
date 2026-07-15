@@ -1,0 +1,43 @@
+import { Index } from 'flexsearch';
+import { getAllNodes, findRootPage } from './repository';
+import type { OutlinerNode } from './schema';
+
+export interface SearchResult {
+  node: OutlinerNode;
+  sourcePage: OutlinerNode | undefined;
+}
+
+/**
+ * Builds a fresh FlexSearch index over all node content and returns a
+ * `query` function. Rebuilding on each search-open is simple and plenty
+ * fast at the scale a single-user local-first app operates at; if this
+ * ever needs to scale to thousands of nodes with keystroke-level search,
+ * switch to an incrementally-updated index instead (add/update/remove
+ * calls wired into the repository's write functions).
+ */
+export async function buildSearchIndex() {
+  const allNodes = await getAllNodes();
+  const index = new Index({ tokenize: 'forward' });
+
+  const nodesById = new Map<string, OutlinerNode>();
+  for (const node of allNodes) {
+    if (!node.plainText.trim()) continue;
+    index.add(node.id, node.plainText);
+    nodesById.set(node.id, node);
+  }
+
+  async function query(term: string, limit = 20): Promise<SearchResult[]> {
+    if (!term.trim()) return [];
+    const ids = index.search(term, { limit }) as string[];
+    const results = await Promise.all(
+      ids.map(async (id) => {
+        const node = nodesById.get(id)!;
+        const sourcePage = await findRootPage(id);
+        return { node, sourcePage };
+      })
+    );
+    return results;
+  }
+
+  return { query };
+}
