@@ -1,0 +1,30 @@
+import type { OutlinerNode } from '../db/schema';
+
+interface LinkAutocompleteProps {
+  suggestions: OutlinerNode[];
+  activeIndex: number;
+  onSelect: (page: OutlinerNode) => void;
+  position: { top: number; left: number };
+}
+
+export function LinkAutocomplete({ suggestions, activeIndex, onSelect, position }: LinkAutocompleteProps) {
+  if (suggestions.length === 0) return null;
+
+  return (
+    <div className="link-autocomplete" style={{ top: position.top, left: position.left }}>
+      {suggestions.map((page, i) => (
+        <div
+          key={page.id}
+          className={`link-autocomplete-item ${i === activeIndex ? 'active' : ''}`}
+          // onMouseDown (not onClick) so it fires before the textarea's onBlur
+          onMouseDown={(e) => {
+            e.preventDefault();
+            onSelect(page);
+          }}
+        >
+          {page.content || 'Untitled'}
+        </div>
+      ))}
+    </div>
+  );
+}

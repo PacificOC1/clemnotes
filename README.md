@@ -1,71 +1,346 @@
-# Outliner App
+import { v4 as uuid } from 'uuid';
+import { db } from './database';
+import { createEmptyNode, type OutlinerNode } from './schema';
 
-A local-first, infinite-nesting outliner note app. Built from Phase 0–2 of the
-architecture plan: project scaffolding, the "everything is a node" data layer,
-and the core recursive outliner UI.
+/** Fetch a single node by id. */
+export async function getNode(id: string): Promise<OutlinerNode | undefined> {
+  return db.nodes.get(id);
+}
 
-## Running locally
+/** Fetch all top-level pages, sorted by creation time (newest first). */
+export async function getAllPages(): Promise<OutlinerNode[]> {
+  const pages = await db.nodes.where('isPage').equals(1 as unknown as number).toArray();
+  // Dexie stores booleans fine but the boolean index query above is a common
+  // gotcha - filter defensively as well:
+  return pages.filter((n) => n.isPage).sort((a, b) => b.createdAt - a.createdAt);
+}
 
-```bash
-npm install
-npm run dev
-```
+/** Fetch a node's direct children, sorted by their order key. */
+export async function getChildren(parentId: string): Promise<OutlinerNode[]> {
+  const children = await db.nodes.where('parentId').equals(parentId).toArray();
+  return children.sort((a, b) => a.order - b.order);
+}
 
-Open the printed localhost URL. Data is stored in your browser's IndexedDB
-(via Dexie) — it persists across reloads but is local to that browser only,
-no server or account needed yet.
+/** Matches [[Page Title]] references. */
+const LINK_REGEX = /\[\[([^\]]+)\]\]/g;
 
-## What's implemented (Phase 0–2 MVP)
+/** Extract the raw title strings inside [[...]] from a block of text. */
+export function extractLinkTitles(content: string): string[] {
+  const titles: string[] = [];
+  const regex = new RegExp(LINK_REGEX);
+  let match: RegExpExecArray | null;
+  while ((match = regex.exec(content)) !== null) {
+    titles.push(match[1].trim());
+  }
+  return titles;
+}
 
-- **Data layer** (`src/db/`): `OutlinerNode` schema, Dexie/IndexedDB setup,
-  and a repository module (`repository.ts`) that's the single source of
-  truth for all reads/writes — create, update, delete, indent, outdent,
-  merge, reorder.
-- **Outliner UI** (`src/components/OutlinerNode.tsx`): recursive component,
-  one per bullet. Each row is reactive via `useLiveQuery` (from
-  `dexie-react-hooks`), so edits only re-render the row that changed.
-- **Keyboard behavior**:
-  - `Enter` — create a new sibling bullet below the current one
-  - `Tab` — indent (nest under the previous sibling)
-  - `Shift+Tab` — outdent (promote to the parent's level)
-  - `Backspace` at the start of an empty bullet — merge into the previous sibling
-- **Pages**: top-level nodes act as pages, listed in the left sidebar.
-- **Collapse/expand**: click the ▾/▸ toggle next to any bullet with children.
+/**
+ * Resolve [[Title]] references in a node's content to actual node IDs and
+ * persist them as `outboundLinks`. Titles that don't match any existing
+ * node are ignored (not auto-created). Can resolve to ANY node, not just
+ * top-level pages — enabled by zoom navigation, so a link can point at a
+ * single bullet buried deep in another page.
+ */
+export async function syncOutboundLinks(nodeId: string, content: string): Promise<void> {
+  const titles = extractLinkTitles(content);
+  if (titles.length === 0) {
+    await db.nodes.update(nodeId, { outboundLinks: [], updatedAt: Date.now() });
+    return;
+  }
 
-## What's not built yet (next phases)
+  const allNodes = await getAllNodes();
+  const linkedIds = titles
+    .map((title) =>
+      allNodes.find((n) => n.id !== nodeId && n.content.trim().toLowerCase() === title.toLowerCase())
+    )
+    .filter((n): n is OutlinerNode => Boolean(n))
+    .map((n) => n.id);
 
-Per the original roadmap, these are separate phases to tackle next:
+  // De-duplicate
+  await db.nodes.update(nodeId, { outboundLinks: [...new Set(linkedIds)], updatedAt: Date.now() });
+}
 
-- Zoom-into-node page navigation (Phase 3)
-- `[[bidirectional links]]` + backlinks panel (Phase 4)
-- Flashcards + spaced repetition (SM-2) (Phase 5)
-- Rich text / LaTeX / code blocks via Tiptap (Phase 6)
-- Portals — embedding a live view of one node inside another (Phase 7)
-- Global search (Phase 8)
-- Cloud sync (Phase 9)
+/** All nodes that link to `nodeId` via [[...]] — uses the multiEntry index, so this is fast. */
+export async function getBacklinks(nodeId: string): Promise<OutlinerNode[]> {
+  return db.nodes.where('outboundLinks').equals(nodeId).toArray();
+}
 
-The data model already anticipates most of these (see `src/db/schema.ts`
-comments) so they can be layered on without a rewrite.
+/** Walk up parentId pointers to find the top-level page a node belongs to. */
+export async function findRootPage(nodeId: string): Promise<OutlinerNode | undefined> {
+  let current = await getNode(nodeId);
+  while (current && current.parentId) {
+    current = await getNode(current.parentId);
+  }
+  return current;
+}
 
-## Deploying to GitHub Pages
+/**
+ * The full ancestor chain from the root page down to (and including) a
+ * node — used to render breadcrumbs when zoomed into any bullet.
+ */
+export async function getBreadcrumbPath(nodeId: string): Promise<OutlinerNode[]> {
+  const path: OutlinerNode[] = [];
+  let current = await getNode(nodeId);
+  while (current) {
+    path.unshift(current);
+    if (!current.parentId) break;
+    current = await getNode(current.parentId);
+  }
+  return path;
+}
 
-1. Push this repo to GitHub.
-2. In `vite.config.ts`, the `base` path is set to `/clemnotes/` when
-   `GITHUB_PAGES=true` — update that string if you ever rename the repo.
-3. In your repo settings, enable **Pages → Source: GitHub Actions**.
-4. Push to `main` — the included workflow (`.github/workflows/deploy.yml`)
-   builds and deploys automatically.
+/** Every node in the database — used for link resolution/search. Fine at this scale (no server-side full-text index yet). */
+export async function getAllNodes(): Promise<OutlinerNode[]> {
+  return db.nodes.toArray();
+}
 
-## Project structure
+/** Create a new page (top-level node). */
+export async function createPage(content = 'Untitled'): Promise<OutlinerNode> {
+  const node: OutlinerNode = {
+    id: uuid(),
+    ...createEmptyNode({ content, isPage: true, parentId: null }),
+  };
+  await db.nodes.add(node);
+  return node;
+}
 
-```
-src/
-  db/
-    schema.ts       # OutlinerNode type + factory
-    database.ts      # Dexie database definition
-    repository.ts     # all CRUD / indent / outdent / merge logic
-  components/
-    OutlinerNode.tsx  # recursive bullet row component
-  App.tsx             # sidebar + active page view
-  App.css
-```
+/**
+ * Create a new sibling node right after `afterNodeId` under the same parent.
+ * Used when the user presses Enter at the end of a row.
+ */
+export async function createSiblingAfter(afterNodeId: string): Promise<OutlinerNode> {
+  const after = await getNode(afterNodeId);
+  if (!after) throw new Error(`Node ${afterNodeId} not found`);
+
+  const siblings = after.parentId
+    ? await getChildren(after.parentId)
+    : await getAllPages();
+
+  const idx = siblings.findIndex((s) => s.id === afterNodeId);
+  const nextSibling = siblings[idx + 1];
+  const order = nextSibling ? (after.order + nextSibling.order) / 2 : after.order + 1000;
+
+  const node: OutlinerNode = {
+    id: uuid(),
+    ...createEmptyNode({ parentId: after.parentId, order, isPage: after.isPage && after.parentId === null }),
+  };
+  await db.nodes.add(node);
+
+  if (after.parentId) {
+    const parent = await getNode(after.parentId);
+    if (parent) {
+      const childrenIds = [...parent.childrenIds, node.id];
+      await db.nodes.update(parent.id, { childrenIds, updatedAt: Date.now() });
+    }
+  }
+
+  return node;
+}
+
+/** Create the first child of a node (used when Tab-indenting into an empty parent). */
+export async function createFirstChild(parentId: string): Promise<OutlinerNode> {
+  const parent = await getNode(parentId);
+  if (!parent) throw new Error(`Node ${parentId} not found`);
+
+  const node: OutlinerNode = {
+    id: uuid(),
+    ...createEmptyNode({ parentId, order: Date.now() }),
+  };
+  await db.nodes.add(node);
+
+  await db.nodes.update(parentId, {
+    childrenIds: [...parent.childrenIds, node.id],
+    collapsed: false,
+    updatedAt: Date.now(),
+  });
+
+  return node;
+}
+
+/**
+ * Create a portal node — a child of `parentId` that embeds a live,
+ * editable view of `targetNodeId`'s subtree rather than holding its own
+ * text content.
+ */
+export async function createPortalChild(parentId: string, targetNodeId: string): Promise<OutlinerNode> {
+  const parent = await getNode(parentId);
+  if (!parent) throw new Error(`Node ${parentId} not found`);
+
+  const node: OutlinerNode = {
+    id: uuid(),
+    ...createEmptyNode({
+      parentId,
+      order: Date.now(),
+      isPortal: true,
+      portalTargetId: targetNodeId,
+    }),
+  };
+  await db.nodes.add(node);
+
+  await db.nodes.update(parentId, {
+    childrenIds: [...parent.childrenIds, node.id],
+    collapsed: false,
+    updatedAt: Date.now(),
+  });
+
+  return node;
+}
+
+/** Update a node's text content. Debounce calls to this from the UI layer. */
+export async function updateContent(id: string, content: string): Promise<void> {
+  await db.nodes.update(id, { content, updatedAt: Date.now() });
+  await syncOutboundLinks(id, content);
+}
+
+/** Search node text for [[ autocomplete. Empty query returns a handful of pages as defaults. */
+export async function searchNodesByTitle(query: string): Promise<OutlinerNode[]> {
+  const q = query.trim().toLowerCase();
+  if (!q) {
+    const pages = await getAllPages();
+    return pages.slice(0, 8);
+  }
+  const all = await getAllNodes();
+  return all
+    .filter((n) => n.content.trim().length > 0 && n.content.toLowerCase().includes(q))
+    .slice(0, 8);
+}
+
+/** Toggle collapsed/expanded state. */
+export async function toggleCollapsed(id: string): Promise<void> {
+  const node = await getNode(id);
+  if (!node) return;
+  await db.nodes.update(id, { collapsed: !node.collapsed });
+}
+
+/**
+ * Indent a node: make it the last child of its previous sibling.
+ * Returns false if there's no previous sibling (can't indent the first child).
+ */
+export async function indentNode(id: string): Promise<boolean> {
+  const node = await getNode(id);
+  if (!node) return false;
+
+  const siblings = node.parentId ? await getChildren(node.parentId) : await getAllPages();
+  const idx = siblings.findIndex((s) => s.id === id);
+  const prevSibling = siblings[idx - 1];
+  if (!prevSibling) return false;
+
+  // Remove from old parent's childrenIds
+  if (node.parentId) {
+    const oldParent = await getNode(node.parentId);
+    if (oldParent) {
+      await db.nodes.update(oldParent.id, {
+        childrenIds: oldParent.childrenIds.filter((cid) => cid !== id),
+        updatedAt: Date.now(),
+      });
+    }
+  }
+
+  // Append as last child of prevSibling
+  const newOrder = prevSibling.childrenIds.length
+    ? Date.now() // simplification: append at end with a fresh timestamp order key
+    : Date.now();
+
+  await db.nodes.update(prevSibling.id, {
+    childrenIds: [...prevSibling.childrenIds, id],
+    collapsed: false,
+    updatedAt: Date.now(),
+  });
+
+  await db.nodes.update(id, {
+    parentId: prevSibling.id,
+    order: newOrder,
+    isPage: false,
+    updatedAt: Date.now(),
+  });
+
+  return true;
+}
+
+/**
+ * Outdent a node: move it to be a sibling of its current parent, positioned
+ * right after the parent. Returns false if the node has no parent (already top-level).
+ */
+export async function outdentNode(id: string): Promise<boolean> {
+  const node = await getNode(id);
+  if (!node || !node.parentId) return false;
+
+  const parent = await getNode(node.parentId);
+  if (!parent) return false;
+
+  // Remove from parent's childrenIds
+  await db.nodes.update(parent.id, {
+    childrenIds: parent.childrenIds.filter((cid) => cid !== id),
+    updatedAt: Date.now(),
+  });
+
+  const grandparentId = parent.parentId;
+  const newOrder = parent.order + 0.5; // place right after the old parent
+
+  if (grandparentId) {
+    const grandparent = await getNode(grandparentId);
+    if (grandparent) {
+      const parentIdx = grandparent.childrenIds.indexOf(parent.id);
+      const childrenIds = [...grandparent.childrenIds];
+      childrenIds.splice(parentIdx + 1, 0, id);
+      await db.nodes.update(grandparent.id, { childrenIds, updatedAt: Date.now() });
+    }
+  }
+
+  await db.nodes.update(id, {
+    parentId: grandparentId,
+    order: newOrder,
+    isPage: grandparentId === null,
+    updatedAt: Date.now(),
+  });
+
+  return true;
+}
+
+/** Delete a node and (recursively) all of its descendants. */
+export async function deleteNode(id: string): Promise<void> {
+  const node = await getNode(id);
+  if (!node) return;
+
+  for (const childId of node.childrenIds) {
+    await deleteNode(childId);
+  }
+
+  if (node.parentId) {
+    const parent = await getNode(node.parentId);
+    if (parent) {
+      await db.nodes.update(parent.id, {
+        childrenIds: parent.childrenIds.filter((cid) => cid !== id),
+        updatedAt: Date.now(),
+      });
+    }
+  }
+
+  await db.nodes.delete(id);
+}
+
+/** Merge a node into its previous sibling (used on Backspace at position 0). */
+export async function mergeWithPreviousSibling(id: string): Promise<string | null> {
+  const node = await getNode(id);
+  if (!node || !node.parentId) return null;
+
+  const siblings = await getChildren(node.parentId);
+  const idx = siblings.findIndex((s) => s.id === id);
+  const prevSibling = siblings[idx - 1];
+  if (!prevSibling) return null;
+
+  const mergedContent = prevSibling.content + node.content;
+  await db.nodes.update(prevSibling.id, { content: mergedContent, updatedAt: Date.now() });
+
+  // Re-parent node's children onto prevSibling
+  for (const childId of node.childrenIds) {
+    await db.nodes.update(childId, { parentId: prevSibling.id, updatedAt: Date.now() });
+  }
+  await db.nodes.update(prevSibling.id, {
+    childrenIds: [...prevSibling.childrenIds, ...node.childrenIds],
+  });
+
+  await deleteNode(id);
+  return prevSibling.id;
+}

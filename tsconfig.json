@@ -1,7 +1,65 @@
-{
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+/**
+ * Looks backward from the cursor for an unclosed "[[" on the current line.
+ * Returns the partial query text typed so far, and the index where "[["
+ * starts (so the caller can splice in a completed [[Title]] on selection).
+ */
+export interface LinkTriggerState {
+  query: string;
+  triggerStart: number; // index of the "[" that starts the "[["
+}
+
+export function detectLinkTrigger(text: string, cursorPos: number): LinkTriggerState | null {
+  const upToCursor = text.slice(0, cursorPos);
+  const openIdx = upToCursor.lastIndexOf('[[');
+  if (openIdx === -1) return null;
+
+  const between = upToCursor.slice(openIdx + 2);
+  // If a closing ]] already appears before the cursor, the link is complete —
+  // no active trigger.
+  if (between.includes(']]') || between.includes('\n')) return null;
+
+  return { query: between, triggerStart: openIdx };
+}
+
+/** Splice a completed [[Title]] into the text, replacing the open trigger. */
+export function completeLinkTrigger(
+  text: string,
+  trigger: LinkTriggerState,
+  cursorPos: number,
+  title: string
+): { newText: string; newCursorPos: number } {
+  const before = text.slice(0, trigger.triggerStart);
+  const after = text.slice(cursorPos);
+  const insertion = `[[${title}]]`;
+  const newText = before + insertion + after;
+  return { newText, newCursorPos: before.length + insertion.length };
+}
+
+/**
+ * Split content into plain-text and link segments for rendering in
+ * "display mode" (i.e. when the bullet isn't focused).
+ */
+export interface ContentSegment {
+  type: 'text' | 'link';
+  value: string; // for links, this is the title
+}
+
+export function splitContentIntoSegments(content: string): ContentSegment[] {
+  const segments: ContentSegment[] = [];
+  const regex = /\[\[([^\]]+)\]\]/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = regex.exec(content)) !== null) {
+    if (match.index > lastIndex) {
+      segments.push({ type: 'text', value: content.slice(lastIndex, match.index) });
+    }
+    segments.push({ type: 'link', value: match[1].trim() });
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < content.length) {
+    segments.push({ type: 'text', value: content.slice(lastIndex) });
+  }
+  if (segments.length === 0) segments.push({ type: 'text', value: content });
+  return segments;
 }

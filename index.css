@@ -1,0 +1,314 @@
+import { useRef, useState, useEffect, type KeyboardEvent, type ChangeEvent } from 'react';
+import { useLiveQuery } from 'dexie-react-hooks';
+import {
+  getChildren,
+  getNode,
+  createSiblingAfter,
+  createFirstChild,
+  createPortalChild,
+  updateContent,
+  toggleCollapsed,
+  indentNode,
+  outdentNode,
+  mergeWithPreviousSibling,
+  searchNodesByTitle,
+  deleteNode,
+} from '../db/repository';
+import type { OutlinerNode as NodeData } from '../db/schema';
+import { detectLinkTrigger, completeLinkTrigger, splitContentIntoSegments } from '../utils/linkParsing';
+import { LinkAutocomplete } from './LinkAutocomplete';
+import { SearchOmnibar } from './SearchOmnibar';
+
+interface OutlinerNodeProps {
+  nodeId: string;
+  depth: number;
+  onFocusRequest: (nodeId: string) => void;
+  focusedNodeId: string | null;
+  onZoomTo: (pageId: string) => void;
+}
+
+export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZoomTo }: OutlinerNodeProps) {
+  const node = useLiveQuery(() => getNode(nodeId), [nodeId]);
+  const children = useLiveQuery(() => getChildren(nodeId), [nodeId, node?.childrenIds.join(',')]) ?? [];
+  const portalTarget = useLiveQuery(
+    () => (node?.isPortal && node.portalTargetId ? getNode(node.portalTargetId) : Promise.resolve(undefined)),
+    [node?.isPortal, node?.portalTargetId]
+  );
+
+  const [draft, setDraft] = useState(node?.content ?? '');
+  const [isFocused, setIsFocused] = useState(false);
+  const [suggestions, setSuggestions] = useState<NodeData[]>([]);
+  const [activeSuggestion, setActiveSuggestion] = useState(0);
+  const [pendingTrigger, setPendingTrigger] = useState<{ triggerStart: number } | null>(null);
+  const [showEmbedPicker, setShowEmbedPicker] = useState(false);
+
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    if (node && node.content !== draft && document.activeElement !== inputRef.current) {
+      setDraft(node.content);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [node?.content]);
+
+  useEffect(() => {
+    if (focusedNodeId === nodeId && inputRef.current) {
+      inputRef.current.focus();
+      const len = inputRef.current.value.length;
+      inputRef.current.setSelectionRange(len, len);
+    }
+  }, [focusedNodeId, nodeId]);
+
+  if (!node) return null;
+
+  function commitChange(value: string) {
+    setDraft(value);
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
+      updateContent(nodeId, value);
+    }, 300);
+  }
+
+  async function handleChange(e: ChangeEvent<HTMLTextAreaElement>) {
+    const value = e.target.value;
+    const cursorPos = e.target.selectionStart;
+    commitChange(value);
+
+    const trigger = detectLinkTrigger(value, cursorPos);
+    if (trigger) {
+      setPendingTrigger({ triggerStart: trigger.triggerStart });
+      const results = await searchNodesByTitle(trigger.query);
+      setSuggestions(results);
+      setActiveSuggestion(0);
+    } else {
+      setPendingTrigger(null);
+      setSuggestions([]);
+    }
+  }
+
+  function handleSelectSuggestion(page: NodeData) {
+    const el = inputRef.current;
+    if (!el || !pendingTrigger) return;
+    const cursorPos = el.selectionStart ?? draft.length;
+    const { newText, newCursorPos } = completeLinkTrigger(
+      draft,
+      { query: '', triggerStart: pendingTrigger.triggerStart },
+      cursorPos,
+      page.content
+    );
+    setDraft(newText);
+    updateContent(nodeId, newText);
+    setSuggestions([]);
+    setPendingTrigger(null);
+    requestAnimationFrame(() => {
+      el.focus();
+      el.setSelectionRange(newCursorPos, newCursorPos);
+    });
+  }
+
+  async function handleKeyDown(e: KeyboardEvent<HTMLTextAreaElement>) {
+    if (suggestions.length > 0) {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setActiveSuggestion((i) => (i + 1) % suggestions.length);
+        return;
+      }
+      if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setActiveSuggestion((i) => (i - 1 + suggestions.length) % suggestions.length);
+        return;
+      }
+      if (e.key === 'Enter' || e.key === 'Tab') {
+        e.preventDefault();
+        handleSelectSuggestion(suggestions[activeSuggestion]);
+        return;
+      }
+      if (e.key === 'Escape') {
+        setSuggestions([]);
+        setPendingTrigger(null);
+        return;
+      }
+    }
+
+    const el = inputRef.current;
+    const atStart = el?.selectionStart === 0 && el?.selectionEnd === 0;
+
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const newNode = await createSiblingAfter(nodeId);
+      onFocusRequest(newNode.id);
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      if (e.shiftKey) {
+        await outdentNode(nodeId);
+      } else {
+        await indentNode(nodeId);
+      }
+      onFocusRequest(nodeId);
+      return;
+    }
+
+    if (e.key === 'Backspace' && atStart && draft === '') {
+      e.preventDefault();
+      const targetId = await mergeWithPreviousSibling(nodeId);
+      if (targetId) onFocusRequest(targetId);
+      return;
+    }
+  }
+
+  async function handleAddChild() {
+    const child = await createFirstChild(nodeId);
+    onFocusRequest(child.id);
+  }
+
+  async function handleLinkClick(title: string) {
+    const matches = await searchNodesByTitle(title);
+    const exact = matches.find((n) => n.content.trim().toLowerCase() === title.trim().toLowerCase());
+    if (exact) onZoomTo(exact.id);
+  }
+
+  async function handleEmbedSelect(targetId: string) {
+    await createPortalChild(nodeId, targetId);
+  }
+
+  // Portal nodes render a live, editable embed of another node's subtree
+  // instead of their own text — the embedded OutlinerNode is the exact
+  // same component/subtree bound to the target id, so edits made inside
+  // the portal write straight back to the real node.
+  if (node.isPortal && node.portalTargetId) {
+    return (
+      <div className="outliner-node" style={{ marginLeft: depth === 0 ? 0 : 20 }}>
+        <div className="portal-embed">
+          <div className="portal-header">
+            <span className="portal-header-label" onClick={() => onZoomTo(node.portalTargetId!)}>
+              ↗ {portalTarget?.content || 'Untitled'}
+            </span>
+            <button className="portal-remove-btn" onClick={() => deleteNode(nodeId)} title="Remove embed">
+              ×
+            </button>
+          </div>
+          <div className="portal-body">
+            <OutlinerNode
+              nodeId={node.portalTargetId}
+              depth={0}
+              onFocusRequest={onFocusRequest}
+              focusedNodeId={focusedNodeId}
+              onZoomTo={onZoomTo}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const segments = splitContentIntoSegments(draft);
+  const showDisplayMode = !isFocused && draft.length > 0;
+
+  return (
+    <div className="outliner-node" style={{ marginLeft: depth === 0 ? 0 : 20 }}>
+      <div className="outliner-row">
+        {node.childrenIds.length > 0 ? (
+          <button
+            className="collapse-toggle"
+            onClick={() => toggleCollapsed(nodeId)}
+            aria-label={node.collapsed ? 'Expand' : 'Collapse'}
+          >
+            {node.collapsed ? '▸' : '▾'}
+          </button>
+        ) : (
+          <span className="bullet">•</span>
+        )}
+
+        <div className="outliner-input-wrapper">
+          {showDisplayMode && (
+            <div
+              className="outliner-display"
+              onClick={() => {
+                setIsFocused(true);
+                onFocusRequest(nodeId);
+              }}
+            >
+              {segments.map((seg, i) =>
+                seg.type === 'link' ? (
+                  <span
+                    key={i}
+                    className="outliner-link"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleLinkClick(seg.value);
+                    }}
+                  >
+                    {seg.value}
+                  </span>
+                ) : (
+                  <span key={i}>{seg.value}</span>
+                )
+              )}
+            </div>
+          )}
+          <textarea
+            ref={inputRef}
+            className="outliner-input"
+            style={showDisplayMode ? { position: 'absolute', opacity: 0, height: 0, pointerEvents: 'none' } : undefined}
+            rows={1}
+            value={draft}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            onFocus={() => {
+              setIsFocused(true);
+              onFocusRequest(nodeId);
+            }}
+            onBlur={() => {
+              setIsFocused(false);
+              setSuggestions([]);
+              setPendingTrigger(null);
+            }}
+            placeholder="Type something... use [[ to link a page"
+          />
+          {suggestions.length > 0 && (
+            <LinkAutocomplete
+              suggestions={suggestions}
+              activeIndex={activeSuggestion}
+              onSelect={handleSelectSuggestion}
+              position={{ top: 26, left: 0 }}
+            />
+          )}
+        </div>
+
+        <button className="embed-btn" onClick={() => setShowEmbedPicker(true)} title="Embed a page or bullet (portal)">
+          ⧉
+        </button>
+        <button className="zoom-in-btn" onClick={() => onZoomTo(nodeId)} title="Zoom into this bullet">
+          ⤢
+        </button>
+        <button className="add-child-btn" onClick={handleAddChild} title="Add child">
+          +
+        </button>
+      </div>
+
+      {!node.collapsed &&
+        children.map((child) => (
+          <OutlinerNode
+            key={child.id}
+            nodeId={child.id}
+            depth={depth + 1}
+            onFocusRequest={onFocusRequest}
+            focusedNodeId={focusedNodeId}
+            onZoomTo={onZoomTo}
+          />
+        ))}
+
+      {showEmbedPicker && (
+        <SearchOmnibar
+          onClose={() => setShowEmbedPicker(false)}
+          onSelect={handleEmbedSelect}
+          placeholder="Embed a page or bullet..."
+        />
+      )}
+    </div>
+  );
+}
