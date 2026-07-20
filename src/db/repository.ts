@@ -10,10 +10,12 @@ export async function getNode(id: string): Promise<OutlinerNode | undefined> {
 
 /** Fetch all top-level pages, sorted by creation time (newest first). */
 export async function getAllPages(): Promise<OutlinerNode[]> {
-  const pages = await db.nodes.where('isPage').equals(1 as unknown as number).toArray();
-  // Dexie stores booleans fine but the boolean index query above is a common
-  // gotcha - filter defensively as well:
-  return pages.filter((n) => n.isPage && !n.deletedAt).sort((a, b) => b.createdAt - a.createdAt);
+  // Note: IndexedDB doesn't support indexing boolean-valued fields (boolean
+  // isn't a valid IndexedDB key type), so a `.where('isPage').equals(...)`
+  // index query silently matches nothing — this must scan and filter in
+  // memory instead. Fine at this scale (personal notes, not millions of rows).
+  const all = await db.nodes.toArray();
+  return all.filter((n) => n.isPage && !n.deletedAt).sort((a, b) => b.createdAt - a.createdAt);
 }
 
 /** Fetch a node's direct children, sorted by their order key. */
