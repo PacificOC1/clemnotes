@@ -15,7 +15,7 @@ Open the printed localhost URL. Data is stored in your browser's IndexedDB
 (via Dexie) — it persists across reloads but is local to that browser only,
 no server or account needed yet.
 
-## What's implemented (Phase 0–4, 6, 7, 8 — everything except flashcards and sync)
+## What's implemented (Phase 0–4, 6, 7, 8, 9, plus a dark-theme redesign — everything except flashcards)
 
 - **Data layer** (`src/db/`): `OutlinerNode` schema, Dexie/IndexedDB setup,
   and a repository module (`repository.ts`) that's the single source of
@@ -86,15 +86,131 @@ no server or account needed yet.
   Tiptap/ProseMirror engine) — fine for a personal local-first app, but
   worth revisiting with code-splitting if load time ever matters.
 
-## What's not built yet (next phases)
+## Dark theme + toolbar
 
-Per the original roadmap, these are separate phases to tackle next:
+The whole app now runs on an original dark theme (not copied from any
+specific product) with **Inter** as the default typeface (self-hosted via
+`@fontsource/inter`, no external font CDN calls) and a floating bottom
+toolbar that acts on whichever bullet you last had focused, via a shared
+"active editor" context:
+
+- **Heading** — dropdown for H1/H2/H3/Normal text
+- **Todo** — toggles a checkbox task list on the current bullet
+- **Table** — inserts a 3×3 table at the cursor
+- **More** — extra formatting: bold, italic, strikethrough, inline code,
+  code block
+- **Undo**
+
+The zoomed-in root node also now renders as a large page title (bigger
+font, no bullet/buttons clutter) rather than looking like just another
+row — while still being the same fully-functional, linkable, embeddable
+node underneath.
+
+Flashcards and image embedding were intentionally skipped from this pass.
+
+## What's not built yet
+
+Per the original roadmap, the only thing left unbuilt is:
 
 - Flashcards + spaced repetition (SM-2) (Phase 5) — skipped for now
-- Cloud sync (Phase 9)
+- Image embedding — skipped for now
 
-The data model already anticipates most of these (see `src/db/schema.ts`
-comments) so they can be layered on without a rewrite.
+The data model already anticipates flashcards (see `src/db/schema.ts`
+comments) so it can be layered on without a rewrite.
+
+## Cloud sync (Supabase) — setup
+
+Cloud sync is fully optional. With no configuration, the app just runs
+local-only (the sidebar shows "Cloud sync not configured"). To turn it on:
+
+### 1. Create a Supabase project
+
+Free at [supabase.com](https://supabase.com) — takes about a minute.
+
+### 2. Run the schema
+
+In your Supabase dashboard → **SQL Editor → New query**, paste and run
+the contents of `supabase/schema.sql` from this project. This creates the
+`nodes` table with row-level security, so each user can only ever read or
+write their own rows.
+
+### 3. Turn off email confirmation (optional, for quick testing)
+
+By default Supabase requires confirming your email before you can sign
+in. For personal use this is an unnecessary step — under
+**Authentication → Providers → Email**, you can toggle "Confirm email"
+off. (Leave it on if you want the extra safety.)
+
+### 4. Get your API keys
+
+**Project Settings → API** — you need the **Project URL** and the
+**anon/public key** (not the service-role key — that one must never be
+exposed in frontend code).
+
+### 5. Local development
+
+Copy `.env.example` to `.env` and fill in your values:
+
+```bash
+cp .env.example .env
+```
+
+```
+VITE_SUPABASE_URL=https://your-project-ref.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-public-key
+```
+
+`.env` is gitignored — it will never get committed or pushed.
+
+### 6. GitHub Pages deployment
+
+The build step needs these same two values available as **GitHub Actions
+secrets** (not committed to the repo, since env vars for a static build
+get baked into the JS bundle at build time — that's expected/fine for an
+anon/public key, which is designed to be safe to expose client-side since
+row-level security is what actually protects your data, not secrecy of
+this key).
+
+In your repo: **Settings → Secrets and variables → Actions → New
+repository secret**, add both:
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
+
+The deploy workflow (`.github/workflows/deploy.yml`) already reads these
+in automatically — push to `main` and the next deploy will have sync
+enabled.
+
+### How it works
+
+- **Auth**: email + password via Supabase Auth, sign in/up right in the
+  sidebar.
+- **Sync engine** (`src/sync/syncEngine.ts`): a two-way, last-write-wins
+  merge by `updatedAt` — on sync, each node is compared between your
+  local copy and the server's, and whichever was edited more recently
+  wins and overwrites the other side. This runs automatically right after
+  sign-in, every 20 seconds while signed in, whenever the tab regains
+  focus, and on-demand via the "Sync now" button.
+- **Deletes**: nodes are soft-deleted (a `deletedAt` timestamp field
+  rather than actually removing the row), so a delete is just another
+  field change that propagates through the same last-write-wins merge —
+  no special-case logic needed, and deleted notes won't get
+  "resurrected" by an out-of-date device.
+
+### Known limitations
+
+- **Conflict resolution is whole-node last-write-wins, not field-level.**
+  If you edit the exact same bullet on two devices while both are
+  offline, whichever synced most recently wins entirely — there's no
+  merge of the two edits. Fine for the common case (one device at a
+  time), but worth knowing.
+- **No realtime push.** Sync is polling-based (every 20s + on focus +
+  on-demand), not an instant live connection via Supabase's realtime
+  channels. Good enough for "edit on my laptop, pick up on my phone a
+  bit later," not true simultaneous multi-device live editing.
+- **Tombstones accumulate forever** — deleted nodes stay in the database
+  as soft-deleted rows rather than ever being purged. Not a problem at
+  personal-notes scale, but a periodic cleanup job would be a sensible
+  addition if this ever needs to scale up.
 
 ## Deploying to GitHub Pages
 

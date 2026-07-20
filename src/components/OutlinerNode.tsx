@@ -3,6 +3,10 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
+import { TableKit } from '@tiptap/extension-table';
+import TaskList from '@tiptap/extension-task-list';
+import TaskItem from '@tiptap/extension-task-item';
+import { useActiveEditor } from '../context/ActiveEditorContext';
 import {
   getChildren,
   getNode,
@@ -27,9 +31,10 @@ interface OutlinerNodeProps {
   onFocusRequest: (nodeId: string) => void;
   focusedNodeId: string | null;
   onZoomTo: (pageId: string) => void;
+  isRoot?: boolean;
 }
 
-export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZoomTo }: OutlinerNodeProps) {
+export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZoomTo, isRoot }: OutlinerNodeProps) {
   const node = useLiveQuery(() => getNode(nodeId), [nodeId]);
   const children = useLiveQuery(() => getChildren(nodeId), [nodeId, node?.childrenIds.join(',')]) ?? [];
   const portalTarget = useLiveQuery(
@@ -41,21 +46,29 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const hasHydrated = useRef(false);
 
+  const { setActiveEditor } = useActiveEditor();
+
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
-        heading: false,
+        heading: { levels: [1, 2, 3] },
         bulletList: false,
         orderedList: false,
         blockquote: false,
         horizontalRule: false,
       }),
       Placeholder.configure({ placeholder: 'Type something... [[link]] or $math$' }),
+      TableKit.configure({ table: { resizable: false } }),
+      TaskList,
+      TaskItem.configure({ nested: false }),
       WikiLink,
       Math,
     ],
     content: EMPTY_DOC,
-    onFocus: () => onFocusRequest(nodeId),
+    onFocus: ({ editor }) => {
+      onFocusRequest(nodeId);
+      setActiveEditor(editor);
+    },
     onUpdate: ({ editor }) => {
       const json = editor.getJSON() as DocNode;
       const docJson = JSON.stringify(json);
@@ -68,12 +81,22 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
     editorProps: {
       attributes: { class: 'outliner-editor-content' },
       handleKeyDown: (view, event) => {
-        if (event.key === 'Enter' && !event.shiftKey) {
+        const { $from } = view.state.selection;
+        let insideTable = false;
+        for (let d = $from.depth; d > 0; d--) {
+          const typeName = $from.node(d).type.name;
+          if (typeName === 'tableCell' || typeName === 'tableHeader') {
+            insideTable = true;
+            break;
+          }
+        }
+
+        if (event.key === 'Enter' && !event.shiftKey && !insideTable) {
           event.preventDefault();
           createSiblingAfter(nodeId).then((n) => onFocusRequest(n.id));
           return true;
         }
-        if (event.key === 'Tab') {
+        if (event.key === 'Tab' && !insideTable) {
           event.preventDefault();
           const action = event.shiftKey ? outdentNode(nodeId) : indentNode(nodeId);
           action.then(() => onFocusRequest(nodeId));
@@ -118,7 +141,7 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
     }
   }, [focusedNodeId, nodeId, editor]);
 
-  if (!node) return null;
+  if (!node || node.deletedAt) return null;
 
   async function handleAddChild() {
     const child = await createFirstChild(nodeId);
@@ -161,29 +184,34 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
 
   return (
     <div className="outliner-node" style={{ marginLeft: depth === 0 ? 0 : 20 }}>
-      <div className="outliner-row">
-        {node.childrenIds.length > 0 ? (
-          <button
-            className="collapse-toggle"
-            onClick={() => toggleCollapsed(nodeId)}
-            aria-label={node.collapsed ? 'Expand' : 'Collapse'}
-          >
-            {node.collapsed ? '▸' : '▾'}
-          </button>
-        ) : (
-          <span className="bullet">•</span>
-        )}
+      <div className={`outliner-row ${isRoot ? 'page-title-row' : ''}`}>
+        {!isRoot &&
+          (node.childrenIds.length > 0 ? (
+            <button
+              className="collapse-toggle"
+              onClick={() => toggleCollapsed(nodeId)}
+              aria-label={node.collapsed ? 'Expand' : 'Collapse'}
+            >
+              {node.collapsed ? '▸' : '▾'}
+            </button>
+          ) : (
+            <span className="bullet">•</span>
+          ))}
 
         <div className="outliner-input-wrapper">
           <EditorContent editor={editor} />
         </div>
 
-        <button className="embed-btn" onClick={() => setShowEmbedPicker(true)} title="Embed a page or bullet (portal)">
-          ⧉
-        </button>
-        <button className="zoom-in-btn" onClick={() => onZoomTo(nodeId)} title="Zoom into this bullet">
-          ⤢
-        </button>
+        {!isRoot && (
+          <>
+            <button className="embed-btn" onClick={() => setShowEmbedPicker(true)} title="Embed a page or bullet (portal)">
+              ⧉
+            </button>
+            <button className="zoom-in-btn" onClick={() => onZoomTo(nodeId)} title="Zoom into this bullet">
+              ⤢
+            </button>
+          </>
+        )}
         <button className="add-child-btn" onClick={handleAddChild} title="Add child">
           +
         </button>

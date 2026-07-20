@@ -13,18 +13,19 @@ export async function getAllPages(): Promise<OutlinerNode[]> {
   const pages = await db.nodes.where('isPage').equals(1 as unknown as number).toArray();
   // Dexie stores booleans fine but the boolean index query above is a common
   // gotcha - filter defensively as well:
-  return pages.filter((n) => n.isPage).sort((a, b) => b.createdAt - a.createdAt);
+  return pages.filter((n) => n.isPage && !n.deletedAt).sort((a, b) => b.createdAt - a.createdAt);
 }
 
 /** Fetch a node's direct children, sorted by their order key. */
 export async function getChildren(parentId: string): Promise<OutlinerNode[]> {
   const children = await db.nodes.where('parentId').equals(parentId).toArray();
-  return children.sort((a, b) => a.order - b.order);
+  return children.filter((n) => !n.deletedAt).sort((a, b) => a.order - b.order);
 }
 
-/** Every node in the database — used for link resolution/search. Fine at this scale (no server-side full-text index yet). */
+/** Every non-deleted node in the database — used for link resolution/search. Fine at this scale (no server-side full-text index yet). */
 export async function getAllNodes(): Promise<OutlinerNode[]> {
-  return db.nodes.toArray();
+  const all = await db.nodes.toArray();
+  return all.filter((n) => !n.deletedAt);
 }
 
 /**
@@ -55,7 +56,8 @@ export async function syncOutboundLinks(nodeId: string, doc: DocNode): Promise<v
 
 /** All nodes that link to `nodeId` via [[...]] — uses the multiEntry index, so this is fast. */
 export async function getBacklinks(nodeId: string): Promise<OutlinerNode[]> {
-  return db.nodes.where('outboundLinks').equals(nodeId).toArray();
+  const rows = await db.nodes.where('outboundLinks').equals(nodeId).toArray();
+  return rows.filter((n) => !n.deletedAt);
 }
 
 /** Walk up parentId pointers to find the top-level page a node belongs to. */
@@ -298,7 +300,12 @@ export async function outdentNode(id: string): Promise<boolean> {
   return true;
 }
 
-/** Delete a node and (recursively) all of its descendants. */
+/**
+ * Soft-delete a node and (recursively) all of its descendants — sets
+ * `deletedAt` rather than physically removing the row, so cloud sync can
+ * propagate the deletion instead of silently re-downloading the node from
+ * another device that hasn't seen the delete yet.
+ */
 export async function deleteNode(id: string): Promise<void> {
   const node = await getNode(id);
   if (!node) return;
@@ -317,7 +324,8 @@ export async function deleteNode(id: string): Promise<void> {
     }
   }
 
-  await db.nodes.delete(id);
+  const now = Date.now();
+  await db.nodes.update(id, { deletedAt: now, updatedAt: now });
 }
 
 /**
@@ -347,6 +355,10 @@ export async function mergeWithPreviousSibling(id: string): Promise<string | nul
   await db.nodes.update(prevSibling.id, {
     childrenIds: [...prevSibling.childrenIds, ...node.childrenIds],
   });
+  // Clear the merged-away node's own childrenIds first — otherwise
+  // deleteNode's recursive cascade would wrongly soft-delete the children
+  // we just re-parented onto prevSibling above.
+  await db.nodes.update(id, { childrenIds: [] });
 
   await deleteNode(id);
   return prevSibling.id;

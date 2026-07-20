@@ -67,6 +67,24 @@ export class OutlinerDB extends Dexie {
             }
           });
       });
+
+    // v5: add `deletedAt` as a soft-delete tombstone. Deletions now set this
+    // timestamp instead of physically removing the row, so cloud sync can
+    // propagate a delete to other devices (a hard-deleted row disappearing
+    // locally would otherwise just get re-downloaded from the server, since
+    // there'd be nothing to signal "this was deleted, not just missing").
+    this.version(5)
+      .stores({
+        nodes: 'id, parentId, isPage, updatedAt, *outboundLinks',
+      })
+      .upgrade(async (tx) => {
+        await tx
+          .table('nodes')
+          .toCollection()
+          .modify((node) => {
+            if (node.deletedAt === undefined) node.deletedAt = null;
+          });
+      });
   }
 }
 

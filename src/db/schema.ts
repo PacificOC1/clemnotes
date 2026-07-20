@@ -15,6 +15,7 @@ export interface OutlinerNode {
   outboundLinks: string[]; // node IDs this node references via [[Title]] syntax
   isPortal: boolean; // true if this node is an embedded live view of another node
   portalTargetId: string | null; // the node this portal embeds, when isPortal is true
+  deletedAt: number | null; // soft-delete tombstone timestamp; null = not deleted. Needed so cloud sync can propagate deletions instead of "resurrecting" them from other devices.
   createdAt: number;
   updatedAt: number;
 }
@@ -33,6 +34,7 @@ export function createEmptyNode(overrides: Partial<OutlinerNode> = {}): Omit<Out
     outboundLinks: [],
     isPortal: false,
     portalTargetId: null,
+    deletedAt: null,
     createdAt: now,
     updatedAt: now,
     ...overrides,
