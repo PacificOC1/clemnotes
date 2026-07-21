@@ -95,7 +95,10 @@ function docFromPlainText(text: string): string {
   return JSON.stringify(doc);
 }
 
-/** Create a new page (top-level node). `title` becomes its plain-text content. */
+/**
+ * Create a new page (top-level node) together with its first empty bullet.
+ * A page therefore opens with a title and an immediately editable note slot.
+ */
 export async function createPage(title = 'Untitled'): Promise<OutlinerNode> {
   const node: OutlinerNode = {
     id: uuid(),
@@ -106,8 +109,44 @@ export async function createPage(title = 'Untitled'): Promise<OutlinerNode> {
       parentId: null,
     }),
   };
-  await db.nodes.add(node);
+  const firstChild: OutlinerNode = {
+    id: uuid(),
+    ...createEmptyNode({ parentId: node.id, order: node.order + 1 }),
+  };
+  node.childrenIds = [firstChild.id];
+
+  await db.transaction('rw', db.nodes, async () => {
+    await db.nodes.bulkAdd([node, firstChild]);
+  });
   return node;
+}
+
+/**
+ * Add the ready-to-type first bullet for pages that were created before this
+ * behaviour existed. The transaction makes this safe under React StrictMode.
+ */
+export async function ensureFirstChild(parentId: string): Promise<OutlinerNode | undefined> {
+  return db.transaction('rw', db.nodes, async () => {
+    const parent = await db.nodes.get(parentId);
+    if (!parent || parent.deletedAt) return undefined;
+
+    const existingChildren = (await db.nodes.where('parentId').equals(parentId).toArray()).filter(
+      (child) => !child.deletedAt
+    );
+    if (existingChildren.length > 0) return existingChildren[0];
+
+    const child: OutlinerNode = {
+      id: uuid(),
+      ...createEmptyNode({ parentId, order: Date.now() }),
+    };
+    await db.nodes.add(child);
+    await db.nodes.update(parentId, {
+      childrenIds: [...parent.childrenIds, child.id],
+      collapsed: false,
+      updatedAt: Date.now(),
+    });
+    return child;
+  });
 }
 
 /**

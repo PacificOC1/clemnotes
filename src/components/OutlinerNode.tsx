@@ -6,6 +6,12 @@ import Placeholder from '@tiptap/extension-placeholder';
 import { TableKit } from '@tiptap/extension-table';
 import TaskList from '@tiptap/extension-task-list';
 import TaskItem from '@tiptap/extension-task-item';
+import { TextStyle } from '@tiptap/extension-text-style';
+import FontFamily from '@tiptap/extension-font-family';
+import Color from '@tiptap/extension-color';
+import Highlight from '@tiptap/extension-highlight';
+import TextAlign from '@tiptap/extension-text-align';
+import Underline from '@tiptap/extension-underline';
 import { useActiveEditor } from '../context/ActiveEditorContext';
 import {
   getChildren,
@@ -15,6 +21,7 @@ import {
   createPortalChild,
   updateContent,
   toggleCollapsed,
+  ensureFirstChild,
   indentNode,
   outdentNode,
   mergeWithPreviousSibling,
@@ -22,6 +29,7 @@ import {
 } from '../db/repository';
 import { WikiLink } from '../tiptap/WikiLinkNode';
 import { Math } from '../tiptap/MathNode';
+import { FontSize } from '../tiptap/FontSize';
 import { parseDoc, docToPlainText, isDocEmpty, EMPTY_DOC, type DocNode } from '../tiptap/docUtils';
 import { SearchOmnibar } from './SearchOmnibar';
 
@@ -51,16 +59,21 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
-        heading: { levels: [1, 2, 3] },
-        bulletList: false,
-        orderedList: false,
+        heading: { levels: [1, 2, 3, 4, 5, 6] },
         blockquote: false,
         horizontalRule: false,
       }),
       Placeholder.configure({ placeholder: 'Type something... [[link]] or $math$' }),
-      TableKit.configure({ table: { resizable: false } }),
+      TableKit.configure({ table: { resizable: true, lastColumnResizable: true } }),
       TaskList,
       TaskItem.configure({ nested: false }),
+      TextStyle,
+      FontFamily,
+      FontSize,
+      Color,
+      Highlight.configure({ multicolor: true }),
+      TextAlign.configure({ types: ['heading', 'paragraph'] }),
+      Underline,
       WikiLink,
       Math,
     ],
@@ -141,6 +154,14 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
     }
   }, [focusedNodeId, nodeId, editor]);
 
+  // Older pages did not have a first bullet until the user clicked +. Keep a
+  // ready-to-type slot directly beneath every page title, including those.
+  useEffect(() => {
+    if (isRoot && node && node.childrenIds.length === 0) {
+      void ensureFirstChild(nodeId);
+    }
+  }, [isRoot, nodeId, node?.childrenIds.length]);
+
   if (!node || node.deletedAt) return null;
 
   async function handleAddChild() {
@@ -188,9 +209,10 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
         {!isRoot &&
           (node.childrenIds.length > 0 ? (
             <button
-              className="collapse-toggle"
+              className="bullet bullet-toggle"
               onClick={() => toggleCollapsed(nodeId)}
               aria-label={node.collapsed ? 'Expand' : 'Collapse'}
+              aria-expanded={!node.collapsed}
             >
               {node.collapsed ? '▸' : '▾'}
             </button>
