@@ -1,8 +1,9 @@
 import Dexie, { type Table } from 'dexie';
-import type { OutlinerNode } from './schema';
+import type { DictionaryEntry, OutlinerNode } from './schema';
 
 export class OutlinerDB extends Dexie {
   nodes!: Table<OutlinerNode, string>;
+  dictionary!: Table<DictionaryEntry, string>;
 
   constructor() {
     super('outliner-app-db');
@@ -85,6 +86,12 @@ export class OutlinerDB extends Dexie {
             if (node.deletedAt === undefined) node.deletedAt = null;
           });
       });
+
+    // v6: dictionary entries for hover definitions and word navigation.
+    this.version(6).stores({
+      nodes: 'id, parentId, isPage, updatedAt, *outboundLinks',
+      dictionary: 'id, word, updatedAt',
+    });
   }
 }
 

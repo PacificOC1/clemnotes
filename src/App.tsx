@@ -7,7 +7,10 @@ import { Breadcrumbs } from './components/Breadcrumbs';
 import { SearchOmnibar } from './components/SearchOmnibar';
 import { BottomToolbar } from './components/BottomToolbar';
 import { SyncPanel } from './components/SyncPanel';
+import { DictionaryPanel } from './components/DictionaryPanel';
+import { DictionaryEntryModal } from './components/DictionaryEntryModal';
 import { NavigationContext } from './context/NavigationContext';
+import { DictionaryProvider } from './context/DictionaryContext';
 import { ActiveEditorContext } from './context/ActiveEditorContext';
 import type { Editor } from '@tiptap/react';
 import './App.css';
@@ -52,60 +55,64 @@ function App() {
   const isActivePage = (pageId: string) => pageId === activeNodeId || breadcrumbPath[0]?.id === pageId;
 
   return (
-    <NavigationContext.Provider value={{ onZoomTo: handleZoomTo }}>
-      <ActiveEditorContext.Provider value={{ activeEditor, setActiveEditor }}>
-        <div className="app-shell">
-          <aside className="sidebar">
-            <div className="sidebar-top">
-              <button className="new-page-btn" onClick={handleNewPage}>
-                + New Page
-              </button>
-              <button className="search-trigger-btn" onClick={() => setSearchOpen(true)}>
-                🔍 Search <span className="kbd-hint">⌘K</span>
-              </button>
-            </div>
-            <ul className="page-list">
-              {pages.map((page) => (
-                <li
-                  key={page.id}
-                  className={isActivePage(page.id) ? 'active' : ''}
-                  onClick={() => handleZoomTo(page.id)}
-                >
-                  {page.plainText || 'Untitled'}
-                </li>
-              ))}
-            </ul>
-            <SyncPanel />
-          </aside>
-
-          <main className="editor-area">
-            {activeNodeId ? (
-              <>
-                <Breadcrumbs path={breadcrumbPath} onNavigate={handleZoomTo} />
-                <OutlinerNode
-                  key={activeNodeId}
-                  nodeId={activeNodeId}
-                  depth={0}
-                  onFocusRequest={setFocusedNodeId}
-                  focusedNodeId={focusedNodeId}
-                  onZoomTo={handleZoomTo}
-                  isRoot
-                />
-                <BacklinksPanel nodeId={activeNodeId} onZoomTo={handleZoomTo} />
-              </>
-            ) : (
-              <div className="empty-state">
-                <p>No pages yet.</p>
-                <button onClick={handleNewPage}>Create your first page</button>
+    <DictionaryProvider>
+      <NavigationContext.Provider value={{ onZoomTo: handleZoomTo }}>
+        <ActiveEditorContext.Provider value={{ activeEditor, setActiveEditor }}>
+          <div className="app-shell">
+            <aside className="sidebar">
+              <div className="sidebar-top">
+                <button className="new-page-btn" onClick={handleNewPage}>
+                  + New Page
+                </button>
+                <button className="search-trigger-btn" onClick={() => setSearchOpen(true)}>
+                  🔍 Search <span className="kbd-hint">⌘K</span>
+                </button>
               </div>
-            )}
-          </main>
+              <ul className="page-list">
+                {pages.map((page) => (
+                  <li
+                    key={page.id}
+                    className={isActivePage(page.id) ? 'active' : ''}
+                    onClick={() => handleZoomTo(page.id)}
+                  >
+                    {page.plainText || 'Untitled'}
+                  </li>
+                ))}
+              </ul>
+              <DictionaryPanel />
+              <SyncPanel />
+            </aside>
 
-          {searchOpen && <SearchOmnibar onClose={() => setSearchOpen(false)} onSelect={handleZoomTo} />}
-          <BottomToolbar />
-        </div>
-      </ActiveEditorContext.Provider>
-    </NavigationContext.Provider>
+            <main className="editor-area">
+              {activeNodeId ? (
+                <>
+                  <Breadcrumbs path={breadcrumbPath} onNavigate={handleZoomTo} />
+                  <OutlinerNode
+                    key={activeNodeId}
+                    nodeId={activeNodeId}
+                    depth={0}
+                    onFocusRequest={setFocusedNodeId}
+                    focusedNodeId={focusedNodeId}
+                    onZoomTo={handleZoomTo}
+                    isRoot
+                  />
+                  <BacklinksPanel nodeId={activeNodeId} onZoomTo={handleZoomTo} />
+                </>
+              ) : (
+                <div className="empty-state">
+                  <p>No pages yet.</p>
+                  <button onClick={handleNewPage}>Create your first page</button>
+                </div>
+              )}
+            </main>
+
+            {searchOpen && <SearchOmnibar onClose={() => setSearchOpen(false)} onSelect={handleZoomTo} />}
+            <DictionaryEntryModal />
+            <BottomToolbar />
+          </div>
+        </ActiveEditorContext.Provider>
+      </NavigationContext.Provider>
+    </DictionaryProvider>
   );
 }
 

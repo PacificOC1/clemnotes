@@ -29,6 +29,7 @@ import {
 } from '../db/repository';
 import { WikiLink } from '../tiptap/WikiLinkNode';
 import { Math } from '../tiptap/MathNode';
+import { DictionaryHighlight } from '../tiptap/DictionaryHighlight';
 import { FontSize } from '../tiptap/FontSize';
 import { parseDoc, docToPlainText, isDocEmpty, EMPTY_DOC, type DocNode } from '../tiptap/docUtils';
 import { SearchOmnibar } from './SearchOmnibar';
@@ -76,6 +77,7 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
       Underline,
       WikiLink,
       Math,
+      DictionaryHighlight,
     ],
     content: EMPTY_DOC,
     onFocus: ({ editor }) => {

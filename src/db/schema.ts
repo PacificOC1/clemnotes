@@ -20,6 +20,15 @@ export interface OutlinerNode {
   updatedAt: number;
 }
 
+export interface DictionaryEntry {
+  id: string;
+  word: string; // normalized lookup key (lowercase)
+  displayWord: string; // original casing for display
+  definition: string;
+  createdAt: number;
+  updatedAt: number;
+}
+
 export function createEmptyNode(overrides: Partial<OutlinerNode> = {}): Omit<OutlinerNode, 'id'> {
   const now = Date.now();
   return {
