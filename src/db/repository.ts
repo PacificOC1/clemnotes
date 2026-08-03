@@ -2,6 +2,7 @@ import { v4 as uuid } from 'uuid';
 import { db } from './database';
 import { createEmptyNode, type OutlinerNode } from './schema';
 import { parseDoc, extractWikiLinkTitles, type DocNode } from '../tiptap/docUtils';
+import { addPageToFolder, removePageFromAllFolders } from './folderRepository';
 
 /** Fetch a single node by id. */
 export async function getNode(id: string): Promise<OutlinerNode | undefined> {
@@ -99,7 +100,7 @@ function docFromPlainText(text: string): string {
  * Create a new page (top-level node) together with its first empty bullet.
  * A page therefore opens with a title and an immediately editable note slot.
  */
-export async function createPage(title = 'Untitled'): Promise<OutlinerNode> {
+export async function createPage(title = 'Untitled', folderId?: string | null): Promise<OutlinerNode> {
   const node: OutlinerNode = {
     id: uuid(),
     ...createEmptyNode({
@@ -118,6 +119,9 @@ export async function createPage(title = 'Untitled'): Promise<OutlinerNode> {
   await db.transaction('rw', db.nodes, async () => {
     await db.nodes.bulkAdd([node, firstChild]);
   });
+  if (folderId) {
+    await addPageToFolder(node.id, folderId);
+  }
   return node;
 }
 
@@ -366,6 +370,9 @@ export async function deleteNode(id: string): Promise<void> {
   }
 
   const now = Date.now();
+  if (node.isPage && node.parentId === null) {
+    await removePageFromAllFolders(id);
+  }
   await db.nodes.update(id, { deletedAt: now, updatedAt: now });
 }
 

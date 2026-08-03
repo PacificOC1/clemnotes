@@ -29,6 +29,17 @@ export interface DictionaryEntry {
   updatedAt: number;
 }
 
+/** Sidebar grouping for top-level pages (local only, not synced). */
+export interface PageFolder {
+  id: string;
+  name: string;
+  pageIds: string[];
+  order: number;
+  collapsed: boolean;
+  createdAt: number;
+  updatedAt: number;
+}
+
 export function createEmptyNode(overrides: Partial<OutlinerNode> = {}): Omit<OutlinerNode, 'id'> {
   const now = Date.now();
   return {

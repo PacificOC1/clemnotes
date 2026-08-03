@@ -8,14 +8,14 @@ import {
 import { useDictionary } from '../context/DictionaryContext';
 import { useLiveQuery } from 'dexie-react-hooks';
 
-export function DictionaryPanel() {
-  const { entries, dictionaryOpen, setDictionaryOpen } = useDictionary();
+export function DictionaryView() {
+  const { entries, editingEntryId, setEditingEntryId } = useDictionary();
   const [word, setWord] = useState('');
   const [definition, setDefinition] = useState('');
   const [error, setError] = useState<string | null>(null);
-  const [editingId, setEditingId] = useState<string | null>(null);
   const wordInputRef = useRef<HTMLInputElement>(null);
 
+  const editingId = editingEntryId;
   const editingEntry = useLiveQuery(
     () => (editingId ? getDictionaryEntry(editingId) : Promise.resolve(undefined)),
     [editingId]
@@ -29,15 +29,15 @@ export function DictionaryPanel() {
   }, [editingEntry?.id, editingEntry?.updatedAt]);
 
   useEffect(() => {
-    if (dictionaryOpen && !editingId) {
+    if (!editingId) {
       wordInputRef.current?.focus();
     }
-  }, [dictionaryOpen, editingId]);
+  }, [editingId]);
 
   function resetForm() {
     setWord('');
     setDefinition('');
-    setEditingId(null);
+    setEditingEntryId(null);
     setError(null);
   }
 
@@ -67,48 +67,36 @@ export function DictionaryPanel() {
   }
 
   function handleEdit(entryId: string) {
-    setEditingId(entryId);
+    setEditingEntryId(entryId);
     setError(null);
   }
 
-  if (!dictionaryOpen) {
-    return (
-      <button className="dictionary-trigger-btn" onClick={() => setDictionaryOpen(true)}>
-        📖 Dictionary {entries.length > 0 && <span className="dictionary-count">{entries.length}</span>}
-      </button>
-    );
-  }
-
   return (
-    <div className="dictionary-panel">
-      <div className="dictionary-panel-header">
-        <span className="dictionary-panel-title">Dictionary</span>
-        <button
-          className="dictionary-close-btn"
-          onClick={() => {
-            setDictionaryOpen(false);
-            resetForm();
-          }}
-          aria-label="Close dictionary"
-        >
-          ×
-        </button>
-      </div>
+    <div className="dictionary-view">
+      <header className="dictionary-view-header">
+        <h1 className="dictionary-view-title">Definitions</h1>
+        <p className="dictionary-view-desc">
+          Add words and definitions here. Matching text in your notes is highlighted — hover for the
+          definition, click to replace the word with it.
+        </p>
+      </header>
 
-      <form className="dictionary-form" onSubmit={handleSubmit}>
-        <input
-          ref={wordInputRef}
-          type="text"
-          placeholder="Word"
-          value={word}
-          onChange={(e) => setWord(e.target.value)}
-        />
-        <textarea
-          placeholder="Definition"
-          value={definition}
-          onChange={(e) => setDefinition(e.target.value)}
-          rows={3}
-        />
+      <form className="dictionary-view-form" onSubmit={handleSubmit}>
+        <div className="dictionary-view-form-row">
+          <input
+            ref={wordInputRef}
+            type="text"
+            placeholder="Word"
+            value={word}
+            onChange={(e) => setWord(e.target.value)}
+          />
+          <textarea
+            placeholder="Definition"
+            value={definition}
+            onChange={(e) => setDefinition(e.target.value)}
+            rows={3}
+          />
+        </div>
         <div className="dictionary-form-actions">
           {editingId && (
             <button type="button" className="dictionary-cancel-btn" onClick={resetForm}>
@@ -116,19 +104,19 @@ export function DictionaryPanel() {
             </button>
           )}
           <button type="submit" className="dictionary-save-btn">
-            {editingId ? 'Update' : 'Add word'}
+            {editingId ? 'Update entry' : 'Add word'}
           </button>
         </div>
         {error && <div className="dictionary-error">{error}</div>}
       </form>
 
       {entries.length > 0 ? (
-        <ul className="dictionary-list">
+        <ul className="dictionary-view-list">
           {entries.map((entry) => (
             <li key={entry.id} className={entry.id === editingId ? 'active' : ''}>
-              <button type="button" className="dictionary-list-item" onClick={() => handleEdit(entry.id)}>
-                <span className="dictionary-list-word">{entry.displayWord}</span>
-                <span className="dictionary-list-def">{entry.definition}</span>
+              <button type="button" className="dictionary-view-card" onClick={() => handleEdit(entry.id)}>
+                <span className="dictionary-view-word">{entry.displayWord}</span>
+                <span className="dictionary-view-def">{entry.definition}</span>
               </button>
               <button
                 type="button"
@@ -142,10 +130,7 @@ export function DictionaryPanel() {
           ))}
         </ul>
       ) : (
-        <div className="dictionary-empty">
-          Add words here — matching text in your notes is highlighted. Hover for the definition, click to
-          replace the word with it.
-        </div>
+        <div className="dictionary-view-empty">No words yet. Add your first entry above.</div>
       )}
     </div>
   );

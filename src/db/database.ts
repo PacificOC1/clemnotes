@@ -1,9 +1,10 @@
 import Dexie, { type Table } from 'dexie';
-import type { DictionaryEntry, OutlinerNode } from './schema';
+import type { DictionaryEntry, OutlinerNode, PageFolder } from './schema';
 
 export class OutlinerDB extends Dexie {
   nodes!: Table<OutlinerNode, string>;
   dictionary!: Table<DictionaryEntry, string>;
+  folders!: Table<PageFolder, string>;
 
   constructor() {
     super('outliner-app-db');
@@ -91,6 +92,13 @@ export class OutlinerDB extends Dexie {
     this.version(6).stores({
       nodes: 'id, parentId, isPage, updatedAt, *outboundLinks',
       dictionary: 'id, word, updatedAt',
+    });
+
+    // v7: sidebar folders for grouping pages (local only).
+    this.version(7).stores({
+      nodes: 'id, parentId, isPage, updatedAt, *outboundLinks',
+      dictionary: 'id, word, updatedAt',
+      folders: 'id, order, updatedAt',
     });
   }
 }

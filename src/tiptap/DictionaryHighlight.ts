@@ -66,7 +66,7 @@ function buildDecorations(doc: ProseMirrorNode, entries: Map<string, DictionaryE
           'data-entry-id': match.entry.id,
           'data-definition': match.entry.definition,
           'data-word': match.entry.displayWord,
-          title: 'Click to replace with definition',
+          title: 'Click to replace with definition · Shift+click to edit in Dictionary',
         })
       );
     }

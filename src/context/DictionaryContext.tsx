@@ -4,11 +4,15 @@ import { buildEntriesMap, getAllDictionaryEntries } from '../db/dictionaryReposi
 import { notifyDictionaryUpdated, updateDictionaryStore } from '../db/dictionaryStore';
 import type { DictionaryEntry } from '../db/schema';
 
+export type AppTab = 'notes' | 'dictionary';
+
 interface DictionaryContextValue {
   entries: DictionaryEntry[];
   modalEntryId: string | null;
-  dictionaryOpen: boolean;
-  setDictionaryOpen: (open: boolean) => void;
+  activeTab: AppTab;
+  setActiveTab: (tab: AppTab) => void;
+  editingEntryId: string | null;
+  setEditingEntryId: (id: string | null) => void;
   openEntryModal: (id: string) => void;
   closeEntryModal: () => void;
 }
@@ -16,8 +20,10 @@ interface DictionaryContextValue {
 const DictionaryContext = createContext<DictionaryContextValue>({
   entries: [],
   modalEntryId: null,
-  dictionaryOpen: false,
-  setDictionaryOpen: () => {},
+  activeTab: 'notes',
+  setActiveTab: () => {},
+  editingEntryId: null,
+  setEditingEntryId: () => {},
   openEntryModal: () => {},
   closeEntryModal: () => {},
 });
@@ -25,12 +31,16 @@ const DictionaryContext = createContext<DictionaryContextValue>({
 export function DictionaryProvider({ children }: { children: ReactNode }) {
   const entries = useLiveQuery(() => getAllDictionaryEntries(), []) ?? [];
   const [modalEntryId, setModalEntryId] = useState<string | null>(null);
-  const [dictionaryOpen, setDictionaryOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<AppTab>('notes');
+  const [editingEntryId, setEditingEntryId] = useState<string | null>(null);
 
   const entriesMap = useMemo(() => buildEntriesMap(entries), [entries]);
 
   useEffect(() => {
-    updateDictionaryStore(entriesMap, (id) => setModalEntryId(id));
+    updateDictionaryStore(entriesMap, (id) => {
+      setActiveTab('dictionary');
+      setEditingEntryId(id);
+    });
     notifyDictionaryUpdated();
   }, [entriesMap]);
 
@@ -38,12 +48,14 @@ export function DictionaryProvider({ children }: { children: ReactNode }) {
     () => ({
       entries,
       modalEntryId,
-      dictionaryOpen,
-      setDictionaryOpen,
+      activeTab,
+      setActiveTab,
+      editingEntryId,
+      setEditingEntryId,
       openEntryModal: setModalEntryId,
       closeEntryModal: () => setModalEntryId(null),
     }),
-    [entries, modalEntryId, dictionaryOpen]
+    [entries, modalEntryId, activeTab, editingEntryId]
   );
 
   return <DictionaryContext.Provider value={value}>{children}</DictionaryContext.Provider>;

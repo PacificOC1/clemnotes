@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useActiveEditor } from '../context/ActiveEditorContext';
+import { useDictionary } from '../context/DictionaryContext';
 
 const FONT_FAMILIES = [['Helvetica', 'Helvetica'], ['Arial', 'Arial'], ['Georgia', 'Georgia'], ['Times New Roman', 'Times New Roman'], ['Verdana', 'Verdana'], ['Courier New', 'Courier New']] as const;
 const FONT_SIZES = [12, 14, 15, 16, 18, 20, 24, 28, 32, 36];
@@ -10,6 +11,7 @@ const TABLE_SIZES = Array.from({ length: TABLE_GRID_DIMENSION }, (_, rowIndex) =
 
 export function BottomToolbar() {
   const { activeEditor } = useActiveEditor();
+  const { activeTab } = useDictionary();
   const [hasSelection, setHasSelection] = useState(false);
   const [inTable, setInTable] = useState(false);
   const [showMoreMenu, setShowMoreMenu] = useState(false);
@@ -50,6 +52,8 @@ export function BottomToolbar() {
     setShowMoreMenu(false);
     setShowTableMenu(false);
   }
+
+  if (activeTab !== 'notes') return null;
 
   return (
     <div className="bottom-toolbar" aria-label="Editor toolbar" ref={toolbarRef}>
