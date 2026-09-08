@@ -4,7 +4,7 @@ import type { PageFolder } from './schema';
 
 export async function getAllFolders(): Promise<PageFolder[]> {
   const folders = await db.folders.toArray();
-  return folders.sort((a, b) => a.order - b.order);
+  return folders.filter((f) => !f.deletedAt).sort((a, b) => a.order - b.order);
 }
 
 export async function createFolder(name = 'New folder'): Promise<PageFolder> {
@@ -17,6 +17,7 @@ export async function createFolder(name = 'New folder'): Promise<PageFolder> {
     pageIds: [],
     order: maxOrder + 1,
     collapsed: false,
+    deletedAt: null,
     createdAt: now,
     updatedAt: now,
   };
@@ -36,8 +37,10 @@ export async function toggleFolderCollapsed(id: string): Promise<void> {
   await db.folders.update(id, { collapsed: !folder.collapsed, updatedAt: Date.now() });
 }
 
+/** Soft-delete, so the deletion propagates through cloud sync. */
 export async function deleteFolder(id: string): Promise<void> {
-  await db.folders.delete(id);
+  const now = Date.now();
+  await db.folders.update(id, { deletedAt: now, updatedAt: now });
 }
 
 export async function addPageToFolder(pageId: string, folderId: string): Promise<void> {
@@ -56,7 +59,7 @@ export async function movePageToFolder(pageId: string, folderId: string | null):
     }
     if (folderId) {
       const target = await db.folders.get(folderId);
-      if (target && !target.pageIds.includes(pageId)) {
+      if (target && !target.deletedAt && !target.pageIds.includes(pageId)) {
         await db.folders.update(folderId, {
           pageIds: [...target.pageIds, pageId],
           updatedAt: Date.now(),
@@ -64,6 +67,18 @@ export async function movePageToFolder(pageId: string, folderId: string | null):
       }
     }
   });
+}
+
+/** Reorder a folder among its siblings by one step. */
+export async function moveFolder(id: string, delta: number): Promise<void> {
+  const folders = await getAllFolders();
+  const index = folders.findIndex((f) => f.id === id);
+  const target = folders[index + delta];
+  if (index === -1 || !target) return;
+  const self = folders[index]!;
+  const now = Date.now();
+  await db.folders.update(self.id, { order: target.order, updatedAt: now });
+  await db.folders.update(target.id, { order: self.order, updatedAt: now });
 }
 
 export async function getPageFolderId(pageId: string): Promise<string | null> {

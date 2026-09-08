@@ -7,15 +7,18 @@ export function normalizeWord(word: string): string {
 }
 
 export async function getAllDictionaryEntries(): Promise<DictionaryEntry[]> {
-  return db.dictionary.orderBy('word').toArray();
+  const entries = await db.dictionary.orderBy('word').toArray();
+  return entries.filter((e) => !e.deletedAt);
 }
 
 export async function getDictionaryEntry(id: string): Promise<DictionaryEntry | undefined> {
-  return db.dictionary.get(id);
+  const entry = await db.dictionary.get(id);
+  return entry && !entry.deletedAt ? entry : undefined;
 }
 
 export async function lookupWord(word: string): Promise<DictionaryEntry | undefined> {
-  return db.dictionary.where('word').equals(normalizeWord(word)).first();
+  const matches = await db.dictionary.where('word').equals(normalizeWord(word)).toArray();
+  return matches.find((e) => !e.deletedAt);
 }
 
 export async function createDictionaryEntry(word: string, definition: string): Promise<DictionaryEntry> {
@@ -31,6 +34,7 @@ export async function createDictionaryEntry(word: string, definition: string): P
     word: normalized,
     displayWord: word.trim(),
     definition: definition.trim(),
+    deletedAt: null,
     createdAt: now,
     updatedAt: now,
   };
@@ -65,8 +69,13 @@ export async function updateDictionaryEntry(
   return updated;
 }
 
+/**
+ * Soft-delete, so the deletion syncs to your other devices instead of the row
+ * simply going missing locally and being re-downloaded on the next merge.
+ */
 export async function deleteDictionaryEntry(id: string): Promise<void> {
-  await db.dictionary.delete(id);
+  const now = Date.now();
+  await db.dictionary.update(id, { deletedAt: now, updatedAt: now });
 }
 
 export function buildEntriesMap(entries: DictionaryEntry[]): Map<string, DictionaryEntry> {

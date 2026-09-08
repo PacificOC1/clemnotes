@@ -1,10 +1,11 @@
 import Dexie, { type Table } from 'dexie';
-import type { DictionaryEntry, OutlinerNode, PageFolder } from './schema';
+import type { DictionaryEntry, Flashcard, OutlinerNode, PageFolder } from './schema';
 
 export class OutlinerDB extends Dexie {
   nodes!: Table<OutlinerNode, string>;
   dictionary!: Table<DictionaryEntry, string>;
   folders!: Table<PageFolder, string>;
+  cards!: Table<Flashcard, string>;
 
   constructor() {
     super('outliner-app-db');
@@ -94,12 +95,46 @@ export class OutlinerDB extends Dexie {
       dictionary: 'id, word, updatedAt',
     });
 
-    // v7: sidebar folders for grouping pages (local only).
+    // v7: sidebar folders for grouping pages.
     this.version(7).stores({
       nodes: 'id, parentId, isPage, updatedAt, *outboundLinks',
       dictionary: 'id, word, updatedAt',
       folders: 'id, order, updatedAt',
     });
+
+    // v8: flashcards, plus soft-delete tombstones on dictionary entries and
+    // folders so those two tables can join `nodes` in cloud sync. Every synced
+    // table now needs the same two fields the merge relies on: `updatedAt` to
+    // decide who wins, and `deletedAt` so a delete is just another field
+    // change rather than a row vanishing.
+    this.version(8)
+      .stores({
+        nodes: 'id, parentId, isPage, updatedAt, *outboundLinks',
+        dictionary: 'id, word, updatedAt',
+        folders: 'id, order, updatedAt',
+        cards: 'id, nodeId, dueAt, updatedAt',
+      })
+      .upgrade(async (tx) => {
+        await tx
+          .table('nodes')
+          .toCollection()
+          .modify((node) => {
+            if (node.isCard === undefined) node.isCard = false;
+            if (node.cardDirection === undefined) node.cardDirection = 'forward';
+          });
+        await tx
+          .table('dictionary')
+          .toCollection()
+          .modify((entry) => {
+            if (entry.deletedAt === undefined) entry.deletedAt = null;
+          });
+        await tx
+          .table('folders')
+          .toCollection()
+          .modify((folder) => {
+            if (folder.deletedAt === undefined) folder.deletedAt = null;
+          });
+      });
   }
 }
 

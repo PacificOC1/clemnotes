@@ -1,13 +1,105 @@
 :root {
   color-scheme: dark;
+
+  /* Surfaces, from furthest back to closest. */
+  --bg: #131418;
+  --bg-sidebar: #16171c;
+  --bg-panel: #1c1e24;
+  --bg-raised: #22252c;
+  --bg-hover: rgba(255, 255, 255, 0.045);
+  --bg-active: rgba(108, 140, 255, 0.14);
+
+  /* Text. */
+  --text: #e6e7eb;
+  --text-dim: #9ea3ae;
+  --text-faint: #6b7078;
+
+  /* Lines. */
+  --border: #272a32;
+  --border-soft: rgba(255, 255, 255, 0.06);
+  --guide: rgba(255, 255, 255, 0.08);
+  --guide-hover: rgba(108, 140, 255, 0.45);
+
+  /* Accents. */
+  --accent: #6c8cff;
+  --accent-soft: rgba(108, 140, 255, 0.18);
+  --accent-text: #a6bbff;
+  --amber: #e0b25e;
+  --amber-soft: rgba(224, 178, 94, 0.16);
+  --green: #6fcf8b;
+  --red: #f0736f;
+  --violet: #b48cf5;
+
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'SF Mono', ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background: #1a1a1e;
-  font-family: Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 #root {
   height: 100vh;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+kbd {
+  font-family: var(--font);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-faint);
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  line-height: 1.5;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }

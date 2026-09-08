@@ -4,7 +4,7 @@ import { buildEntriesMap, getAllDictionaryEntries } from '../db/dictionaryReposi
 import { notifyDictionaryUpdated, updateDictionaryStore } from '../db/dictionaryStore';
 import type { DictionaryEntry } from '../db/schema';
 
-export type AppTab = 'notes' | 'dictionary';
+export type AppTab = 'notes' | 'review' | 'dictionary';
 
 interface DictionaryContextValue {
   entries: DictionaryEntry[];

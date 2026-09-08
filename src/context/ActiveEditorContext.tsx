@@ -3,12 +3,15 @@ import type { Editor } from '@tiptap/react';
 
 interface ActiveEditorContextValue {
   activeEditor: Editor | null;
-  setActiveEditor: (editor: Editor | null) => void;
+  /** The rem whose editor currently has focus — app-level menus need it for rem-scoped commands. */
+  activeNodeId: string | null;
+  setActive: (editor: Editor | null, nodeId: string | null) => void;
 }
 
 export const ActiveEditorContext = createContext<ActiveEditorContextValue>({
   activeEditor: null,
-  setActiveEditor: () => {},
+  activeNodeId: null,
+  setActive: () => {},
 });
 
 export function useActiveEditor() {

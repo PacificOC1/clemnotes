@@ -17,7 +17,14 @@ interface PageSidebarProps {
   breadcrumbRootId: string | undefined;
   onSelectPage: (pageId: string) => void;
   onDeletePage: (pageId: string, event: React.MouseEvent) => void;
+  onNewPage: () => void;
 }
+
+/** The page being dragged in the sidebar — see the note in OutlinerNode about why this isn't state. */
+let draggingPageId: string | null = null;
+
+/** See the note in OutlinerNode: a private type keeps editors from inserting the id as text. */
+const PAGE_DRAG_TYPE = 'application/x-clemnotes-page';
 
 function PageRow({
   page,
@@ -27,7 +34,6 @@ function PageRow({
   onSelectPage,
   onDeletePage,
   onMovePage,
-  nested,
 }: {
   page: OutlinerNode;
   active: boolean;
@@ -36,37 +42,46 @@ function PageRow({
   onSelectPage: (pageId: string) => void;
   onDeletePage: (pageId: string, event: React.MouseEvent) => void;
   onMovePage: (pageId: string, folderId: string | null) => void;
-  nested?: boolean;
 }) {
   return (
-    <li className={`page-list-row ${active ? 'active' : ''} ${nested ? 'nested' : ''}`}>
-      <button type="button" className="page-list-item" onClick={() => onSelectPage(page.id)}>
-        {page.plainText || 'Untitled'}
+    <li
+      className={`page-row ${active ? 'active' : ''}`}
+      draggable
+      onDragStart={(e) => {
+        draggingPageId = page.id;
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData(PAGE_DRAG_TYPE, page.id);
+      }}
+      onDragEnd={() => { draggingPageId = null; }}
+    >
+      <button type="button" className="page-row-btn" onClick={() => onSelectPage(page.id)}>
+        <span className="page-row-icon">▤</span>
+        <span className="page-row-label">{page.plainText || 'Untitled'}</span>
       </button>
-      <select
-        className="page-folder-select"
-        value={folderId ?? ''}
-        onClick={(e) => e.stopPropagation()}
-        onChange={(e) => onMovePage(page.id, e.target.value || null)}
-        aria-label={`Move ${page.plainText || 'Untitled'} to folder`}
-        title="Move to folder"
-      >
-        <option value="">Unfiled</option>
-        {folders.map((folder) => (
-          <option key={folder.id} value={folder.id}>
-            {folder.name}
-          </option>
-        ))}
-      </select>
-      <button
-        type="button"
-        className="page-delete-btn"
-        onClick={(e) => onDeletePage(page.id, e)}
-        aria-label={`Delete ${page.plainText || 'Untitled'}`}
-        title="Delete page"
-      >
-        ×
-      </button>
+      <div className="page-row-actions">
+        <select
+          className="page-folder-select"
+          value={folderId ?? ''}
+          onClick={(e) => e.stopPropagation()}
+          onChange={(e) => onMovePage(page.id, e.target.value || null)}
+          aria-label={`Move ${page.plainText || 'Untitled'} to a folder`}
+          title="Move to folder"
+        >
+          <option value="">Unfiled</option>
+          {folders.map((folder) => (
+            <option key={folder.id} value={folder.id}>{folder.name}</option>
+          ))}
+        </select>
+        <button
+          type="button"
+          className="page-row-delete"
+          onClick={(e) => onDeletePage(page.id, e)}
+          aria-label={`Delete ${page.plainText || 'Untitled'}`}
+          title="Delete page"
+        >
+          ×
+        </button>
+      </div>
     </li>
   );
 }
@@ -77,18 +92,18 @@ export function PageSidebar({
   breadcrumbRootId,
   onSelectPage,
   onDeletePage,
+  onNewPage,
 }: PageSidebarProps) {
   const folders = useLiveQuery(() => getAllFolders(), []) ?? [];
   const [renamingFolderId, setRenamingFolderId] = useState<string | null>(null);
   const [renameValue, setRenameValue] = useState('');
+  const [dropFolderId, setDropFolderId] = useState<string | null>(null);
 
   const pagesById = useMemo(() => new Map(pages.map((p) => [p.id, p])), [pages]);
 
   const filedPageIds = useMemo(() => {
     const ids = new Set<string>();
-    for (const folder of folders) {
-      for (const id of folder.pageIds) ids.add(id);
-    }
+    for (const folder of folders) for (const id of folder.pageIds) ids.add(id);
     return ids;
   }, [folders]);
 
@@ -99,19 +114,11 @@ export function PageSidebar({
 
   const pageFolderId = useMemo(() => {
     const map = new Map<string, string>();
-    for (const folder of folders) {
-      for (const id of folder.pageIds) map.set(id, folder.id);
-    }
+    for (const folder of folders) for (const id of folder.pageIds) map.set(id, folder.id);
     return map;
   }, [folders]);
 
-  function isActivePage(pageId: string) {
-    return pageId === activeNodeId || breadcrumbRootId === pageId;
-  }
-
-  async function handleNewFolder() {
-    await createFolder();
-  }
+  const isActivePage = (pageId: string) => pageId === activeNodeId || breadcrumbRootId === pageId;
 
   async function handleNewPageInFolder(folderId: string, event: React.MouseEvent) {
     event.stopPropagation();
@@ -123,12 +130,8 @@ export function PageSidebar({
     event.stopPropagation();
     const folder = folders.find((f) => f.id === folderId);
     if (!folder) return;
-    if (!window.confirm(`Delete folder "${folder.name}"? Pages inside will move to Unfiled.`)) return;
+    if (!window.confirm(`Delete folder "${folder.name}"? The pages inside move to Unfiled.`)) return;
     await deleteFolder(folderId);
-  }
-
-  async function handleMovePage(pageId: string, folderId: string | null) {
-    await movePageToFolder(pageId, folderId);
   }
 
   function startRename(folder: PageFolder) {
@@ -137,32 +140,45 @@ export function PageSidebar({
   }
 
   async function commitRename() {
-    if (renamingFolderId) {
-      await updateFolderName(renamingFolderId, renameValue);
-    }
+    if (renamingFolderId) await updateFolderName(renamingFolderId, renameValue);
     setRenamingFolderId(null);
+  }
+
+  async function dropOnFolder(folderId: string | null, event: React.DragEvent) {
+    event.preventDefault();
+    const pageId = draggingPageId || event.dataTransfer.getData(PAGE_DRAG_TYPE);
+    setDropFolderId(null);
+    draggingPageId = null;
+    if (pageId) await movePageToFolder(pageId, folderId);
   }
 
   return (
     <div className="page-sidebar">
-      <div className="page-sidebar-actions">
-        <button type="button" className="sidebar-secondary-btn" onClick={handleNewFolder}>
-          + Folder
-        </button>
+      <div className="sidebar-section-head">
+        <span className="sidebar-section-title">Documents</span>
+        <div className="sidebar-section-actions">
+          <button type="button" className="icon-btn" onClick={() => void createFolder()} title="New folder">🗀</button>
+          <button type="button" className="icon-btn" onClick={onNewPage} title="New page">+</button>
+        </div>
       </div>
 
-      <ul className="page-list">
+      <ul className="folder-list">
         {folders.map((folder) => {
           const folderPages = folder.pageIds
             .map((id) => pagesById.get(id))
             .filter((p): p is OutlinerNode => Boolean(p));
 
           return (
-            <li key={folder.id} className="folder-block">
-              <div className="folder-header">
+            <li key={folder.id} className={`folder ${dropFolderId === folder.id ? 'drop-target' : ''}`}>
+              <div
+                className="folder-head"
+                onDragOver={(e) => { e.preventDefault(); setDropFolderId(folder.id); }}
+                onDragLeave={() => setDropFolderId(null)}
+                onDrop={(e) => void dropOnFolder(folder.id, e)}
+              >
                 <button
                   type="button"
-                  className="folder-collapse-btn"
+                  className="folder-caret"
                   onClick={() => toggleFolderCollapsed(folder.id)}
                   aria-label={folder.collapsed ? 'Expand folder' : 'Collapse folder'}
                 >
@@ -170,12 +186,12 @@ export function PageSidebar({
                 </button>
                 {renamingFolderId === folder.id ? (
                   <input
-                    className="folder-rename-input"
+                    className="folder-rename"
                     value={renameValue}
                     onChange={(e) => setRenameValue(e.target.value)}
-                    onBlur={() => commitRename()}
+                    onBlur={() => void commitRename()}
                     onKeyDown={(e) => {
-                      if (e.key === 'Enter') commitRename();
+                      if (e.key === 'Enter') void commitRename();
                       if (e.key === 'Escape') setRenamingFolderId(null);
                     }}
                     autoFocus
@@ -183,7 +199,8 @@ export function PageSidebar({
                 ) : (
                   <button
                     type="button"
-                    className="folder-name-btn"
+                    className="folder-name"
+                    onClick={() => toggleFolderCollapsed(folder.id)}
                     onDoubleClick={() => startRename(folder)}
                     title="Double-click to rename"
                   >
@@ -191,26 +208,14 @@ export function PageSidebar({
                   </button>
                 )}
                 <span className="folder-count">{folderPages.length}</span>
-                <button
-                  type="button"
-                  className="folder-add-page-btn"
-                  onClick={(e) => handleNewPageInFolder(folder.id, e)}
-                  title="New page in folder"
-                >
-                  +
-                </button>
-                <button
-                  type="button"
-                  className="folder-delete-btn"
-                  onClick={(e) => handleDeleteFolder(folder.id, e)}
-                  aria-label={`Delete folder ${folder.name}`}
-                  title="Delete folder"
-                >
-                  ×
-                </button>
+                <div className="folder-actions">
+                  <button type="button" className="icon-btn" onClick={(e) => void handleNewPageInFolder(folder.id, e)} title="New page here">+</button>
+                  <button type="button" className="icon-btn icon-btn-danger" onClick={(e) => void handleDeleteFolder(folder.id, e)} title="Delete folder">×</button>
+                </div>
               </div>
-              {!folder.collapsed && folderPages.length > 0 && (
-                <ul className="folder-page-list">
+
+              {!folder.collapsed && (
+                <ul className="page-list">
                   {folderPages.map((page) => (
                     <PageRow
                       key={page.id}
@@ -220,39 +225,40 @@ export function PageSidebar({
                       folderId={pageFolderId.get(page.id) ?? null}
                       onSelectPage={onSelectPage}
                       onDeletePage={onDeletePage}
-                      onMovePage={handleMovePage}
-                      nested
+                      onMovePage={(pageId, folderId) => void movePageToFolder(pageId, folderId)}
                     />
                   ))}
+                  {folderPages.length === 0 && <li className="folder-empty">Drop a page here</li>}
                 </ul>
-              )}
-              {!folder.collapsed && folderPages.length === 0 && (
-                <div className="folder-empty">No pages — click + to add one</div>
               )}
             </li>
           );
         })}
-
-        {unfiledPages.length > 0 && (
-          <li className="folder-block unfiled-block">
-            {folders.length > 0 && <div className="unfiled-label">Unfiled</div>}
-            <ul className="folder-page-list">
-              {unfiledPages.map((page) => (
-                <PageRow
-                  key={page.id}
-                  page={page}
-                  active={isActivePage(page.id)}
-                  folders={folders}
-                  folderId={null}
-                  onSelectPage={onSelectPage}
-                  onDeletePage={onDeletePage}
-                  onMovePage={handleMovePage}
-                />
-              ))}
-            </ul>
-          </li>
-        )}
       </ul>
+
+      <div
+        className={`unfiled ${dropFolderId === '__unfiled__' ? 'drop-target' : ''}`}
+        onDragOver={(e) => { e.preventDefault(); setDropFolderId('__unfiled__'); }}
+        onDragLeave={() => setDropFolderId(null)}
+        onDrop={(e) => void dropOnFolder(null, e)}
+      >
+        {folders.length > 0 && unfiledPages.length > 0 && <div className="unfiled-label">Unfiled</div>}
+        <ul className="page-list">
+          {unfiledPages.map((page) => (
+            <PageRow
+              key={page.id}
+              page={page}
+              active={isActivePage(page.id)}
+              folders={folders}
+              folderId={null}
+              onSelectPage={onSelectPage}
+              onDeletePage={onDeletePage}
+              onMovePage={(pageId, folderId) => void movePageToFolder(pageId, folderId)}
+            />
+          ))}
+        </ul>
+        {pages.length === 0 && <div className="folder-empty">No pages yet</div>}
+      </div>
     </div>
   );
 }

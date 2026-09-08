@@ -1,22 +1,26 @@
 import { v4 as uuid } from 'uuid';
 import { db } from './database';
 import { createEmptyNode, type OutlinerNode } from './schema';
-import { parseDoc, extractWikiLinkTitles, type DocNode } from '../tiptap/docUtils';
+import { parseDoc, extractWikiLinkTitles, docFromText, type DocNode } from '../tiptap/docUtils';
 import { addPageToFolder, removePageFromAllFolders } from './folderRepository';
+import { deleteCardsForNode, reconcileCards } from './cardRepository';
+
+/** Gap left between adjacent order keys when appending; halved on every insert between two rows. */
+const ORDER_STEP = 1000;
 
 /** Fetch a single node by id. */
 export async function getNode(id: string): Promise<OutlinerNode | undefined> {
   return db.nodes.get(id);
 }
 
-/** Fetch all top-level pages, sorted by creation time (newest first). */
+/** Fetch all top-level pages, sorted by their order key. */
 export async function getAllPages(): Promise<OutlinerNode[]> {
   // Note: IndexedDB doesn't support indexing boolean-valued fields (boolean
   // isn't a valid IndexedDB key type), so a `.where('isPage').equals(...)`
   // index query silently matches nothing — this must scan and filter in
   // memory instead. Fine at this scale (personal notes, not millions of rows).
   const all = await db.nodes.toArray();
-  return all.filter((n) => n.isPage && !n.deletedAt).sort((a, b) => b.createdAt - a.createdAt);
+  return all.filter((n) => n.isPage && !n.deletedAt).sort((a, b) => a.order - b.order);
 }
 
 /** Fetch a node's direct children, sorted by their order key. */
@@ -25,10 +29,23 @@ export async function getChildren(parentId: string): Promise<OutlinerNode[]> {
   return children.filter((n) => !n.deletedAt).sort((a, b) => a.order - b.order);
 }
 
-/** Every non-deleted node in the database — used for link resolution/search. Fine at this scale (no server-side full-text index yet). */
+/** Every non-deleted node in the database — used for link resolution/search. */
 export async function getAllNodes(): Promise<OutlinerNode[]> {
   const all = await db.nodes.toArray();
   return all.filter((n) => !n.deletedAt);
+}
+
+/** A node's siblings in display order — its parent's children, or the page list at the top level. */
+async function getSiblings(node: OutlinerNode): Promise<OutlinerNode[]> {
+  return node.parentId ? getChildren(node.parentId) : getAllPages();
+}
+
+/** An order key that sits between two rows, or just past the end when there's no `next`. */
+function orderBetween(prev: OutlinerNode | undefined, next: OutlinerNode | undefined): number {
+  if (prev && next) return (prev.order + next.order) / 2;
+  if (prev) return prev.order + ORDER_STEP;
+  if (next) return next.order - ORDER_STEP;
+  return Date.now();
 }
 
 /**
@@ -42,17 +59,24 @@ export async function getAllNodes(): Promise<OutlinerNode[]> {
 export async function syncOutboundLinks(nodeId: string, doc: DocNode): Promise<void> {
   const titles = extractWikiLinkTitles(doc);
   if (titles.length === 0) {
+    const current = await db.nodes.get(nodeId);
+    // Skip the write when there's nothing to clear — this runs on every
+    // keystroke-debounce, and most rems have no links at all.
+    if (current && current.outboundLinks.length === 0) return;
     await db.nodes.update(nodeId, { outboundLinks: [], updatedAt: Date.now() });
     return;
   }
 
   const allNodes = await getAllNodes();
+  const byTitle = new Map<string, string>();
+  for (const candidate of allNodes) {
+    const key = candidate.plainText.trim().toLowerCase();
+    if (key && !byTitle.has(key)) byTitle.set(key, candidate.id);
+  }
+
   const linkedIds = titles
-    .map((title) =>
-      allNodes.find((n) => n.id !== nodeId && n.plainText.trim().toLowerCase() === title.toLowerCase())
-    )
-    .filter((n): n is OutlinerNode => Boolean(n))
-    .map((n) => n.id);
+    .map((title) => byTitle.get(title.trim().toLowerCase()))
+    .filter((id): id is string => Boolean(id) && id !== nodeId);
 
   await db.nodes.update(nodeId, { outboundLinks: [...new Set(linkedIds)], updatedAt: Date.now() });
 }
@@ -87,13 +111,15 @@ export async function getBreadcrumbPath(nodeId: string): Promise<OutlinerNode[]>
   return path;
 }
 
-/** Build a simple single-paragraph doc (as a JSON string) from plain text — used for programmatic node creation (e.g. auto-creating a page from a wikiLink click). */
-function docFromPlainText(text: string): string {
-  const doc: DocNode = {
-    type: 'doc',
-    content: [{ type: 'paragraph', content: text ? [{ type: 'text', text }] : [] }],
-  };
-  return JSON.stringify(doc);
+/** True when `candidateId` sits anywhere inside `ancestorId`'s subtree (or is that node). */
+export async function isSelfOrDescendant(candidateId: string, ancestorId: string): Promise<boolean> {
+  let current = await getNode(candidateId);
+  while (current) {
+    if (current.id === ancestorId) return true;
+    if (!current.parentId) return false;
+    current = await getNode(current.parentId);
+  }
+  return false;
 }
 
 /**
@@ -101,18 +127,22 @@ function docFromPlainText(text: string): string {
  * A page therefore opens with a title and an immediately editable note slot.
  */
 export async function createPage(title = 'Untitled', folderId?: string | null): Promise<OutlinerNode> {
+  const pages = await getAllPages();
+  const lastPage = pages[pages.length - 1];
+
   const node: OutlinerNode = {
     id: uuid(),
     ...createEmptyNode({
-      content: docFromPlainText(title),
+      content: JSON.stringify(docFromText(title)),
       plainText: title,
       isPage: true,
       parentId: null,
+      order: lastPage ? lastPage.order + ORDER_STEP : Date.now(),
     }),
   };
   const firstChild: OutlinerNode = {
     id: uuid(),
-    ...createEmptyNode({ parentId: node.id, order: node.order + 1 }),
+    ...createEmptyNode({ parentId: node.id, order: Date.now() }),
   };
   node.childrenIds = [firstChild.id];
 
@@ -161,13 +191,9 @@ export async function createSiblingAfter(afterNodeId: string): Promise<OutlinerN
   const after = await getNode(afterNodeId);
   if (!after) throw new Error(`Node ${afterNodeId} not found`);
 
-  const siblings = after.parentId
-    ? await getChildren(after.parentId)
-    : await getAllPages();
-
+  const siblings = await getSiblings(after);
   const idx = siblings.findIndex((s) => s.id === afterNodeId);
-  const nextSibling = siblings[idx + 1];
-  const order = nextSibling ? (after.order + nextSibling.order) / 2 : after.order + 1000;
+  const order = orderBetween(after, siblings[idx + 1]);
 
   const node: OutlinerNode = {
     id: uuid(),
@@ -178,7 +204,11 @@ export async function createSiblingAfter(afterNodeId: string): Promise<OutlinerN
   if (after.parentId) {
     const parent = await getNode(after.parentId);
     if (parent) {
-      const childrenIds = [...parent.childrenIds, node.id];
+      // Insert into childrenIds at the matching position rather than
+      // appending, so the array stays a faithful mirror of display order.
+      const childrenIds = [...parent.childrenIds];
+      const at = childrenIds.indexOf(afterNodeId);
+      childrenIds.splice(at === -1 ? childrenIds.length : at + 1, 0, node.id);
       await db.nodes.update(parent.id, { childrenIds, updatedAt: Date.now() });
     }
   }
@@ -191,9 +221,12 @@ export async function createFirstChild(parentId: string): Promise<OutlinerNode> 
   const parent = await getNode(parentId);
   if (!parent) throw new Error(`Node ${parentId} not found`);
 
+  const children = await getChildren(parentId);
+  const last = children[children.length - 1];
+
   const node: OutlinerNode = {
     id: uuid(),
-    ...createEmptyNode({ parentId, order: Date.now() }),
+    ...createEmptyNode({ parentId, order: last ? last.order + ORDER_STEP : Date.now() }),
   };
   await db.nodes.add(node);
 
@@ -215,11 +248,14 @@ export async function createPortalChild(parentId: string, targetNodeId: string):
   const parent = await getNode(parentId);
   if (!parent) throw new Error(`Node ${parentId} not found`);
 
+  const children = await getChildren(parentId);
+  const last = children[children.length - 1];
+
   const node: OutlinerNode = {
     id: uuid(),
     ...createEmptyNode({
       parentId,
-      order: Date.now(),
+      order: last ? last.order + ORDER_STEP : Date.now(),
       isPortal: true,
       portalTargetId: targetNodeId,
     }),
@@ -237,12 +273,16 @@ export async function createPortalChild(parentId: string, targetNodeId: string):
 
 /**
  * Update a node's rich-text content. `docJson` is `JSON.stringify(editor.getJSON())`;
- * `plainText` should be the editor's plain-text rendering (`editor.getText()`).
- * Debounce calls to this from the UI layer.
+ * `plainText` should be the editor's plain-text rendering. Debounce calls to
+ * this from the UI layer. Link resolution and flashcard reconciliation both
+ * hang off this single write path.
  */
 export async function updateContent(id: string, docJson: string, plainText: string): Promise<void> {
   await db.nodes.update(id, { content: docJson, plainText, updatedAt: Date.now() });
-  await syncOutboundLinks(id, parseDoc(docJson));
+  const doc = parseDoc(docJson);
+  await syncOutboundLinks(id, doc);
+  const node = await getNode(id);
+  if (node) await reconcileCards(node);
 }
 
 /** Search node text for wikiLink resolution / omnibar search. Empty query returns a handful of pages as defaults. */
@@ -255,6 +295,14 @@ export async function searchNodesByTitle(query: string): Promise<OutlinerNode[]>
   const all = await getAllNodes();
   return all
     .filter((n) => n.plainText.trim().length > 0 && n.plainText.toLowerCase().includes(q))
+    .sort((a, b) => {
+      // Prefer exact matches, then titles that start with the query, then pages.
+      const aText = a.plainText.trim().toLowerCase();
+      const bText = b.plainText.trim().toLowerCase();
+      const score = (text: string, isPage: boolean) =>
+        (text === q ? 0 : text.startsWith(q) ? 1 : 2) - (isPage ? 0.5 : 0);
+      return score(aText, a.isPage) - score(bText, b.isPage);
+    })
     .slice(0, 8);
 }
 
@@ -273,7 +321,7 @@ export async function indentNode(id: string): Promise<boolean> {
   const node = await getNode(id);
   if (!node) return false;
 
-  const siblings = node.parentId ? await getChildren(node.parentId) : await getAllPages();
+  const siblings = await getSiblings(node);
   const idx = siblings.findIndex((s) => s.id === id);
   const prevSibling = siblings[idx - 1];
   if (!prevSibling) return false;
@@ -289,15 +337,18 @@ export async function indentNode(id: string): Promise<boolean> {
     }
   }
 
+  const newSiblings = await getChildren(prevSibling.id);
+  const last = newSiblings[newSiblings.length - 1];
+
   await db.nodes.update(prevSibling.id, {
-    childrenIds: [...prevSibling.childrenIds, id],
+    childrenIds: [...prevSibling.childrenIds.filter((cid) => cid !== id), id],
     collapsed: false,
     updatedAt: Date.now(),
   });
 
   await db.nodes.update(id, {
     parentId: prevSibling.id,
-    order: Date.now(),
+    order: last ? last.order + ORDER_STEP : Date.now(),
     isPage: false,
     updatedAt: Date.now(),
   });
@@ -316,21 +367,22 @@ export async function outdentNode(id: string): Promise<boolean> {
   const parent = await getNode(node.parentId);
   if (!parent) return false;
 
-  // Remove from parent's childrenIds
   await db.nodes.update(parent.id, {
     childrenIds: parent.childrenIds.filter((cid) => cid !== id),
     updatedAt: Date.now(),
   });
 
   const grandparentId = parent.parentId;
-  const newOrder = parent.order + 0.5; // place right after the old parent
+  const parentSiblings = await getSiblings(parent);
+  const parentIdx = parentSiblings.findIndex((s) => s.id === parent.id);
+  const newOrder = orderBetween(parent, parentSiblings[parentIdx + 1]);
 
   if (grandparentId) {
     const grandparent = await getNode(grandparentId);
     if (grandparent) {
-      const parentIdx = grandparent.childrenIds.indexOf(parent.id);
       const childrenIds = [...grandparent.childrenIds];
-      childrenIds.splice(parentIdx + 1, 0, id);
+      const at = childrenIds.indexOf(parent.id);
+      childrenIds.splice(at === -1 ? childrenIds.length : at + 1, 0, id);
       await db.nodes.update(grandparent.id, { childrenIds, updatedAt: Date.now() });
     }
   }
@@ -340,6 +392,114 @@ export async function outdentNode(id: string): Promise<boolean> {
     order: newOrder,
     isPage: grandparentId === null,
     updatedAt: Date.now(),
+  });
+
+  return true;
+}
+
+/**
+ * Move a node one slot up or down among its siblings (Alt+↑ / Alt+↓).
+ * Implemented as an order-key swap so nothing else in the tree has to move.
+ */
+export async function moveAmongSiblings(id: string, delta: number): Promise<boolean> {
+  const node = await getNode(id);
+  if (!node) return false;
+
+  const siblings = await getSiblings(node);
+  const idx = siblings.findIndex((s) => s.id === id);
+  const target = siblings[idx + delta];
+  if (idx === -1 || !target) return false;
+
+  const now = Date.now();
+  await db.nodes.update(node.id, { order: target.order, updatedAt: now });
+  await db.nodes.update(target.id, { order: node.order, updatedAt: now });
+
+  // Keep the parent's childrenIds mirror in step with the new display order.
+  if (node.parentId) {
+    const parent = await getNode(node.parentId);
+    if (parent) {
+      const childrenIds = [...parent.childrenIds];
+      const from = childrenIds.indexOf(id);
+      const to = childrenIds.indexOf(target.id);
+      if (from !== -1 && to !== -1) {
+        childrenIds[from] = target.id;
+        childrenIds[to] = id;
+        await db.nodes.update(parent.id, { childrenIds, updatedAt: now });
+      }
+    }
+  }
+
+  return true;
+}
+
+export type DropPosition = 'before' | 'after' | 'child';
+
+/**
+ * Move a node next to (or inside) another node — the drag-and-drop path.
+ * Refuses to drop a node into its own subtree, which would detach that whole
+ * branch from the tree with no way back to it.
+ */
+export async function moveNodeRelativeTo(
+  id: string,
+  targetId: string,
+  position: DropPosition
+): Promise<boolean> {
+  if (id === targetId) return false;
+
+  const node = await getNode(id);
+  const target = await getNode(targetId);
+  if (!node || !target) return false;
+  if (await isSelfOrDescendant(targetId, id)) return false;
+
+  const newParentId = position === 'child' ? target.id : target.parentId;
+  let order: number;
+
+  if (position === 'child') {
+    const children = (await getChildren(target.id)).filter((c) => c.id !== id);
+    const last = children[children.length - 1];
+    order = last ? last.order + ORDER_STEP : Date.now();
+  } else {
+    const siblings = (await getSiblings(target)).filter((s) => s.id !== id);
+    const targetIdx = siblings.findIndex((s) => s.id === targetId);
+    order =
+      position === 'before'
+        ? orderBetween(siblings[targetIdx - 1], target)
+        : orderBetween(target, siblings[targetIdx + 1]);
+  }
+
+  const now = Date.now();
+
+  // Detach from the old parent.
+  if (node.parentId && node.parentId !== newParentId) {
+    const oldParent = await getNode(node.parentId);
+    if (oldParent) {
+      await db.nodes.update(oldParent.id, {
+        childrenIds: oldParent.childrenIds.filter((cid) => cid !== id),
+        updatedAt: now,
+      });
+    }
+  }
+
+  // Attach to the new one.
+  if (newParentId) {
+    const parent = await getNode(newParentId);
+    if (parent) {
+      const childrenIds = parent.childrenIds.filter((cid) => cid !== id);
+      if (position === 'child') {
+        childrenIds.push(id);
+      } else {
+        const at = childrenIds.indexOf(targetId);
+        childrenIds.splice(at === -1 ? childrenIds.length : position === 'before' ? at : at + 1, 0, id);
+      }
+      await db.nodes.update(parent.id, { childrenIds, collapsed: false, updatedAt: now });
+    }
+  }
+
+  await db.nodes.update(id, {
+    parentId: newParentId,
+    order,
+    isPage: newParentId === null,
+    updatedAt: now,
   });
 
   return true;
@@ -373,6 +533,7 @@ export async function deleteNode(id: string): Promise<void> {
   if (node.isPage && node.parentId === null) {
     await removePageFromAllFolders(id);
   }
+  await deleteCardsForNode(id);
   await db.nodes.update(id, { deletedAt: now, updatedAt: now });
 }
 
@@ -380,7 +541,7 @@ export async function deleteNode(id: string): Promise<void> {
  * Merge a node into its previous sibling (used on Backspace at position 0).
  * Note: this concatenates plain text rather than merging rich-text docs
  * structurally, so inline formatting/links on the merged-in node are not
- * preserved — a reasonable v1 tradeoff since merges are relatively rare
+ * preserved — a reasonable tradeoff since merges are relatively rare
  * and usually happen on near-empty rows.
  */
 export async function mergeWithPreviousSibling(id: string): Promise<string | null> {
@@ -393,7 +554,7 @@ export async function mergeWithPreviousSibling(id: string): Promise<string | nul
   if (!prevSibling) return null;
 
   const mergedText = prevSibling.plainText + node.plainText;
-  const mergedDoc = docFromPlainText(mergedText);
+  const mergedDoc = JSON.stringify(docFromText(mergedText));
   await db.nodes.update(prevSibling.id, { content: mergedDoc, plainText: mergedText, updatedAt: Date.now() });
 
   // Re-parent node's children onto prevSibling
@@ -409,5 +570,9 @@ export async function mergeWithPreviousSibling(id: string): Promise<string | nul
   await db.nodes.update(id, { childrenIds: [] });
 
   await deleteNode(id);
+
+  const merged = await getNode(prevSibling.id);
+  if (merged) await reconcileCards(merged);
+
   return prevSibling.id;
 }

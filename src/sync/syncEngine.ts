@@ -1,63 +1,126 @@
+import type { Table } from 'dexie';
 import { supabase } from './supabaseClient';
 import { db } from '../db/database';
-import type { OutlinerNode } from '../db/schema';
+
+/** Everything a row needs to take part in the merge. */
+interface Syncable {
+  id: string;
+  updatedAt: number;
+  deletedAt: number | null;
+}
+
+export interface TableSyncResult {
+  table: string;
+  pushed: number;
+  pulled: number;
+  error?: string;
+}
 
 export interface SyncResult {
   pushed: number;
   pulled: number;
+  tables: TableSyncResult[];
+  /** Tables that failed — almost always because the Supabase migration hasn't been run yet. */
+  failed: string[];
 }
 
 /**
- * Two-way sync between the local IndexedDB store and the `nodes` table in
- * Supabase, scoped to `userId`. Conflict resolution is simple last-write-wins
- * by `updatedAt` — fine for a single-user app syncing across their own
- * devices, where true concurrent edits to the same bullet are rare. Deletes
- * are just another field mutation (`deletedAt`) so they sync the same way
- * as any other change, no special-casing needed.
+ * Last-write-wins merge of one table between local IndexedDB and Supabase,
+ * scoped to `userId`. Conflict resolution is by `updatedAt`, which is fine for
+ * a single user syncing their own devices: true concurrent edits to the same
+ * row are rare, and deletes are just another field change (`deletedAt`) so
+ * they travel through the same comparison as any other edit.
  */
-export async function syncWithCloud(userId: string): Promise<SyncResult> {
+async function syncTable<T extends Syncable>(
+  localTable: Table<T, string>,
+  remoteTable: string,
+  userId: string
+): Promise<TableSyncResult> {
   if (!supabase) throw new Error('Cloud sync is not configured');
 
-  const local = await db.nodes.toArray();
-  const { data: remoteRows, error } = await supabase.from('nodes').select('*').eq('userId', userId);
+  const local = await localTable.toArray();
+  const { data: remoteRows, error } = await supabase.from(remoteTable).select('*').eq('userId', userId);
   if (error) throw error;
 
-  const remote = (remoteRows ?? []) as (OutlinerNode & { userId: string })[];
+  const remote = (remoteRows ?? []) as (T & { userId: string })[];
 
-  const localById = new Map(local.map((n) => [n.id, n]));
-  const remoteById = new Map(remote.map((n) => [n.id, n]));
+  const localById = new Map(local.map((row) => [row.id, row]));
+  const remoteById = new Map(remote.map((row) => [row.id, row]));
 
-  const toUpload: OutlinerNode[] = [];
-  const toDownload: OutlinerNode[] = [];
+  const toUpload: T[] = [];
+  const toDownload: T[] = [];
 
-  const allIds = new Set([...localById.keys(), ...remoteById.keys()]);
-  for (const id of allIds) {
-    const l = localById.get(id);
-    const r = remoteById.get(id);
-    if (l && !r) {
-      toUpload.push(l);
-    } else if (r && !l) {
-      toDownload.push(r);
-    } else if (l && r) {
-      if (l.updatedAt > r.updatedAt) toUpload.push(l);
-      else if (r.updatedAt > l.updatedAt) toDownload.push(r);
+  for (const id of new Set([...localById.keys(), ...remoteById.keys()])) {
+    const mine = localById.get(id);
+    const theirs = remoteById.get(id);
+    if (mine && !theirs) toUpload.push(mine);
+    else if (theirs && !mine) toDownload.push(theirs);
+    else if (mine && theirs) {
+      if (mine.updatedAt > theirs.updatedAt) toUpload.push(mine);
+      else if (theirs.updatedAt > mine.updatedAt) toDownload.push(theirs);
       // equal updatedAt: already in sync, nothing to do
     }
   }
 
   if (toUpload.length > 0) {
-    const rows = toUpload.map((n) => ({ ...n, userId }));
-    const { error: upErr } = await supabase.from('nodes').upsert(rows);
+    const { error: upErr } = await supabase
+      .from(remoteTable)
+      .upsert(toUpload.map((row) => ({ ...row, userId })));
     if (upErr) throw upErr;
   }
 
   if (toDownload.length > 0) {
-    const clean = toDownload.map((n) => {
-      const { userId: _drop, ...rest } = n as OutlinerNode & { userId?: string };
-      return rest as OutlinerNode;
+    const clean = toDownload.map((row) => {
+      const { userId: _drop, ...rest } = row as T & { userId?: string };
+      return rest as T;
     });
-    await db.nodes.bulkPut(clean);
+    await localTable.bulkPut(clean);
   }
 
-  return { pushed: toUpload.length, pulled: toDownload.length };
+  return { table: remoteTable, pushed: toUpload.length, pulled: toDownload.length };
+}
+
+/**
+ * Sync every table that has a cloud counterpart. Each table is merged
+ * independently and a failure in one doesn't abandon the others — so if the
+ * Supabase migration adding `dictionary`, `folders` and `cards` hasn't been
+ * run yet, your notes still sync and the UI can tell you exactly which tables
+ * are missing rather than the whole sync just breaking.
+ */
+export async function syncWithCloud(userId: string): Promise<SyncResult> {
+  if (!supabase) throw new Error('Cloud sync is not configured');
+
+  const jobs: Array<[string, () => Promise<TableSyncResult>]> = [
+    ['nodes', () => syncTable(db.nodes, 'nodes', userId)],
+    ['dictionary', () => syncTable(db.dictionary, 'dictionary', userId)],
+    ['folders', () => syncTable(db.folders, 'folders', userId)],
+    ['cards', () => syncTable(db.cards, 'cards', userId)],
+  ];
+
+  const tables: TableSyncResult[] = [];
+  const failed: string[] = [];
+
+  for (const [name, run] of jobs) {
+    try {
+      tables.push(await run());
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      tables.push({ table: name, pushed: 0, pulled: 0, error: message });
+      failed.push(name);
+    }
+  }
+
+  // Every table failing means something systemic (offline, bad credentials),
+  // not a missing migration — surface that as a real error.
+  if (failed.length === jobs.length) {
+    const first = tables.find((t) => t.error)?.error ?? 'Sync failed';
+    throw new Error(first);
+  }
+
+  return {
+    pushed: tables.reduce((sum, t) => sum + t.pushed, 0),
+    pulled: tables.reduce((sum, t) => sum + t.pulled, 0),
+    tables,
+    failed,
+  };
 }

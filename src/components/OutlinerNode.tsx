@@ -1,18 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { useEditor, EditorContent } from '@tiptap/react';
-import StarterKit from '@tiptap/starter-kit';
-import Placeholder from '@tiptap/extension-placeholder';
-import { TableKit } from '@tiptap/extension-table';
-import TaskList from '@tiptap/extension-task-list';
-import TaskItem from '@tiptap/extension-task-item';
-import { TextStyle } from '@tiptap/extension-text-style';
-import FontFamily from '@tiptap/extension-font-family';
-import Color from '@tiptap/extension-color';
-import Highlight from '@tiptap/extension-highlight';
-import TextAlign from '@tiptap/extension-text-align';
-import Underline from '@tiptap/extension-underline';
 import { useActiveEditor } from '../context/ActiveEditorContext';
+import { handleMenuKey } from '../editor/menuStore';
 import {
   getChildren,
   getNode,
@@ -25,14 +15,32 @@ import {
   indentNode,
   outdentNode,
   mergeWithPreviousSibling,
+  moveAmongSiblings,
+  moveNodeRelativeTo,
   deleteNode,
+  type DropPosition,
 } from '../db/repository';
-import { WikiLink } from '../tiptap/WikiLinkNode';
-import { Math } from '../tiptap/MathNode';
-import { DictionaryHighlight } from '../tiptap/DictionaryHighlight';
-import { FontSize } from '../tiptap/FontSize';
+import { getCardsForNode, toggleCardDirection } from '../db/cardRepository';
+import { rowExtensions } from '../tiptap/extensions';
 import { parseDoc, docToPlainText, isDocEmpty, EMPTY_DOC, type DocNode } from '../tiptap/docUtils';
 import { SearchOmnibar } from './SearchOmnibar';
+
+/**
+ * The id of the rem currently being dragged. Held in a module variable rather
+ * than state because `dragover` can't read `dataTransfer` for security reasons
+ * -- the browser only exposes the payload on `drop`, and we need to know what's
+ * being dragged in order to draw the drop indicator.
+ */
+let draggingId: string | null = null;
+
+/**
+ * A private drag type rather than `text/plain`. ProseMirror (correctly) treats
+ * a plain-text payload dropped onto an editor as text to insert, so carrying
+ * the rem id that way meant dropping a rem onto another one pasted its UUID
+ * into the target's content. Nothing but this app reads this type, so the
+ * editor sees a drop it has no handler for and leaves the content alone.
+ */
+const REM_DRAG_TYPE = 'application/x-clemnotes-rem';
 
 interface OutlinerNodeProps {
   nodeId: string;
@@ -50,39 +58,21 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
     () => (node?.isPortal && node.portalTargetId ? getNode(node.portalTargetId) : Promise.resolve(undefined)),
     [node?.isPortal, node?.portalTargetId]
   );
+  const cards = useLiveQuery(() => (node?.isCard ? getCardsForNode(nodeId) : Promise.resolve([])), [nodeId, node?.isCard]) ?? [];
 
   const [showEmbedPicker, setShowEmbedPicker] = useState(false);
+  const [dropHint, setDropHint] = useState<DropPosition | null>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const hasHydrated = useRef(false);
 
-  const { setActiveEditor } = useActiveEditor();
+  const { setActive } = useActiveEditor();
 
   const editor = useEditor({
-    extensions: [
-      StarterKit.configure({
-        heading: { levels: [1, 2, 3, 4, 5, 6] },
-        blockquote: false,
-        horizontalRule: false,
-      }),
-      Placeholder.configure({ placeholder: 'Type something... [[link]] or $math$' }),
-      TableKit.configure({ table: { resizable: true, lastColumnResizable: true } }),
-      TaskList,
-      TaskItem.configure({ nested: false }),
-      TextStyle,
-      FontFamily,
-      FontSize,
-      Color,
-      Highlight.configure({ multicolor: true }),
-      TextAlign.configure({ types: ['heading', 'paragraph'] }),
-      Underline,
-      WikiLink,
-      Math,
-      DictionaryHighlight,
-    ],
+    extensions: rowExtensions,
     content: EMPTY_DOC,
     onFocus: ({ editor }) => {
       onFocusRequest(nodeId);
-      setActiveEditor(editor);
+      setActive(editor, nodeId);
     },
     onUpdate: ({ editor }) => {
       const json = editor.getJSON() as DocNode;
@@ -94,8 +84,21 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
       }, 300);
     },
     editorProps: {
-      attributes: { class: 'outliner-editor-content' },
+      attributes: { class: 'rem-editor' },
+      // Belt and braces alongside the custom drag type: while a rem drag is in
+      // flight, the editor never handles the drop itself.
+      handleDrop: (_view, event) => {
+        if (!draggingId) return false;
+        event.preventDefault();
+        return true;
+      },
       handleKeyDown: (view, event) => {
+        // The slash / [[ menus get first refusal on navigation keys.
+        if (handleMenuKey(event)) {
+          event.preventDefault();
+          return true;
+        }
+
         const { $from } = view.state.selection;
         let insideTable = false;
         for (let d = $from.depth; d > 0; d--) {
@@ -104,6 +107,13 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
             insideTable = true;
             break;
           }
+        }
+
+        // Alt+↑/↓ moves the whole rem among its siblings.
+        if (event.altKey && (event.key === 'ArrowUp' || event.key === 'ArrowDown')) {
+          event.preventDefault();
+          void moveAmongSiblings(nodeId, event.key === 'ArrowUp' ? -1 : 1);
+          return true;
         }
 
         if (event.key === 'Enter' && !event.shiftKey && !insideTable) {
@@ -175,19 +185,50 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
     await createPortalChild(nodeId, targetId);
   }
 
+  function handleDragStart(event: React.DragEvent) {
+    draggingId = nodeId;
+    event.dataTransfer.effectAllowed = 'move';
+    event.dataTransfer.setData(REM_DRAG_TYPE, nodeId);
+  }
+
+  function handleDragOver(event: React.DragEvent) {
+    if (!draggingId || draggingId === nodeId || isRoot) return;
+    event.preventDefault();
+    event.dataTransfer.dropEffect = 'move';
+    const rect = event.currentTarget.getBoundingClientRect();
+    const ratio = (event.clientY - rect.top) / rect.height;
+    // Top and bottom edges reorder; the middle band nests the dragged rem
+    // underneath this one, which is how you reparent without a second gesture.
+    setDropHint(ratio < 0.3 ? 'before' : ratio > 0.7 ? 'after' : 'child');
+  }
+
+  async function handleDrop(event: React.DragEvent) {
+    event.preventDefault();
+    event.stopPropagation();
+    const sourceId = draggingId || event.dataTransfer.getData(REM_DRAG_TYPE);
+    const position = dropHint;
+    setDropHint(null);
+    draggingId = null;
+    if (!sourceId || !position) return;
+    await moveNodeRelativeTo(sourceId, nodeId, position);
+  }
+
+  const liveCards = cards.filter((c) => !c.suspended);
+  const isClozeRem = liveCards.some((c) => c.kind === 'cloze');
+
   // Portal nodes render a live, editable embed of another node's subtree
   // instead of their own text — the embedded OutlinerNode is the exact
   // same component/subtree bound to the target id, so edits made inside
   // the portal write straight back to the real node.
   if (node.isPortal && node.portalTargetId) {
     return (
-      <div className="outliner-node" style={{ marginLeft: depth === 0 ? 0 : 20 }}>
+      <div className="rem" data-depth={depth}>
         <div className="portal-embed">
           <div className="portal-header">
-            <span className="portal-header-label" onClick={() => onZoomTo(node.portalTargetId!)}>
+            <button type="button" className="portal-header-label" onClick={() => onZoomTo(node.portalTargetId!)}>
               ↗ {portalTarget?.plainText || 'Untitled'}
-            </span>
-            <button className="portal-remove-btn" onClick={() => deleteNode(nodeId)} title="Remove embed">
+            </button>
+            <button type="button" className="portal-remove-btn" onClick={() => deleteNode(nodeId)} title="Remove embed">
               ×
             </button>
           </div>
@@ -205,13 +246,61 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
     );
   }
 
+  if (isRoot) {
+    return (
+      <div className="rem rem-root">
+        <div className="page-title">
+          <EditorContent editor={editor} />
+        </div>
+        <div className="rem-children rem-children-root">
+          {children.map((child) => (
+            <OutlinerNode
+              key={child.id}
+              nodeId={child.id}
+              depth={0}
+              onFocusRequest={onFocusRequest}
+              focusedNodeId={focusedNodeId}
+              onZoomTo={onZoomTo}
+            />
+          ))}
+        </div>
+        {showEmbedPicker && (
+          <SearchOmnibar
+            onClose={() => setShowEmbedPicker(false)}
+            onSelect={handleEmbedSelect}
+            placeholder="Embed a page or rem..."
+          />
+        )}
+      </div>
+    );
+  }
+
+  const hasChildren = children.length > 0;
+
   return (
-    <div className="outliner-node" style={{ marginLeft: depth === 0 ? 0 : 20 }}>
-      <div className={`outliner-row ${isRoot ? 'page-title-row' : ''}`}>
-        {!isRoot &&
-          (node.childrenIds.length > 0 ? (
+    <div className="rem" data-depth={depth}>
+      <div
+        className={`rem-row ${dropHint ? `drop-${dropHint}` : ''} ${node.isCard ? 'is-card' : ''}`}
+        onDragOver={handleDragOver}
+        onDragLeave={() => setDropHint(null)}
+        onDrop={handleDrop}
+      >
+        <div className="rem-gutter">
+          <button
+            type="button"
+            className="rem-handle"
+            draggable
+            onDragStart={handleDragStart}
+            onDragEnd={() => { draggingId = null; setDropHint(null); }}
+            title="Drag to move · click to zoom in"
+            onClick={() => onZoomTo(nodeId)}
+          >
+            ⠿
+          </button>
+          {hasChildren ? (
             <button
-              className="bullet bullet-toggle"
+              type="button"
+              className="rem-collapse"
               onClick={() => toggleCollapsed(nodeId)}
               aria-label={node.collapsed ? 'Expand' : 'Collapse'}
               aria-expanded={!node.collapsed}
@@ -219,45 +308,69 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
               {node.collapsed ? '▸' : '▾'}
             </button>
           ) : (
-            <span className="bullet">•</span>
-          ))}
+            <span className="rem-collapse rem-collapse-empty" />
+          )}
+          <button
+            type="button"
+            className={`rem-bullet ${node.collapsed && hasChildren ? 'has-hidden' : ''}`}
+            onClick={() => onZoomTo(nodeId)}
+            title="Zoom into this rem"
+          >
+            <span className="rem-bullet-dot" />
+          </button>
+        </div>
 
-        <div className="outliner-input-wrapper">
+        <div className="rem-body">
           <EditorContent editor={editor} />
         </div>
 
-        {!isRoot && (
-          <>
-            <button className="embed-btn" onClick={() => setShowEmbedPicker(true)} title="Embed a page or bullet (portal)">
-              ⧉
-            </button>
-            <button className="zoom-in-btn" onClick={() => onZoomTo(nodeId)} title="Zoom into this bullet">
-              ⤢
-            </button>
-          </>
-        )}
-        <button className="add-child-btn" onClick={handleAddChild} title="Add child">
-          +
-        </button>
+        <div className="rem-actions">
+          {node.isCard && (
+            isClozeRem ? (
+              <span className="rem-card-badge rem-card-badge-cloze" title="Cloze rem — one card per blank">
+                ⌷ {liveCards.length}
+              </span>
+            ) : (
+              <button
+                type="button"
+                className="rem-card-badge"
+                onClick={() => toggleCardDirection(nodeId)}
+                title={
+                  node.cardDirection === 'both'
+                    ? 'Two-way card — click to test the forward direction only'
+                    : 'Forward card — click to also test the reverse'
+                }
+              >
+                {node.cardDirection === 'both' ? '⇄' : '→'} {liveCards.length}
+              </button>
+            )
+          )}
+          <button type="button" className="rem-action" onClick={() => setShowEmbedPicker(true)} title="Embed another rem">⧈</button>
+          <button type="button" className="rem-action" onClick={handleAddChild} title="Add a child rem">+</button>
+          <button type="button" className="rem-action rem-action-danger" onClick={() => deleteNode(nodeId)} title="Delete this rem">×</button>
+        </div>
       </div>
 
-      {!node.collapsed &&
-        children.map((child) => (
-          <OutlinerNode
-            key={child.id}
-            nodeId={child.id}
-            depth={depth + 1}
-            onFocusRequest={onFocusRequest}
-            focusedNodeId={focusedNodeId}
-            onZoomTo={onZoomTo}
-          />
-        ))}
+      {!node.collapsed && hasChildren && (
+        <div className="rem-children">
+          {children.map((child) => (
+            <OutlinerNode
+              key={child.id}
+              nodeId={child.id}
+              depth={depth + 1}
+              onFocusRequest={onFocusRequest}
+              focusedNodeId={focusedNodeId}
+              onZoomTo={onZoomTo}
+            />
+          ))}
+        </div>
+      )}
 
       {showEmbedPicker && (
         <SearchOmnibar
           onClose={() => setShowEmbedPicker(false)}
           onSelect={handleEmbedSelect}
-          placeholder="Embed a page or bullet..."
+          placeholder="Embed a page or rem..."
         />
       )}
     </div>
