@@ -59,10 +59,19 @@ create table if not exists public.cards (
 create index if not exists cards_user_id_idx on public.cards ("userId");
 create index if not exists cards_due_idx on public.cards ("userId", "dueAt");
 
--- 5. Row Level Security on the three new tables.
+-- 5. Row Level Security. The three new tables need it turned on; `nodes` is
+-- re-asserted too, because an earlier half-finished setup could have left it
+-- without a policy, and without one every row is readable by anyone holding
+-- the publishable key. Re-running this when it is already correct is a no-op.
+alter table public.nodes enable row level security;
 alter table public.dictionary enable row level security;
 alter table public.folders enable row level security;
 alter table public.cards enable row level security;
+
+drop policy if exists "Users manage their own nodes" on public.nodes;
+create policy "Users manage their own nodes"
+  on public.nodes for all
+  using (auth.uid() = "userId") with check (auth.uid() = "userId");
 
 drop policy if exists "Users manage their own dictionary" on public.dictionary;
 create policy "Users manage their own dictionary"
