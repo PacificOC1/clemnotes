@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { useEditor, EditorContent } from '@tiptap/react';
 import { useActiveEditor } from '../context/ActiveEditorContext';
@@ -42,6 +42,12 @@ let draggingId: string | null = null;
  */
 const REM_DRAG_TYPE = 'application/x-clemnotes-rem';
 
+/**
+ * Shared empty chain for the top of the tree, so the default prop value isn't
+ * a fresh Set on every render of the root row.
+ */
+const NO_ANCESTORS: ReadonlySet<string> = new Set();
+
 interface OutlinerNodeProps {
   nodeId: string;
   depth: number;
@@ -49,9 +55,30 @@ interface OutlinerNodeProps {
   focusedNodeId: string | null;
   onZoomTo: (pageId: string) => void;
   isRoot?: boolean;
+  /**
+   * Every rem id rendered above this one, counting hops through portals.
+   *
+   * The parent tree can't contain a cycle — `moveNodeRelativeTo` refuses to
+   * drop a rem into its own subtree — but portals are a second, unconstrained
+   * graph laid over it: nothing stops a rem from embedding itself, an ancestor,
+   * or a rem that embeds it back. Expanding one of those recurses forever, and
+   * because each level resolves through an async live query it never overflows
+   * the stack and throws; it just keeps mounting editors until the tab dies.
+   * Carrying the chain down lets a portal notice it's about to re-enter
+   * something it already sits inside and stop.
+   */
+  ancestorIds?: ReadonlySet<string>;
 }
 
-export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZoomTo, isRoot }: OutlinerNodeProps) {
+export function OutlinerNode({
+  nodeId,
+  depth,
+  onFocusRequest,
+  focusedNodeId,
+  onZoomTo,
+  isRoot,
+  ancestorIds = NO_ANCESTORS,
+}: OutlinerNodeProps) {
   const node = useLiveQuery(() => getNode(nodeId), [nodeId]);
   const children = useLiveQuery(() => getChildren(nodeId), [nodeId, node?.childrenIds.join(',')]) ?? [];
   const portalTarget = useLiveQuery(
@@ -59,6 +86,9 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
     [node?.isPortal, node?.portalTargetId]
   );
   const cards = useLiveQuery(() => (node?.isCard ? getCardsForNode(nodeId) : Promise.resolve([])), [nodeId, node?.isCard]) ?? [];
+
+  /** This row's ancestors plus itself — what the rows below it inherit. */
+  const chain = useMemo(() => new Set(ancestorIds).add(nodeId), [ancestorIds, nodeId]);
 
   const [showEmbedPicker, setShowEmbedPicker] = useState(false);
   const [dropHint, setDropHint] = useState<DropPosition | null>(null);
@@ -182,7 +212,10 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
   }
 
   async function handleEmbedSelect(targetId: string) {
-    await createPortalChild(nodeId, targetId);
+    const created = await createPortalChild(nodeId, targetId);
+    if (!created) {
+      window.alert("A rem can't embed itself or anything it already sits inside.");
+    }
   }
 
   function handleDragStart(event: React.DragEvent) {
@@ -221,6 +254,11 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
   // same component/subtree bound to the target id, so edits made inside
   // the portal write straight back to the real node.
   if (node.isPortal && node.portalTargetId) {
+    // Re-entering something already open above us would loop forever, so show
+    // a link to it instead of expanding it in place. `chain` includes this rem,
+    // which also catches a portal pointed straight at itself.
+    const isCircular = chain.has(node.portalTargetId);
+
     return (
       <div className="rem" data-depth={depth}>
         <div className="portal-embed">
@@ -233,13 +271,21 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
             </button>
           </div>
           <div className="portal-body">
-            <OutlinerNode
-              nodeId={node.portalTargetId}
-              depth={0}
-              onFocusRequest={onFocusRequest}
-              focusedNodeId={focusedNodeId}
-              onZoomTo={onZoomTo}
-            />
+            {isCircular ? (
+              <p className="portal-circular">
+                This embed points at a rem it already sits inside, so it can't be opened here.
+                Use ↗ to jump to it.
+              </p>
+            ) : (
+              <OutlinerNode
+                nodeId={node.portalTargetId}
+                depth={0}
+                onFocusRequest={onFocusRequest}
+                focusedNodeId={focusedNodeId}
+                onZoomTo={onZoomTo}
+                ancestorIds={chain}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -261,6 +307,7 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
               onFocusRequest={onFocusRequest}
               focusedNodeId={focusedNodeId}
               onZoomTo={onZoomTo}
+              ancestorIds={chain}
             />
           ))}
         </div>
@@ -361,6 +408,7 @@ export function OutlinerNode({ nodeId, depth, onFocusRequest, focusedNodeId, onZ
               onFocusRequest={onFocusRequest}
               focusedNodeId={focusedNodeId}
               onZoomTo={onZoomTo}
+              ancestorIds={chain}
             />
           ))}
         </div>

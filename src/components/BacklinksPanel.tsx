@@ -14,10 +14,15 @@ interface BacklinkEntry {
 }
 
 export function BacklinksPanel({ nodeId, onZoomTo }: BacklinksPanelProps) {
-  const backlinkNodes = useLiveQuery(() => getBacklinks(nodeId), [nodeId]) ?? [];
+  // Deliberately not defaulted to `[]`: while the query is still resolving,
+  // `?? []` hands the effect below a brand-new array on every render, and the
+  // effect's own setState causes that render — a spin that only stopped when
+  // Dexie happened to answer.
+  const backlinkNodes = useLiveQuery(() => getBacklinks(nodeId), [nodeId]);
   const [entries, setEntries] = useState<BacklinkEntry[]>([]);
 
   useEffect(() => {
+    if (!backlinkNodes) return;
     let cancelled = false;
     (async () => {
       const resolved = await Promise.all(
@@ -26,7 +31,11 @@ export function BacklinksPanel({ nodeId, onZoomTo }: BacklinksPanelProps) {
           sourcePage: await findRootPage(node.id),
         }))
       );
-      if (!cancelled) setEntries(resolved);
+      // Keep the old array when both are empty, so an empty result can't
+      // re-trigger this effect through a changed state identity.
+      if (!cancelled) {
+        setEntries((prev) => (prev.length === 0 && resolved.length === 0 ? prev : resolved));
+      }
     })();
     return () => {
       cancelled = true;

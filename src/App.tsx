@@ -258,8 +258,13 @@ function Workspace() {
               placeholder="Embed a page or rem..."
               onClose={() => setEmbedTargetId(null)}
               onSelect={(targetId) => {
-                void createPortalChild(embedTargetId, targetId);
+                const parentId = embedTargetId;
                 setEmbedTargetId(null);
+                void createPortalChild(parentId, targetId).then((created) => {
+                  if (!created) {
+                    window.alert("A rem can't embed itself or anything it already sits inside.");
+                  }
+                });
               }}
             />
           )}

@@ -243,10 +243,22 @@ export async function createFirstChild(parentId: string): Promise<OutlinerNode> 
  * Create a portal node — a child of `parentId` that embeds a live,
  * editable view of `targetNodeId`'s subtree rather than holding its own
  * text content.
+ *
+ * Returns null when the embed would nest a rem inside itself: the embed picker
+ * happily offers the very page you're standing on, and embedding it there makes
+ * the renderer walk target → subtree → portal → target forever. The renderer
+ * has its own guard for cycles that only exist between portals (A embeds B, B
+ * embeds A), which can't be seen from the parent tree alone; this one keeps the
+ * common accident out of the database in the first place.
  */
-export async function createPortalChild(parentId: string, targetNodeId: string): Promise<OutlinerNode> {
+export async function createPortalChild(
+  parentId: string,
+  targetNodeId: string
+): Promise<OutlinerNode | null> {
   const parent = await getNode(parentId);
   if (!parent) throw new Error(`Node ${parentId} not found`);
+
+  if (await isSelfOrDescendant(parentId, targetNodeId)) return null;
 
   const children = await getChildren(parentId);
   const last = children[children.length - 1];
