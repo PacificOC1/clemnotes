@@ -148,6 +148,16 @@ export function OutlinerNode({
 
         if (event.key === 'Enter' && !event.shiftKey && !insideTable) {
           event.preventDefault();
+          // The title row's "sibling" is another top-level page, so the usual
+          // Enter behaviour turned every stray Return in a heading into a new
+          // document. From the title, Enter drops into the body instead —
+          // reusing the first bullet if there is one, creating it if not.
+          if (isRoot) {
+            void ensureFirstChild(nodeId).then((child) => {
+              if (child) onFocusRequest(child.id);
+            });
+            return true;
+          }
           createSiblingAfter(nodeId).then((n) => onFocusRequest(n.id));
           return true;
         }

@@ -19,7 +19,9 @@ never leaves the machine. Cloud sync is opt-in; see below.
 
 ### Structure
 
-- `Enter` — new sibling rem
+- `Enter` — new sibling rem. In a page title (or the top row of a rem you've
+  zoomed into) it drops down into the first bullet instead of starting a new
+  page — reusing that bullet if it's already there, creating it if it isn't
 - `Tab` / `Shift+Tab` — indent / outdent
 - `Alt+↑` / `Alt+↓` — move a rem (and its whole subtree) among its siblings
 - `Backspace` at the start of an empty rem — merge into the previous one
@@ -54,6 +56,12 @@ References** panel listing everything that points at it.
 The `⧈` button on a row (or `/embed`) inserts a **portal**: a live, editable view
 of another rem's subtree. It isn't a copy — edits inside the embed write straight
 back to the original.
+
+A rem can't embed itself or anything it already sits inside; the picker says so
+rather than creating it. Cycles that only exist between portals — A embeds B
+while B embeds A — are caught while rendering instead: the inner embed shows a
+short note and its `↗` jump link rather than opening a copy of something already
+on screen.
 
 ### Maths
 
