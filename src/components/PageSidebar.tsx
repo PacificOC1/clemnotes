@@ -18,6 +18,7 @@ interface PageSidebarProps {
   onSelectPage: (pageId: string) => void;
   onDeletePage: (pageId: string, event: React.MouseEvent) => void;
   onNewPage: () => void;
+  onAddLatexCourse: () => void;
 }
 
 /** The page being dragged in the sidebar — see the note in OutlinerNode about why this isn't state. */
@@ -93,6 +94,7 @@ export function PageSidebar({
   onSelectPage,
   onDeletePage,
   onNewPage,
+  onAddLatexCourse,
 }: PageSidebarProps) {
   const folders = useLiveQuery(() => getAllFolders(), []) ?? [];
   const [renamingFolderId, setRenamingFolderId] = useState<string | null>(null);
@@ -157,6 +159,15 @@ export function PageSidebar({
       <div className="sidebar-section-head">
         <span className="sidebar-section-title">Documents</span>
         <div className="sidebar-section-actions">
+          <button
+            type="button"
+            className="icon-btn"
+            onClick={onAddLatexCourse}
+            title="Add the LaTeX course"
+            aria-label="Add the LaTeX course"
+          >
+            ∑
+          </button>
           <button type="button" className="icon-btn" onClick={() => void createFolder()} title="New folder">🗀</button>
           <button type="button" className="icon-btn" onClick={onNewPage} title="New page">+</button>
         </div>

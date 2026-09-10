@@ -618,6 +618,10 @@
   font-size: 14px;
 }
 
+.empty-state .primary-btn + .ghost-btn {
+  margin-left: 10px;
+}
+
 /* ---- Breadcrumbs ---- */
 
 .breadcrumbs {

@@ -9,6 +9,7 @@ import {
   deleteNode,
 } from './db/repository';
 import { getCardStats } from './db/cardRepository';
+import { seedLatexTutorial } from './db/seedLatexTutorial';
 import { OutlinerNode } from './components/OutlinerNode';
 import { BacklinksPanel } from './components/BacklinksPanel';
 import { Breadcrumbs } from './components/Breadcrumbs';
@@ -104,6 +105,17 @@ function Workspace() {
     setFocusedNodeId(page.id);
   }
 
+  /**
+   * Install the built-in LaTeX course, or just open it when it's already
+   * there — re-adding it would leave two copies with two sets of cards, which
+   * is never what the button meant. Deleting the page and pressing it again
+   * does give you a fresh copy, since a soft-deleted page stops counting.
+   */
+  async function handleAddLatexCourse() {
+    const result = await seedLatexTutorial();
+    handleZoomTo(result.pageId);
+  }
+
   async function handleDeletePage(pageId: string, event: React.MouseEvent) {
     event.stopPropagation();
     const page = pages.find((p) => p.id === pageId);
@@ -182,6 +194,7 @@ function Workspace() {
               onSelectPage={handleZoomTo}
               onDeletePage={handleDeletePage}
               onNewPage={handleNewPage}
+              onAddLatexCourse={() => void handleAddLatexCourse()}
             />
 
             <SyncPanel />
@@ -241,6 +254,13 @@ function Workspace() {
                     <p>Pages are just rems with no parent. Make one and start typing.</p>
                     <button type="button" className="primary-btn" onClick={handleNewPage}>
                       Create your first page
+                    </button>
+                    <button
+                      type="button"
+                      className="ghost-btn"
+                      onClick={() => void handleAddLatexCourse()}
+                    >
+                      Or add the LaTeX course
                     </button>
                   </div>
                 )
