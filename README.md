@@ -94,11 +94,51 @@ Cards are derived from rem content and reconciled on every edit. Their IDs are
 deterministic (`<remId>::forward`, `<remId>::cloze:2`), so deleting a `::` and
 undoing it gets the card's scheduling history back rather than starting over.
 
+Suspending a card mid-session takes it out of the queue without grading it — it
+keeps whatever schedule it already had, so unsuspending it months later doesn't
+find it carrying an interval from a review that never happened.
+
+### Review history
+
+Every grade is written to an append-only `reviews` table: which card, what
+grade, when, how late against its due date, and the interval and ease on either
+side of the reschedule. Nothing ever updates or deletes a row there.
+
+This exists because card state is lossy. A card records where its schedule
+stands now, and the moment you grade it the fact that you graded it is gone —
+which forecloses retention rates, due forecasts, leech detection and any future
+move to a scheduler like FSRS that fits a memory model to your actual history.
+None of that can be backfilled, so the log had to start before the notebook got
+any bigger. Resetting a card clears its schedule but not its history.
+
 ## Definitions
 
 The **Definitions** tab holds a personal dictionary. Any word you define is
 underlined wherever it appears in your notes — hover for the definition, click to
 replace the word with it inline, `Shift`-click to jump to the entry and edit it.
+
+## Export and backup
+
+**Sidebar → Export & backup.**
+
+- **Back up everything (`.json`)** — every rem, card, review, definition and
+  folder in one file, including soft-deleted rows. Lossless: content is written
+  exactly as the database holds it, so a restore reproduces the database rather
+  than an approximation of it. Tombstones are included deliberately — dropping
+  them would mean a restore resurrects deleted rems on the next sync.
+- **Export notes as Markdown** — the readable copy. Every rem becomes a bullet
+  at its own depth, `[[links]]` and `{{clozes}}` come out in the syntax that
+  would recreate them, `::` cards survive as literal text, maths becomes
+  `$latex$`, and portals are written as Obsidian-style `![[embeds]]` rather than
+  being inlined. Heading blocks inside a rem flatten to bold, because a Markdown
+  heading can't live inside a list item without breaking the list.
+- **Restore from a backup** — merges, keeping whichever copy of a row is newer.
+  That's the same last-write-wins rule cloud sync uses, on purpose: if importing
+  resolved conflicts differently from syncing, restoring on a synced device would
+  produce a state neither device agreed on and the next sync would fight it.
+  Importing into an empty database is therefore also a full restore.
+
+Worth doing before any risky change — schema migrations especially.
 
 ## Cloud sync (Supabase) — setup
 
@@ -112,13 +152,18 @@ Free at [supabase.com](https://supabase.com) — about a minute.
 ### 2. Run the schema
 
 **New project:** in Supabase → **SQL Editor → New query**, paste and run
-`supabase/schema.sql`. This creates `nodes`, `dictionary`, `folders` and `cards`,
-each with row-level security so a user can only ever read or write their own rows.
+`supabase/schema.sql`. This creates `nodes`, `dictionary`, `folders`, `cards` and
+`reviews`, each with row-level security so a user can only ever read or write
+their own rows.
 
-**Upgrading from an earlier version** (you already ran the old `schema.sql`, which
-only created `nodes`): run `supabase/migration-002-sync-all.sql` instead. It adds
-the three new tables and the two new `nodes` columns without touching your
-existing notes, and is safe to run more than once.
+**Upgrading from an earlier version:** run the migrations you're missing rather
+than `schema.sql`. Both are safe to run more than once, and neither touches your
+existing notes.
+
+| You already have | Run |
+|---|---|
+| only `nodes` | `supabase/migration-002-sync-all.sql`, then `migration-003-reviews.sql` |
+| everything except `reviews` | `supabase/migration-003-reviews.sql` |
 
 Until you run the migration the app still syncs your notes fine — the sidebar
 tells you which tables are missing rather than failing the whole sync.
@@ -162,9 +207,13 @@ workflow already reads them.
 
 - **Auth**: email + password via Supabase Auth, from the sidebar.
 - **Engine** (`src/sync/syncEngine.ts`): a two-way, last-write-wins merge by
-  `updatedAt`, run independently over each of the four tables. It fires right
-  after sign-in, every 20 seconds while signed in, whenever the tab regains
-  focus, and on demand.
+  `updatedAt`, run independently over each table. It fires right after sign-in,
+  every 20 seconds while signed in, whenever the tab regains focus, and on demand.
+- **`reviews` syncs differently.** Its rows are written once and never touched
+  again, so there is nothing to compare: the poll fetches only the remote's ids
+  and pulls full rows for the ones it's missing. That matters because it's the
+  one table with no ceiling on its size — it grows even on days you write
+  nothing — and the general merge downloads every row on every poll.
 - **Deletes**: everything is soft-deleted (a `deletedAt` timestamp rather than
   removing the row), so a deletion is just another field change travelling
   through the same merge — no risk of a device that hasn't seen the delete
@@ -204,10 +253,11 @@ workflow already reads them.
 ```
 src/
   db/
-    schema.ts              # OutlinerNode, Flashcard, DictionaryEntry, PageFolder
-    database.ts            # Dexie definition + v1→v8 migrations
+    schema.ts              # OutlinerNode, Flashcard, ReviewLogEntry, DictionaryEntry, PageFolder
+    database.ts            # Dexie definition + v1→v9 migrations
     repository.ts          # all rem CRUD: create, indent, outdent, move, merge, links
     cardRepository.ts      # deriving and scheduling flashcards from rem content
+    reviewRepository.ts    # the append-only review log + its read helpers
     dictionaryRepository.ts
     folderRepository.ts
     searchIndex.ts         # FlexSearch index for the ⌘K omnibar
@@ -229,13 +279,40 @@ src/
     FormattingBubble.tsx   # the selection toolbar
     ReviewView.tsx         # the flashcard session
     PageSidebar.tsx, SearchOmnibar.tsx, BacklinksPanel.tsx, …
+  export/
+    backup.ts              # the lossless JSON envelope
+    importBackup.ts        # parsing, validation and the merge on restore
+    markdown.ts            # rendering rems to readable Markdown
+    tree.ts                # one consistent snapshot of the page trees
+    download.ts            # the only part that touches the DOM
   sync/
     syncEngine.ts          # table-agnostic last-write-wins merge
     supabaseClient.ts
+scripts/
+  verify-export.ts         # end-to-end export/import/review-log check, run in Node
 supabase/
   schema.sql                     # fresh install
   migration-002-sync-all.sql     # upgrade from the notes-only schema
+  migration-003-reviews.sql      # adds the review log
 ```
+
+## Verifying without a test runner
+
+There's no test framework in the project yet. Where something needed proving,
+it was proved by bundling the relevant modules with esbuild and running them
+against `fake-indexeddb` in Node — every module under `src/db` and `src/export`
+is browser-free apart from the IndexedDB global, so the whole data layer can be
+exercised this way:
+
+```bash
+npm i --no-save fake-indexeddb esbuild
+npx esbuild scripts/verify-export.ts --bundle --platform=node --format=cjs \
+  --outfile=/tmp/verify.cjs && node /tmp/verify.cjs
+```
+
+That covers the backup round-trip (export → wipe → restore → byte-identical
+re-export), merge semantics, rejection of malformed files, what Markdown
+preserves, and that grading a card appends exactly one accurate log row.
 
 ## What's not built
 

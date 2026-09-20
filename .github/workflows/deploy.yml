@@ -3,18 +3,23 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Per-branch, so a pull request run can never cancel a deploy of main.
 concurrency:
-  group: pages
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build:
+  # Gates. Nothing deploys until these pass — before this job existed, a broken
+  # push shipped a broken site and you found out by loading it.
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,7 +27,29 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm ci
+      # `npm install` rather than `npm ci`: the lockfile is generated on
+      # Windows and oxlint/rolldown ship platform-specific binaries, so a
+      # strict install from it fails on a Linux runner.
+      - run: npm install --no-audit --no-fund
+      - name: Typecheck
+        run: npx tsc -b
+      - name: Lint
+        # `src scripts` rather than a bare `npx oxlint`, which also lints
+        # dist/ and drowns real findings in minified-bundle warnings.
+        run: npx oxlint src scripts
+      - name: Test
+        run: npm test
+
+  build:
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm install --no-audit --no-fund
       - run: npm run build
         env:
           GITHUB_PAGES: true
@@ -33,6 +60,8 @@ jobs:
           path: dist
 
   deploy:
+    # Pull requests are checked and built, but only main is published.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:

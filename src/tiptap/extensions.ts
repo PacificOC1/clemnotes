@@ -12,6 +12,7 @@ import Underline from '@tiptap/extension-underline';
 import { WikiLink } from './WikiLinkNode';
 import { Math } from './MathNode';
 import { Cloze } from './ClozeNode';
+import { RemQueryBlock } from './QueryNode';
 import { DictionaryHighlight } from './DictionaryHighlight';
 import { FontSize } from './FontSize';
 
@@ -31,6 +32,7 @@ const baseExtensions = [
   WikiLink,
   Math,
   Cloze,
+  RemQueryBlock,
 ];
 
 /** Extensions for an editable rem row. */

@@ -22,6 +22,49 @@ interface Coords {
   bottom: number;
 }
 
+/**
+ * A remembered Escape press.
+ *
+ * Keying this on the document position alone was wrong: `from` is a position
+ * within one rem's editor, so it collides between rems, and — the case you
+ * actually hit — deleting the trigger and typing it again lands on the same
+ * position, so the menu stayed suppressed for a trigger the user had just
+ * asked for. Recording the editor and the trigger text as well makes the
+ * dismissal belong to one *instance* of the trigger rather than to a spot on
+ * screen.
+ */
+interface Dismissal {
+  editor: Editor;
+  kind: MenuKind;
+  from: number;
+  /** The trigger's query text as it stood when Escape was pressed. */
+  query: string;
+  /** Value of `docVersion` at that moment — see `continuesDismissed`. */
+  docVersion: number;
+}
+
+/**
+ * True while `next` is still the trigger that was dismissed — the user is
+ * typing forward through it, or backspacing within it — so the menu should
+ * stay out of the way.
+ *
+ * The interesting case is identical query text. That happens two ways: no
+ * edit at all since the Escape (a plugin dispatching a decoration refresh,
+ * say), which should stay dismissed; or the trigger being deleted and typed
+ * again inside a single transaction, which should reopen. `docVersion`
+ * separates them — it only advances on transactions that changed the doc.
+ */
+function continuesDismissed(
+  d: Dismissal,
+  editor: Editor,
+  next: Trigger,
+  docVersion: number
+): boolean {
+  if (d.editor !== editor || d.kind !== next.kind || d.from !== next.from) return false;
+  if (next.query === d.query) return docVersion === d.docVersion;
+  return next.query.startsWith(d.query) || d.query.startsWith(next.query);
+}
+
 interface MenuItem {
   id: string;
   label: string;
@@ -88,6 +131,11 @@ const SLASH_COMMANDS: SlashCommand[] = [
     id: 'link', label: 'Link to rem', hint: 'Type [[ to search', icon: '⧉',
     keywords: ['link', 'reference', 'wiki', 'mention'],
     run: (e) => e.chain().focus().insertContent('[[').run(),
+  },
+  {
+    id: 'query', label: 'Query', hint: 'A live list of every rem matching a filter', icon: '⌕',
+    keywords: ['query', 'search', 'filter', 'saved', 'live', 'list', 'find'],
+    run: (e) => e.chain().focus().insertContent({ type: 'remQuery', attrs: { query: '{}' } }).run(),
   },
   {
     id: 'embed', label: 'Embed rem', hint: 'Live, editable copy of another rem', icon: '⧈',
@@ -184,7 +232,8 @@ export function EditorMenus({ onEmbed, onZoomTo }: EditorMenusProps) {
   const [coords, setCoords] = useState<Coords | null>(null);
   const [matches, setMatches] = useState<OutlinerNode[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
-  const dismissedAt = useRef<number | null>(null);
+  const dismissed = useRef<Dismissal | null>(null);
+  const docVersion = useRef(0);
   const triggerRef = useRef<Trigger | null>(null);
 
   // Track the trigger under the cursor on every transaction.
@@ -199,16 +248,24 @@ export function EditorMenus({ onEmbed, onZoomTo }: EditorMenusProps) {
       if (!editor || editor.isDestroyed) return;
       const next = detectTrigger(editor);
       if (!next) {
-        dismissedAt.current = null;
+        // No trigger under the cursor at all: whatever was dismissed is gone.
+        dismissed.current = null;
         triggerRef.current = null;
         setTrigger(null);
         setCoords(null);
         return;
       }
-      if (dismissedAt.current === next.from) {
-        triggerRef.current = null;
-        setTrigger(null);
-        return;
+      const prevDismissal = dismissed.current;
+      if (prevDismissal) {
+        if (continuesDismissed(prevDismissal, editor, next, docVersion.current)) {
+          // Follow the trigger forward so the next keystroke is compared
+          // against what is on screen now, not what it was when dismissed.
+          dismissed.current = { ...prevDismissal, query: next.query, docVersion: docVersion.current };
+          triggerRef.current = null;
+          setTrigger(null);
+          return;
+        }
+        dismissed.current = null;
       }
       const box = editor.view.coordsAtPos(next.to);
       setCoords({ left: box.left, top: box.top, bottom: box.bottom });
@@ -226,11 +283,16 @@ export function EditorMenus({ onEmbed, onZoomTo }: EditorMenusProps) {
       }
     }
 
+    function onTransaction({ transaction }: { transaction: { docChanged: boolean } }) {
+      if (transaction.docChanged) docVersion.current += 1;
+      sync();
+    }
+
     sync();
-    activeEditor.on('transaction', sync);
+    activeEditor.on('transaction', onTransaction);
     activeEditor.on('focus', sync);
     return () => {
-      activeEditor.off('transaction', sync);
+      activeEditor.off('transaction', onTransaction);
       activeEditor.off('focus', sync);
     };
   }, [activeEditor]);
@@ -251,10 +313,19 @@ export function EditorMenus({ onEmbed, onZoomTo }: EditorMenusProps) {
   }, [trigger?.kind, trigger?.query]);
 
   const close = useCallback(() => {
-    dismissedAt.current = trigger?.from ?? null;
+    dismissed.current =
+      trigger && activeEditor
+        ? {
+            editor: activeEditor,
+            kind: trigger.kind,
+            from: trigger.from,
+            query: trigger.query,
+            docVersion: docVersion.current,
+          }
+        : null;
     triggerRef.current = null;
     setTrigger(null);
-  }, [trigger?.from]);
+  }, [trigger, activeEditor]);
 
   const items: MenuItem[] = useMemo(() => {
     if (!trigger || !activeEditor) return [];
@@ -274,12 +345,15 @@ export function EditorMenus({ onEmbed, onZoomTo }: EditorMenusProps) {
       }));
     }
 
-    const insertLink = (title: string) => {
+    // The picker knows exactly which rem was chosen, so the link records it.
+    // That is what makes renaming the target harmless and tells two rems with
+    // identical text apart — the two things a title-only link cannot do.
+    const insertLink = (title: string, targetId: string | null = null) => {
       activeEditor
         .chain()
         .focus()
         .deleteRange(range)
-        .insertContent({ type: 'wikiLink', attrs: { title } })
+        .insertContent({ type: 'wikiLink', attrs: { title, targetId } })
         .run();
     };
 
@@ -288,7 +362,7 @@ export function EditorMenus({ onEmbed, onZoomTo }: EditorMenusProps) {
       label: node.plainText || 'Untitled',
       hint: node.isPage ? 'Page' : 'Rem',
       icon: node.isPage ? '▤' : '•',
-      run: () => insertLink(node.plainText.trim() || 'Untitled'),
+      run: () => insertLink(node.plainText.trim() || 'Untitled', node.id),
     }));
 
     const typed = trigger.query.trim();
@@ -301,7 +375,7 @@ export function EditorMenus({ onEmbed, onZoomTo }: EditorMenusProps) {
         icon: '+',
         run: async () => {
           const page = await createPage(typed);
-          insertLink(typed);
+          insertLink(typed, page.id);
           onZoomTo(page.id);
         },
       });
@@ -314,7 +388,7 @@ export function EditorMenus({ onEmbed, onZoomTo }: EditorMenusProps) {
     (index: number) => {
       const item = items[index];
       if (!item) return;
-      dismissedAt.current = null;
+      dismissed.current = null;
       triggerRef.current = null;
       setTrigger(null);
       void item.run();

@@ -90,12 +90,47 @@ create index cards_user_id_idx on public.cards ("userId");
 create index cards_due_idx on public.cards ("userId", "dueAt");
 
 -- ---------------------------------------------------------------------------
+-- reviews — append-only log of every grade you have given
+--
+-- `cards` says where a card's schedule stands now; this says how it got there.
+-- Rows are written once and never updated or deleted, which is why sync treats
+-- this table differently from the rest. `deletedAt` exists only because the
+-- sync contract expects it.
+-- ---------------------------------------------------------------------------
+create table public.reviews (
+  id text primary key,
+  "userId" uuid references auth.users not null,
+  "cardId" text not null,
+  "nodeId" text not null,
+  kind text not null,
+  grade integer not null,
+  "reviewedAt" bigint not null,
+  "scheduledFor" bigint not null,
+  "elapsedMs" bigint,
+  state text not null,
+  "intervalBefore" double precision not null default 0,
+  "intervalAfter" double precision not null default 0,
+  "easeBefore" double precision not null default 2.5,
+  "easeAfter" double precision not null default 2.5,
+  "repetitionsBefore" integer not null default 0,
+  "lapsesBefore" integer not null default 0,
+  "deletedAt" bigint,
+  "createdAt" bigint not null,
+  "updatedAt" bigint not null
+);
+
+create index reviews_user_id_idx on public.reviews ("userId");
+create index reviews_user_reviewed_idx on public.reviews ("userId", "reviewedAt");
+create index reviews_card_idx on public.reviews ("userId", "cardId");
+
+-- ---------------------------------------------------------------------------
 -- Row Level Security: every user can only ever see/write their own rows.
 -- ---------------------------------------------------------------------------
 alter table public.nodes enable row level security;
 alter table public.dictionary enable row level security;
 alter table public.folders enable row level security;
 alter table public.cards enable row level security;
+alter table public.reviews enable row level security;
 
 create policy "Users manage their own nodes"
   on public.nodes for all
@@ -111,6 +146,10 @@ create policy "Users manage their own folders"
 
 create policy "Users manage their own cards"
   on public.cards for all
+  using (auth.uid() = "userId") with check (auth.uid() = "userId");
+
+create policy "Users manage their own reviews"
+  on public.reviews for all
   using (auth.uid() = "userId") with check (auth.uid() = "userId");
 
 -- Note: by default Supabase requires email confirmation before sign-in

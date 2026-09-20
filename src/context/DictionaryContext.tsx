@@ -3,8 +3,9 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { buildEntriesMap, getAllDictionaryEntries } from '../db/dictionaryRepository';
 import { notifyDictionaryUpdated, updateDictionaryStore } from '../db/dictionaryStore';
 import type { DictionaryEntry } from '../db/schema';
+import type { AppTab } from '../router/route';
 
-export type AppTab = 'notes' | 'review' | 'dictionary';
+export type { AppTab };
 
 interface DictionaryContextValue {
   entries: DictionaryEntry[];
@@ -28,10 +29,16 @@ const DictionaryContext = createContext<DictionaryContextValue>({
   closeEntryModal: () => {},
 });
 
-export function DictionaryProvider({ children }: { children: ReactNode }) {
+interface DictionaryProviderProps {
+  children: ReactNode;
+  /** The tab the URL says we are on — the route is the source of truth. */
+  activeTab: AppTab;
+  setActiveTab: (tab: AppTab) => void;
+}
+
+export function DictionaryProvider({ children, activeTab, setActiveTab }: DictionaryProviderProps) {
   const entries = useLiveQuery(() => getAllDictionaryEntries(), []) ?? [];
   const [modalEntryId, setModalEntryId] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<AppTab>('notes');
   const [editingEntryId, setEditingEntryId] = useState<string | null>(null);
 
   const entriesMap = useMemo(() => buildEntriesMap(entries), [entries]);
@@ -42,7 +49,7 @@ export function DictionaryProvider({ children }: { children: ReactNode }) {
       setEditingEntryId(id);
     });
     notifyDictionaryUpdated();
-  }, [entriesMap]);
+  }, [entriesMap, setActiveTab]);
 
   const value = useMemo(
     () => ({
@@ -55,7 +62,7 @@ export function DictionaryProvider({ children }: { children: ReactNode }) {
       openEntryModal: setModalEntryId,
       closeEntryModal: () => setModalEntryId(null),
     }),
-    [entries, modalEntryId, activeTab, editingEntryId]
+    [entries, modalEntryId, activeTab, setActiveTab, editingEntryId]
   );
 
   return <DictionaryContext.Provider value={value}>{children}</DictionaryContext.Provider>;

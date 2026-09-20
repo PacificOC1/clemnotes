@@ -1,18 +1,24 @@
 import type { Table } from 'dexie';
 import { supabase } from './supabaseClient';
 import { db } from '../db/database';
-
-/** Everything a row needs to take part in the merge. */
-interface Syncable {
-  id: string;
-  updatedAt: number;
-  deletedAt: number | null;
-}
+import {
+  advanceWatermark,
+  missingLocally,
+  planAppendOnlyMerge,
+  planIncrementalMerge,
+  planMerge,
+  type MergePlan,
+  type Syncable,
+} from './merge';
+import { readCursor, writeCursor, type SyncCursor } from './cursors';
+import { invalidateSearchIndex } from '../db/searchIndex';
 
 export interface TableSyncResult {
   table: string;
   pushed: number;
   pulled: number;
+  /** True when this run re-read the whole table rather than only what changed. */
+  reconciled: boolean;
   error?: string;
 }
 
@@ -25,41 +31,157 @@ export interface SyncResult {
 }
 
 /**
- * Last-write-wins merge of one table between local IndexedDB and Supabase,
- * scoped to `userId`. Conflict resolution is by `updatedAt`, which is fine for
- * a single user syncing their own devices: true concurrent edits to the same
- * row are rare, and deletes are just another field change (`deletedAt`) so
- * they travel through the same comparison as any other edit.
+ * How long between full reconciles.
+ *
+ * Incremental pulls trust `updatedAt`, which is stamped by whichever device
+ * wrote the row. That is reliable enough for minute-to-minute work and not
+ * reliable enough to be the only thing standing between you and a lost note,
+ * so once a day every table is re-read in full and reconciled properly.
+ */
+const RECONCILE_INTERVAL_MS = 24 * 60 * 60 * 1000;
+
+/** How far short of the newest row seen the pull watermark is parked. */
+const CLOCK_SLACK_MS = 60_000;
+
+/** `in` on more than a few hundred ids makes a URL PostgREST rejects outright. */
+const ID_BATCH = 200;
+
+function stripUserId<T>(rows: unknown[]): T[] {
+  return rows.map((row) => {
+    const { userId: _drop, ...rest } = row as { userId?: string };
+    return rest as T;
+  });
+}
+
+/** Whether this run should re-read everything rather than only what changed. */
+function needsReconcile(cursor: SyncCursor, now: number): boolean {
+  return cursor.reconciledAt === 0 || now - cursor.reconciledAt > RECONCILE_INTERVAL_MS;
+}
+
+/**
+ * Merge one table between local IndexedDB and Supabase, scoped to `userId`.
+ *
+ * Conflict resolution is last-write-wins on `updatedAt` — fine for one person
+ * syncing their own devices, where true concurrent edits to the same row are
+ * rare and a delete is just another field change (`deletedAt`) travelling
+ * through the same comparison.
+ *
+ * What changes with the cursor is only *what gets fetched*. A normal run pulls
+ * the rows changed since the last pull and pushes the rows written since the
+ * last push, which at rest is two empty result sets rather than a copy of the
+ * entire database every twenty seconds. Once a day — and on the first sync on
+ * a device, and any time the cursor is missing — it falls back to reading
+ * everything, which is what makes a lost cursor, a cleared browser or a
+ * skewed clock self-correcting rather than silently lossy.
  */
 async function syncTable<T extends Syncable>(
   localTable: Table<T, string>,
   remoteTable: string,
-  userId: string
+  userId: string,
+  now = Date.now()
 ): Promise<TableSyncResult> {
   if (!supabase) throw new Error('Cloud sync is not configured');
 
-  const local = await localTable.toArray();
-  const { data: remoteRows, error } = await supabase.from(remoteTable).select('*').eq('userId', userId);
+  const cursor = readCursor(userId, remoteTable);
+  const reconciled = needsReconcile(cursor, now);
+
+  // Captured before anything is read, so a write that lands mid-sync is caught
+  // by the next run rather than falling between the two.
+  const startedAt = now;
+
+  let query = supabase.from(remoteTable).select('*').eq('userId', userId);
+  if (!reconciled) query = query.gt('updatedAt', cursor.pulledThrough);
+  const { data: remoteRows, error } = await query;
+  if (error) throw error;
+  const remote = stripUserId<T>(remoteRows ?? []);
+
+  let plan: MergePlan<T>;
+  if (reconciled) {
+    plan = planMerge(await localTable.toArray(), remote);
+  } else {
+    const changedLocal = await localTable
+      .where('updatedAt')
+      .aboveOrEqual(cursor.pushedThrough)
+      .toArray();
+    const localForRemote = (await localTable.bulkGet(remote.map((row) => row.id))).filter(
+      (row): row is T => row !== undefined
+    );
+    plan = planIncrementalMerge({ changedLocal, remote, localForRemote });
+  }
+
+  if (plan.toUpload.length > 0) {
+    const { error: upErr } = await supabase
+      .from(remoteTable)
+      .upsert(plan.toUpload.map((row) => ({ ...row, userId })));
+    if (upErr) throw upErr;
+  }
+
+  if (plan.toDownload.length > 0) {
+    await localTable.bulkPut(plan.toDownload);
+    // Rows arrived from another device; the search index no longer matches.
+    if (remoteTable === 'nodes') invalidateSearchIndex();
+  }
+
+  // Only advanced once both halves have succeeded: a cursor moved past rows
+  // that were never actually written is the one failure this design must not
+  // have, and the cost of not moving it is a repeated fetch.
+  writeCursor(userId, remoteTable, {
+    pulledThrough: advanceWatermark(remote, cursor.pulledThrough, CLOCK_SLACK_MS),
+    pushedThrough: startedAt,
+    reconciledAt: reconciled ? startedAt : cursor.reconciledAt,
+  });
+
+  return {
+    table: remoteTable,
+    pushed: plan.toUpload.length,
+    pulled: plan.toDownload.length,
+    reconciled,
+  };
+}
+
+/**
+ * Merge an append-only table — one whose rows are written once and never
+ * touched again.
+ *
+ * Because the rows are immutable there is nothing to compare: a row either
+ * exists on the other side or it does not. So the pull asks only for ids, and
+ * full rows are fetched only for the ones actually missing. With a cursor it
+ * asks only for ids newer than the last pull, which for the review log — the
+ * one table with no ceiling on its size, and which grows even on days you
+ * write nothing — is the difference between a poll that costs nothing and one
+ * that grows forever.
+ */
+async function syncAppendOnlyTable<T extends Syncable>(
+  localTable: Table<T, string>,
+  remoteTable: string,
+  userId: string,
+  now = Date.now()
+): Promise<TableSyncResult> {
+  if (!supabase) throw new Error('Cloud sync is not configured');
+
+  const cursor = readCursor(userId, remoteTable);
+  const reconciled = needsReconcile(cursor, now);
+  const startedAt = now;
+
+  let idQuery = supabase.from(remoteTable).select('id,updatedAt').eq('userId', userId);
+  if (!reconciled) idQuery = idQuery.gt('updatedAt', cursor.pulledThrough);
+  const { data: remoteIdRows, error } = await idQuery;
   if (error) throw error;
 
-  const remote = (remoteRows ?? []) as (T & { userId: string })[];
+  const remoteStubs = (remoteIdRows ?? []) as Array<{ id: string; updatedAt: number }>;
+  const remoteIds = remoteStubs.map((row) => row.id);
 
-  const localById = new Map(local.map((row) => [row.id, row]));
-  const remoteById = new Map(remote.map((row) => [row.id, row]));
+  let toUpload: T[];
+  let missingIds: string[];
 
-  const toUpload: T[] = [];
-  const toDownload: T[] = [];
-
-  for (const id of new Set([...localById.keys(), ...remoteById.keys()])) {
-    const mine = localById.get(id);
-    const theirs = remoteById.get(id);
-    if (mine && !theirs) toUpload.push(mine);
-    else if (theirs && !mine) toDownload.push(theirs);
-    else if (mine && theirs) {
-      if (mine.updatedAt > theirs.updatedAt) toUpload.push(mine);
-      else if (theirs.updatedAt > mine.updatedAt) toDownload.push(theirs);
-      // equal updatedAt: already in sync, nothing to do
-    }
+  if (reconciled) {
+    const local = await localTable.toArray();
+    ({ toUpload, missingIds } = planAppendOnlyMerge(local, remoteIds));
+  } else {
+    // Re-uploading a row the remote already has is an upsert onto itself, so
+    // the push side needs no knowledge of the remote at all.
+    toUpload = await localTable.where('updatedAt').aboveOrEqual(cursor.pushedThrough).toArray();
+    missingIds = missingLocally(remoteIds, await localTable.bulkGet(remoteIds));
   }
 
   if (toUpload.length > 0) {
@@ -69,15 +191,27 @@ async function syncTable<T extends Syncable>(
     if (upErr) throw upErr;
   }
 
-  if (toDownload.length > 0) {
-    const clean = toDownload.map((row) => {
-      const { userId: _drop, ...rest } = row as T & { userId?: string };
-      return rest as T;
-    });
-    await localTable.bulkPut(clean);
+  let pulled = 0;
+  for (let i = 0; i < missingIds.length; i += ID_BATCH) {
+    const batch = missingIds.slice(i, i + ID_BATCH);
+    const { data: rows, error: downErr } = await supabase
+      .from(remoteTable)
+      .select('*')
+      .eq('userId', userId)
+      .in('id', batch);
+    if (downErr) throw downErr;
+    const clean = stripUserId<T>(rows ?? []);
+    if (clean.length > 0) await localTable.bulkPut(clean);
+    pulled += clean.length;
   }
 
-  return { table: remoteTable, pushed: toUpload.length, pulled: toDownload.length };
+  writeCursor(userId, remoteTable, {
+    pulledThrough: advanceWatermark(remoteStubs, cursor.pulledThrough, CLOCK_SLACK_MS),
+    pushedThrough: startedAt,
+    reconciledAt: reconciled ? startedAt : cursor.reconciledAt,
+  });
+
+  return { table: remoteTable, pushed: toUpload.length, pulled, reconciled };
 }
 
 /**
@@ -86,15 +220,20 @@ async function syncTable<T extends Syncable>(
  * Supabase migration adding `dictionary`, `folders` and `cards` hasn't been
  * run yet, your notes still sync and the UI can tell you exactly which tables
  * are missing rather than the whole sync just breaking.
+ *
+ * Each table also carries its own cursor, so a table that failed today simply
+ * has more to catch up on tomorrow — one broken table can never advance
+ * another table's position.
  */
-export async function syncWithCloud(userId: string): Promise<SyncResult> {
+export async function syncWithCloud(userId: string, now = Date.now()): Promise<SyncResult> {
   if (!supabase) throw new Error('Cloud sync is not configured');
 
   const jobs: Array<[string, () => Promise<TableSyncResult>]> = [
-    ['nodes', () => syncTable(db.nodes, 'nodes', userId)],
-    ['dictionary', () => syncTable(db.dictionary, 'dictionary', userId)],
-    ['folders', () => syncTable(db.folders, 'folders', userId)],
-    ['cards', () => syncTable(db.cards, 'cards', userId)],
+    ['nodes', () => syncTable(db.nodes, 'nodes', userId, now)],
+    ['dictionary', () => syncTable(db.dictionary, 'dictionary', userId, now)],
+    ['folders', () => syncTable(db.folders, 'folders', userId, now)],
+    ['cards', () => syncTable(db.cards, 'cards', userId, now)],
+    ['reviews', () => syncAppendOnlyTable(db.reviews, 'reviews', userId, now)],
   ];
 
   const tables: TableSyncResult[] = [];
@@ -105,7 +244,7 @@ export async function syncWithCloud(userId: string): Promise<SyncResult> {
       tables.push(await run());
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
-      tables.push({ table: name, pushed: 0, pulled: 0, error: message });
+      tables.push({ table: name, pushed: 0, pulled: 0, reconciled: false, error: message });
       failed.push(name);
     }
   }

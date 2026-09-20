@@ -1,20 +1,28 @@
 import { Node, mergeAttributes, InputRule } from '@tiptap/core';
 import { ReactNodeViewRenderer, NodeViewWrapper } from '@tiptap/react';
 import type { NodeViewProps } from '@tiptap/react';
-import katex from 'katex';
-import 'katex/dist/katex.min.css';
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
+import { katexIfLoaded, loadKatex, renderMath } from './katexLoader';
 
 function MathView({ node, updateAttributes }: NodeViewProps) {
   const latex = String(node.attrs.latex ?? '');
 
-  const html = useMemo(() => {
-    try {
-      return katex.renderToString(latex, { throwOnError: false, displayMode: false });
-    } catch {
-      return latex;
-    }
-  }, [latex]);
+  // Once KaTeX is in memory the markup is derived during render, so editing a
+  // formula never round-trips through state. Only the very first formula in a
+  // session waits, and it shows its own source in the meantime.
+  const [katex, setKatex] = useState(katexIfLoaded);
+  const html = katex ? renderMath(katex, latex) : latex;
+
+  useEffect(() => {
+    if (katex) return;
+    let live = true;
+    void loadKatex().then((loaded) => {
+      if (live) setKatex(loaded);
+    });
+    return () => {
+      live = false;
+    };
+  }, [katex]);
 
   function handleClick() {
     const next = window.prompt('Edit LaTeX:', latex);

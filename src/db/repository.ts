@@ -1,9 +1,18 @@
 import { v4 as uuid } from 'uuid';
 import { db } from './database';
 import { createEmptyNode, type OutlinerNode } from './schema';
-import { parseDoc, extractWikiLinkTitles, docFromText, type DocNode } from '../tiptap/docUtils';
+import {
+  parseDoc,
+  extractWikiLinks,
+  docFromText,
+  renumberClozesInDoc,
+  type DocNode,
+} from '../tiptap/docUtils';
 import { addPageToFolder, removePageFromAllFolders } from './folderRepository';
 import { deleteCardsForNode, reconcileCards } from './cardRepository';
+import { inDisplayOrder, normalizeSelection } from './selection';
+import { asOneUndo, noteCreated, pushUndo, takeSnapshot } from './undo';
+import { indexNode, removeFromIndex } from './searchIndex';
 
 /** Gap left between adjacent order keys when appending; halved on every insert between two rows. */
 const ORDER_STEP = 1000;
@@ -57,8 +66,8 @@ function orderBetween(prev: OutlinerNode | undefined, next: OutlinerNode | undef
  * bullet buried deep in another page.
  */
 export async function syncOutboundLinks(nodeId: string, doc: DocNode): Promise<void> {
-  const titles = extractWikiLinkTitles(doc);
-  if (titles.length === 0) {
+  const links = extractWikiLinks(doc);
+  if (links.length === 0) {
     const current = await db.nodes.get(nodeId);
     // Skip the write when there's nothing to clear — this runs on every
     // keystroke-debounce, and most rems have no links at all.
@@ -67,16 +76,42 @@ export async function syncOutboundLinks(nodeId: string, doc: DocNode): Promise<v
     return;
   }
 
-  const allNodes = await getAllNodes();
-  const byTitle = new Map<string, string>();
-  for (const candidate of allNodes) {
-    const key = candidate.plainText.trim().toLowerCase();
-    if (key && !byTitle.has(key)) byTitle.set(key, candidate.id);
+  const resolved: Array<string | undefined> = new Array(links.length);
+  const needTitleLookup: number[] = [];
+
+  // A link inserted from the picker already knows what it points at, so it
+  // costs one indexed lookup and survives the target being renamed. Only the
+  // hand-typed ones — and anything written before ids existed — still need the
+  // title index, which is the full table read this used to do unconditionally.
+  const idCandidates = links.map((link) => link.targetId).filter((id): id is string => id !== null);
+  const byId = new Map<string, string>();
+  if (idCandidates.length > 0) {
+    const rows = await db.nodes.bulkGet([...new Set(idCandidates)]);
+    for (const row of rows) {
+      if (row && !row.deletedAt) byId.set(row.id, row.id);
+    }
   }
 
-  const linkedIds = titles
-    .map((title) => byTitle.get(title.trim().toLowerCase()))
-    .filter((id): id is string => Boolean(id) && id !== nodeId);
+  links.forEach((link, i) => {
+    const byIdHit = link.targetId ? byId.get(link.targetId) : undefined;
+    if (byIdHit) resolved[i] = byIdHit;
+    else needTitleLookup.push(i);
+  });
+
+  if (needTitleLookup.length > 0) {
+    const allNodes = await getAllNodes();
+    const byTitle = new Map<string, string>();
+    for (const candidate of allNodes) {
+      const key = candidate.plainText.trim().toLowerCase();
+      if (key && !byTitle.has(key)) byTitle.set(key, candidate.id);
+    }
+    for (const i of needTitleLookup) {
+      const title = links[i]?.title ?? '';
+      resolved[i] = title ? byTitle.get(title.trim().toLowerCase()) : undefined;
+    }
+  }
+
+  const linkedIds = resolved.filter((id): id is string => Boolean(id) && id !== nodeId);
 
   await db.nodes.update(nodeId, { outboundLinks: [...new Set(linkedIds)], updatedAt: Date.now() });
 }
@@ -146,9 +181,13 @@ export async function createPage(title = 'Untitled', folderId?: string | null): 
   };
   node.childrenIds = [firstChild.id];
 
+  const entry = await takeSnapshot('New page', []);
   await db.transaction('rw', db.nodes, async () => {
     await db.nodes.bulkAdd([node, firstChild]);
   });
+  noteCreated(entry, [node.id, firstChild.id]);
+  pushUndo(entry);
+
   if (folderId) {
     await addPageToFolder(node.id, folderId);
   }
@@ -195,11 +234,14 @@ export async function createSiblingAfter(afterNodeId: string): Promise<OutlinerN
   const idx = siblings.findIndex((s) => s.id === afterNodeId);
   const order = orderBetween(after, siblings[idx + 1]);
 
+  const entry = await takeSnapshot('New rem', [after.parentId]);
   const node: OutlinerNode = {
     id: uuid(),
     ...createEmptyNode({ parentId: after.parentId, order, isPage: after.isPage && after.parentId === null }),
   };
   await db.nodes.add(node);
+  noteCreated(entry, [node.id]);
+  pushUndo(entry);
 
   if (after.parentId) {
     const parent = await getNode(after.parentId);
@@ -224,11 +266,14 @@ export async function createFirstChild(parentId: string): Promise<OutlinerNode> 
   const children = await getChildren(parentId);
   const last = children[children.length - 1];
 
+  const entry = await takeSnapshot('New rem', [parentId]);
   const node: OutlinerNode = {
     id: uuid(),
     ...createEmptyNode({ parentId, order: last ? last.order + ORDER_STEP : Date.now() }),
   };
   await db.nodes.add(node);
+  noteCreated(entry, [node.id]);
+  pushUndo(entry);
 
   await db.nodes.update(parentId, {
     childrenIds: [...parent.childrenIds, node.id],
@@ -263,6 +308,7 @@ export async function createPortalChild(
   const children = await getChildren(parentId);
   const last = children[children.length - 1];
 
+  const entry = await takeSnapshot('Embed rem', [parentId]);
   const node: OutlinerNode = {
     id: uuid(),
     ...createEmptyNode({
@@ -273,6 +319,8 @@ export async function createPortalChild(
     }),
   };
   await db.nodes.add(node);
+  noteCreated(entry, [node.id]);
+  pushUndo(entry);
 
   await db.nodes.update(parentId, {
     childrenIds: [...parent.childrenIds, node.id],
@@ -290,11 +338,28 @@ export async function createPortalChild(
  * hang off this single write path.
  */
 export async function updateContent(id: string, docJson: string, plainText: string): Promise<void> {
+  /**
+   * Two blanks sharing a number share one card, so answering one silently
+   * reschedules the other. The editor repairs this live as you paste, but that
+   * repair rides a transaction that deliberately emits no update — and content
+   * can arrive here from places with no editor at all. Fixing it on the write
+   * path is what makes the stored doc, and therefore the cards derived from it,
+   * actually correct.
+   */
+  let doc = parseDoc(docJson);
+  const renumbered = renumberClozesInDoc(doc);
+  if (renumbered) {
+    doc = renumbered;
+    docJson = JSON.stringify(renumbered);
+  }
+
   await db.nodes.update(id, { content: docJson, plainText, updatedAt: Date.now() });
-  const doc = parseDoc(docJson);
   await syncOutboundLinks(id, doc);
   const node = await getNode(id);
-  if (node) await reconcileCards(node);
+  if (node) {
+    await reconcileCards(node);
+    indexNode(node);
+  }
 }
 
 /** Search node text for wikiLink resolution / omnibar search. Empty query returns a handful of pages as defaults. */
@@ -338,6 +403,10 @@ export async function indentNode(id: string): Promise<boolean> {
   const prevSibling = siblings[idx - 1];
   if (!prevSibling) return false;
 
+  // The three rows an indent can touch: the rem, the parent losing it, and
+  // the sibling gaining it.
+  pushUndo(await takeSnapshot('Indent', [id, node.parentId, prevSibling.id]));
+
   // Remove from old parent's childrenIds
   if (node.parentId) {
     const oldParent = await getNode(node.parentId);
@@ -378,6 +447,8 @@ export async function outdentNode(id: string): Promise<boolean> {
 
   const parent = await getNode(node.parentId);
   if (!parent) return false;
+
+  pushUndo(await takeSnapshot('Outdent', [id, parent.id, parent.parentId]));
 
   await db.nodes.update(parent.id, {
     childrenIds: parent.childrenIds.filter((cid) => cid !== id),
@@ -422,6 +493,8 @@ export async function moveAmongSiblings(id: string, delta: number): Promise<bool
   const target = siblings[idx + delta];
   if (idx === -1 || !target) return false;
 
+  pushUndo(await takeSnapshot('Move', [id, target.id, node.parentId]));
+
   const now = Date.now();
   await db.nodes.update(node.id, { order: target.order, updatedAt: now });
   await db.nodes.update(target.id, { order: node.order, updatedAt: now });
@@ -462,6 +535,15 @@ export async function moveNodeRelativeTo(
   const target = await getNode(targetId);
   if (!node || !target) return false;
   if (await isSelfOrDescendant(targetId, id)) return false;
+
+  pushUndo(
+    await takeSnapshot('Move', [
+      id,
+      node.parentId,
+      position === 'child' ? target.id : target.parentId,
+      targetId,
+    ])
+  );
 
   const newParentId = position === 'child' ? target.id : target.parentId;
   let order: number;
@@ -518,35 +600,174 @@ export async function moveNodeRelativeTo(
 }
 
 /**
- * Soft-delete a node and (recursively) all of its descendants — sets
- * `deletedAt` rather than physically removing the row, so cloud sync can
- * propagate the deletion instead of silently re-downloading the node from
- * another device that hasn't seen the delete yet.
+ * Every id in a rem's subtree, itself included.
+ *
+ * Walks `childrenIds` rather than querying by `parentId`, because
+ * `mergeWithPreviousSibling` clears that array specifically to hand its
+ * children to another rem *without* the delete following them.
+ */
+async function collectSubtree(id: string): Promise<string[]> {
+  const ids: string[] = [];
+  const seen = new Set<string>();
+  const queue = [id];
+
+  while (queue.length > 0) {
+    const current = queue.shift()!;
+    if (seen.has(current)) continue;
+    seen.add(current);
+    const node = await db.nodes.get(current);
+    if (!node) continue;
+    ids.push(current);
+    queue.push(...node.childrenIds);
+  }
+
+  return ids;
+}
+
+/**
+ * Soft-delete a node and all of its descendants.
+ *
+ * `deletedAt` rather than removing the row, so cloud sync can propagate the
+ * deletion instead of silently re-downloading the node from another device
+ * that hasn't seen it yet.
+ *
+ * The whole cascade is one transaction. It used to walk the subtree writing a
+ * row at a time: interrupt that — close the tab, lose the page — and you were
+ * left with half a subtree tombstoned while the parent's `childrenIds` had
+ * already been trimmed, which is unreachable but not deleted, and impossible
+ * to notice until it turns up in a backup.
  */
 export async function deleteNode(id: string): Promise<void> {
   const node = await getNode(id);
   if (!node) return;
 
-  for (const childId of node.childrenIds) {
-    await deleteNode(childId);
-  }
-
-  if (node.parentId) {
-    const parent = await getNode(node.parentId);
-    if (parent) {
-      await db.nodes.update(parent.id, {
-        childrenIds: parent.childrenIds.filter((cid) => cid !== id),
-        updatedAt: Date.now(),
-      });
-    }
-  }
-
+  const subtree = await collectSubtree(id);
   const now = Date.now();
-  if (node.isPage && node.parentId === null) {
-    await removePageFromAllFolders(id);
+
+  // The whole subtree and its cards, so an undo brings back the rems *and*
+  // their scheduling rather than a stripped copy.
+  const cardIds = (await db.cards.where('nodeId').anyOf(subtree).toArray()).map((c) => c.id);
+  pushUndo(await takeSnapshot('Delete', [...subtree, node.parentId], cardIds));
+
+  await db.transaction('rw', db.nodes, db.cards, db.folders, async () => {
+    if (node.parentId) {
+      const parent = await db.nodes.get(node.parentId);
+      if (parent) {
+        await db.nodes.update(parent.id, {
+          childrenIds: parent.childrenIds.filter((cid) => cid !== id),
+          updatedAt: now,
+        });
+      }
+    }
+
+    if (node.isPage && node.parentId === null) {
+      await removePageFromAllFolders(id);
+    }
+
+    for (const subId of subtree) {
+      await deleteCardsForNode(subId);
+    }
+
+    const rows = await db.nodes.bulkGet(subtree);
+    const tombstoned = rows
+      .filter((row): row is OutlinerNode => row !== undefined && row.deletedAt === null)
+      .map((row) => ({ ...row, deletedAt: now, updatedAt: now }));
+    if (tombstoned.length > 0) await db.nodes.bulkPut(tombstoned);
+  });
+
+  removeFromIndex(subtree);
+}
+
+/**
+ * Apply an operation to a whole selection.
+ *
+ * Two rules, both enforced here rather than at every call site: a rem whose
+ * ancestor is also selected is dropped (the ancestor already carries it), and
+ * the rest are applied in screen order — top-down for indent, because each rem
+ * goes under the sibling above it and that sibling must not have moved yet;
+ * bottom-up for outdent, for the mirror-image reason.
+ */
+async function applyToSelection(
+  ids: string[],
+  visibleOrder: string[],
+  direction: 'down' | 'up',
+  label: string,
+  run: (id: string) => Promise<unknown>,
+  affected?: (sequence: string[]) => Promise<{ nodes: string[]; cards: string[] }>
+): Promise<number> {
+  const rows = await db.nodes.bulkGet([...new Set(ids)]);
+  const parentOf = new Map<string, string | null>();
+  for (const row of rows) if (row) parentOf.set(row.id, row.parentId);
+
+  const outer = normalizeSelection(ids, (id) => parentOf.get(id));
+  const ordered = inDisplayOrder(outer, visibleOrder);
+  const sequence = direction === 'up' ? [...ordered].reverse() : ordered;
+  if (sequence.length === 0) return 0;
+
+  // Deleting five rems is one thing you did, so it is one thing you can undo.
+  // The snapshot is taken here and the nested operations record nothing.
+  const scope = affected
+    ? await affected(sequence)
+    : // Indent and outdent only move rows that are on screen, or the root they
+      // hang from — a moved rem's own children keep their parent and order.
+      { nodes: [...visibleOrder, ...sequence], cards: [] };
+  const entry = await takeSnapshot(`${label} ${sequence.length} rems`, scope.nodes, scope.cards);
+
+  await asOneUndo(async () => {
+    for (const id of sequence) await run(id);
+  });
+  pushUndo(entry);
+
+  return sequence.length;
+}
+
+export async function indentNodes(ids: string[], visibleOrder: string[]): Promise<number> {
+  return applyToSelection(ids, visibleOrder, 'down', 'Indent', indentNode);
+}
+
+export async function outdentNodes(ids: string[], visibleOrder: string[]): Promise<number> {
+  return applyToSelection(ids, visibleOrder, 'up', 'Outdent', outdentNode);
+}
+
+export async function deleteNodes(ids: string[], visibleOrder: string[]): Promise<number> {
+  return applyToSelection(ids, visibleOrder, 'down', 'Delete', deleteNode, async (sequence) => {
+    // A delete reaches rows that are not on screen: collapsed children, and
+    // every card the subtree generates.
+    const nodes: string[] = [];
+    for (const id of sequence) {
+      nodes.push(...(await collectSubtree(id)));
+      const row = await db.nodes.get(id);
+      if (row?.parentId) nodes.push(row.parentId);
+    }
+    const cards = (await db.cards.where('nodeId').anyOf(nodes).toArray()).map((c) => c.id);
+    return { nodes, cards };
+  });
+}
+
+/**
+ * The rems currently on screen under `rootId`, in the order they appear.
+ *
+ * Collapsed subtrees are skipped, because a selection you cannot see is a
+ * selection you cannot have meant. This is what a shift-click range is
+ * measured against.
+ */
+export async function flattenVisible(rootId: string): Promise<string[]> {
+  const order: string[] = [];
+  const seen = new Set<string>();
+
+  async function walk(id: string): Promise<void> {
+    if (seen.has(id)) return;
+    seen.add(id);
+    const node = await getNode(id);
+    if (!node || node.deletedAt) return;
+    order.push(id);
+    if (node.collapsed || node.isPortal) return;
+    for (const child of await getChildren(id)) await walk(child.id);
   }
-  await deleteCardsForNode(id);
-  await db.nodes.update(id, { deletedAt: now, updatedAt: now });
+
+  await walk(rootId);
+  // The root itself is the page you are looking at, not a row you can select.
+  return order.slice(1);
 }
 
 /**
@@ -565,26 +786,39 @@ export async function mergeWithPreviousSibling(id: string): Promise<string | nul
   const prevSibling = siblings[idx - 1];
   if (!prevSibling) return null;
 
-  const mergedText = prevSibling.plainText + node.plainText;
-  const mergedDoc = JSON.stringify(docFromText(mergedText));
-  await db.nodes.update(prevSibling.id, { content: mergedDoc, plainText: mergedText, updatedAt: Date.now() });
+  // One unit: the merge ends by deleting the rem it absorbed, and if that
+  // delete recorded its own entry it would be the thing an undo reversed —
+  // bringing the rem back while leaving its text stuck on the one above.
+  const entry = await takeSnapshot('Merge rems', [
+    id,
+    prevSibling.id,
+    node.parentId,
+    ...node.childrenIds,
+  ]);
 
-  // Re-parent node's children onto prevSibling
-  for (const childId of node.childrenIds) {
-    await db.nodes.update(childId, { parentId: prevSibling.id, updatedAt: Date.now() });
-  }
-  await db.nodes.update(prevSibling.id, {
-    childrenIds: [...prevSibling.childrenIds, ...node.childrenIds],
+  await asOneUndo(async () => {
+    const mergedText = prevSibling.plainText + node.plainText;
+    const mergedDoc = JSON.stringify(docFromText(mergedText));
+    await db.nodes.update(prevSibling.id, { content: mergedDoc, plainText: mergedText, updatedAt: Date.now() });
+
+    // Re-parent node's children onto prevSibling
+    for (const childId of node.childrenIds) {
+      await db.nodes.update(childId, { parentId: prevSibling.id, updatedAt: Date.now() });
+    }
+    await db.nodes.update(prevSibling.id, {
+      childrenIds: [...prevSibling.childrenIds, ...node.childrenIds],
+    });
+    // Clear the merged-away node's own childrenIds first — otherwise
+    // deleteNode's recursive cascade would wrongly soft-delete the children
+    // we just re-parented onto prevSibling above.
+    await db.nodes.update(id, { childrenIds: [] });
+
+    await deleteNode(id);
+
+    const merged = await getNode(prevSibling.id);
+    if (merged) await reconcileCards(merged);
   });
-  // Clear the merged-away node's own childrenIds first — otherwise
-  // deleteNode's recursive cascade would wrongly soft-delete the children
-  // we just re-parented onto prevSibling above.
-  await db.nodes.update(id, { childrenIds: [] });
 
-  await deleteNode(id);
-
-  const merged = await getNode(prevSibling.id);
-  if (merged) await reconcileCards(merged);
-
+  pushUndo(entry);
   return prevSibling.id;
 }

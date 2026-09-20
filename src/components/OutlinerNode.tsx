@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef, type MouseEvent } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { useEditor, EditorContent } from '@tiptap/react';
 import { useActiveEditor } from '../context/ActiveEditorContext';
@@ -21,6 +21,9 @@ import {
   type DropPosition,
 } from '../db/repository';
 import { getCardsForNode, toggleCardDirection } from '../db/cardRepository';
+import { copyLinkToRem } from '../db/clipboard';
+import { useSelection } from '../context/SelectionContext';
+import { RemContext } from '../context/RemContext';
 import { rowExtensions } from '../tiptap/extensions';
 import { parseDoc, docToPlainText, isDocEmpty, EMPTY_DOC, type DocNode } from '../tiptap/docUtils';
 import { SearchOmnibar } from './SearchOmnibar';
@@ -96,6 +99,8 @@ export function OutlinerNode({
   const hasHydrated = useRef(false);
 
   const { setActive } = useActiveEditor();
+  const { selected, onSelectRow } = useSelection();
+  const remContextValue = useMemo(() => ({ nodeId }), [nodeId]);
 
   const editor = useEditor({
     extensions: rowExtensions,
@@ -333,11 +338,30 @@ export function OutlinerNode({
   }
 
   const hasChildren = children.length > 0;
+  const isSelected = selected.has(nodeId);
+
+  /**
+   * A plain click on the bullet zooms, as it always did. With a modifier it
+   * selects instead — Cmd/Ctrl toggles this row, Shift extends from the last
+   * one clicked. Selection lives on the bullet rather than on the row so it
+   * never competes with placing the cursor in the text.
+   */
+  function handleBulletClick(event: MouseEvent) {
+    if (event.shiftKey) {
+      event.preventDefault();
+      onSelectRow(nodeId, 'range');
+    } else if (event.metaKey || event.ctrlKey) {
+      event.preventDefault();
+      onSelectRow(nodeId, 'toggle');
+    } else {
+      onZoomTo(nodeId);
+    }
+  }
 
   return (
     <div className="rem" data-depth={depth}>
       <div
-        className={`rem-row ${dropHint ? `drop-${dropHint}` : ''} ${node.isCard ? 'is-card' : ''}`}
+        className={`rem-row ${dropHint ? `drop-${dropHint}` : ''} ${node.isCard ? 'is-card' : ''} ${isSelected ? 'is-selected' : ''}`}
         onDragOver={handleDragOver}
         onDragLeave={() => setDropHint(null)}
         onDrop={handleDrop}
@@ -369,16 +393,20 @@ export function OutlinerNode({
           )}
           <button
             type="button"
-            className={`rem-bullet ${node.collapsed && hasChildren ? 'has-hidden' : ''}`}
-            onClick={() => onZoomTo(nodeId)}
-            title="Zoom into this rem"
+            className={`rem-bullet ${node.collapsed && hasChildren ? 'has-hidden' : ''} ${isSelected ? 'is-selected' : ''}`}
+            onClick={handleBulletClick}
+            aria-pressed={isSelected}
+            title="Click to zoom in · ⌘/Ctrl-click to select · Shift-click to extend"
           >
             <span className="rem-bullet-dot" />
           </button>
         </div>
 
         <div className="rem-body">
-          <EditorContent editor={editor} />
+          {/* Node views inside this editor need to know which rem they are in. */}
+          <RemContext.Provider value={remContextValue}>
+            <EditorContent editor={editor} />
+          </RemContext.Provider>
         </div>
 
         <div className="rem-actions">
@@ -402,6 +430,14 @@ export function OutlinerNode({
               </button>
             )
           )}
+          <button
+            type="button"
+            className="rem-action"
+            onClick={() => void copyLinkToRem(nodeId)}
+            title="Copy a [[link]] to this rem"
+          >
+            ⚯
+          </button>
           <button type="button" className="rem-action" onClick={() => setShowEmbedPicker(true)} title="Embed another rem">⧈</button>
           <button type="button" className="rem-action" onClick={handleAddChild} title="Add a child rem">+</button>
           <button type="button" className="rem-action rem-action-danger" onClick={() => deleteNode(nodeId)} title="Delete this rem">×</button>

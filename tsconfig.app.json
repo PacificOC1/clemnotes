@@ -7,6 +7,11 @@
     "types": ["vite/client"],
     "allowArbitraryExtensions": true,
     "skipLibCheck": true,
+    /* Strict mode. Turned on in one line, because the codebase already passed
+       it — every `getNode()` result was already guarded rather than assumed,
+       so the compiler was agreeing with code that happened to be correct.
+       Now it is checked rather than trusted. */
+    "strict": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",

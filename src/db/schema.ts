@@ -52,6 +52,56 @@ export interface Flashcard {
   updatedAt: number;
 }
 
+/**
+ * Where a card sat in its life cycle at the moment it was reviewed. Derived
+ * from the card's state rather than stored on the card, because SM-2 has no
+ * explicit notion of it — but every algorithm worth migrating to does, and it
+ * cannot be reconstructed after the fact.
+ */
+export type ReviewState = 'new' | 'learning' | 'relearning' | 'review';
+
+/**
+ * One review, as it happened. Append-only: nothing ever updates a row here,
+ * and nothing deletes one.
+ *
+ * A card records where its schedule stands *now*; this records how it got
+ * there. That distinction matters because scheduling state is lossy — the
+ * moment you grade a card, the fact that you graded it (when, how, how late,
+ * off what interval) is gone, and no amount of later analysis can recover it.
+ * Retention rates, due forecasts, leech detection and any future move to a
+ * model-fitting scheduler like FSRS all read this table and none of them can
+ * be backfilled from card state alone.
+ *
+ * `deletedAt` is here purely to satisfy the sync contract — every synced table
+ * needs `updatedAt` and `deletedAt` — and stays null in practice.
+ */
+export interface ReviewLogEntry {
+  id: string;
+  cardId: string;
+  nodeId: string; // denormalised so stats can group by rem without a card lookup
+  kind: CardKind;
+  /** SM-2 quality, 0–5, exactly as passed to `schedule()`. Below 3 is a lapse. */
+  grade: number;
+  reviewedAt: number;
+  /** The `dueAt` the card carried going in — reviewedAt minus this is how late you were. */
+  scheduledFor: number;
+  /** Time since this card's previous review; null the first time it is seen. */
+  elapsedMs: number | null;
+  state: ReviewState;
+  // Before/after pairs, so a rescheduling can be replayed or audited without
+  // re-deriving it from an algorithm that may since have changed.
+  intervalBefore: number;
+  intervalAfter: number;
+  easeBefore: number;
+  easeAfter: number;
+  repetitionsBefore: number;
+  lapsesBefore: number;
+  // Sync contract.
+  deletedAt: number | null;
+  createdAt: number;
+  updatedAt: number;
+}
+
 export interface DictionaryEntry {
   id: string;
   word: string; // normalized lookup key (lowercase)

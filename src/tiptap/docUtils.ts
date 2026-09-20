@@ -34,8 +34,11 @@ export function docToPlainText(doc: DocNode): string {
   function walk(node: DocNode) {
     if (node.type === 'text' && node.text) {
       parts.push(node.text);
-    } else if (node.type === 'wikiLink' && node.attrs?.title) {
-      parts.push(String(node.attrs.title));
+    } else if (node.type === 'wikiLink') {
+      // The alias is what the sentence actually reads as, so it is what the
+      // rem's plain text — search, titles, card faces — should contain.
+      const label = node.attrs?.alias || node.attrs?.title;
+      if (label) parts.push(String(label));
     } else if (node.type === 'math' && node.attrs?.latex) {
       parts.push(String(node.attrs.latex));
     } else if (node.type === 'cloze' && node.attrs?.text) {
@@ -48,19 +51,89 @@ export function docToPlainText(doc: DocNode): string {
   return parts.join('').trim();
 }
 
-/** Collect every [[Title]] wikiLink node's title attr from a doc. */
-export function extractWikiLinkTitles(doc: DocNode): string[] {
-  const titles: string[] = [];
+/** One `[[Title]]` as stored: the id it points at, and the text it was written as. */
+export interface WikiLinkRef {
+  /** The rem this link points at, when it was inserted from the picker. */
+  targetId: string | null;
+  /** What the link was written as — the fallback for a hand-typed link. */
+  title: string;
+  /** `[[Photosynthesis|it]]` — display text chosen by the writer, when there is one. */
+  alias: string | null;
+}
+
+/**
+ * Collect every `[[Title]]` in a doc.
+ *
+ * Links inserted from the `[[` picker carry the id of the rem they point at.
+ * Links typed by hand — and every link written before ids existed — carry only
+ * a title, and have to be resolved by matching text. Both shapes are here
+ * because both will exist in any real notebook for a long time.
+ */
+export function extractWikiLinks(doc: DocNode): WikiLinkRef[] {
+  const links: WikiLinkRef[] = [];
 
   function walk(node: DocNode) {
-    if (node.type === 'wikiLink' && node.attrs?.title) {
-      titles.push(String(node.attrs.title));
+    if (node.type === 'wikiLink') {
+      const title = node.attrs?.title === undefined ? '' : String(node.attrs.title);
+      const rawId = node.attrs?.targetId;
+      const targetId = typeof rawId === 'string' && rawId ? rawId : null;
+      const rawAlias = node.attrs?.alias;
+      const alias = typeof rawAlias === 'string' && rawAlias ? rawAlias : null;
+      if (title || targetId) links.push({ targetId, title, alias });
     }
     node.content?.forEach(walk);
   }
 
   walk(doc);
-  return titles;
+  return links;
+}
+
+/** Just the titles, for the places that only care what a link reads as. */
+export function extractWikiLinkTitles(doc: DocNode): string[] {
+  return extractWikiLinks(doc)
+    .map((link) => link.title)
+    .filter(Boolean);
+}
+
+/**
+ * Fill in `targetId` on any link that has none, using `resolve` to turn a
+ * title into an id.
+ *
+ * Returns a new doc, or `null` when nothing changed — so a caller migrating a
+ * whole table can write only the rows that actually needed it. A title that
+ * resolves to nothing is left exactly as it was: an unresolvable link is not
+ * broken, it is a link to a page that does not exist yet, and clicking it
+ * still offers to create one.
+ */
+export function attachLinkTargets(
+  doc: DocNode,
+  resolve: (title: string) => string | undefined
+): DocNode | null {
+  let changed = false;
+
+  function walk(node: DocNode): DocNode {
+    let next = node;
+
+    if (node.type === 'wikiLink' && !node.attrs?.targetId) {
+      const title = node.attrs?.title === undefined ? '' : String(node.attrs.title);
+      const targetId = title ? resolve(title) : undefined;
+      if (targetId) {
+        changed = true;
+        next = { ...node, attrs: { ...node.attrs, targetId } };
+      }
+    }
+
+    if (next.content) {
+      const content = next.content.map(walk);
+      if (content.some((child, i) => child !== next.content?.[i])) {
+        next = { ...next, content };
+      }
+    }
+    return next;
+  }
+
+  const result = walk(doc);
+  return changed ? result : null;
 }
 
 /** True if a doc has no meaningful content (used for the Backspace-merge-when-empty check). */
@@ -94,6 +167,87 @@ export function extractClozeIndices(doc: DocNode): number[] {
 
   walk(doc);
   return [...indices].sort((a, b) => a - b);
+}
+
+/**
+ * Resolve duplicate cloze numbers in a sequence, in document order.
+ *
+ * Two blanks sharing a number share one card — so answering one silently
+ * reschedules the other, and half the sentence is never really tested. Typing
+ * blanks one at a time can't produce that, because each new one is numbered
+ * past the highest; pasting a fragment from another rem, or splitting one rem
+ * into two, produces it immediately.
+ *
+ * The rule is minimal churn, not tidiness. **Only duplicates move.** Gaps are
+ * left alone — 1, 3, 7 works perfectly well, each blank has its own card, and
+ * renumbering them to 1, 2, 3 would change every card's id and throw away the
+ * scheduling attached to it. The first blank to claim a number keeps it, and
+ * later claimants take the lowest number nobody is using.
+ *
+ * Returns `null` when nothing needs to move, so a caller can tell "already
+ * fine" from "fixed" without comparing arrays.
+ */
+export function renumberedClozeIndices(indices: number[]): number[] | null {
+  // Anything unusable counts as 1, which is what every reader of these already
+  // does — and that mismatch is itself a bug worth writing back, not just a
+  // tidy-up: the card is keyed on the coerced value while `renderCloze` matches
+  // on the stored one, so a blank numbered 0 or NaN has a card that never
+  // blanks anything.
+  const clean = indices.map((raw) => (Number.isFinite(raw) && raw >= 1 ? Math.floor(raw) : 1));
+
+  const keep = new Set<number>();
+  for (const index of clean) keep.add(index);
+
+  const claimed = new Set<number>();
+  const taken = new Set<number>(keep);
+  let changed = clean.some((value, i) => value !== indices[i]);
+
+  const out = clean.map((index) => {
+    if (!claimed.has(index)) {
+      claimed.add(index);
+      return index;
+    }
+    // Already spoken for: take the lowest number no blank is using, and that
+    // no blank later in the sentence is going to want.
+    let free = 1;
+    while (taken.has(free)) free += 1;
+    taken.add(free);
+    changed = true;
+    return free;
+  });
+
+  return changed ? out : null;
+}
+
+/**
+ * Apply `renumberedClozeIndices` to a whole doc, in document order.
+ *
+ * Returns a new doc, or `null` when nothing needed to move — so a caller can
+ * write only the rows that actually changed.
+ */
+export function renumberClozesInDoc(doc: DocNode): DocNode | null {
+  const indices: number[] = [];
+  function collect(node: DocNode) {
+    if (node.type === 'cloze') indices.push(Number(node.attrs?.index ?? 1));
+    node.content?.forEach(collect);
+  }
+  collect(doc);
+
+  const renumbered = renumberedClozeIndices(indices);
+  if (!renumbered) return null;
+
+  let position = 0;
+  function apply(node: DocNode): DocNode {
+    let next = node;
+    if (node.type === 'cloze') {
+      const index = renumbered![position];
+      position += 1;
+      if (index !== undefined) next = { ...node, attrs: { ...node.attrs, index } };
+    }
+    if (next.content) next = { ...next, content: next.content.map(apply) };
+    return next;
+  }
+  return apply(doc);
 }
 
 /** The highest cloze index in a doc — used to number the next one you create. */

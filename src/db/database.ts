@@ -1,11 +1,14 @@
 import Dexie, { type Table } from 'dexie';
-import type { DictionaryEntry, Flashcard, OutlinerNode, PageFolder } from './schema';
+import type { DictionaryEntry, Flashcard, OutlinerNode, PageFolder, ReviewLogEntry } from './schema';
+import { planLinkBackfill } from './linkBackfill';
+import { planClozeRepair } from './clozeRepair';
 
 export class OutlinerDB extends Dexie {
   nodes!: Table<OutlinerNode, string>;
   dictionary!: Table<DictionaryEntry, string>;
   folders!: Table<PageFolder, string>;
   cards!: Table<Flashcard, string>;
+  reviews!: Table<ReviewLogEntry, string>;
 
   constructor() {
     super('outliner-app-db');
@@ -134,6 +137,69 @@ export class OutlinerDB extends Dexie {
           .modify((folder) => {
             if (folder.deletedAt === undefined) folder.deletedAt = null;
           });
+      });
+
+    // v9: the review log. Append-only history of every grade, which card it
+    // was, and the scheduling state on either side of it.
+    //
+    // There is no upgrade function because there is nothing to migrate: past
+    // reviews were never recorded and cannot be reconstructed from card state,
+    // so the table starts empty and fills from here on. That is the whole
+    // argument for adding it before the notebook gets any bigger.
+    //
+    // Indexed on `cardId` (per-card history), `reviewedAt` (everything in a
+    // date range, which is what every statistic wants) and `updatedAt` (the
+    // field cloud sync compares on).
+    this.version(9).stores({
+      nodes: 'id, parentId, isPage, updatedAt, *outboundLinks',
+      dictionary: 'id, word, updatedAt',
+      folders: 'id, order, updatedAt',
+      cards: 'id, nodeId, dueAt, updatedAt',
+      reviews: 'id, cardId, nodeId, reviewedAt, updatedAt',
+    });
+
+    // v10: `[[Title]]` links carry the id of the rem they point at.
+    //
+    // No index changes — the id lives inside the stored Tiptap doc, so this is
+    // a content migration rather than a schema one. Every existing link is
+    // resolved by title once, here, and from then on the link survives its
+    // target being renamed. Links whose title matches nothing are left as they
+    // are: an unresolvable link is a link to a page that doesn't exist yet,
+    // which is a state the app already understands.
+    this.version(10)
+      .stores({
+        nodes: 'id, parentId, isPage, updatedAt, *outboundLinks',
+        dictionary: 'id, word, updatedAt',
+        folders: 'id, order, updatedAt',
+        cards: 'id, nodeId, dueAt, updatedAt',
+        reviews: 'id, cardId, nodeId, reviewedAt, updatedAt',
+      })
+      .upgrade(async (tx) => {
+        const table = tx.table('nodes');
+        const updates = planLinkBackfill(await table.toArray());
+        if (updates.length > 0) await table.bulkPut(updates);
+      });
+
+    // v11: give every `{{blank}}` a number no other blank in its rem is using.
+    //
+    // Again no index changes — the numbers live inside the stored Tiptap doc.
+    // Two blanks sharing a number shared one card, so answering one silently
+    // rescheduled the other; typing blanks one at a time could never produce
+    // that, but pasting a fragment from another rem, or splitting a rem in two,
+    // produced it immediately. The editor and the write path both prevent it
+    // from here on; this is the pass that fixes what is already stored.
+    this.version(11)
+      .stores({
+        nodes: 'id, parentId, isPage, updatedAt, *outboundLinks',
+        dictionary: 'id, word, updatedAt',
+        folders: 'id, order, updatedAt',
+        cards: 'id, nodeId, dueAt, updatedAt',
+        reviews: 'id, cardId, nodeId, reviewedAt, updatedAt',
+      })
+      .upgrade(async (tx) => {
+        const table = tx.table('nodes');
+        const updates = planClozeRepair(await table.toArray());
+        if (updates.length > 0) await table.bulkPut(updates);
       });
   }
 }

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { buildSearchIndex, type SearchResult } from '../db/searchIndex';
+import { searchNodes, warmSearchIndex, type SearchResult } from '../db/searchIndex';
 
 interface SearchOmnibarProps {
   onClose: () => void;
@@ -12,26 +12,17 @@ export function SearchOmnibar({ onClose, onSelect, placeholder = 'Search your no
   const [results, setResults] = useState<SearchResult[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
-  const queryRef = useRef<((term: string) => Promise<SearchResult[]>) | null>(null);
-
-  // Build the index once when the omnibar opens.
+  // The index lives for the life of the tab now, so opening the omnibar only
+  // has to make sure it exists — usually it already does.
   useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      const { query } = await buildSearchIndex();
-      if (!cancelled) queryRef.current = query;
-    })();
+    void warmSearchIndex();
     inputRef.current?.focus();
-    return () => {
-      cancelled = true;
-    };
   }, []);
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      if (!queryRef.current) return;
-      const r = await queryRef.current(term);
+      const r = await searchNodes(term);
       if (!cancelled) {
         setResults(r);
         setActiveIndex(0);

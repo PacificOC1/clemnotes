@@ -2,10 +2,37 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { User } from '@supabase/supabase-js';
 import { supabase, isSyncConfigured } from '../sync/supabaseClient';
 import { syncWithCloud } from '../sync/syncEngine';
+import { clearCursors } from '../sync/cursors';
 
 type SyncStatus = 'idle' | 'syncing' | 'error';
 
 const SYNC_INTERVAL_MS = 20000;
+
+/** Which SQL file creates each table, so the warning points at the right one. */
+const MIGRATION_FOR_TABLE: Record<string, string> = {
+  dictionary: 'migration-002-sync-all.sql',
+  folders: 'migration-002-sync-all.sql',
+  cards: 'migration-002-sync-all.sql',
+  reviews: 'migration-003-reviews.sql',
+};
+
+function migrationsFor(tables: string[]): string[] {
+  const files = tables.map((t) => MIGRATION_FOR_TABLE[t]).filter((f): f is string => Boolean(f));
+  return [...new Set(files)].sort();
+}
+
+const TABLE_LABELS: Record<string, string> = {
+  dictionary: 'definitions',
+  folders: 'folders',
+  cards: 'flashcards',
+  reviews: 'review history',
+};
+
+function describeMissing(tables: string[]): string {
+  const labels = tables.map((t) => TABLE_LABELS[t] ?? t);
+  if (labels.length <= 1) return labels[0] ?? 'them';
+  return `${labels.slice(0, -1).join(', ')} and ${labels[labels.length - 1]}`;
+}
 
 export function SyncPanel() {
   const [user, setUser] = useState<User | null>(null);
@@ -89,6 +116,17 @@ export function SyncPanel() {
     setMissingTables([]);
   }
 
+  /**
+   * Forget where each table got to, so the next sync re-reads everything and
+   * reconciles it properly. The escape hatch for the one thing incremental
+   * sync can get wrong — a device whose clock was far enough out that a row
+   * slipped past the watermark — and harmless to press at any time.
+   */
+  async function handleFullResync(userId: string) {
+    clearCursors(userId);
+    await runSync(userId);
+  }
+
   if (!user) {
     return (
       <div className="sync">
@@ -126,9 +164,15 @@ export function SyncPanel() {
       {missingTables.length > 0 && (
         <div className="sync-warning">
           <strong>{missingTables.join(', ')}</strong> {missingTables.length === 1 ? "isn't" : "aren't"} set up
-          in Supabase yet — run <code>supabase/migration-002-sync-all.sql</code> to sync{' '}
-          {missingTables.includes('cards') ? 'flashcards, ' : ''}definitions and folders too. Notes are
-          syncing fine in the meantime.
+          in Supabase yet — run{' '}
+          {migrationsFor(missingTables).map((file, i, all) => (
+            <span key={file}>
+              <code>supabase/{file}</code>
+              {i < all.length - 1 ? ' and ' : ''}
+            </span>
+          ))}{' '}
+          to sync {describeMissing(missingTables)} too. Everything else is syncing fine in the
+          meantime.
         </div>
       )}
 
@@ -140,6 +184,18 @@ export function SyncPanel() {
               {status === 'syncing' ? 'Syncing…' : 'Sync now'}
             </button>
             <button type="button" className="ghost-btn" onClick={handleSignOut}>Sign out</button>
+          </div>
+          <button
+            type="button"
+            className="sync-resync"
+            onClick={() => void handleFullResync(user.id)}
+            disabled={status === 'syncing'}
+          >
+            Re-check everything
+          </button>
+          <div className="sync-note">
+            Normally only what changed since the last sync is exchanged, with a full check once
+            a day.
           </div>
           {lastSyncedAt && status !== 'syncing' && (
             <div className="sync-time">Last synced {new Date(lastSyncedAt).toLocaleTimeString()}</div>

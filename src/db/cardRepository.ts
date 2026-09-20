@@ -1,5 +1,9 @@
 import { db } from './database';
+import { buildPageIndex, countByPage, scopeCards } from './cardScope';
+import { buildReviewEntry, getTodayCounts } from './reviewRepository';
 import { DEFAULT_EASE, schedule } from '../srs/sm2';
+import { isLeech, planPractice, planSession, type SessionPlan } from '../srs/session';
+import { loadSettings, type ReviewSettings } from '../srs/settings';
 import { extractClozeIndices, parseDoc, splitOnSeparator } from '../tiptap/docUtils';
 import type { CardKind, Flashcard, OutlinerNode } from './schema';
 
@@ -125,6 +129,102 @@ export async function getDueCards(now = Date.now()): Promise<Flashcard[]> {
     .sort((a, b) => a.dueAt - b.dueAt);
 }
 
+/**
+ * Narrow a set of cards to one document, when a scope is given.
+ *
+ * Costs one read of the nodes table, and only when a scope is actually in
+ * play — see `cardScope.ts` for why the page is resolved rather than stored.
+ */
+async function applyScope(cards: Flashcard[], pageId: string | null): Promise<Flashcard[]> {
+  if (!pageId) return cards;
+  return scopeCards(cards, buildPageIndex(await db.nodes.toArray()), pageId);
+}
+
+/**
+ * The queue for a review session: everything due, minus what the daily limits
+ * and sibling burying hold back, and optionally only from one document.
+ *
+ * Built once when the session starts rather than consulted per card, so the
+ * count you are shown at the top is the number of cards you will actually be
+ * asked — and so changing a limit mid-session cannot move the finish line
+ * while you are walking towards it.
+ */
+export async function buildReviewQueue(
+  settings: ReviewSettings = loadSettings(),
+  now = Date.now(),
+  pageId: string | null = null
+): Promise<SessionPlan> {
+  const [due, today] = await Promise.all([getDueCards(now), getTodayCounts(now)]);
+  return planSession(await applyScope(due, pageId), settings, today);
+}
+
+/**
+ * A practice queue. Nothing that happens in a practice session is written
+ * anywhere, so this can draw on the whole collection rather than only what is
+ * due — which is the point of it: the night before an exam you want the
+ * material you are worried about, not the material the scheduler happens to
+ * have queued. Scoping it to that exam's document is the other half of that.
+ */
+export async function buildPracticeQueue(
+  limit = 40,
+  pageId: string | null = null
+): Promise<Flashcard[]> {
+  return planPractice(await applyScope(await getAllCards(), pageId), limit);
+}
+
+export interface PageCardCount {
+  pageId: string;
+  title: string;
+  due: number;
+  total: number;
+}
+
+/**
+ * Due and total counts per document, for the scope picker.
+ *
+ * One nodes read and one cards read, shared between both counts. Pages with no
+ * cards at all are left out — a scope picker listing every page you have ever
+ * made, most of them empty, is a worse tool than one listing the four you
+ * actually study.
+ */
+export async function getPageCardCounts(now = Date.now()): Promise<PageCardCount[]> {
+  const [nodes, cards] = await Promise.all([db.nodes.toArray(), getAllCards()]);
+  const pageIndex = buildPageIndex(nodes);
+
+  const totals = countByPage(cards, pageIndex);
+  const dues = countByPage(
+    cards.filter((card) => !card.suspended && card.dueAt <= now),
+    pageIndex
+  );
+
+  const titles = new Map(nodes.map((node) => [node.id, node.plainText.trim() || 'Untitled']));
+
+  return [...totals.entries()]
+    .map(([pageId, total]) => ({
+      pageId,
+      title: titles.get(pageId) ?? 'Untitled',
+      due: dues.get(pageId) ?? 0,
+      total,
+    }))
+    .sort((a, b) => b.due - a.due || a.title.localeCompare(b.title));
+}
+
+/**
+ * Cards you keep failing.
+ *
+ * A card failed eight times is nearly always a badly written card rather than
+ * a fact you are incapable of learning — two ideas crammed into one blank, or
+ * an answer that could equally be three other things. Surfacing them is worth
+ * more than any amount of rescheduling, because the fix is to rewrite the rem.
+ */
+export async function getLeeches(threshold: number | null): Promise<Flashcard[]> {
+  if (threshold === null) return [];
+  const cards = await getAllCards();
+  return cards
+    .filter((card) => isLeech(card, threshold))
+    .sort((a, b) => b.lapses - a.lapses || a.dueAt - b.dueAt);
+}
+
 export interface CardStats {
   total: number;
   due: number;
@@ -144,19 +244,41 @@ export async function getCardStats(now = Date.now()): Promise<CardStats> {
   };
 }
 
-/** Record a review and reschedule the card. */
+/**
+ * Record a review and reschedule the card.
+ *
+ * The log row and the card update are written in one transaction: a review
+ * that reached the log without rescheduling the card (or the reverse) would be
+ * a lie about what happened, and the log is only worth having if it is exact.
+ *
+ * Note that the row is built from the card's state *before* `schedule()` is
+ * applied — that pre-review state is the part that gets overwritten, and it is
+ * what any later analysis actually needs.
+ */
 export async function gradeCard(cardId: string, quality: number): Promise<void> {
   const card = await db.cards.get(cardId);
   if (!card) return;
-  const update = schedule(card, quality);
-  await db.cards.update(cardId, { ...update, updatedAt: Date.now() });
+  const now = Date.now();
+  const update = schedule(card, quality, now);
+  const entry = buildReviewEntry(card, quality, update, now);
+
+  await db.transaction('rw', db.cards, db.reviews, async () => {
+    await db.cards.update(cardId, { ...update, updatedAt: now });
+    await db.reviews.add(entry);
+  });
 }
 
 export async function setCardSuspended(cardId: string, suspended: boolean): Promise<void> {
   await db.cards.update(cardId, { suspended, updatedAt: Date.now() });
 }
 
-/** Reset a card's scheduling back to "never seen". */
+/**
+ * Reset a card's scheduling back to "never seen".
+ *
+ * This does not touch the review log — those reviews still happened, and the
+ * log is append-only. Statistics will show the card's full history while its
+ * schedule starts again from zero, which is the honest reading of a reset.
+ */
 export async function resetCard(cardId: string): Promise<void> {
   const now = Date.now();
   await db.cards.update(cardId, {
