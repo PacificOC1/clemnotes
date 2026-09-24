@@ -1,7 +1,8 @@
 import { Node, mergeAttributes, InputRule } from '@tiptap/core';
 import { ReactNodeViewRenderer, NodeViewWrapper } from '@tiptap/react';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { getNode, searchNodesByTitle, createPage } from '../db/repository';
+import { findByTitle, getNode } from '../db/repository';
+import { createPageForTitle } from '../db/dailyNotes';
 import { useNavigation } from '../context/NavigationContext';
 import type { NodeViewProps } from '@tiptap/react';
 
@@ -18,28 +19,29 @@ import type { NodeViewProps } from '@tiptap/react';
  * to it. With an id, renaming the target is invisible to the link, and the
  * label follows the target's current text rather than a stale copy of it.
  */
-function WikiLinkView({ node }: NodeViewProps) {
-  const title = String(node.attrs.title ?? '');
-  const targetId = node.attrs.targetId ? String(node.attrs.targetId) : null;
-  const alias = node.attrs.alias ? String(node.attrs.alias) : '';
-  const { onZoomTo } = useNavigation();
+/**
+ * Everything a link shows and does, from its attributes alone — shared by the
+ * editor's node view and the static rendering a rem uses until you click into
+ * it (#19), so the two can't drift apart.
+ */
+export function useWikiLinkView(attrs: Record<string, unknown> | undefined) {
+  const title = String(attrs?.title ?? '');
+  const targetId = attrs?.targetId ? String(attrs.targetId) : null;
+  const alias = attrs?.alias ? String(attrs.alias) : '';
+  const { onZoomTo, onOpenInSplit } = useNavigation();
 
-  // An id is one indexed lookup; a title is a scan, so only do that when the
-  // link has no id to go on.
+  // An id is one indexed lookup; a title goes through the title index, and
+  // only when the link has no id to go on.
   const target = useLiveQuery(
     () => (targetId ? getNode(targetId) : Promise.resolve(undefined)),
     [targetId]
   );
-  const matches =
-    useLiveQuery(
-      () => (targetId ? Promise.resolve([]) : searchNodesByTitle(title)),
-      [targetId, title]
-    ) ?? [];
+  const byTitle = useLiveQuery(
+    () => (targetId || !title ? Promise.resolve(undefined) : findByTitle(title)),
+    [targetId, title]
+  );
 
   const live = target && !target.deletedAt ? target : undefined;
-  const byTitle = matches.find(
-    (n) => n.plainText.trim().toLowerCase() === title.trim().toLowerCase()
-  );
   const resolved = live ?? byTitle;
 
   // An alias is the writer saying what this link should read as in *this*
@@ -49,24 +51,31 @@ function WikiLinkView({ node }: NodeViewProps) {
   // better to still read as something than to go blank.
   const label = alias || live?.plainText.trim() || title || 'Untitled';
 
-  async function handleClick() {
+  async function onClick(event: React.MouseEvent) {
+    // Shift-click opens the link beside this document rather than in place of it.
+    const go = event.shiftKey && onOpenInSplit ? onOpenInSplit : onZoomTo;
     if (resolved) {
-      onZoomTo(resolved.id);
+      go(resolved.id);
       return;
     }
-    // Nothing to point at — create the page, Roam/RemNote-style.
-    const page = await createPage(title);
-    onZoomTo(page.id);
+    // Nothing to point at — create the page, Roam/RemNote-style. A date makes
+    // (or finds) that day's daily note rather than a loose page of the same name.
+    go(await createPageForTitle(title));
   }
 
+  return {
+    label,
+    className: `wiki-link ${resolved ? '' : 'wiki-link-new'}`,
+    title: `${label !== title && title ? `Links to "${title}" · ` : ''}Shift-click to open beside`,
+    onClick: (event: React.MouseEvent) => void onClick(event),
+  };
+}
+
+function WikiLinkView({ node }: NodeViewProps) {
+  const view = useWikiLinkView(node.attrs);
   return (
-    <NodeViewWrapper
-      as="span"
-      className={`wiki-link ${resolved ? '' : 'wiki-link-new'}`}
-      onClick={handleClick}
-      title={label !== title && title ? `Links to "${title}"` : undefined}
-    >
-      {label}
+    <NodeViewWrapper as="span" className={view.className} onClick={view.onClick} title={view.title}>
+      {view.label}
     </NodeViewWrapper>
   );
 }

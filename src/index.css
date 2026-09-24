@@ -6,7 +6,7 @@
   --bg-sidebar: #16171c;
   --bg-panel: #1c1e24;
   --bg-raised: #22252c;
-  --bg-hover: rgba(255, 255, 255, 0.045);
+  --bg-hover: rgba(var(--tint-rgb), 0.045);
   --bg-active: rgba(108, 140, 255, 0.14);
 
   /* Text. */
@@ -16,8 +16,8 @@
 
   /* Lines. */
   --border: #272a32;
-  --border-soft: rgba(255, 255, 255, 0.06);
-  --guide: rgba(255, 255, 255, 0.08);
+  --border-soft: rgba(var(--tint-rgb), 0.06);
+  --guide: rgba(var(--tint-rgb), 0.08);
   --guide-hover: rgba(108, 140, 255, 0.45);
 
   /* Accents. */
@@ -34,8 +34,60 @@
   --radius-lg: 12px;
   --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
 
+  /* Colours that only work on one kind of background get a name, so the
+     light palette below can swap them. */
+  --tint-rgb: 255, 255, 255;
+  --amber-text: #e8d5ae;
+  --tag-text: #8fd6ad;
+  --violet-text: #d9c2ff;
+  --on-accent: #0c1020;
+  --overlay-bg: rgba(19, 20, 24, 0.82);
+
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --mono: 'SF Mono', ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+}
+
+/*
+ * The light palette (#57). Everything in the app reads these custom
+ * properties, so a theme is a second set of values rather than a restyle.
+ * `data-theme` is set on <html> by `src/theme.ts` before the first paint.
+ */
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #fbfbfa;
+  --bg-sidebar: #f3f3f1;
+  --bg-panel: #ffffff;
+  --bg-raised: #ffffff;
+  --bg-hover: rgba(0, 0, 0, 0.045);
+  --bg-active: rgba(63, 95, 216, 0.1);
+
+  --text: #1d1f24;
+  --text-dim: #4d525d;
+  --text-faint: #858a94;
+
+  --border: #e1e2e6;
+  --border-soft: rgba(0, 0, 0, 0.07);
+  --guide: rgba(0, 0, 0, 0.1);
+  --guide-hover: rgba(63, 95, 216, 0.45);
+
+  --accent: #3f5fd8;
+  --accent-soft: rgba(63, 95, 216, 0.12);
+  --accent-text: #2f4bb8;
+  --amber: #9a6200;
+  --amber-soft: rgba(196, 132, 20, 0.14);
+  --green: #1d8048;
+  --red: #cc3b36;
+  --violet: #7446cc;
+
+  --shadow: 0 12px 32px rgba(20, 22, 30, 0.14);
+
+  --tint-rgb: 0, 0, 0;
+  --amber-text: #6f4c0c;
+  --tag-text: #1d7443;
+  --violet-text: #6134b4;
+  --on-accent: #ffffff;
+  --overlay-bg: rgba(255, 255, 255, 0.92);
 }
 
 * {
@@ -89,17 +141,72 @@ kbd {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(var(--tint-rgb), 0.1);
   border-radius: 6px;
   border: 3px solid transparent;
   background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(var(--tint-rgb), 0.2);
   background-clip: content-box;
 }
 
 ::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* Shown instead of the app when an upgrade is due and its snapshot failed —
+   before App.css has loaded, so it carries its own styles. */
+.upgrade-blocked {
+  max-width: 620px;
+  margin: 64px auto;
+  padding: 26px 28px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.upgrade-blocked h1 {
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.upgrade-blocked p {
+  font-size: 13.5px;
+  color: var(--text-dim);
+  margin: 0 0 14px;
+}
+
+.upgrade-blocked pre {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--red);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  white-space: pre-wrap;
+  margin: 0 0 14px;
+}
+
+.upgrade-blocked .crash-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.upgrade-blocked button {
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--bg-raised);
+  cursor: pointer;
+}
+
+.upgrade-blocked button.primary-btn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
 }

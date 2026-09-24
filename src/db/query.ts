@@ -1,6 +1,7 @@
 import { db } from './database';
 import { findRootPage } from './repository';
 import { searchNodes } from './searchIndex';
+import { findTagPages, normalizeTagName, remHasTag } from './tags';
 import type { OutlinerNode } from './schema';
 
 /**
@@ -29,6 +30,8 @@ export interface RemQuery {
   inPage?: string;
   /** Rems linking to this one. */
   linksTo?: string;
+  /** Rems tagged `#name` — stored as the name, so it survives the tag page being remade. */
+  tag?: string;
   limit?: number;
 }
 
@@ -41,7 +44,8 @@ export function isEmptyQuery(query: RemQuery): boolean {
     !query.hasCards &&
     !query.editedWithinDays &&
     !query.inPage &&
-    !query.linksTo
+    !query.linksTo &&
+    !query.tag
   );
 }
 
@@ -68,6 +72,7 @@ export function normalizeQuery(raw: unknown): RemQuery {
   }
   if (typeof input.inPage === 'string' && input.inPage) query.inPage = input.inPage;
   if (typeof input.linksTo === 'string' && input.linksTo) query.linksTo = input.linksTo;
+  if (typeof input.tag === 'string' && normalizeTagName(input.tag)) query.tag = normalizeTagName(input.tag);
   if (typeof input.limit === 'number' && input.limit > 0) query.limit = Math.floor(input.limit);
 
   return query;
@@ -83,7 +88,13 @@ export function serializeQuery(query: RemQuery): string {
  * `text` is not among them: it is answered by the search index, which knows
  * about prefixes and tokens in a way a substring test does not.
  */
-export function matchesRow(node: OutlinerNode, query: RemQuery, now: number): boolean {
+/** A `tag` filter, resolved once per run: the tag pages' ids, and the name for id-less tags. */
+export interface TagFilter {
+  ids: ReadonlySet<string>;
+  names: ReadonlySet<string>;
+}
+
+export function matchesRow(node: OutlinerNode, query: RemQuery, now: number, tags?: TagFilter): boolean {
   if (node.deletedAt) return false;
   // A portal has no text of its own, and an empty rem is not an answer.
   if (node.isPortal || !node.plainText.trim()) return false;
@@ -96,6 +107,9 @@ export function matchesRow(node: OutlinerNode, query: RemQuery, now: number): bo
   }
 
   if (query.linksTo && !node.outboundLinks.includes(query.linksTo)) return false;
+
+  // Checked last: it is the only predicate that parses the rem's content.
+  if (query.tag && (!tags || !remHasTag(node, tags.ids, tags.names))) return false;
 
   return true;
 }
@@ -124,11 +138,21 @@ export async function runQuery(query: RemQuery, now = Date.now()): Promise<Query
   let candidates: OutlinerNode[];
   let ranked = false;
 
+  let tags: TagFilter | undefined;
+  if (query.tag) {
+    const pages = await findTagPages(query.tag);
+    tags = { ids: new Set(pages.map((p) => p.id)), names: new Set([query.tag.toLowerCase()]) };
+  }
+
   if (query.text) {
     // The index already ranks these; take a generous slice and filter down.
     const hits = await searchNodes(query.text, Math.max(limit * 4, 100));
     candidates = hits.map((hit) => hit.node);
     ranked = true;
+  } else if (tags) {
+    // A tag is a link to its page, so the same multiEntry index answers it;
+    // `matchesRow` then drops the rems that only *link* to the page.
+    candidates = tags.ids.size > 0 ? await db.nodes.where('outboundLinks').anyOf([...tags.ids]).toArray() : [];
   } else if (query.linksTo) {
     // multiEntry index — the cheapest question this database can be asked.
     candidates = await db.nodes.where('outboundLinks').equals(query.linksTo).toArray();
@@ -136,12 +160,14 @@ export async function runQuery(query: RemQuery, now = Date.now()): Promise<Query
     const cutoff = now - query.editedWithinDays * 24 * 60 * 60 * 1000;
     candidates = await db.nodes.where('updatedAt').aboveOrEqual(cutoff).toArray();
   } else {
-    // Only `hasCards` is left, and `isCard` cannot be indexed — IndexedDB
-    // rejects boolean keys — so this one has to scan.
-    candidates = await db.nodes.toArray();
+    // Only `hasCards` is left: `cardKey` is its index (database.ts v14).
+    candidates = await db.nodes.where('cardKey').equals('card').toArray();
   }
 
-  const matched = candidates.filter((node) => matchesRow(node, query, now));
+  // `anyOf` returns a rem once per matching key; a rem tagged with two pages
+  // that share a name would otherwise be listed twice.
+  const unique = [...new Map(candidates.map((node) => [node.id, node])).values()];
+  const matched = unique.filter((node) => matchesRow(node, query, now, tags));
 
   // Text results keep the index's ranking; everything else reads newest first,
   // which is what "what have I been working on" wants.
@@ -184,5 +210,6 @@ export function describeQuery(query: RemQuery, pageTitle?: string): string {
   }
   if (query.inPage) parts.push(pageTitle ? `in ${pageTitle}` : 'in this document');
   if (query.linksTo) parts.push('linking here');
+  if (query.tag) parts.push(`tagged #${query.tag}`);
   return parts.length === 0 ? 'No filter set' : `Rems ${parts.join(', ')}`;
 }

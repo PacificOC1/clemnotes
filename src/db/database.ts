@@ -1,5 +1,15 @@
 import Dexie, { type Table } from 'dexie';
-import type { DictionaryEntry, Flashcard, OutlinerNode, PageFolder, ReviewLogEntry } from './schema';
+import type {
+  DictionaryEntry,
+  Flashcard,
+  OutlinerNode,
+  PageFolder,
+  RemVersion,
+  ReviewLogEntry,
+  StoredImage,
+  SyncBase,
+} from './schema';
+import { derivedNodeKeys, LEGACY_NODE_FIELDS } from './schema';
 import { planLinkBackfill } from './linkBackfill';
 import { planClozeRepair } from './clozeRepair';
 
@@ -9,6 +19,9 @@ export class OutlinerDB extends Dexie {
   folders!: Table<PageFolder, string>;
   cards!: Table<Flashcard, string>;
   reviews!: Table<ReviewLogEntry, string>;
+  images!: Table<StoredImage, string>;
+  versions!: Table<RemVersion, string>;
+  syncBase!: Table<SyncBase, string>;
 
   constructor() {
     super('outliner-app-db');
@@ -201,7 +214,139 @@ export class OutlinerDB extends Dexie {
         const updates = planClozeRepair(await table.toArray());
         if (updates.length > 0) await table.bulkPut(updates);
       });
+
+    // v12: images. The bytes of anything pasted or dropped into a rem, keyed by
+    // the id its doc refers to. Nothing to migrate — no rem had an image
+    // before — and it is the first upgrade to run with the pre-upgrade
+    // snapshot (`migrationSafety.ts`) in place.
+    //
+    // Indexed on `uploadedAt` so a sync can find what it hasn't sent yet
+    // without reading every image's bytes into memory — which is why "not
+    // yet" is 0 rather than null: IndexedDB leaves null out of an index.
+    this.version(12).stores({
+      nodes: 'id, parentId, isPage, updatedAt, *outboundLinks',
+      dictionary: 'id, word, updatedAt',
+      folders: 'id, order, updatedAt',
+      cards: 'id, nodeId, dueAt, updatedAt',
+      reviews: 'id, cardId, nodeId, reviewedAt, updatedAt',
+      images: 'id, updatedAt, uploadedAt',
+    });
+
+    // v13: version history. Past states of each rem's text, local to this
+    // device. `[nodeId+savedAt]` answers both "this rem's history, newest
+    // first" and "when was the last version kept" — the question every
+    // content write asks — without reading any other rem's versions.
+    this.version(13).stores({
+      nodes: 'id, parentId, isPage, updatedAt, *outboundLinks',
+      dictionary: 'id, word, updatedAt',
+      folders: 'id, order, updatedAt',
+      cards: 'id, nodeId, dueAt, updatedAt',
+      reviews: 'id, cardId, nodeId, reviewedAt, updatedAt',
+      images: 'id, updatedAt, uploadedAt',
+      versions: 'id, [nodeId+savedAt], savedAt, reason',
+    });
+
+    // v14: two derived index keys on nodes (#16) and the sync base (#22).
+    //
+    // `getAllPages()` read every rem to find the pages, because `isPage` is a
+    // boolean and IndexedDB won't index booleans; the `hasCards` query did the
+    // same with `isCard`. `rootKey`/`cardKey` mirror them as strings present
+    // only when true, kept right by the hooks below on every write — so no
+    // call site has to remember them — and stripped before a row is synced.
+    //
+    // `syncBase` holds, per rem, the last copy both sides agreed on, which is
+    // what lets sync merge field by field instead of whole rows.
+    this.version(14)
+      .stores({
+        nodes: 'id, parentId, isPage, updatedAt, *outboundLinks, rootKey, cardKey',
+        dictionary: 'id, word, updatedAt',
+        folders: 'id, order, updatedAt',
+        cards: 'id, nodeId, dueAt, updatedAt',
+        reviews: 'id, cardId, nodeId, reviewedAt, updatedAt',
+        images: 'id, updatedAt, uploadedAt',
+        versions: 'id, [nodeId+savedAt], savedAt, reason',
+        syncBase: 'id',
+      })
+      .upgrade(async (tx) => {
+        await tx
+          .table('nodes')
+          .toCollection()
+          .modify((node) => {
+            const keys = derivedNodeKeys(node);
+            if (keys.rootKey) node.rootKey = keys.rootKey;
+            else delete node.rootKey;
+            if (keys.cardKey) node.cardKey = keys.cardKey;
+            else delete node.cardKey;
+          });
+      });
+
+    // v15: `titleKey` for link matching by title (#15), and `childrenIds`
+    // retired (#4) — a rem's children are found by `parentId`.
+    this.version(15)
+      .stores({
+        nodes: 'id, parentId, isPage, updatedAt, *outboundLinks, rootKey, cardKey, titleKey',
+        dictionary: 'id, word, updatedAt',
+        folders: 'id, order, updatedAt',
+        cards: 'id, nodeId, dueAt, updatedAt',
+        reviews: 'id, cardId, nodeId, reviewedAt, updatedAt',
+        images: 'id, updatedAt, uploadedAt',
+        versions: 'id, [nodeId+savedAt], savedAt, reason',
+        syncBase: 'id',
+      })
+      .upgrade(async (tx) => {
+        await tx
+          .table('nodes')
+          .toCollection()
+          .modify((node) => {
+            normalizeNodeRow(node);
+          });
+      });
+
+    // Every row written to `nodes` — add, put, update, modify, bulk or not,
+    // from the app, a sync pull, a restore or an upgrade — passes through
+    // here on its way to IndexedDB. Deriving the index keys at this one
+    // point, rather than in hooks or at call sites, is what makes them
+    // impossible to get wrong: there is no write path that skips it.
+    this.use({
+      stack: 'dbcore',
+      name: 'nodeRowNormalizer',
+      create(down) {
+        return {
+          ...down,
+          table(tableName) {
+            const table = down.table(tableName);
+            if (tableName !== 'nodes') return table;
+            return {
+              ...table,
+              mutate(req) {
+                if (req.type !== 'add' && req.type !== 'put') return table.mutate(req);
+                const values = req.values.map((value) => normalizeNodeRow({ ...(value as OutlinerNode) }));
+                return table.mutate({ ...req, values });
+              },
+            };
+          },
+        };
+      },
+    });
   }
+}
+
+/** A node row as it should be stored: derived keys current, retired fields gone. */
+export function normalizeNodeRow(node: OutlinerNode): OutlinerNode {
+  applyDerivedKeys(node);
+  for (const field of LEGACY_NODE_FIELDS) delete (node as unknown as Record<string, unknown>)[field];
+  return node;
+}
+
+/** Set or clear a row's derived index keys in place. */
+function applyDerivedKeys(node: OutlinerNode): void {
+  const keys = derivedNodeKeys(node);
+  if (keys.rootKey) node.rootKey = keys.rootKey;
+  else delete node.rootKey;
+  if (keys.cardKey) node.cardKey = keys.cardKey;
+  else delete node.cardKey;
+  if (keys.titleKey) node.titleKey = keys.titleKey;
+  else delete node.titleKey;
 }
 
 export const db = new OutlinerDB();

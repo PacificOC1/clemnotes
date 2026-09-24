@@ -80,19 +80,20 @@ describe('tree structure', () => {
     expect(await outdentNode(page.id)).toBe(false);
   });
 
-  it('keeps childrenIds a faithful mirror of display order', async () => {
+  it('reorders by order key alone, without touching the parent (#4)', async () => {
     const { page } = await threeChildTree();
+    const before = await getNode(page.id);
     await moveAmongSiblings('c', -1);
-    const parent = await getNode(page.id);
     expect(await childOrder(page.id)).toEqual(['a', 'c', 'b']);
-    expect(parent?.childrenIds).toEqual(['a', 'c', 'b']);
+    // The parent row is not an edit: nothing to sync, nothing to conflict on.
+    expect((await getNode(page.id))?.updatedAt).toBe(before?.updatedAt);
+    expect(await getNode(page.id)).not.toHaveProperty('childrenIds');
   });
 
   it('inserts a new sibling directly after its origin, not at the end', async () => {
     const { page } = await threeChildTree();
     const fresh = await createSiblingAfter('a');
     expect(await childOrder(page.id)).toEqual(['a', fresh.id, 'b', 'c']);
-    expect((await getNode(page.id))?.childrenIds).toEqual(['a', fresh.id, 'b', 'c']);
   });
 
   it('will not drop a node into its own subtree', async () => {
@@ -110,7 +111,6 @@ describe('tree structure', () => {
     expect(await moveNodeRelativeTo('c', 'a', 'child')).toBe(true);
     expect(await childOrder(page.id)).toEqual(['a', 'b']);
     expect(await childOrder('a')).toEqual(['c']);
-    expect((await getNode(page.id))?.childrenIds).toEqual(['a', 'b']);
   });
 
   it('reports the ancestor chain for breadcrumbs', async () => {
@@ -135,7 +135,7 @@ describe('pages', () => {
     const page = await createPage('Fresh');
     const children = await getChildren(page.id);
     expect(children).toHaveLength(1);
-    expect(page.childrenIds).toEqual([children[0]?.id]);
+    expect(page).not.toHaveProperty('childrenIds');
   });
 
   it('lists pages in order and excludes deleted ones', async () => {
@@ -169,7 +169,7 @@ describe('deletion', () => {
     for (const id of ['a', 'b', grandchild.id]) {
       expect((await getNode(id))?.deletedAt).toBeTypeOf('number');
     }
-    expect((await getNode(page.id))?.childrenIds).toEqual(['c']);
+    expect(await childOrder(page.id)).toEqual(['c']);
   });
 
   it('tombstones a whole subtree rather than removing rows', async () => {
@@ -185,7 +185,6 @@ describe('deletion', () => {
       expect((await getNode(id))?.deletedAt).toBeTypeOf('number');
     }
     expect(await childOrder(page.id)).toEqual(['c']);
-    expect((await getNode(page.id))?.childrenIds).toEqual(['c']);
   });
 
   it('takes the cards of every deleted rem with it', async () => {

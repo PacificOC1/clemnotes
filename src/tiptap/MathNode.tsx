@@ -4,14 +4,12 @@ import type { NodeViewProps } from '@tiptap/react';
 import { useEffect, useState } from 'react';
 import { katexIfLoaded, loadKatex, renderMath } from './katexLoader';
 
-function MathView({ node, updateAttributes }: NodeViewProps) {
-  const latex = String(node.attrs.latex ?? '');
-
+/** KaTeX markup for a formula, or its source until KaTeX has loaded. Shared with the static rendering (#19). */
+export function useMathHtml(latex: string): string {
   // Once KaTeX is in memory the markup is derived during render, so editing a
   // formula never round-trips through state. Only the very first formula in a
   // session waits, and it shows its own source in the meantime.
   const [katex, setKatex] = useState(katexIfLoaded);
-  const html = katex ? renderMath(katex, latex) : latex;
 
   useEffect(() => {
     if (katex) return;
@@ -23,6 +21,13 @@ function MathView({ node, updateAttributes }: NodeViewProps) {
       live = false;
     };
   }, [katex]);
+
+  return katex ? renderMath(katex, latex) : latex;
+}
+
+function MathView({ node, updateAttributes }: NodeViewProps) {
+  const latex = String(node.attrs.latex ?? '');
+  const html = useMathHtml(latex);
 
   function handleClick() {
     const next = window.prompt('Edit LaTeX:', latex);

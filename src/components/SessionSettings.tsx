@@ -1,4 +1,12 @@
-import { DEFAULT_SETTINGS, type ReviewSettings } from '../srs/settings';
+import { useState } from 'react';
+import {
+  DEFAULT_SETTINGS,
+  MAX_RETENTION,
+  MIN_RETENTION,
+  type ReviewSettings,
+} from '../srs/settings';
+import { DEFAULT_PARAMETERS, MIN_EVIDENCE, countEvidence, optimizeParameters } from '../srs/fsrs';
+import { getFsrsHistories } from '../db/cardRepository';
 
 /**
  * The four numbers that decide what a session looks like.
@@ -53,14 +61,58 @@ export function SessionSettings({ settings, onChange }: SessionSettingsProps) {
     settings.newPerDay === DEFAULT_SETTINGS.newPerDay &&
     settings.reviewsPerDay === DEFAULT_SETTINGS.reviewsPerDay &&
     settings.leechThreshold === DEFAULT_SETTINGS.leechThreshold &&
-    settings.burySiblings === DEFAULT_SETTINGS.burySiblings;
+    settings.burySiblings === DEFAULT_SETTINGS.burySiblings &&
+    settings.scheduler === DEFAULT_SETTINGS.scheduler &&
+    settings.desiredRetention === DEFAULT_SETTINGS.desiredRetention;
+
+  const [fit, setFit] = useState<{ busy: boolean; progress: number; message: string | null }>({
+    busy: false,
+    progress: 0,
+    message: null,
+  });
+
+  /**
+   * Fit FSRS to this notebook's review log. Only adopted when the fitted
+   * parameters predict your past reviews better than the current ones do.
+   */
+  async function handleOptimize() {
+    setFit({ busy: true, progress: 0, message: null });
+    try {
+      const histories = await getFsrsHistories();
+      const evidence = countEvidence(histories);
+      if (evidence < MIN_EVIDENCE) {
+        setFit({
+          busy: false,
+          progress: 0,
+          message: `Not enough history yet: ${evidence} of the ${MIN_EVIDENCE} spaced reviews needed. Until then the defaults — fitted on millions of reviews — are the better guess.`,
+        });
+        return;
+      }
+      const result = await optimizeParameters(histories, settings.fsrsParameters ?? DEFAULT_PARAMETERS, {
+        onProgress: (progress) => setFit((f) => ({ ...f, progress })),
+      });
+      if (result.improved) {
+        onChange({ ...settings, fsrsParameters: result.parameters });
+        const gain = ((1 - result.lossAfter / result.lossBefore) * 100).toFixed(1);
+        setFit({ busy: false, progress: 1, message: `Fitted to ${result.evidence} reviews — ${gain}% better at predicting what you remember.` });
+      } else {
+        setFit({ busy: false, progress: 1, message: `Checked ${result.evidence} reviews; the current parameters already fit best, so nothing changed.` });
+      }
+    } catch (err) {
+      setFit({ busy: false, progress: 0, message: err instanceof Error ? err.message : 'Fitting failed.' });
+    }
+  }
 
   return (
     <section className="session-settings">
       <div className="session-settings-head">
         <h2>Session settings</h2>
         {!isDefault && (
-          <button type="button" onClick={() => onChange({ ...DEFAULT_SETTINGS })}>
+          <button
+            type="button"
+            // Fitted parameters are yours, not a preference — keep them.
+            onClick={() => onChange({ ...DEFAULT_SETTINGS, fsrsParameters: settings.fsrsParameters })}
+          >
             Reset to defaults
           </button>
         )}
@@ -99,6 +151,61 @@ export function SessionSettings({ settings, onChange }: SessionSettingsProps) {
           context for the other two, so the rest wait for another day.
         </span>
       </label>
+
+      <div className="session-scheduler">
+        <label className="session-field">
+          <span className="session-field-label">Scheduler</span>
+          <select
+            value={settings.scheduler}
+            onChange={(event) => set('scheduler', event.target.value === 'sm2' ? 'sm2' : 'fsrs')}
+          >
+            <option value="fsrs">FSRS</option>
+            <option value="sm2">SM-2</option>
+          </select>
+          <span className="session-field-hint">
+            {settings.scheduler === 'fsrs'
+              ? 'Models how fast you forget each card, from your history'
+              : 'The classic ease-factor algorithm'}
+          </span>
+        </label>
+
+        {settings.scheduler === 'fsrs' && (
+          <>
+            <label className="session-field">
+              <span className="session-field-label">
+                Desired recall · {Math.round(settings.desiredRetention * 100)}%
+              </span>
+              <input
+                type="range"
+                min={MIN_RETENTION}
+                max={MAX_RETENTION}
+                step={0.01}
+                value={settings.desiredRetention}
+                onChange={(event) => set('desiredRetention', Number(event.target.value))}
+              />
+              <span className="session-field-hint">Higher means more reviews, remembered more often</span>
+            </label>
+
+            <div className="session-field">
+              <span className="session-field-label">Parameters</span>
+              <div className="session-fit">
+                <button type="button" onClick={() => void handleOptimize()} disabled={fit.busy}>
+                  {fit.busy ? `Fitting… ${Math.round(fit.progress * 100)}%` : 'Fit to my reviews'}
+                </button>
+                {settings.fsrsParameters && !fit.busy && (
+                  <button type="button" className="link-btn" onClick={() => set('fsrsParameters', null)}>
+                    Use defaults
+                  </button>
+                )}
+              </div>
+              <span className="session-field-hint">
+                {fit.message ??
+                  (settings.fsrsParameters ? 'Fitted to your history' : 'FSRS defaults')}
+              </span>
+            </div>
+          </>
+        )}
+      </div>
 
       <p className="session-note">
         Limits apply to everything reviewed today, not just this session, and they are kept on

@@ -15,6 +15,15 @@ Open the printed localhost URL. With no configuration the app is entirely local 
 data lives in your browser's IndexedDB (via Dexie), persists across reloads, and
 never leaves the machine. Cloud sync is opt-in; see below.
 
+### Offline and installable
+
+The built app (`npm run build`, or the GitHub Pages deploy) registers a service
+worker that caches the whole app on first visit, so it opens with no connection
+at all — your notes were already local. Browsers that support it offer
+**Install** in the address bar, giving Clemnotes its own window and icon. A new
+deploy is picked up on the next visit. (The dev server doesn't register the
+worker, so `npm run dev` always serves fresh code.)
+
 ## Writing
 
 ### Structure
@@ -23,6 +32,7 @@ never leaves the machine. Cloud sync is opt-in; see below.
   zoomed into) it drops down into the first bullet instead of starting a new
   page — reusing that bullet if it's already there, creating it if it isn't
 - `Tab` / `Shift+Tab` — indent / outdent
+- `↑` / `↓` on the first or last line of a rem — go to the rem above or below
 - `Alt+↑` / `Alt+↓` — move a rem (and its whole subtree) among its siblings
 - `Backspace` at the start of an empty rem — merge into the previous one
 - Drag the `⠿` handle to move a rem anywhere: drop near a row's top or bottom
@@ -53,6 +63,13 @@ resolve to *any* rem, not just top-level pages, so you can link straight to one
 bullet buried in another document. Every zoomed-in rem shows a **Linked
 References** panel listing everything that points at it.
 
+**Shift-click** a link (or a page in the sidebar) to open it **beside** the one
+you're on, in a second pane — a source on one side and your own notes on the
+other. `◫` in the top bar opens or closes the pane, `⇄` swaps the two, and links
+clicked inside the side pane navigate that pane. Both panes are the same live
+outline, so a rem open in both updates in both. The pair is part of the URL, so
+back, forward and reload keep it.
+
 The `⧈` button on a row (or `/embed`) inserts a **portal**: a live, editable view
 of another rem's subtree. It isn't a copy — edits inside the embed write straight
 back to the original.
@@ -63,6 +80,86 @@ while B embeds A — are caught while rendering instead: the inner embed shows a
 short note and its `↗` jump link rather than opening a copy of something already
 on screen.
 
+### Tags
+
+Type `#` and a word and a picker offers existing pages, or "Create #word" for a
+new one. A tag is a small green chip; clicking it opens the tag's page, which
+lists everything tagged with it under **Tagged**, separately from ordinary
+**Linked References**. New tag pages are filed in a **Tags** folder, but any
+page can be a tag. A saved query (`/query`) can filter by tag too.
+
+`#` only starts a tag at the beginning of a word, so `C#`, URL fragments and the
+`# ` heading shortcut are left alone.
+
+### Daily notes
+
+**Today** in the sidebar (or `Alt+Shift+D`) opens a page for today's date,
+titled `2026-09-23`, making it the first time and filing it under **Daily
+notes**. A bar above the title shows the day in words and steps to the day
+before or after. `[[2026-09-23]]` links to that day's note, and typing
+`[[today`, `[[yesterday` or `[[tomorrow` in the link picker offers the date.
+
+### Images
+
+Paste or drop an image into any rem, or use `/image` to pick a file. Hover an
+image for S / M / L sizes and a full-size view. Images are stored in this
+browser (IndexedDB), so they work offline; very large photos are shrunk to
+2400 px on their longest side first. With cloud sync on, they are uploaded to a
+private Supabase Storage bucket and other devices fetch each one the first time
+they show it — see `migration-005-images.sql` below.
+
+### Templates
+
+Any page in the **Templates** folder is a template. Type `/template` in a rem to
+stamp a copy of one in (replacing the empty bullet you typed it into); the
+picker's **+ New template** makes one. `%date%`, `%time%` and `%weekday%` are
+filled in on the way.
+
+### Finding things
+
+`⌘K` searches everything; `⌘⇧F` finds in the page you're on and puts the cursor
+on the match (unfolding anything collapsed above it). Both have **Everywhere /
+This page** (Tab switches), **Has cards** and **Edited this week** filters.
+
+Every rem shows **Linked References** and, folded underneath, **Unlinked
+references**: rems that mention it by name without linking to it, each with a
+**Link** button.
+
+### Version history
+
+`⟲` on a rem (or in the top bar, for the page you're zoomed into) lists its past
+versions — one is kept whenever you come back to edit it after ten minutes — with
+a preview and **Restore**. Restoring keeps the current text as a version first.
+History is kept on this device only. When cloud sync can't combine edits made to
+the same rem on two devices (see *How sync works*), the newer one wins but the
+other goes into history and the sidebar points at it.
+
+### Long documents
+
+A rem is drawn as plain text until you click into it, and only then becomes an
+editor — so a page of hundreds of rems opens quickly and stays light. Nothing
+about using it changes: the cursor lands where you clicked (a double-click
+selects the word), links and tags work straight away, and clicking a formula,
+a defined word, a to-do box or an image's size buttons does what it always did.
+A 400-rem page that used to build 401 editors now builds none until you click;
+it reloads about four times faster and uses about a quarter of the memory.
+
+### Layout
+
+Drag the sidebar's edge to resize it (double-click to reset). `☾ / ☀ / ◐` beside
+the logo switches dark, light and system themes. The top bar shows the word count
+for what you're looking at, `☰` lists its headings, and `◎` (`Alt+Shift+F`) is
+focus mode, which dims everything but the rem you're writing.
+
+### Accessibility
+
+The outline is exposed to screen readers as a tree: each rem is an item with
+its level, whether it is folded, and whether it is selected, named by its own
+text rather than everything underneath it. Every icon button has a name,
+keyboard focus is always visible, hover-only controls also appear when a
+keyboard reaches them, and zooming moves focus to the new page rather than
+dropping it. With "reduce motion" set in your system, animations are off.
+
 ### Maths
 
 Type `$e=mc^2$` and the closing `$` renders it as live KaTeX. Click a formula to
@@ -70,11 +167,17 @@ edit its LaTeX.
 
 ## Flashcards
 
-Two ways to make a card, both just text in a normal rem:
+Four ways to make a card, all just text in a normal rem:
 
 - **`Concept :: Descriptor`** — everything before the `::` is the question,
   everything after is the answer. The badge on the row toggles between a one-way
   card and a two-way pair that also tests the reverse direction.
+- **`Question ::`** with nothing after it — the rem's children are the answer,
+  for answers that don't fit on one line. It is the same card as `A :: B`, so
+  typing an answer onto the line later keeps its schedule.
+- **`Prompt >>>`** — a list card: "name everything underneath". The answer is
+  the rem's children, numbered, read at review time — add an item and the card
+  changes without being reset.
 - **`{{cloze blanks}}`** — each pair of braces becomes its own numbered blank,
   so one sentence can test several facts independently. Selecting text and
   hitting `⌷` in the formatting toolbar does the same thing.
@@ -83,7 +186,15 @@ The **Flashcards** tab shows what's due and runs the review session: `Space`
 reveals the answer, then `1`–`4` (or the buttons) grade it Again / Hard / Good /
 Easy, with the resulting interval shown on each button.
 
-Scheduling is **SM-2**, the algorithm behind SuperMemo and Anki: each card
+Scheduling is **FSRS** by default: it models how quickly you forget each card
+from its review history and schedules the next review for when recall is predicted
+to fall to your **desired recall** (90% unless you change it). Memory state isn't
+stored — it's replayed from the review log — so cards you reviewed under SM-2
+carried their real history across, and **Fit to my reviews** (once you have 200
+reviews spaced a day or more apart) tunes FSRS to you. **SM-2** is still one
+setting away.
+
+Under SM-2, the algorithm behind SuperMemo and classic Anki, each card
 carries an ease factor and an interval, a good answer multiplies the interval by
 the ease, and a failure resets the streak and puts the card back in the same
 session. Two deliberate refinements on textbook SM-2: a forgotten card returns in
@@ -117,6 +228,22 @@ The **Definitions** tab holds a personal dictionary. Any word you define is
 underlined wherever it appears in your notes — hover for the definition, click to
 replace the word with it inline, `Shift`-click to jump to the entry and edit it.
 
+## Importing
+
+**Sidebar → Export & backup → Import from elsewhere.**
+
+- **Markdown files** or **a folder / Obsidian vault**: headings nest what's under
+  them, list items become rems, `[[links]]` between the imported notes resolve,
+  `#tags` get tag pages, `{{clozes}}` and `::` make cards, and images the notes
+  refer to are imported from the folder. Clemnotes' own Markdown export reads back
+  as the pages it wrote. Everything lands in one folder named after the import.
+- **Anki deck (.apkg)**, current or older format: decks become pages (sub-decks as
+  headings), Basic notes become `Front :: Back` (two-way when there's a reverse
+  card), Cloze notes keep their numbered blanks, and extra fields, tags and images
+  come along. Each card keeps its interval, ease, due date and suspension, and
+  every past review goes into the review log, so FSRS schedules imported cards from
+  their real history.
+
 ## Export and backup
 
 **Sidebar → Export & backup.**
@@ -138,7 +265,26 @@ replace the word with it inline, `Shift`-click to jump to the entry and edit it.
   produce a state neither device agreed on and the next sync would fight it.
   Importing into an empty database is therefore also a full restore.
 
-Worth doing before any risky change — schema migrations especially.
+Worth doing before any risky change.
+
+**Maintenance** (same panel):
+
+- **Clean up unused images** — finds images no rem, deleted rem or saved version
+  still refers to, says how many and how much space, and removes them here and
+  from cloud Storage. Anything added in the last seven days is left alone, so an
+  image you've just cut and are about to paste back is safe.
+- **Diagnostics…** — the last 300 things the app did in the background: syncs
+  and what they moved, merged edits and conflicts, upgrades and their snapshots,
+  imports, image uploads, and any error. It never records note text, so **Copy**
+  gives you something safe to paste into a bug report. The "Something went wrong"
+  screen includes it in its copied details too.
+
+**Schema upgrades back themselves up.** Before a new version of the app
+upgrades the database, it copies every table into a separate IndexedDB database
+(`clemnotes-migration-snapshots`), keeping the last three. They are listed under
+**Export & backup → Saved before upgrades**, and each downloads as an ordinary
+backup file. If that copy can't be written (a full disk, say), the app stops
+before upgrading and offers the backup as a download first.
 
 ## Cloud sync (Supabase) — setup
 
@@ -162,8 +308,11 @@ existing notes.
 
 | You already have | Run |
 |---|---|
-| only `nodes` | `supabase/migration-002-sync-all.sql`, then `migration-003-reviews.sql` |
-| everything except `reviews` | `supabase/migration-003-reviews.sql` |
+| only `nodes` | `supabase/migration-002-sync-all.sql`, then `003`, `004` and `005` |
+| everything except `reviews` | `supabase/migration-003-reviews.sql`, then `004` and `005` |
+| everything, no images yet | `supabase/migration-005-images.sql` (creates the private `images` bucket) |
+
+`migration-004-sync-watermarks.sql` only adds indexes; nothing breaks without it.
 
 Until you run the migration the app still syncs your notes fine — the sidebar
 tells you which tables are missing rather than failing the whole sync.
@@ -190,7 +339,9 @@ VITE_SUPABASE_URL=https://your-project-ref.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-public-key
 ```
 
-`.env` is gitignored.
+`.env` is gitignored. Replace both values with your own — if either is still
+the template, missing, or doesn't look like a Supabase URL or key, the sidebar
+says which one instead of showing a sign-in form that can only fail.
 
 ### 6. GitHub Pages deployment
 
@@ -206,9 +357,15 @@ workflow already reads them.
 ### How sync works
 
 - **Auth**: email + password via Supabase Auth, from the sidebar.
-- **Engine** (`src/sync/syncEngine.ts`): a two-way, last-write-wins merge by
-  `updatedAt`, run independently over each table. It fires right after sign-in,
-  every 20 seconds while signed in, whenever the tab regains focus, and on demand.
+- **Engine** (`src/sync/syncEngine.ts`): a two-way merge by `updatedAt`, run
+  independently over each table. It fires right after sign-in, every 20 seconds
+  while signed in, whenever the tab regains focus, and on demand.
+- **Rems merge field by field.** Each device remembers the last version of every
+  rem it agreed on with the cloud. When both sides changed a rem since then, the
+  changes are combined: move a bullet on your laptop and edit its text on your
+  phone and you keep both. Only when the *text itself* was edited on both sides
+  does one win — the newer — with the other kept in version history. The other
+  tables are still last-write-wins per row.
 - **`reviews` syncs differently.** Its rows are written once and never touched
   again, so there is nothing to compare: the poll fetches only the remote's ids
   and pulls full rows for the ones it's missing. That matters because it's the
@@ -218,26 +375,42 @@ workflow already reads them.
   removing the row), so a deletion is just another field change travelling
   through the same merge — no risk of a device that hasn't seen the delete
   resurrecting the row.
+- **Old deletions are purged after 90 days.** During the daily full sync the
+  cloud drops deleted rows older than that, and each device follows. A device
+  that was offline long enough to miss both the delete and the purge deletes
+  its copy too, rather than uploading it again — unless you edited it there in
+  the meantime, in which case your edit wins and it comes back. A notebook
+  without sync purges its own old deletions.
 - **Partial failure is survivable**: one table failing (a missing migration, say)
   doesn't abandon the others.
 
 ### Known limitations
 
-- **Conflict resolution is whole-row last-write-wins, not field-level.** Edit the
-  same bullet on two devices while both are offline and the most recently synced
-  one wins entirely. Fine for one device at a time; worth knowing.
+- **Text isn't merged within a rem.** Edit the *words* of the same bullet on two
+  devices while both are offline and the newer edit wins — the other is kept in
+  that rem's version history and flagged in the sidebar, rather than lost.
+  (Different fields — position, collapsed state, the text — do combine.) The
+  record of what was last agreed lives on each device, so the first sync after
+  this update, or on a new device, falls back to newest-wins until it has one.
 - **No realtime push.** Sync polls (20s + on focus + on demand) rather than
   holding a live Supabase realtime channel. Good enough for "laptop now, phone
   later"; not simultaneous multi-device editing.
-- **Tombstones accumulate forever.** Deleted rows stay as soft-deleted records.
-  Not a problem at personal-notes scale, but a periodic purge would be sensible
-  if this ever grew.
+- **A device that last synced on an older version of the app, and then stayed
+  offline for more than 90 days**, can bring back a rem that was deleted and
+  purged meanwhile: it has no record of having agreed on that rem with the
+  cloud, so it can't tell "purged" from "never uploaded". Once a device has
+  synced on this version, it can.
 - **Backspace-merging two rems collapses to plain text.** Structurally merging
   two rich-text documents is a nontrivial ProseMirror operation; merges still
   work, they just lose formatting on the row being merged in.
-- **The production bundle is ~1.2 MB** (mostly KaTeX's fonts and the Tiptap/
-  ProseMirror engine). Fine for a personal local-first app; code-splitting is
-  the fix if load time ever matters.
+- **Unused images stay until you clean them up.** Removing an image from a rem
+  leaves its bytes in place (so undo works); **Clean up unused images** clears
+  them. It runs per device — another device still holding an image it uploaded
+  itself is unaffected.
+- **Image upload to Supabase Storage hasn't been run against a live project
+  yet.** It uses the documented storage API and fails soft — images keep working
+  on the device they were added on — but it is the one part of this that is
+  untested end to end.
 
 ## Deploying to GitHub Pages
 
@@ -248,13 +421,29 @@ workflow already reads them.
 4. Push to `main`; the workflow in `.github/workflows/deploy.yml` builds and
    deploys.
 
+The workflow fails if the JavaScript needed to open the app grows past the budget
+in `scripts/bundle-budget.json` (340 kB gzipped; it is about 313 kB). Run
+`npm run build && npm run check:bundle` to see the numbers locally. The
+flashcard and definitions views and the Supabase client load on demand, so they
+don't count toward it.
+
 ## Project structure
 
 ```
 src/
   db/
     schema.ts              # OutlinerNode, Flashcard, ReviewLogEntry, DictionaryEntry, PageFolder
-    database.ts            # Dexie definition + v1→v9 migrations
+    database.ts            # Dexie definition + v1→v15 migrations, the row normaliser every write goes through
+    migrationSafety.ts     # the pre-upgrade snapshot, and the list of them
+    versionRepository.ts   # version history, and conflict copies from sync
+    treeInsert.ts          # inserting whole trees (templates, imports) in one go
+    tombstones.ts          # purging deletions older than 90 days
+    templates.ts           # /template
+    unlinked.ts            # unlinked references
+    outline.ts             # word count, table of contents
+    dailyNotes.ts          # a page per date
+    tags.ts                # #tags: tag pages, the picker's search, tag matching
+    imageRepository.ts     # image bytes in IndexedDB, shrinking big photos, the unused-image sweep
     repository.ts          # all rem CRUD: create, indent, outdent, move, merge, links
     cardRepository.ts      # deriving and scheduling flashcards from rem content
     reviewRepository.ts    # the append-only review log + its read helpers
@@ -262,23 +451,38 @@ src/
     folderRepository.ts
     searchIndex.ts         # FlexSearch index for the ⌘K omnibar
   srs/
-    sm2.ts                 # the spaced-repetition algorithm, pure functions
+    sm2.ts                 # SM-2, pure functions
+    fsrs.ts                # FSRS: replay from the log, scheduling, fitting
   tiptap/
     extensions.ts          # the shared editor extension set
     docUtils.ts            # doc parsing, plain-text extraction, card splitting
     WikiLinkNode.tsx       # [[links]]
     MathNode.tsx           # $LaTeX$
     ClozeNode.tsx          # {{blanks}}
+    TagNode.tsx            # #tags
+    ImageNode.tsx          # pasted / dropped images
+    cardFaces.ts           # what each kind of card shows on each side
+    StaticDoc.tsx          # a rem drawn without an editor, identical to the editor's markup
     DictionaryHighlight.ts # definition underlines + tooltips
+    dictionaryMatcher.ts   # every definition compiled into one regex
     FontSize.ts
   editor/
     menuStore.ts           # lets popup menus claim keys from the focused editor
   components/
     OutlinerNode.tsx       # the recursive rem row
+    RemText.tsx            # a rem's text: static until clicked, then a live editor
     EditorMenus.tsx        # the / and [[ popups
     FormattingBubble.tsx   # the selection toolbar
     ReviewView.tsx         # the flashcard session
+    SplitPane.tsx          # the second document, beside the first
+    DiagnosticsPanel.tsx   # the event log, with Copy
     PageSidebar.tsx, SearchOmnibar.tsx, BacklinksPanel.tsx, …
+  import/
+    inline.ts, markdown.ts # Markdown → rems
+    importMarkdown.ts      # files / folders, images, tag pages
+    anki.ts                # reading .apkg (legacy and anki21b)
+    ankiHtml.ts            # Anki field HTML → inline content
+    importAnki.ts          # notes → rems, schedules and review history
   export/
     backup.ts              # the lossless JSON envelope
     importBackup.ts        # parsing, validation and the merge on restore
@@ -286,34 +490,38 @@ src/
     tree.ts                # one consistent snapshot of the page trees
     download.ts            # the only part that touches the DOM
   sync/
-    syncEngine.ts          # table-agnostic last-write-wins merge
-    supabaseClient.ts
+    syncEngine.ts          # table-agnostic two-way sync
+    merge.ts               # field-level three-way merge
+    nodeMerge.ts           # rem conflicts: merge, or keep the loser in history
+    imageSync.ts           # image bytes to and from Supabase Storage
+    syncConfig.ts          # catching template / half-set env vars
+    supabaseClient.ts      # loads supabase-js on demand
+  diagnostics.ts           # the rolling event log
 scripts/
+  service-worker.ts        # Vite plugin that writes sw.js (offline cache)
+  check-bundle.mjs         # the startup-size budget, run in CI
   verify-export.ts         # end-to-end export/import/review-log check, run in Node
 supabase/
   schema.sql                     # fresh install
   migration-002-sync-all.sql     # upgrade from the notes-only schema
   migration-003-reviews.sql      # adds the review log
+  migration-004-sync-watermarks.sql  # indexes for incremental sync
+  migration-005-images.sql       # the private images bucket
 ```
 
-## Verifying without a test runner
-
-There's no test framework in the project yet. Where something needed proving,
-it was proved by bundling the relevant modules with esbuild and running them
-against `fake-indexeddb` in Node — every module under `src/db` and `src/export`
-is browser-free apart from the IndexedDB global, so the whole data layer can be
-exercised this way:
+## Tests
 
 ```bash
-npm i --no-save fake-indexeddb esbuild
-npx esbuild scripts/verify-export.ts --bundle --platform=node --format=cjs \
-  --outfile=/tmp/verify.cjs && node /tmp/verify.cjs
+npm test          # Vitest, against fake-indexeddb
+npx tsc -b        # type check
+npm run lint      # oxlint
 ```
 
-That covers the backup round-trip (export → wipe → restore → byte-identical
-re-export), merge semantics, rejection of malformed files, what Markdown
-preserves, and that grading a card appends exactly one accurate log row.
+The data layer — repository, sync merge, import, export, scheduling, migrations —
+is covered by unit tests that run the real Dexie code against an in-memory
+IndexedDB. `scripts/verify-export.ts` is the older end-to-end export check and
+still runs standalone.
 
 ## What's not built
 
-Image embedding is the one thing from the original roadmap still unimplemented.
+PDF reading, touch-friendly dragging and a phone layout. The full list, with what is done, is in the roadmap.

@@ -5,6 +5,7 @@ import {
   BACKUP_FORMAT_VERSION,
   BACKUP_TABLES,
   CURRENT_SCHEMA_VERSION,
+  base64ToBytes,
   type BackupFile,
   type BackupTableName,
   type BackupTables,
@@ -86,7 +87,14 @@ export function parseBackup(text: string): BackupFile {
   }
 
   const data = file.data as Partial<BackupTables>;
-  const clean: BackupTables = { nodes: [], cards: [], reviews: [], dictionary: [], folders: [] };
+  const clean: BackupTables = {
+    nodes: [],
+    cards: [],
+    reviews: [],
+    dictionary: [],
+    folders: [],
+    images: [],
+  };
 
   for (const table of BACKUP_TABLES) {
     const rows = data[table];
@@ -114,6 +122,21 @@ export function parseBackup(text: string): BackupFile {
     (clean[table] as unknown[]) = rows as unknown[];
   }
 
+  // Image bytes travel as base64; turn them back into what IndexedDB stores.
+  clean.images = (clean.images as unknown as Array<Record<string, unknown>>).map((row) => {
+    if (typeof row.data !== 'string') {
+      throw new BackupParseError('An image in that backup has no data — the file looks corrupted.');
+    }
+    try {
+      // `uploadedAt: 0` — whether the *exporting* device had uploaded it says
+      // nothing about this device or this account. Re-uploading is an upsert
+      // of the same bytes, so the cost of being wrong this way is nothing.
+      return { ...row, data: base64ToBytes(row.data), uploadedAt: 0 } as unknown as BackupTables['images'][number];
+    } catch {
+      throw new BackupParseError('An image in that backup could not be decoded — the file looks corrupted.');
+    }
+  });
+
   return {
     format: BACKUP_FORMAT,
     formatVersion: file.formatVersion,
@@ -125,6 +148,7 @@ export function parseBackup(text: string): BackupFile {
       reviews: clean.reviews.length,
       dictionary: clean.dictionary.length,
       folders: clean.folders.length,
+      images: clean.images.length,
     },
     data: clean,
   };
@@ -191,7 +215,7 @@ function mergeRows<T extends Timestamped>(incoming: T[], existing: T[]): {
  * position than the one the user was trying to recover from.
  */
 export async function importBackup(file: BackupFile, mode: ImportMode): Promise<ImportReport> {
-  const tables = [db.nodes, db.cards, db.reviews, db.dictionary, db.folders];
+  const tables = [db.nodes, db.cards, db.reviews, db.dictionary, db.folders, db.images];
   const results: TableImportResult[] = [];
 
   await db.transaction('rw', tables, async () => {

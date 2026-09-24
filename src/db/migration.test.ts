@@ -4,7 +4,7 @@ import { createEmptyNode, type OutlinerNode } from './schema';
 import { extractWikiLinks, parseDoc } from '../tiptap/docUtils';
 
 /**
- * The v9 → v10 upgrade, run for real.
+ * The v9 → current upgrade, run for real — snapshot first, as the app does.
  *
  * Every other test opens a database that is already at the current version, so
  * the upgrade functions never execute — which is exactly the code path that,
@@ -55,7 +55,8 @@ describe('upgrading a v9 database', () => {
     expect(legacy.verno).toBe(9);
 
     await legacy.table('nodes').bulkAdd([
-      node('target', 'Photosynthesis', { isPage: true }),
+      // Rows from before #4 carry `childrenIds`; v15 drops it.
+      { ...node('target', 'Photosynthesis', { isPage: true }), childrenIds: ['links'] } as OutlinerNode,
       node('links', 'See Photosynthesis', {
         content: legacyLinkDoc('Photosynthesis'),
         updatedAt: 1000,
@@ -80,9 +81,34 @@ describe('upgrading a v9 database', () => {
     ]);
     legacy.close();
 
+    // What `main.tsx` does before anything touches the database: copy it.
+    const { snapshotBeforeUpgrade, listSnapshots, getSnapshot } = await import('./migrationSafety');
+    const outcome = await snapshotBeforeUpgrade(15);
+    expect(outcome.status).toBe('snapshotted');
+
     const { db } = await import('./database');
     await db.open();
-    expect(db.verno).toBe(11);
+    expect(db.verno).toBe(15);
+
+    // The snapshot holds the rows as they were *before* v10 rewrote them.
+    const [summary] = await listSnapshots();
+    expect(summary).toMatchObject({ fromVersion: 9, toVersion: 15 });
+    const before = await getSnapshot(summary!.id);
+    const legacyLinks = (before!.tables.nodes as OutlinerNode[]).find((n) => n.id === 'links');
+    expect(targetsOf(legacyLinks!.content)).toEqual([null]);
+
+    // v12 adds the images table, v13 version history — both empty.
+    expect(await db.images.count()).toBe(0);
+    expect(await db.versions.count()).toBe(0);
+
+    // v14 derives the page index key for rows already on disk.
+    expect((await db.nodes.get('target'))?.rootKey).toBe('page');
+    expect((await db.nodes.get('plain'))?.rootKey).toBeUndefined();
+    expect(await db.nodes.where('rootKey').equals('page').primaryKeys()).toEqual(['target']);
+
+    // v15: the title index (#15), and no more `childrenIds` (#4).
+    expect(await db.nodes.where('titleKey').equals('photosynthesis').primaryKeys()).toEqual(['target']);
+    expect(await db.nodes.get('target')).not.toHaveProperty('childrenIds');
 
     const linked = await db.nodes.get('links');
     expect(targetsOf(linked!.content)).toEqual(['target']);

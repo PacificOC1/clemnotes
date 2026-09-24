@@ -15,7 +15,8 @@ interface PageSidebarProps {
   pages: OutlinerNode[];
   activeNodeId: string | null;
   breadcrumbRootId: string | undefined;
-  onSelectPage: (pageId: string) => void;
+  /** `beside` = shift-click: open it in the split pane. */
+  onSelectPage: (pageId: string, beside?: boolean) => void;
   onDeletePage: (pageId: string, event: React.MouseEvent) => void;
   onNewPage: () => void;
   onAddLatexCourse: () => void;
@@ -40,7 +41,8 @@ function PageRow({
   active: boolean;
   folders: PageFolder[];
   folderId: string | null;
-  onSelectPage: (pageId: string) => void;
+  /** `beside` = shift-click: open it in the split pane. */
+  onSelectPage: (pageId: string, beside?: boolean) => void;
   onDeletePage: (pageId: string, event: React.MouseEvent) => void;
   onMovePage: (pageId: string, folderId: string | null) => void;
 }) {
@@ -55,7 +57,12 @@ function PageRow({
       }}
       onDragEnd={() => { draggingPageId = null; }}
     >
-      <button type="button" className="page-row-btn" onClick={() => onSelectPage(page.id)}>
+      <button
+        type="button"
+        className="page-row-btn"
+        onClick={(event) => onSelectPage(page.id, event.shiftKey)}
+        title="Shift-click to open beside the current page"
+      >
         <span className="page-row-icon">▤</span>
         <span className="page-row-label">{page.plainText || 'Untitled'}</span>
       </button>
@@ -168,8 +175,8 @@ export function PageSidebar({
           >
             ∑
           </button>
-          <button type="button" className="icon-btn" onClick={() => void createFolder()} title="New folder">🗀</button>
-          <button type="button" className="icon-btn" onClick={onNewPage} title="New page">+</button>
+          <button type="button" className="icon-btn" onClick={() => void createFolder()} title="New folder" aria-label="New folder">🗀</button>
+          <button type="button" className="icon-btn" onClick={onNewPage} title="New page" aria-label="New page">+</button>
         </div>
       </div>
 
@@ -214,14 +221,15 @@ export function PageSidebar({
                     onClick={() => toggleFolderCollapsed(folder.id)}
                     onDoubleClick={() => startRename(folder)}
                     title="Double-click to rename"
+                    aria-expanded={!folder.collapsed}
                   >
                     {folder.name}
                   </button>
                 )}
                 <span className="folder-count">{folderPages.length}</span>
                 <div className="folder-actions">
-                  <button type="button" className="icon-btn" onClick={(e) => void handleNewPageInFolder(folder.id, e)} title="New page here">+</button>
-                  <button type="button" className="icon-btn icon-btn-danger" onClick={(e) => void handleDeleteFolder(folder.id, e)} title="Delete folder">×</button>
+                  <button type="button" className="icon-btn" onClick={(e) => void handleNewPageInFolder(folder.id, e)} title="New page here" aria-label="New page here">+</button>
+                  <button type="button" className="icon-btn icon-btn-danger" onClick={(e) => void handleDeleteFolder(folder.id, e)} title="Delete folder" aria-label="Delete folder">×</button>
                 </div>
               </div>
 

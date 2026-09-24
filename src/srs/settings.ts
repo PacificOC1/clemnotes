@@ -9,6 +9,8 @@
  * devices, that is the moment to move them, not before.
  */
 
+export type SchedulerName = 'fsrs' | 'sm2';
+
 export interface ReviewSettings {
   /** New cards to introduce per day; `null` means no limit. */
   newPerDay: number | null;
@@ -18,6 +20,12 @@ export interface ReviewSettings {
   leechThreshold: number | null;
   /** Show at most one card per rem in a session. */
   burySiblings: boolean;
+  /** Which algorithm schedules the next review. */
+  scheduler: SchedulerName;
+  /** FSRS: the chance of remembering a card you want to be reviewing it at, 0.7–0.97. */
+  desiredRetention: number;
+  /** FSRS: parameters fitted to your own history, or null for the defaults. */
+  fsrsParameters: number[] | null;
 }
 
 /**
@@ -31,7 +39,13 @@ export const DEFAULT_SETTINGS: ReviewSettings = {
   reviewsPerDay: 200,
   leechThreshold: 8,
   burySiblings: true,
+  scheduler: 'fsrs',
+  desiredRetention: 0.9,
+  fsrsParameters: null,
 };
+
+export const MIN_RETENTION = 0.7;
+export const MAX_RETENTION = 0.97;
 
 const STORAGE_KEY = 'clemnotes.reviewSettings';
 
@@ -53,6 +67,19 @@ export function normalizeSettings(raw: unknown): ReviewSettings {
     leechThreshold: coerceLimit(input.leechThreshold, DEFAULT_SETTINGS.leechThreshold),
     burySiblings:
       typeof input.burySiblings === 'boolean' ? input.burySiblings : DEFAULT_SETTINGS.burySiblings,
+    scheduler: input.scheduler === 'sm2' ? 'sm2' : 'fsrs',
+    desiredRetention:
+      typeof input.desiredRetention === 'number' && Number.isFinite(input.desiredRetention)
+        ? Math.min(MAX_RETENTION, Math.max(MIN_RETENTION, input.desiredRetention))
+        : DEFAULT_SETTINGS.desiredRetention,
+    // All numbers, and the length ts-fsrs expects (FSRS-6: 21) — anything else
+    // is from an older build or hand-edited, and the defaults are safer.
+    fsrsParameters:
+      Array.isArray(input.fsrsParameters) &&
+      input.fsrsParameters.length === 21 &&
+      input.fsrsParameters.every((n) => typeof n === 'number' && Number.isFinite(n))
+        ? input.fsrsParameters
+        : null,
   };
 }
 

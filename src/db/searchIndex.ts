@@ -86,6 +86,14 @@ export function invalidateSearchIndex(): void {
   building = null;
 }
 
+/** Matching rems, without their pages — for callers that only need the rows (the link picker). */
+export async function searchIndexedNodes(term: string, limit = 20): Promise<OutlinerNode[]> {
+  if (!term.trim()) return [];
+  const { index, nodesById } = await ready();
+  const ids = index.search(term, { limit }) as string[];
+  return ids.map((id) => nodesById.get(id)).filter((node): node is OutlinerNode => node !== undefined);
+}
+
 export async function searchNodes(term: string, limit = 20): Promise<SearchResult[]> {
   if (!term.trim()) return [];
   const { index, nodesById } = await ready();

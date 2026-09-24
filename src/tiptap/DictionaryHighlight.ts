@@ -9,49 +9,25 @@ import {
   navigateToDictionaryEntry,
 } from '../db/dictionaryStore';
 import type { DictionaryEntry } from '../db/schema';
+import { compileMatcher } from './dictionaryMatcher';
 
 const pluginKey = new PluginKey('dictionaryHighlight');
 
-function isWordChar(ch: string): boolean {
-  return /[\p{L}\p{N}_]/u.test(ch);
-}
-
-function findMatches(text: string, entries: Map<string, DictionaryEntry>): Array<{ from: number; to: number; entry: DictionaryEntry }> {
-  const lowerText = text.toLowerCase();
-  const words = [...entries.keys()].sort((a, b) => b.length - a.length);
-  const matches: Array<{ from: number; to: number; entry: DictionaryEntry }> = [];
-  const usedRanges: Array<[number, number]> = [];
-
-  for (const word of words) {
-    const entry = entries.get(word);
-    if (!entry) continue;
-
-    let searchFrom = 0;
-    while (searchFrom < lowerText.length) {
-      const idx = lowerText.indexOf(word, searchFrom);
-      if (idx === -1) break;
-
-      const end = idx + word.length;
-      const beforeOk = idx === 0 || !isWordChar(lowerText[idx - 1]!);
-      const afterOk = end >= lowerText.length || !isWordChar(lowerText[end]!);
-
-      if (beforeOk && afterOk) {
-        const overlaps = usedRanges.some(([start, stop]) => !(end <= start || idx >= stop));
-        if (!overlaps) {
-          usedRanges.push([idx, end]);
-          matches.push({ from: idx, to: end, entry });
-        }
-      }
-      searchFrom = idx + 1;
-    }
-  }
-
-  return matches;
+/**
+ * One listener for the whole app, not one per editor. Each editor's plugin
+ * used to re-broadcast a refresh on every dictionary change, and every editor
+ * answered every broadcast — n editors rebuilt their decorations n times.
+ */
+if (typeof window !== 'undefined') {
+  window.addEventListener(DICTIONARY_UPDATED_EVENT, () => {
+    window.dispatchEvent(new CustomEvent('dictionary-highlight-refresh'));
+  });
 }
 
 function buildDecorations(doc: ProseMirrorNode, entries: Map<string, DictionaryEntry>): DecorationSet {
   if (entries.size === 0) return DecorationSet.empty;
 
+  const matcher = compileMatcher(entries);
   const decorations: Decoration[] = [];
 
   doc.descendants((node, pos) => {
@@ -59,7 +35,7 @@ function buildDecorations(doc: ProseMirrorNode, entries: Map<string, DictionaryE
 
     if (node.marks.some((mark) => mark.type.name === 'code')) return;
 
-    for (const match of findMatches(node.text, entries)) {
+    for (const match of matcher.find(node.text)) {
       decorations.push(
         Decoration.inline(pos + match.from, pos + match.to, {
           class: 'dict-word',
@@ -87,7 +63,7 @@ function ensureTooltip(): HTMLDivElement {
   return tooltipEl;
 }
 
-function showTooltip(target: HTMLElement): void {
+export function showTooltip(target: HTMLElement): void {
   const word = target.getAttribute('data-word') ?? '';
   const definition = target.getAttribute('data-definition') ?? '';
   const tooltip = ensureTooltip();
@@ -112,7 +88,7 @@ function showTooltip(target: HTMLElement): void {
   });
 }
 
-function hideTooltip(): void {
+export function hideTooltip(): void {
   if (tooltipEl) tooltipEl.hidden = true;
 }
 
@@ -130,7 +106,7 @@ function findDictWordTarget(event: Event): HTMLElement | null {
   return target.closest('.dict-word');
 }
 
-function replaceWordWithDefinition(view: EditorView, target: HTMLElement, definition: string): boolean {
+export function replaceWordWithDefinition(view: EditorView, target: HTMLElement, definition: string): boolean {
   try {
     const from = view.posAtDOM(target, 0);
     const to = view.posAtDOM(target, target.childNodes.length);
@@ -205,14 +181,8 @@ export const DictionaryHighlight = Extension.create({
           },
         },
         view() {
-          function handleDictionaryUpdated() {
-            // Force all plugin instances to rebuild decorations.
-            window.dispatchEvent(new CustomEvent('dictionary-highlight-refresh'));
-          }
-          window.addEventListener(DICTIONARY_UPDATED_EVENT, handleDictionaryUpdated);
           return {
             destroy() {
-              window.removeEventListener(DICTIONARY_UPDATED_EVENT, handleDictionaryUpdated);
               hideTooltip();
             },
           };

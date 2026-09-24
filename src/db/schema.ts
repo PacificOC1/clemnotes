@@ -6,15 +6,25 @@ import { EMPTY_DOC } from '../tiptap/docUtils';
 /** Which cards a `Concept :: Descriptor` rem generates. */
 export type CardDirection = 'forward' | 'both';
 
-/** The three kinds of card a rem can produce. */
-export type CardKind = 'forward' | 'backward' | 'cloze';
+/**
+ * The kinds of card a rem can produce.
+ *
+ * `list` is `Prompt >>>`: name everything underneath the rem. Its answer is
+ * read from the rem's children at review time rather than stored, so adding a
+ * child changes the card without touching its scheduling.
+ */
+export type CardKind = 'forward' | 'backward' | 'cloze' | 'list';
 
 export interface OutlinerNode {
   id: string;
   content: string; // JSON.stringify(Tiptap doc) — the rich-text source of truth
   plainText: string; // derived plain text of `content`, kept in sync on every write; used for search/links/display titles
   parentId: string | null;
-  childrenIds: string[];
+  // No `childrenIds` (#4): a rem's children are the rows whose `parentId` is it,
+  // in `order`. The array used to mirror that, had to be kept in step by every
+  // structural write, and could drift — now, across devices too, because sync
+  // merges fields separately. Rows from older versions may still carry it; the
+  // hooks in `database.ts` strip it.
   order: number; // fractional sibling order key
   collapsed: boolean;
   isPage: boolean; // true for top-level "documents" shown in the sidebar
@@ -26,6 +36,55 @@ export interface OutlinerNode {
   deletedAt: number | null; // soft-delete tombstone timestamp; null = not deleted. Needed so cloud sync can propagate deletions instead of "resurrecting" them from other devices.
   createdAt: number;
   updatedAt: number;
+  /**
+   * Derived index keys (#16), maintained by hooks in `database.ts` — never
+   * written by hand, never synced. IndexedDB can't index booleans, so "is a
+   * live page" and "makes cards" are mirrored as a string present only when
+   * true, which an index *can* find: `'page'` / `'card'`, or absent.
+   */
+  rootKey?: 'page';
+  cardKey?: 'card';
+  /**
+   * The rem's text, trimmed and lowercased, when it is short enough to be a
+   * title (#15). What a hand-typed `[[link]]` is matched against — an index
+   * lookup instead of reading every rem.
+   */
+  titleKey?: string;
+}
+
+/** Fields that exist only in this browser and must be stripped before a row leaves it. */
+export const LOCAL_ONLY_NODE_FIELDS = ['rootKey', 'cardKey', 'titleKey'] as const;
+
+/**
+ * Fields older versions wrote that nothing reads any more. Stripped on the way
+ * into the database and on the way out to sync, so they fade away rather than
+ * travelling forever.
+ */
+export const LEGACY_NODE_FIELDS = ['childrenIds'] as const;
+
+/** Longest text still treated as a possible title for link matching. */
+export const TITLE_KEY_MAX = 200;
+
+/** How a title is compared: trimmed, case-insensitive. */
+export function titleKeyOf(text: string): string {
+  return text.trim().toLowerCase();
+}
+
+/** The derived keys a node should carry. */
+export function derivedNodeKeys(
+  node: Pick<OutlinerNode, 'isPage' | 'parentId' | 'deletedAt' | 'isCard'> & { plainText?: string }
+): {
+  rootKey: 'page' | undefined;
+  cardKey: 'card' | undefined;
+  titleKey: string | undefined;
+} {
+  const live = !node.deletedAt;
+  const title = titleKeyOf(node.plainText ?? '');
+  return {
+    rootKey: live && node.isPage && node.parentId === null ? 'page' : undefined,
+    cardKey: live && node.isCard ? 'card' : undefined,
+    titleKey: live && title && title.length <= TITLE_KEY_MAX ? title : undefined,
+  };
 }
 
 /**
@@ -130,7 +189,6 @@ export function createEmptyNode(overrides: Partial<OutlinerNode> = {}): Omit<Out
     content: JSON.stringify(EMPTY_DOC),
     plainText: '',
     parentId: null,
-    childrenIds: [],
     order: now, // timestamp-based order is a fine default; real fractional
                 // reordering logic lives in repository.ts
     collapsed: false,
@@ -145,4 +203,73 @@ export function createEmptyNode(overrides: Partial<OutlinerNode> = {}): Omit<Out
     updatedAt: now,
     ...overrides,
   };
+}
+
+/**
+ * An image pasted or dropped into a rem.
+ *
+ * The rem's doc holds only `imageId`; the bytes live here, so a notebook full
+ * of screenshots still renders offline and the doc stays small enough to sync
+ * row by row. Stored as an `ArrayBuffer` rather than a `Blob` because every
+ * IndexedDB implementation — and the one the tests run on — clones those
+ * without surprises.
+ *
+ * Deliberately **not** a synced table: the bytes travel through Supabase
+ * Storage instead (see `src/sync/imageSync.ts`), and `uploadedAt` is this
+ * device's record of whether it has sent them yet, so it is local by nature.
+ */
+export interface StoredImage {
+  id: string;
+  mime: string;
+  data: ArrayBuffer;
+  width: number | null;
+  height: number | null;
+  /** Bytes, for the backup panel and for deciding whether to shrink it. */
+  size: number;
+  /**
+   * When the bytes were last known to be in cloud storage; 0 = not yet. Not
+   * null, so the "still to upload" rows can be found through an index.
+   */
+  uploadedAt: number;
+  deletedAt: number | null;
+  createdAt: number;
+  updatedAt: number;
+}
+
+/**
+ * Why a version was kept.
+ *
+ * - `edit` — the text as it was before you started editing it again after a
+ *   pause (one per burst of typing, not one per keystroke).
+ * - `restore` — the text as it was just before you restored an older version.
+ * - `conflict` — the side that lost when this rem was edited on two devices
+ *   between syncs. Nothing else in the app would otherwise remember it.
+ */
+export type VersionReason = 'edit' | 'restore' | 'conflict';
+
+/**
+ * A past state of one rem's text. Local to this device, like the undo stack:
+ * version history is a safety net for this browser's copy, and syncing every
+ * version of every rem would multiply the sync payload for little gain.
+ */
+export interface RemVersion {
+  id: string;
+  nodeId: string;
+  content: string;
+  plainText: string;
+  savedAt: number;
+  reason: VersionReason;
+  /** For `conflict`: which side's text this is. */
+  from?: 'this device' | 'another device';
+  /** For `conflict`: false until someone has looked at it. */
+  seen?: boolean;
+}
+
+/**
+ * The last copy of a rem that this device and the cloud agreed on — the
+ * common ancestor a three-way merge needs (#22). Local only; one per rem.
+ */
+export interface SyncBase {
+  id: string;
+  row: OutlinerNode;
 }

@@ -2,10 +2,13 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Editor } from '@tiptap/react';
 import { useActiveEditor } from '../context/ActiveEditorContext';
 import { setMenuKeyHandler } from '../editor/menuStore';
-import { createPage, searchNodesByTitle } from '../db/repository';
+import { searchNodesByTitle } from '../db/repository';
+import { TAG_CHARS, ensureTagPage, searchTagPages } from '../db/tags';
+import { pickImageInto } from '../tiptap/ImageNode';
+import { createPageForTitle, dailyTitle, openDailyNote, relativeDay } from '../db/dailyNotes';
 import type { OutlinerNode } from '../db/schema';
 
-type MenuKind = 'slash' | 'wiki';
+type MenuKind = 'slash' | 'wiki' | 'tag';
 
 interface Trigger {
   kind: MenuKind;
@@ -85,6 +88,7 @@ interface SlashCommand {
 interface SlashContext {
   nodeId: string | null;
   onEmbed: (nodeId: string) => void;
+  onTemplate: (nodeId: string) => void;
 }
 
 /**
@@ -143,6 +147,16 @@ const SLASH_COMMANDS: SlashCommand[] = [
     run: (_e, ctx) => { if (ctx.nodeId) ctx.onEmbed(ctx.nodeId); },
   },
   {
+    id: 'template', label: 'Template', hint: 'Stamp in a page from the Templates folder', icon: '▦',
+    keywords: ['template', 'skeleton', 'structure', 'boilerplate', 'lecture', 'stamp'],
+    run: (_e, ctx) => { if (ctx.nodeId) ctx.onTemplate(ctx.nodeId); },
+  },
+  {
+    id: 'image', label: 'Image', hint: 'From a file — or just paste or drop one', icon: '▣',
+    keywords: ['image', 'picture', 'photo', 'screenshot', 'img', 'diagram'],
+    run: (e) => pickImageInto(e),
+  },
+  {
     id: 'math', label: 'Math', hint: 'Type $ then LaTeX then $', icon: '∑',
     keywords: ['math', 'latex', 'formula', 'equation', 'katex'],
     run: (e) => e.chain().focus().insertContent('$').run(),
@@ -179,7 +193,9 @@ const SLASH_COMMANDS: SlashCommand[] = [
   },
 ];
 
-/** Find a `/command` or `[[link` trigger immediately before the cursor. */
+const TAG_TRIGGER = new RegExp(`(?:^|\\s)#(${TAG_CHARS}+)$`, 'u');
+
+/** Find a `/command`, `[[link` or `#tag` trigger immediately before the cursor. */
 function detectTrigger(editor: Editor): Trigger | null {
   const { state } = editor;
   const { selection } = state;
@@ -197,6 +213,14 @@ function detectTrigger(editor: Editor): Trigger | null {
   const wiki = /\[\[([^[\]\n]*)$/.exec(textBefore);
   if (wiki) {
     return { kind: 'wiki', query: wiki[1] ?? '', from: selection.from - wiki[0].length, to: selection.from };
+  }
+
+  // `#tag` — only at the start of a word, so `C#`, `#1` inside a URL fragment
+  // and the `# ` heading shortcut (nothing after the `#`) all stay text.
+  const tag = TAG_TRIGGER.exec(textBefore);
+  if (tag) {
+    const query = tag[1] ?? '';
+    return { kind: 'tag', query, from: selection.from - query.length - 1, to: selection.from };
   }
 
   const slash = /(?:^|\s)(\/[a-zA-Z]*)$/.exec(textBefore);
@@ -218,6 +242,7 @@ function matchCommands(query: string): SlashCommand[] {
 
 interface EditorMenusProps {
   onEmbed: (nodeId: string) => void;
+  onTemplate: (nodeId: string) => void;
   onZoomTo: (nodeId: string) => void;
 }
 
@@ -226,7 +251,7 @@ interface EditorMenusProps {
  * than one per bullet: there is only ever one menu on screen, and each editor
  * routes its arrow/Enter keys here through the menu store.
  */
-export function EditorMenus({ onEmbed, onZoomTo }: EditorMenusProps) {
+export function EditorMenus({ onEmbed, onTemplate, onZoomTo }: EditorMenusProps) {
   const { activeEditor, activeNodeId } = useActiveEditor();
   const [trigger, setTrigger] = useState<Trigger | null>(null);
   const [coords, setCoords] = useState<Coords | null>(null);
@@ -297,14 +322,15 @@ export function EditorMenus({ onEmbed, onZoomTo }: EditorMenusProps) {
     };
   }, [activeEditor]);
 
-  // Live search for the [[ link picker.
+  // Live search for the [[ link picker and the # tag picker.
   useEffect(() => {
-    if (trigger?.kind !== 'wiki') {
+    if (trigger?.kind !== 'wiki' && trigger?.kind !== 'tag') {
       setMatches([]);
       return;
     }
     let cancelled = false;
-    searchNodesByTitle(trigger.query).then((results) => {
+    const search = trigger.kind === 'tag' ? searchTagPages : searchNodesByTitle;
+    search(trigger.query).then((results) => {
       if (!cancelled) setMatches(results);
     });
     return () => {
@@ -340,9 +366,43 @@ export function EditorMenus({ onEmbed, onZoomTo }: EditorMenusProps) {
         icon: cmd.icon,
         run: () => {
           activeEditor.chain().focus().deleteRange(range).run();
-          cmd.run(activeEditor, { nodeId: activeNodeId, onEmbed });
+          cmd.run(activeEditor, { nodeId: activeNodeId, onEmbed, onTemplate });
         },
       }));
+    }
+
+    if (trigger.kind === 'tag') {
+      // A tag is followed by a space, so you can keep typing the sentence.
+      const insertTag = (title: string, targetId: string) => {
+        activeEditor
+          .chain()
+          .focus()
+          .deleteRange(range)
+          .insertContent([
+            { type: 'tag', attrs: { title, targetId } },
+            { type: 'text', text: ' ' },
+          ])
+          .run();
+      };
+      const typed = trigger.query.trim();
+      const tagItems: MenuItem[] = matches.map((page) => ({
+        id: page.id,
+        label: `#${page.plainText.trim()}`,
+        hint: 'Tag',
+        icon: '#',
+        run: () => insertTag(page.plainText.trim(), page.id),
+      }));
+      const exact = matches.some((p) => p.plainText.trim().toLowerCase() === typed.toLowerCase());
+      if (typed && !exact) {
+        tagItems.push({
+          id: '__create_tag__',
+          label: `Create #${typed}`,
+          hint: 'New tag',
+          icon: '+',
+          run: async () => insertTag(typed, await ensureTagPage(typed)),
+        });
+      }
+      return tagItems;
     }
 
     // The picker knows exactly which rem was chosen, so the link records it.
@@ -366,6 +426,28 @@ export function EditorMenus({ onEmbed, onZoomTo }: EditorMenusProps) {
     }));
 
     const typed = trigger.query.trim();
+
+    // `[[today`, `[[yest`… — link to that day's note by its date, making it if
+    // it doesn't exist yet. Offered first because it is almost certainly what
+    // someone typing "today" into a link picker means.
+    if (typed.length >= 2) {
+      const words = ['today', 'yesterday', 'tomorrow'].filter((w) => w.startsWith(typed.toLowerCase()));
+      const dayItems: MenuItem[] = words.map((word) => {
+        const date = relativeDay(word)!;
+        const title = dailyTitle(date);
+        return {
+          id: `__day_${word}`,
+          label: `${word[0]!.toUpperCase()}${word.slice(1)} · ${title}`,
+          hint: 'Daily note',
+          icon: '◷',
+          run: async () => {
+            insertLink(title, await openDailyNote(date));
+          },
+        };
+      });
+      results.unshift(...dayItems);
+    }
+
     const hasExact = matches.some((n) => n.plainText.trim().toLowerCase() === typed.toLowerCase());
     if (typed && !hasExact) {
       results.push({
@@ -374,15 +456,15 @@ export function EditorMenus({ onEmbed, onZoomTo }: EditorMenusProps) {
         hint: 'New page',
         icon: '+',
         run: async () => {
-          const page = await createPage(typed);
-          insertLink(typed, page.id);
-          onZoomTo(page.id);
+          const id = await createPageForTitle(typed);
+          insertLink(typed, id);
+          onZoomTo(id);
         },
       });
     }
 
     return results;
-  }, [trigger, activeEditor, activeNodeId, matches, onEmbed, onZoomTo]);
+  }, [trigger, activeEditor, activeNodeId, matches, onEmbed, onTemplate, onZoomTo]);
 
   const select = useCallback(
     (index: number) => {
@@ -440,7 +522,7 @@ export function EditorMenus({ onEmbed, onZoomTo }: EditorMenusProps) {
       }}
     >
       <div className="editor-menu-label">
-        {trigger.kind === 'slash' ? 'Insert' : 'Link to rem'}
+        {trigger.kind === 'slash' ? 'Insert' : trigger.kind === 'tag' ? 'Tag' : 'Link to rem'}
       </div>
       <ul className="editor-menu-list">
         {items.map((item, i) => (

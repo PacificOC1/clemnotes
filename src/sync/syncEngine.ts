@@ -1,5 +1,6 @@
 import type { Table } from 'dexie';
-import { supabase } from './supabaseClient';
+import type { SupabaseClient } from '@supabase/supabase-js';
+import { getSupabase } from './supabaseClient';
 import { db } from '../db/database';
 import {
   advanceWatermark,
@@ -7,11 +8,18 @@ import {
   planAppendOnlyMerge,
   planIncrementalMerge,
   planMerge,
+  planPurges,
+  TOMBSTONE_RETENTION_MS,
   type MergePlan,
   type Syncable,
 } from './merge';
 import { readCursor, writeCursor, type SyncCursor } from './cursors';
 import { invalidateSearchIndex } from '../db/searchIndex';
+import { uploadPendingImages } from './imageSync';
+import type { OutlinerNode } from '../db/schema';
+import { forRemote, recordAgreed, resolveNodeConflicts } from './nodeMerge';
+import { logEvent } from '../diagnostics';
+import { deleteRowsForGood, type PurgeableTable } from '../db/tombstones';
 
 export interface TableSyncResult {
   table: string;
@@ -75,19 +83,33 @@ function needsReconcile(cursor: SyncCursor, now: number): boolean {
  * skewed clock self-correcting rather than silently lossy.
  */
 async function syncTable<T extends Syncable>(
+  supabase: SupabaseClient,
   localTable: Table<T, string>,
   remoteTable: string,
   userId: string,
   now = Date.now()
 ): Promise<TableSyncResult> {
-  if (!supabase) throw new Error('Cloud sync is not configured');
-
   const cursor = readCursor(userId, remoteTable);
   const reconciled = needsReconcile(cursor, now);
 
   // Captured before anything is read, so a write that lands mid-sync is caught
   // by the next run rather than falling between the two.
   const startedAt = now;
+
+  // #24: once a day, before reading, the cloud forgets tombstones older than
+  // the retention window. Every device then follows at its own reconcile
+  // (below), so they all agree on when a row stopped existing. A failure here
+  // costs nothing but a longer-lived tombstone.
+  let purgedRemotely = 0;
+  if (reconciled) {
+    const { error: purgeErr, count } = await supabase
+      .from(remoteTable)
+      .delete({ count: 'exact' })
+      .eq('userId', userId)
+      .lt('deletedAt', now - TOMBSTONE_RETENTION_MS);
+    if (purgeErr) logEvent('sync', `Couldn't purge old deletions from ${remoteTable}: ${purgeErr.message}`, undefined, 'warn');
+    else purgedRemotely = count ?? 0;
+  }
 
   let query = supabase.from(remoteTable).select('*').eq('userId', userId);
   if (!reconciled) query = query.gt('updatedAt', cursor.pulledThrough);
@@ -96,8 +118,39 @@ async function syncTable<T extends Syncable>(
   const remote = stripUserId<T>(remoteRows ?? []);
 
   let plan: MergePlan<T>;
+  let localSeen: T[];
   if (reconciled) {
-    plan = planMerge(await localTable.toArray(), remote);
+    localSeen = await localTable.toArray();
+    plan = planMerge(localSeen, remote);
+
+    // Rows the cloud purged are deleted here rather than uploaded back.
+    const remoteIds = new Set(remote.map((row) => row.id));
+    const missingRemotely = plan.toUpload.filter((row) => !remoteIds.has(row.id));
+    const agreedUnchanged = new Set<string>();
+    if (remoteTable === 'nodes' && missingRemotely.length > 0) {
+      const bases = await db.syncBase.bulkGet(missingRemotely.map((row) => row.id));
+      missingRemotely.forEach((row, i) => {
+        const base = bases[i]?.row;
+        if (base && row.updatedAt <= base.updatedAt) agreedUnchanged.add(row.id);
+      });
+    }
+    const { purge, refused } = planPurges({
+      missingRemotely,
+      agreedUnchanged,
+      now,
+      localCount: localSeen.length,
+      remoteCount: remote.length,
+    });
+    if (refused) {
+      logEvent('sync', `Too much of ${remoteTable} is missing from the cloud to be purges; uploading it instead`, { missing: missingRemotely.length }, 'warn');
+    }
+    if (purge.length > 0 || purgedRemotely > 0) {
+      const purgeIds = new Set(purge.map((row) => row.id));
+      await deleteRowsForGood(remoteTable as PurgeableTable, [...purgeIds]);
+      plan = { ...plan, toUpload: plan.toUpload.filter((row) => !purgeIds.has(row.id)) };
+      localSeen = localSeen.filter((row) => !purgeIds.has(row.id));
+      logEvent('sync', `Purged old deletions from ${remoteTable}`, { cloud: purgedRemotely, here: purge.length });
+    }
   } else {
     const changedLocal = await localTable
       .where('updatedAt')
@@ -106,13 +159,29 @@ async function syncTable<T extends Syncable>(
     const localForRemote = (await localTable.bulkGet(remote.map((row) => row.id))).filter(
       (row): row is T => row !== undefined
     );
+    localSeen = [...localForRemote, ...changedLocal];
     plan = planIncrementalMerge({ changedLocal, remote, localForRemote });
+  }
+
+  // #22: rems changed here *and* elsewhere since the last sync are merged
+  // field by field against the copy both last agreed on (see nodeMerge.ts).
+  if (remoteTable === 'nodes') {
+    const resolved = await resolveNodeConflicts(
+      plan as unknown as MergePlan<OutlinerNode>,
+      localSeen as unknown as OutlinerNode[],
+      remote as unknown as OutlinerNode[],
+      cursor
+    );
+    plan = resolved.plan as unknown as MergePlan<T>;
+    if (resolved.merged || resolved.kept) {
+      logEvent('sync', 'Rems edited on two devices', { merged: resolved.merged, textKept: resolved.kept }, resolved.kept ? 'warn' : 'info');
+    }
   }
 
   if (plan.toUpload.length > 0) {
     const { error: upErr } = await supabase
       .from(remoteTable)
-      .upsert(plan.toUpload.map((row) => ({ ...row, userId })));
+      .upsert(plan.toUpload.map((row) => ({ ...forRemote(row), userId })));
     if (upErr) throw upErr;
   }
 
@@ -120,6 +189,18 @@ async function syncTable<T extends Syncable>(
     await localTable.bulkPut(plan.toDownload);
     // Rows arrived from another device; the search index no longer matches.
     if (remoteTable === 'nodes') invalidateSearchIndex();
+  }
+
+  // Both halves succeeded: everything that moved, and everything found
+  // identical on both sides, is now the agreed base for the next merge.
+  if (remoteTable === 'nodes') {
+    const localById = new Map((localSeen as unknown as OutlinerNode[]).map((row) => [row.id, row]));
+    const identical = (remote as unknown as OutlinerNode[]).filter((row) => localById.get(row.id)?.updatedAt === row.updatedAt);
+    await recordAgreed([
+      ...(plan.toUpload as unknown as OutlinerNode[]),
+      ...(plan.toDownload as unknown as OutlinerNode[]),
+      ...identical,
+    ]);
   }
 
   // Only advanced once both halves have succeeded: a cursor moved past rows
@@ -152,13 +233,12 @@ async function syncTable<T extends Syncable>(
  * that grows forever.
  */
 async function syncAppendOnlyTable<T extends Syncable>(
+  supabase: SupabaseClient,
   localTable: Table<T, string>,
   remoteTable: string,
   userId: string,
   now = Date.now()
 ): Promise<TableSyncResult> {
-  if (!supabase) throw new Error('Cloud sync is not configured');
-
   const cursor = readCursor(userId, remoteTable);
   const reconciled = needsReconcile(cursor, now);
   const startedAt = now;
@@ -225,15 +305,17 @@ async function syncAppendOnlyTable<T extends Syncable>(
  * has more to catch up on tomorrow — one broken table can never advance
  * another table's position.
  */
-export async function syncWithCloud(userId: string, now = Date.now()): Promise<SyncResult> {
+export async function syncWithCloud(userId: string, now = Date.now(), client?: SupabaseClient): Promise<SyncResult> {
+  // `client` is for tests, which hand in an in-memory stand-in for Supabase.
+  const supabase = client ?? (await getSupabase());
   if (!supabase) throw new Error('Cloud sync is not configured');
 
   const jobs: Array<[string, () => Promise<TableSyncResult>]> = [
-    ['nodes', () => syncTable(db.nodes, 'nodes', userId, now)],
-    ['dictionary', () => syncTable(db.dictionary, 'dictionary', userId, now)],
-    ['folders', () => syncTable(db.folders, 'folders', userId, now)],
-    ['cards', () => syncTable(db.cards, 'cards', userId, now)],
-    ['reviews', () => syncAppendOnlyTable(db.reviews, 'reviews', userId, now)],
+    ['nodes', () => syncTable(supabase, db.nodes, 'nodes', userId, now)],
+    ['dictionary', () => syncTable(supabase, db.dictionary, 'dictionary', userId, now)],
+    ['folders', () => syncTable(supabase, db.folders, 'folders', userId, now)],
+    ['cards', () => syncTable(supabase, db.cards, 'cards', userId, now)],
+    ['reviews', () => syncAppendOnlyTable(supabase, db.reviews, 'reviews', userId, now)],
   ];
 
   const tables: TableSyncResult[] = [];
@@ -253,7 +335,34 @@ export async function syncWithCloud(userId: string, now = Date.now()): Promise<S
   // not a missing migration — surface that as a real error.
   if (failed.length === jobs.length) {
     const first = tables.find((t) => t.error)?.error ?? 'Sync failed';
+    logEvent('sync', `Sync failed: ${first}`, undefined, 'error');
     throw new Error(first);
+  }
+
+  // Image bytes go to Storage rather than a table, after the rows: a rem that
+  // shows an image is more useful arriving before its picture than after.
+  // Reported like a table so a missing bucket reads like a missing migration.
+  const images = await uploadPendingImages(userId, supabase).catch((err: unknown) => ({
+    uploaded: 0,
+    error: err instanceof Error ? err.message : String(err),
+  }));
+  tables.push({ table: 'images', pushed: images.uploaded, pulled: 0, reconciled: false, error: images.error });
+  if (images.error) failed.push('images');
+
+  const pushed = tables.reduce((sum, t) => sum + t.pushed, 0);
+  const pulled = tables.reduce((sum, t) => sum + t.pulled, 0);
+  if (pushed || pulled || failed.length || tables.some((t) => t.reconciled)) {
+    logEvent(
+      'sync',
+      failed.length ? `Synced with ${failed.length} table(s) failing` : 'Synced',
+      {
+        pushed,
+        pulled,
+        reconciled: tables.filter((t) => t.reconciled).map((t) => t.table).join(',') || null,
+        failed: tables.filter((t) => t.error).map((t) => `${t.table}: ${t.error}`).join('; ') || null,
+      },
+      failed.length ? 'warn' : 'info'
+    );
   }
 
   return {

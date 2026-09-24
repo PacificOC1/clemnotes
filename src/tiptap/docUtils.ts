@@ -15,6 +15,12 @@ export const EMPTY_DOC: DocNode = {
 /** The separator that turns a rem into a two-sided flashcard, RemNote-style. */
 export const CARD_SEPARATOR = '::';
 
+/**
+ * Ending a rem with this makes it a list card: "name everything underneath".
+ * `Stages of mitosis >>>` asks for the rem's children, in order.
+ */
+export const LIST_MARKER = '>>>';
+
 /** Parse a stored content string back into a doc; falls back to an empty doc if invalid/missing. */
 export function parseDoc(content: string): DocNode {
   if (!content) return EMPTY_DOC;
@@ -39,6 +45,8 @@ export function docToPlainText(doc: DocNode): string {
       // rem's plain text — search, titles, card faces — should contain.
       const label = node.attrs?.alias || node.attrs?.title;
       if (label) parts.push(String(label));
+    } else if (node.type === 'tag' && node.attrs?.title) {
+      parts.push(`#${String(node.attrs.title)}`);
     } else if (node.type === 'math' && node.attrs?.latex) {
       parts.push(String(node.attrs.latex));
     } else if (node.type === 'cloze' && node.attrs?.text) {
@@ -86,6 +94,47 @@ export function extractWikiLinks(doc: DocNode): WikiLinkRef[] {
 
   walk(doc);
   return links;
+}
+
+/** One `#tag` as stored: the tag page it points at, and the name it was written as. */
+export interface TagRef {
+  targetId: string | null;
+  title: string;
+}
+
+/**
+ * Collect every `#tag` in a doc.
+ *
+ * A tag is mechanically a link — it points at a rem, the tag's page, and
+ * lands in `outboundLinks` so the page can list everything tagged with it —
+ * but it means something different. A link says "this is that"; a tag says
+ * "this is about that". Keeping them as two node types is what lets the tag
+ * page tell the two apart, and lets a query ask for one without the other.
+ */
+export function extractTags(doc: DocNode): TagRef[] {
+  const tags: TagRef[] = [];
+  function walk(node: DocNode) {
+    if (node.type === 'tag') {
+      const title = node.attrs?.title === undefined ? '' : String(node.attrs.title);
+      const rawId = node.attrs?.targetId;
+      const targetId = typeof rawId === 'string' && rawId ? rawId : null;
+      if (title || targetId) tags.push({ targetId, title });
+    }
+    node.content?.forEach(walk);
+  }
+  walk(doc);
+  return tags;
+}
+
+/**
+ * Everything a doc points at — links and tags — as one list, which is what
+ * `outboundLinks` stores. A tag carries no alias; it reads as its name.
+ */
+export function extractReferences(doc: DocNode): WikiLinkRef[] {
+  return [
+    ...extractWikiLinks(doc),
+    ...extractTags(doc).map((tag) => ({ targetId: tag.targetId, title: tag.title, alias: null })),
+  ];
 }
 
 /** Just the titles, for the places that only care what a link reads as. */
@@ -299,6 +348,92 @@ export function splitOnSeparator(doc: DocNode): CardSides | null {
   return null;
 }
 
+/**
+ * The first block's inline content with a trailing marker removed, or null
+ * when the first block does not end with it.
+ *
+ * Only a *trailing* marker counts: `>>>` or `::` in the middle of a sentence is
+ * prose (or, for `::`, the ordinary two-sided card), and at the end it is a
+ * statement that the answer lives underneath.
+ */
+function stripTrailingMarker(doc: DocNode, marker: string): DocNode | null {
+  const blocks = doc.content ?? [];
+  const first = blocks[0];
+  if (!first?.content || first.content.length === 0) return null;
+
+  const inline = first.content.map(cloneNode);
+  // Trailing whitespace-only text nodes don't count as the end of the sentence.
+  while (inline.length > 0) {
+    const last = inline[inline.length - 1]!;
+    if (last.type === 'text' && !(last.text ?? '').trim()) inline.pop();
+    else break;
+  }
+  const last = inline[inline.length - 1];
+  if (!last || last.type !== 'text') return null;
+
+  const text = (last.text ?? '').replace(/\s+$/, '');
+  if (!text.endsWith(marker)) return null;
+
+  const rest = text.slice(0, -marker.length).replace(/\s+$/, '');
+  if (rest) inline[inline.length - 1] = { ...last, text: rest };
+  else inline.pop();
+  if (inline.length === 0) return null;
+
+  return { type: 'doc', content: [{ ...first, content: inline }] };
+}
+
+/** `Stages of mitosis >>>` — the prompt of a list card, marker removed. */
+export function splitListPrompt(doc: DocNode): DocNode | null {
+  return stripTrailingMarker(doc, LIST_MARKER);
+}
+
+/**
+ * `What does the liver do ::` with nothing after it — a card whose answer is
+ * the rem's children rather than the rest of the line. Returns the question.
+ *
+ * The same card id as an ordinary `A :: B` card, so typing an answer onto the
+ * line (or deleting it again) keeps the card and its scheduling.
+ */
+export function splitMultiLinePrompt(doc: DocNode): DocNode | null {
+  if (splitOnSeparator(doc)) return null;
+  return stripTrailingMarker(doc, CARD_SEPARATOR);
+}
+
+/**
+ * Turn the children of a rem into one answer: a numbered list for a list card
+ * ("name all of these" is usually asked in order), bullets otherwise.
+ *
+ * A list item's first child must be a paragraph, so a child whose first block
+ * is a heading or a code block is flattened to a paragraph holding the same
+ * inline content. Later blocks come through as they are.
+ */
+export function childrenAnswerDoc(children: DocNode[], ordered: boolean): DocNode {
+  const items: DocNode[] = [];
+  for (const child of children) {
+    const blocks = (child.content ?? []).filter((b) => b.type !== 'remQuery');
+    if (blocks.length === 0) continue;
+    const [head, ...tail] = blocks;
+    // Headings and code blocks hold inline content, so it moves across as is;
+    // anything with block children (a table, a quote) is read out as text.
+    const holdsInline = ['paragraph', 'heading', 'codeBlock'].includes(head!.type);
+    const plain = docToPlainText({ type: 'doc', content: [head!] });
+    const paragraph: DocNode = {
+      type: 'paragraph',
+      content: holdsInline ? head!.content?.map(cloneNode) : plain ? [{ type: 'text', text: plain }] : [],
+    };
+    if (!paragraph.content || paragraph.content.length === 0) continue;
+    items.push({ type: 'listItem', content: [paragraph, ...tail.map(cloneNode)] });
+  }
+
+  if (items.length === 0) {
+    return {
+      type: 'doc',
+      content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Nothing underneath this rem yet.' }] }],
+    };
+  }
+  return { type: 'doc', content: [{ type: ordered ? 'orderedList' : 'bulletList', content: items }] };
+}
+
 function cloneNode(node: DocNode): DocNode {
   return JSON.parse(JSON.stringify(node)) as DocNode;
 }
@@ -328,4 +463,66 @@ export function renderCloze(doc: DocNode, index: number, revealed: boolean): Doc
   }
 
   return walk(doc);
+}
+
+// ---------------------------------------------------------------------------
+// Unlinked references
+// ---------------------------------------------------------------------------
+
+function escapeRegExp(text: string): string {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * A pattern for `title` as a whole phrase: not inside a longer word, so
+ * "Cell" doesn't match "Cellular" and "RNA" doesn't match "mRNA".
+ */
+export function mentionPattern(title: string): RegExp {
+  return new RegExp(`(?<![\\p{L}\\p{N}])${escapeRegExp(title.trim())}(?![\\p{L}\\p{N}])`, 'iu');
+}
+
+/**
+ * Turn the first plain mention of `title` in a doc into a link to `targetId`.
+ *
+ * Only inside ordinary text runs — never in code, and never across two runs
+ * with different formatting, because a link can't straddle a bold boundary.
+ * The link keeps the words as written (as its alias, when the casing
+ * differs), so the sentence reads exactly as it did. Returns null when there
+ * is no plain mention to link.
+ */
+export function linkFirstMention(doc: DocNode, title: string, targetId: string): DocNode | null {
+  const pattern = mentionPattern(title);
+  let done = false;
+
+  function walk(node: DocNode): DocNode {
+    if (done || node.type === 'codeBlock') return node;
+    if (!node.content) return node;
+
+    const content: DocNode[] = [];
+    for (const child of node.content) {
+      if (done || child.type !== 'text' || !child.text || child.marks?.some((m) => m.type === 'code')) {
+        content.push(done ? child : walk(child));
+        continue;
+      }
+      const match = pattern.exec(child.text);
+      if (!match) {
+        content.push(child);
+        continue;
+      }
+      const before = child.text.slice(0, match.index);
+      const written = match[0];
+      const after = child.text.slice(match.index + written.length);
+      if (before) content.push({ ...child, text: before });
+      content.push({
+        type: 'wikiLink',
+        attrs: { title: title.trim(), targetId, alias: written === title.trim() ? null : written },
+      });
+      if (after) content.push({ ...child, text: after });
+      done = true;
+    }
+    return { ...node, content };
+  }
+
+  const result = walk(doc);
+  return done ? result : null;
 }

@@ -39,7 +39,7 @@ export function SelectionBar({ count, onIndent, onOutdent, onCopy, onDelete, onC
         {copied === 'done' ? 'Copied' : copied === 'failed' ? "Couldn't copy" : 'Copy as Markdown'}
       </button>
       <button type="button" className="selection-danger" onClick={() => void onDelete()}>Delete</button>
-      <button type="button" className="selection-clear" onClick={onClear} title="Clear selection (Esc)">✕</button>
+      <button type="button" className="selection-clear" onClick={onClear} title="Clear selection (Esc)" aria-label="Clear selection">✕</button>
     </div>
   );
 }

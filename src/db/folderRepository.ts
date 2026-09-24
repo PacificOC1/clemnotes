@@ -92,3 +92,20 @@ export async function getPageFolderId(pageId: string): Promise<string | null> {
 export async function removePageFromAllFolders(pageId: string): Promise<void> {
   await movePageToFolder(pageId, null);
 }
+
+/**
+ * The folder called `name`, made if there isn't one.
+ *
+ * Looked up by name rather than by a fixed id: folder ids are primary keys in
+ * the shared Supabase table, so a hard-coded one would collide between two
+ * people using the same project. The cost is that two devices creating it
+ * offline at the same moment end up with two; the older one wins every lookup
+ * after that, so the second simply stays empty.
+ */
+export async function ensureFolderNamed(name: string): Promise<PageFolder> {
+  const wanted = name.trim().toLowerCase();
+  const existing = (await getAllFolders())
+    .filter((f) => f.name.trim().toLowerCase() === wanted)
+    .sort((a, b) => a.createdAt - b.createdAt)[0];
+  return existing ?? createFolder(name);
+}

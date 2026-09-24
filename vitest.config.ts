@@ -13,6 +13,8 @@ import { defineConfig } from 'vitest/config';
  * between tests within a file.
  */
 export default defineConfig({
+  // The Anki importer's tests read real .apkg packages as `?inline` assets.
+  assetsInclude: ['**/*.apkg'],
   test: {
     environment: 'node',
     include: ['src/**/*.test.ts'],

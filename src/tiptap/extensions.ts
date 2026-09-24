@@ -10,6 +10,8 @@ import Highlight from '@tiptap/extension-highlight';
 import TextAlign from '@tiptap/extension-text-align';
 import Underline from '@tiptap/extension-underline';
 import { WikiLink } from './WikiLinkNode';
+import { Tag } from './TagNode';
+import { RemImage } from './ImageNode';
 import { Math } from './MathNode';
 import { Cloze } from './ClozeNode';
 import { RemQueryBlock } from './QueryNode';
@@ -30,9 +32,11 @@ const baseExtensions = [
   TextAlign.configure({ types: ['heading', 'paragraph'] }),
   Underline,
   WikiLink,
+  Tag,
   Math,
   Cloze,
   RemQueryBlock,
+  RemImage,
 ];
 
 /** Extensions for an editable rem row. */

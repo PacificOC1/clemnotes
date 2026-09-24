@@ -16,6 +16,7 @@ function fresh(id: string, nodeId = id) {
 }
 
 const unlimited: ReviewSettings = {
+  ...DEFAULT_SETTINGS,
   newPerDay: null,
   reviewsPerDay: null,
   leechThreshold: null,

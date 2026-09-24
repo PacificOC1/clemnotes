@@ -169,7 +169,7 @@ function buildRems(
     if (producesCards(rem)) cardNodeIds.push(id);
 
     if (rem.children && rem.children.length > 0) {
-      node.childrenIds = buildRems(rem.children, id, out, cardNodeIds);
+      buildRems(rem.children, id, out, cardNodeIds);
     }
   });
 
@@ -243,7 +243,7 @@ export async function seedLatexTutorial(options: { force?: boolean } = {}): Prom
     }),
   };
   nodes.push(page);
-  page.childrenIds = buildRems(LATEX_COURSE, pageId, nodes, cardNodeIds);
+  buildRems(LATEX_COURSE, pageId, nodes, cardNodeIds);
 
   const byId = new Map(nodes.map((node) => [node.id, node]));
 

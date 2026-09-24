@@ -1,8 +1,7 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { useEditor, EditorContent } from '@tiptap/react';
-import { readOnlyExtensions } from '../tiptap/extensions';
-import { parseDoc, renderCloze, splitOnSeparator, type DocNode } from '../tiptap/docUtils';
+import { parseDoc } from '../tiptap/docUtils';
+import { facesFor, kindLabel } from '../tiptap/cardFaces';
 import {
   buildPracticeQueue,
   buildReviewQueue,
@@ -14,56 +13,17 @@ import {
   resetCard,
   setCardSuspended,
 } from '../db/cardRepository';
-import { findRootPage, getNode } from '../db/repository';
+import { findRootPage, getChildren, getNode } from '../db/repository';
 import { GRADES, describeDue, previewInterval } from '../srs/sm2';
+import { historySince, previewFsrs, recallProbability, replay } from '../srs/fsrs';
+import { fsrsOptions } from '../db/cardRepository';
+import { getReviewsForCard } from '../db/reviewRepository';
 import { isLeech } from '../srs/session';
 import { loadSettings, saveSettings, type ReviewSettings } from '../srs/settings';
 import { SessionSettings } from './SessionSettings';
+import { ReadOnlyDoc as RemDoc } from './ReadOnlyDoc';
 import { StatsPanel } from './StatsPanel';
 import type { Flashcard } from '../db/schema';
-
-/** Renders a rem's document without any editing affordances — a card face. */
-function RemDoc({ doc, className }: { doc: DocNode; className?: string }) {
-  const serialized = JSON.stringify(doc);
-  const editor = useEditor(
-    { extensions: readOnlyExtensions, content: doc, editable: false },
-    []
-  );
-
-  useEffect(() => {
-    if (editor) editor.commands.setContent(JSON.parse(serialized), { emitUpdate: false });
-  }, [editor, serialized]);
-
-  return (
-    <div className={className}>
-      <EditorContent editor={editor} />
-    </div>
-  );
-}
-
-interface Faces {
-  front: DocNode;
-  back: DocNode;
-}
-
-/** Work out what to show on each side of a card, given its kind. */
-function facesFor(card: Flashcard, content: string): Faces | null {
-  const doc = parseDoc(content);
-
-  if (card.kind === 'cloze') {
-    const index = card.clozeIndex ?? 1;
-    return { front: renderCloze(doc, index, false), back: renderCloze(doc, index, true) };
-  }
-
-  const sides = splitOnSeparator(doc);
-  if (!sides) return null;
-  return card.kind === 'backward' ? { front: sides.back, back: sides.front } : sides;
-}
-
-function kindLabel(card: Flashcard): string {
-  if (card.kind === 'cloze') return `Cloze ${card.clozeIndex ?? 1}`;
-  return card.kind === 'backward' ? 'Reverse' : 'Forward';
-}
 
 interface ReviewViewProps {
   onZoomTo: (nodeId: string) => void;
@@ -122,10 +82,54 @@ export function ReviewView({ onZoomTo }: ReviewViewProps) {
     [current?.nodeId]
   );
 
-  const faces = useMemo(
-    () => (current && node ? facesFor(current, node.content) : null),
-    [current, node?.content]
+  // The answer to a list card (and to `A ::` with nothing after it) is the
+  // rem's children, read live — edit the list and the card follows. The result
+  // carries the id it was asked about: moving to the next card must not show
+  // the previous card's list for a frame, and "not loaded yet" must not read
+  // as "nothing underneath".
+  const usesChildren = current !== null && current.kind !== 'cloze';
+  const childrenQuery = useLiveQuery(
+    async () =>
+      current && usesChildren
+        ? { forId: current.nodeId, rows: await getChildren(current.nodeId) }
+        : { forId: current?.nodeId ?? null, rows: [] },
+    [current?.nodeId, usesChildren]
   );
+  const childrenReady = childrenQuery !== undefined && childrenQuery.forId === (current?.nodeId ?? null);
+
+  // FSRS previews need the card's history; tagged with the card it belongs to
+  // for the same reason as the children above.
+  const historyQuery = useLiveQuery(
+    async () => (current ? { forId: current.id, rows: await getReviewsForCard(current.id) } : null),
+    [current?.id]
+  );
+  const history =
+    current && historyQuery && historyQuery.forId === current.id ? historySince(current, historyQuery.rows) : null;
+  const useFsrs = settings.scheduler === 'fsrs';
+  const memory = useFsrs && history ? replay(history, fsrsOptions(settings)) : null;
+  const recall = memory ? recallProbability(memory, undefined, fsrsOptions(settings)) : null;
+  const intervalLabel = (quality: number) =>
+    !current
+      ? ''
+      : useFsrs
+        ? history
+          ? previewFsrs(current, history, quality, undefined, fsrsOptions(settings))
+          : '…'
+        : previewInterval(current, quality);
+  // Same trap for the rem itself: the previous card's rem answers first.
+  const nodeReady = node !== undefined && node.id === current?.nodeId;
+
+  // Not memoised: `RemDoc` compares the serialised doc before re-rendering,
+  // and parsing a card's worth of JSON is cheaper than keeping a memo honest
+  // over a live query that returns a fresh array on every change.
+  const faces =
+    current && node && nodeReady && childrenReady
+      ? facesFor(
+          current,
+          node.content,
+          childrenQuery.rows.filter((c) => !c.isPortal).map((c) => parseDoc(c.content))
+        )
+      : null;
 
   const startSession = useCallback(async () => {
     const plan = await buildReviewQueue(settings, Date.now(), scope);
@@ -152,7 +156,7 @@ export function ReviewView({ onZoomTo }: ReviewViewProps) {
       if (!current) return;
       // Practice writes nothing: no reschedule, no log row. Drilling before an
       // exam should not cost you the spacing you have built up.
-      if (!practice) await gradeCard(current.id, quality);
+      if (!practice) await gradeCard(current.id, quality, settings);
       setReviewed((n) => n + 1);
       setRevealed(false);
       setQueue((q) => {
@@ -163,7 +167,7 @@ export function ReviewView({ onZoomTo }: ReviewViewProps) {
         return quality < 3 && head ? [...rest, head] : rest;
       });
     },
-    [current, practice]
+    [current, practice, settings]
   );
 
   /**
@@ -239,7 +243,9 @@ export function ReviewView({ onZoomTo }: ReviewViewProps) {
             </button>
           )}
 
-          {faces ? (
+          {!childrenReady || !nodeReady ? (
+            <div className="review-face review-front" />
+          ) : faces ? (
             <>
               <RemDoc doc={faces.front} className="review-face review-front" />
               {revealed && (
@@ -251,7 +257,8 @@ export function ReviewView({ onZoomTo }: ReviewViewProps) {
             </>
           ) : (
             <div className="review-broken">
-              This card's rem no longer has a <code>::</code> or a cloze in it.
+              This card's rem no longer has the <code>::</code>, <code>&gt;&gt;&gt;</code> or cloze
+              that made it.
               <button type="button" onClick={skip}>Skip</button>
               <button
                 type="button"
@@ -294,7 +301,7 @@ export function ReviewView({ onZoomTo }: ReviewViewProps) {
                   onClick={() => void answer(grade.quality)}
                 >
                   <span className="review-grade-label">{grade.label}</span>
-                  <span className="review-grade-interval">{previewInterval(current, grade.quality)}</span>
+                  <span className="review-grade-interval">{intervalLabel(grade.quality)}</span>
                   <kbd>{grade.hotkey}</kbd>
                 </button>
               ))}
@@ -303,7 +310,16 @@ export function ReviewView({ onZoomTo }: ReviewViewProps) {
           <div className="review-meta">
             <button type="button" onClick={() => void setCardSuspended(current.id, true).then(skip)}>Suspend</button>
             <button type="button" onClick={() => void resetCard(current.id)}>Reset</button>
-            <span>ease {current.easeFactor.toFixed(2)} · {current.lapses} lapse{current.lapses === 1 ? '' : 's'}</span>
+            <span>
+              {memory?.state
+                ? `stability ${Math.round(memory.state.stability)}d · difficulty ${memory.state.difficulty.toFixed(1)}`
+                : useFsrs
+                  ? 'new card'
+                  : `ease ${current.easeFactor.toFixed(2)}`}
+              {recall !== null && ` · ${Math.round(recall * 100)}% recall now`}
+              {' · '}
+              {current.lapses} lapse{current.lapses === 1 ? '' : 's'}
+            </span>
           </div>
         </div>
       </div>
@@ -352,8 +368,12 @@ export function ReviewView({ onZoomTo }: ReviewViewProps) {
         <h1>Flashcards</h1>
         <p>
           Write <code>Concept :: Descriptor</code> in any rem to make a card, or wrap words in{' '}
-          <code>{'{{curly braces}}'}</code> for a fill-in-the-blank. Scheduling uses SM-2 — the same
-          algorithm behind SuperMemo and Anki.
+          <code>{'{{curly braces}}'}</code> for a fill-in-the-blank. End a rem with{' '}
+          <code>&gt;&gt;&gt;</code> to be asked for everything underneath it, or with <code>::</code>{' '}
+          to make its children the answer.{' '}
+          {settings.scheduler === 'fsrs'
+            ? `Scheduling uses FSRS, aiming for ${Math.round(settings.desiredRetention * 100)}% recall.`
+            : 'Scheduling uses SM-2, the algorithm behind SuperMemo and classic Anki.'}
         </p>
       </header>
 

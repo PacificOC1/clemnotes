@@ -18,6 +18,8 @@ export interface Route {
   tab: AppTab;
   /** The rem being zoomed into, on the notes tab. */
   nodeId: string | null;
+  /** A second document open beside it (#43). Absent, not null, when there isn't one. */
+  splitId?: string;
 }
 
 export const HOME: Route = { tab: 'notes', nodeId: null };
@@ -48,7 +50,10 @@ export function parseRoute(hash: string): Route {
   const raw = rest[0];
   if (!raw) return { ...HOME };
   try {
-    return { tab: 'notes', nodeId: decodeURIComponent(raw) };
+    const nodeId = decodeURIComponent(raw);
+    // `#/notes/<id>/split/<other>` — two documents side by side.
+    if (rest[1] === 'split' && rest[2]) return { tab: 'notes', nodeId, splitId: decodeURIComponent(rest[2]) };
+    return { tab: 'notes', nodeId };
   } catch {
     // A malformed percent-escape shouldn't be a dead end.
     return { ...HOME };
@@ -58,10 +63,12 @@ export function parseRoute(hash: string): Route {
 /** The canonical hash for a route. Always absolute, always with a leading `#/`. */
 export function formatRoute(route: Route): string {
   if (route.tab !== 'notes') return `#/${route.tab}`;
-  return route.nodeId ? `#/notes/${encodeURIComponent(route.nodeId)}` : '#/notes';
+  if (!route.nodeId) return '#/notes';
+  const main = `#/notes/${encodeURIComponent(route.nodeId)}`;
+  return route.splitId ? `${main}/split/${encodeURIComponent(route.splitId)}` : main;
 }
 
 /** True when two routes point at the same place — used to avoid junk history entries. */
 export function sameRoute(a: Route, b: Route): boolean {
-  return a.tab === b.tab && a.nodeId === b.nodeId;
+  return a.tab === b.tab && a.nodeId === b.nodeId && (a.splitId ?? null) === (b.splitId ?? null);
 }

@@ -131,16 +131,16 @@ export function FormattingBubble() {
 
       <span className="fb-divider" />
 
-      <button type="button" className={`fb-btn ${active('bold')}`} title="Bold  ⌘B" onClick={() => run(() => editor.chain().focus().toggleBold().run())}><strong>B</strong></button>
-      <button type="button" className={`fb-btn fb-italic ${active('italic')}`} title="Italic  ⌘I" onClick={() => run(() => editor.chain().focus().toggleItalic().run())}>I</button>
-      <button type="button" className={`fb-btn ${active('underline')}`} title="Underline  ⌘U" onClick={() => run(() => editor.chain().focus().toggleUnderline().run())}><u>U</u></button>
-      <button type="button" className={`fb-btn ${active('strike')}`} title="Strikethrough" onClick={() => run(() => editor.chain().focus().toggleStrike().run())}><s>S</s></button>
-      <button type="button" className={`fb-btn ${active('code')}`} title="Inline code" onClick={() => run(() => editor.chain().focus().toggleCode().run())}>{'</>'}</button>
+      <button type="button" className={`fb-btn ${active('bold')}`} title="Bold  ⌘B" onClick={() => run(() => editor.chain().focus().toggleBold().run())} aria-label="Bold"><strong>B</strong></button>
+      <button type="button" className={`fb-btn fb-italic ${active('italic')}`} title="Italic  ⌘I" onClick={() => run(() => editor.chain().focus().toggleItalic().run())} aria-label="Italic">I</button>
+      <button type="button" className={`fb-btn ${active('underline')}`} title="Underline  ⌘U" onClick={() => run(() => editor.chain().focus().toggleUnderline().run())} aria-label="Underline"><u>U</u></button>
+      <button type="button" className={`fb-btn ${active('strike')}`} title="Strikethrough" onClick={() => run(() => editor.chain().focus().toggleStrike().run())} aria-label="Strikethrough"><s>S</s></button>
+      <button type="button" className={`fb-btn ${active('code')}`} title="Inline code" onClick={() => run(() => editor.chain().focus().toggleCode().run())} aria-label="Inline code">{'</>'}</button>
 
       <span className="fb-divider" />
 
       <div className="format-bubble-group">
-        <button type="button" className="fb-btn fb-swatch-btn" title="Highlight" onClick={() => { setShowMore((v) => !v); setShowType(false); }}>
+        <button type="button" className="fb-btn fb-swatch-btn" title="Highlight" onClick={() => { setShowMore((v) => !v); setShowType(false); }} aria-label="Highlight">
           <span className="fb-swatch" />
         </button>
         {showMore && (
@@ -202,8 +202,8 @@ export function FormattingBubble() {
 
       <span className="fb-divider" />
 
-      <button type="button" className="fb-btn fb-cloze" title="Make this a cloze blank" onClick={() => run(makeCloze)}>⌷</button>
-      <button type="button" className="fb-btn" title="Clear formatting" onClick={() => run(() => editor.chain().focus().unsetAllMarks().run())}>⌫</button>
+      <button type="button" className="fb-btn fb-cloze" title="Make this a cloze blank" onClick={() => run(makeCloze)} aria-label="Make this a cloze blank">⌷</button>
+      <button type="button" className="fb-btn" title="Clear formatting" onClick={() => run(() => editor.chain().focus().unsetAllMarks().run())} aria-label="Clear formatting">⌫</button>
     </div>
   );
 }

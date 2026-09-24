@@ -1,8 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { supabase, isSyncConfigured } from '../sync/supabaseClient';
+import { getSupabase, isSyncConfigured, syncConfigProblem } from '../sync/supabaseClient';
+import { describeNetworkError } from '../sync/syncConfig';
 import { syncWithCloud } from '../sync/syncEngine';
 import { clearCursors } from '../sync/cursors';
+import { useLiveQuery } from 'dexie-react-hooks';
+import { getUnseenConflicts } from '../db/versionRepository';
+import { VersionHistory } from './VersionHistory';
 
 type SyncStatus = 'idle' | 'syncing' | 'error';
 
@@ -14,6 +18,7 @@ const MIGRATION_FOR_TABLE: Record<string, string> = {
   folders: 'migration-002-sync-all.sql',
   cards: 'migration-002-sync-all.sql',
   reviews: 'migration-003-reviews.sql',
+  images: 'migration-005-images.sql',
 };
 
 function migrationsFor(tables: string[]): string[] {
@@ -26,6 +31,7 @@ const TABLE_LABELS: Record<string, string> = {
   folders: 'folders',
   cards: 'flashcards',
   reviews: 'review history',
+  images: 'images',
 };
 
 function describeMissing(tables: string[]): string {
@@ -40,20 +46,35 @@ export function SyncPanel() {
   const [password, setPassword] = useState('');
   const [mode, setMode] = useState<'signIn' | 'signUp'>('signIn');
   const [authError, setAuthError] = useState<string | null>(null);
+  /** Not an error: what happened after a sign-up that needs you to do something. */
+  const [authNotice, setAuthNotice] = useState<string | null>(null);
   const [status, setStatus] = useState<SyncStatus>('idle');
   const [lastSyncedAt, setLastSyncedAt] = useState<number | null>(null);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [missingTables, setMissingTables] = useState<string[]>([]);
   const [expanded, setExpanded] = useState(false);
+  const conflicts = useLiveQuery(() => getUnseenConflicts(), []) ?? [];
+  const [conflictOpen, setConflictOpen] = useState<string | null>(null);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    if (!supabase) return;
-    supabase.auth.getSession().then(({ data }) => setUser(data.session?.user ?? null));
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
+    if (!isSyncConfigured) return;
+    let unsubscribe: (() => void) | null = null;
+    let cancelled = false;
+    void getSupabase().then((supabase) => {
+      if (!supabase || cancelled) return;
+      void supabase.auth.getSession().then(({ data }) => {
+        if (!cancelled) setUser(data.session?.user ?? null);
+      });
+      const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+        setUser(session?.user ?? null);
+      });
+      unsubscribe = () => listener.subscription.unsubscribe();
     });
-    return () => listener.subscription.unsubscribe();
+    return () => {
+      cancelled = true;
+      unsubscribe?.();
+    };
   }, []);
 
   const runSync = useCallback(async (userId: string) => {
@@ -68,7 +89,7 @@ export function SyncPanel() {
       setStatus('idle');
     } catch (err) {
       setStatus('error');
-      setStatusMessage(err instanceof Error ? err.message : 'Sync failed');
+      setStatusMessage(describeNetworkError(err));
     }
   }, []);
 
@@ -89,28 +110,53 @@ export function SyncPanel() {
     };
   }, [user?.id, runSync]);
 
-  if (!isSyncConfigured || !supabase) {
-    return <div className="sync sync-off">Cloud sync not configured</div>;
+  if (!isSyncConfigured) {
+    // "Not configured" is the normal local-only state; anything else is a
+    // configuration that was *attempted* and would only fail at sign-in.
+    const attempted = syncConfigProblem && syncConfigProblem !== 'Cloud sync not configured';
+    return (
+      <div className={`sync sync-off ${attempted ? 'sync-misconfigured' : ''}`}>
+        {attempted ? (
+          <>
+            <strong>Cloud sync is off.</strong> {syncConfigProblem}
+          </>
+        ) : (
+          'Cloud sync not configured'
+        )}
+      </div>
+    );
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setAuthError(null);
-    if (!supabase) return;
+    setAuthNotice(null);
     try {
-      const { error } =
-        mode === 'signIn'
-          ? await supabase.auth.signInWithPassword({ email, password })
-          : await supabase.auth.signUp({ email, password });
-      if (error) setAuthError(error.message);
-      else if (mode === 'signUp') setAuthError('Check your email to confirm your account, then sign in.');
+      const supabase = await getSupabase();
+      if (!supabase) return;
+      if (mode === 'signIn') {
+        const { error } = await supabase.auth.signInWithPassword({ email, password });
+        if (error) setAuthError(describeNetworkError(error));
+        return;
+      }
+      const { data, error } = await supabase.auth.signUp({ email, password });
+      if (error) {
+        setAuthError(describeNetworkError(error));
+      } else if (data.session) {
+        // Email confirmation is off (as the README suggests for personal use):
+        // Supabase has already signed you in, and `onAuthStateChange` will
+        // swap this form out on its own. There is no email coming.
+      } else {
+        setAuthNotice('Check your email to confirm your account, then sign in.');
+        setMode('signIn');
+      }
     } catch (err) {
-      setAuthError(err instanceof Error ? err.message : 'Something went wrong — please try again.');
+      setAuthError(describeNetworkError(err));
     }
   }
 
   async function handleSignOut() {
-    await supabase!.auth.signOut();
+    await (await getSupabase())?.auth.signOut();
     setStatusMessage(null);
     setLastSyncedAt(null);
     setMissingTables([]);
@@ -145,6 +191,7 @@ export function SyncPanel() {
             <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={6} />
             <button type="submit" className="primary-btn sync-submit">{mode === 'signIn' ? 'Sign in' : 'Sign up'}</button>
             {authError && <div className="sync-error">{authError}</div>}
+            {authNotice && <div className="sync-notice">{authNotice}</div>}
           </form>
         )}
       </div>
@@ -160,6 +207,26 @@ export function SyncPanel() {
         </span>
         <span className="sync-caret">{expanded ? '▾' : '▸'}</span>
       </button>
+
+      {conflicts.length > 0 && (
+        <div className="sync-conflicts">
+          <strong>
+            {conflicts.length} edit{conflicts.length === 1 ? '' : 's'} kept from a sync conflict
+          </strong>{' '}
+          — the same rem was changed on two devices. The newer text won; the other is in its
+          history.
+          <ul>
+            {conflicts.slice(0, 5).map((version) => (
+              <li key={version.id}>
+                <button type="button" className="link-btn" onClick={() => setConflictOpen(version.nodeId)}>
+                  {version.plainText.trim().slice(0, 48) || 'Untitled'}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {conflictOpen && <VersionHistory nodeId={conflictOpen} onClose={() => setConflictOpen(null)} />}
 
       {missingTables.length > 0 && (
         <div className="sync-warning">

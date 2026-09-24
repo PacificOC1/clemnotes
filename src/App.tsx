@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import type { Editor } from '@tiptap/react';
 import {
@@ -8,7 +8,10 @@ import {
   getBreadcrumbPath,
   deleteNode,
   deleteNodes,
+  ensureFirstChild,
+  expandAncestors,
   flattenVisible,
+  isSelfOrDescendant,
   indentNodes,
   outdentNodes,
 } from './db/repository';
@@ -17,8 +20,10 @@ import { copyRemsAsMarkdown } from './db/clipboard';
 import { undoLast } from './db/undo';
 import { getCardStats } from './db/cardRepository';
 import { seedLatexTutorial } from './db/seedLatexTutorial';
+import { openDailyNote } from './db/dailyNotes';
 import { OutlinerNode } from './components/OutlinerNode';
 import { BacklinksPanel } from './components/BacklinksPanel';
+import { UnlinkedReferences } from './components/UnlinkedReferences';
 import { Breadcrumbs } from './components/Breadcrumbs';
 import { SearchOmnibar } from './components/SearchOmnibar';
 import { FormattingBubble } from './components/FormattingBubble';
@@ -26,22 +31,49 @@ import { EditorMenus } from './components/EditorMenus';
 import { SyncPanel } from './components/SyncPanel';
 import { BackupPanel } from './components/BackupPanel';
 import { PageSidebar } from './components/PageSidebar';
-import { DictionaryView } from './components/DictionaryView';
 import { DictionaryEntryModal } from './components/DictionaryEntryModal';
-import { ReviewView } from './components/ReviewView';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { SelectionBar } from './components/SelectionBar';
 import { UndoToast } from './components/UndoToast';
 import { Shortcuts } from './components/Shortcuts';
+import { DailyNav } from './components/DailyNav';
+import { VersionHistory } from './components/VersionHistory';
+import { TemplatePicker } from './components/TemplatePicker';
+import { TableOfContents } from './components/TableOfContents';
+import { SplitPane } from './components/SplitPane';
+import { SidebarResizer } from './components/SidebarResizer';
+import { countWords } from './db/outline';
+import { NEXT_THEME, loadTheme, onThemeChange, setTheme, type ThemePreference } from './theme';
 import { SelectionContext } from './context/SelectionContext';
 import { NavigationContext } from './context/NavigationContext';
 import { DictionaryProvider, useDictionary } from './context/DictionaryContext';
 import { ActiveEditorContext } from './context/ActiveEditorContext';
 import { useRoute } from './router/useRoute';
 import type { AppTab, Route } from './router/route';
+import { isSyncConfigured } from './sync/supabaseClient';
+import { purgeLocalTombstones } from './db/tombstones';
+import { logEvent } from './diagnostics';
 import './App.css';
 
+// The flashcard and dictionary tabs load on first visit (#63): most sessions
+// are writing, and neither view is needed to write.
+const ReviewView = lazy(() => import('./components/ReviewView').then((m) => ({ default: m.ReviewView })));
+const DictionaryView = lazy(() => import('./components/DictionaryView').then((m) => ({ default: m.DictionaryView })));
+
 const SIDEBAR_KEY = 'clemnotes:sidebar-open';
+const SIDEBAR_WIDTH_KEY = 'clemnotes:sidebar-width';
+const DEFAULT_SIDEBAR_WIDTH = 262;
+const MIN_SIDEBAR_WIDTH = 190;
+const MAX_SIDEBAR_WIDTH = 520;
+
+function loadSidebarWidth(): number {
+  try {
+    const raw = Number(localStorage.getItem(SIDEBAR_WIDTH_KEY));
+    return raw >= MIN_SIDEBAR_WIDTH && raw <= MAX_SIDEBAR_WIDTH ? raw : DEFAULT_SIDEBAR_WIDTH;
+  } catch {
+    return DEFAULT_SIDEBAR_WIDTH;
+  }
+}
 
 interface WorkspaceProps {
   route: Route;
@@ -57,14 +89,21 @@ function Workspace({ route, navigate }: WorkspaceProps) {
   // so back, forward, reload and a shared link all mean the same thing.
   const viewNodeId = route.nodeId;
   const [focusedNodeId, setFocusedNodeId] = useState<string | null>(null);
-  const [searchOpen, setSearchOpen] = useState(false);
+  /** Closed, or open in one of its two scopes (⌘K everywhere, ⌘⇧F this page). */
+  const [searchOpen, setSearchOpen] = useState<false | 'all' | 'page'>(false);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
+  const [historyFor, setHistoryFor] = useState<string | null>(null);
+  const [templateAt, setTemplateAt] = useState<string | null>(null);
   const [selected, setSelected] = useState<ReadonlySet<string>>(() => new Set());
   const anchorRef = useRef<string | null>(null);
   /** The rows on screen, in display order — what a shift-click range spans. */
   const visibleOrderRef = useRef<string[]>([]);
   const [embedTargetId, setEmbedTargetId] = useState<string | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarWidth, setSidebarWidth] = useState(loadSidebarWidth);
+  const [theme, setThemeState] = useState<ThemePreference>(loadTheme);
+  const [focusMode, setFocusMode] = useState(false);
+  const [tocOpen, setTocOpen] = useState(false);
   const [activeEditor, setActiveEditor] = useState<Editor | null>(null);
   const [activeNodeId, setActiveNodeId] = useState<string | null>(null);
 
@@ -73,7 +112,35 @@ function Workspace({ route, navigate }: WorkspaceProps) {
     setActiveNodeId(nodeId);
   }, []);
 
+  // #24: a notebook that doesn't sync drops its own deletions after 90 days.
+  // (With sync on, the cloud decides during the daily reconcile.)
+  useEffect(() => {
+    if (isSyncConfigured) return;
+    void purgeLocalTombstones().then((purged) => {
+      if (purged > 0) logEvent('maintenance', 'Purged old deletions', { rows: purged });
+    });
+  }, []);
+
   const activeRootId = viewNodeId ?? pages[0]?.id ?? null;
+
+  /**
+   * #58: zooming replaces the part of the page that had focus — the bullet you
+   * clicked is gone — which drops keyboard and screen-reader users on <body>,
+   * at the top of the page. Put them on the new document instead, unless
+   * something (the first bullet of a new page, say) has already taken focus.
+   */
+  const documentRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      const active = document.activeElement;
+      if (!active || active === document.body) documentRef.current?.focus({ preventScroll: true });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [activeRootId]);
+  const breadcrumbQueryRootRef = useRef<string | null>(activeRootId);
+  useEffect(() => {
+    breadcrumbQueryRootRef.current = activeRootId;
+  }, [activeRootId]);
   // The result carries the id it was asked about. Without that, a result that
   // arrived for the *previous* rem looks like an answer about the current one —
   // and since the answer for "no rem at all" is an empty path, zooming into a
@@ -88,13 +155,52 @@ function Workspace({ route, navigate }: WorkspaceProps) {
   );
   const breadcrumbPath = breadcrumbQuery?.forId === activeRootId ? breadcrumbQuery.path : [];
 
+  // Live, so it counts as you type; tagged with the rem it counted for the
+  // same reason as the breadcrumbs above.
+  const wordQuery = useLiveQuery(
+    async () => ({ forId: activeRootId, words: activeRootId ? await countWords(activeRootId) : 0 }),
+    [activeRootId]
+  );
+  const wordCount = wordQuery?.forId === activeRootId ? wordQuery.words : undefined;
+
+  useEffect(() => onThemeChange(setThemeState), []);
+
+  // The second pane (#43) rides along in the URL; the main pane navigating
+  // leaves it where it is.
+  const splitId = route.tab === 'notes' ? (route.splitId ?? null) : null;
+  const splitRef = useRef<string | null>(splitId);
+  useEffect(() => {
+    splitRef.current = splitId;
+  }, [splitId]);
+
   const handleZoomTo = useCallback(
     (nodeId: string) => {
       setFocusedNodeId(null);
-      navigate({ tab: 'notes', nodeId });
+      navigate({ tab: 'notes', nodeId, ...(splitRef.current ? { splitId: splitRef.current } : {}) });
     },
     [navigate]
   );
+
+  /** Open a rem beside the current document. */
+  const openInSplit = useCallback(
+    (nodeId: string) => {
+      const main = route.nodeId ?? breadcrumbQueryRootRef.current;
+      if (!main) {
+        handleZoomTo(nodeId);
+        return;
+      }
+      navigate({ tab: 'notes', nodeId: main, splitId: nodeId });
+    },
+    [navigate, route.nodeId, handleZoomTo]
+  );
+
+  const closeSplit = useCallback(() => {
+    if (route.nodeId) navigate({ tab: 'notes', nodeId: route.nodeId });
+  }, [navigate, route.nodeId]);
+
+  const swapSplit = useCallback(() => {
+    if (route.nodeId && splitId) navigate({ tab: 'notes', nodeId: splitId, splitId: route.nodeId });
+  }, [navigate, route.nodeId, splitId]);
 
   /**
    * A link to a rem that has since been deleted — or that belongs to a
@@ -110,6 +216,24 @@ function Workspace({ route, navigate }: WorkspaceProps) {
       navigate({ tab: 'notes', nodeId: null }, { replace: true });
     }
   }, [route.nodeId, breadcrumbQuery, navigate]);
+
+  /**
+   * Find-in-page: show a rem where it sits rather than zooming into it —
+   * unfold anything collapsed above it and put the cursor in it. A rem outside
+   * the part of the page on screen is zoomed to instead.
+   */
+  const revealInPage = useCallback(
+    async (nodeId: string) => {
+      if (!activeRootId || !(await isSelfOrDescendant(nodeId, activeRootId)) || nodeId === activeRootId) {
+        handleZoomTo(nodeId);
+        return;
+      }
+      await expandAncestors(nodeId, activeRootId);
+      setFocusedNodeId(null);
+      requestAnimationFrame(() => setFocusedNodeId(nodeId));
+    },
+    [activeRootId, handleZoomTo]
+  );
 
   const handleEmbed = useCallback((nodeId: string) => setEmbedTargetId(nodeId), []);
 
@@ -151,6 +275,7 @@ function Workspace({ route, navigate }: WorkspaceProps) {
   /** The focused editor, for deciding who owns ⌘Z. */
   const activeEditorRef = useRef<Editor | null>(null);
   const indentSelectionRef = useRef<() => Promise<void>>(async () => {});
+  const openTodayRef = useRef<() => void>(() => {});
   const outdentSelectionRef = useRef<() => Promise<void>>(async () => {});
 
   /** Run a bulk operation over the selection, then let it go. */
@@ -173,6 +298,19 @@ function Workspace({ route, navigate }: WorkspaceProps) {
   useEffect(() => {
     activeEditorRef.current = activeEditor;
   }, [activeEditor]);
+
+  const openToday = useCallback(() => {
+    void openDailyNote().then(async (id) => {
+      handleZoomTo(id);
+      // Straight into the first bullet: you opened today to write something.
+      const first = await ensureFirstChild(id);
+      if (first) setFocusedNodeId(first.id);
+    });
+  }, [handleZoomTo]);
+
+  useEffect(() => {
+    openTodayRef.current = openToday;
+  }, [openToday]);
 
   useEffect(() => {
     selectedRef.current = selected;
@@ -208,11 +346,25 @@ function Workspace({ route, navigate }: WorkspaceProps) {
       const meta = e.metaKey || e.ctrlKey;
       if (meta && e.key.toLowerCase() === 'k') {
         e.preventDefault();
-        setSearchOpen(true);
+        setSearchOpen('all');
+      }
+      if (meta && e.shiftKey && e.key.toLowerCase() === 'f') {
+        e.preventDefault();
+        setSearchOpen('page');
       }
       if (meta && e.key === '\\') {
         e.preventDefault();
         setSidebarOpen((open) => !open);
+      }
+      // Alt+Shift+D — today's daily note. Matched on `code`, because on a Mac
+      // Alt+Shift turns the key into a different character ("Î").
+      if (e.altKey && e.shiftKey && !meta && e.code === 'KeyF') {
+        e.preventDefault();
+        setFocusMode((v) => !v);
+      }
+      if (e.altKey && e.shiftKey && !meta && e.code === 'KeyD') {
+        e.preventDefault();
+        openTodayRef.current();
       }
       if (meta && e.key === '/') {
         e.preventDefault();
@@ -284,13 +436,25 @@ function Workspace({ route, navigate }: WorkspaceProps) {
   const parentOfView = breadcrumbPath.length > 1 ? breadcrumbPath[breadcrumbPath.length - 2] : null;
 
   return (
-    <NavigationContext.Provider value={{ onZoomTo: handleZoomTo }}>
+    <NavigationContext.Provider value={{ onZoomTo: handleZoomTo, onOpenInSplit: openInSplit }}>
       <SelectionContext.Provider value={selectionValue}>
       <ActiveEditorContext.Provider value={{ activeEditor, activeNodeId, setActive }}>
-        <div className={`app-shell ${sidebarOpen ? '' : 'sidebar-collapsed'}`}>
+        <div
+          className={`app-shell ${sidebarOpen ? '' : 'sidebar-collapsed'} ${focusMode ? 'focus-mode' : ''}`}
+          style={{ '--sidebar-w': `${sidebarWidth}px` } as CSSProperties}
+        >
           <aside className="sidebar">
             <div className="sidebar-head">
               <span className="sidebar-brand">Clemnotes</span>
+              <button
+                type="button"
+                className="icon-btn"
+                onClick={() => setTheme(NEXT_THEME[theme])}
+                title={`Theme: ${theme} — click for ${NEXT_THEME[theme]}`}
+                aria-label={`Theme: ${theme}`}
+              >
+                {theme === 'dark' ? '☾' : theme === 'light' ? '☀' : '◐'}
+              </button>
               <button
                 type="button"
                 className="icon-btn"
@@ -303,7 +467,7 @@ function Workspace({ route, navigate }: WorkspaceProps) {
             </div>
 
             <div className="sidebar-nav">
-              <button type="button" className="nav-item nav-search" onClick={() => setSearchOpen(true)}>
+              <button type="button" className="nav-item nav-search" onClick={() => setSearchOpen('all')}>
                 <span className="nav-icon">⌕</span>
                 <span className="nav-label">Search</span>
                 <kbd>⌘K</kbd>
@@ -315,6 +479,10 @@ function Workspace({ route, navigate }: WorkspaceProps) {
               >
                 <span className="nav-icon">▤</span>
                 <span className="nav-label">Notes</span>
+              </button>
+              <button type="button" className="nav-item" onClick={openToday} title="Today's daily note  Alt+Shift+D">
+                <span className="nav-icon">◷</span>
+                <span className="nav-label">Today</span>
               </button>
               <button
                 type="button"
@@ -340,7 +508,7 @@ function Workspace({ route, navigate }: WorkspaceProps) {
               pages={pages}
               activeNodeId={activeRootId}
               breadcrumbRootId={breadcrumbPath[0]?.id}
-              onSelectPage={handleZoomTo}
+              onSelectPage={(pageId, beside) => (beside ? openInSplit(pageId) : handleZoomTo(pageId))}
               onDeletePage={handleDeletePage}
               onNewPage={handleNewPage}
               onAddLatexCourse={() => void handleAddLatexCourse()}
@@ -349,6 +517,23 @@ function Workspace({ route, navigate }: WorkspaceProps) {
             <SyncPanel />
             <BackupPanel />
           </aside>
+          {/* Outside the sidebar, whose overflow would clip all but a sliver of it. */}
+          {sidebarOpen && (
+            <SidebarResizer
+              width={sidebarWidth}
+              min={MIN_SIDEBAR_WIDTH}
+              max={MAX_SIDEBAR_WIDTH}
+              defaultWidth={DEFAULT_SIDEBAR_WIDTH}
+              onResize={setSidebarWidth}
+              onCommit={(width) => {
+                try {
+                  localStorage.setItem(SIDEBAR_WIDTH_KEY, String(width));
+                } catch {
+                  // Not remembered; still applied for this visit.
+                }
+              }}
+            />
+          )}
 
           <div className="main">
             <header className="topbar">
@@ -380,9 +565,72 @@ function Workspace({ route, navigate }: WorkspaceProps) {
                 </>
               )}
               <div className="topbar-spacer" />
+              {activeTab === 'notes' && activeRootId && (
+                <>
+                  {wordCount !== undefined && (
+                    <span className="topbar-words" title="Words in this rem and everything under it">
+                      {wordCount.toLocaleString()} word{wordCount === 1 ? '' : 's'}
+                    </span>
+                  )}
+                  <div className="toc-anchor">
+                    <button
+                      type="button"
+                      className={`icon-btn ${tocOpen ? 'active' : ''}`}
+                      onClick={() => setTocOpen((v) => !v)}
+                      title="Contents — the headings on this page"
+                      aria-label="Contents"
+                      aria-expanded={tocOpen}
+                    >
+                      ☰
+                    </button>
+                    {tocOpen && (
+                      <TableOfContents
+                        rootId={activeRootId}
+                        onPick={(id) => {
+                          setTocOpen(false);
+                          void revealInPage(id);
+                        }}
+                        onClose={() => setTocOpen(false)}
+                      />
+                    )}
+                  </div>
+                  <button
+                    type="button"
+                    className={`icon-btn ${splitId ? 'active' : ''}`}
+                    onClick={() => (splitId ? closeSplit() : openInSplit(activeRootId))}
+                    title={splitId ? 'Close the second pane' : 'Split view — open a second document beside this one (or shift-click a page or link)'}
+                    aria-label="Split view"
+                    aria-pressed={Boolean(splitId)}
+                  >
+                    ◫
+                  </button>
+                  <button
+                    type="button"
+                    className={`icon-btn ${focusMode ? 'active' : ''}`}
+                    onClick={() => setFocusMode((v) => !v)}
+                    title="Focus mode — dim everything but the rem you're writing  Alt+Shift+F"
+                    aria-label="Focus mode"
+                    aria-pressed={focusMode}
+                  >
+                    ◎
+                  </button>
+                </>
+              )}
+              {activeTab === 'notes' && activeRootId && (
+                <button
+                  type="button"
+                  className="icon-btn"
+                  onClick={() => setHistoryFor(activeRootId)}
+                  title="Version history of this rem"
+                  aria-label="Version history"
+                >
+                  ⟲
+                </button>
+              )}
               <button type="button" className="ghost-btn" onClick={handleNewPage}>+ New page</button>
             </header>
 
+            <div className={`panes ${splitId ? 'is-split' : ''}`}>
             <main className="content">
               {/* Scoped to the document, so a bad rem leaves the sidebar, the
                   tabs and the URL working — something to walk away with. */}
@@ -392,7 +640,15 @@ function Workspace({ route, navigate }: WorkspaceProps) {
               >
               {activeTab === 'notes' && (
                 activeRootId ? (
-                  <div className="document">
+                  <div
+                    className="document"
+                    ref={documentRef}
+                    tabIndex={-1}
+                    aria-label={breadcrumbPath[breadcrumbPath.length - 1]?.plainText.trim() || 'Untitled'}
+                  >
+                    {breadcrumbPath.length === 1 && breadcrumbPath[0]?.id === activeRootId && (
+                      <DailyNav title={breadcrumbPath[0].plainText} onOpen={handleZoomTo} />
+                    )}
                     <OutlinerNode
                       key={activeRootId}
                       nodeId={activeRootId}
@@ -403,6 +659,7 @@ function Workspace({ route, navigate }: WorkspaceProps) {
                       isRoot
                     />
                     <BacklinksPanel nodeId={activeRootId} onZoomTo={handleZoomTo} />
+                    <UnlinkedReferences key={activeRootId} nodeId={activeRootId} onZoomTo={handleZoomTo} />
                   </div>
                 ) : (
                   <div className="empty-state">
@@ -421,14 +678,33 @@ function Workspace({ route, navigate }: WorkspaceProps) {
                   </div>
                 )
               )}
-              {activeTab === 'review' && <ReviewView onZoomTo={handleZoomTo} />}
-              {activeTab === 'dictionary' && <DictionaryView />}
+              <Suspense fallback={<div className="view-loading">Loading…</div>}>
+                {activeTab === 'review' && <ReviewView onZoomTo={handleZoomTo} />}
+                {activeTab === 'dictionary' && <DictionaryView />}
+              </Suspense>
               </ErrorBoundary>
             </main>
+            {splitId && (
+              <SplitPane
+                nodeId={splitId}
+                onNavigate={openInSplit}
+                onOpenInMain={handleZoomTo}
+                onSwap={swapSplit}
+                onClose={closeSplit}
+              />
+            )}
+            </div>
           </div>
 
           {searchOpen && (
-            <SearchOmnibar onClose={() => setSearchOpen(false)} onSelect={handleZoomTo} />
+            <SearchOmnibar
+              onClose={() => setSearchOpen(false)}
+              onSelect={handleZoomTo}
+              filters
+              pageId={breadcrumbPath[0]?.id ?? activeRootId}
+              initialScope={searchOpen}
+              onReveal={(nodeId) => void revealInPage(nodeId)}
+            />
           )}
           {embedTargetId && (
             <SearchOmnibar
@@ -445,7 +721,17 @@ function Workspace({ route, navigate }: WorkspaceProps) {
               }}
             />
           )}
-          <EditorMenus onEmbed={handleEmbed} onZoomTo={handleZoomTo} />
+          <EditorMenus onEmbed={handleEmbed} onTemplate={setTemplateAt} onZoomTo={handleZoomTo} />
+          {templateAt && (
+            <TemplatePicker
+              atId={templateAt}
+              onClose={() => setTemplateAt(null)}
+              onInserted={(firstId) => {
+                if (firstId) setFocusedNodeId(firstId);
+              }}
+              onOpenPage={handleZoomTo}
+            />
+          )}
           <FormattingBubble />
           <DictionaryEntryModal />
           <SelectionBar
@@ -458,6 +744,7 @@ function Workspace({ route, navigate }: WorkspaceProps) {
           />
           <UndoToast />
           {shortcutsOpen && <Shortcuts onClose={() => setShortcutsOpen(false)} />}
+          {historyFor && <VersionHistory nodeId={historyFor} onClose={() => setHistoryFor(null)} />}
         </div>
       </ActiveEditorContext.Provider>
       </SelectionContext.Provider>

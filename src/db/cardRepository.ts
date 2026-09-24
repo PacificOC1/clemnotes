@@ -1,10 +1,17 @@
 import { db } from './database';
 import { buildPageIndex, countByPage, scopeCards } from './cardScope';
-import { buildReviewEntry, getTodayCounts } from './reviewRepository';
-import { DEFAULT_EASE, schedule } from '../srs/sm2';
+import { buildReviewEntry, getReviewsForCard, getTodayCounts } from './reviewRepository';
+import { DEFAULT_PARAMETERS, fsrsSchedule, historySince, type FsrsOptions, type HistoryPoint } from '../srs/fsrs';
+import { DEFAULT_EASE, schedule, type ScheduleUpdate } from '../srs/sm2';
 import { isLeech, planPractice, planSession, type SessionPlan } from '../srs/session';
 import { loadSettings, type ReviewSettings } from '../srs/settings';
-import { extractClozeIndices, parseDoc, splitOnSeparator } from '../tiptap/docUtils';
+import {
+  extractClozeIndices,
+  parseDoc,
+  splitListPrompt,
+  splitMultiLinePrompt,
+  splitOnSeparator,
+} from '../tiptap/docUtils';
 import type { CardKind, Flashcard, OutlinerNode } from './schema';
 
 interface DesiredCard {
@@ -30,7 +37,14 @@ function desiredCards(node: OutlinerNode): DesiredCard[] {
     }));
   }
 
-  if (!splitOnSeparator(doc)) return [];
+  // `Prompt >>>` — one card asking for everything underneath.
+  if (splitListPrompt(doc)) {
+    return [{ id: `${node.id}::list`, kind: 'list', clozeIndex: null }];
+  }
+
+  // `A :: B`, or `A ::` with the answer in the children. Both are the same
+  // card, so finishing a half-typed line never resets anything.
+  if (!splitOnSeparator(doc) && !splitMultiLinePrompt(doc)) return [];
 
   const cards: DesiredCard[] = [{ id: `${node.id}::forward`, kind: 'forward', clozeIndex: null }];
   if (node.cardDirection === 'both') {
@@ -67,6 +81,11 @@ function newCard(nodeId: string, desired: DesiredCard, now: number): Flashcard {
  */
 export async function reconcileCards(node: OutlinerNode): Promise<void> {
   const desired = desiredCards(node);
+  // Almost every rem makes no cards and never has: nothing to reconcile, and
+  // no reason to query the cards table on every keystroke (#21). A rem that
+  // *used* to make cards still has `isCard` set, so it falls through and has
+  // them retired.
+  if (desired.length === 0 && !node.isCard) return;
   const existing = await db.cards.where('nodeId').equals(node.id).toArray();
   const now = Date.now();
 
@@ -255,11 +274,23 @@ export async function getCardStats(now = Date.now()): Promise<CardStats> {
  * applied — that pre-review state is the part that gets overwritten, and it is
  * what any later analysis actually needs.
  */
-export async function gradeCard(cardId: string, quality: number): Promise<void> {
+export async function gradeCard(
+  cardId: string,
+  quality: number,
+  settings: ReviewSettings = loadSettings(),
+  now = Date.now()
+): Promise<void> {
   const card = await db.cards.get(cardId);
   if (!card) return;
-  const now = Date.now();
-  const update = schedule(card, quality, now);
+  let update: ScheduleUpdate;
+  if (settings.scheduler === 'fsrs') {
+    // FSRS reads the card's history rather than a stored state — see fsrs.ts.
+    const history = historySince(card, await getReviewsForCard(card.id));
+    const { memory: _memory, ...rest } = fsrsSchedule(card, history, quality, now, fsrsOptions(settings));
+    update = rest;
+  } else {
+    update = schedule(card, quality, now);
+  }
   const entry = buildReviewEntry(card, quality, update, now);
 
   await db.transaction('rw', db.cards, db.reviews, async () => {
@@ -282,6 +313,10 @@ export async function setCardSuspended(cardId: string, suspended: boolean): Prom
 export async function resetCard(cardId: string): Promise<void> {
   const now = Date.now();
   await db.cards.update(cardId, {
+    // FSRS replays a card's history from `createdAt` on, so moving it here is
+    // what makes the reset a fresh start for FSRS too. The reviews before it
+    // stay in the log, where statistics still count them.
+    createdAt: now,
     easeFactor: DEFAULT_EASE,
     interval: 0,
     repetitions: 0,
@@ -299,4 +334,33 @@ export async function toggleCardDirection(nodeId: string): Promise<void> {
   const cardDirection = node.cardDirection === 'both' ? 'forward' : 'both';
   await db.nodes.update(nodeId, { cardDirection, updatedAt: Date.now() });
   await reconcileCards({ ...node, cardDirection });
+}
+
+/** The FSRS half of the review settings. */
+export function fsrsOptions(settings: ReviewSettings): FsrsOptions {
+  return {
+    parameters: settings.fsrsParameters ?? DEFAULT_PARAMETERS,
+    retention: settings.desiredRetention,
+  };
+}
+
+/**
+ * Every live card's history since it was (re)started, for fitting FSRS to you.
+ * Cards with no reviews are left out — they carry no evidence.
+ */
+export async function getFsrsHistories(): Promise<HistoryPoint[][]> {
+  const [cards, reviews] = await Promise.all([getAllCards(), db.reviews.toArray()]);
+  const byCard = new Map<string, HistoryPoint[]>();
+  for (const review of reviews) {
+    if (review.deletedAt !== null) continue;
+    const list = byCard.get(review.cardId) ?? [];
+    list.push({ reviewedAt: review.reviewedAt, grade: review.grade });
+    byCard.set(review.cardId, list);
+  }
+  const out: HistoryPoint[][] = [];
+  for (const card of cards) {
+    const history = historySince(card, byCard.get(card.id) ?? []);
+    if (history.length > 0) out.push(history.sort((a, b) => a.reviewedAt - b.reviewedAt));
+  }
+  return out;
 }

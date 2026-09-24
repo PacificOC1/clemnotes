@@ -16,6 +16,8 @@ create table public.nodes (
   content text not null default '',
   "plainText" text not null default '',
   "parentId" text,
+  -- Legacy: no longer written or read (the tree is parentId + order). Kept so
+  -- older copies of the app, still uploading it, don't fail. Safe to ignore.
   "childrenIds" text[] not null default '{}',
   "order" double precision not null default 0,
   collapsed boolean not null default false,
@@ -151,6 +153,31 @@ create policy "Users manage their own cards"
 create policy "Users manage their own reviews"
   on public.reviews for all
   using (auth.uid() = "userId") with check (auth.uid() = "userId");
+
+-- ---------------------------------------------------------------------------
+-- images — a private Storage bucket, one object per image at <userId>/<id>
+-- (identical to migration-005-images.sql)
+-- ---------------------------------------------------------------------------
+insert into storage.buckets (id, name, public)
+values ('images', 'images', false)
+on conflict (id) do nothing;
+
+create policy "Users read their own images"
+  on storage.objects for select to authenticated
+  using (bucket_id = 'images' and (storage.foldername(name))[1] = auth.uid()::text);
+
+create policy "Users upload their own images"
+  on storage.objects for insert to authenticated
+  with check (bucket_id = 'images' and (storage.foldername(name))[1] = auth.uid()::text);
+
+create policy "Users replace their own images"
+  on storage.objects for update to authenticated
+  using (bucket_id = 'images' and (storage.foldername(name))[1] = auth.uid()::text)
+  with check (bucket_id = 'images' and (storage.foldername(name))[1] = auth.uid()::text);
+
+create policy "Users delete their own images"
+  on storage.objects for delete to authenticated
+  using (bucket_id = 'images' and (storage.foldername(name))[1] = auth.uid()::text);
 
 -- Note: by default Supabase requires email confirmation before sign-in
 -- works. For quick personal testing you can turn this off under

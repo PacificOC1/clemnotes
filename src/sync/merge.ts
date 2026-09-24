@@ -157,3 +157,169 @@ export function missingLocally(
 ): string[] {
   return remoteIds.filter((_, i) => localRows[i] === undefined);
 }
+
+/** A row both sides changed since they last agreed. */
+export interface Conflict<T> {
+  id: string;
+  local: T;
+  remote: T;
+  /** Which side last-write-wins is about to keep. */
+  winner: 'local' | 'remote';
+}
+
+/**
+ * Rows edited on this device *and* elsewhere since the last sync — the case
+ * last-write-wins resolves by silently discarding one side.
+ *
+ * "Changed here" is a local row written at or after the push cursor (so not
+ * yet sent); "changed there" is a remote row newer than the pull cursor. Both
+ * true and `differs` says the difference matters: that is a conflict. Merging
+ * still picks a winner exactly as before — this only says who lost, so the
+ * caller can keep the losing side somewhere instead of dropping it.
+ *
+ * A first sync (both cursors at 0) calls every differing row a conflict,
+ * which is right: two copies that have never been compared can't be told
+ * apart from two copies edited separately.
+ */
+export function findConflicts<T extends Syncable>(
+  local: T[],
+  remote: T[],
+  cursor: { pushedThrough: number; pulledThrough: number },
+  differs: (a: T, b: T) => boolean
+): Conflict<T>[] {
+  const localById = new Map(local.map((row) => [row.id, row]));
+  const out: Conflict<T>[] = [];
+  for (const theirs of remote) {
+    const mine = localById.get(theirs.id);
+    if (!mine || mine.updatedAt === theirs.updatedAt) continue;
+    const changedHere = mine.updatedAt >= cursor.pushedThrough;
+    const changedThere = theirs.updatedAt > cursor.pulledThrough;
+    if (!changedHere || !changedThere || !differs(mine, theirs)) continue;
+    out.push({ id: theirs.id, local: mine, remote: theirs, winner: mine.updatedAt > theirs.updatedAt ? 'local' : 'remote' });
+  }
+  return out;
+}
+
+/** Fields a three-way merge must not treat as data. */
+const MERGE_IGNORED = new Set(['id', 'updatedAt', 'createdAt', 'userId', 'rootKey', 'cardKey', 'titleKey', 'childrenIds']);
+
+const same = (a: unknown, b: unknown) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+
+export interface ThreeWayResult<T> {
+  row: T;
+  /** Both sides changed the content group differently — the loser's text needs keeping. */
+  contentConflict: boolean;
+  /** Which side's content the result carries. */
+  contentFrom: 'local' | 'remote';
+}
+
+/**
+ * Merge a row both sides changed, field by field, against the copy they last
+ * agreed on (#22).
+ *
+ * Whole-row last-write-wins answers "which device touched it last?", and so
+ * loses an edit whenever the *other* device touched the same rem for a
+ * different reason: text edited on the laptop, the rem dragged somewhere else
+ * on the phone, and whichever synced second erased the other change. With the
+ * base, each field can be asked separately: changed on one side only → that
+ * side's value; changed on both → the newer side's, as before.
+ *
+ * `groups` bundles fields that only make sense together — a rem's content and
+ * everything derived from it (plain text, links, whether it makes cards) must
+ * come from the same side, or the derived fields would describe text the row
+ * doesn't hold.
+ *
+ * The result is stamped newer than both sides, so it wins everywhere next.
+ */
+export function threeWayMerge<T extends Syncable>(
+  base: T,
+  local: T,
+  remote: T,
+  groups: string[][] = []
+): ThreeWayResult<T> {
+  const localNewer = local.updatedAt >= remote.updatedAt;
+  const grouped = new Set(groups.flat());
+  const units: string[][] = [...groups];
+  const keys = new Set([...Object.keys(local), ...Object.keys(remote), ...Object.keys(base)]);
+  for (const key of keys) {
+    if (!MERGE_IGNORED.has(key) && !grouped.has(key)) units.push([key]);
+  }
+
+  const out: Record<string, unknown> = { ...((localNewer ? local : remote) as unknown as Record<string, unknown>) };
+  const b = base as unknown as Record<string, unknown>;
+  const l = local as unknown as Record<string, unknown>;
+  const r = remote as unknown as Record<string, unknown>;
+  let contentConflict = false;
+  let contentFrom: 'local' | 'remote' = localNewer ? 'local' : 'remote';
+
+  units.forEach((unit, index) => {
+    const localChanged = unit.some((k) => !same(l[k], b[k]));
+    const remoteChanged = unit.some((k) => !same(r[k], b[k]));
+    let from: 'local' | 'remote';
+    if (localChanged && !remoteChanged) from = 'local';
+    else if (remoteChanged && !localChanged) from = 'remote';
+    else from = localNewer ? 'local' : 'remote';
+    const source = from === 'local' ? l : r;
+    for (const k of unit) {
+      if (source[k] === undefined) delete out[k];
+      else out[k] = source[k];
+    }
+    // The first group is the content group, by convention of the caller.
+    if (index === 0 && groups.length > 0) {
+      contentFrom = from;
+      contentConflict = localChanged && remoteChanged && unit.some((k) => !same(l[k], r[k]));
+    }
+  });
+
+  out.updatedAt = Math.max(local.updatedAt, remote.updatedAt) + 1;
+  return { row: out as unknown as T, contentConflict, contentFrom };
+}
+
+
+/** How long a deleted row is kept before it is purged for good (#24). */
+export const TOMBSTONE_RETENTION_MS = 90 * 24 * 60 * 60 * 1000;
+
+/**
+ * Which local rows the cloud no longer has because they were purged — rows to
+ * delete here, not to upload.
+ *
+ * A full reconcile uploads every local row the cloud lacks, which is right for
+ * a row that was never sent and wrong for one the cloud deliberately dropped:
+ * uploading it would bring a purged rem back from the dead. Two cases are
+ * safe to call "purged":
+ *
+ * - it is itself a tombstone older than the retention window — the cloud
+ *   drops those, and so should this device;
+ * - both sides agreed on this exact row before (`agreedUnchanged`: it has a
+ *   sync base and hasn't changed since), so the cloud had it, and the only
+ *   thing that removes a row from the cloud is the purge. That catches a
+ *   device that was offline long enough to miss the delete *and* the purge.
+ *
+ * A live row the cloud never agreed on (restored from a backup, written
+ * offline, from before sync bases existed) is uploaded as before. A limit
+ * guards the second rule against the one case it can't see — a cloud table
+ * wiped by hand: if an implausible share of the notebook looks purged, those
+ * rows are uploaded instead (`refused`).
+ */
+export function planPurges<T extends Syncable>(input: {
+  /** Local rows the remote does not have. */
+  missingRemotely: T[];
+  /** Ids agreed with the cloud before and unchanged here since. */
+  agreedUnchanged: ReadonlySet<string>;
+  now: number;
+  retentionMs?: number;
+  /** How many local rows there are — for the sanity limit. */
+  localCount: number;
+  /** How many rows the remote returned — an empty remote is never "purged". */
+  remoteCount: number;
+}): { purge: T[]; refused: boolean } {
+  const horizon = input.now - (input.retentionMs ?? TOMBSTONE_RETENTION_MS);
+  const expired = (row: T) => row.deletedAt !== null && row.deletedAt < horizon;
+  // Old tombstones are always safe to drop: they are deletions either way.
+  const tombstones = input.missingRemotely.filter(expired);
+  // Rows presumed purged because the cloud once had them get the sanity check.
+  const agreed = input.missingRemotely.filter((row) => !expired(row) && input.agreedUnchanged.has(row.id));
+  const limit = Math.max(50, Math.floor(input.localCount * 0.2));
+  const refused = agreed.length > 0 && (input.remoteCount === 0 || agreed.length > limit);
+  return { purge: refused ? tombstones : [...tombstones, ...agreed], refused };
+}

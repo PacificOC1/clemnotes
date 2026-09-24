@@ -1,4 +1,5 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react';
+import { formatDiagnostics, logError } from '../diagnostics';
 
 /**
  * One bad render must not take the whole app with it.
@@ -40,6 +41,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, info: ErrorInfo): void {
     this.setState({ info: info.componentStack ?? '' });
+    logError('render', error, { where: globalThis.location?.hash || '#/notes' });
     // Kept in the console as well as on screen: the copy button is the useful
     // path, but a stack that only exists behind a button is easy to lose.
     console.error('Clemnotes render error', error, info);
@@ -57,6 +59,9 @@ export class ErrorBoundary extends Component<Props, State> {
       '',
       'Component stack:',
       info || '(none)',
+      '',
+      // What led up to it: syncs, upgrades, earlier errors.
+      formatDiagnostics(),
     ].join('\n');
   }
 

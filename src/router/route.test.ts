@@ -67,3 +67,20 @@ describe('sameRoute', () => {
     expect(sameRoute({ tab: 'notes', nodeId: 'a' }, { tab: 'notes', nodeId: 'b' })).toBe(false);
   });
 });
+
+describe('split view in the URL', () => {
+  it('round-trips a second document', () => {
+    const route = { tab: 'notes' as const, nodeId: 'a', splitId: 'b/c' };
+    expect(formatRoute(route)).toBe('#/notes/a/split/b%2Fc');
+    expect(parseRoute(formatRoute(route))).toEqual(route);
+  });
+
+  it('treats a route with and without a split as different places', () => {
+    expect(sameRoute({ tab: 'notes', nodeId: 'a' }, { tab: 'notes', nodeId: 'a', splitId: 'b' })).toBe(false);
+    expect(sameRoute({ tab: 'notes', nodeId: 'a' }, { tab: 'notes', nodeId: 'a' })).toBe(true);
+  });
+
+  it('ignores a dangling split segment', () => {
+    expect(parseRoute('#/notes/a/split')).toEqual({ tab: 'notes', nodeId: 'a' });
+  });
+});

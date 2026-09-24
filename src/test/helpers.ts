@@ -1,4 +1,5 @@
 import { db } from '../db/database';
+import { invalidateSearchIndex } from '../db/searchIndex';
 import { createEmptyNode, type Flashcard, type OutlinerNode } from '../db/schema';
 import type { DocNode } from '../tiptap/docUtils';
 
@@ -21,7 +22,11 @@ export async function resetDatabase(): Promise<void> {
     db.reviews.clear(),
     db.dictionary.clear(),
     db.folders.clear(),
+    db.images.clear(),
+    db.versions.clear(),
+    db.syncBase.clear(),
   ]);
+  invalidateSearchIndex();
 }
 
 /** A one-paragraph Tiptap doc, as a stored `content` string. */
@@ -60,7 +65,7 @@ export async function addTextNode(
   return addNode({ id, content: textDoc(text), plainText: text, ...overrides });
 }
 
-/** Attach a child to a parent, keeping the parent's `childrenIds` mirror honest. */
+/** Attach a child to a parent, after its existing children. */
 export async function addChild(
   parent: OutlinerNode,
   id: string,
@@ -73,10 +78,6 @@ export async function addChild(
     order: (siblings.length + 1) * 1000,
     ...overrides,
   });
-  const fresh = await db.nodes.get(parent.id);
-  if (fresh) {
-    await db.nodes.update(parent.id, { childrenIds: [...fresh.childrenIds, id] });
-  }
   return child;
 }
 

@@ -146,6 +146,15 @@ function inlineToMarkdown(nodes: DocNode[] | undefined): string {
         out += alias ? `[[${target}|${alias}]]` : `[[${target}]]`;
         break;
       }
+      case 'tag':
+        // `#name` — what Obsidian and Logseq read as a tag. A name with a space
+        // in it (a tag page renamed since) is written as `#[[name]]`, Logseq's
+        // spelling, rather than silently becoming a shorter tag.
+        {
+          const name = String(node.attrs?.title ?? '');
+          out += /\s/.test(name) ? `#[[${name}]]` : `#${name}`;
+        }
+        break;
       case 'math':
         out += `$${String(node.attrs?.latex ?? '')}$`;
         break;
@@ -254,6 +263,14 @@ function blockToMarkdown(node: DocNode, listDepth = 0): string[] {
 
     case 'table':
       return tableToMarkdown(node);
+
+    case 'remImage': {
+      // The bytes aren't in a Markdown file — they are in the JSON backup and
+      // in this browser. The line keeps the image's place in the outline and
+      // the id that finds it, rather than silently dropping it.
+      const alt = String(node.attrs?.alt ?? '') || 'image';
+      return [`![${escapeText(alt)}](clemnotes-image:${String(node.attrs?.imageId ?? '')})`];
+    }
 
     default: {
       const text = inlineToMarkdown(node.content);

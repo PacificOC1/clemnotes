@@ -1,21 +1,12 @@
-import { useState, useEffect, useMemo, useRef, type MouseEvent } from 'react';
+import { useState, useEffect, useId, useMemo, type MouseEvent } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { useEditor, EditorContent } from '@tiptap/react';
-import { useActiveEditor } from '../context/ActiveEditorContext';
-import { handleMenuKey } from '../editor/menuStore';
 import {
   getChildren,
   getNode,
-  createSiblingAfter,
   createFirstChild,
   createPortalChild,
-  updateContent,
   toggleCollapsed,
   ensureFirstChild,
-  indentNode,
-  outdentNode,
-  mergeWithPreviousSibling,
-  moveAmongSiblings,
   moveNodeRelativeTo,
   deleteNode,
   type DropPosition,
@@ -24,17 +15,10 @@ import { getCardsForNode, toggleCardDirection } from '../db/cardRepository';
 import { copyLinkToRem } from '../db/clipboard';
 import { useSelection } from '../context/SelectionContext';
 import { RemContext } from '../context/RemContext';
-import { rowExtensions } from '../tiptap/extensions';
-import { parseDoc, docToPlainText, isDocEmpty, EMPTY_DOC, type DocNode } from '../tiptap/docUtils';
 import { SearchOmnibar } from './SearchOmnibar';
-
-/**
- * The id of the rem currently being dragged. Held in a module variable rather
- * than state because `dragover` can't read `dataTransfer` for security reasons
- * -- the browser only exposes the payload on `drop`, and we need to know what's
- * being dragged in order to draw the drop indicator.
- */
-let draggingId: string | null = null;
+import { VersionHistory } from './VersionHistory';
+import { RemText } from './RemText';
+import { draggingRemId, setDraggingRemId } from './dragState';
 
 /**
  * A private drag type rather than `text/plain`. ProseMirror (correctly) treats
@@ -83,9 +67,14 @@ export function OutlinerNode({
   ancestorIds = NO_ANCESTORS,
 }: OutlinerNodeProps) {
   const node = useLiveQuery(() => getNode(nodeId), [nodeId]);
-  const children = useLiveQuery(() => getChildren(nodeId), [nodeId, node?.childrenIds.join(',')]) ?? [];
+  // `undefined` while loading, so "no children yet" can't be mistaken for "none".
+  const loadedChildren = useLiveQuery(() => getChildren(nodeId), [nodeId]);
+  const children = loadedChildren ?? [];
+  // `null` rather than `undefined` for "looked, and it isn't there", so a
+  // target that is missing can be told apart from one still loading.
   const portalTarget = useLiveQuery(
-    () => (node?.isPortal && node.portalTargetId ? getNode(node.portalTargetId) : Promise.resolve(undefined)),
+    async () =>
+      node?.isPortal && node.portalTargetId ? ((await getNode(node.portalTargetId)) ?? null) : undefined,
     [node?.isPortal, node?.portalTargetId]
   );
   const cards = useLiveQuery(() => (node?.isCard ? getCardsForNode(nodeId) : Promise.resolve([])), [nodeId, node?.isCard]) ?? [];
@@ -94,130 +83,21 @@ export function OutlinerNode({
   const chain = useMemo(() => new Set(ancestorIds).add(nodeId), [ancestorIds, nodeId]);
 
   const [showEmbedPicker, setShowEmbedPicker] = useState(false);
+  const [showHistory, setShowHistory] = useState(false);
   const [dropHint, setDropHint] = useState<DropPosition | null>(null);
-  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const hasHydrated = useRef(false);
 
-  const { setActive } = useActiveEditor();
   const { selected, onSelectRow } = useSelection();
+  /** The row's own text names it for assistive tech — not its whole subtree. */
+  const labelId = useId();
   const remContextValue = useMemo(() => ({ nodeId }), [nodeId]);
-
-  const editor = useEditor({
-    extensions: rowExtensions,
-    content: EMPTY_DOC,
-    onFocus: ({ editor }) => {
-      onFocusRequest(nodeId);
-      setActive(editor, nodeId);
-    },
-    onUpdate: ({ editor }) => {
-      const json = editor.getJSON() as DocNode;
-      const docJson = JSON.stringify(json);
-      const plainText = docToPlainText(json);
-      if (debounceRef.current) clearTimeout(debounceRef.current);
-      debounceRef.current = setTimeout(() => {
-        updateContent(nodeId, docJson, plainText);
-      }, 300);
-    },
-    editorProps: {
-      attributes: { class: 'rem-editor' },
-      // Belt and braces alongside the custom drag type: while a rem drag is in
-      // flight, the editor never handles the drop itself.
-      handleDrop: (_view, event) => {
-        if (!draggingId) return false;
-        event.preventDefault();
-        return true;
-      },
-      handleKeyDown: (view, event) => {
-        // The slash / [[ menus get first refusal on navigation keys.
-        if (handleMenuKey(event)) {
-          event.preventDefault();
-          return true;
-        }
-
-        const { $from } = view.state.selection;
-        let insideTable = false;
-        for (let d = $from.depth; d > 0; d--) {
-          const typeName = $from.node(d).type.name;
-          if (typeName === 'tableCell' || typeName === 'tableHeader') {
-            insideTable = true;
-            break;
-          }
-        }
-
-        // Alt+↑/↓ moves the whole rem among its siblings.
-        if (event.altKey && (event.key === 'ArrowUp' || event.key === 'ArrowDown')) {
-          event.preventDefault();
-          void moveAmongSiblings(nodeId, event.key === 'ArrowUp' ? -1 : 1);
-          return true;
-        }
-
-        if (event.key === 'Enter' && !event.shiftKey && !insideTable) {
-          event.preventDefault();
-          // The title row's "sibling" is another top-level page, so the usual
-          // Enter behaviour turned every stray Return in a heading into a new
-          // document. From the title, Enter drops into the body instead —
-          // reusing the first bullet if there is one, creating it if not.
-          if (isRoot) {
-            void ensureFirstChild(nodeId).then((child) => {
-              if (child) onFocusRequest(child.id);
-            });
-            return true;
-          }
-          createSiblingAfter(nodeId).then((n) => onFocusRequest(n.id));
-          return true;
-        }
-        if (event.key === 'Tab' && !insideTable) {
-          event.preventDefault();
-          const action = event.shiftKey ? outdentNode(nodeId) : indentNode(nodeId);
-          action.then(() => onFocusRequest(nodeId));
-          return true;
-        }
-        if (event.key === 'Backspace') {
-          const { selection } = view.state;
-          const atStart = selection.empty && selection.from <= 1;
-          const empty = isDocEmpty(view.state.doc.toJSON() as DocNode);
-          if (atStart && empty) {
-            event.preventDefault();
-            mergeWithPreviousSibling(nodeId).then((targetId) => {
-              if (targetId) onFocusRequest(targetId);
-            });
-            return true;
-          }
-        }
-        return false;
-      },
-    },
-  }, []);
-
-  // Hydrate the editor with this node's real content once it loads, and
-  // keep it in sync with external changes (e.g. after a merge) — but only
-  // when the editor doesn't currently have focus, so we don't fight the
-  // user's live typing.
-  useEffect(() => {
-    if (!editor || !node) return;
-    if (editor.isFocused) return;
-    const incoming = parseDoc(node.content);
-    const incomingStr = JSON.stringify(incoming);
-    const currentStr = JSON.stringify(editor.getJSON());
-    if (!hasHydrated.current || incomingStr !== currentStr) {
-      editor.commands.setContent(incoming, { emitUpdate: false });
-      hasHydrated.current = true;
-    }
-  }, [editor, node?.content]);
-
-  useEffect(() => {
-    if (focusedNodeId === nodeId && editor) {
-      editor.commands.focus('end');
-    }
-  }, [focusedNodeId, nodeId, editor]);
 
   // Older pages did not have a first bullet until the user clicked +. Keep a
   // ready-to-type slot directly beneath every page title, including those.
   useEffect(() => {
-    if (isRoot && node && node.childrenIds.length === 0) {
+    if (isRoot && node && !node.deletedAt && loadedChildren?.length === 0) {
       void ensureFirstChild(nodeId);
     }
-  }, [isRoot, nodeId, node?.childrenIds.length]);
+  }, [isRoot, nodeId, node, loadedChildren?.length]);
 
   if (!node || node.deletedAt) return null;
 
@@ -234,13 +114,14 @@ export function OutlinerNode({
   }
 
   function handleDragStart(event: React.DragEvent) {
-    draggingId = nodeId;
+    setDraggingRemId(nodeId);
     event.dataTransfer.effectAllowed = 'move';
     event.dataTransfer.setData(REM_DRAG_TYPE, nodeId);
   }
 
   function handleDragOver(event: React.DragEvent) {
-    if (!draggingId || draggingId === nodeId || isRoot) return;
+    const dragging = draggingRemId();
+    if (!dragging || dragging === nodeId || isRoot) return;
     event.preventDefault();
     event.dataTransfer.dropEffect = 'move';
     const rect = event.currentTarget.getBoundingClientRect();
@@ -253,16 +134,17 @@ export function OutlinerNode({
   async function handleDrop(event: React.DragEvent) {
     event.preventDefault();
     event.stopPropagation();
-    const sourceId = draggingId || event.dataTransfer.getData(REM_DRAG_TYPE);
+    const sourceId = draggingRemId() || event.dataTransfer.getData(REM_DRAG_TYPE);
     const position = dropHint;
     setDropHint(null);
-    draggingId = null;
+    setDraggingRemId(null);
     if (!sourceId || !position) return;
     await moveNodeRelativeTo(sourceId, nodeId, position);
   }
 
   const liveCards = cards.filter((c) => !c.suspended);
   const isClozeRem = liveCards.some((c) => c.kind === 'cloze');
+  const isListRem = liveCards.some((c) => c.kind === 'list');
 
   // Portal nodes render a live, editable embed of another node's subtree
   // instead of their own text — the embedded OutlinerNode is the exact
@@ -274,18 +156,45 @@ export function OutlinerNode({
     // which also catches a portal pointed straight at itself.
     const isCircular = chain.has(node.portalTargetId);
 
+    /**
+     * The target is gone. It used to render as an empty box headed "Untitled",
+     * which explained nothing and offered no way out. A deleted target still
+     * has its tombstone, and with it the text it had — so the embed can say
+     * what it pointed at. One that was never here at all (a rem from a
+     * notebook this device hasn't synced) has only its id.
+     */
+    if (portalTarget === null || portalTarget?.deletedAt) {
+      const was = portalTarget?.plainText.trim();
+      return (
+        <div className="rem" data-depth={depth} role="treeitem" aria-level={depth + 1}>
+          <div className="portal-embed portal-embed-dead">
+            <div className="portal-dead">
+              <span className="portal-dead-text">
+                {portalTarget
+                  ? <>This embed pointed at <b>{was || 'an untitled rem'}</b>, which has been deleted.</>
+                  : <>This embed points at a rem that isn’t in this notebook.</>}
+              </span>
+              <button type="button" className="portal-dead-remove" onClick={() => deleteNode(nodeId)}>
+                Remove embed
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     return (
-      <div className="rem" data-depth={depth}>
+      <div className="rem" data-depth={depth} role="treeitem" aria-level={depth + 1} aria-label={`Embed of ${portalTarget?.plainText.trim() || 'a rem'}`}>
         <div className="portal-embed">
           <div className="portal-header">
             <button type="button" className="portal-header-label" onClick={() => onZoomTo(node.portalTargetId!)}>
               ↗ {portalTarget?.plainText || 'Untitled'}
             </button>
-            <button type="button" className="portal-remove-btn" onClick={() => deleteNode(nodeId)} title="Remove embed">
+            <button type="button" className="portal-remove-btn" onClick={() => deleteNode(nodeId)} title="Remove embed" aria-label="Remove embed">
               ×
             </button>
           </div>
-          <div className="portal-body">
+          <div className="portal-body" role="group">
             {isCircular ? (
               <p className="portal-circular">
                 This embed points at a rem it already sits inside, so it can't be opened here.
@@ -310,10 +219,23 @@ export function OutlinerNode({
   if (isRoot) {
     return (
       <div className="rem rem-root">
-        <div className="page-title">
-          <EditorContent editor={editor} />
+        <div className="page-title" data-rem-id={nodeId}>
+          <RemContext.Provider value={remContextValue}>
+            <RemText
+              nodeId={nodeId}
+              content={node.content}
+              isRoot
+              focusedNodeId={focusedNodeId}
+              onFocusRequest={onFocusRequest}
+            />
+          </RemContext.Provider>
         </div>
-        <div className="rem-children rem-children-root">
+        <div
+          className="rem-children rem-children-root"
+          role="tree"
+          aria-multiselectable="true"
+          aria-label={`${node.plainText.trim() || 'Untitled'} — outline`}
+        >
           {children.map((child) => (
             <OutlinerNode
               key={child.id}
@@ -359,9 +281,18 @@ export function OutlinerNode({
   }
 
   return (
-    <div className="rem" data-depth={depth}>
+    <div
+      className="rem"
+      data-depth={depth}
+      role="treeitem"
+      aria-level={depth + 1}
+      aria-labelledby={labelId}
+      aria-selected={isSelected}
+      aria-expanded={hasChildren ? !node.collapsed : undefined}
+    >
       <div
-        className={`rem-row ${dropHint ? `drop-${dropHint}` : ''} ${node.isCard ? 'is-card' : ''} ${isSelected ? 'is-selected' : ''}`}
+        data-rem-id={nodeId}
+        className={`rem-row ${dropHint ? `drop-${dropHint}` : ''} ${node.isCard ? 'is-card' : ''} ${isSelected ? 'is-selected' : ''} ${focusedNodeId === nodeId ? 'is-focused' : ''}`}
         onDragOver={handleDragOver}
         onDragLeave={() => setDropHint(null)}
         onDrop={handleDrop}
@@ -372,8 +303,9 @@ export function OutlinerNode({
             className="rem-handle"
             draggable
             onDragStart={handleDragStart}
-            onDragEnd={() => { draggingId = null; setDropHint(null); }}
+            onDragEnd={() => { setDraggingRemId(null); setDropHint(null); }}
             title="Drag to move · click to zoom in"
+            aria-label="Zoom in (drag to move)"
             onClick={() => onZoomTo(nodeId)}
           >
             ⠿
@@ -396,16 +328,22 @@ export function OutlinerNode({
             className={`rem-bullet ${node.collapsed && hasChildren ? 'has-hidden' : ''} ${isSelected ? 'is-selected' : ''}`}
             onClick={handleBulletClick}
             aria-pressed={isSelected}
+            aria-label="Zoom in · ⌘ or Ctrl-click to select"
             title="Click to zoom in · ⌘/Ctrl-click to select · Shift-click to extend"
           >
             <span className="rem-bullet-dot" />
           </button>
         </div>
 
-        <div className="rem-body">
+        <div className="rem-body" id={labelId}>
           {/* Node views inside this editor need to know which rem they are in. */}
           <RemContext.Provider value={remContextValue}>
-            <EditorContent editor={editor} />
+            <RemText
+              nodeId={nodeId}
+              content={node.content}
+              focusedNodeId={focusedNodeId}
+              onFocusRequest={onFocusRequest}
+            />
           </RemContext.Provider>
         </div>
 
@@ -414,6 +352,10 @@ export function OutlinerNode({
             isClozeRem ? (
               <span className="rem-card-badge rem-card-badge-cloze" title="Cloze rem — one card per blank">
                 ⌷ {liveCards.length}
+              </span>
+            ) : isListRem ? (
+              <span className="rem-card-badge rem-card-badge-list" title="List card — asks for everything underneath">
+                ☰ {children.length}
               </span>
             ) : (
               <button
@@ -435,17 +377,19 @@ export function OutlinerNode({
             className="rem-action"
             onClick={() => void copyLinkToRem(nodeId)}
             title="Copy a [[link]] to this rem"
+            aria-label="Copy a link to this rem"
           >
             ⚯
           </button>
-          <button type="button" className="rem-action" onClick={() => setShowEmbedPicker(true)} title="Embed another rem">⧈</button>
-          <button type="button" className="rem-action" onClick={handleAddChild} title="Add a child rem">+</button>
-          <button type="button" className="rem-action rem-action-danger" onClick={() => deleteNode(nodeId)} title="Delete this rem">×</button>
+          <button type="button" className="rem-action" onClick={() => setShowHistory(true)} title="Version history" aria-label="Version history">⟲</button>
+          <button type="button" className="rem-action" onClick={() => setShowEmbedPicker(true)} title="Embed another rem" aria-label="Embed another rem">⧈</button>
+          <button type="button" className="rem-action" onClick={handleAddChild} title="Add a child rem" aria-label="Add a child rem">+</button>
+          <button type="button" className="rem-action rem-action-danger" onClick={() => deleteNode(nodeId)} title="Delete this rem" aria-label="Delete this rem">×</button>
         </div>
       </div>
 
       {!node.collapsed && hasChildren && (
-        <div className="rem-children">
+        <div className="rem-children" role="group">
           {children.map((child) => (
             <OutlinerNode
               key={child.id}
@@ -467,6 +411,7 @@ export function OutlinerNode({
           placeholder="Embed a page or rem..."
         />
       )}
+      {showHistory && <VersionHistory nodeId={nodeId} onClose={() => setShowHistory(false)} />}
     </div>
   );
 }

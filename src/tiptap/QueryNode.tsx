@@ -75,6 +75,15 @@ function QueryView({ node, updateAttributes, editor }: NodeViewProps) {
             />
           </label>
           <label>
+            <span>Tagged</span>
+            <input
+              type="text"
+              value={query.tag ? `#${query.tag}` : ''}
+              placeholder="#any tag"
+              onChange={(e) => set({ tag: e.target.value.replace(/^#+/, '') || undefined })}
+            />
+          </label>
+          <label>
             <span>Edited in the last</span>
             <input
               type="number"
