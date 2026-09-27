@@ -20,6 +20,8 @@ export interface Route {
   nodeId: string | null;
   /** A second document open beside it (#43). Absent, not null, when there isn't one. */
   splitId?: string;
+  /** A PDF open beside it (#53), and the page to show. Absent when there isn't one. */
+  pdf?: { fileId: string; page?: number };
 }
 
 export const HOME: Route = { tab: 'notes', nodeId: null };
@@ -53,6 +55,15 @@ export function parseRoute(hash: string): Route {
     const nodeId = decodeURIComponent(raw);
     // `#/notes/<id>/split/<other>` — two documents side by side.
     if (rest[1] === 'split' && rest[2]) return { tab: 'notes', nodeId, splitId: decodeURIComponent(rest[2]) };
+    // `#/notes/<id>/pdf/<file>[/<page>]` — reading a PDF beside it.
+    if (rest[1] === 'pdf' && rest[2]) {
+      const page = Number(rest[3]);
+      return {
+        tab: 'notes',
+        nodeId,
+        pdf: { fileId: decodeURIComponent(rest[2]), ...(Number.isInteger(page) && page > 0 ? { page } : {}) },
+      };
+    }
     return { tab: 'notes', nodeId };
   } catch {
     // A malformed percent-escape shouldn't be a dead end.
@@ -65,10 +76,17 @@ export function formatRoute(route: Route): string {
   if (route.tab !== 'notes') return `#/${route.tab}`;
   if (!route.nodeId) return '#/notes';
   const main = `#/notes/${encodeURIComponent(route.nodeId)}`;
+  if (route.pdf) return `${main}/pdf/${encodeURIComponent(route.pdf.fileId)}${route.pdf.page ? `/${route.pdf.page}` : ''}`;
   return route.splitId ? `${main}/split/${encodeURIComponent(route.splitId)}` : main;
 }
 
 /** True when two routes point at the same place — used to avoid junk history entries. */
 export function sameRoute(a: Route, b: Route): boolean {
-  return a.tab === b.tab && a.nodeId === b.nodeId && (a.splitId ?? null) === (b.splitId ?? null);
+  return (
+    a.tab === b.tab &&
+    a.nodeId === b.nodeId &&
+    (a.splitId ?? null) === (b.splitId ?? null) &&
+    (a.pdf?.fileId ?? null) === (b.pdf?.fileId ?? null) &&
+    (a.pdf?.page ?? null) === (b.pdf?.page ?? null)
+  );
 }

@@ -50,10 +50,15 @@ export interface OutlinerNode {
    * lookup instead of reading every rem.
    */
   titleKey?: string;
+  /**
+   * The PDFs this rem holds (a PDF block) or quotes (a highlight's page chip)
+   * — derived from `content`, indexed, local-only (#53).
+   */
+  pdfKeys?: string[];
 }
 
 /** Fields that exist only in this browser and must be stripped before a row leaves it. */
-export const LOCAL_ONLY_NODE_FIELDS = ['rootKey', 'cardKey', 'titleKey'] as const;
+export const LOCAL_ONLY_NODE_FIELDS = ['rootKey', 'cardKey', 'titleKey', 'pdfKeys'] as const;
 
 /**
  * Fields older versions wrote that nothing reads any more. Stripped on the way
@@ -72,11 +77,12 @@ export function titleKeyOf(text: string): string {
 
 /** The derived keys a node should carry. */
 export function derivedNodeKeys(
-  node: Pick<OutlinerNode, 'isPage' | 'parentId' | 'deletedAt' | 'isCard'> & { plainText?: string }
+  node: Pick<OutlinerNode, 'isPage' | 'parentId' | 'deletedAt' | 'isCard'> & { plainText?: string; content?: string }
 ): {
   rootKey: 'page' | undefined;
   cardKey: 'card' | undefined;
   titleKey: string | undefined;
+  pdfKeys: string[];
 } {
   const live = !node.deletedAt;
   const title = titleKeyOf(node.plainText ?? '');
@@ -84,7 +90,30 @@ export function derivedNodeKeys(
     rootKey: live && node.isPage && node.parentId === null ? 'page' : undefined,
     cardKey: live && node.isCard ? 'card' : undefined,
     titleKey: live && title && title.length <= TITLE_KEY_MAX ? title : undefined,
+    pdfKeys: live ? pdfIdsIn(node.content ?? '') : [],
   };
+}
+
+/**
+ * The PDF ids a stored doc refers to, through a PDF block (`remPdf`) or a
+ * highlight's page chip (`pdfAnchor`). Cheap for the common case: a doc that
+ * mentions neither is never parsed.
+ */
+export function pdfIdsIn(content: string): string[] {
+  if (!content.includes('"remPdf"') && !content.includes('"pdfAnchor"')) return [];
+  const ids = new Set<string>();
+  const walk = (node: unknown) => {
+    if (!node || typeof node !== 'object') return;
+    const n = node as { type?: string; attrs?: { fileId?: unknown }; content?: unknown[] };
+    if ((n.type === 'remPdf' || n.type === 'pdfAnchor') && typeof n.attrs?.fileId === 'string') ids.add(n.attrs.fileId);
+    n.content?.forEach(walk);
+  };
+  try {
+    walk(JSON.parse(content));
+  } catch {
+    return [];
+  }
+  return [...ids];
 }
 
 /**
@@ -100,7 +129,7 @@ export interface Flashcard {
   clozeIndex: number | null; // which {{cloze}} this card tests, for kind === 'cloze'
   // SM-2 state
   easeFactor: number; // 1.3 floor, 2.5 default
-  interval: number; // days until next review after the last successful one
+  intervalDays: number; // days until next review after the last successful one
   repetitions: number; // consecutive successful reviews
   lapses: number; // times this card has been forgotten
   dueAt: number;

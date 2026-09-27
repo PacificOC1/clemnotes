@@ -29,7 +29,7 @@ export function reviewStateOf(card: Flashcard): ReviewState {
   if (card.repetitions === 0) return 'learning';
   // Below the six-day interval a card is still working its way up the
   // graduating steps rather than genuinely in long-term review.
-  return card.interval >= 6 ? 'review' : 'learning';
+  return card.intervalDays >= 6 ? 'review' : 'learning';
 }
 
 /**
@@ -53,8 +53,8 @@ export function buildReviewEntry(
     scheduledFor: card.dueAt,
     elapsedMs: card.lastReviewedAt === null ? null : now - card.lastReviewedAt,
     state: reviewStateOf(card),
-    intervalBefore: card.interval,
-    intervalAfter: next.interval,
+    intervalBefore: card.intervalDays,
+    intervalAfter: next.intervalDays,
     easeBefore: card.easeFactor,
     easeAfter: next.easeFactor,
     repetitionsBefore: card.repetitions,

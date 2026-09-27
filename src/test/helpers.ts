@@ -99,7 +99,7 @@ export function cardLike(overrides: Partial<Flashcard> = {}): Flashcard {
     kind: 'forward',
     clozeIndex: null,
     easeFactor: 2.5,
-    interval: 0,
+    intervalDays: 0,
     repetitions: 0,
     lapses: 0,
     dueAt: now,

@@ -180,3 +180,19 @@ describe('the one write path every row goes through', () => {
     expect(modified?.titleKey).toBe('modified');
   });
 });
+
+describe('cards call it intervalDays (#27)', () => {
+  it('turns a legacy `interval` into `intervalDays` on the way in — a backup, or an older device', async () => {
+    const { cardLike } = await import('../test/helpers');
+    const legacy = { ...cardLike({ id: 'old-card' }), interval: 12 } as Record<string, unknown>;
+    delete legacy.intervalDays;
+    await db.cards.put(legacy as never);
+    const stored = await db.cards.get('old-card');
+    expect(stored?.intervalDays).toBe(12);
+    expect(stored).not.toHaveProperty('interval');
+
+    // Both present (the cloud keeps both columns while devices update): intervalDays wins.
+    await db.cards.put({ ...cardLike({ id: 'both' }), intervalDays: 5, interval: 3 } as never);
+    expect((await db.cards.get('both'))?.intervalDays).toBe(5);
+  });
+});

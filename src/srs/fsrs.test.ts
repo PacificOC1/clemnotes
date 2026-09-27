@@ -70,14 +70,14 @@ describe('scheduling', () => {
   it('sends Again back in ten minutes and counts the lapse', () => {
     const next = fsrsSchedule(card, [], 0, T0);
     expect(next.dueAt - T0).toBe(10 * 60 * 1000);
-    expect(next.interval).toBe(0);
+    expect(next.intervalDays).toBe(0);
     expect(next.lapses).toBe(1);
   });
 
   it('orders the intervals Hard ≤ Good ≤ Easy, at least a day', () => {
     const history = [at(0, 4)];
     const reviewed = { ...card, lastReviewedAt: T0, repetitions: 1 };
-    const [hard, good, easy] = [3, 4, 5].map((q) => fsrsSchedule(reviewed, history, q, T0 + 3 * DAY).interval);
+    const [hard, good, easy] = [3, 4, 5].map((q) => fsrsSchedule(reviewed, history, q, T0 + 3 * DAY).intervalDays);
     expect(hard).toBeGreaterThanOrEqual(1);
     expect(hard!).toBeLessThanOrEqual(good!);
     expect(good!).toBeLessThanOrEqual(easy!);
@@ -88,7 +88,7 @@ describe('scheduling', () => {
     const reviewed = { ...card, lastReviewedAt: T0 + 3 * DAY, repetitions: 2 };
     const relaxed = fsrsSchedule(reviewed, history, 4, T0 + 20 * DAY, { parameters: DEFAULT_PARAMETERS, retention: 0.8 });
     const strict = fsrsSchedule(reviewed, history, 4, T0 + 20 * DAY, { parameters: DEFAULT_PARAMETERS, retention: 0.95 });
-    expect(strict.interval).toBeLessThan(relaxed.interval);
+    expect(strict.intervalDays).toBeLessThan(relaxed.intervalDays);
   });
 
   it('leaves the SM-2 ease alone, so switching back picks up where it was', () => {
@@ -113,14 +113,14 @@ describe('grading through the database', () => {
     await db.cards.add(cardLike({ id: 'card', createdAt: T0, dueAt: T0, lastReviewedAt: null }));
     await gradeCard('card', 4, DEFAULT_SETTINGS, T0);
     const graded = (await db.cards.get('card'))!;
-    expect(graded.interval).toBe(Math.round(DEFAULT_PARAMETERS[2]!));
+    expect(graded.intervalDays).toBe(Math.round(DEFAULT_PARAMETERS[2]!));
     expect(await getReviewsForCard('card')).toHaveLength(1);
   });
 
   it('still schedules with SM-2 when asked to', async () => {
     await db.cards.add(cardLike({ id: 'card', createdAt: T0, dueAt: T0, lastReviewedAt: null }));
     await gradeCard('card', 4, { ...DEFAULT_SETTINGS, scheduler: 'sm2' }, T0);
-    expect((await db.cards.get('card'))!.interval).toBe(1);
+    expect((await db.cards.get('card'))!.intervalDays).toBe(1);
   });
 
   it('starts FSRS afresh after a reset, keeping the log', async () => {
@@ -131,7 +131,7 @@ describe('grading through the database', () => {
     const fresh = (await db.cards.get('card'))!;
     await gradeCard('card', 4, DEFAULT_SETTINGS, fresh.createdAt + 1000);
     // As if it had never been failed: the first-Good stability.
-    expect((await db.cards.get('card'))!.interval).toBe(Math.round(DEFAULT_PARAMETERS[2]!));
+    expect((await db.cards.get('card'))!.intervalDays).toBe(Math.round(DEFAULT_PARAMETERS[2]!));
     expect(await getReviewsForCard('card')).toHaveLength(3);
   });
 });

@@ -60,7 +60,7 @@ function newCard(nodeId: string, desired: DesiredCard, now: number): Flashcard {
     kind: desired.kind,
     clozeIndex: desired.clozeIndex,
     easeFactor: DEFAULT_EASE,
-    interval: 0,
+    intervalDays: 0,
     repetitions: 0,
     lapses: 0,
     dueAt: now, // brand new cards are due immediately
@@ -258,8 +258,8 @@ export async function getCardStats(now = Date.now()): Promise<CardStats> {
     total: cards.length,
     due: cards.filter((c) => !c.suspended && c.dueAt <= now).length,
     fresh: cards.filter((c) => c.lastReviewedAt === null).length,
-    learning: cards.filter((c) => c.lastReviewedAt !== null && c.interval < 21).length,
-    mature: cards.filter((c) => c.interval >= 21).length,
+    learning: cards.filter((c) => c.lastReviewedAt !== null && c.intervalDays < 21).length,
+    mature: cards.filter((c) => c.intervalDays >= 21).length,
   };
 }
 
@@ -318,7 +318,7 @@ export async function resetCard(cardId: string): Promise<void> {
     // stay in the log, where statistics still count them.
     createdAt: now,
     easeFactor: DEFAULT_EASE,
-    interval: 0,
+    intervalDays: 0,
     repetitions: 0,
     lapses: 0,
     dueAt: now,

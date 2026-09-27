@@ -108,7 +108,7 @@ describe.each([
     // Scheduling carried over: the reviewed Basic card is a review card with
     // Anki's interval; the suspended one is suspended.
     const [powerhouse] = await getCardsForNode(top.find((r) => r.plainText.startsWith('What is'))!.id);
-    expect(powerhouse!.interval).toBe(5);
+    expect(powerhouse!.intervalDays).toBe(5);
     expect(powerhouse!.lastReviewedAt).not.toBeNull();
     const [water] = await getCardsForNode(top.find((r) => r.plainText.startsWith('Water'))!.id);
     expect(water!.suspended).toBe(true);

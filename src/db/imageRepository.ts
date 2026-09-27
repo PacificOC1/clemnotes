@@ -85,6 +85,37 @@ async function prepare(file: Blob): Promise<Prepared> {
   return { data: await blob.arrayBuffer(), mime: 'image/webp', width: canvas.width, height: canvas.height };
 }
 
+/** PDFs are kept whole — they are the source you read — up to what cloud storage takes. */
+export const MAX_PDF_BYTES = 50_000_000;
+
+/**
+ * Store a PDF (#53) in the same table as images: the same local-first bytes,
+ * the same upload to the private bucket, the same backup and clean-up.
+ */
+export async function storePdf(file: Blob, now = Date.now()): Promise<StoredImage> {
+  if (file.type && file.type !== 'application/pdf') throw new Error("That isn't a PDF.");
+  if (file.size > MAX_PDF_BYTES) {
+    throw new ImageTooLargeError(
+      `That PDF is ${(file.size / 1_000_000).toFixed(0)} MB — the limit is ${MAX_PDF_BYTES / 1_000_000} MB.`
+    );
+  }
+  const data = await file.arrayBuffer();
+  const stored: StoredImage = {
+    id: uuid(),
+    mime: 'application/pdf',
+    data,
+    width: null,
+    height: null,
+    size: data.byteLength,
+    uploadedAt: 0,
+    deletedAt: null,
+    createdAt: now,
+    updatedAt: now,
+  };
+  await db.images.add(stored);
+  return stored;
+}
+
 /** Store an image and return its id — what the doc will refer to. */
 export async function storeImage(file: Blob, now = Date.now()): Promise<StoredImage> {
   if (!file.type.startsWith('image/')) throw new Error("That isn't an image.");
@@ -157,8 +188,10 @@ export interface UnusedImages {
 }
 
 function collectImageIds(content: string, into: Set<string>): void {
-  // Cheaper than parsing every doc: image ids only ever appear as this attr.
-  for (const match of content.matchAll(/"imageId":"([^"]+)"/g)) into.add(match[1]!);
+  // Cheaper than parsing every doc: stored files are only ever referred to by
+  // these attrs — `imageId` on a picture, `fileId` on a PDF block or on a
+  // highlight's page chip (#53).
+  for (const match of content.matchAll(/"(?:imageId|fileId)":"([^"]+)"/g)) into.add(match[1]!);
 }
 
 /**

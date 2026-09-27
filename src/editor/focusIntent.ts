@@ -6,7 +6,8 @@
  * rem wants its start. Rather than widening a callback threaded through every
  * row, the few callers that care leave a note here first.
  */
-export type FocusPlace = 'start' | 'end';
+/** The start, the end, or a document position (a PDF card puts the cursor in its question). */
+export type FocusPlace = 'start' | 'end' | number;
 
 const intents = new Map<string, FocusPlace>();
 

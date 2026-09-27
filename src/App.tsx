@@ -11,6 +11,7 @@ import {
   ensureFirstChild,
   expandAncestors,
   flattenVisible,
+  getNode,
   isSelfOrDescendant,
   indentNodes,
   outdentNodes,
@@ -41,6 +42,8 @@ import { VersionHistory } from './components/VersionHistory';
 import { TemplatePicker } from './components/TemplatePicker';
 import { TableOfContents } from './components/TableOfContents';
 import { SplitPane } from './components/SplitPane';
+import { onOpenPdfRequest } from './pdf/pdfEvents';
+import { setFocusIntent } from './editor/focusIntent';
 import { SidebarResizer } from './components/SidebarResizer';
 import { countWords } from './db/outline';
 import { NEXT_THEME, loadTheme, onThemeChange, setTheme, type ThemePreference } from './theme';
@@ -59,6 +62,8 @@ import './App.css';
 // are writing, and neither view is needed to write.
 const ReviewView = lazy(() => import('./components/ReviewView').then((m) => ({ default: m.ReviewView })));
 const DictionaryView = lazy(() => import('./components/DictionaryView').then((m) => ({ default: m.DictionaryView })));
+// The PDF reader (#53) and pdf.js behind it load only when a PDF is opened.
+const PdfPane = lazy(() => import('./components/PdfPane').then((m) => ({ default: m.PdfPane })));
 
 const SIDEBAR_KEY = 'clemnotes:sidebar-open';
 const SIDEBAR_WIDTH_KEY = 'clemnotes:sidebar-width';
@@ -173,10 +178,22 @@ function Workspace({ route, navigate }: WorkspaceProps) {
     splitRef.current = splitId;
   }, [splitId]);
 
+  // A PDF open beside the outline (#53) rides along the same way.
+  const pdfRoute = route.tab === 'notes' ? (route.pdf ?? null) : null;
+  const pdfRef = useRef(pdfRoute);
+  useEffect(() => {
+    pdfRef.current = pdfRoute;
+  }, [pdfRoute]);
+
   const handleZoomTo = useCallback(
     (nodeId: string) => {
       setFocusedNodeId(null);
-      navigate({ tab: 'notes', nodeId, ...(splitRef.current ? { splitId: splitRef.current } : {}) });
+      navigate({
+        tab: 'notes',
+        nodeId,
+        ...(splitRef.current ? { splitId: splitRef.current } : {}),
+        ...(pdfRef.current ? { pdf: pdfRef.current } : {}),
+      });
     },
     [navigate]
   );
@@ -197,6 +214,24 @@ function Workspace({ route, navigate }: WorkspaceProps) {
   const closeSplit = useCallback(() => {
     if (route.nodeId) navigate({ tab: 'notes', nodeId: route.nodeId });
   }, [navigate, route.nodeId]);
+
+  // A PDF block, a page chip or a dropped file asks for a PDF: open it beside
+  // whatever the main pane shows, in place of a second document.
+  const routeRef = useRef(route);
+  useEffect(() => {
+    routeRef.current = route;
+  }, [route]);
+  useEffect(
+    () =>
+      onOpenPdfRequest((fileId, target) => {
+        const current = routeRef.current;
+        const main = current.nodeId ?? breadcrumbQueryRootRef.current;
+        if (!main) return;
+        if (current.pdf?.fileId === fileId && !target) return;
+        navigate({ tab: 'notes', nodeId: main, pdf: { fileId, ...(target ? { page: target.page } : current.pdf?.fileId === fileId && current.pdf.page ? { page: current.pdf.page } : {}) } });
+      }),
+    [navigate]
+  );
 
   const swapSplit = useCallback(() => {
     if (route.nodeId && splitId) navigate({ tab: 'notes', nodeId: splitId, splitId: route.nodeId });
@@ -231,6 +266,27 @@ function Workspace({ route, navigate }: WorkspaceProps) {
       await expandAncestors(nodeId, activeRootId);
       setFocusedNodeId(null);
       requestAnimationFrame(() => setFocusedNodeId(nodeId));
+    },
+    [activeRootId, handleZoomTo]
+  );
+
+  /**
+   * Show a rem from the PDF pane — a highlight clicked on the page, or a card
+   * just made. In the page on screen if it is there; otherwise the main pane
+   * moves to the rem it sits under, so it is seen in context.
+   */
+  const showRemFromPdf = useCallback(
+    async (nodeId: string) => {
+      const row = await getNode(nodeId);
+      if (!row) return;
+      if (activeRootId && nodeId !== activeRootId && (await isSelfOrDescendant(nodeId, activeRootId))) {
+        await expandAncestors(nodeId, activeRootId);
+        setFocusedNodeId(null);
+        requestAnimationFrame(() => setFocusedNodeId(nodeId));
+        return;
+      }
+      handleZoomTo(row.parentId ?? nodeId);
+      window.setTimeout(() => setFocusedNodeId(nodeId), 200);
     },
     [activeRootId, handleZoomTo]
   );
@@ -596,11 +652,11 @@ function Workspace({ route, navigate }: WorkspaceProps) {
                   </div>
                   <button
                     type="button"
-                    className={`icon-btn ${splitId ? 'active' : ''}`}
-                    onClick={() => (splitId ? closeSplit() : openInSplit(activeRootId))}
+                    className={`icon-btn ${splitId || pdfRoute ? 'active' : ''}`}
+                    onClick={() => (splitId || pdfRoute ? closeSplit() : openInSplit(activeRootId))}
                     title={splitId ? 'Close the second pane' : 'Split view — open a second document beside this one (or shift-click a page or link)'}
                     aria-label="Split view"
-                    aria-pressed={Boolean(splitId)}
+                    aria-pressed={Boolean(splitId || pdfRoute)}
                   >
                     ◫
                   </button>
@@ -630,7 +686,7 @@ function Workspace({ route, navigate }: WorkspaceProps) {
               <button type="button" className="ghost-btn" onClick={handleNewPage}>+ New page</button>
             </header>
 
-            <div className={`panes ${splitId ? 'is-split' : ''}`}>
+            <div className={`panes ${splitId || pdfRoute ? 'is-split' : ''}`}>
             <main className="content">
               {/* Scoped to the document, so a bad rem leaves the sidebar, the
                   tabs and the URL working — something to walk away with. */}
@@ -684,7 +740,29 @@ function Workspace({ route, navigate }: WorkspaceProps) {
               </Suspense>
               </ErrorBoundary>
             </main>
-            {splitId && (
+            {pdfRoute && route.nodeId && (
+              <Suspense fallback={<section className="split-pane pdf-pane"><p className="pdf-status">Opening…</p></section>}>
+              <PdfPane
+                key={pdfRoute.fileId}
+                fileId={pdfRoute.fileId}
+                page={pdfRoute.page}
+                fallbackParentId={activeRootId}
+                onClose={closeSplit}
+                onPageSeen={(page) => {
+                  const current = routeRef.current;
+                  if (current.nodeId && current.pdf) {
+                    navigate({ tab: 'notes', nodeId: current.nodeId, pdf: { fileId: current.pdf.fileId, page } }, { replace: true });
+                  }
+                }}
+                onShowRem={(nodeId) => void showRemFromPdf(nodeId)}
+                onEditRem={(nodeId, cursor) => {
+                  setFocusIntent(nodeId, cursor);
+                  void showRemFromPdf(nodeId);
+                }}
+              />
+              </Suspense>
+            )}
+            {splitId && !pdfRoute && (
               <SplitPane
                 nodeId={splitId}
                 onNavigate={openInSplit}

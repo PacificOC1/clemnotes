@@ -38,15 +38,15 @@ describe('reviewStateOf', () => {
 
   it('only calls a card in review once it is past the graduating steps', () => {
     const seen = { lastReviewedAt: NOW - DAY_MS, repetitions: 2 };
-    expect(reviewStateOf(cardLike({ ...seen, interval: 1 }))).toBe('learning');
-    expect(reviewStateOf(cardLike({ ...seen, interval: 6 }))).toBe('review');
-    expect(reviewStateOf(cardLike({ ...seen, interval: 60 }))).toBe('review');
+    expect(reviewStateOf(cardLike({ ...seen, intervalDays: 1 }))).toBe('learning');
+    expect(reviewStateOf(cardLike({ ...seen, intervalDays: 6 }))).toBe('review');
+    expect(reviewStateOf(cardLike({ ...seen, intervalDays: 60 }))).toBe('review');
   });
 });
 
 describe('buildReviewEntry', () => {
   it('captures the card as it was going in, and the schedule coming out', () => {
-    const card = cardLike({ interval: 10, repetitions: 3, lapses: 1, easeFactor: 2.3, dueAt: NOW - DAY_MS });
+    const card = cardLike({ intervalDays: 10, repetitions: 3, lapses: 1, easeFactor: 2.3, dueAt: NOW - DAY_MS });
     const next = schedule(card, 3, NOW);
     const row = buildReviewEntry(card, 3, next, NOW);
 
@@ -58,7 +58,7 @@ describe('buildReviewEntry', () => {
       reviewedAt: NOW,
       scheduledFor: card.dueAt,
       intervalBefore: 10,
-      intervalAfter: next.interval,
+      intervalAfter: next.intervalDays,
       easeBefore: 2.3,
       easeAfter: next.easeFactor,
       repetitionsBefore: 3,

@@ -201,7 +201,7 @@ export function findConflicts<T extends Syncable>(
 }
 
 /** Fields a three-way merge must not treat as data. */
-const MERGE_IGNORED = new Set(['id', 'updatedAt', 'createdAt', 'userId', 'rootKey', 'cardKey', 'titleKey', 'childrenIds']);
+const MERGE_IGNORED = new Set(['id', 'updatedAt', 'createdAt', 'userId', 'rootKey', 'cardKey', 'titleKey', 'pdfKeys', 'childrenIds']);
 
 const same = (a: unknown, b: unknown) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
 

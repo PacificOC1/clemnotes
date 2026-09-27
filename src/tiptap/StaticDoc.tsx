@@ -4,6 +4,7 @@ import { useWikiLinkView } from './WikiLinkNode';
 import { useTagView } from './TagNode';
 import { useMathHtml } from './MathNode';
 import { ImageTools, imageSizeOf, useRemImage } from './ImageNode';
+import { PdfBlockBody, usePdfAnchorView } from './PdfNodes';
 import { compileMatcher } from './dictionaryMatcher';
 import { DICTIONARY_UPDATED_EVENT, getDictionaryEntries } from '../db/dictionaryStore';
 
@@ -47,6 +48,8 @@ const STATIC_NODES = new Set([
   'math',
   'cloze',
   'remImage',
+  'remPdf',
+  'pdfAnchor',
 ]);
 
 /** True when a document holds something only a live editor can draw. */
@@ -193,6 +196,15 @@ function StaticMath({ latex }: { latex: string }) {
       style={{ whiteSpace: 'normal' }}
       dangerouslySetInnerHTML={{ __html: html }}
     />
+  );
+}
+
+function StaticPdfAnchor({ attrs }: { attrs: DocNode['attrs'] }) {
+  const view = usePdfAnchorView(attrs);
+  return (
+    <span className="pdf-anchor" title={view.title} onClick={view.onClick} style={{ whiteSpace: 'normal' }}>
+      {view.label}
+    </span>
   );
 }
 
@@ -358,6 +370,14 @@ function renderNode(node: DocNode, key: string, ctx: RenderContext): ReactNode {
     }
     case 'remImage':
       return <StaticImage key={key} attrs={attrs} tools={ctx.editable} />;
+    case 'remPdf':
+      return (
+        <div key={key} className="pdf-block">
+          <PdfBlockBody attrs={attrs} />
+        </div>
+      );
+    case 'pdfAnchor':
+      return <StaticPdfAnchor key={key} attrs={attrs} />;
     default:
       // `docNeedsEditor` keeps unknown types away from here; draw their text rather than nothing.
       return <span key={key}>{renderChildren(node, key, ctx)}</span>;

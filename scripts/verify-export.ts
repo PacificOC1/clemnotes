@@ -149,8 +149,8 @@ async function main() {
   check('elapsedMs is null on a first review', log[0]?.elapsedMs === null);
   check(
     'before/after intervals bracket the reschedule',
-    log[0]?.intervalBefore === before?.interval && log[0]?.intervalAfter === after?.interval,
-    { logged: [log[0]?.intervalBefore, log[0]?.intervalAfter], card: [before?.interval, after?.interval] }
+    log[0]?.intervalBefore === before?.intervalDays && log[0]?.intervalAfter === after?.intervalDays,
+    { logged: [log[0]?.intervalBefore, log[0]?.intervalAfter], card: [before?.intervalDays, after?.intervalDays] }
   );
   check('the card actually moved on', (after?.dueAt ?? 0) > (before?.dueAt ?? 0));
 

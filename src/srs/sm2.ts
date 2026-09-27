@@ -36,7 +36,7 @@ export const GRADES: Grade[] = [
 
 export interface ScheduleUpdate {
   easeFactor: number;
-  interval: number;
+  intervalDays: number;
   repetitions: number;
   lapses: number;
   dueAt: number;
@@ -45,7 +45,7 @@ export interface ScheduleUpdate {
 
 /** Apply one review to a card's scheduling state. Pure — callers persist the result. */
 export function schedule(card: Flashcard, quality: number, now = Date.now()): ScheduleUpdate {
-  let { easeFactor, interval, repetitions, lapses } = card;
+  let { easeFactor, intervalDays: interval, repetitions, lapses } = card;
 
   if (quality < 3) {
     repetitions = 0;
@@ -75,7 +75,7 @@ export function schedule(card: Flashcard, quality: number, now = Date.now()): Sc
 
   return {
     easeFactor,
-    interval,
+    intervalDays: interval,
     repetitions,
     lapses,
     dueAt: quality < 3 ? now + RELEARN_MS : now + interval * DAY_MS,
@@ -87,7 +87,7 @@ export function schedule(card: Flashcard, quality: number, now = Date.now()): Sc
 export function previewInterval(card: Flashcard, quality: number): string {
   const next = schedule(card, quality);
   if (quality < 3) return '10m';
-  const days = next.interval;
+  const days = next.intervalDays;
   if (days < 1) return '10m';
   if (days === 1) return '1d';
   if (days < 30) return `${days}d`;

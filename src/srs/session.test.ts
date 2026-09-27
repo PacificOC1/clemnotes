@@ -7,7 +7,7 @@ const NOW = 1_700_000_000_000;
 
 /** A card that has been seen before, so it counts against the review limit. */
 function seen(id: string, nodeId = id, extra = {}) {
-  return cardLike({ id, nodeId, lastReviewedAt: NOW - 86_400_000, interval: 5, ...extra });
+  return cardLike({ id, nodeId, lastReviewedAt: NOW - 86_400_000, intervalDays: 5, ...extra });
 }
 
 /** A card being seen for the first time. */

@@ -50,7 +50,7 @@ interface Activation {
 }
 
 /** Elements that act on click by themselves, in either mode. */
-const OWN_CLICK = '.wiki-link, .tag-chip, a[href]';
+const OWN_CLICK = '.wiki-link, .tag-chip, a[href], .pdf-anchor, .pdf-block-open';
 /** Elements whose click behaviour belongs to the editor. */
 const REPLAY_CLICK = '.math-node, .dict-word, li[data-type="taskItem"] > label, .rem-image-tools button';
 

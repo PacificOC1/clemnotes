@@ -88,14 +88,14 @@ describe('deriving the cards', () => {
     await remWith('Liver ::');
     const [before] = await getCardsForNode('rem');
     expect(before?.id).toBe('rem::forward');
-    await db.cards.update('rem::forward', { interval: 12 });
+    await db.cards.update('rem::forward', { intervalDays: 12 });
 
     await db.nodes.update('rem', { content: textDoc('Liver :: detox') });
     await reconcileCards((await getNode('rem'))!);
     const [after] = await getCardsForNode('rem');
     // Same card, same schedule: finishing the line is not a new fact to learn.
     expect(after?.id).toBe('rem::forward');
-    expect(after?.interval).toBe(12);
+    expect(after?.intervalDays).toBe(12);
   });
 
   it('retires the list card when the marker goes', async () => {

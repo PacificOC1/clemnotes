@@ -100,7 +100,7 @@ describe('undoing a structural change', () => {
     const page = await threeChildTree();
     const rem = await addChild(page, 'card-rem', 'A :: B', { content: textDoc('A :: B') });
     await reconcileCards(rem);
-    await db.cards.update('card-rem::forward', { interval: 30, repetitions: 4 });
+    await db.cards.update('card-rem::forward', { intervalDays: 30, repetitions: 4 });
     clearUndoHistory();
 
     await deleteNode('card-rem');
@@ -108,7 +108,7 @@ describe('undoing a structural change', () => {
 
     await undoLast();
     const [card] = await getCardsForNode('card-rem');
-    expect(card).toMatchObject({ interval: 30, repetitions: 4 });
+    expect(card).toMatchObject({ intervalDays: 30, repetitions: 4 });
   });
 
   it('puts a merge back', async () => {

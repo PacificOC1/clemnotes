@@ -79,20 +79,25 @@ describe('upgrading a v9 database', () => {
         updatedAt: 4000,
       }),
     ]);
+    // A card as every version before v16 stored it (#27).
+    await legacy.table('cards').add({
+      id: 'plain::forward', nodeId: 'plain', kind: 'forward', clozeIndex: null, easeFactor: 2.5, interval: 9,
+      repetitions: 2, lapses: 0, dueAt: 5000, lastReviewedAt: 4000, suspended: false, deletedAt: null, createdAt: 1, updatedAt: 1,
+    });
     legacy.close();
 
     // What `main.tsx` does before anything touches the database: copy it.
     const { snapshotBeforeUpgrade, listSnapshots, getSnapshot } = await import('./migrationSafety');
-    const outcome = await snapshotBeforeUpgrade(15);
+    const outcome = await snapshotBeforeUpgrade(16);
     expect(outcome.status).toBe('snapshotted');
 
     const { db } = await import('./database');
     await db.open();
-    expect(db.verno).toBe(15);
+    expect(db.verno).toBe(16);
 
     // The snapshot holds the rows as they were *before* v10 rewrote them.
     const [summary] = await listSnapshots();
-    expect(summary).toMatchObject({ fromVersion: 9, toVersion: 15 });
+    expect(summary).toMatchObject({ fromVersion: 9, toVersion: 16 });
     const before = await getSnapshot(summary!.id);
     const legacyLinks = (before!.tables.nodes as OutlinerNode[]).find((n) => n.id === 'links');
     expect(targetsOf(legacyLinks!.content)).toEqual([null]);
@@ -105,6 +110,11 @@ describe('upgrading a v9 database', () => {
     expect((await db.nodes.get('target'))?.rootKey).toBe('page');
     expect((await db.nodes.get('plain'))?.rootKey).toBeUndefined();
     expect(await db.nodes.where('rootKey').equals('page').primaryKeys()).toEqual(['target']);
+
+    // v16: the interval says its unit (#27).
+    const card = await db.cards.get('plain::forward');
+    expect(card?.intervalDays).toBe(9);
+    expect(card).not.toHaveProperty('interval');
 
     // v15: the title index (#15), and no more `childrenIds` (#4).
     expect(await db.nodes.where('titleKey').equals('photosynthesis').primaryKeys()).toEqual(['target']);

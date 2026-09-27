@@ -26,7 +26,9 @@ import type { Plugin } from 'vite';
 /** Files from `public/` — copied as they are, so not in the bundle the plugin sees. */
 const PUBLIC_FILES = ['favicon.svg', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 
-const SKIP = [/\.map$/, /\.wasm$/, /\.woff$/, /\.ttf$/, /^\.vite\//, /^sw\.js$/];
+// pdf.js (#53) is over 1.5 MB and most sessions never open a PDF: it is
+// cached the first time it is used rather than downloaded up front.
+const SKIP = [/\.map$/, /\.wasm$/, /\.woff$/, /\.ttf$/, /^\.vite\//, /^sw\.js$/, /(^|\/)pdf\.worker/, /(^|\/)pdf-[\w-]+\.js$/];
 
 export function serviceWorkerSource(files: string[], version: string): string {
   const precache = ['./', ...files.map((f) => `./${f}`)];

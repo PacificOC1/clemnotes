@@ -5,6 +5,7 @@ import { setMenuKeyHandler } from '../editor/menuStore';
 import { searchNodesByTitle } from '../db/repository';
 import { TAG_CHARS, ensureTagPage, searchTagPages } from '../db/tags';
 import { pickImageInto } from '../tiptap/ImageNode';
+import { pickPdfInto } from '../tiptap/PdfNodes';
 import { createPageForTitle, dailyTitle, openDailyNote, relativeDay } from '../db/dailyNotes';
 import type { OutlinerNode } from '../db/schema';
 
@@ -155,6 +156,11 @@ const SLASH_COMMANDS: SlashCommand[] = [
     id: 'image', label: 'Image', hint: 'From a file — or just paste or drop one', icon: '▣',
     keywords: ['image', 'picture', 'photo', 'screenshot', 'img', 'diagram'],
     run: (e) => pickImageInto(e),
+  },
+  {
+    id: 'pdf', label: 'PDF', hint: 'Read a PDF beside your notes, and highlight it into rems', icon: '▤',
+    keywords: ['pdf', 'paper', 'reading', 'document', 'book', 'highlight', 'annotate'],
+    run: (e) => pickPdfInto(e),
   },
   {
     id: 'math', label: 'Math', hint: 'Type $ then LaTeX then $', icon: '∑',

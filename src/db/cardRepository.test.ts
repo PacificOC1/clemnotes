@@ -122,7 +122,7 @@ describe('reconciliation', () => {
     await rewrite('rem', textDoc('A :: B'));
     const back = await db.cards.get('rem::forward');
     expect(back?.deletedAt).toBeNull();
-    expect(back?.interval).toBe(graded?.interval);
+    expect(back?.intervalDays).toBe(graded?.intervalDays);
     expect(back?.easeFactor).toBe(graded?.easeFactor);
     expect(back?.repetitions).toBe(graded?.repetitions);
   });
@@ -179,7 +179,7 @@ describe('the review queue', () => {
     const other = await addTextNode('rem2', 'C :: D', { content: textDoc('C :: D') });
     await reconcileCards(other);
     await db.cards.update('rem2::forward', {
-      interval: 30,
+      intervalDays: 30,
       lastReviewedAt: now - DAY_MS,
       dueAt: now + 10 * DAY_MS,
     });
@@ -211,8 +211,8 @@ describe('grading', () => {
       grade: 4,
       state: 'new',
       elapsedMs: null,
-      intervalBefore: before?.interval,
-      intervalAfter: after?.interval,
+      intervalBefore: before?.intervalDays,
+      intervalAfter: after?.intervalDays,
       easeBefore: before?.easeFactor,
       easeAfter: after?.easeFactor,
     });
@@ -253,7 +253,7 @@ describe('grading', () => {
     const after = await db.cards.get('rem::forward');
     expect(after?.suspended).toBe(true);
     expect(after?.dueAt).toBe(before?.dueAt);
-    expect(after?.interval).toBe(before?.interval);
+    expect(after?.intervalDays).toBe(before?.intervalDays);
     expect(after?.repetitions).toBe(before?.repetitions);
     expect(await db.reviews.count()).toBe(0);
   });
@@ -264,7 +264,7 @@ describe('grading', () => {
     await resetCard('rem::forward');
 
     const card = await db.cards.get('rem::forward');
-    expect(card).toMatchObject({ interval: 0, repetitions: 0, lapses: 0, lastReviewedAt: null });
+    expect(card).toMatchObject({ intervalDays: 0, repetitions: 0, lapses: 0, lastReviewedAt: null });
     expect(card?.easeFactor).toBe(2.5);
     // Those reviews still happened. The log is append-only.
     expect(await getReviewsForCard('rem::forward')).toHaveLength(1);

@@ -84,3 +84,22 @@ describe('split view in the URL', () => {
     expect(parseRoute('#/notes/a/split')).toEqual({ tab: 'notes', nodeId: 'a' });
   });
 });
+
+describe('a PDF beside the outline (#53)', () => {
+  it('round-trips with and without a page', () => {
+    for (const route of [
+      { tab: 'notes' as const, nodeId: 'a', pdf: { fileId: 'f1' } },
+      { tab: 'notes' as const, nodeId: 'a', pdf: { fileId: 'f1', page: 12 } },
+    ]) {
+      expect(parseRoute(formatRoute(route))).toEqual(route);
+    }
+  });
+
+  it('ignores a page that is not a page number', () => {
+    expect(parseRoute('#/notes/a/pdf/f1/zero')).toEqual({ tab: 'notes', nodeId: 'a', pdf: { fileId: 'f1' } });
+  });
+
+  it('tells two pages of the same PDF apart', () => {
+    expect(sameRoute(parseRoute('#/notes/a/pdf/f/2'), parseRoute('#/notes/a/pdf/f/3'))).toBe(false);
+  });
+});

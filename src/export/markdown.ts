@@ -165,6 +165,10 @@ function inlineToMarkdown(nodes: DocNode[] | undefined): string {
       case 'hardBreak':
         out += '\n';
         break;
+      case 'pdfAnchor':
+        // Where in the PDF this came from, as a reader would cite it.
+        out += `(p. ${Number(node.attrs?.page ?? 1)})`;
+        break;
       default:
         out += inlineToMarkdown(node.content);
         break;
@@ -270,6 +274,12 @@ function blockToMarkdown(node: DocNode, listDepth = 0): string[] {
       // the id that finds it, rather than silently dropping it.
       const alt = String(node.attrs?.alt ?? '') || 'image';
       return [`![${escapeText(alt)}](clemnotes-image:${String(node.attrs?.imageId ?? '')})`];
+    }
+
+    case 'remPdf': {
+      // Like an image: the bytes live in the backup and this browser.
+      const name = String(node.attrs?.name ?? '') || 'PDF';
+      return [`[${escapeText(name)}](clemnotes-pdf:${String(node.attrs?.fileId ?? '')})`];
     }
 
     default: {

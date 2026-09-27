@@ -77,7 +77,7 @@ create table public.cards (
   kind text not null,
   "clozeIndex" integer,
   "easeFactor" double precision not null default 2.5,
-  interval double precision not null default 0,
+  "intervalDays" double precision not null default 0,
   repetitions integer not null default 0,
   lapses integer not null default 0,
   "dueAt" bigint not null,

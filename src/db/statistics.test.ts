@@ -52,13 +52,13 @@ describe('dailySeries', () => {
 describe('intervalDistribution', () => {
   it('sorts cards into buckets by interval, counting unseen cards as new', () => {
     const cards = [
-      cardLike({ id: '1', interval: 0 }),
-      cardLike({ id: '2', interval: 200, lastReviewedAt: null }), // never seen: still new
-      cardLike({ id: '3', interval: 1, lastReviewedAt: NOW }),
-      cardLike({ id: '4', interval: 5, lastReviewedAt: NOW }),
-      cardLike({ id: '5', interval: 14, lastReviewedAt: NOW }),
-      cardLike({ id: '6', interval: 45, lastReviewedAt: NOW }),
-      cardLike({ id: '7', interval: 400, lastReviewedAt: NOW }),
+      cardLike({ id: '1', intervalDays: 0 }),
+      cardLike({ id: '2', intervalDays: 200, lastReviewedAt: null }), // never seen: still new
+      cardLike({ id: '3', intervalDays: 1, lastReviewedAt: NOW }),
+      cardLike({ id: '4', intervalDays: 5, lastReviewedAt: NOW }),
+      cardLike({ id: '5', intervalDays: 14, lastReviewedAt: NOW }),
+      cardLike({ id: '6', intervalDays: 45, lastReviewedAt: NOW }),
+      cardLike({ id: '7', intervalDays: 400, lastReviewedAt: NOW }),
     ];
     expect(intervalDistribution(cards).map((b) => [b.label, b.count])).toEqual([
       ['New', 2],
@@ -72,7 +72,7 @@ describe('intervalDistribution', () => {
 
   it('puts every card in exactly one bucket', () => {
     const cards = Array.from({ length: 50 }, (_, i) =>
-      cardLike({ id: `c${i}`, interval: i * 7, lastReviewedAt: NOW })
+      cardLike({ id: `c${i}`, intervalDays: i * 7, lastReviewedAt: NOW })
     );
     const total = intervalDistribution(cards).reduce((sum, b) => sum + b.count, 0);
     expect(total).toBe(cards.length);
@@ -144,9 +144,9 @@ describe('currentStreak', () => {
 describe('loadStatistics', () => {
   it('reads cards and the log into one snapshot', async () => {
     await db.cards.bulkAdd([
-      cardLike({ id: 'due', dueAt: NOW - DAY_MS, interval: 30, lastReviewedAt: daysAgo(30) }),
-      cardLike({ id: 'later', dueAt: NOW + 2 * DAY_MS, interval: 3, lastReviewedAt: daysAgo(1) }),
-      cardLike({ id: 'asleep', dueAt: NOW - DAY_MS, suspended: true, interval: 0 }),
+      cardLike({ id: 'due', dueAt: NOW - DAY_MS, intervalDays: 30, lastReviewedAt: daysAgo(30) }),
+      cardLike({ id: 'later', dueAt: NOW + 2 * DAY_MS, intervalDays: 3, lastReviewedAt: daysAgo(1) }),
+      cardLike({ id: 'asleep', dueAt: NOW - DAY_MS, suspended: true, intervalDays: 0 }),
     ]);
 
     const stats = await loadStatistics(30, 30, NOW);

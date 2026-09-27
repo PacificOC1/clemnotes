@@ -108,6 +108,23 @@ browser (IndexedDB), so they work offline; very large photos are shrunk to
 private Supabase Storage bucket and other devices fetch each one the first time
 they show it — see `migration-005-images.sql` below.
 
+### PDFs
+
+Type `/pdf` in a rem (or drop a PDF onto one) to add it: the rem gets a block
+with the file's name, and the PDF opens **beside** your notes. Select a passage
+and pick:
+
+- **Highlight** — a new rem, under the one holding the PDF, quoting the passage
+  and starting with a page chip like `p. 12`.
+- **Make card** — the same, as a flashcard whose answer is the passage; the
+  cursor lands in front of the `::`, ready for you to type the question.
+
+Highlights are drawn on the page. Click one to go to its rem; click a rem's
+page chip to go back to the passage, which flashes. **Read beside** on the block
+opens it again, `−` / `+` zoom (the percentage resets to fit the width), and the
+page you're on is part of the URL. PDFs are stored and synced like images, up
+to 50 MB each. A scanned PDF with no text layer can be read but not highlighted.
+
 ### Templates
 
 Any page in the **Templates** folder is a template. Type `/template` in a rem to
@@ -308,9 +325,17 @@ existing notes.
 
 | You already have | Run |
 |---|---|
-| only `nodes` | `supabase/migration-002-sync-all.sql`, then `003`, `004` and `005` |
-| everything except `reviews` | `supabase/migration-003-reviews.sql`, then `004` and `005` |
-| everything, no images yet | `supabase/migration-005-images.sql` (creates the private `images` bucket) |
+| only `nodes` | `supabase/migration-002-sync-all.sql`, then `003`, `004`, `005` and `006` |
+| everything except `reviews` | `supabase/migration-003-reviews.sql`, then `004`, `005` and `006` |
+| everything, no images yet | `supabase/migration-005-images.sql` (creates the private `images` bucket), then `006` |
+| everything up to images | `supabase/migration-006-interval-days.sql` (renames a flashcard column) |
+
+**`006` goes with the September 2026 update** that renamed a flashcard's
+`interval` to `intervalDays`. Run it when you deploy that version; until you do,
+flashcard scheduling doesn't sync (everything else does, and the sidebar says
+which table is failing). It keeps the old column in step for devices that
+haven't updated yet. Once every device you use has loaded the new version, you
+can run `migration-007-drop-interval.sql` to remove the old column — optional.
 
 `migration-004-sync-watermarks.sql` only adds indexes; nothing breaks without it.
 
@@ -386,6 +411,10 @@ workflow already reads them.
 
 ### Known limitations
 
+- **The PDF reader needs one online visit.** pdf.js is too big to download for
+  everyone up front, so it is cached the first time a PDF is opened; opening a
+  PDF for the very first time while offline doesn't work.
+
 - **Text isn't merged within a rem.** Edit the *words* of the same bullet on two
   devices while both are offline and the newer edit wins — the other is kept in
   that rem's version history and flagged in the sidebar, rather than lost.
@@ -438,6 +467,7 @@ src/
     versionRepository.ts   # version history, and conflict copies from sync
     treeInsert.ts          # inserting whole trees (templates, imports) in one go
     tombstones.ts          # purging deletions older than 90 days
+    pdfRepository.ts       # a PDF's rem, its highlights, making a highlight or card
     templates.ts           # /template
     unlinked.ts            # unlinked references
     outline.ts             # word count, table of contents
@@ -463,6 +493,7 @@ src/
     ImageNode.tsx          # pasted / dropped images
     cardFaces.ts           # what each kind of card shows on each side
     StaticDoc.tsx          # a rem drawn without an editor, identical to the editor's markup
+    PdfNodes.tsx           # the PDF block, and a highlight's page chip
     DictionaryHighlight.ts # definition underlines + tooltips
     dictionaryMatcher.ts   # every definition compiled into one regex
     FontSize.ts
@@ -471,12 +502,17 @@ src/
   components/
     OutlinerNode.tsx       # the recursive rem row
     RemText.tsx            # a rem's text: static until clicked, then a live editor
+    PdfPane.tsx            # the PDF reader beside the outline (loaded on demand)
     EditorMenus.tsx        # the / and [[ popups
     FormattingBubble.tsx   # the selection toolbar
     ReviewView.tsx         # the flashcard session
     SplitPane.tsx          # the second document, beside the first
     DiagnosticsPanel.tsx   # the event log, with Copy
     PageSidebar.tsx, SearchOmnibar.tsx, BacklinksPanel.tsx, …
+  pdf/
+    pdfjs.ts               # pdf.js, loaded the first time a PDF is opened
+    geometry.ts            # highlight rectangles as fractions of the page
+    pdfEvents.ts           # "open this PDF", from anywhere
   import/
     inline.ts, markdown.ts # Markdown → rems
     importMarkdown.ts      # files / folders, images, tag pages
@@ -507,6 +543,8 @@ supabase/
   migration-003-reviews.sql      # adds the review log
   migration-004-sync-watermarks.sql  # indexes for incremental sync
   migration-005-images.sql       # the private images bucket
+  migration-006-interval-days.sql    # cards.interval → "intervalDays", kept in step for old devices
+  migration-007-drop-interval.sql    # optional, once every device has updated
 ```
 
 ## Tests
@@ -524,4 +562,6 @@ still runs standalone.
 
 ## What's not built
 
-PDF reading, touch-friendly dragging and a phone layout. The full list, with what is done, is in the roadmap.
+Touch-friendly dragging and a phone layout, realtime sync, and the long shots
+(card generation, a web clipper, publishing, collaboration). The full list, with
+what is done, is in the roadmap.

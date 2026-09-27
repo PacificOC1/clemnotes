@@ -302,6 +302,37 @@ export class OutlinerDB extends Dexie {
           });
       });
 
+    // v16: a flashcard's `interval` is `intervalDays` (#27) — the unit in the
+    // name, and not a Postgres keyword.
+    //
+    // Also `pdfKeys` (#53): the PDFs a rem holds or quotes, so a PDF's reader
+    // can find its highlights and the rem it belongs to without reading every rem.
+    this.version(16)
+      .stores({
+        nodes: 'id, parentId, isPage, updatedAt, *outboundLinks, rootKey, cardKey, titleKey, *pdfKeys',
+        dictionary: 'id, word, updatedAt',
+        folders: 'id, order, updatedAt',
+        cards: 'id, nodeId, dueAt, updatedAt',
+        reviews: 'id, cardId, nodeId, reviewedAt, updatedAt',
+        images: 'id, updatedAt, uploadedAt',
+        versions: 'id, [nodeId+savedAt], savedAt, reason',
+        syncBase: 'id',
+      })
+      .upgrade(async (tx) => {
+        await tx
+          .table('nodes')
+          .toCollection()
+          .modify((node) => {
+            normalizeNodeRow(node);
+          });
+        await tx
+          .table('cards')
+          .toCollection()
+          .modify((card) => {
+            normalizeCardRow(card);
+          });
+      });
+
     // Every row written to `nodes` — add, put, update, modify, bulk or not,
     // from the app, a sync pull, a restore or an upgrade — passes through
     // here on its way to IndexedDB. Deriving the index keys at this one
@@ -315,13 +346,18 @@ export class OutlinerDB extends Dexie {
           ...down,
           table(tableName) {
             const table = down.table(tableName);
-            if (tableName !== 'nodes') return table;
+            const normalize: ((value: unknown) => unknown) | null =
+              tableName === 'nodes'
+                ? (value) => normalizeNodeRow({ ...(value as OutlinerNode) })
+                : tableName === 'cards'
+                  ? (value) => normalizeCardRow({ ...(value as Flashcard) })
+                  : null;
+            if (!normalize) return table;
             return {
               ...table,
               mutate(req) {
                 if (req.type !== 'add' && req.type !== 'put') return table.mutate(req);
-                const values = req.values.map((value) => normalizeNodeRow({ ...(value as OutlinerNode) }));
-                return table.mutate({ ...req, values });
+                return table.mutate({ ...req, values: req.values.map(normalize) });
               },
             };
           },
@@ -329,6 +365,20 @@ export class OutlinerDB extends Dexie {
       },
     });
   }
+}
+
+/**
+ * A card row as it should be stored. Rows from before v16 — a backup, or a
+ * download from a device not yet updated — call the interval `interval`;
+ * whichever arrives, it is kept as `intervalDays`.
+ */
+export function normalizeCardRow(card: Flashcard): Flashcard {
+  const legacy = card as unknown as Record<string, unknown>;
+  if ('interval' in legacy) {
+    if (typeof card.intervalDays !== 'number' && typeof legacy.interval === 'number') card.intervalDays = legacy.interval;
+    delete legacy.interval;
+  }
+  return card;
 }
 
 /** A node row as it should be stored: derived keys current, retired fields gone. */
@@ -347,6 +397,8 @@ function applyDerivedKeys(node: OutlinerNode): void {
   else delete node.cardKey;
   if (keys.titleKey) node.titleKey = keys.titleKey;
   else delete node.titleKey;
+  if (keys.pdfKeys.length > 0) node.pdfKeys = keys.pdfKeys;
+  else delete node.pdfKeys;
 }
 
 export const db = new OutlinerDB();

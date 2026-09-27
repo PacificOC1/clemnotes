@@ -85,7 +85,7 @@ export function intervalDistribution(cards: Flashcard[]): IntervalBucket[] {
   return BUCKETS.map((bucket) => ({
     ...bucket,
     count: cards.filter((card) => {
-      const days = card.lastReviewedAt === null ? 0 : card.interval;
+      const days = card.lastReviewedAt === null ? 0 : card.intervalDays;
       return days >= bucket.min && (bucket.max === null || days <= bucket.max);
     }).length,
   }));
@@ -165,7 +165,7 @@ export async function loadStatistics(
     forecast: dueForecast(cards, forecastDays, now),
     intervals: intervalDistribution(cards),
     dueNow: cards.filter((c) => !c.suspended && c.dueAt <= now).length,
-    mature: cards.filter((c) => c.interval >= 21).length,
+    mature: cards.filter((c) => c.intervalDays >= 21).length,
     total: cards.length,
     streak: currentStreak(reviewsPerDay),
   };

@@ -51,7 +51,11 @@ export function docToPlainText(doc: DocNode): string {
       parts.push(String(node.attrs.latex));
     } else if (node.type === 'cloze' && node.attrs?.text) {
       parts.push(String(node.attrs.text));
+    } else if (node.type === 'remPdf' && node.attrs?.name) {
+      // A rem holding a PDF reads as the PDF's name — in the sidebar, in search.
+      parts.push(String(node.attrs.name));
     }
+    // A highlight's page chip (`pdfAnchor`) adds nothing: the quote is the text.
     node.content?.forEach(walk);
   }
 

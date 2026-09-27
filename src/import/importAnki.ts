@@ -133,7 +133,7 @@ function scheduleFrom(card: AnkiCard, collection: AnkiCollection, lastReview: nu
   else if (card.type === 1 || card.type === 3) dueAt = card.due * 1000;
   return {
     easeFactor: ease,
-    interval: card.ivl > 0 ? card.ivl : 0,
+    intervalDays: card.ivl > 0 ? card.ivl : 0,
     repetitions: card.type === 2 ? Math.max(2, card.reps - card.lapses) : 0,
     lapses: card.lapses,
     dueAt,

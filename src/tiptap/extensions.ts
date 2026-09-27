@@ -12,6 +12,7 @@ import Underline from '@tiptap/extension-underline';
 import { WikiLink } from './WikiLinkNode';
 import { Tag } from './TagNode';
 import { RemImage } from './ImageNode';
+import { RemPdf, PdfAnchor } from './PdfNodes';
 import { Math } from './MathNode';
 import { Cloze } from './ClozeNode';
 import { RemQueryBlock } from './QueryNode';
@@ -37,6 +38,8 @@ const baseExtensions = [
   Cloze,
   RemQueryBlock,
   RemImage,
+  RemPdf,
+  PdfAnchor,
 ];
 
 /** Extensions for an editable rem row. */

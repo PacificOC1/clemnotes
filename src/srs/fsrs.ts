@@ -139,7 +139,7 @@ export function fsrsSchedule(
   if (rating === 1) {
     return {
       easeFactor: card.easeFactor,
-      interval: 0,
+      intervalDays: 0,
       repetitions: 0,
       lapses: card.lapses + 1,
       dueAt: now + RELEARN_MS,
@@ -151,7 +151,7 @@ export function fsrsSchedule(
   const interval = intervalFor(algorithm, memory, t);
   return {
     easeFactor: card.easeFactor,
-    interval,
+    intervalDays: interval,
     repetitions: card.repetitions + 1,
     lapses: card.lapses,
     dueAt: now + interval * DAY_MS,
@@ -169,8 +169,8 @@ export function previewFsrs(
   options: FsrsOptions = DEFAULT_FSRS
 ): string {
   const next = fsrsSchedule(card, history, quality, now, options);
-  if (next.interval < 1) return '10m';
-  return formatDays(next.interval);
+  if (next.intervalDays < 1) return '10m';
+  return formatDays(next.intervalDays);
 }
 
 export function formatDays(days: number): string {
