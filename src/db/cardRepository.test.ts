@@ -11,6 +11,7 @@ import {
   getDueCards,
   gradeCard,
   reconcileCards,
+  reconcileCardsBulk,
   resetCard,
   setCardSuspended,
   toggleCardDirection,
@@ -94,6 +95,33 @@ describe('deriving cards from a rem', () => {
     expect((await getNode('rem'))?.isCard).toBe(true);
     await rewrite('rem', textDoc('no longer a card'));
     expect((await getNode('rem'))?.isCard).toBe(false);
+  });
+});
+
+describe('reconciling many rems at once', () => {
+  beforeEach(resetDatabase);
+
+  it('creates, keeps, retires and resurrects cards like one-at-a-time reconciling, and sets isCard', async () => {
+    const card = await addTextNode('a', 'A :: B', { content: textDoc('A :: B') });
+    const cloze = await addTextNode('b', 'x', { content: clozeDoc([1, 'x'], [2, 'y']) });
+    const plain = await addTextNode('c', 'plain', { content: textDoc('plain') });
+    await reconcileCardsBulk([card, cloze, plain]);
+    expect((await getAllCards()).map((c) => c.id).sort()).toEqual(['a::forward', 'b::cloze:1', 'b::cloze:2']);
+    expect((await db.nodes.get('a'))?.isCard).toBe(true);
+    expect((await db.nodes.get('c'))?.isCard).toBe(false);
+
+    // Graded, then the rem stops being a card, then comes back: history kept.
+    await gradeCard('a::forward', 5);
+    const graded = await db.cards.get('a::forward');
+    await db.nodes.update('a', { content: textDoc('A and B'), plainText: 'A and B' });
+    await reconcileCardsBulk([(await db.nodes.get('a'))!]);
+    expect((await db.cards.get('a::forward'))?.deletedAt).toBeTypeOf('number');
+    expect((await db.nodes.get('a'))?.isCard).toBe(false);
+    await db.nodes.update('a', { content: textDoc('A :: B'), plainText: 'A :: B' });
+    await reconcileCardsBulk([(await db.nodes.get('a'))!]);
+    const back = await db.cards.get('a::forward');
+    expect(back?.deletedAt).toBeNull();
+    expect(back?.intervalDays).toBe(graded?.intervalDays);
   });
 });
 

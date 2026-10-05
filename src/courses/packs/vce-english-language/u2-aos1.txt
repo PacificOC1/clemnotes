@@ -1,0 +1,725 @@
+% VCE English Language — Unit 2, Area of Study 1: English across time.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ f7da46eb U2.1.1.1 | The history of English through key events
+**In a sentence**
+  English grew from the dialects of Germanic settlers into a global language, and each great event — Viking raids, the Norman Conquest, Christianity, plague, printing, dictionaries, typewriters and the internet — left its mark on its sounds, words and grammar.
+**Key terms**
+  **Old English (OE)**: English from about 450 to 1100 — highly inflected, with Germanic vocabulary.
+  **Middle English (ME)**: about 1100 to 1500 — after the Norman Conquest, with heavy French influence and fewer inflections.
+  **Early Modern English (EModE)**: about 1500 to 1800 — the age of printing, the Renaissance and Shakespeare.
+  **Modern English (ModE)**: about 1800 to the present.
+  **Incursion**: an invasion or influx of people bringing another language.
+  **Language contact**: speakers of different languages interacting, leading to borrowing and change.
+**The periods**
+  **Old English**: Angles, Saxons and Jutes from northern Germany and Denmark settled Britain after the Romans left (from about 450). Inflected nouns and verbs, freer word order, runes then the Latin alphabet with extra letters such as þ (thorn) and æ (ash). Key text: "Beowulf".
+  **Middle English**: after 1066 French was the language of the court, law and church; English survived among ordinary people and lost most of its inflections. Key text: Chaucer's "Canterbury Tales" (late 1300s).
+  **Early Modern English**: printing, the Renaissance and exploration; spelling became more fixed; thousands of Latin and Greek borrowings; the Great Vowel Shift. Key texts: Shakespeare, the King James Bible (1611).
+  **Modern English**: empire, industry and science expand the vocabulary; standard spelling and grammar codified; English spreads worldwide; recently the internet.
+**Incursions (one elective option)**
+  **The Vikings** (raids from 793; the Danelaw from the late 800s): Old Norse was close to Old English, so speakers mixed easily. Norse gave everyday words — "sky", "egg", "skin", "knife", "window" ("wind-eye"), "husband", "law" — and even the pronouns "they", "them", "their". Mixed communities simplified word endings, speeding the loss of inflections. Place names in "-by" (Whitby, Derby) and "-thorpe".
+  **The Norman Conquest** (1066): William of Normandy's victory at Hastings made Norman French the language of power for about 300 years. About 10 000 French words entered English: government ("parliament", "tax"), law ("judge", "jury"), church, fashion and food. English kept the farm animals ("cow", "pig", "sheep") while French gave the meat on the table ("beef", "pork", "mutton"). By the late 1300s English was used again in law courts and Parliament (1362).
+  **Religion**: Christianity (Augustine's mission in 597) brought Latin church and learning words — "altar", "candle", "school", "verse", "monk". The King James Bible (1611) spread phrases still used: "the salt of the earth", "a labour of love", "a law unto themselves".
+  **Plagues**: the Black Death (1348–50) killed perhaps a third or more of England's people; labour shortages raised the status of ordinary English speakers, and English replaced French in schools soon after. COVID-19 is a modern example: "iso", "lockdown" and "social distancing" spread rapidly; "covidiot" was coined.
+**Inventions (the other elective option)**
+  **Gutenberg and the printing press**: Gutenberg's press (Mainz, about 1440); William Caxton set up the first press in England at Westminster in 1476. Printers chose London-based spellings, spreading one standard; some Flemish typesetters added quirks ("ghost" with an h). Spelling began to fix while pronunciation was still changing.
+  **Dictionaries**: Robert Cawdrey's "Table Alphabeticall" (1604), the first English dictionary; Samuel Johnson's "Dictionary" (1755) fixed many spellings; Noah Webster's American dictionary (1828) created American spellings ("color", "center"); the Oxford English Dictionary (completed 1928) records historical use; the Macquarie Dictionary (1981) records Australian English.
+  **Typewriters and keyboards**: the Sholes and Glidden typewriter (1870s) gave the QWERTY layout; typing standardised business letters; "cc" (carbon copy) survives in email; keyboards and phone keypads shaped abbreviations and predictive text.
+  **The internet**: email, texting and social media created new genres and conventions — initialisms ("lol", "omg"), emoji, speech-like writing — and spread neologisms worldwide in days ("selfie", first recorded in Australia in 2002; "doomscrolling"; "to google").
+**Worked example**
+  Explain how the Norman Conquest changed English vocabulary, using an example.
+    After 1066 Norman French speakers held power, so French words entered domains they controlled — law, government, the church and fine dining.
+    The contrast "cow/beef", "pig/pork", "sheep/mutton" shows it: English-speaking farmers tended the animals (Old English words), while French-speaking nobles ate the meat (French words).
+    Many English/French pairs survive with different levels of formality: "ask"/"enquire", "kingly"/"royal".
+**Going deeper**
+  English often has three words for one idea from three layers: Old English "kingly", French "royal", Latin "regal"; "ask", "question", "interrogate". The Germanic word is usually the most everyday.
+  Dates for the periods are approximate — language changes gradually, and scholars choose slightly different boundaries.
+**Worked example 2**
+  Why do "they", "them" and "their" come from Old Norse?
+    Old English "hīe", "him" and "heora" sounded very similar to other pronouns ("he", "him", "her").
+    In the Danelaw, where speakers of English and Norse lived side by side, the clearer Norse forms "þeir" etc. were adopted and gradually spread.
+    It's rare to borrow pronouns — a sign of how close the contact was.
+**Common mistakes**
+  Calling Shakespeare's English "Old English". It is Early Modern English.
+  Giving exact dates for periods as if change happened overnight.
+  Listing borrowings without linking them to the social context that caused them.
+**Exam tips**
+  For any event: who came into contact, what social change occurred, and which subsystems changed — with examples.
+  You must know all the events, and your elective (Incursions or Inventions) in depth.
+**Connections**
+  English and the Indo-European languages: where Old English came from.
+  Codification and Standard English: printing and dictionaries.
+  The Great Vowel Shift; lexical, morphological, syntactic and semantic change.
+**Practice questions**
+  Explain the impact of the Vikings on English.
+    Old Norse speakers settled the Danelaw and lived alongside English speakers. English borrowed everyday words ("sky", "egg", "knife") and pronouns ("they", "them", "their"), and communication between the two groups helped simplify inflections.
+  How did the printing press affect English spelling?
+    Printing spread uniform London-based spellings to many readers, helping standardise spelling, but it fixed spellings while pronunciation was still changing (e.g. during the Great Vowel Shift), creating mismatches like "knight".
+  Give two examples of language change linked to the internet.
+    New initialisms such as "lol", and conversion of nouns to verbs such as "to google"; also emoji and new words such as "selfie".
+  How did the Black Death help English regain status?
+    It killed a large part of the population, creating labour shortages that improved the position of English-speaking workers; English soon replaced French in schools and later in law and Parliament.
+**Flashcards**
+  Approximate dates of Old English? :: About 450 to 1100.
+  Approximate dates of Middle English? :: About 1100 to 1500.
+  Norman Conquest date? :: 1066.
+  Who set up the first printing press in England, and when? :: William Caxton, Westminster, 1476.
+  Name three Old Norse borrowings. :: "sky", "egg", "they" (also "skin", "knife", "window", "law").
+  Why does English have "beef" and "cow"? :: French-speaking Normans ate the meat (beef); English-speaking farmers raised the animal (cow).
+  Samuel Johnson's dictionary was published in {{1755}}.
+  Name two words spread by COVID-19. :: "iso", "lockdown" (also "social distancing", "covidiot").
+
+@ ee2fd113 U2.1.1.2 | English and the Indo-European languages
+**In a sentence**
+  English belongs to the Germanic branch of the Indo-European family, so it shares ancestor words — cognates — with languages from German and Dutch to Latin, Greek and Sanskrit.
+**Key terms**
+  **Language family**: languages descended from a common ancestor.
+  **Indo-European (IE)**: the family including most languages of Europe and many of South Asia and Iran.
+  **Proto-Indo-European (PIE)**: the reconstructed ancestor language, spoken thousands of years ago with no written records.
+  **Germanic**: the IE branch including English, German, Dutch, Frisian and the Scandinavian languages.
+  **Cognate**: a word descended from the same ancestor word as a word in a related language.
+**The family tree**
+  PIE (roughly 6000 years ago, reconstructed by comparing its daughter languages).
+  Branches include: Germanic (English, German, Dutch, Swedish), Italic (Latin → French, Spanish, Italian), Hellenic (Greek), Indo-Iranian (Sanskrit → Hindi; Persian), Celtic (Irish, Welsh), Balto-Slavic (Russian, Polish, Lithuanian).
+  English: PIE → Germanic → West Germanic → Anglo-Frisian → Old English. Its closest living relative is Frisian (spoken in the Netherlands and Germany).
+**Cognates**
+  English "father", German "Vater", Latin "pater", Greek "patēr", Sanskrit "pitṛ".
+  English "night", German "Nacht", Latin "nox/noctis", Spanish "noche".
+  English "three", German "drei", Latin "tres", Greek "treis".
+  Cognates are not borrowings: they were inherited separately from a common ancestor.
+**Borrowing on top of inheritance**
+  English's core — "mother", "water", "house", "eat", "the", "and" — is Germanic.
+  But so many French and Latin words were borrowed that roughly a quarter or more of English vocabulary is Germanic, with similar shares from French and Latin (plus Greek and others). The most frequent words, though, are overwhelmingly Germanic.
+**Worked example**
+  Show how cognates reveal that English and Latin are related.
+    English "father" and Latin "pater", English "fish" and Latin "piscis", English "foot" and Latin "pes/pedis" match in meaning.
+    Where Latin has p, English regularly has f — a systematic sound correspondence, not coincidence.
+    This regular pattern shows both descend from one ancestor, PIE.
+**Going deeper**
+  Sir William Jones (1786) noticed that Sanskrit, Latin and Greek were too similar to be coincidence and must share a source.
+  Grimm's Law (1822) describes the sound changes that set Germanic apart: PIE p → f ("pater"/"father"), t → th ("tres"/"three"), k → h ("centum"/"hundred").
+**Common mistakes**
+  Saying English "comes from Latin". English is Germanic; it borrowed heavily from Latin and French.
+  Treating borrowings as cognates ("beef" in English and "bœuf" in French is a borrowing, not a cognate).
+**Exam tips**
+  Name the branch (Germanic) precisely and use cognate examples showing regular sound correspondences.
+**Connections**
+  The history of English: Old English as a West Germanic language.
+  Lexical change: borrowings added to the inherited core.
+  Tracing etymologies (key skill).
+**Practice questions**
+  Which branch of Indo-European does English belong to, and what are its closest relatives?
+    Germanic (West Germanic); its closest relatives are Frisian, then Dutch and German.
+  Distinguish a cognate from a borrowing, with examples.
+    A cognate is inherited from a common ancestor ("father"/"Vater"); a borrowing is taken directly from another language ("beef" from French "bœuf").
+  Why is English vocabulary so mixed when its grammar is Germanic?
+    Contact with Norse, Norman French, and Latin through the church and learning added huge numbers of borrowings, but the core vocabulary and grammar stayed Germanic.
+**Flashcards**
+  What is Proto-Indo-European? :: The reconstructed common ancestor of the Indo-European languages.
+  English belongs to which branch of Indo-European? :: Germanic (West Germanic).
+  What is a cognate? :: A word descended from the same ancestor word as a word in a related language.
+  English's closest living relative is {{Frisian}}.
+  Give a cognate set for "father". :: Vater (German), pater (Latin), pitṛ (Sanskrit).
+  Who first proposed that Sanskrit, Latin and Greek are related? :: Sir William Jones (1786).
+  According to Grimm's Law, PIE p became {{f}} in Germanic.
+
+@ 79cb2a20 U2.1.1.3 | Codification and Standard English
+**In a sentence**
+  Standard English wasn't handed down — one London-based variety was selected, spread by printing and then codified in dictionaries and grammar books, which is why English spelling is so irregular and some "rules" were invented in the 1700s.
+**Key terms**
+  **Standard English**: the variety used in formal writing, education and official contexts; in Australia, Standard Australian English (SAE).
+  **Standardisation**: the process by which one variety becomes the accepted norm.
+  **Codification**: setting down the norms of a language in dictionaries, grammars and style guides.
+  **Chancery Standard**: the written English of London government clerks in the 1400s, an early basis for standard spelling.
+  **Prescriptive grammar**: rules telling people how they should use language.
+**How a standard develops**
+  Selection: one variety is chosen — the London and East Midlands dialect, used by the court, government and printers.
+  Elaboration: it's extended to all functions (law, science, literature).
+  Codification: spelling and grammar written down.
+  Acceptance: it's taught in schools and seen as "correct".
+**Origins of English spelling**
+  Old English spelling was fairly phonetic, but French scribes after 1066 introduced conventions ("qu" for "cw": "queen"; "ou" for /uː/: "house").
+  Chancery clerks (1400s) and printers (Caxton, from 1476) spread consistent London spellings.
+  The Great Vowel Shift changed pronunciation after many spellings had fixed — so "name", "bite" and "house" are spelt for old pronunciations.
+  Renaissance scholars added letters to show Latin origins: "debt" (Latin "debitum"), "doubt" ("dubitare"); "island" got an "s" by false analogy with "isle".
+  Samuel Johnson's "Dictionary" (1755) fixed many spellings; Noah Webster (1828) simplified American spellings ("color", "theater").
+**Origins of English grammar rules**
+  In the 1700s, writers worried English was decaying. Jonathan Swift (1712) proposed an academy to "fix" it.
+  Grammarians such as Robert Lowth ("A Short Introduction to English Grammar", 1762) wrote rules, some modelled on Latin: don't split an infinitive ("to boldly go"), don't end a sentence with a preposition, avoid double negatives.
+  These rules describe a preferred style, not how English actually worked — Shakespeare used double negatives freely.
+**Standard Australian English**
+  SAE follows international standard grammar but has its own vocabulary and spelling choices (British "-our" spelling in most contexts, "program" in computing), recorded in the Macquarie Dictionary and the Australian Government Style Manual.
+**Worked example**
+  Explain why "knight" is spelt with a "k" and "gh".
+    In Middle English both letters were pronounced: something like [kniçt].
+    Spelling was being fixed by printers and scribes in the 1400s–1500s.
+    Afterwards, /k/ before /n/ and the "gh" sound were lost, but the spelling stayed — a fossil of the older pronunciation.
+**Going deeper**
+  No official body regulates English (unlike the Académie française), so dictionaries mostly describe current use — but many people treat them as authorities that prescribe.
+  Every standard is a social choice: it's the variety of those with power, not a linguistically superior one.
+**Common mistakes**
+  Saying Standard English is the "original" or "purest" English. It's one dialect that became the norm.
+  Thinking grammar rules like "never split an infinitive" were always part of English.
+**Exam tips**
+  Link each spelling or grammar feature to a cause: printing, the Great Vowel Shift, Latin-based respellings, dictionary makers.
+**Connections**
+  The history of English: printing and dictionaries.
+  The Great Vowel Shift: why spelling and sound don't match.
+  Prescriptivism and descriptivism.
+**Practice questions**
+  What is codification? Give two examples.
+    Setting down a language's norms in writing — for example Johnson's "Dictionary" (1755) and Lowth's grammar (1762).
+  Explain why "debt" has a silent "b".
+    Renaissance scholars added the "b" to show the word's origin in Latin "debitum", although it came into English from French "dette" and had never been pronounced with /b/.
+  Why is the "don't split infinitives" rule considered artificial?
+    It was invented by 18th-century grammarians modelling English on Latin, where the infinitive is a single word and can't be split; English speakers have always split infinitives.
+**Flashcards**
+  Define codification. :: Setting down a language's norms in dictionaries, grammars and style guides.
+  Which variety became the basis of Standard English? :: The London/East Midlands dialect (Chancery Standard).
+  Who wrote an influential prescriptive grammar in 1762? :: Robert Lowth.
+  The silent "b" in "debt" was added to show its {{Latin}} origin.
+  Why does English spelling often not match pronunciation? :: Spellings fixed by printing before sound changes like the Great Vowel Shift finished.
+  Who created American spellings like "color"? :: Noah Webster (1828).
+  What does SAE stand for? :: Standard Australian English.
+
+@ cb892226 U2.1.1.4 | The Great Vowel Shift
+**In a sentence**
+  Between about 1400 and 1700, English long vowels moved up in the mouth and the two highest became diphthongs — so "bite" once sounded like "beet" and "house" like "hoose" — while spelling stayed put.
+**Key terms**
+  **Great Vowel Shift (GVS)**: a series of changes to the long vowels of English, roughly 1400–1700.
+  **Long vowel**: a vowel held for longer (in IPA marked with ː).
+  **Raising**: a vowel moving to a higher tongue position.
+  **Diphthongisation**: a monophthong becoming a diphthong (a glide between two vowel qualities).
+**What happened**
+  Each long vowel moved up (raised) one step; the two highest vowels, which couldn't rise further, became diphthongs.
+    /iː/ → /aɪ/ (via intermediate stages): "bite" [biːt] → [baɪt] (HCE today /bɑet/).
+    /uː/ → /aʊ/: "house" [huːs] → [haʊs] (HCE /hæɔs/).
+    /eː/ → /iː/: "meet" [meːt] → [miːt].
+    /oː/ → /uː/: "goose" [ɡoːs] → [ɡuːs].
+    /aː/ → /eː/ → /eɪ/: "name" [naːm] → [neɪm].
+  The changes happened over generations and varied by region — northern dialects shifted differently.
+**Why it matters**
+  Printing and scribal practice were fixing spellings during the same period, so English spellings record pre-shift pronunciations: the letter "i" in "bite", "ee" in "meet", "oo" in "goose".
+  It explains why English vowel letters have different values from the same letters in most European languages (Italian or Spanish "i" is still /i/).
+  Shakespeare's pronunciation was mid-shift; some of his rhymes that fail today worked then.
+**Worked example**
+  Explain why "bite" and "beet" sound different today but might once have sounded alike to modern ears.
+    Before the shift, "bite" had /iː/ (like modern "beet").
+    During the GVS, /iː/ diphthongised to /aɪ/, while "beet" (then with /eː/) raised to /iː/.
+    The spellings "i" and "ee" preserve the older vowels.
+**Going deeper**
+  Nobody knows exactly why it happened. Suggested causes include social mixing after the Black Death, migration to London, and speakers imitating or avoiding French-influenced prestige pronunciations.
+  The GVS is a "chain shift": when one vowel moved, others moved to keep words distinct.
+**Common mistakes**
+  Describing it as a sudden event rather than a gradual change over about 300 years.
+  Saying it affected short vowels. It affected long vowels.
+  Mixing up the direction: vowels moved up, not down.
+**Exam tips**
+  Give at least two examples with before-and-after IPA, and link the GVS to the mismatch between spelling and sound.
+**Connections**
+  Codification and Standard English: spelling fixed during the shift.
+  Phonetics and the IPA (Unit 1): vowel height and diphthongs.
+  The history of English: Middle to Early Modern English.
+**Practice questions**
+  Describe the Great Vowel Shift.
+    Between about 1400 and 1700 English long vowels were raised; the highest, /iː/ and /uː/, became diphthongs (/aɪ/, /aʊ/). For example "house" changed from [huːs] to [haʊs].
+  Why does the Great Vowel Shift help explain English spelling?
+    Spellings were being standardised by printers during the shift, so they reflect the older pronunciations: "meet" keeps "ee" from when it was [meːt].
+  What happened to the vowel in "goose"?
+    It was raised from /oː/ to /uː/.
+**Flashcards**
+  When did the Great Vowel Shift happen? :: About 1400 to 1700.
+  Which vowels did the Great Vowel Shift affect? :: The long vowels.
+  In the GVS, long vowels were {{raised}}; the highest became {{diphthongs}}.
+  "house" before the GVS? :: [huːs] ("hoose").
+  "bite" before the GVS? :: [biːt] (like modern "beet").
+  Why is the GVS important for spelling? :: Spelling was fixed before it finished, so spellings show older pronunciations.
+  What is a chain shift? :: A series of linked sound changes where one vowel's move triggers others.
+
+@ 46f29ca3 U2.1.1.5 | Morphological change: word formation
+**In a sentence**
+  New words are constantly built from old material — by adding affixes, compounding, blending, shortening, making acronyms and initialisms, and back-formation — and English itself lost most of its inflections over time.
+**Key terms**
+  **Affixation**: adding a prefix or suffix to make a new word ("un-" + "friend").
+  **Compounding**: joining two free morphemes ("blackboard", "website").
+  **Blending**: combining parts of two words ("brunch" = breakfast + lunch).
+  **Shortening (clipping)**: cutting part of a longer word ("uni" from "university", "phone" from "telephone").
+  **Abbreviation**: a shortened form of a word or phrase; includes acronyms and initialisms.
+  **Acronym**: initial letters pronounced as a word ("scuba", "Qantas").
+  **Initialism**: initial letters pronounced one by one ("ABC", "lol").
+  **Backformation**: removing a supposed affix to create a new word ("edit" from "editor").
+**The processes, with examples**
+  Affixation: "unfriend", "ungoogleable", "re-tweet", "-ish" ("fiveish").
+  Compounding: "blackboard", "smartphone", "sunscreen", "carpark".
+  Blending: "smog" (smoke + fog), "motel" (motor + hotel), "Brexit" (Britain + exit).
+  Shortening: "bus" (omnibus), "fridge" (refrigerator), "uni", "ad".
+  Acronyms: "scuba" (self-contained underwater breathing apparatus), "laser", "Qantas" (Queensland and Northern Territory Aerial Services), "NATO".
+  Initialisms: "ABC", "ATM", "lol", "omg".
+  Backformation: "edit" (from "editor"), "burgle" (from "burglar"), "babysit" (from "babysitter"), "donate" (from "donation").
+  Going further (Unit 2 metalanguage): conversion of word class ("to google", "a big ask") and contraction ("can't").
+**Loss of inflections**
+  Old English marked grammatical case with endings: "se cyning" (the king, subject), "þone cyning" (object), "þæs cyninges" (of the king).
+  Through contact with Norse and the Norman period, most endings were levelled; by Middle English, word order and prepositions did their job.
+  Survivors: plural "-s", possessive "-'s", pronoun case ("he/him"), a few old plurals ("oxen", "children", "feet").
+**Worked example**
+  Identify the process in each: "sitcom", "RSVP", "vax", "televise".
+    "sitcom" — blend of "situation" + "comedy" (arguably a clipped compound).
+    "RSVP" — initialism (from French "répondez s'il vous plaît").
+    "vax" — shortening of "vaccine/vaccination".
+    "televise" — backformation from "television".
+**Going deeper**
+  Australian English loves shortening with a suffix — "arvo", "servo", "brekkie", "Chrissie" — called hypocoristics (studied in Unit 4).
+  Word-formation processes combine: "Brexiteer" is a blend plus affixation.
+**Common mistakes**
+  Calling "ABC" an acronym. It's an initialism; acronyms are said as words.
+  Confusing a blend (parts of words) with a compound (whole words).
+  Treating back-formation as ordinary shortening — back-formation removes what looks like an affix and creates a new word class.
+**Exam tips**
+  Name the process precisely and show how the word was formed (component words or the removed affix).
+**Connections**
+  Morphology (Unit 1): free and bound morphemes, affixes.
+  Lexical change: neologisms often come from these processes.
+  Syntactic change: loss of inflections led to fixed word order.
+**Practice questions**
+  Distinguish an acronym from an initialism, with examples.
+    An acronym is pronounced as a word ("scuba", "Qantas"); an initialism is pronounced letter by letter ("ABC", "ATM").
+  Explain backformation using "burgle".
+    "burglar" looked like verb + "-ar" (like "beggar"), so speakers removed the "suffix" to create the new verb "burgle".
+  How did the loss of inflections change English?
+    Case endings that showed a word's grammatical role disappeared, so English came to depend on word order (SVO) and prepositions to show who did what to whom.
+**Flashcards**
+  "brunch" is formed by {{blending}}.
+  "uni" from "university" is an example of {{shortening}} (clipping).
+  What is backformation? :: Creating a new word by removing a supposed affix, e.g. "edit" from "editor".
+  Acronym or initialism: "Qantas"? :: Acronym — pronounced as a word.
+  Acronym or initialism: "lol"? :: Usually an initialism (said letter by letter), though some say it as a word.
+  Give an example of compounding. :: "blackboard" (also "smartphone", "website").
+  What replaced lost inflections in English? :: Fixed word order and prepositions.
+
+@ 37f77d4f U2.1.1.6 | Lexical change: words in and out
+**In a sentence**
+  The English lexicon keeps changing: it borrows words from other languages, turns brand names into ordinary words, coins new words, keeps some old ones for special effect, and lets others fade away.
+**Key terms**
+  **Borrowing (loanword)**: a word taken from another language.
+  **Commonisation**: a brand name becoming a common word for the product type.
+  **Neologism**: a newly coined word or new meaning.
+  **Archaism**: an old word or form still used in special contexts for effect.
+  **Obsolescence**: a word falling out of use.
+  **Nominalisation**: turning a verb or adjective into a noun ("decide" → "decision").
+**Borrowings**
+  English has borrowed from more than 350 languages.
+  French: "government", "restaurant", "ballet"; Latin: "data", "agenda"; Greek: "telephone", "democracy"; Norse: "sky"; Italian: "piano", "pizza"; Japanese: "tsunami", "emoji"; Hindi: "shampoo", "bungalow"; Arabic: "algebra", "coffee" (via Turkish).
+  Australian borrowings from Aboriginal languages: "kangaroo" (Guugu Yimithirr, recorded by Cook's expedition in 1770), "koala" and "boomerang" (Dharug), "yakka" (hard work, from Yagara).
+**Commonisation**
+  "esky", "biro", "hoover", "band-aid", "google" (to search), "zoom" (a video call). Companies often fight this because it can cost them trademark protection.
+**Neologisms**
+  "selfie" (first recorded in Australia, 2002), "doomscrolling", "mansplain", "iso", "rizz". Many come from word-formation processes; some are new meanings for old words ("cloud", "viral").
+**Archaisms and obsolescence**
+  Archaisms survive in law, religion, ceremony and fantasy: "whereas", "heretofore", "thou", "whilst", "betwixt".
+  Obsolescence: "wireless" (for radio), "gramophone", "groovy"; words vanish when the thing disappears or a fashion passes. Some return ("wireless" for Wi-Fi).
+**Worked example**
+  Explain how "esky" became an ordinary Australian word.
+    "Esky" was a brand name for a portable cooler (from the 1950s).
+    It became so strongly linked to the product that Australians used it for any portable cooler, whatever the brand.
+    This is commonisation: a proper noun (brand) becoming a common noun.
+**Going deeper**
+  Borrowings reveal contact and power: food, fashion and art words from French and Italian; trade words from Dutch ("yacht", "cruise"); colonial words from Indian and Aboriginal languages.
+  Dictionaries decide when to add neologisms by tracking use over time — the Macquarie Dictionary's Word of the Year highlights new Australian words.
+**Common mistakes**
+  Calling any new-sounding word a borrowing — check its origin.
+  Confusing archaism (still used for effect) with obsolescence (no longer used).
+**Exam tips**
+  For each change, give the example and the social cause: contact, technology, marketing, fashion.
+**Connections**
+  Morphological change: how neologisms are formed.
+  Tracing etymologies (key skill).
+  English as a world language: borrowing through contact.
+**Practice questions**
+  Give two Australian English borrowings from Aboriginal languages and their sources.
+    "kangaroo" from Guugu Yimithirr; "koala" or "boomerang" from Dharug (also "yakka" from Yagara).
+  What is commonisation? Give an example.
+    A brand name becoming a general word for that kind of product, e.g. "biro" for any ballpoint pen.
+  Why do archaisms survive in legal language?
+    Legal language values precision and continuity with earlier documents, and archaic forms signal a formal, authoritative register.
+**Flashcards**
+  What is a neologism? :: A newly coined word or new meaning.
+  "esky" and "biro" are examples of {{commonisation}}.
+  Which Aboriginal language gave English "kangaroo"? :: Guugu Yimithirr.
+  What is an archaism? :: An old word still used in special contexts for effect.
+  What is obsolescence? :: A word falling out of use.
+  Give two French borrowings. :: "government", "restaurant" (also "ballet", "beef").
+  What is nominalisation? :: Turning a verb or adjective into a noun, e.g. "decide" → "decision".
+
+@ 616a35ed U2.1.1.7 | Syntactic change: word order
+**In a sentence**
+  Old English could vary its word order because endings showed each word's role; as those endings disappeared, English came to rely on a fixed subject–verb–object order, and later developed "do" for questions and negatives.
+**Key terms**
+  **Word order**: the order of subject (S), verb (V) and object (O) in a clause.
+  **Inflection**: an ending that marks grammatical information such as case, number or tense.
+  **Case**: marking of a noun's role (subject, object, possessor).
+  **Do-support**: using the auxiliary "do" to form questions and negatives ("Do you know?", "I don't know").
+**Old English word order**
+  Endings showed roles, so order could vary for emphasis: "Se cyning geseah þone mann" and "Þone mann geseah se cyning" both mean "The king saw the man".
+  Common patterns: verb in second position in main clauses; verb at the end in subordinate clauses (SOV).
+**Change to fixed SVO**
+  As case endings were lost (contact with Norse, the Norman period), order became the main way to show who did what.
+  By Middle English, SVO was dominant: "The king saw the man" ≠ "The man saw the king".
+**Questions and negatives**
+  Early Modern English still inverted the main verb: "Know you not…?", "I know not."
+  "Do"-support grew during the 1500s–1700s: "Do you not know…?", "I do not know" → "I don't know".
+**Texts across time — the Lord's Prayer (opening)**
+  Old English (about 1000): "Fæder ūre þū þe eart on heofonum" — word for word, "Father our, thou that art in heavens".
+  Middle English (Wycliffe, 1380s): "Oure fadir that art in heuenes".
+  Early Modern English (King James Bible, 1611): "Our Father which art in heaven".
+  Changes: possessive after the noun ("Fæder ūre") → before it ("Our Father"); inflected "heofonum" → "heaven" with a preposition; "which" used for a person in 1611, "who" today.
+**Worked example**
+  Rewrite "I know not what you mean" in Modern English and explain the change.
+    Modern: "I don't know what you mean."
+    Early Modern English negated the main verb directly ("know not").
+    Modern English uses do-support: the auxiliary "do" carries the negation ("don't") and the main verb follows.
+**Going deeper**
+  Some old patterns survive in fixed phrases and formal language: "Long live the King", "Little did he know", "Thus spake…".
+  Adjective order and the placement of adverbs also shifted, but SVO is the headline change.
+**Common mistakes**
+  Saying Old English had "no" word order rules. It had patterns; they were more flexible because of inflections.
+  Confusing word order with spelling changes when comparing texts.
+**Exam tips**
+  When comparing texts from different periods, quote the phrases and name the syntactic change (inversion, do-support, position of possessives, loss of inflection).
+**Connections**
+  Morphological change: loss of inflections drove fixed word order.
+  The history of English: Norse and Norman contact.
+  Syntax (Unit 1): subject, verb, object.
+**Practice questions**
+  Why could Old English have freer word order than Modern English?
+    Old English nouns carried case endings showing subject and object, so the roles were clear whatever the order; Modern English has lost most of these endings and relies on word order.
+  What is do-support? Give an example.
+    Using the auxiliary "do" to form questions and negatives: "Do you like it?", "I don't like it", instead of older "Like you it?", "I like it not".
+  Identify one syntactic change between "Fæder ūre" and "Our Father".
+    The possessive pronoun moved from after the noun to before it.
+**Flashcards**
+  Dominant word order of Modern English? :: Subject–verb–object (SVO).
+  Why did English word order become fixed? :: Case endings were lost, so order had to show grammatical roles.
+  "I don't know" instead of "I know not" shows {{do-support}}.
+  Old English "Fæder ūre" means… :: "Our Father" (literally "Father our").
+  When did do-support spread? :: About the 1500s to 1700s (Early Modern English).
+  Give a surviving old word-order phrase. :: "Long live the King" (also "Little did he know").
+  Early Modern "Know you not?" in Modern English? :: "Don't you know?" — with do-support.
+
+@ 08bd7ed9 U2.1.1.8 | Semantic change
+**In a sentence**
+  Words change meaning over time — they broaden, narrow, go up or down in status, or shift to something new — and their connotations change as attitudes do.
+**Key terms**
+  **Broadening (generalisation)**: a word's meaning becomes wider.
+  **Narrowing (specialisation)**: a word's meaning becomes more specific.
+  **Elevation (amelioration)**: a word gains more positive meaning or status.
+  **Deterioration (pejoration)**: a word gains more negative meaning or status.
+  **Shift**: a word's meaning moves to a new, related area.
+  **Denotation**: a word's literal meaning.
+  **Connotation**: the associations and feelings a word carries.
+**The processes, with examples**
+  **Broadening**: "holiday" (holy day → any day off); "dog" (once a particular breed → all dogs); "guys" (men → any group of people); "virus" (disease agent → also computer program).
+  **Narrowing**: "meat" (any food → animal flesh); "deer" (any animal → one kind); "girl" (a child of either sex → a female child); "wife" (any woman → married woman).
+  **Elevation**: "nice" (from Latin "nescius", ignorant → foolish → precise → pleasant); "knight" (boy, servant → noble warrior); "sick" and "wicked" in slang meaning "excellent".
+  **Deterioration**: "silly" (blessed → innocent → foolish); "hussy" (from "housewife" → an insulting word for a woman); "villain" (farm worker → wrongdoer).
+  **Shift**: "awful" (full of awe → very bad); "mouse" (animal → also computer device); "cloud" (in the sky → data storage).
+**Changing connotations**
+  Some words keep their denotation but change connotation as society changes, e.g. terms for groups of people or for disability — once neutral words can become offensive, and reclaimed words can become positive.
+**Why meanings change**
+  Social and technological change (new things need words: "mouse", "tablet").
+  Euphemism and taboo (words for death, bodily functions wear out and are replaced).
+  Attitudes to groups (deterioration of words for women or lower-status people).
+  Metaphor and extension ("viral", "surf the net").
+**Worked example**
+  Classify and explain the change in "meat" and "nice".
+    "meat" — narrowing: in Old English "mete" meant any food (compare "sweetmeat"); it now means only animal flesh.
+    "nice" — elevation: from Latin "nescius" (ignorant), meaning "foolish" in Middle English; it gradually became positive, meaning "pleasant".
+**Going deeper**
+  Many words for women have deteriorated ("mistress", "madam", "hussy") while male equivalents haven't ("master", "sir") — linguists see this as a reflection of social attitudes.
+  One word can go through several changes: "nice" moved through at least four meanings.
+**Common mistakes**
+  Confusing broadening/narrowing (scope of meaning) with elevation/deterioration (positive or negative value).
+  Giving the modern meaning without the earlier one — the change needs both.
+**Exam tips**
+  State the old meaning, the new meaning and the process; add a social reason if you can.
+**Connections**
+  Lexical change: neologisms and new senses.
+  Tracing etymologies: dictionaries show the history of meanings.
+  Arbitrariness (Unit 1): meanings can change because the form–meaning link is arbitrary.
+**Practice questions**
+  Explain the semantic change in "awful".
+    It originally meant "full of awe" (inspiring wonder or fear); it shifted to mean "very bad" — a shift and deterioration.
+  Give an example of broadening and explain it.
+    "holiday" once meant a holy day (a religious festival); it now means any day or period off work or school.
+  Why have many words for women deteriorated?
+    Semantic change often reflects social attitudes; lower social status and negative stereotypes of women became attached to the words.
+**Flashcards**
+  Define broadening. :: A word's meaning becomes wider.
+  Define narrowing. :: A word's meaning becomes more specific.
+  "meat" once meant any food: an example of {{narrowing}}.
+  "silly" once meant "blessed": an example of {{deterioration}}.
+  What did "nice" originally mean? :: Foolish or ignorant (from Latin "nescius").
+  Denotation vs connotation? :: Denotation is literal meaning; connotation is the associations a word carries.
+  Name the change: "mouse" for a computer device. :: Shift (a new, related meaning).
+
+@ 150ab123 U2.1.1.9 | Prescriptivism and descriptivism
+**In a sentence**
+  Prescriptivists say how language should be used and see change as decay; descriptivists describe how language is actually used and see change as natural — and attitudes to change often reveal more about society than about language.
+**Key terms**
+  **Prescriptivism**: the view that there are correct forms of language that people should follow.
+  **Descriptivism**: the view that linguists should describe how language is actually used, without judging it.
+  **Complaint tradition**: the long history of people complaining that language is declining.
+  **Standard**: the variety taken as the norm in formal contexts.
+  **Appropriateness**: whether language suits its context, as opposed to whether it's "correct".
+**Prescriptivism**
+  Judges usage as right or wrong: "It's 'fewer items', not 'less items'", "Don't use 'literally' for emphasis", "'Could of' is wrong".
+  Historically: Swift (1712), Lowth (1762), style guides, newspaper letters complaining about text-speak or Americanisms.
+  Strengths: consistency and clarity in formal writing; a shared standard helps education and access.
+  Criticisms: many "rules" are arbitrary; it can stigmatise speakers of non-standard varieties.
+**Descriptivism**
+  Describes and explains: "'Less' with countable nouns is common in informal speech"; "'Literally' is developing an intensifier meaning, like 'really' did."
+  The approach of linguistics and of modern dictionaries like the Macquarie, which record words once they're widely used.
+  Strengths: evidence-based; recognises all varieties as rule-governed.
+  Criticisms: some see it as "anything goes" — though descriptivists do recognise that some forms suit some contexts better.
+**Attitudes to change**
+  Every generation complains: 18th-century writers attacked "mob" (a clipping of "mobile vulgus") as vulgar; 20th-century critics attacked American spellings; today, text-speak and emoji.
+  Research (e.g. David Crystal's "Txtng: The Gr8 Db8", 2008) found texting doesn't harm literacy — children who text well often spell well.
+  The idea of appropriateness replaces correctness: slang suits a chat with friends, not a job application.
+**Worked example**
+  A letter to the editor says: "Young people are destroying English with 'like' and 'literally'." Respond descriptively.
+    "Like" now works as a discourse marker (introducing reported speech or thought: "and I was like, no way") — a new, rule-governed function.
+    "Literally" is following the path of "really" and "very" (from Latin "verus", true), which also became intensifiers.
+    Change is natural and continuous; these uses suit informal speech and don't replace older meanings.
+**Going deeper**
+  Prescriptive attitudes often target the speech of young people, women, migrants or lower-status groups — the complaint is often really about the speakers.
+  Many linguists accept a "pragmatic" middle ground: describe honestly, but teach the standard as one variety needed for formal contexts.
+**Common mistakes**
+  Presenting descriptivism as "there are no rules". Descriptivists study the rules speakers actually follow.
+  Taking one side in an analysis question when you're asked to explain both.
+**Exam tips**
+  Use specific examples of each attitude, and discuss both views before reaching a judgement.
+**Connections**
+  Codification and Standard English: the source of many prescriptive rules.
+  Semantic change: "literally" and similar debates.
+  Applying prescriptivism and descriptivism (key skill).
+**Practice questions**
+  Distinguish prescriptivism from descriptivism.
+    Prescriptivism sets rules for how language should be used and views non-standard use and change as errors or decline; descriptivism describes how language is actually used, treating change and variation as natural.
+  Give one argument for each approach.
+    For prescriptivism: a common standard gives clarity and consistency in formal writing. For descriptivism: it is evidence-based and recognises that all varieties follow rules and that change is inevitable.
+  What is the complaint tradition? Give an example.
+    The recurring belief that language is declining, e.g. 18th-century writers attacking "mob", or modern complaints about text-speak.
+**Flashcards**
+  Define prescriptivism. :: The view that there are correct forms of language that people should follow.
+  Define descriptivism. :: Describing how language is actually used, without judging it.
+  Linguists and modern dictionaries take a {{descriptive}} approach.
+  What is the complaint tradition? :: The long-running belief that language is getting worse.
+  What did Crystal's research find about texting? :: It doesn't harm literacy; good texters are often good spellers.
+  Correct vs appropriate? :: Descriptivists judge language by whether it suits its context, not by fixed correctness.
+  Name an 18th-century prescriptivist. :: Robert Lowth (also Jonathan Swift, Samuel Johnson).
+
+@ b6388f31 U2.1.1.10 | Metalanguage for language change
+**In a sentence**
+  Describing language change precisely means using its technical terms — periods, families, sound changes, word-formation processes, semantic change and attitudes — each backed by a dated example.
+**Key terms**
+  **Etymology**: the origin and history of a word.
+  **Diachronic**: looking at language change over time.
+  **Synchronic**: looking at language at one point in time.
+**Terms to control**
+  Periods: Old, Middle, Early Modern and Modern English.
+  Origins: Indo-European, Proto-Indo-European, Germanic, cognate, borrowing, language contact.
+  Standardisation: codification, Standard English, SAE, Chancery Standard.
+  Phonology: Great Vowel Shift, raising, diphthongisation, long vowel.
+  Morphology: affixation, abbreviation, acronym, initialism, shortening, compounding, blending, backformation, conversion, contraction, inflection.
+  Lexicology: borrowing, commonisation, neologism, archaism, obsolescence, nominalisation.
+  Syntax: word order, SVO, inflection, do-support.
+  Semantics: broadening, narrowing, elevation, deterioration, shift, denotation, connotation, etymology.
+  Attitudes: prescriptivism, descriptivism, complaint tradition, appropriateness.
+**Using it well**
+  Pair every term with a dated example: "'meat' narrowed from 'any food' (Old English 'mete') to 'animal flesh'."
+  Name the subsystem for each change: phonological, morphological, lexical, syntactic or semantic.
+**Worked example**
+  Rewrite with metalanguage: "Old words get new meanings and some words come from other countries."
+    "Semantic change such as shift ('mouse' for a computer device) gives existing words new senses, while borrowing from languages in contact with English, such as 'tsunami' from Japanese, adds new lexemes."
+**Going deeper**
+  Diachronic analysis compares texts from different periods; synchronic analysis compares varieties at one time. Unit 2 Area of Study 1 is mainly diachronic.
+**Common mistakes**
+  Using "slang" for every new word — name the process instead.
+  Mixing up the subsystem a change belongs to.
+**Exam tips**
+  Keep a timeline with key dates and a glossary with an example for each process.
+**Connections**
+  All learning points in this area.
+  Tracing etymologies and analysing texts (key skills).
+**Practice questions**
+  What is the difference between diachronic and synchronic study?
+    Diachronic study examines language change over time; synchronic study examines language at a single point in time.
+  Identify the subsystem of each change: the Great Vowel Shift; do-support; "nice" becoming positive.
+    Phonological; syntactic; semantic.
+**Flashcards**
+  Define etymology. :: The origin and history of a word.
+  Studying language change over time is {{diachronic}} study.
+  Which subsystem does the Great Vowel Shift belong to? :: Phonetics and phonology.
+  Which subsystem does do-support belong to? :: Syntax.
+  Which subsystem do broadening and narrowing belong to? :: Semantics.
+  Why pair each term with a dated example? :: To show the change precisely — before and after.
+  Name four semantic change processes. :: Broadening, narrowing, elevation, deterioration (also shift).
+
+@ e8a4aff3 U2.1.2.1 | Using language-change concepts
+**In a sentence**
+  This skill is applying the concepts and metalanguage of change to explain how and why English has changed.
+**Key terms**
+  **Cause of change**: the social, technological or internal factor behind a change.
+  **Internal change**: change arising from within the language (e.g. levelling of irregular forms).
+  **External change**: change caused by contact, technology or social events.
+**How to do it**
+  Identify the change and its subsystem.
+  Name the process with metalanguage.
+  Explain the cause: contact (Norse, French), technology (printing, internet), social change (plague, empire), or internal tendencies.
+**Going deeper**
+  Most changes have more than one cause — the loss of inflections was helped by Norse contact and by natural sound changes weakening word endings.
+**Worked example**
+  Explain the change in "they" using concepts from this area.
+    Lexical/morphological change: the pronoun was borrowed from Old Norse.
+    External cause: close contact in the Danelaw.
+    Internal factor: the Old English forms had become confusingly similar to "he/him/her".
+**Connections**
+  The history of English through key events.
+  Metalanguage for language change.
+**Practice questions**
+  Distinguish internal from external causes of change.
+    Internal causes arise within the language system itself (e.g. simplifying irregular forms); external causes come from outside — contact, technology, social events.
+  Give an external cause of change with an example.
+    Technology: the internet spread initialisms such as "lol".
+**Flashcards**
+  What is an external cause of language change? :: Contact, technology or social events outside the language system.
+  What is an internal cause? :: Change arising from within the language, e.g. levelling irregular forms.
+  The borrowing of "they" from Norse had an external cause: language {{contact}}.
+  Why do most changes have more than one cause? :: Social, technological and internal factors often work together.
+
+@ 359783db U2.1.2.2 | Describing change objectively
+**In a sentence**
+  This skill is describing language change systematically and without judgement — as change, not decay.
+**Key terms**
+  **Objective**: evidence-based and non-judgemental.
+  **Systematic**: organised consistently, e.g. subsystem by subsystem.
+**How to do it**
+  Compare forms before and after, with dates or periods.
+  Work subsystem by subsystem: phonology, morphology, lexicology, syntax, semantics.
+  Use neutral wording: "changed", "developed", "shifted", not "corrupted" or "degenerated".
+**Going deeper**
+  A table works well for systematic description: feature | earlier form | later form | process.
+**Worked example**
+  Describe objectively: "Kids ruin words by shortening everything."
+    "Shortening (clipping) is a long-standing word-formation process in English — 'bus' from 'omnibus' (1800s), 'phone' from 'telephone' — and remains productive in words like 'uni' and 'vax'."
+**Connections**
+  Metalanguage for language change.
+  Prescriptivism and descriptivism.
+**Practice questions**
+  Replace "degenerated" in "English grammar degenerated after 1066".
+    "English grammar changed after 1066: most inflections were lost and word order became more fixed."
+  Why is a table useful for describing change?
+    It lines up the earlier and later forms and the process for each feature, making the analysis systematic and easy to compare.
+**Flashcards**
+  Neutral word for a language change? :: Change, development or shift — not decay.
+  Systematic description works {{subsystem}} by subsystem.
+  What must you show to describe a change? :: The earlier form, the later form and the process.
+  Why avoid "corruption" when describing change? :: It's a judgement, not a description.
+
+@ 728c07d4 U2.1.2.3 | Tracing etymologies
+**In a sentence**
+  This skill is using etymological dictionaries and databases to trace where a word came from and how its form and meaning changed.
+**Key terms**
+  **Etymology**: the origin and history of a word.
+  **Etymological dictionary**: a dictionary recording word origins and dated changes.
+  **First citation**: the earliest recorded use of a word or meaning.
+**Sources**
+  The Oxford English Dictionary (the fullest historical record, with dated quotations).
+  The Online Etymology Dictionary (free, quick).
+  The Macquarie Dictionary (Australian words and meanings).
+  The Australian National Dictionary (Australian words, with first citations).
+**Reading an entry**
+  Note the source language, the date of first use, any changes in form, and changes in meaning.
+  Watch for folk etymologies — popular but false stories of origin.
+**Going deeper**
+  Etymology can reveal contact history: "yacht" and "cruise" from Dutch show trade and seafaring links; "bungalow" and "verandah" from India show empire.
+**Worked example**
+  Trace "salary".
+    From Latin "salarium", linked to "sal" (salt) — perhaps an allowance for buying salt.
+    Came into English via Anglo-Norman French in the 1300s.
+    Meaning now: fixed regular pay — a shift from the original sense.
+    Note: the popular story that Roman soldiers were "paid in salt" is not well supported — a possible folk etymology.
+**Connections**
+  English and the Indo-European languages.
+  Lexical and semantic change.
+**Practice questions**
+  Name two sources for tracing etymologies.
+    The Oxford English Dictionary and the Online Etymology Dictionary (also the Macquarie Dictionary, the Australian National Dictionary).
+  What is a folk etymology?
+    A popular but false account of where a word came from.
+**Flashcards**
+  What does an etymological dictionary record? :: Word origins, dated first uses and changes in form and meaning.
+  The fullest historical dictionary of English is the {{Oxford English Dictionary}}.
+  What is a first citation? :: The earliest recorded use of a word or meaning.
+  Which dictionary records Australian first citations? :: The Australian National Dictionary.
+
+@ 76628a69 U2.1.2.4 | Analysing change in texts
+**In a sentence**
+  This skill is comparing texts from different periods — such as versions of the Lord's Prayer or passages of Chaucer and Shakespeare — to identify and explain changes across the subsystems.
+**Key terms**
+  **Diachronic comparison**: comparing texts from different times.
+  **Parallel texts**: versions of the same text from different periods.
+**How to do it**
+  Choose parallel texts where possible, so changes aren't just differences of topic.
+  Go subsystem by subsystem: spelling and phonology (letters like þ and æ, the Great Vowel Shift), morphology (inflections), lexicon (borrowings, archaisms), syntax (word order, do-support), semantics (changed meanings).
+  Quote each feature and name the change.
+**Going deeper**
+  Spelling differences aren't always sound changes: before standardisation, the same writer might spell a word several ways.
+**Worked example**
+  Compare "Oure fadir that art in heuenes" (1380s) with "Our Father which art in heaven" (1611).
+    Spelling: "fadir" → "Father", "heuenes" → "heaven" (u and v not yet distinguished in the 1380s; standardisation by 1611).
+    Morphology: plural "heuenes" → singular "heaven" in this phrase.
+    Lexis/syntax: relative "that" → "which" (and today "who"); the archaic verb form "art" (second person) remains.
+**Connections**
+  Syntactic change: the Lord's Prayer.
+  The history of English through key events.
+**Practice questions**
+  Why use parallel texts to study change?
+    Because the content is the same, differences reveal language change rather than differences of topic or genre.
+  Name one change visible between Old English "Fæder ūre" and Modern "Our Father".
+    The possessive pronoun moved before the noun (a word-order change).
+**Flashcards**
+  What are parallel texts? :: Versions of the same text from different periods.
+  Old English letter þ is called {{thorn}}.
+  Why aren't all early spelling differences sound changes? :: Spelling wasn't standardised; writers varied.
+  What is diachronic comparison? :: Comparing texts from different times.
+
+@ 93435122 U2.1.2.5 | Applying prescriptivism and descriptivism
+**In a sentence**
+  This skill is using the prescriptive–descriptive distinction to analyse real debates about English and to discuss them in a balanced way.
+**Key terms**
+  **Language attitude**: a person's belief or feeling about a language, variety or usage.
+  **Stance**: the position a text takes.
+**How to do it**
+  Identify the stance of a text (a style guide, a letter to the editor, a dictionary note).
+  Label it prescriptive or descriptive and explain what shows it (modal verbs like "should", evaluative words like "sloppy", or neutral, evidence-based language).
+  Discuss the underlying attitudes — often about age, class or national identity.
+**Going deeper**
+  Dictionaries are descriptive in method but often read prescriptively ("it's in the dictionary, so it's a word").
+**Worked example**
+  Analyse the stance: "It is deplorable that 'could of' now appears in student essays."
+    Prescriptive: the evaluative "deplorable" judges the usage.
+    Descriptive explanation: "could of" reflects the spoken contraction "could've" (/kʊdəv/), which sounds identical; the writer spells the sound.
+    Balanced view: it's non-standard in formal writing but a predictable result of speech influencing spelling.
+**Connections**
+  Prescriptivism and descriptivism.
+  Codification and Standard English.
+**Practice questions**
+  What language features show a prescriptive stance?
+    Modal verbs of obligation ("should", "must"), evaluative words ("sloppy", "incorrect", "deplorable") and appeals to rules or authority.
+  Explain descriptively why people write "could of".
+    The spoken contraction "could've" sounds the same as "could of", so writers spell what they hear.
+**Flashcards**
+  What is a language attitude? :: A belief or feeling about a language, variety or usage.
+  Words like "sloppy" and "deplorable" signal a {{prescriptive}} stance.
+  Why do people write "could of"? :: It sounds identical to the contraction "could've".
+  Are dictionaries prescriptive or descriptive? :: Descriptive in method, though often used prescriptively.

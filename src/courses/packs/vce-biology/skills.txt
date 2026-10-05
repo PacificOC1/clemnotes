@@ -1,0 +1,603 @@
+% VCE Biology — Key science skills (all units). Shorter notes: these skills are used inside every area of study.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ d3bc4dd5 S.1.1 | Constructing aims and questions
+**In a sentence**
+  A good investigation starts with a focused, researchable question that names what will be changed or compared and what will be measured.
+**Key ideas**
+  A good question is specific, testable and achievable with the time and equipment you have.
+    Weak: "Does salt affect plants?" Better: "How does the concentration of sodium chloride (0–200 mM) in watering solution affect the height of radish seedlings after 14 days?"
+  An aim states what the investigation will do: "To investigate the effect of … on …" or "To determine …".
+  Research the background first, so the question is worth asking and you know what's already known.
+**Practice questions**
+  Improve this question: "Do enzymes work better when warm?"
+    "How does temperature (10–60 °C) affect the rate at which catalase breaks down hydrogen peroxide, measured as the volume of oxygen produced in 2 minutes?"
+  Why should an investigation question be achievable with school equipment?
+    Otherwise you can't generate enough reliable data to answer it in the time and with the resources available.
+**Flashcards**
+  What makes a research question good? :: It is specific, testable, names the variables, and is achievable.
+  How does an aim usually begin? :: "To investigate…" or "To determine…".
+  Turn "Does light affect plants?" into a better question. :: E.g. "How does light intensity affect the rate of transpiration of a leafy shoot, measured with a potometer?"
+
+@ 1d1c4cc7 S.1.2 | Independent, dependent and controlled variables
+**In a sentence**
+  Change one thing (independent variable), measure one thing (dependent variable), and keep everything else the same (controlled variables).
+**Key ideas**
+  **Independent variable**: the one you deliberately change.
+  **Dependent variable**: the one you measure, which responds.
+  **Controlled variables**: everything else that could affect the result, kept the same so the test is fair.
+  A **control** (control group or experimental control) is a separate treatment for comparison — e.g. potato strips in distilled water, or plants given no fertiliser. It is not the same as a controlled variable.
+  Example — effect of sucrose concentration on potato mass: independent = sucrose concentration; dependent = percentage change in mass; controlled = strip size, potato variety, temperature, time in solution, volume of solution.
+**Practice questions**
+  An investigation tests how exercise duration affects heart rate. Identify the variables.
+    Independent: exercise duration. Dependent: heart rate (beats per minute). Controlled: type and intensity of exercise, time of measurement after exercise, the person's resting state, room temperature.
+  What is the difference between a controlled variable and a control?
+    A controlled variable is kept constant in every trial; a control is a separate comparison treatment (e.g. no treatment) to show what happens without the independent variable.
+**Flashcards**
+  Define the independent variable. :: The variable deliberately changed by the investigator.
+  Define the dependent variable. :: The variable measured, which responds to the independent variable.
+  Why keep controlled variables constant? :: So any change in the dependent variable can be attributed to the independent variable.
+  In testing light intensity on transpiration, name two controlled variables. :: Temperature, humidity, air movement, the plant species or leaf area.
+
+@ f13732eb S.1.3 | Formulating hypotheses
+**In a sentence**
+  A hypothesis is a testable prediction about how the independent variable will affect the dependent variable, with a biological reason.
+**Key ideas**
+  Common form: "If [independent variable changes], then [dependent variable will change in this way], because [biological reason]."
+  It must be testable and falsifiable — the results must be able to show it's wrong.
+  Results support or don't support a hypothesis; they never prove it.
+**Practice questions**
+  Write a hypothesis for: "How does temperature affect the rate of transpiration?"
+    If temperature increases, then the rate of transpiration will increase, because water evaporates faster from the mesophyll cells and water vapour molecules diffuse out of the stomata more quickly.
+  Is a hypothesis useful if the results don't support it?
+    Yes — rejecting a hypothesis is new knowledge and points to a better explanation.
+**Flashcards**
+  What is the "If … then … because" structure for? :: Writing a hypothesis linking the variables and giving a biological reason.
+  What makes a hypothesis scientific? :: It is testable and could be shown to be false.
+  Can results prove a hypothesis? :: No — they support or fail to support it.
+
+@ d30a227c S.1.4 | Predicting possible outcomes
+**In a sentence**
+  Before you start, use biology to predict what you expect to see — it guides the method and gives you something to compare the results with.
+**Key ideas**
+  A prediction is the specific result expected in this experiment: "Strips in 0.6 M sucrose will lose the most mass; strips in water will gain mass."
+  Predictions help you choose sensible ranges and instruments (will a 0.01 g balance detect the change?).
+  Predict a trend and, if possible, a shape (e.g. mass change falls as concentration rises, crossing zero where the solution is isotonic).
+**Practice questions**
+  Predict the result of placing onion epidermis cells in a concentrated salt solution.
+    The cells will lose water by osmosis; the cytoplasm will shrink and pull away from the cell wall (plasmolysis).
+  How does a prediction differ from a hypothesis?
+    A hypothesis is a general, reasoned statement about the relationship between variables; a prediction is the specific outcome expected in this particular experiment if the hypothesis is correct.
+**Flashcards**
+  What is a prediction? :: The specific result expected in an experiment, based on the hypothesis and biology.
+  Why predict before starting? :: To choose suitable ranges and equipment and to have something to compare results with.
+  Predict: red blood cells in distilled water. :: They gain water by osmosis, swell and burst.
+
+@ 5928776a S.2.1 | Choosing an investigation methodology
+**In a sentence**
+  Match the type of investigation to the question: experiments for cause and effect, correlational studies and fieldwork for relationships in nature, literature reviews and case studies for questions answered from existing information.
+**Key ideas**
+  **Case study**: an in-depth look at a real or hypothetical situation (e.g. the spread of devil facial tumour disease).
+  **Classification and identification**: sorting organisms into groups or identifying them (using a dichotomous key).
+  **Controlled experiment**: change one variable, measure another, control the rest — shows cause and effect.
+  **Correlational study**: measure variables that aren't manipulated to look for associations (smoking and lung cancer rates).
+  **Fieldwork**: observation and sampling in a natural environment (quadrats, transects).
+  **Literature review**: collating and analysing others' findings from secondary sources.
+  **Modelling**: physical, conceptual or mathematical representations (agar cubes, a population model).
+  **Product, process or system development**: designing something to meet a need.
+  **Simulation**: using a model to study a system that can't easily be studied directly.
+**Practice questions**
+  Which methodology suits "Is the density of a native grass related to distance from a walking track?"
+    Fieldwork using a correlational approach (e.g. quadrats along a transect), because the variables are measured in place, not manipulated.
+  Why can't a correlational study show that one variable causes another?
+    Other variables weren't controlled, so a third factor could cause both, or the relationship could be coincidence.
+**Flashcards**
+  Which methodology shows cause and effect? :: A controlled experiment.
+  What is a literature review? :: Collating and analysing others' findings from secondary sources.
+  Using quadrats along a transect is an example of {{fieldwork}}.
+  What does a correlational study show? :: An association between variables, not cause.
+
+@ cd150219 S.2.2 | Designing and conducting investigations
+**In a sentence**
+  A good design chooses a suitable sample and sample size, equipment and procedure, allows for sources of error, and decides in advance what data to collect and how much.
+**Key ideas**
+  **Sampling**: choose samples that represent the population (random sampling avoids bias). Bigger samples make results more reliable.
+  **Replicates**: repeat each treatment (e.g. five strips per concentration) to reduce the effect of random variation.
+  **Equipment**: enough resolution for the change you're measuring; calibrate before use.
+  **Procedure**: clear, numbered steps someone else could follow.
+  **Data plan**: which qualitative and quantitative data, how many readings, over what range.
+  Field sampling (going further): quadrats for plants and slow animals; transects to sample along a gradient; capture–mark–recapture for mobile animals — estimated population = (number marked × number captured second time) ÷ number recaptured with marks.
+**Worked example**
+  20 lizards were caught, marked and released. Later 25 were caught, of which 5 were marked. Estimate the population.
+    Population ≈ (20 × 25) ÷ 5 = 500 ÷ 5 = 100 lizards.
+**Practice questions**
+  Why is random sampling important in fieldwork?
+    It avoids choosing unusual or convenient spots, so the sample is more likely to represent the whole area.
+  A student tests one leaf at each light intensity. Suggest an improvement and explain it.
+    Use several leaves (e.g. five) per light intensity and calculate the mean; this reduces the effect of random variation between leaves and increases confidence in the results.
+**Flashcards**
+  Why use a large sample size? :: To reduce the effect of random variation and make results more representative.
+  What are replicates? :: Repeated samples or trials of the same treatment.
+  Capture–mark–recapture: 30 marked, 40 caught later, 10 marked among them. Population? :: (30 × 40) ÷ 10 = 120.
+  What does random sampling avoid? :: Bias from choosing unusual or convenient samples.
+
+@ 5c2a5340 S.2.3 | Working independently, collaboratively and adapting
+**In a sentence**
+  Investigations are often done in groups but assessed individually, so share the work fairly, respect others' ideas, and record any change to the method and why you made it.
+**Key ideas**
+  Collaborating: agree on roles and goals, share data honestly, respect others' viewpoints, act on feedback.
+  Independence: your analysis and report must be your own.
+  Constraints: time, equipment, safety and ethics limit what's possible — plan within them.
+  Adapting: if something doesn't work (seeds fail to germinate), change the method, and record the change and the reason in your logbook.
+**Practice questions**
+  During an investigation a student finds the salt concentrations chosen kill all the seedlings. What should they do?
+    Adapt the method by testing a lower range of concentrations, and record the change and the reason in the logbook.
+  Why must modifications to a method be recorded?
+    So the final method and results can be interpreted correctly and repeated, and to show the investigation's honest history.
+**Flashcards**
+  What should you do when a method needs changing mid-investigation? :: Make the change and record what changed and why in the logbook.
+  Name two constraints on a school investigation. :: Time, equipment, safety, ethics, cost.
+  In group work, whose analysis must the report contain? :: Your own.
+
+@ 768f8adc S.3.1 | Risk assessment and safety data sheets
+**In a sentence**
+  Before practical work, identify each hazard, judge the risk and decide how to control it, using safety data sheets for any chemicals.
+**Key ideas**
+  **Hazard**: something that could cause harm. **Risk**: how likely and how serious the harm is. **Control**: what reduces the risk.
+  **Safety data sheet (SDS)**: gives a chemical's hazards, safe handling, PPE, first aid, storage and disposal.
+  Biology hazards: sharp instruments (scalpels), stains and chemicals (iodine, ethanol, hydrochloric acid), heat, glassware, microorganisms, allergens (pollen, latex).
+  A risk assessment is written into your logbook before starting.
+**Practice questions**
+  Write a risk assessment line for using ethanol to extract chlorophyll.
+    Hazard: flammable, irritant liquid. Risk: fire if near a flame; eye irritation. Control: no naked flames (heat in a water bath), wear safety glasses, use small volumes, ventilate.
+  Where would you find the correct disposal method for a stain?
+    On its safety data sheet (SDS).
+**Flashcards**
+  What is an SDS? :: A safety data sheet giving a chemical's hazards, handling, first aid and disposal.
+  Hazard vs risk? :: A hazard could cause harm; risk is the likelihood and severity of that harm.
+  A risk assessment lists hazards, risks and {{control measures}}.
+
+@ 07d2f53d S.3.2 | Occupational health and safety in the lab
+**In a sentence**
+  Follow safe lab practice every time: wear PPE, handle equipment and microbes correctly, keep the bench clean, and dispose of waste properly.
+**Key ideas**
+  PPE: safety glasses, lab coat, gloves where needed, closed shoes, hair tied back.
+  Aseptic technique with microorganisms: disinfect benches, flame or sterilise equipment, keep lids on plates, seal and label plates, never open incubated plates, autoclave waste.
+  Sharps: cut away from yourself onto a tile; dispose of blades in a sharps container.
+  Know where the eyewash, fire blanket and first aid are; report all accidents and spills.
+**Practice questions**
+  Give two aseptic techniques used when culturing bacteria.
+    Disinfect the bench before and after; flame the inoculating loop; keep plates closed and sealed; incubate at temperatures that don't favour human pathogens (e.g. 25–30 °C).
+  Why should incubated Petri dishes not be opened?
+    Colonies may include harmful microbes; opening the dish could release them.
+**Flashcards**
+  Name three items of PPE. :: Safety glasses, lab coat, gloves (also closed shoes).
+  What is aseptic technique? :: Methods that prevent contamination of cultures and exposure to microbes.
+  How should used scalpel blades be disposed of? :: In a sharps container.
+
+@ a2cd6a79 S.3.3 | Ethical conduct in investigations
+**In a sentence**
+  Behave ethically in how you run and report investigations: be honest, protect human participants, minimise harm to animals and the environment, and acknowledge others' work.
+**Key ideas**
+  Honesty: record and report all data truthfully, including results that don't fit; never invent or alter data.
+  Human participants: informed consent, the right to withdraw, privacy and confidentiality, no harm.
+  Animals: the 3 Rs — replace, reduce, refine; animal ethics approval.
+  Environment: minimise disturbance in fieldwork; return organisms; take only what's needed.
+  Acknowledge sources and help.
+**Practice questions**
+  A student leaves out two trials that didn't match the others. Is this ethical?
+    No, unless there is a clear, recorded reason (e.g. a known mistake). Omitting data because it doesn't fit is dishonest; it should be reported and discussed.
+  What does informed consent require?
+    That participants are told what the study involves, including any risks, and freely agree, knowing they can withdraw at any time.
+**Flashcards**
+  The 3 Rs of animal research? :: Replace, reduce, refine.
+  Name two ethical requirements for human participants. :: Informed consent and confidentiality (also the right to withdraw, no harm).
+  Is leaving out data that don't fit ethical? :: No — all data should be reported unless there is a recorded valid reason.
+
+@ 6caeab05 S.4.1 | Generating and collating data, including databases
+**In a sentence**
+  Collect primary data systematically, and collate secondary data from reputable sources, including scientific databases.
+**Key ideas**
+  Systematic: the same method, timing and units every time; record straight away.
+  Reputable online sources for biology: NCBI (genes and genomes), the Atlas of Living Australia (species records), Bureau of Meteorology (climate), AIHW and ABS (health and population statistics), CSIRO, peer-reviewed journals.
+  Bioinformatics: comparing DNA or protein sequences from databases.
+**Practice questions**
+  Suggest a database a student could use to find where koalas have been recorded in Victoria.
+    The Atlas of Living Australia (or Victorian Biodiversity Atlas).
+  What makes primary data collection "systematic"?
+    Using the same planned method, instruments, timing and units for every measurement and recording it immediately.
+**Flashcards**
+  Name a database of Australian species records. :: The Atlas of Living Australia.
+  Name a source of Australian health statistics. :: AIHW (Australian Institute of Health and Welfare) or ABS.
+  What is NCBI used for? :: Finding gene, protein and genome sequences.
+
+@ 31d49416 S.4.2 | Recording data and using a logbook
+**In a sentence**
+  Record qualitative and quantitative data clearly and immediately, summarise it, and keep it all in a dated logbook that authenticates your work.
+**Key ideas**
+  Quantitative data in tables with units in headings; qualitative data as clear descriptions or labelled drawings.
+  Summaries: means, ranges, percentages.
+  The logbook holds everything: plans, risk assessments, raw data, observations, changes to the method, early analysis.
+  Never erase — cross out with one line.
+**Practice questions**
+  Why record raw data immediately rather than later?
+    Memory is unreliable; immediate recording prevents errors and shows the data are genuine.
+  How should a biological drawing be presented?
+    In pencil, with clear single lines (no shading), labelled with ruled label lines, a title and the magnification.
+**Flashcards**
+  Where do units go in a data table? :: In the column headings.
+  What is the purpose of a logbook? :: To record the investigation as it happens and authenticate the student's own work.
+  Should errors in a logbook be erased? :: No — cross them out with a single line.
+
+@ a52eb2d7 S.4.3 | Presenting data
+**In a sentence**
+  Choose a presentation that makes the pattern easy to see — tables for exact values, line graphs for continuous data, bar charts for categories, and flow charts or schematic diagrams for processes.
+**Key ideas**
+  **Table**: independent variable in the first column; units in headings; consistent decimal places.
+  **Line graph (or scatter graph)**: both variables continuous (temperature vs enzyme activity).
+  **Bar chart**: independent variable is categories (blood group frequencies, species counts).
+  **Flow chart**: a sequence of steps (SCNT, a stimulus–response pathway).
+  **Schematic diagram**: a simplified labelled drawing (a nephron, a food web).
+**Practice questions**
+  Which graph type suits the number of each blood group in a class?
+    A bar chart, because blood group is categorical.
+  Which suits heart rate measured every minute during exercise?
+    A line graph, because time and heart rate are continuous.
+**Flashcards**
+  Bar chart or line graph for categorical data? :: Bar chart.
+  Bar chart or line graph for continuous data? :: Line graph (or scatter graph with a line of best fit).
+  A {{flow chart}} shows the steps of a process in order.
+
+@ d6096133 S.4.4 | Graphing linear and non-linear relationships
+**In a sentence**
+  Plot the independent variable on the x-axis and the dependent variable on the y-axis, with even scales and labels, and draw a line or curve of best fit that shows whether the relationship is linear or not.
+**Key ideas**
+  Title that names both variables; axes labelled with quantity and unit; even scales that use most of the grid.
+  Plot points accurately; draw a smooth line or curve of best fit through the trend, not dot-to-dot, unless readings are a sequence over time.
+  Linear: a straight line (constant rate of change). Non-linear: a curve — e.g. exponential bacterial growth, an enzyme's activity rising then falling with temperature, a population levelling off at carrying capacity.
+**Practice questions**
+  Sketch and describe the shape of a graph of bacterial numbers against time in ideal conditions.
+    A curve getting steeper over time — exponential growth, as the number doubles each generation.
+  Why should a line of best fit not be drawn dot-to-dot?
+    Individual points include random error; a line of best fit shows the overall trend.
+**Flashcards**
+  Which variable goes on the y-axis? :: The dependent variable.
+  Describe a non-linear relationship. :: One where the rate of change is not constant, giving a curve.
+  Name a biological example of exponential growth. :: Bacteria dividing by binary fission in ideal conditions.
+
+@ 363e0850 S.5.1 | Processing quantitative data
+**In a sentence**
+  Turn raw numbers into meaningful values — means, ratios, percentages and percentage change — with correct units and sensible decimal places.
+**Key ideas**
+  Mean = sum of values ÷ number of values.
+  Percentage = part ÷ whole × 100.
+  Percentage change = (final − initial) ÷ initial × 100 (negative for a decrease).
+  Ratios: simplify to the smallest whole numbers or to x : 1 (e.g. 12 : 4 = 3 : 1; SA:V 24 : 8 = 3 : 1).
+  Rate = change ÷ time (e.g. mm per minute).
+**Worked example**
+  Of 160 offspring, 118 have the dominant phenotype. Express the ratio and compare it with 3 : 1.
+    Recessive = 160 − 118 = 42.
+    Ratio = 118 : 42 = 2.8 : 1.
+    Close to the expected 3 : 1 for a monohybrid cross of two heterozygotes.
+**Practice questions**
+  A plant grew from 12.0 cm to 15.6 cm. Calculate the percentage change.
+    (15.6 − 12.0) ÷ 12.0 × 100 = +30%.
+  In a class of 25, 5 are colour-blind. What percentage is that?
+    5 ÷ 25 × 100 = 20%.
+**Flashcards**
+  Formula for percentage change? :: (final − initial) ÷ initial × 100.
+  Simplify 45 : 15. :: 3 : 1.
+  Mean of 4, 6 and 8? :: 6.
+  A value falls from 50 to 40. Percentage change? :: −20%.
+
+@ 0a8351a0 S.5.2 | Data quality: accuracy, precision, errors and sample size
+**In a sentence**
+  Judge your data by its accuracy, precision, repeatability, reproducibility and validity, identify random and systematic errors, and remember that bigger samples give more certainty.
+**Key ideas**
+  Accuracy — close to the true value. Precision — repeated values close together.
+  Repeatability — same conditions, same person. Reproducibility — different person, method or equipment.
+  Validity — measures what it's meant to; experiment tests what it claims.
+  **Random errors**: unpredictable scatter; reduce precision; reduced by more readings and averaging.
+  **Systematic errors**: consistent shift in one direction (e.g. uncalibrated instrument); reduce accuracy; not fixed by repeating — fix the instrument or method.
+  **Personal errors** are mistakes (misreading, spilling); they are not measurement errors — redo the trial.
+  **Sample size**: small samples are more affected by chance and individual variation; larger samples increase certainty.
+**Practice questions**
+  A thermometer reads 2 °C too high throughout. What type of error is this and what does it affect?
+    A systematic error; it reduces accuracy (precision is unaffected).
+  Why is a sample of 5 plants less reliable than a sample of 50?
+    With few plants, one unusual plant has a big effect on the mean; a larger sample averages out individual variation.
+**Flashcards**
+  Random errors affect {{precision}}; systematic errors affect {{accuracy}}.
+  How do you reduce random error? :: Take more readings and average them.
+  Does repeating trials fix a systematic error? :: No — the instrument or method must be corrected.
+  Is misreading a scale a random error? :: No — it's a personal error (a mistake); redo the reading.
+
+@ fbef95a5 S.5.3 | Outliers, contradictory and provisional data
+**In a sentence**
+  Spot results that don't fit, find out why before deciding what to do with them, and recognise when data conflict or are only provisional.
+**Key ideas**
+  **Outlier**: a value far from the others. Check for a mistake; exclude only with a recorded reason; otherwise keep it and discuss it. Repeating the reading can help.
+  **Contradictory data**: results or sources that disagree — compare methods and conditions to explain why.
+  **Provisional data**: results that may change with more evidence (e.g. early trial results for a new therapy).
+  **Uncertainty** (qualitative in VCE Biology): the lack of exact knowledge of a value; not the same as error.
+**Practice questions**
+  Heart rates after exercise: 118, 122, 120, 164, 119 bpm. How should 164 be treated?
+    It's an outlier. Check whether there was a mistake (e.g. measured at a different time). If so, exclude it with a stated reason; if not, keep it and discuss it, and repeat if possible.
+  Why are results from the first small trial of a new treatment called provisional?
+    Small early studies may not be representative; further, larger studies could change the conclusion.
+**Flashcards**
+  What is an outlier? :: A value that lies far from the other results.
+  Should outliers be deleted automatically? :: No — investigate; exclude only with a recorded reason.
+  Data that may change with further evidence are {{provisional}}.
+
+@ c2f7f34e S.5.4 | Repeating experiments
+**In a sentence**
+  Repeating an experiment checks that a result wasn't a fluke — consistent repeats make findings robust, and results others can reproduce are trusted most.
+**Key ideas**
+  Repeat trials within your investigation to reduce random error and check repeatability.
+  Independent repetition by others, with different equipment or methods, tests reproducibility.
+  A single result, however striking, is weak evidence.
+**Practice questions**
+  Why did scientists doubt early claims until other laboratories repeated them?
+    A single result could be caused by error, chance or bias; when independent labs reproduce it, confidence grows that it is real.
+  How many trials should you do?
+    At least three per treatment, and more if the results vary a lot, so the mean is reliable and outliers can be identified.
+**Flashcards**
+  Why repeat trials? :: To reduce random error, check repeatability and make findings robust.
+  What does reproducibility test? :: Whether others get the same result with different people, methods or equipment.
+  Is one striking result strong evidence? :: No — it needs to be repeated.
+
+@ e171ecdf S.5.5 | Evaluating methods and suggesting improvements
+**In a sentence**
+  Look critically at your method for sources of error, mistakes and bias, and suggest specific changes that would improve accuracy and precision.
+**Key ideas**
+  Identify the weakness → explain its effect on the data → suggest a specific, realistic improvement.
+  Sources: uncontrolled variables, imprecise instruments, small samples, inconsistent technique, observer bias (e.g. judging colour change by eye).
+  Improvements: control a variable, use a more precise instrument or a data logger, increase sample size, standardise technique, blind the observer.
+**Practice questions**
+  Students judged when an iodine test turned from blue-black to yellow by eye. Suggest an improvement.
+    Use a colorimeter to measure the colour change objectively, or compare against a standard colour chart, to reduce observer judgement and improve precision.
+  Why is "be more careful" a poor improvement?
+    It is vague — it doesn't identify the problem or give a specific change that would reduce the error.
+**Flashcards**
+  Three parts of a good evaluation point? :: The weakness, its effect on the data, and a specific improvement.
+  How can observer bias be reduced? :: Use an instrument to measure objectively, or blind the observer to the treatment.
+  Give an improvement for inconsistent blotting of potato strips. :: Blot each strip the same way (e.g. two presses on the same paper) for a standard time.
+
+@ b5e3cc20 S.6.1 | Opinion, anecdote and evidence
+**In a sentence**
+  Base conclusions on evidence — data collected systematically — not on opinions or anecdotes, and know the difference between ideas science can test and those it can't.
+**Key ideas**
+  Evidence: systematic observations or measurements.
+  Anecdote: a personal story or single case.
+  Opinion: a personal view that may or may not be based on evidence.
+  Scientific ideas are testable; non-scientific ideas (values, beliefs) are not.
+**Practice questions**
+  Classify: "My grandfather smoked and lived to 95, so smoking isn't that harmful."
+    Anecdote — a single case that doesn't outweigh large studies showing smoking greatly increases disease risk.
+  Why is "vaccines are good" not a scientific claim as written?
+    It's a value judgement; a scientific claim would be testable, e.g. "vaccination reduces hospital admissions for measles".
+**Flashcards**
+  Define anecdote. :: A personal story or single case, not systematically collected.
+  What makes an idea scientific? :: It can be tested by evidence and possibly shown wrong.
+  "I think gene therapy is exciting" is an {{opinion}}.
+
+@ 037b8ee4 S.6.2 | How well the evidence supports the aim
+**In a sentence**
+  Judge whether your data actually answer the aim — fully, partly or not at all — and recommend how the investigation could be changed or extended.
+**Key ideas**
+  Compare what the aim set out to find with what the data show.
+  Consider the range tested, sample size and controls: can you generalise, or only comment on the conditions tested?
+  Recommend modifications (a wider range, more replicates, a missing control) or extensions (a new variable, another species).
+**Practice questions**
+  An aim was to find the effect of temperature (0–60 °C) on enzyme activity, but only 20 °C and 40 °C were tested. How well do the data address the aim?
+    Only partly — two temperatures can't show the shape of the relationship or the optimum across the full range. More temperatures (e.g. every 10 °C) should be tested.
+  Suggest an extension to an investigation of osmosis in potato.
+    Test another tissue (sweet potato, carrot) or another solute (sodium chloride), or measure the effect of temperature on the rate of mass change.
+**Flashcards**
+  What should you ask when evaluating the aim? :: Do the data actually answer what the aim set out to find, and for what range of conditions?
+  Modification vs extension? :: A modification improves the same investigation; an extension investigates a related new question.
+  Testing too narrow a range means the data only {{partly}} address the aim.
+
+@ 8f59e09d S.6.3 | Supporting or refuting a hypothesis
+**In a sentence**
+  Compare your results with the hypothesis and say whether they support it, partly support it, or don't — quoting the data that show it.
+**Key ideas**
+  Use "the results support the hypothesis" or "do not support" — never "prove".
+  Quote specific data: "mass change fell from +12% in water to −15% in 0.6 M sucrose, supporting the hypothesis".
+  If results only partly support it (e.g. true up to 40 °C but not beyond), say so and explain.
+**Practice questions**
+  Hypothesis: "If light intensity increases, transpiration increases." Results: transpiration rose from 2.0 to 5.5 mm/min as light increased, then levelled off. Evaluate.
+    The results partly support the hypothesis: transpiration increased with light at lower intensities, but levelled off at high intensity, when stomata were likely fully open and another factor became limiting.
+  Why don't scientists say a hypothesis is "proven"?
+    Future evidence could always contradict it; results can only support it.
+**Flashcards**
+  Which words describe the result of testing a hypothesis? :: Supported or not supported (never "proven").
+  What should back up a statement that data support a hypothesis? :: Specific data values from the results.
+  Can results partly support a hypothesis? :: Yes — e.g. true over part of the range tested.
+
+@ 978fda40 S.6.4 | Constructing evidence-based conclusions
+**In a sentence**
+  Build a conclusion by making a claim that answers the question, backing it with evidence from your data, and explaining the reasoning using biology.
+**Key ideas**
+  Claim → evidence → reasoning.
+  Claim: answer the question directly.
+  Evidence: the key data or trend.
+  Reasoning: the biological explanation linking evidence to claim.
+  Don't go beyond the data or introduce new information.
+**Worked example**
+  Question: How does sucrose concentration affect potato mass?
+    Claim: As sucrose concentration increases, potato strips lose more mass.
+    Evidence: mean mass change fell from +12% (0 M) to −15% (0.6 M), crossing 0% at about 0.25 M.
+    Reasoning: in more concentrated solutions water leaves the cells by osmosis; around 0.25 M the solution is isotonic with the cells.
+**Practice questions**
+  What three parts make a strong scientific conclusion?
+    A claim answering the question, evidence from the data, and reasoning linking them through biology.
+  Why shouldn't new information appear in a conclusion?
+    The conclusion must follow from the results and discussion already presented; new information hasn't been analysed or evaluated.
+**Flashcards**
+  Three parts of an evidence-based argument? :: Claim, evidence, reasoning.
+  What must a conclusion answer? :: The investigation question.
+  The biological explanation linking evidence to claim is the {{reasoning}}.
+
+@ db57226d S.6.5 | Limitations of conclusions
+**In a sentence**
+  Every conclusion has limits — the conditions tested, the sample, the methodology — so state what it doesn't show and what further evidence is needed.
+**Key ideas**
+  Conclusions apply only to the conditions tested (one potato variety, one temperature).
+  Small or unrepresentative samples limit how widely you can generalise.
+  Correlation doesn't show causation.
+  Identify what further evidence would strengthen or extend the conclusion.
+**Practice questions**
+  A study finds that people who eat more vegetables have lower blood pressure. What is a limitation of concluding that vegetables lower blood pressure?
+    It's a correlation; people who eat more vegetables may also exercise more or smoke less, so another factor could be responsible. A controlled trial would be needed.
+  A student tested one species of grass. What is the limitation?
+    The conclusion may not apply to other species; more species would need to be tested to generalise.
+**Flashcards**
+  Does correlation show causation? :: No — a third factor could be responsible.
+  Why can't results from one species be generalised to all? :: Other species may respond differently; only the conditions tested are supported.
+  What should follow a limitation? :: The further evidence needed or an improvement.
+
+@ 1b370dea S.6.6 | Implications of findings
+**In a sentence**
+  Explain what your findings mean beyond the experiment — for understanding the biology, and for real-world uses, decisions and further research.
+**Key ideas**
+  Scientific implications: what the finding adds to understanding.
+  Practical implications: applications in health, agriculture, conservation.
+  Social and ethical implications: who is affected and how.
+  Further research: the next question the findings raise.
+**Practice questions**
+  Give an implication of finding that salt water reduces seedling growth.
+    Farmers irrigating with saline water (or on land affected by dryland salinity) may get lower crop yields; salt-tolerant varieties may be needed.
+  What is the difference between an implication and a conclusion?
+    A conclusion answers the question from the data; an implication explains what that answer means for wider understanding or practice.
+**Flashcards**
+  What is an implication? :: What a finding means beyond the investigation — for understanding, applications or decisions.
+  Give a type of implication. :: Scientific, practical, social or ethical.
+  Suggesting the next question is part of discussing {{further research}}.
+
+@ b3010f26 S.7.1 | Biological terminology, conventions and units
+**In a sentence**
+  Use precise biological terms, standard abbreviations, SI units and graphing conventions so your work is clear and unambiguous.
+**Key ideas**
+  Precise terms: "net movement of water by osmosis", not "water goes in"; "allele", not "gene", for a version of a gene.
+  Standard abbreviations: DNA, ATP, ADH, SCNT; units: g, mL, µm, °C, mmol/L.
+  Binomial names: genus capitalised, species lower case, italicised (or underlined by hand) — Eucalyptus regnans.
+  Graph conventions: title, labelled axes with units, independent variable on the x-axis.
+**Practice questions**
+  Correct: "The cell sucked in water because it had less water."
+    Water entered the cell by osmosis because the cell had a higher solute concentration than the surrounding solution.
+  Write the binomial name of the mountain ash correctly (by hand).
+    Eucalyptus regnans, underlined (italicised when typed), with a capital E and lower-case r.
+**Flashcards**
+  How is a binomial name written? :: Genus capitalised, species lower case, italicised or underlined.
+  Symbol for micrometre? :: µm.
+  Why use precise terminology? :: So meaning is clear, unambiguous and scientifically correct.
+
+@ c7515417 S.7.2 | Connecting biological concepts
+**In a sentence**
+  Strong answers connect ideas — linking structure to function, processes to outcomes, and topics to each other — rather than listing facts in isolation.
+**Key ideas**
+  Structure → function: villi increase surface area → faster absorption.
+  Cause → effect chains: mutation in p53 → damaged cells don't undergo apoptosis → uncontrolled division.
+  Cross-topic links: meiosis → genetic diversity → survival of populations; osmosis → water balance in plants and kidneys.
+**Practice questions**
+  Link meiosis to the survival of a species.
+    Crossing over and independent assortment in meiosis produce genetically diverse gametes; the resulting diverse offspring make it more likely some survive environmental change, so the species persists.
+  Link the structure of a root hair cell to its function.
+    Its long extension increases surface area for water uptake by osmosis; many mitochondria supply ATP for active uptake of mineral ions.
+**Flashcards**
+  Complete the chain: villi → ? → ? :: Larger surface area → faster absorption of nutrients.
+  Why are connected explanations better than lists? :: They show understanding of how and why, which is what most marks reward.
+  Link aquaporins to homeostasis. :: ADH increases aquaporins in collecting ducts, increasing water reabsorption to maintain water balance.
+
+@ ea44a791 S.7.3 | Models and theories, and their limitations
+**In a sentence**
+  Models and theories organise and explain observations — the fluid mosaic model, the stimulus–response model, Punnett squares, cell theory — but every model simplifies, so you should be able to say what it leaves out.
+**Key ideas**
+  Models make complex systems understandable and allow predictions.
+  Limitations: a stimulus–response diagram shows one simple pathway, while real regulation involves many interacting signals; a Punnett square assumes random fertilisation and gives probabilities, not certainties; a food web leaves out many species and the strength of links; the fluid mosaic model is a static picture of a dynamic structure.
+  Theories (cell theory, evolution by natural selection) are well supported but still open to refinement.
+**Practice questions**
+  Give one limitation of the agar cube model of cells.
+    Agar has no membrane, organelles or active transport, so it only models diffusion distance and SA:V, not how real cells control exchange.
+  Why is a Punnett square a model?
+    It represents how alleles combine in fertilisation, simplifying reality by assuming each gamete combination is equally likely and ignoring factors such as linkage.
+**Flashcards**
+  Why do scientists use models? :: To simplify complex systems, explain observations and make predictions.
+  Limitation of a Punnett square? :: It gives probabilities, not the actual outcome, and assumes equal chances for each gamete combination.
+  Name one biological theory. :: Cell theory (or evolution by natural selection).
+
+@ db6c6f2f S.7.4 | Evaluating scientific and media texts
+**In a sentence**
+  Read claims in articles, news and social media critically — check the source, the evidence behind the claim, and whether the headline matches what the research actually found.
+**Key ideas**
+  Who is making the claim, and do they have expertise or a conflict of interest?
+  What is the evidence — peer-reviewed research, sample size, controls, replication?
+  Does the media report match the original study (e.g. a mouse study reported as a cure for humans)?
+  Is it correlation presented as cause? Is language sensational ("miracle", "breakthrough")?
+  Compare with other reputable sources.
+**Practice questions**
+  A headline says "Chocolate prevents heart disease". The study found chocolate eaters had slightly lower rates of heart disease. Evaluate.
+    The study shows a correlation, not causation — other lifestyle factors could explain it. "Prevents" overstates the finding; a controlled trial would be needed.
+  Why check the original study behind a news article?
+    News reports may simplify, exaggerate or misreport findings; the original shows the actual methods, sample and conclusions.
+**Flashcards**
+  Name two questions to ask of a media claim. :: Who is making it (expertise, conflicts) and what evidence supports it?
+  Why be cautious about "cure" headlines from mouse studies? :: Results in animals often don't carry over to humans.
+  Presenting correlation as proof of cause is a common {{media}} error.
+
+@ 7c083a6a S.7.5 | Analysing bioethical issues
+**In a sentence**
+  Analyse bioethical issues using the three approaches (consequences, duty/rule, virtues) and the five ethical concepts (integrity, justice, beneficence, non-maleficence, respect), together with social, economic, legal and political factors.
+**Key ideas**
+  Consequences-based: weigh benefits against harms.
+  Duty/rule-based: are there duties or rules that apply regardless of outcome?
+  Virtues-based: what would a person of good character do?
+  Concepts: integrity (honesty), justice (fairness), beneficence (doing good), non-maleficence (avoiding harm), respect (for living things, autonomy and culture).
+  Always apply them to the specific issue with examples, and consider all stakeholders.
+**Practice questions**
+  Apply non-maleficence to the use of gene drives to eliminate feral cats.
+    Non-maleficence asks whether the harm is proportionate: removing cats could greatly benefit native wildlife, but a gene drive might spread unpredictably (e.g. to pet cats overseas) or cause ecological side effects, so risks must be minimised and weighed.
+  Which approach focuses on the character of the decision-maker?
+    The virtues-based approach.
+**Flashcards**
+  Three approaches to bioethics? :: Consequences-based, duty/rule-based, virtues-based.
+  Five ethical concepts? :: Integrity, justice, beneficence, non-maleficence, respect.
+  Four factors that influence bioethical decisions? :: Social, economic, legal and political.
+
+@ 05c43fde S.7.6 | Communicating for audience and purpose
+**In a sentence**
+  Write clearly, coherently and concisely, choosing the format and language that suit your audience and purpose — from a formal scientific report to a poster or a public explainer.
+**Key ideas**
+  Scientific genres: practical report, scientific poster, journal-style article, oral or multimedia presentation.
+  Clear: one idea per sentence, key terms defined. Coherent: logical order, linked ideas. Concise: no padding.
+  Posters: a short title (the question), one-sentence key finding, concise sections, strong visuals.
+  Adjust technical detail to the audience.
+**Practice questions**
+  How should a poster's key finding be presented?
+    As a single clear sentence answering the investigation question, placed prominently.
+  Rewrite for a general audience: "Hyperglycaemia results from insufficient insulin secretion by β cells."
+    Blood sugar gets too high when the pancreas doesn't release enough insulin.
+**Flashcards**
+  Name three scientific genres. :: Practical report, scientific poster, oral/multimedia presentation (also articles).
+  What makes writing concise? :: Saying what's needed without padding or repetition.
+  A poster's central statement is a one-sentence {{key finding}}.
+
+@ 08ada503 S.7.7 | Acknowledging and referencing sources
+**In a sentence**
+  Acknowledge every source of information and help, using a standard referencing style with in-text citations and a reference list.
+**Key ideas**
+  In-text citation where the information is used; full details in the reference list.
+  Use one style consistently (APA or Harvard are common).
+  Include images, data, quotes and paraphrased ideas — and acknowledge people who helped.
+  Record details as you go, in your logbook.
+**Practice questions**
+  Does a graph copied from a website need a reference?
+    Yes — images and data from any source must be acknowledged.
+  Why use one referencing style consistently?
+    It makes references clear, complete and easy for readers to follow and check.
+**Flashcards**
+  Two parts of a referencing system? :: In-text citations and a reference list.
+  What is plagiarism? :: Presenting someone else's work or ideas as your own.
+  Should help from a teacher or expert be acknowledged? :: Yes.

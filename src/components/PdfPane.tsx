@@ -3,7 +3,10 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import type { PDFDocumentProxy, RenderTask } from 'pdfjs-dist';
 import { getImage } from '../db/imageRepository';
 import { addHighlight, highlightsFor, pdfInfo, type PdfHighlight } from '../db/pdfRepository';
-import { loadImage } from '../sync/imageSync';
+import { loadImageWithReason } from '../sync/imageSync';
+import { useFileStoreVersion } from '../sync/files/fileStoreState';
+import { missingFileMessage } from '../sync/files/messages';
+import type { FileStoreKind } from '../sync/files/types';
 import { loadPdfjs, openPdf } from '../pdf/pdfjs';
 import { cleanSelectionText, toPageRects, type PageRect } from '../pdf/geometry';
 import { onOpenPdfRequest, takePdfTarget } from '../pdf/pdfEvents';
@@ -57,7 +60,9 @@ export function PdfPane({ fileId, page, fallbackParentId, onClose, onPageSeen, o
   const info = useLiveQuery(() => pdfInfo(fileId), [fileId]);
   const highlights = useLiveQuery(() => highlightsFor(fileId), [fileId]);
 
-  const [missing, setMissing] = useState(false);
+  /** Not here, and not fetched: which stores wanted a sign-in (`null` = still looking). */
+  const [missing, setMissing] = useState<FileStoreKind[] | null>(null);
+  const storeVersion = useFileStoreVersion();
   const [doc, setDoc] = useState<PDFDocumentProxy | null>(null);
   const [failed, setFailed] = useState<string | null>(null);
   const [sizes, setSizes] = useState<Size[]>([]);
@@ -72,13 +77,13 @@ export function PdfPane({ fileId, page, fallbackParentId, onClose, onPageSeen, o
   useEffect(() => {
     if (stored !== null) return;
     let cancelled = false;
-    void loadImage(fileId).then((found) => {
-      if (!cancelled && !found) setMissing(true);
+    void loadImageWithReason(fileId).then((found) => {
+      if (!cancelled && !found.image) setMissing(found.needsSignIn);
     });
     return () => {
       cancelled = true;
     };
-  }, [stored, fileId]);
+  }, [stored, fileId, storeVersion]);
 
   // Open the document once its bytes are here.
   const bytes = stored?.data;
@@ -260,12 +265,7 @@ export function PdfPane({ fileId, page, fallbackParentId, onClose, onPageSeen, o
   if (failed) {
     body = <p className="pdf-status">This PDF couldn’t be opened: {failed}</p>;
   } else if (stored === null && missing) {
-    body = (
-      <p className="pdf-status">
-        This PDF isn’t on this device yet. It appears once the device it was added on has synced, and you’re signed
-        in here.
-      </p>
-    );
+    body = <p className="pdf-status">{missingFileMessage('PDF', missing)}</p>;
   } else if (!doc) {
     body = <p className="pdf-status">Opening…</p>;
   } else {

@@ -1,0 +1,414 @@
+% VCE Biology — Unit 1, Area of Study 2: how plant and animal systems function.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ a9062431 U1.2.1.1 | Plant tissues and the movement of water
+**In a sentence**
+  In a vascular plant, root hair cells take water in by osmosis, xylem carries it up in an unbroken column pulled by evaporation from the leaves (transpiration), and most of it is lost through stomata.
+**Key terms**
+  **Tissue**: a group of similar cells working together on one function.
+  **Vascular plant**: a plant with xylem and phloem (ferns, conifers, flowering plants).
+  **Xylem**: tissue of dead, hollow, lignified cells that carries water and minerals from roots to leaves.
+  **Phloem**: tissue of living sieve tube cells (with companion cells) that carries sugars around the plant.
+  **Root hair cell**: an epidermal root cell with a long extension that increases surface area for absorbing water and minerals.
+  **Stomata**: pores, mostly in the lower leaf surface, each between two guard cells, that let gases in and out.
+  **Transpiration**: loss of water vapour from the leaves, mostly through stomata.
+  **Cohesion**: water molecules sticking to each other (hydrogen bonding).
+  **Adhesion**: water molecules sticking to other surfaces, such as xylem walls.
+**Levels of organisation in a plant**
+  Cells → tissues → organs (root, stem, leaf, flower) → systems (the root system below ground, the shoot system above).
+  Three tissue systems: **dermal** (the epidermis and its cuticle, guard cells and root hairs — protection and exchange), **ground** (mostly parenchyma, including the photosynthesising mesophyll; also support tissue), and **vascular** (xylem and phloem, bundled into veins).
+  **Meristems** at root and shoot tips make new cells for growth.
+**Inside a leaf (top to bottom)**
+  Waxy **cuticle** — reduces water loss.
+  **Upper epidermis** — a single transparent layer that lets light through.
+  **Palisade mesophyll** — tall, tightly packed cells full of chloroplasts, where most photosynthesis happens.
+  **Spongy mesophyll** — loosely packed cells with air spaces for gas exchange.
+  **Vascular bundle (vein)** — xylem (usually above) and phloem (below).
+  **Lower epidermis** with **stomata** and **guard cells**.
+**Xylem and phloem compared**
+  Xylem: dead cells (vessel elements and tracheids) with no end walls, forming continuous tubes; walls thickened with lignin for strength; carries water and minerals **upwards only**; also supports the plant.
+  Phloem: living **sieve tube elements** joined end to end by perforated **sieve plates**; they lack a nucleus and most organelles, so neighbouring **companion cells** (with many mitochondria) keep them alive; carries sucrose and amino acids **up or down**, from where they're made or stored (source) to where they're used (sink).
+**Intake: water enters the root**
+  Root hair cells have a huge surface area (long, thin extensions) and thin walls.
+  They actively pump mineral ions in from the soil, using ATP from their many mitochondria. This makes the cell's solute concentration higher than the soil water's.
+  So water enters the root hair cell by **osmosis**.
+  Water then crosses the root cortex to the xylem, travelling through cell walls and spaces (apoplast pathway) and through the cytoplasm from cell to cell (symplast pathway).
+  In the endodermis a waxy band, the **Casparian strip**, blocks the wall route, forcing water through the cells' membranes — so the plant controls what enters the xylem.
+**Movement: up the xylem (transpiration–cohesion–tension)**
+  1. Water evaporates from the moist walls of mesophyll cells into the air spaces and diffuses out through the stomata (transpiration).
+  2. This pulls water out of the xylem in the leaf, creating tension (a negative pressure) in the xylem.
+  3. Because water molecules cling to each other (cohesion) and to the xylem walls (adhesion), the whole column is pulled up, all the way from the roots.
+  4. Water moves into the root xylem to replace what was pulled up.
+  The plant uses no ATP to lift water — the sun's energy, evaporating the water, drives it. Root pressure can push water a short distance too.
+**Loss: transpiration**
+  More than 90% of the water a plant takes up is lost by transpiration, almost all of it through the stomata.
+  Transpiration is faster when it's bright (stomata open), warm, windy or dry, and slower in humid, still, dark or cool conditions.
+  Benefits: it moves minerals up from the roots, cools the leaves, and keeps cells turgid. The cost is water.
+**Worked example**
+  In a potometer, the bubble moved 45 mm in 15 minutes in still air and 90 mm in 15 minutes with a fan. Calculate each rate and explain the difference.
+    Still air: 45 ÷ 15 = 3.0 mm per minute. Fan: 90 ÷ 15 = 6.0 mm per minute.
+    The fan doubled the rate. Moving air carries water vapour away from the leaf surface, keeping the concentration gradient between the air spaces and the outside air steep, so water vapour diffuses out of the stomata faster.
+**Going deeper**
+  A potometer measures water uptake by a cut shoot (the movement of an air bubble along a tube), which is close to the rate of transpiration.
+  In very tall trees such as mountain ash (which can approach 100 m), the water column is enormously long; it only works because xylem vessels are narrow and the column never breaks.
+**Common mistakes**
+  "Phloem carries water." Xylem carries water; phloem carries sugars (in a watery sap).
+  "Xylem cells are alive." Mature xylem cells are dead and hollow — that's what makes them good tubes.
+  "Roots absorb water by active transport." Roots actively take up ions; water follows by osmosis.
+  "Water is pumped up the stem." It's pulled up by transpiration, using the sun's energy, not ATP.
+  "Plants breathe through stomata." Stomata allow gas exchange and water loss; breathing is an animal ventilation process.
+**Exam tips**
+  For transpiration–cohesion–tension, include all three words and the link between them: evaporation creates tension, cohesion holds the column together.
+  When asked how a cell is adapted, name the feature and link it to the function: "root hairs increase surface area, so more water can enter by osmosis".
+**Connections**
+  The plasma membrane: osmosis and active transport in root hair cells.
+  Regulating water balance in plants: how stomata control the loss.
+  Surface area to volume ratio: root hairs and thin leaves.
+  Adaptations (Unit 2): xerophyte features reduce transpiration.
+**Practice questions**
+  Explain how water enters a root hair cell from the soil.
+    The root hair cell actively takes up mineral ions, so its cytoplasm has a higher solute concentration than the soil water. Water moves into the cell by osmosis, down this gradient. The long root hair gives a large surface area for this.
+  Describe how water moves from the roots to the leaves.
+    Water evaporates from leaf mesophyll cells and diffuses out of the stomata (transpiration). This creates tension in the xylem. Water molecules cohere to each other and adhere to the xylem walls, so a continuous column is pulled up from the roots.
+  Give two structural differences between xylem and phloem.
+    Xylem cells are dead and hollow with lignified walls and no end walls; phloem sieve tubes are living cells with sieve plates, supported by companion cells. Xylem carries water one way (up); phloem carries sugars both ways.
+  Predict and explain the effect of high humidity on the rate of transpiration.
+    Transpiration slows. The air outside already holds a lot of water vapour, so the concentration gradient from the leaf air spaces to the outside is smaller and water vapour diffuses out more slowly.
+**Flashcards**
+  What does xylem carry, and which way? :: Water and minerals, upwards from roots to leaves.
+  What does phloem carry? :: Sugars (mainly sucrose) and amino acids, up or down the plant.
+  Why do phloem sieve tubes need companion cells? :: Sieve tubes lack a nucleus and most organelles; companion cells keep them alive and supply ATP.
+  Water moves up the xylem by transpiration, {{cohesion}} and {{tension}}.
+  How do root hair cells make water enter by osmosis? :: They actively pump in mineral ions, raising their solute concentration above the soil water's.
+  Which leaf layer does most photosynthesis? :: The palisade mesophyll.
+  Name two conditions that increase the rate of transpiration. :: Higher temperature, wind, low humidity, bright light.
+  What does the Casparian strip do? :: Blocks water moving through the cell walls of the endodermis, forcing it through membranes so the plant controls what enters the xylem.
+
+@ 5f4c9d51 U1.2.1.2 | Digestive, endocrine and excretory systems
+**In a sentence**
+  Animal cells specialise into tissues, tissues build organs, and organs work together as systems — the digestive system breaks food down and absorbs it, the endocrine system sends hormone messages, and the excretory system removes wastes such as urea.
+**Key terms**
+  **Tissue**: a group of similar cells with a shared function.
+  **Organ**: a structure made of several tissues working together (stomach, kidney).
+  **System**: a group of organs working together for a major function.
+  **Enzyme**: a protein that speeds up a reaction, e.g. amylase breaks starch into sugars.
+  **Villi**: finger-like folds of the small intestine lining that increase surface area for absorption.
+  **Hormone**: a chemical messenger released into the blood by an endocrine gland that affects target cells.
+  **Target cell**: a cell with the receptor for a particular hormone.
+  **Nephron**: the functional unit of the kidney that filters blood and makes urine.
+  **Urea**: the main nitrogen-containing waste in mammals, made in the liver from excess amino acids.
+**Levels of organisation**
+  Cell → tissue → organ → system → organism. For example: smooth muscle cells → muscle tissue → stomach → digestive system.
+  The four animal tissue types: **epithelial** (covers surfaces and lines tubes; absorbs and secretes), **connective** (supports and binds — bone, blood, fat, cartilage), **muscle** (skeletal, smooth and cardiac; contracts), and **nervous** (carries electrical signals).
+**The digestive system — breaking food down and absorbing it**
+  **Mechanical digestion** (teeth chewing, stomach churning) breaks food into smaller pieces; **chemical digestion** uses enzymes to break large molecules into small ones that can be absorbed.
+  The route: mouth → oesophagus → stomach → small intestine → large intestine → rectum → anus.
+  **Mouth**: teeth grind food; salivary glands release saliva with **amylase** (starch → maltose).
+  **Oesophagus**: a muscular tube; waves of smooth muscle contraction (**peristalsis**) push food to the stomach.
+  **Stomach**: muscular walls churn food; hydrochloric acid (about pH 2) kills microbes and activates **pepsin**, which starts digesting protein.
+  **Small intestine**: in the first part (duodenum), the **pancreas** adds enzymes (amylase, proteases, **lipase**) and the **liver** adds **bile** (stored in the gallbladder), which breaks fat into small droplets (emulsifies it). The rest of the small intestine absorbs the products.
+  **Large intestine**: absorbs water; gut bacteria live here; faeces formed and stored in the rectum.
+  Enzyme summary: carbohydrates → sugars (amylase); proteins → amino acids (proteases such as pepsin and trypsin); fats → fatty acids and glycerol (lipase).
+**How the small intestine is specialised for absorption**
+  Long and folded, lined with **villi**, and the epithelial cells have **microvilli** — an enormous surface area.
+  The epithelium is only one cell thick, so the diffusion distance is short.
+  Each villus has a dense network of blood capillaries (absorbing sugars and amino acids) and a **lacteal** (a lymph vessel absorbing fats).
+  Epithelial cells have many mitochondria, supplying ATP for active transport of nutrients.
+**The endocrine system — chemical signalling**
+  Endocrine glands are **ductless**: they release hormones straight into the blood.
+  A hormone travels throughout the body but only affects **target cells** that have a matching receptor.
+  Compared with nerves, hormone signals are slower, last longer and act more widely.
+  Glands to know:
+    **Hypothalamus** (in the brain): links the nervous and endocrine systems; makes ADH and releasing hormones such as TRH; it's the control centre for temperature and water balance.
+    **Pituitary gland**: the anterior pituitary releases TSH, growth hormone and others; the posterior pituitary releases ADH made by the hypothalamus.
+    **Thyroid gland**: releases thyroxine, which raises metabolic rate.
+    **Pancreas**: its islets of Langerhans release insulin (from beta cells) and glucagon (from alpha cells).
+    **Adrenal glands**: release adrenaline and cortisol.
+    **Gonads**: testes (testosterone) and ovaries (oestrogen, progesterone).
+**The excretory system — removing metabolic waste**
+  Excretion is removing waste made by the body's own reactions (not faeces, which is undigested food).
+  The liver turns excess amino acids into **urea**; the kidneys remove urea, excess salts and water from the blood as urine. The lungs excrete CO₂.
+  Pathway: renal artery → kidney → ureter → bladder → urethra; clean blood leaves in the renal vein.
+  Each kidney has about a million **nephrons**:
+    **Glomerulus and Bowman's capsule — filtration**: blood pressure forces water, glucose, salts, amino acids and urea out of the glomerulus capillaries into the capsule. Blood cells and large proteins are too big and stay behind.
+    **Proximal convoluted tubule — reabsorption**: all the glucose and amino acids, and most of the water and salts, are reabsorbed into the blood. These cells have microvilli and many mitochondria (active transport).
+    **Loop of Henle**: makes the tissue around it salty, so water can later be drawn out of the collecting duct.
+    **Distal convoluted tubule**: fine-tunes salt levels and pH; some substances are secreted into the tubule.
+    **Collecting duct**: reabsorbs water, controlled by ADH, then carries urine to the ureter.
+  So urine is made by three processes: **filtration**, **reabsorption** and **secretion**.
+**Going deeper**
+  Hormones that are proteins (insulin, ADH) are hydrophilic, so they bind receptors on the cell surface. Steroid hormones (cortisol, testosterone) are hydrophobic, so they cross the membrane and bind receptors inside the cell — links to the plasma membrane.
+  Kangaroos and other grazing animals have long guts with chambers where microbes ferment tough plant cellulose; carnivores have much shorter guts.
+  Desert mammals such as the spinifex hopping mouse have very long loops of Henle and produce extremely concentrated urine — links to adaptations in Unit 2.
+**Common mistakes**
+  Calling the pancreas only an endocrine gland. It's both: exocrine (digestive enzymes through a duct) and endocrine (insulin and glucagon into the blood).
+  "Hormones only go to their target organ." They travel everywhere in the blood; only cells with the receptor respond.
+  Mixing up excretion (removing metabolic waste like urea) and egestion (removing undigested food).
+  "The bladder makes urine." The kidneys make it; the bladder only stores it.
+  "Glucose in urine is normal." In a healthy person all filtered glucose is reabsorbed.
+**Exam tips**
+  For "how is this organ suited to its function", name the tissue or structural feature and link it to the function (villi → surface area → absorption).
+  In kidney questions, use the three process words: filtration, reabsorption, secretion — and say where each happens.
+**Connections**
+  Organelles: secretory cells in the pancreas and stomach are full of rough ER and Golgi.
+  Homeostasis: the endocrine glands and kidneys are the effectors for glucose and water balance.
+  Homeostasis malfunctions: type 1 diabetes and hyperthyroidism are endocrine failures.
+  Surface area to volume ratio: villi and microvilli.
+**Practice questions**
+  Explain three ways the small intestine is adapted for absorbing nutrients.
+    Villi and microvilli give a very large surface area; the epithelium is one cell thick, so the diffusion distance is short; each villus has a rich blood supply (and a lacteal) that carries nutrients away, keeping the concentration gradient steep.
+  Distinguish between an endocrine gland and an exocrine gland, using the pancreas as an example.
+    An endocrine gland releases hormones directly into the blood (the pancreas's islets release insulin and glucagon). An exocrine gland releases its product through a duct (the pancreas sends digestive enzymes through the pancreatic duct to the small intestine).
+  Describe how the nephron forms urine.
+    Blood is filtered in the glomerulus: water, glucose, salts and urea pass into Bowman's capsule, but cells and proteins don't. In the tubules, useful substances (all glucose, most water and salts) are reabsorbed into the blood and some substances are secreted in. Water is reabsorbed from the collecting duct under the control of ADH. What's left is urine.
+  Why does a hormone affect only certain cells, even though it reaches every cell in the body?
+    Only target cells have receptor proteins with the matching shape for that hormone, so only they respond.
+**Flashcards**
+  Order: cell, organ, tissue, system. :: Cell → tissue → organ → system.
+  What does bile do? :: Emulsifies fats into small droplets, increasing surface area for lipase.
+  Where does protein digestion start? :: In the stomach, with pepsin (at about pH 2).
+  Endocrine glands release hormones directly into the {{blood}}.
+  Where is ADH made and where is it released? :: Made in the hypothalamus, released from the posterior pituitary.
+  What happens in the glomerulus? :: Filtration: blood pressure forces small molecules (water, glucose, salts, urea) into Bowman's capsule.
+  Where is all the glucose reabsorbed in a nephron? :: The proximal convoluted tubule.
+  Which cells of the pancreas make insulin? :: Beta cells in the islets of Langerhans.
+
+@ 0bf813f5 U1.2.2.1 | Regulating water balance in plants
+**In a sentence**
+  A plant balances the water it takes in against the water it loses by opening and closing its stomata — guard cells swell to open them and go floppy to close them, and the hormone abscisic acid closes them when the plant is short of water.
+**Key terms**
+  **Guard cells**: the pair of cells around each stoma that change shape to open or close it.
+  **Turgid**: firm and swollen with water.
+  **Flaccid**: limp from losing water.
+  **Abscisic acid (ABA)**: a plant hormone, made when the plant is water-stressed, that makes stomata close.
+  **Wilting**: drooping of a plant when its cells lose turgor.
+  **Xerophyte**: a plant adapted to dry conditions.
+**The trade-off**
+  Stomata must open to let CO₂ in for photosynthesis — but open stomata also let water vapour out.
+  So a plant regulates its water balance mainly by controlling how open its stomata are.
+**How guard cells open and close a stoma**
+  Opening: guard cells actively pump in potassium ions (K⁺) → their solute concentration rises → water enters by osmosis → the guard cells become **turgid**. Their inner walls are thicker than their outer walls, so they curve apart and the pore opens.
+  Closing: K⁺ ions leave → water leaves by osmosis → the guard cells become **flaccid** → they straighten and the pore closes.
+  Stomata usually open in light (when photosynthesis can use the CO₂) and close in darkness.
+**Abscisic acid — the water-stress signal**
+  This is a stimulus–response in a plant.
+    Stimulus: soil dries out and the plant becomes water-stressed.
+    Response in roots and leaves: they make abscisic acid, which travels to the guard cells.
+    Effect: ABA makes guard cells lose K⁺, then water, so they go flaccid and the stomata close.
+    Result: transpiration falls and the plant conserves water (at the cost of taking in less CO₂).
+**Wilting**
+  If water loss is greater than uptake, cells lose turgor and the plant wilts. Wilting reduces the leaf area facing the sun, which cuts water loss — a short-term emergency response.
+**Structural features that reduce water loss (xerophytes)**
+  Thick waxy cuticle.
+  Fewer stomata, or stomata only on the lower surface.
+  Sunken stomata, or stomata in pits or grooves, and leaf hairs — both trap a layer of humid air, reducing the gradient.
+  Rolled leaves with the stomata inside (spinifex).
+  Small, narrow or needle-like leaves (a smaller surface area).
+  Leaves that hang vertically (many eucalypts), so they catch less of the harsh midday sun.
+  Deep roots reaching groundwater, or wide shallow roots catching brief rain.
+  Water-storing tissue (succulents, cacti).
+**Worked example**
+  A plant is left without watering for three days. Explain how it responds to reduce water loss.
+    Stimulus: water stress as the soil dries.
+    The roots and leaves produce abscisic acid, which reaches the guard cells.
+    Guard cells lose K⁺ ions, lowering their solute concentration; water leaves them by osmosis.
+    The guard cells become flaccid and the stomata close, so transpiration decreases.
+**Going deeper**
+  Some desert plants use CAM photosynthesis: they open their stomata at night, when it's cool and humid, store CO₂, and keep stomata closed during the day.
+  Plants in water (hydrophytes, like water lilies) have the opposite problem: their stomata are on the upper surface, their cuticle is thin, and air spaces help them float.
+  Salt-tolerant plants (halophytes) such as mangroves and saltbush can excrete or store salt so water still enters their roots by osmosis.
+**Common mistakes**
+  Saying ABA opens stomata. ABA closes them.
+  Forgetting the cost of closing stomata: less CO₂ enters, so photosynthesis slows.
+  Saying guard cells open when they lose water. They open when turgid, close when flaccid.
+  "Plants sweat to cool down." Transpiration does cool leaves, but plants can't regulate it for temperature the way animals regulate sweating.
+**Exam tips**
+  Give the ion (K⁺), the process (osmosis) and the result (turgid or flaccid) in that order.
+  Describe a xerophyte feature and then explain how it reduces transpiration — the explanation earns the mark.
+**Connections**
+  Plant tissues and the movement of water: stomata are where transpiration happens.
+  The plasma membrane: active transport of K⁺ and osmosis in guard cells.
+  Homeostasis in animals: another example of a stimulus–response.
+  Adaptations (Unit 2): xerophytes are structural and physiological adaptations.
+**Practice questions**
+  Explain how guard cells open a stoma.
+    Guard cells actively take up K⁺ ions, raising their solute concentration. Water enters by osmosis and they become turgid. Their thicker inner walls make them curve apart, opening the pore.
+  Explain why a plant in a hot, dry wind might close its stomata even though this reduces photosynthesis.
+    Losing water faster than the roots can replace it would make the plant wilt and could kill it. Closing stomata cuts transpiration; the plant accepts less CO₂ uptake (less photosynthesis) to survive.
+  Describe two structural features of a eucalypt leaf that reduce water loss and explain how each works.
+    A thick waxy cuticle makes the surface waterproof, so little water evaporates through it. Leaves hanging vertically receive less direct midday sun, so they stay cooler and lose less water. (Also: sunken stomata trap humid air.)
+**Flashcards**
+  What makes guard cells swell and open the stoma? :: Active uptake of K⁺ ions, then water entering by osmosis.
+  What hormone closes stomata when a plant is water-stressed? :: Abscisic acid (ABA).
+  When guard cells are {{flaccid}}, the stoma is {{closed}}.
+  Why can't a plant just keep its stomata closed? :: It needs CO₂ for photosynthesis, which enters through open stomata.
+  How do sunken stomata reduce water loss? :: They trap humid air, reducing the water vapour gradient, so less water diffuses out.
+  Give three xerophyte features. :: Thick cuticle, sunken stomata, small or rolled leaves (also hairs, vertical leaves, deep roots).
+  Which way do K⁺ ions move when stomata close? :: Out of the guard cells (water then follows by osmosis).
+
+@ b0758bb7 U1.2.2.2 | Homeostasis: temperature, glucose and water
+**In a sentence**
+  Homeostasis keeps the body's internal environment within a narrow range: receptors detect a change, a control centre such as the hypothalamus or pancreas responds, and effectors reverse the change by negative feedback — for body temperature, blood glucose and water balance.
+**Key terms**
+  **Homeostasis**: keeping the internal environment within a narrow range despite changes inside or outside the body.
+  **Tolerance range**: the range of values within which an organism's cells can function.
+  **Set point**: the ideal value the body keeps a variable near (about 37 °C for human core temperature).
+  **Stimulus**: a change in the internal or external environment.
+  **Receptor**: a structure that detects the stimulus.
+  **Control centre**: the part that receives the information and coordinates a response (often the hypothalamus).
+  **Effector**: a muscle or gland that carries out the response.
+  **Negative feedback**: the response reverses the original change, returning the variable towards the set point.
+  **Positive feedback**: the response increases the original change.
+**The stimulus–response model**
+  Stimulus → receptor → control centre → effector → response.
+  Messages from receptors to the control centre, and from it to the effectors, travel by nerves (fast, short-lived, precise) or hormones (slower, longer-lasting, widespread).
+  In **negative feedback**, the response reduces the stimulus, so the loop switches itself off as the variable returns to normal.
+  **Positive feedback** amplifies a change until some end point (contractions during childbirth driven by oxytocin; blood clotting). It is not how homeostasis works but you must be able to tell them apart.
+**Body temperature (thermoregulation)**
+  Humans are **endotherms**: we make most of our heat through metabolism. Core temperature is kept near 37 °C. Ectotherms (lizards) rely mainly on outside heat and behaviour.
+  Receptors: thermoreceptors in the skin (outside temperature) and in the hypothalamus (blood temperature).
+  Control centre: the **hypothalamus**.
+  Too hot — effectors and responses:
+    Skin arterioles **vasodilate**, so more blood flows near the surface and heat is lost by radiation.
+    Sweat glands release sweat; evaporation of water takes heat from the skin.
+    Hair lies flat; metabolic rate is not raised.
+    Behaviour: seek shade, remove clothing, be less active. (Kangaroos lick their forearms; dogs pant.)
+  Too cold — effectors and responses:
+    Skin arterioles **vasoconstrict**, so less warm blood flows near the surface and less heat is lost.
+    Skeletal muscles **shiver**, releasing heat from respiration.
+    Hair erector muscles contract (goosebumps; fur traps a layer of insulating air in mammals).
+    Metabolic rate rises: the hypothalamus → TRH → the pituitary → TSH → the thyroid → **thyroxine**; adrenaline also raises metabolism.
+    Behaviour: put on clothes, huddle, curl up, move to shelter.
+**Blood glucose**
+  Normal blood glucose is about 4–8 mmol/L. Cells need a steady supply (the brain especially), but too much glucose draws water out of cells and damages blood vessels.
+  Receptor and control centre: cells of the **islets of Langerhans** in the pancreas detect glucose themselves.
+  Blood glucose too high (after a meal):
+    **Beta cells** release **insulin**.
+    Insulin makes body cells (especially muscle and fat) take up more glucose, and makes the liver and muscles store it as **glycogen**.
+    Blood glucose falls back towards normal.
+  Blood glucose too low (between meals, during exercise):
+    **Alpha cells** release **glucagon**.
+    Glucagon makes the liver break glycogen down into glucose and release it into the blood.
+    Blood glucose rises back towards normal.
+  Insulin and glucagon are **antagonistic**: they have opposite effects. The **liver** is the main target of both.
+**Water balance (osmoregulation)**
+  Stimulus: dehydration (sweating, not drinking, salty food) raises the solute concentration of the blood.
+  Receptors: **osmoreceptors** in the **hypothalamus**.
+  Control centre: the hypothalamus, which makes more **antidiuretic hormone (ADH)** and triggers **thirst**.
+  ADH is released into the blood from the **posterior pituitary**.
+  Effectors: the **collecting ducts** (and distal tubules) of the kidney nephrons. ADH makes their cells insert more **aquaporins** into their membranes.
+  Response: more water is reabsorbed into the blood, so a small volume of concentrated urine is produced and blood solute concentration falls back to normal.
+  If you drink a lot: blood becomes dilute → less ADH → fewer aquaporins → less water reabsorbed → a large volume of dilute urine.
+**Worked example**
+  Draw (in words) the stimulus–response model for a rise in blood glucose after lunch.
+    Stimulus: blood glucose rises above the normal range.
+    Receptor: beta cells of the islets of Langerhans in the pancreas.
+    Control centre: the same beta cells, which release insulin into the blood.
+    Effectors: liver, muscle and fat cells.
+    Response: cells take up glucose; liver and muscle convert it to glycogen.
+    Negative feedback: blood glucose falls, so the stimulus is removed and insulin release drops.
+**Going deeper**
+  Alcohol suppresses ADH release, which is why drinking alcohol makes you urinate more and can leave you dehydrated.
+  Small mammals have a high surface area to volume ratio, so they lose heat fast; many Australian mammals such as pygmy possums save energy with torpor rather than keeping warm all night.
+  Glucagon also stimulates the liver to make new glucose from non-carbohydrates; adrenaline raises blood glucose quickly in "fight or flight".
+**Common mistakes**
+  Mixing up **glucagon** (a hormone) and **glycogen** (the stored carbohydrate).
+  "Insulin turns glucose into glycogen." Insulin is the signal; enzymes in liver and muscle cells do the conversion.
+  "ADH makes you urinate." It's anti-diuretic: it reduces urine volume.
+  "Vasodilation moves blood vessels closer to the skin." The vessels don't move; they widen, letting more blood flow near the surface.
+  Leaving out the feedback: a negative feedback answer must say the response reduces the stimulus and returns the variable to its normal range.
+**Exam tips**
+  Label all five parts of the stimulus–response model, and name the actual structures (hypothalamus, osmoreceptors, collecting ducts), not just "the brain" or "the kidney".
+  Describe responses precisely: "vasoconstriction of arterioles in the skin reduces blood flow to the surface, so less heat is lost by radiation."
+**Connections**
+  Animal systems: the endocrine glands and nephron structures involved.
+  The plasma membrane: aquaporins and glucose carriers.
+  Homeostasis malfunctions: type 1 diabetes, hypoglycaemia and hyperthyroidism.
+  Adaptations (Unit 2): physiological adaptations such as torpor and concentrated urine.
+**Practice questions**
+  Explain how the body responds to a fall in core body temperature.
+    Thermoreceptors in the skin and hypothalamus detect the fall. The hypothalamus triggers vasoconstriction of skin arterioles (less heat lost), shivering (heat from muscle respiration), raised hair, and more thyroxine and adrenaline (higher metabolic rate), plus behaviours such as adding clothes. Temperature rises back to normal — negative feedback.
+  Describe the role of ADH in maintaining water balance when a person is dehydrated.
+    Osmoreceptors in the hypothalamus detect the higher blood solute concentration. More ADH is released from the posterior pituitary. ADH makes collecting duct cells insert more aquaporins, so more water is reabsorbed into the blood, producing a small volume of concentrated urine and restoring the blood's solute concentration.
+  Explain why insulin and glucagon are described as antagonistic hormones.
+    They have opposite effects on blood glucose: insulin lowers it (glucose taken up by cells and stored as glycogen), glucagon raises it (glycogen broken down to glucose in the liver). Together they keep glucose in a narrow range.
+  Distinguish between negative and positive feedback, with an example of each.
+    Negative feedback reverses a change, returning a variable to its set point (e.g. sweating when hot). Positive feedback amplifies a change until an end point (e.g. contractions during childbirth).
+**Flashcards**
+  Order the stimulus–response model. :: Stimulus → receptor → control centre → effector → response.
+  What is negative feedback? :: A response that reverses the original change, returning the variable towards its set point.
+  Which part of the brain is the control centre for temperature and water balance? :: The hypothalamus.
+  When blood glucose is high, {{beta}} cells release {{insulin}}.
+  What does glucagon do? :: Makes the liver break glycogen down into glucose, raising blood glucose.
+  How does ADH increase water reabsorption? :: It makes collecting duct cells insert more aquaporins into their membranes.
+  How does vasodilation cool the body? :: Skin arterioles widen, so more warm blood flows near the surface and more heat is lost by radiation.
+  Give an example of positive feedback. :: Contractions during childbirth (or blood clotting).
+
+@ 768388d5 U1.2.2.3 | Homeostasis malfunctions
+**In a sentence**
+  When part of a feedback loop fails, a variable escapes its normal range: in type 1 diabetes the pancreas can't make insulin, in hypoglycaemia blood glucose falls too low, and in hyperthyroidism the thyroid makes too much thyroxine.
+**Key terms**
+  **Type 1 diabetes**: an autoimmune disease in which the immune system destroys the insulin-making beta cells.
+  **Hyperglycaemia**: blood glucose above the normal range.
+  **Hypoglycaemia**: blood glucose below the normal range (below about 4 mmol/L).
+  **Autoimmune disease**: a disease in which the immune system attacks the body's own cells.
+  **Hyperthyroidism**: overproduction of thyroid hormone (thyroxine).
+  **Graves' disease**: an autoimmune cause of hyperthyroidism in which antibodies act like TSH.
+  **Goitre**: a swollen thyroid gland.
+**Type 1 diabetes**
+  Cause: the immune system destroys the beta cells in the islets of Langerhans, so little or no insulin is made. It usually appears in children or young adults and is not caused by diet or lifestyle.
+  Where the loop breaks: high blood glucose is detected, but no insulin can be sent, so the effectors (liver, muscle, fat cells) never get the signal.
+  Consequences: persistent hyperglycaemia; cells are starved of glucose even though the blood is full of it; the body breaks down fat instead, making ketones, which can build up to a dangerous state (ketoacidosis).
+  Symptoms: excessive thirst and urination (glucose spills into urine and draws water with it by osmosis), weight loss, tiredness, hunger.
+  Management: insulin by injection or pump (it can't be swallowed — it's a protein and would be digested), regular glucose monitoring (finger pricks or continuous glucose monitors), matching insulin to carbohydrate intake and exercise.
+  Contrast with type 2 diabetes: insulin is made but target cells respond poorly (insulin resistance); strongly linked to lifestyle and genes.
+**Hypoglycaemia**
+  Blood glucose drops below the normal range.
+  Causes: too much insulin (a common risk for people with type 1 diabetes), a missed or delayed meal, strenuous exercise without enough carbohydrate, alcohol.
+  Why it's dangerous: the brain depends on glucose. Symptoms include shakiness, sweating, a fast heartbeat, hunger, irritability and confusion; severe cases cause seizures or unconsciousness.
+  Treatment: fast-acting glucose (jelly beans, juice, glucose tablets), then a longer-acting carbohydrate; a glucagon injection if the person is unconscious.
+**Hyperthyroidism**
+  The normal loop: the hypothalamus releases TRH → the anterior pituitary releases TSH → the thyroid releases thyroxine → thyroxine raises metabolic rate. High thyroxine feeds back to reduce TRH and TSH (negative feedback).
+  In hyperthyroidism too much thyroxine is made and the feedback can't bring it down.
+  Most common cause: **Graves' disease**, an autoimmune condition where antibodies bind the TSH receptors on the thyroid and keep stimulating it, ignoring the feedback. Other causes: thyroid nodules or tumours that make hormone on their own, thyroid inflammation, too much iodine.
+  Symptoms (a raised metabolic rate): weight loss despite a big appetite, feeling hot and sweating (heat intolerance), fast or irregular heartbeat, anxiety and irritability, tremor, muscle weakness and fatigue, a goitre, and bulging eyes in Graves' disease.
+  Treatment: anti-thyroid medicines, radioactive iodine (destroys some thyroid cells), or surgery to remove part or all of the thyroid (followed by thyroxine tablets); beta-blockers ease the fast heartbeat.
+**Worked example**
+  Explain, using the stimulus–response model, why a person with type 1 diabetes has high blood glucose after a meal.
+    Stimulus: blood glucose rises after the meal.
+    Receptor/control centre: the pancreas should detect this, but the beta cells have been destroyed by the immune system.
+    Signal: little or no insulin is released.
+    Effectors: liver, muscle and fat cells receive no signal, so they don't take up glucose or store it as glycogen.
+    Result: the negative feedback loop is broken and blood glucose stays high (hyperglycaemia).
+**Going deeper**
+  Stem-cell research aims to make new insulin-producing cells for people with type 1 diabetes; islet transplants already work for a few, but need immune-suppressing drugs.
+  Hypothyroidism is the opposite — too little thyroxine — causing tiredness, weight gain and feeling cold.
+**Common mistakes**
+  "People with type 1 diabetes make too much sugar." They can't make insulin, so glucose isn't removed from the blood.
+  "Hypoglycaemia only affects diabetics." Anyone can become hypoglycaemic, though it's most common with insulin treatment.
+  Confusing hyperthyroidism (too much thyroxine, everything speeds up) with hypothyroidism (too little, everything slows).
+  Forgetting that type 1 diabetes and Graves' disease are autoimmune.
+**Exam tips**
+  Locate the fault in the model: "the signal (insulin) is missing" for type 1 diabetes; "the gland ignores the feedback" for Graves' disease.
+  Link each symptom to the cause: weight loss in hyperthyroidism because a high metabolic rate uses up energy stores.
+**Connections**
+  Homeostasis: the normal loops for glucose and thyroxine.
+  Animal systems: the pancreas and thyroid as endocrine glands.
+  Stem cells: possible future cures for type 1 diabetes.
+**Practice questions**
+  Explain why people with type 1 diabetes need to inject insulin rather than take it as a tablet.
+    Insulin is a protein. Taken by mouth it would be digested by proteases in the stomach and small intestine into amino acids and would never reach the blood as working insulin.
+  A person with type 1 diabetes injects insulin and then goes for a long run without eating. Explain what might happen and what they should do.
+    The insulin makes cells take up glucose while exercise uses it up, so blood glucose can fall below the normal range (hypoglycaemia), causing shakiness, confusion or collapse. They should take fast-acting glucose (jelly beans, juice) and then some longer-acting carbohydrate.
+  Explain how Graves' disease causes hyperthyroidism even though TSH levels are low.
+    In Graves' disease antibodies bind the TSH receptors on the thyroid and stimulate it just as TSH would. The thyroid keeps making thyroxine regardless of feedback, so thyroxine is high even though the high levels have suppressed TSH release.
+  Give three symptoms of hyperthyroidism and link one to its cause.
+    Weight loss, heat intolerance, rapid heartbeat (also tremor, anxiety, goitre). Weight loss: excess thyroxine raises metabolic rate, so energy stores are used faster.
+**Flashcards**
+  What causes type 1 diabetes? :: The immune system destroys the insulin-producing beta cells (autoimmune).
+  Why do people with untreated type 1 diabetes urinate a lot? :: Excess glucose in the filtrate draws water with it by osmosis, so more urine is made.
+  Hypoglycaemia means blood glucose is {{below}} the normal range.
+  First treatment for a conscious person with hypoglycaemia? :: Fast-acting glucose such as jelly beans or juice.
+  Order the hormones that control the thyroid. :: Hypothalamus TRH → anterior pituitary TSH → thyroid thyroxine.
+  What is Graves' disease? :: An autoimmune disease where antibodies stimulate the thyroid like TSH, causing hyperthyroidism.
+  Three symptoms of hyperthyroidism? :: Weight loss, heat intolerance, fast heartbeat (also tremor, anxiety, goitre).

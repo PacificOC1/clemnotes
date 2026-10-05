@@ -1,0 +1,400 @@
+% VCE Economics — Unit 1, Area of Study 3: behavioural economics.
+% Original study notes. Format: see src/courses/notesPack.ts. Money is written \$ (a bare $ starts maths).
+
+@ 3d63b55a U1.3.1.1 | Bounded rationality, willpower, self-interest
+**In a sentence**
+  Behavioural economics finds that real people are only boundedly rational (they use mental shortcuts), have bounded willpower (they favour now over later) and bounded self-interest (they care about fairness and others) — so their choices depart from the traditional model in predictable ways.
+**Key terms**
+  **Behavioural economics**: the study of how psychological, social and emotional factors affect economic decisions.
+  **Bounded rationality**: people's rationality is limited by the information they have, the time available and their mental capacity, so they use rules of thumb and are prone to biases.
+  **Heuristic**: a mental shortcut or rule of thumb that simplifies a decision.
+  **Bias**: a systematic, predictable error in judgement.
+  **Bounded willpower**: people often lack the self-control to act in their long-term interest, even when they know what's best.
+  **Present bias**: giving too much weight to immediate costs and rewards compared with future ones.
+  **Bounded self-interest**: people care about fairness and others' wellbeing, not just their own gain.
+  **Nudge**: a change in how a choice is presented that predictably changes behaviour without banning options or changing incentives much (Thaler and Sunstein, 2008).
+**Bounded rationality**
+  Herbert Simon (1950s) argued people "satisfice" — choose something good enough — rather than maximise.
+  Anchoring: judgements are pulled towards the first number seen. In Tversky and Kahneman's experiment, people who saw a wheel stop at 10 guessed on average that 25% of UN countries were African; those who saw 65 guessed 45%.
+  Framing: the same information presented differently changes choices ("95% fat-free" sells better than "5% fat").
+  Loss aversion: losses hurt about twice as much as equal gains please (Kahneman and Tversky's prospect theory).
+  Endowment effect: people value things more once they own them. In a famous experiment, students given a mug asked about twice as much to sell it as others would pay to buy one.
+  Status quo and default bias: people stick with pre-set options (default super funds, auto-renewing subscriptions).
+  Choice overload: too many options can stop people choosing. In the "jam study", a display of 24 jams drew 60% of shoppers but only about 3% bought; 6 jams drew 40% and about 30% bought.
+  Availability heuristic: judging likelihood by how easily examples come to mind (fear of shark attacks vs road accidents).
+  Herd behaviour: copying others (bidding wars, crypto booms).
+**Bounded willpower**
+  Present bias explains procrastination and under-saving: people plan to exercise, save or study "next week".
+  Hyperbolic discounting: \$100 today is preferred to \$110 next week, yet \$110 in 53 weeks is preferred to \$100 in 52 weeks — impatience is strongest for the present.
+  Walter Mischel's marshmallow test (1970s): many children couldn't wait 15 minutes to get two treats instead of one.
+  Examples: gym memberships that go unused; buy now, pay later spending; smokers who want to quit.
+  Commitment devices help (automatic savings transfers, pre-paid classes).
+**Bounded self-interest**
+  Ultimatum game: one player proposes how to split \$10; if the other rejects it, both get nothing. Traditional theory says any offer above zero should be accepted, but offers below about 20–30% are often rejected as unfair, and most proposers offer 40–50%.
+  Dictator game: even when the other player can't reject, many people share some money.
+  Real examples: donating blood and to charities, volunteering, tipping, boycotting firms seen as unfair, paying more for ethical or local products.
+**Worked example**
+  Identify which insight best explains each: (a) a shopper buys a \$120 jacket "reduced from \$300"; (b) Sam keeps meaning to switch to a cheaper phone plan but never does; (c) a customer refuses to buy from a store that raised umbrella prices during a storm.
+    (a) Bounded rationality — anchoring on the \$300 "was" price makes \$120 seem a bargain.
+    (b) Bounded willpower (present bias) and status quo bias — the small effort now outweighs the future savings in his mind.
+    (c) Bounded self-interest — the customer gives up a convenient purchase to punish behaviour seen as unfair.
+**Going deeper**
+  These deviations are predictable, not random — which is what makes behavioural economics useful for designing policy and why businesses exploit it.
+  Daniel Kahneman (Nobel 2002) and Richard Thaler (Nobel 2017) won the economics prize for this work.
+  Some findings haven't replicated strongly (the jam study effect is smaller in later studies), so evaluate evidence carefully.
+**Common mistakes**
+  Saying behavioural economics shows people are "stupid" or "irrational". It shows they are human — limited information, time and self-control, and social motives.
+  Mixing up the three bounds: shortcuts and biases = rationality; self-control = willpower; fairness and altruism = self-interest.
+**Exam tips**
+  Name the bound, name the specific bias or behaviour, and give an example — "bounded rationality: anchoring, e.g. the 'was \$300' price tag".
+**Connections**
+  The traditional view of the consumer: the model these insights challenge.
+  Traditional vs behavioural economics.
+  Government and business strategies that use these insights.
+**Practice questions**
+  Explain the concept of bounded rationality, with an example.
+    People's ability to make rational decisions is limited by information, time and mental capacity, so they rely on heuristics that cause biases. E.g. anchoring: a shopper judges a \$150 price as cheap after seeing a crossed-out \$250.
+  How does the ultimatum game challenge the assumption of self-interest?
+    Traditional theory predicts responders accept any positive offer, but many reject low offers (below about 20–30%) as unfair, giving up money to punish unfairness — self-interest is bounded by fairness.
+  Using bounded willpower, explain why many Australians don't make voluntary super contributions.
+    Present bias: spending now feels much more valuable than retirement income decades away, so people delay saving even when they know it's in their long-term interest.
+  What is loss aversion?
+    The tendency for losses to feel roughly twice as painful as gains of the same size feel good.
+**Flashcards**
+  Three key insights of behavioural economics? :: Bounded rationality, bounded willpower and bounded self-interest.
+  What is bounded rationality? :: Rationality limited by information, time and mental capacity, so people use heuristics.
+  Judgements pulled towards the first number seen are {{anchoring}}.
+  What is present bias? :: Over-weighting immediate costs and rewards relative to future ones.
+  What does the ultimatum game show? :: People reject unfair offers — self-interest is bounded by fairness.
+  Losses hurt about {{twice}} as much as equal gains please.
+  What is a nudge? :: A change in how a choice is presented that shifts behaviour without banning options.
+  Who wrote Nudge (2008)? :: Richard Thaler and Cass Sunstein.
+
+@ f73ae5b6 U1.3.1.2 | Traditional vs behavioural economics
+**In a sentence**
+  Traditional economics assumes rational, self-interested, fully informed utility-maximisers; behavioural economics adds evidence that people are limited and social, and the two together explain decisions better than either alone.
+**Key terms**
+  **Traditional (neoclassical) economics**: models agents as rational, self-interested and fully informed, maximising utility or profit.
+  **Homo economicus**: the "economic man" of traditional models.
+  **Complement**: to add to and improve something rather than replace it.
+**The key differences**
+  Rationality: traditional — consistent, logical, calculating; behavioural — bounded, using heuristics, prone to biases.
+  Information: traditional — perfect; behavioural — limited, and people misread it (framing).
+  Self-control: traditional — people act on their long-term preferences; behavioural — bounded willpower, present bias.
+  Motives: traditional — self-interest; behavioural — also fairness, altruism, social norms.
+  Context: traditional — how a choice is presented doesn't matter; behavioural — defaults, framing and order matter a lot.
+  Method: traditional — theory and models; behavioural — experiments and field trials, drawing on psychology.
+**Why they complement each other**
+  Traditional models still predict many outcomes well (the law of demand holds; higher tobacco taxes do cut smoking).
+  Behavioural insights explain where they fail (why people don't switch energy plans despite savings) and suggest cheaper policies (defaults, reminders).
+  Policy often uses both: a tax (traditional incentive) plus graphic warnings (behavioural framing).
+**Worked example**
+  Explain how each approach would predict responses to a new law making superannuation contributions voluntary instead of compulsory.
+    Traditional: rational workers would save the amount that maximises lifetime utility, so savings might fall only slightly.
+    Behavioural: present bias and inertia mean many would stop saving, leading to much lower retirement incomes — which is why compulsion and defaults exist.
+    Conclusion: behavioural insights explain why compulsory super and defaults are used.
+**Going deeper**
+  Behavioural economics doesn't reject rationality; it describes the conditions under which people are more or less rational (familiar, frequent, simple choices vs rare, complex, long-term ones).
+**Common mistakes**
+  Writing that behavioural economics "proves traditional economics wrong". The study design stresses that it complements it.
+  Listing differences without examples.
+**Exam tips**
+  Use a table structure in words: for each assumption, state the traditional view, the behavioural view, and an example.
+**Connections**
+  The traditional view of the consumer.
+  Bounded rationality, willpower, self-interest.
+  Government nudges and their effectiveness.
+**Practice questions**
+  Outline two differences between traditional and behavioural economics.
+    Traditional economics assumes people are fully rational and informed; behavioural economics finds rationality is bounded, so people use shortcuts and are affected by framing. Traditional economics assumes self-interest; behavioural economics finds people also care about fairness.
+  Explain how behavioural economics complements traditional economics.
+    It keeps the traditional framework where it predicts well but adds explanations for systematic departures, such as inertia and present bias, improving predictions and policy design.
+  Why might a traditional economist predict that few people would need reminders to pay a bill?
+    Rational, informed agents would pay to avoid late fees; the model doesn't allow for forgetfulness or present bias.
+**Flashcards**
+  Traditional view of rationality? :: Fully rational, consistent and informed.
+  Behavioural view of rationality? :: Bounded — heuristics and biases.
+  Behavioural economics {{complements}} traditional economics.
+  Main method of behavioural economics? :: Experiments and field trials.
+  Does framing matter in the traditional model? :: No — only the options and their costs and benefits.
+  Example where traditional theory still predicts well? :: Higher tobacco taxes reduce smoking (law of demand).
+  Motive traditional economics assumes? :: Self-interest.
+
+@ 0bccfbb7 U1.3.1.3 | Government nudges and their effectiveness
+**In a sentence**
+  Governments use behavioural insights — defaults, framing, social norms, simplification and reminders — to steer people towards better choices, and these nudges work best when they are cheap, well targeted and tested.
+**Key terms**
+  **Choice architecture**: the way options are presented, which affects what people choose.
+  **Default option**: what happens if a person makes no active choice.
+  **Social norm**: what most people do or approve of, which influences behaviour.
+  **BETA**: the Behavioural Economics Team of the Australian Government, set up in 2016 in the Department of the Prime Minister and Cabinet to design and test behavioural policies.
+  **Randomised controlled trial (RCT)**: an experiment comparing a group that gets a policy with an otherwise similar group that doesn't.
+**Strategies and examples**
+  Defaults: compulsory superannuation (the Superannuation Guarantee reached 12% of wages on 1 July 2025) and MySuper default funds; since 2021, "stapling" a worker's existing super fund to each new job stops duplicate accounts and fees.
+  Framing and salience: plain packaging of tobacco (a world first in 2012) with large graphic health warnings; Health Star Ratings on food; energy rating stickers on appliances.
+  Social norms: BETA and the Chief Medical Officer wrote to the GPs prescribing the most antibiotics, comparing them with their peers — prescriptions fell about 12% over six months in the 2017 trial. The ATO uses "most people pay on time" messages.
+  Simplification: pre-filled tax returns; one-page fact sheets; the Energy Made Easy comparison website.
+  Reminders and commitment: text reminders for medical appointments and fines.
+  Small incentives with behavioural design: Victoria's container deposit scheme (CDS Vic, from November 2023) pays 10c per eligible drink container returned.
+**Judging effectiveness**
+  Evidence: did an RCT or data show a change? (antibiotics: yes — a measurable fall.)
+  Size and duration: do effects persist or fade? (Reminder effects often fade.)
+  Cost: nudges are usually cheap compared with regulation or large subsidies.
+  Reach and equity: who responds, and who doesn't? (Defaults help people least likely to act.)
+  Unintended effects and ethics: critics call nudges paternalistic or manipulative; transparency matters.
+**Worked example**
+  Evaluate the effectiveness of tobacco plain packaging as a behavioural strategy.
+    Insight: framing and salience — removing attractive branding and adding large graphic warnings makes the health costs vivid and the product less appealing.
+    Evidence: smoking rates kept falling after 2012 (daily smoking among adults is now around one in ten), though tax rises at the same time make it hard to separate effects.
+    Cost: low to government; other countries (UK, France, New Zealand) copied it.
+    Limitations: addicted smokers respond less; illegal tobacco and vaping have grown.
+    Judgement: fairly effective as part of a package with taxes and bans.
+**Going deeper**
+  Nudges are not a substitute for all regulation: for big problems (emissions), small nudges have small effects, and prices or rules may be needed.
+  "Sludge" is the opposite of a nudge: friction that makes good choices harder (long forms to claim a rebate).
+**Common mistakes**
+  Calling any government policy a nudge. A tax or ban isn't a nudge; defaults, framing and reminders are.
+  Evaluating without evidence — use data or trial results.
+**Exam tips**
+  Name the insight the strategy uses, describe the strategy, then evaluate with criteria: evidence, cost, reach, persistence, unintended effects.
+**Connections**
+  Bounded rationality, willpower, self-interest.
+  Consumers, workers and incentives.
+  Business nudges and their effectiveness.
+**Practice questions**
+  Explain how the government uses default options to influence behaviour, with an example.
+    It sets the choice that applies if people do nothing. Superannuation contributions (12% of wages from July 2025) are made automatically into a default fund, so people save for retirement despite present bias and inertia.
+  Describe the 2017 BETA antibiotic trial and its result.
+    Letters comparing high-prescribing GPs with their peers used social norms; antibiotic prescriptions fell by about 12% over six months compared with the control group.
+  Outline two criteria for evaluating a government nudge.
+    Evidence of effect (ideally from a randomised trial) and cost relative to other policies (also persistence, equity and unintended effects).
+**Flashcards**
+  What is choice architecture? :: The way options are presented, which affects what people choose.
+  Superannuation Guarantee rate from 1 July 2025? :: 12% of wages.
+  Plain packaging of tobacco began in Australia in {{2012}}.
+  What is BETA? :: The Behavioural Economics Team of the Australian Government (2016).
+  Result of the 2017 antibiotic letters trial? :: About a 12% fall in prescriptions over six months.
+  Is a tax a nudge? :: No — nudges change presentation, not incentives much.
+  Refund per container under CDS Vic? :: 10 cents.
+  What is "sludge"? :: Friction that makes good choices harder.
+
+@ 41788111 U1.3.1.4 | Business nudges and their effectiveness
+**In a sentence**
+  Businesses use behavioural insights — anchoring, decoys, framing, scarcity, defaults and loyalty schemes — to increase sales and profits, often at the expense of consumers' true interests.
+**Key terms**
+  **Anchoring**: setting a reference price so another price looks attractive.
+  **Decoy pricing**: adding an option designed to make another option look better value.
+  **Charm pricing**: prices just below a round number (\$9.99).
+  **Scarcity and urgency cues**: "only 2 left", countdown timers.
+  **Drip pricing**: showing a low headline price and adding compulsory fees later.
+  **Subscription trap**: free trials that roll into paid subscriptions and are hard to cancel.
+**Strategies and examples**
+  Anchoring: crossed-out "was" prices and "RRP" tags (the Coles "Down Down" case turned on whether the "was" price was genuine).
+  Decoy pricing: Dan Ariely's Economist experiment — web only \$59, print only \$125, print + web \$125. With the decoy (print only), 84% chose print + web; without it, 68% chose web only.
+  Framing: "95% fat-free", "save \$50", "only \$1 a day".
+  Charm pricing: \$19.99 reads as "19-something".
+  Scarcity and urgency: hotel booking sites, flash sales, limited editions (herd behaviour and loss aversion).
+  Defaults: auto-renewing subscriptions, pre-ticked add-ons (travel insurance on flights).
+  Loyalty programs: Flybuys and Everyday Rewards — points exploit the endowment effect and make switching feel like a loss, while giving firms detailed data.
+  Buy now, pay later (Afterpay, Zip): splitting a price into four payments reduces the "pain of paying" (present bias).
+  Store layout: essentials at the back, treats at checkouts, eye-level placement of high-margin brands.
+  Social proof: star ratings, "bestseller", "12 people are viewing this".
+**Judging effectiveness**
+  For businesses: higher conversion rates, sales and margins; loyalty programs raise repeat purchases.
+  For consumers: some nudges help (reminders to reorder medication), but many lead to overspending, debt (BNPL) or paying for unwanted subscriptions — lowering living standards.
+  Limits: consumers learn and become sceptical; the ACCC acts on misleading conduct under the Australian Consumer Law; the government has proposed banning unfair practices such as drip pricing and subscription traps.
+**Worked example**
+  A cinema sells popcorn: small \$6, medium \$9.50, large \$10. Explain the strategy and evaluate its effect.
+    The medium is a decoy: it's close in price to the large, so the large looks like great value (only 50c more for much more popcorn).
+    Many customers who would have bought a small or medium trade up to the large, raising revenue per customer at little extra cost to the cinema.
+    Consumers may buy more than they wanted (bounded rationality), lowering the value they get per dollar.
+**Going deeper**
+  The same insight can serve good or bad ends: defaults enrol people in super (government) or in subscriptions they forget (business). The difference is whether the nudge serves the chooser's own interest.
+  Regulators increasingly treat "dark patterns" online (hidden cancel buttons, fake timers) as misleading conduct.
+**Common mistakes**
+  Describing the strategy without naming the behavioural insight it exploits.
+  Judging effectiveness only for the business — also consider consumers' living standards.
+**Exam tips**
+  Strategy → insight exploited → example → effectiveness for the firm → effect on consumers → any regulation.
+**Connections**
+  Bounded rationality, willpower, self-interest.
+  Strategies to increase profit (Unit 1 Area of Study 2): price discrimination and multiple branding.
+  Government nudges and their effectiveness: the same insights used for public goals.
+**Practice questions**
+  Explain how anchoring is used by retailers, with an example.
+    Retailers show a high reference price ("was \$300") beside the sale price (\$120) so the sale price seems a bargain, increasing sales even if the "was" price was rarely charged.
+  How do loyalty programs use behavioural insights to increase profit?
+    Points feel like an asset the customer owns (endowment effect) and switching feels like a loss (loss aversion), so customers keep returning; the firm also gains data to target offers.
+  Evaluate the effect of buy now, pay later on consumers.
+    It makes purchases feel cheaper by splitting payments (present bias), raising spending; convenient for some, but it can lead to overspending, late fees and debt for others — lowering their living standards.
+**Flashcards**
+  What is decoy pricing? :: Adding an option to make another look better value.
+  Ariely's Economist experiment: share choosing print + web with the decoy? :: 84%.
+  A \$9.99 price is {{charm}} pricing.
+  Which insight do "only 2 left" messages exploit? :: Loss aversion and herd behaviour (scarcity).
+  Which insight do loyalty points exploit? :: The endowment effect and loss aversion.
+  What is drip pricing? :: A low headline price with compulsory fees added later.
+  Auto-renewing free trials exploit which bias? :: Default (status quo) bias.
+  Who enforces rules against misleading pricing? :: The ACCC, under the Australian Consumer Law.
+
+@ 59dfe365 U1.3.2.1 | Using economic terms precisely
+**In a sentence**
+  This skill is defining behavioural economics terms — bounded rationality, bounded willpower, bounded self-interest, nudge, anchoring, framing, default — accurately and using them correctly.
+**Key terms**
+  **Precision**: naming the specific bias or bound rather than a vague "psychology".
+**How to do it**
+  Learn a one-line definition for each term and one example.
+  Match the example to the right bound: a shortcut or bias → bounded rationality; a failure of self-control → bounded willpower; fairness or altruism → bounded self-interest.
+  Name the specific bias where possible: "anchoring", not "they were tricked".
+**Going deeper**
+  Some behaviours involve two insights (a gym membership: present bias and optimism about future self-control). Name both.
+**Worked example**
+  Improve: "People don't switch energy providers because they're lazy."
+    Better: "Status quo bias and present bias (bounded rationality and willpower) mean the small effort of switching now outweighs larger future savings in people's minds."
+**Connections**
+  Every key knowledge point in this area.
+  Using economic terms precisely in the other areas.
+**Practice questions**
+  Define a nudge.
+    A change in the way choices are presented that predictably changes behaviour without banning options or significantly changing incentives.
+  Which bound is shown by someone who donates blood without payment?
+    Bounded self-interest — they act for others' benefit.
+**Flashcards**
+  Shortcut or bias → which bound? :: Bounded rationality.
+  Failure of self-control → which bound? :: Bounded willpower.
+  Fairness or altruism → which bound? :: Bounded self-interest.
+  "Lazy" should be replaced by the precise term {{status quo bias}} (or present bias).
+
+@ 4a6e408c U1.3.2.2 | Telling traditional from behavioural
+**In a sentence**
+  This skill is recognising whether an explanation or prediction uses the traditional model or behavioural insights, and explaining the difference with examples.
+**Key terms**
+  **Traditional explanation**: relies on rational responses to prices, incomes and incentives.
+  **Behavioural explanation**: relies on biases, heuristics, limited willpower, social norms or fairness.
+**How to do it**
+  Ask: does the explanation assume people calculate and respond to incentives (traditional), or that presentation, habit, emotion or fairness drives the choice (behavioural)?
+  Give the traditional prediction, then the behavioural one, and say which the evidence supports.
+**Going deeper**
+  Many real policies combine both: a sugar tax (traditional price incentive) with front-of-pack warnings (behavioural salience).
+**Worked example**
+  Why do more people become organ donors in countries with an opt-out system?
+    Traditional: registration costs are tiny, so the default shouldn't matter — rates should be similar.
+    Behavioural: default bias — most people stay with the default, so opt-out countries have far higher consent rates (above 90% in some, versus much lower in opt-in countries like Australia).
+    The evidence supports the behavioural explanation.
+**Connections**
+  Traditional vs behavioural economics.
+  Bounded rationality, willpower, self-interest.
+**Practice questions**
+  Is this traditional or behavioural: "Petrol sales fell because the price rose 30c a litre"?
+    Traditional — a rational response to a higher price (the law of demand).
+  Is this traditional or behavioural: "Sales rose after the shop moved lollies to the checkout"?
+    Behavioural — placement and impulse (bounded willpower), not price, changed behaviour.
+**Flashcards**
+  Explanation based on price and incentives? :: Traditional.
+  Explanation based on defaults, framing or habits? :: Behavioural.
+  Why do opt-out organ donation systems get higher consent? :: Default bias — most people keep the pre-set option.
+  Can one policy use both approaches? :: Yes — e.g. a tax plus warning labels.
+
+@ e138ef94 U1.3.2.3 | Predicting with economic theory
+**In a sentence**
+  This skill is using traditional and behavioural theory to predict how consumers and other agents will respond to a change — especially to a change in how choices are presented.
+**Key terms**
+  **Prediction**: a reasoned, testable statement about the likely effect of a change.
+**How to do it**
+  Identify the change (a new default, a new price, a new label).
+  Choose the theory: incentives and the law of demand (traditional) or a named bias (behavioural).
+  Chain: change → how it alters costs, benefits or perception → response → outcome for the agents and living standards.
+  Note uncertainty: effects may fade or differ between groups.
+**Going deeper**
+  Behavioural predictions are especially strong for defaults: participation rates usually rise from well under half to over 80–90% when a scheme becomes opt-out.
+**Worked example**
+  Predict the effect of an employer changing its salary-sacrifice super scheme from opt-in to opt-out (workers are enrolled at 2% extra unless they leave).
+    Default bias and inertia mean most workers stay enrolled.
+    Participation rises sharply, so retirement savings rise.
+    Take-home pay falls slightly for those enrolled; a few who can't afford it opt out.
+**Connections**
+  Traditional vs behavioural economics.
+  Government nudges and their effectiveness.
+**Practice questions**
+  Predict the effect of putting calorie counts on fast-food menus.
+    Salience of health information (framing) should reduce average calories ordered a little, especially among health-conscious customers; effects are often small and may fade.
+  Predict the effect of a supermarket removing lollies from checkouts.
+    Fewer impulse purchases (bounded willpower), so confectionery sales fall at the checkout, though some shoppers buy them elsewhere in the store.
+**Flashcards**
+  Strongest behavioural prediction tool? :: Defaults — most people stick with them.
+  Effect of making a scheme opt-out? :: Participation rises sharply.
+  Behavioural effects often {{fade}} over time.
+  First step in a prediction? :: Identify the change and the theory that applies.
+
+@ 1754de0f U1.3.2.4 | Running a behavioural experiment
+**In a sentence**
+  This skill is investigating or running a behavioural economics experiment — designing it, collecting data, analysing the results and reporting what they show about decision-making.
+**Key terms**
+  **Hypothesis**: a testable prediction ("A 'most students do this' sign will raise correct recycling").
+  **Control group**: participants who don't receive the treatment, for comparison.
+  **Treatment group**: participants who do.
+  **Variable**: the factor changed (independent) and the outcome measured (dependent).
+  **Ethics**: informed consent, no harm, privacy, and debriefing participants.
+**How to do it**
+  1. Choose an insight to test (anchoring, framing, decoy, social norms, ultimatum game).
+  2. Write a hypothesis.
+  3. Design: two groups as similar as possible (randomly assigned), one change only.
+  4. Collect data: count choices, prices guessed, offers made.
+  5. Analyse: compare averages or percentages between groups.
+  6. Report: findings, whether the hypothesis was supported, limitations (small sample, participants knew each other), and real-world applications.
+**Going deeper**
+  VCAA's support material suggests testing whether a nudge or reward changes rubbish disposal at school — a real field experiment with a clear outcome to count.
+**Worked example**
+  Design an anchoring experiment and interpret sample results.
+    Hypothesis: people shown a high number will guess a higher price for a jar of jam.
+    Method: Group A (20 students) first writes the last two digits of 20; Group B (20 students) writes 90; both then guess the jam's price.
+    Results (sample): Group A average \$5.20; Group B average \$7.60.
+    Analysis: Group B guessed \$2.40 higher on average (7.60 − 5.20 = 2.40), about 46% more.
+    Conclusion: the results support anchoring — an irrelevant number shifted price judgements. Limitations: small, non-random sample; students may have discussed answers.
+**Connections**
+  Bounded rationality, willpower, self-interest.
+  Gathering and using economic data.
+**Practice questions**
+  Why does a behavioural experiment need a control group?
+    To compare with the treatment group, so any difference can be attributed to the change being tested rather than other factors.
+  Identify two ethical requirements for a classroom economics experiment.
+    Informed consent from participants and protecting their privacy (also no harm and debriefing).
+**Flashcards**
+  Group that doesn't receive the treatment? :: The control group.
+  What is a hypothesis? :: A testable prediction.
+  Participants should be assigned to groups {{randomly}}.
+  Two limitations common in class experiments? :: Small samples and participants influencing each other.
+
+@ 32c12552 U1.3.2.5 | Evaluating behavioural policies
+**In a sentence**
+  This skill is judging how effective government and business actions based on behavioural economics are, using data and clear economic reasoning to reach a supported conclusion.
+**Key terms**
+  **Effectiveness**: how far an action achieves its aim, at what cost, and with what side effects.
+  **Evaluation criteria**: evidence of effect, size and persistence, cost, reach and equity, unintended consequences, effect on living standards.
+**How to do it**
+  State the action and its aim.
+  Name the behavioural insight it uses.
+  Present evidence (trial results, before/after data) with dates and sources.
+  Apply criteria and weigh them.
+  Conclude: effective, partly effective or ineffective — for whom, and why.
+**Going deeper**
+  Separate the aim of the actor from the consumer's interest: a business nudge can be very effective for profits while lowering consumer living standards.
+**Worked example**
+  Evaluate the Superannuation Guarantee default as a behavioural policy.
+    Aim: adequate retirement incomes. Insight: present bias and inertia — people under-save if left to choose.
+    Evidence: almost all employees now have super; total super savings exceed \$4 trillion.
+    Criteria: highly effective in reach; low administrative cost; but it lowers take-home pay now and helps higher earners more (tax concessions).
+    Conclusion: very effective at raising saving, with equity concerns about who benefits most.
+**Connections**
+  Government nudges and their effectiveness.
+  Business nudges and their effectiveness.
+**Practice questions**
+  List four criteria for evaluating a behavioural policy.
+    Evidence of effect; size and persistence of the effect; cost; equity and unintended consequences.
+  Why might a business nudge be judged effective and harmful at the same time?
+    It can raise the firm's sales and profit (effective for its aim) while leading consumers to spend more than is in their interest, lowering their living standards.
+**Flashcards**
+  First step in evaluating a behavioural policy? :: State its aim and the insight it uses.
+  Best evidence of a nudge's effect? :: A randomised controlled trial.
+  Effectiveness should be judged for {{whom}} as well as how much.
+  Evaluation criteria? :: Evidence, size/persistence, cost, equity, unintended effects, living standards.

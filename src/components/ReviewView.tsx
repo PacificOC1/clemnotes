@@ -9,6 +9,7 @@ import {
   getCardStats,
   getLeeches,
   getPageCardCounts,
+  getScopeSummary,
   gradeCard,
   resetCard,
   setCardSuspended,
@@ -27,9 +28,12 @@ import type { Flashcard } from '../db/schema';
 
 interface ReviewViewProps {
   onZoomTo: (nodeId: string) => void;
+  /** null = the whole collection; an id = only that document, or that rem and what's under and linked to it. Kept in the URL. */
+  scope: string | null;
+  onScopeChange: (scope: string | null) => void;
 }
 
-export function ReviewView({ onZoomTo }: ReviewViewProps) {
+export function ReviewView({ onZoomTo, scope, onScopeChange: setScope }: ReviewViewProps) {
   const stats = useLiveQuery(() => getCardStats(), []) ?? null;
   const allCards = useLiveQuery(() => getAllCards(), []) ?? [];
 
@@ -43,12 +47,23 @@ export function ReviewView({ onZoomTo }: ReviewViewProps) {
   const [settings, setSettings] = useState<ReviewSettings>(loadSettings);
   /** How many due cards the daily limits and sibling burying held back. */
   const [held, setHeld] = useState({ byLimit: 0, bySiblings: 0 });
-  /** null = the whole collection; an id = only that document. */
-  const [scope, setScope] = useState<string | null>(null);
-
   const pageCountsQuery = useLiveQuery(() => getPageCardCounts(), []);
   const pageCounts = pageCountsQuery ?? [];
-  const scopedPage = scope ? pageCounts.find((p) => p.pageId === scope) : null;
+  // A scope the page picker doesn't list — a course's area of study, opened
+  // from its roadmap — is described on its own. Tagged with its id so a
+  // previous scope's answer isn't shown for a frame.
+  const otherScopeQuery = useLiveQuery(
+    async () => (scope ? { forId: scope, summary: await getScopeSummary(scope) } : null),
+    [scope]
+  );
+  const otherScope =
+    scope && otherScopeQuery?.forId === scope && otherScopeQuery.summary
+      ? { pageId: scope, ...otherScopeQuery.summary }
+      : null;
+  const listedScope = scope ? pageCounts.find((p) => p.pageId === scope) : undefined;
+  const scopedPage = scope ? (listedScope ?? otherScope) : null;
+  // An area of study's title is a whole question; keep buttons to one line.
+  const scopeTitle = scopedPage ? (scopedPage.title.length > 60 ? `${scopedPage.title.slice(0, 57)}…` : scopedPage.title) : '';
 
   /**
    * A scope whose document has lost all its cards would silently review
@@ -60,10 +75,16 @@ export function ReviewView({ onZoomTo }: ReviewViewProps) {
    * `undefined` reads as "still true", so nothing happens until there is a
    * real answer.
    */
-  const scopeStillExists = pageCountsQuery?.some((p) => p.pageId === scope) ?? true;
+  const scopeStillExists =
+    otherScopeQuery?.forId !== scope
+      ? true
+      : otherScopeQuery?.summary === null
+        ? false
+        : // A page drops out of the picker when its last card goes; a rem scope stays (and says it has none).
+          (pageCountsQuery?.some((p) => p.pageId === scope) ?? true) || (otherScope !== null && !otherScope.isPage);
   useEffect(() => {
     if (scope && !scopeStillExists) setScope(null);
-  }, [scope, scopeStillExists]);
+  }, [scope, scopeStillExists, setScope]);
 
   const leeches = useLiveQuery(() => getLeeches(settings.leechThreshold), [settings.leechThreshold]) ?? [];
 
@@ -402,7 +423,7 @@ export function ReviewView({ onZoomTo }: ReviewViewProps) {
         </div>
       )}
 
-      {pageCounts.length > 1 && (
+      {(pageCounts.length > 1 || (scopedPage && !listedScope)) && (
         <div className="review-scope">
           <label htmlFor="review-scope">Review</label>
           <select
@@ -411,6 +432,12 @@ export function ReviewView({ onZoomTo }: ReviewViewProps) {
             onChange={(event) => setScope(event.target.value || null)}
           >
             <option value="">Everything · {stats?.due ?? 0} due</option>
+            {scopedPage && !listedScope && (
+              <option value={scopedPage.pageId}>
+                {scopeTitle} · {scopedPage.due} due of{' '}
+                {scopedPage.total}
+              </option>
+            )}
             {pageCounts.map((page) => (
               <option key={page.pageId} value={page.pageId}>
                 {page.title} · {page.due} due of {page.total}
@@ -424,7 +451,7 @@ export function ReviewView({ onZoomTo }: ReviewViewProps) {
         <div className="review-actions">
           <button type="button" className="primary-btn review-start" onClick={() => void startSession()}>
             Start review · {dueInScope} card{dueInScope === 1 ? '' : 's'}
-            {scopedPage ? ` from ${scopedPage.title}` : ''}
+            {scopedPage ? ` from ${scopeTitle}` : ''}
           </button>
           <button type="button" className="ghost-btn" onClick={() => void startPractice()}>
             Practice instead
@@ -434,10 +461,14 @@ export function ReviewView({ onZoomTo }: ReviewViewProps) {
         <div className="review-empty">
           {stats && stats.total === 0 ? (
             <p>No cards yet. Add <code>::</code> to a rem and it will show up here.</p>
+          ) : scopedPage && scopedPage.total === 0 ? (
+            <p>
+              No cards in {scopeTitle} yet. Add <code>::</code> to a rem under it, or to a rem that links to it.
+            </p>
           ) : scopedPage ? (
             <>
               <p>
-                Nothing due in {scopedPage.title} — {scopedPage.total} card
+                Nothing due in {scopeTitle} — {scopedPage.total} card
                 {scopedPage.total === 1 ? '' : 's'} there, all scheduled ahead.
               </p>
               <button type="button" className="ghost-btn" onClick={() => void startPractice()}>

@@ -1,0 +1,1143 @@
+% VCE Chemistry — Unit 1, Area of Study 1: structure, bonding and properties.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ 66b4287b U1.1.1.1 | Elements, isotopes and ions
+**In a sentence**
+  An atom's identity is its number of protons; its mass depends on protons plus neutrons; and its charge depends on how many electrons it has gained or lost.
+**Key terms**
+  **Element**: a substance made of atoms that all have the same number of protons.
+  **Atomic number (Z)**: the number of protons in the nucleus.
+  **Mass number (A)**: the number of protons plus neutrons in the nucleus.
+  **Isotopes**: atoms of the same element with different numbers of neutrons.
+  **Ion**: an atom or group of atoms with a charge, from gaining or losing electrons.
+  **Nucleon**: a particle in the nucleus — a proton or a neutron.
+**Key ideas**
+  An **element** is a substance made of only one kind of atom — every atom has the same number of protons.
+  The **atomic number (Z)** is the number of protons. It decides which element an atom is.
+    Carbon is always Z = 6. An atom with 7 protons is nitrogen, whatever else changes.
+  The **mass number (A)** is protons + neutrons (the particles in the nucleus, called nucleons).
+    Neutrons = A − Z.
+  In a neutral atom, electrons = protons. The charge only changes when electrons are gained or lost.
+  **Isotopes** are atoms of the same element (same Z) with different numbers of neutrons (different A).
+    Carbon-12 (6 p, 6 n) and carbon-14 (6 p, 8 n) are isotopes of carbon.
+    Isotopes have the same chemical properties (same electrons) but slightly different physical properties such as mass and density.
+  An **ion** is an atom (or group of atoms) with a charge because electrons have been gained or lost.
+    Losing electrons makes a positive ion (**cation**). Metals usually form cations: Na → Na⁺ + e⁻.
+    Gaining electrons makes a negative ion (**anion**). Non-metals usually form anions: Cl + e⁻ → Cl⁻.
+**Notation**
+  Isotope symbol: mass number top-left, atomic number bottom-left, charge top-right. Written in a line as ²³₁₁Na⁺ or as "sodium-23".
+  Reading ³⁵₁₇Cl⁻: Z = 17 so 17 protons; A = 35 so 35 − 17 = 18 neutrons; charge 1− so 17 + 1 = 18 electrons.
+**Worked example**
+  How many protons, neutrons and electrons are in ²⁷₁₃Al³⁺?
+    Protons = Z = 13
+    Neutrons = A − Z = 27 − 13 = 14
+    Electrons = 13 − 3 = 10 (a 3+ charge means 3 electrons were lost)
+**Going deeper**
+  Protons and neutrons each have a mass of about 1 atomic mass unit; an electron is about 1/1836 of that, which is why electrons are ignored in the mass number.
+  Some isotopes are unstable (radioisotopes) and decay, e.g. carbon-14 is used to date once-living material. Stability depends on the neutron-to-proton ratio, not on the chemistry.
+  Isoelectronic species have the same number of electrons: Na⁺, Mg²⁺, F⁻, O²⁻ and Ne all have 10 electrons (2, 8) — but different nuclear charges, so different sizes.
+**Worked example 2**
+  An ion has 16 protons, 18 neutrons and 18 electrons. Write its symbol.
+    16 protons → sulfur (Z = 16)
+    A = 16 + 18 = 34
+    Charge = 16 − 18 = 2− (two more electrons than protons)
+    Symbol: ³⁴₁₆S²⁻
+**Common mistakes**
+  Changing the number of protons to make an ion — only electrons move in chemical changes.
+  Adding electrons for a positive charge. A positive ion has **fewer** electrons than protons.
+  Thinking isotopes react differently. Chemistry depends on electrons, and isotopes have the same electron arrangement.
+**Exam tips**
+  When asked for numbers of particles, give all three with labels — protons, neutrons, electrons — even if only one changed.
+  Say "same number of protons" (not "same atomic number" alone) when defining isotopes; examiners want the particle named.
+**Connections**
+  Relative isotopic mass and relative atomic mass build directly on isotopes (Unit 1, Area of Study 2).
+  Ion charges from electron gain and loss lead to ionic bonding and ionic formulas.
+  Electron numbers feed into electron configurations and the periodic table trends.
+**Practice questions**
+  Explain why ³⁵Cl and ³⁷Cl react in the same way with sodium.
+    Both have 17 protons and 17 electrons in the same arrangement (2, 8, 7). Chemical reactions involve electrons, so the extra two neutrons in ³⁷Cl don't change how it reacts.
+  Complete: ⁵⁶₂₆Fe³⁺ has ___ protons, ___ neutrons and ___ electrons.
+    26 protons, 30 neutrons (56 − 26), 23 electrons (26 − 3).
+  A particle has 12 protons, 12 neutrons and 10 electrons. Identify it.
+    Magnesium (Z = 12), mass number 24, charge 2+: the ion ²⁴Mg²⁺.
+  Which of these are isotopes of the same element: ⁴⁰₁₈Ar, ⁴⁰₂₀Ca, ⁴⁴₂₀Ca?
+    ⁴⁰Ca and ⁴⁴Ca — same Z (20), different A. ⁴⁰Ar has the same mass number as ⁴⁰Ca but is a different element (Z = 18).
+**Flashcards**
+  What is the atomic number of an atom? :: The number of protons in its nucleus. It identifies the element.
+  What is the mass number of an atom? :: The number of protons plus neutrons in its nucleus.
+  What are isotopes? :: Atoms of the same element (same number of protons) with different numbers of neutrons, so different mass numbers.
+  How many neutrons, protons and electrons are in ³⁷₁₇Cl⁻? :: 17 protons, 20 neutrons, 18 electrons.
+  A cation has {{fewer}} electrons than protons; an anion has {{more}}.
+  Why do isotopes of an element have the same chemical properties? :: They have the same number and arrangement of electrons, and chemical reactions involve electrons.
+  What are isoelectronic species? :: Atoms or ions with the same number of electrons (e.g. Na⁺, F⁻ and Ne all have 10).
+  Symbol for an ion with 16 protons, 18 neutrons, 18 electrons? :: ³⁴₁₆S²⁻
+
+@ 15896c74 U1.1.1.2 | The periodic table: structure and trends
+**In a sentence**
+  The periodic table arranges elements so that their electron arrangements repeat, and the trends in size, electronegativity, ionisation energy and reactivity all follow from core charge and the number of shells.
+**Key terms**
+  **Period**: a horizontal row; its number is the number of occupied shells.
+  **Group**: a vertical column; elements in it have the same number of valence electrons.
+  **Valence electrons**: electrons in the outermost shell, involved in bonding.
+  **Core charge**: protons minus inner-shell electrons — the net attraction felt by valence electrons.
+  **Electronegativity**: the ability of an atom to attract the electrons in a covalent bond.
+  **First ionisation energy**: the energy needed to remove one mole of electrons from one mole of gaseous atoms.
+  **Subshell**: a division of a shell (s, p, d, f) holding up to 2, 6, 10 or 14 electrons.
+**How the table is organised**
+  Elements are in order of atomic number. **Periods** are rows; **groups** are columns (1–18).
+  Elements in the same group have the same number of outer-shell (valence) electrons, so they react in similar ways.
+  The period number is the number of occupied electron shells.
+  **Blocks**: s-block (groups 1–2), p-block (groups 13–18), d-block (transition metals, groups 3–12). The block is the subshell being filled last.
+**Electron configurations**
+  Shell model: electrons fill shells 2, 8, 8, 2 … (e.g. Ca = 2, 8, 8, 2).
+  Subshell model: each shell has subshells s, p, d, f holding 2, 6, 10, 14 electrons.
+  Filling order: 1s 2s 2p 3s 3p 4s 3d 4p. The 4s fills **before** 3d because it is lower in energy.
+    Na: 1s² 2s² 2p⁶ 3s¹
+    Fe: 1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁶ 4s² (written with 3d before 4s; the 4s still fills first)
+  Two exceptions to learn: Cr = [Ar] 3d⁵ 4s¹ and Cu = [Ar] 3d¹⁰ 4s¹. A half-full or full d subshell is extra stable.
+  Transition metal ions lose their 4s electrons first: Fe²⁺ = [Ar] 3d⁶, not [Ar] 3d⁴ 4s².
+**Core charge — the idea behind every trend**
+  Core charge = protons − inner-shell (core) electrons. It is the attraction the valence electrons actually feel.
+    For main-group elements, core charge = number of valence electrons. Na: 11 − 10 = +1. Cl: 17 − 10 = +7.
+  **Across a period**: core charge increases while the number of shells stays the same, so valence electrons are held more tightly.
+  **Down a group**: core charge stays the same but there are more shells, so valence electrons are further from the nucleus and held less tightly.
+**The trends**
+  **Atomic radius**: decreases across a period (higher core charge pulls shells in); increases down a group (more shells).
+  **Electronegativity** (how strongly an atom attracts a bonding pair of electrons): increases across a period, decreases down a group. Fluorine is the highest (4.0).
+  **First ionisation energy** (energy to remove one electron from each atom of 1 mol of gaseous atoms): increases across a period, decreases down a group.
+  **Metallic character** (tendency to lose electrons): decreases across a period, increases down a group. Metals are on the left and bottom; non-metals top right; metalloids along the staircase.
+  **Reactivity**
+    Metals get more reactive **down** a group (valence electrons are lost more easily): K reacts faster with water than Na.
+    Non-metals get less reactive down a group (electrons are gained less easily): F₂ is more reactive than Cl₂.
+**Worked example**
+  Explain why sodium has a larger atomic radius than chlorine.
+    Both are in period 3, so their valence electrons are in the third shell.
+    Chlorine's core charge (+7) is much larger than sodium's (+1).
+    The stronger attraction pulls chlorine's valence shell closer to the nucleus, so chlorine is smaller.
+**Going deeper**
+  The shape of the table comes from subshells: the s-block is two columns wide (2 electrons), the p-block six, the d-block ten, the f-block fourteen.
+  Ionisation energy has small dips in the trend across a period (e.g. from Be to B and from N to O) because of subshells: B's electron is in a higher-energy 2p orbital, and O has a paired 2p electron that is repelled. You won't be asked to explain these in Unit 1, but they show the shell model is a simplification.
+  Noble gases have the highest first ionisation energies in their period and are not given electronegativity values on most tables because they rarely form bonds.
+  Hydrogen doesn't fit neatly: it has one valence electron like group 1 but is a non-metal that usually shares electrons.
+**Worked example 2**
+  Write the electron configuration of Ca²⁺ and of Cl⁻, and explain why they have the same arrangement.
+    Ca (20): 1s² 2s² 2p⁶ 3s² 3p⁶ 4s². Losing 2 electrons (4s): Ca²⁺ = 1s² 2s² 2p⁶ 3s² 3p⁶.
+    Cl (17): 1s² 2s² 2p⁶ 3s² 3p⁵. Gaining 1 electron: Cl⁻ = 1s² 2s² 2p⁶ 3s² 3p⁶.
+    Both have 18 electrons — the argon configuration. They are isoelectronic; Ca²⁺ is smaller because it has 20 protons pulling on the same 18 electrons, versus 17 in Cl⁻.
+**Common mistakes**
+  Saying "more electrons" makes atoms smaller across a period. The cause is the higher core charge with the same number of shells.
+  Mixing up trends for metals and non-metals: reactivity goes down a group for metals but up a group for non-metals.
+  Writing Cu as [Ar] 3d⁹ 4s² or forgetting ions lose 4s electrons first.
+**Exam tips**
+  A full trend explanation has three parts: the trend, the cause (core charge and/or number of shells), and the effect on attraction for valence electrons.
+  "Down a group" answers must mention the extra shell (greater distance and more shielding); "across a period" answers must mention increasing core charge with the same number of shells.
+**Connections**
+  Electronegativity differences decide whether bonds are polar (polarity of molecules) or ionic.
+  Metallic character and reactivity explain the reactivity series of metals.
+  Electron configurations explain ion charges, including transition metal ions.
+**Practice questions**
+  Explain why the first ionisation energy of potassium is lower than that of sodium.
+    Both have a core charge of +1, but potassium's valence electron is in the fourth shell, further from the nucleus than sodium's third-shell electron. It is attracted less strongly, so less energy is needed to remove it.
+  Which is more electronegative, oxygen or sulfur? Explain.
+    Oxygen. Both have a core charge of +6, but oxygen's valence shell is closer to the nucleus (2 shells vs 3), so it attracts bonding electrons more strongly.
+  Write the subshell configuration of phosphorus.
+    1s² 2s² 2p⁶ 3s² 3p³
+  Why does metallic character decrease across period 3 from Na to Cl?
+    Core charge increases from +1 to +7 with the same number of shells, so atoms hold their valence electrons more tightly and lose them less readily.
+**Flashcards**
+  What is core charge? :: The number of protons minus the number of inner-shell electrons. It is the effective attraction felt by valence electrons.
+  How does atomic radius change across a period, and why? :: It decreases, because core charge increases while the number of shells stays the same, pulling valence electrons closer.
+  How does electronegativity change down a group, and why? :: It decreases, because valence electrons are in shells further from the nucleus with the same core charge, so bonding electrons are attracted less strongly.
+  What is the electron configuration of Fe²⁺? :: 1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁶ — the 4s electrons are lost first.
+  Electron configuration of chromium? :: [Ar] 3d⁵ 4s¹ (an exception — a half-full d subshell)
+  Down a group, metals become {{more}} reactive and non-metals become {{less}} reactive.
+  Define first ionisation energy. :: The energy needed to remove one electron from each atom in one mole of gaseous atoms.
+  Why do ionisation energies increase across a period? :: Core charge increases while the number of shells stays the same, so valence electrons are held more tightly.
+  Subshell configuration of Ca²⁺? :: 1s² 2s² 2p⁶ 3s² 3p⁶ (same as argon)
+
+@ 43c8e377 U1.1.1.3 | Critical elements and recycling
+**In a sentence**
+  Some elements that modern technology depends on are at risk of running short, so recovering them from used products is becoming as important as mining them.
+**Key terms**
+  **Critical element**: an element essential to technology or the economy whose supply is at risk.
+  **Rare-earth elements**: the lanthanoids plus scandium and yttrium.
+  **Metalloid**: an element with properties between metals and non-metals (e.g. silicon, germanium, antimony, tellurium).
+  **Post-transition metal**: a metal in the p-block to the right of the transition metals (e.g. gallium, indium, tin).
+  **Urban mining**: recovering elements from waste products instead of ore.
+**What makes an element critical**
+  A **critical element** is one that is essential to modern technology but has a supply at risk.
+  Risk comes from low abundance, being concentrated in a few countries, being hard to extract, or having no good substitute.
+  Many are only mined as by-products of other metals, so supply can't simply be increased.
+**Examples to know**
+  **Helium**: used for cooling MRI magnets (liquid He at −269 °C), welding and leak detection. It comes from natural gas deposits and escapes Earth's atmosphere once released, so it is effectively non-renewable.
+  **Phosphorus**: essential in fertilisers (plants need phosphate). Mined from phosphate rock found mainly in a few countries (Morocco holds most reserves). No substitute exists for its role in living things.
+  **Rare-earth elements** (lanthanoids plus Sc and Y): neodymium magnets in electric vehicle motors and wind turbines, europium and terbium in screens and LEDs. Not actually rare in the crust, but spread thinly, hard to separate from each other, and processing is dominated by China.
+  **Post-transition metals and metalloids**: indium (touchscreens, as indium tin oxide), gallium (LEDs, solar cells), germanium (fibre optics), antimony and tellurium (solar panels, batteries).
+  Lithium and cobalt (batteries) are also often listed as critical.
+**Why recycling matters**
+  Recovering elements from waste (**urban mining**) reduces the need for new mining, which saves energy, reduces land damage, and makes supply less dependent on a few countries.
+  **E-waste** (old phones, computers) contains gold, silver, copper, indium, rare earths and more, often at higher concentrations than in natural ores.
+  Challenges: elements are present in tiny amounts, mixed with many others, and hard to separate; collection rates are low; recovery can use toxic chemicals (acid leaching, cyanide) if done poorly.
+  Recycling helium: some MRI and lab facilities capture boil-off helium and re-liquefy it.
+**Going deeper**
+  Supply risk is a combination of factors, often summarised as: geological scarcity, concentration of production in a few countries, political or trade risk, lack of substitutes, and low recycling rates.
+  Many critical elements are "companion metals": indium is mostly recovered from zinc ore processing and gallium from aluminium (bauxite) processing, so their supply depends on demand for the host metal.
+  Helium's value comes from its extremely low boiling point (−269 °C), which makes liquid helium the only practical coolant for the superconducting magnets in MRI machines.
+  Phosphorus has no substitute in biology: it is part of DNA, ATP and bones, so fertiliser phosphate is essential for food production.
+**Common mistakes**
+  Saying rare-earth elements are critical only because they are rare. Supply risk and difficulty of separation matter more.
+  Treating recycling as free: collection, separation and energy costs are real and need to be weighed.
+**Exam tips**
+  When evaluating recycling, give at least one benefit and one challenge, and link the benefit to sustainability (less mining, less energy, secure supply).
+**Connections**
+  Metal recycling and the circular economy develops the recycling side of this idea.
+  The periodic table: critical elements are clustered in the d-block, the lanthanoids and the metalloid staircase.
+  Sustainability concepts in the Area of Study 3 research investigation.
+**Practice questions**
+  Give two reasons why an element may be classified as critical.
+    Any two: low abundance or hard to extract; production concentrated in a few countries; essential to important technologies; no good substitute; low recycling rates.
+  Explain why recovering indium from old LCD screens could be more sustainable than mining new indium.
+    It reduces the mining and processing of zinc ore (energy use, land damage, waste), keeps indium in use in a circular economy, and makes supply less dependent on a few producing countries.
+  Why is helium considered non-renewable even though it is the second most abundant element in the universe?
+    On Earth it is only collected from natural gas deposits, and once released into the air it escapes into space, so it can't be recovered or replaced on a human timescale.
+**Flashcards**
+  What is a critical element? :: An element essential for technology or the economy whose supply is at risk (scarce, concentrated in few countries, hard to extract, or with no substitute).
+  Why is helium considered a critical, non-renewable resource? :: It comes from natural gas deposits, and once released it escapes Earth's atmosphere into space, so it can't be recovered.
+  Give two uses of rare-earth elements. :: Neodymium magnets in EV motors and wind turbines; europium or terbium in screens and LEDs.
+  Why is phosphorus critical? :: It is essential for fertilisers and living things, has no substitute, and its phosphate rock reserves are concentrated in a few countries.
+  What is urban mining? :: Recovering valuable elements from waste such as e-waste, instead of mining new ore.
+  Give two difficulties of recovering elements from e-waste. :: Tiny amounts mixed with many other materials are hard to separate; low collection rates; recovery processes can use toxic chemicals and energy.
+  Which industry supplies most of the world's indium as a by-product? :: Zinc ore processing.
+  Why is liquid helium used in MRI machines? :: Its very low boiling point (−269 °C) keeps the superconducting magnets cold enough.
+
+@ 59835b39 U1.1.2.1 | Lewis structures and formulas
+**In a sentence**
+  Covalent molecules form when non-metal atoms share pairs of electrons, and Lewis structures show every shared (bonding) and unshared (lone) pair so we can predict shape and properties.
+**Key terms**
+  **Covalent bond**: a shared pair of electrons between two non-metal atoms, attracted to both nuclei.
+  **Bonding pair**: a pair of electrons shared between two atoms.
+  **Lone (non-bonding) pair**: a pair of valence electrons not involved in bonding.
+  **Octet rule**: atoms tend to share electrons until they have eight in their valence shell (two for hydrogen).
+  **Double / triple bond**: two / three shared pairs between the same two atoms.
+**Three ways to show a molecule**
+  **Molecular formula**: the number of each atom, e.g. C₂H₆, H₂O.
+  **Structural formula**: every atom and every bond drawn as a line (single —, double =, triple ≡). Non-bonding pairs are usually left out.
+  **Lewis (electron dot) structure**: every valence electron drawn as a dot or cross; shows bonding pairs and non-bonding (lone) pairs.
+**How to draw a Lewis structure**
+  1. Count valence electrons: H 1, C 4, N 5, O 6, Cl 7.
+  2. Put the atom that forms the most bonds in the centre (C, then N, then O). H is always on the outside.
+  3. Join atoms with single bonds, then give outer atoms full shells (8 electrons, or 2 for H).
+  4. If the central atom has fewer than 8, turn lone pairs into double or triple bonds.
+  5. Check: total electrons drawn = total valence electrons.
+**The molecules you need**
+  H₂: H–H, one bonding pair, no lone pairs.
+  Cl₂: Cl–Cl, one bonding pair, three lone pairs on each Cl.
+  O₂: O=O, a double bond, two lone pairs on each O.
+  N₂: N≡N, a triple bond, one lone pair on each N.
+  HCl: H–Cl, three lone pairs on Cl.
+  H₂O: two O–H bonds, two lone pairs on O.
+  NH₃: three N–H bonds, one lone pair on N.
+  CH₄: four C–H bonds, no lone pairs.
+  CO₂: O=C=O, two double bonds, two lone pairs on each O.
+  C₂H₆ (ethane): C–C single bond, each C bonded to three H.
+  C₂H₄ (ethene): C=C double bond, each C bonded to two H.
+**Valency (how many bonds each atom usually forms)**
+  H 1, Cl 1, O 2, N 3, C 4. Useful for checking structural formulas quickly.
+**Worked example**
+  Draw the Lewis structure of NH₃.
+    Valence electrons: N 5 + 3 × H 1 = 8 electrons = 4 pairs.
+    Three pairs form N–H bonds; the fourth is a lone pair on N.
+    N has 8 electrons around it; each H has 2. Done.
+**Going deeper**
+  A covalent bond holds atoms together because both nuclei are attracted to the shared electron pair between them.
+  Multiple bonds are shorter and stronger than single bonds between the same atoms: C≡C > C=C > C–C in strength.
+  The octet rule is a guide, not a law — some molecules (like BF₃ or SF₆) break it, but all the molecules in this dot point obey it.
+  Counting electrons: the total in a Lewis structure always equals the sum of the valence electrons of all atoms (plus extra for negative ions, minus for positive ions).
+**Worked example 2**
+  Draw the Lewis structure of carbon dioxide.
+    Valence electrons: C 4 + 2 × O 6 = 16 electrons = 8 pairs.
+    Skeleton O–C–O uses 2 pairs; give each O three lone pairs (6 more pairs): 8 pairs used.
+    Carbon now has only 4 electrons, so move one lone pair from each O into a bond: O=C=O.
+    Check: C has 8 electrons (two double bonds); each O has 8 (a double bond plus two lone pairs).
+**Common mistakes**
+  Forgetting lone pairs in Lewis structures (they matter for shape and polarity).
+  Giving carbon five bonds or hydrogen two.
+  Drawing CO₂ with single bonds — carbon would only have 4 electrons.
+**Exam tips**
+  In Lewis structures, draw every lone pair — a missing lone pair usually loses the mark.
+  If asked for a structural formula, show every bond as a line; lone pairs are usually optional (read the question).
+**Connections**
+  Molecular shapes (VSEPR) are predicted from the Lewis structure.
+  Polarity of molecules depends on the bonds and shape drawn here.
+  Naming organic compounds uses structural and semi-structural formulas of the same kind.
+**Practice questions**
+  How many electrons are shared between the two nitrogen atoms in N₂?
+    Six (a triple bond is three shared pairs).
+  Draw (describe) the Lewis structure of HCl and state how many lone pairs it has.
+    H–Cl with one bonding pair; chlorine has three lone pairs. Total 8 valence electrons (1 + 7).
+  Explain why hydrogen only ever forms one covalent bond.
+    Hydrogen has one electron and its only shell holds two, so sharing one pair fills it.
+  Write the molecular and structural formulas of ethene.
+    Molecular: C₂H₄. Structural: two carbons joined by a double bond, each carbon also bonded to two hydrogens (H₂C=CH₂).
+**Flashcards**
+  How many lone pairs are on the oxygen in H₂O? :: Two.
+  How many lone pairs are on the nitrogen in NH₃? :: One.
+  What type of bond joins the atoms in N₂? :: A triple bond (N≡N), with one lone pair on each N.
+  Structural formula of carbon dioxide? :: O=C=O (two double bonds; two lone pairs on each O in the Lewis structure)
+  What does a Lewis structure show that a structural formula usually doesn't? :: The non-bonding (lone) pairs of electrons — every valence electron is shown.
+  Ethene has a carbon–carbon {{double}} bond; ethane has a carbon–carbon {{single}} bond.
+  Total valence electrons in CO₂? :: 16 (4 + 6 + 6)
+  How many lone pairs are on each chlorine atom in Cl₂? :: Three.
+
+@ 7ad99aea U1.1.2.2 | Molecular shapes (VSEPR)
+**In a sentence**
+  Electron pairs around a central atom push as far apart as possible, and where the atoms end up gives the molecule's shape.
+**Key terms**
+  **VSEPR theory**: valence shell electron pair repulsion — electron pairs around a central atom arrange themselves to minimise repulsion.
+  **Electron group (region)**: a lone pair, single bond, double bond or triple bond around the central atom — each counts as one.
+  **Linear**, **bent (V-shaped)**, **pyramidal**, **tetrahedral**: the four shapes you need.
+**VSEPR theory**
+  Electron pairs around a central atom (bonding and lone pairs) repel each other and spread out as far apart as possible.
+  A double or triple bond counts as **one** region of electrons.
+  Lone pairs repel slightly more than bonding pairs, but the shape name only describes where the **atoms** are.
+**The four shapes (no bond angles needed)**
+  **Linear**: two regions, no lone pairs on the central atom (CO₂), or any molecule of only two atoms (H₂, HCl, O₂, N₂, Cl₂).
+  **Tetrahedral**: four bonding pairs, no lone pairs (CH₄; each carbon in ethane).
+  **Pyramidal**: three bonding pairs, one lone pair (NH₃). The four pairs are arranged tetrahedrally, but the lone pair is invisible in the shape.
+  **Bent (V-shaped)**: two bonding pairs, two lone pairs (H₂O).
+**Method**
+  1. Draw the Lewis structure.
+  2. Count regions of electrons around the central atom (lone pairs + bonded atoms, counting multiple bonds once).
+  3. Count how many of those are lone pairs.
+  4. Name the shape from the positions of the atoms.
+**Worked example**
+  Predict the shape of H₂O.
+    O has two bonding pairs (to H) and two lone pairs: four regions.
+    The four regions point towards the corners of a tetrahedron.
+    Only two corners have atoms, so the molecule is bent.
+**Going deeper**
+  The arrangement of electron groups and the shape of the molecule are different ideas. NH₃ and H₂O both have four electron groups arranged tetrahedrally, but NH₃ is pyramidal (3 atoms around N) and H₂O is bent (2 atoms around O).
+  Lone pairs sit closer to the central atom and spread out more than bonding pairs, so they push the bonds together slightly — which is why water's angle is smaller than methane's (not examined in Units 1–2, but it explains why the shapes aren't perfect).
+  Molecules with more than one central atom have a shape around each: in ethane, each carbon is tetrahedral.
+**Worked example 2**
+  Predict the shape of hydrogen sulfide, H₂S.
+    S is in group 16 like O: 6 valence electrons, 2 used in S–H bonds, 2 lone pairs.
+    Four electron groups (2 bonding, 2 lone) → tetrahedral arrangement.
+    Only two positions have atoms, so H₂S is bent, like water.
+**Common mistakes**
+  Calling NH₃ "trigonal planar" — the lone pair pushes the H atoms down into a pyramid.
+  Calling CO₂ bent because O has lone pairs — only lone pairs on the **central** atom affect shape.
+  Counting a double bond as two regions.
+**Exam tips**
+  Name the shape and justify it: "NH₃ is pyramidal because the central N has three bonding pairs and one lone pair, which repel to a tetrahedral arrangement."
+**Connections**
+  Lewis structures come first — the shape is read from them.
+  Shape decides polarity (polarity of molecules), which decides intermolecular forces and solubility.
+**Practice questions**
+  State and explain the shape of methane.
+    Tetrahedral: carbon has four bonding pairs and no lone pairs; the four pairs repel equally to point towards the corners of a tetrahedron.
+  Why is carbon dioxide linear but water bent, even though both have three atoms?
+    In CO₂ the carbon has two electron groups (two double bonds) and no lone pairs, so they point opposite each other. In H₂O the oxygen has two bonding pairs and two lone pairs; the lone pairs push the two O–H bonds into a bent shape.
+  Predict the shape of PH₃.
+    Pyramidal — phosphorus (group 15, like N) has three bonding pairs and one lone pair.
+**Flashcards**
+  What does VSEPR stand for, and what is its main idea? :: Valence shell electron pair repulsion: electron pairs around a central atom repel and get as far apart as possible.
+  Shape of NH₃? :: Pyramidal (three bonding pairs and one lone pair)
+  Shape of H₂O? :: Bent (two bonding pairs and two lone pairs)
+  Shape of CO₂ and why? :: Linear — two double-bond regions and no lone pairs on carbon, so they point in opposite directions.
+  Shape of CH₄? :: Tetrahedral (four bonding pairs, no lone pairs)
+  In VSEPR, a double bond counts as {{one}} region of electron density.
+  Shape of H₂S? :: Bent — two bonding pairs and two lone pairs on S (like water).
+  Shape of PH₃? :: Pyramidal — three bonding pairs and one lone pair (like NH₃).
+
+@ 64f54328 U1.1.2.3 | Polarity of molecules
+**In a sentence**
+  A molecule is polar only if it has polar bonds whose dipoles don't cancel because the shape is unsymmetrical.
+**Key terms**
+  **Polar bond**: a covalent bond with unequal sharing, because the atoms differ in electronegativity.
+  **Dipole**: a separation of charge, shown with δ+ and δ− (or an arrow towards the negative end).
+  **Polar molecule**: a molecule with an overall dipole.
+  **Non-polar molecule**: a molecule with no overall dipole (no polar bonds, or symmetrical cancelling dipoles).
+**Polar bonds**
+  A bond is **polar** when the two atoms have different electronegativities, so the shared electrons sit closer to one atom.
+  The more electronegative atom gets a partial negative charge (δ−); the other gets δ+.
+    In H–Cl, Cl (3.2) is more electronegative than H (2.2): Hδ+—Clδ−.
+  Bonds between identical atoms (H–H, Cl–Cl) are non-polar. C–H is treated as essentially non-polar (2.6 vs 2.2).
+**Polar molecules**
+  A molecule is polar if it has polar bonds **and** its shape is not symmetrical, so the dipoles don't cancel.
+  **Polar**: HCl (one polar bond), H₂O (bent), NH₃ (pyramidal).
+  **Non-polar**: H₂, O₂, N₂, Cl₂ (no polar bonds); CO₂ (linear — the two C=O dipoles cancel); CH₄ (tetrahedral and symmetrical).
+**Method**
+  1. Are any bonds polar? If not, the molecule is non-polar.
+  2. Draw the shape. Do the dipoles point in opposite or symmetrical directions and cancel?
+  3. If they cancel → non-polar. If not → polar.
+**Worked example**
+  Why is CO₂ non-polar although its bonds are polar?
+    Each C=O bond is polar (O is more electronegative).
+    The molecule is linear, so the two dipoles are equal and point in opposite directions.
+    They cancel, leaving no overall dipole.
+**Going deeper**
+  As a rough guide, an electronegativity difference below about 0.5 gives a (nearly) non-polar bond, between about 0.5 and 1.7 a polar covalent bond, and above about 1.7 mostly ionic bonding. Bonding is a continuum, not three boxes.
+  Think of bond dipoles as arrows that add like forces: equal arrows pointing opposite ways (CO₂) or evenly around a tetrahedron (CCl₄) add to zero.
+  CCl₄ is a good test case: each C–Cl bond is polar, but the tetrahedral shape makes the molecule non-polar. CH₃Cl, with one different atom, is polar.
+**Worked example 2**
+  Is CH₂Cl₂ (dichloromethane) polar?
+    C–Cl bonds are polar; C–H bonds are almost non-polar.
+    The shape is tetrahedral, but the four groups are not all the same, so the dipoles don't cancel.
+    CH₂Cl₂ is polar.
+**Common mistakes**
+  Saying a molecule is polar just because it has polar bonds — always check the shape.
+  Saying water is polar "because oxygen is electronegative" without mentioning the bent shape.
+**Exam tips**
+  Always mention both bonds and shape. "Polar because it has polar bonds" gets no marks for CO₂-type questions.
+**Connections**
+  Molecular shapes decide whether dipoles cancel.
+  Polar molecules have dipole–dipole forces (intermolecular forces).
+  Polarity decides solubility (like dissolves like) and behaviour in chromatography.
+**Practice questions**
+  Explain why CCl₄ is non-polar even though C–Cl bonds are polar.
+    The four C–Cl dipoles are equal and arranged tetrahedrally, so they cancel; there is no overall dipole.
+  Which is polar: CO₂ or SO₂? (SO₂ is bent.)
+    SO₂ — its polar S=O bonds are in a bent shape, so the dipoles don't cancel. CO₂ is linear and its dipoles cancel.
+  Label the partial charges in an N–H bond.
+    Nδ−–Hδ+ (N is more electronegative: 3.0 vs 2.2).
+**Flashcards**
+  What makes a covalent bond polar? :: The two atoms have different electronegativities, so the bonding electrons are shared unequally.
+  Why is water polar? :: Its O–H bonds are polar and its bent shape means the dipoles don't cancel.
+  Why is methane non-polar? :: Its C–H bonds are almost non-polar, and its symmetrical tetrahedral shape cancels any small dipoles.
+  Is ammonia polar? :: Yes — polar N–H bonds in a pyramidal (non-symmetrical) shape.
+  A molecule with polar bonds is non-polar if its {{shape is symmetrical}} so the dipoles cancel.
+  Is CCl₄ polar? :: No — its polar C–Cl bonds are arranged symmetrically (tetrahedral) and cancel.
+  Is CH₃Cl polar? :: Yes — the tetrahedral groups aren't all the same, so the dipoles don't cancel.
+
+@ 09533eb9 U1.1.2.4 | Bonding and intermolecular forces
+**In a sentence**
+  Covalent bonds hold atoms together inside molecules and are strong; much weaker intermolecular forces hold molecules to each other, and it's these that decide melting and boiling points.
+**Key terms**
+  **Intramolecular bond**: a bond within a molecule (covalent bond).
+  **Intermolecular force**: an attraction between separate molecules.
+  **Dispersion force**: an attraction between temporary (instantaneous) dipoles; present between all molecules.
+  **Dipole–dipole attraction**: the attraction between permanent dipoles of polar molecules.
+  **Hydrogen bond**: a strong dipole–dipole attraction between an H bonded to N, O or F and a lone pair on N, O or F of another molecule.
+**Intramolecular vs intermolecular**
+  **Intramolecular** bonds are inside a molecule: covalent bonds (shared electron pairs). They are strong.
+  **Intermolecular** forces are between molecules. They are much weaker, and they are what melting and boiling a molecular substance overcome.
+**The three intermolecular forces (weakest to strongest)**
+  **Dispersion forces**: in **all** molecules. Electrons move, creating instantaneous dipoles that induce dipoles in neighbours.
+    Stronger for larger molecules (more electrons) and longer, straighter chains (more contact).
+  **Dipole–dipole attraction**: between **polar** molecules. The δ+ end of one attracts the δ− end of another. HCl has dipole–dipole forces (plus dispersion).
+  **Hydrogen bonding**: a strong dipole–dipole attraction when H is bonded directly to **N, O or F**. The H is attracted to a lone pair on an N, O or F of another molecule.
+    Found in H₂O, NH₃, HF, alcohols and carboxylic acids.
+**Relative strengths**
+  covalent bonds ≫ hydrogen bonds > dipole–dipole > dispersion (for molecules of similar size).
+  Caution: dispersion forces in a very large molecule can outweigh hydrogen bonding in a small one. Iodine (I₂) is a solid at room temperature because of dispersion forces alone.
+**Worked example**
+  Identify all intermolecular forces in NH₃ and CH₄.
+    NH₃: dispersion, dipole–dipole and hydrogen bonding (H bonded to N; N has a lone pair).
+    CH₄: dispersion only (non-polar).
+**Going deeper**
+  Why hydrogen bonds are so strong: N, O and F are small and very electronegative, so the H becomes almost a bare proton (strongly δ+) that can get very close to a lone pair on a neighbouring molecule.
+  Rough energies for comparison: covalent bonds about 150–950 kJ mol⁻¹; hydrogen bonds about 10–40 kJ mol⁻¹; dipole–dipole and dispersion usually a few to ~20 kJ mol⁻¹. The exact numbers aren't examinable, but the order of magnitude is the point.
+  Dispersion forces depend on how easily the electron cloud can be distorted (polarisability), which rises with the number of electrons, and on how much surface two molecules share — long straight chains beat compact branched ones.
+**Worked example 2**
+  Rank HF, HCl and F₂ by strength of intermolecular forces.
+    F₂: non-polar, dispersion only — weakest.
+    HCl: polar, dipole–dipole + dispersion.
+    HF: hydrogen bonding (H bonded to F) + dispersion — strongest.
+    Order: F₂ < HCl < HF (boiling points −188 °C, −85 °C, 20 °C).
+**Common mistakes**
+  Saying boiling water breaks O–H covalent bonds. Boiling only overcomes the forces **between** molecules.
+  Saying hydrogen bonding happens whenever a molecule has hydrogen — it must be bonded to N, O or F.
+  Forgetting that every molecule has dispersion forces.
+**Exam tips**
+  Name every force present, then say which is strongest and why. Write "overcome" for intermolecular forces and "break" for bonds.
+**Connections**
+  Properties of molecular substances are explained with these forces.
+  Hydrogen bonding explains water's anomalous properties (Unit 2).
+  Forces between polymer chains decide polymer properties (thermoplastics, LDPE vs HDPE).
+**Practice questions**
+  Explain why iodine (I₂) is a solid at room temperature but fluorine (F₂) is a gas, though both are non-polar.
+    Both have only dispersion forces, but I₂ has far more electrons (106 vs 18), so its temporary dipoles and dispersion forces are much stronger — enough to hold molecules in a solid at room temperature.
+  Can CH₄ molecules form hydrogen bonds with each other? Explain.
+    No. Its H atoms are bonded to C, not N, O or F, so they are not strongly δ+, and carbon has no lone pairs.
+  What forces must be overcome when ethanol boils?
+    Hydrogen bonds (O–H groups), plus dispersion forces between the molecules — not the covalent bonds.
+**Flashcards**
+  What is the difference between intramolecular bonding and intermolecular forces? :: Intramolecular bonds are the covalent bonds within a molecule (strong); intermolecular forces are attractions between molecules (much weaker).
+  What causes dispersion forces? :: Temporary dipoles from moving electrons inducing dipoles in neighbouring molecules. Present between all molecules.
+  When does hydrogen bonding occur? :: When H is covalently bonded to N, O or F, and is attracted to a lone pair on N, O or F in another molecule.
+  List the intermolecular forces in HCl. :: Dispersion forces and dipole–dipole attraction (no hydrogen bonding — Cl isn't N, O or F).
+  Put in order of strength: dispersion, covalent bond, hydrogen bond, dipole–dipole. :: Covalent bond > hydrogen bond > dipole–dipole > dispersion (for similar-sized molecules).
+  Dispersion forces get stronger as molecules get {{larger (more electrons)}}.
+  Why are hydrogen bonds stronger than ordinary dipole–dipole forces? :: N, O and F are small and very electronegative, so the H is strongly δ+ and can get very close to a lone pair.
+  Rank F₂, HCl, HF by boiling point. :: F₂ < HCl < HF
+
+@ cc21aba2 U1.1.2.5 | Properties of molecular substances
+**In a sentence**
+  Molecular substances melt and boil at low temperatures and never conduct electricity, because only weak forces hold the molecules together and nothing charged can move.
+**Key terms**
+  **Molecular substance**: a substance made of discrete molecules (e.g. water, methane, sugar).
+  **Melting / boiling point**: the temperature at which enough energy is supplied to overcome the intermolecular forces holding the solid / liquid together.
+  **Electrical conductivity**: the ability to carry an electric current, which needs charged particles free to move.
+**Melting and boiling points**
+  Molecular substances have **low** melting and boiling points because only weak intermolecular forces must be overcome — the covalent bonds stay intact.
+  The stronger the intermolecular forces, the higher the melting and boiling point.
+    CH₄ (dispersion only) boils at −162 °C; H₂O (hydrogen bonding) boils at 100 °C, despite being a similar size.
+  In a family of similar molecules, boiling point rises with size: stronger dispersion forces.
+    Boiling points: CH₄ −162 °C, C₂H₆ −89 °C, C₃H₈ −42 °C, C₄H₁₀ −1 °C.
+**Electrical conductivity**
+  Molecular substances do **not** conduct electricity in any state: there are no charged particles free to move (no ions, no delocalised electrons).
+  (Exception to know about: some molecules like HCl react with water to form ions, so the **solution** conducts. The pure substance does not.)
+**Other properties**
+  Often soft as solids (weak forces between molecules).
+  Solubility follows "like dissolves like" — covered in separation and identification.
+**Worked example**
+  Explain why ammonia (NH₃, bp −33 °C) has a higher boiling point than methane (CH₄, bp −162 °C).
+    Both are small molecules with similar numbers of electrons, so similar dispersion forces.
+    NH₃ is polar and has hydrogen bonding between molecules; CH₄ has only dispersion forces.
+    More energy is needed to overcome the stronger forces between NH₃ molecules, so it boils at a higher temperature.
+**Going deeper**
+  Two things decide the boiling point of a molecular substance: the type of intermolecular forces (hydrogen bonding > dipole–dipole > dispersion) and the size and shape of the molecule (more electrons and more contact → stronger dispersion forces).
+  When comparing, compare like with like. A big non-polar molecule (octane, bp 126 °C) can boil higher than a small hydrogen-bonded one (methanol, bp 65 °C) because its dispersion forces add up to more.
+  Some substances are molecular but conduct in solution because they react with water to make ions — HCl gas dissolves to form H₃O⁺ and Cl⁻. The pure molecular substance still doesn't conduct.
+**Worked example 2**
+  Explain why ethanol (C₂H₅OH, bp 78 °C) boils much higher than propane (C₃H₈, bp −42 °C), though both have similar numbers of electrons.
+    Similar electron numbers → similar dispersion forces.
+    Ethanol has an O–H group, so it forms hydrogen bonds between molecules; propane is non-polar and has dispersion forces only.
+    More energy is needed to overcome ethanol's intermolecular forces, so it boils at a higher temperature.
+**Common mistakes**
+  Explaining boiling point with covalent bond strength.
+  Saying molecular substances conduct when molten.
+  Comparing two molecules without naming the forces present in **each** one.
+**Exam tips**
+  A full comparison answer: name the forces in substance A, name the forces in substance B, say which are stronger, and link to energy needed and boiling point.
+**Connections**
+  Bonding and intermolecular forces supplies the forces used here.
+  Diamond and graphite: contrast molecular substances with covalent network substances.
+  Water's boiling point anomaly (Unit 2) is a special case of this.
+**Practice questions**
+  Explain why sugar (sucrose) doesn't conduct electricity when dissolved in water.
+    Sucrose dissolves as whole neutral molecules, not ions, so there are no charged particles free to move.
+  Which has the higher boiling point, butane or 2-methylpropane? Explain.
+    Butane. Both are C₄H₁₀ with the same number of electrons, but butane's straight chain gives more contact between molecules, so stronger dispersion forces than branched 2-methylpropane.
+  Why is methane a gas at room temperature?
+    CH₄ molecules are small and non-polar, with only weak dispersion forces between them, which are overcome at very low temperatures (bp −162 °C).
+**Flashcards**
+  Why do molecular substances have low melting points? :: Only weak intermolecular forces need to be overcome; the strong covalent bonds within molecules don't break.
+  Why don't molecular substances conduct electricity? :: They have no charged particles (ions or delocalised electrons) free to move.
+  Why does butane have a higher boiling point than methane? :: Butane is a larger molecule with more electrons, so it has stronger dispersion forces.
+  Why does water have a much higher boiling point than methane? :: Water molecules are held by hydrogen bonds (plus dispersion); methane has only weak dispersion forces.
+  Molecular substances conduct electricity in {{no}} state.
+  Why does ethanol boil higher than propane? :: Ethanol forms hydrogen bonds (O–H); propane has only dispersion forces of similar strength.
+  Why does a solution of HCl gas in water conduct, if HCl is molecular? :: HCl reacts with water to form ions (H₃O⁺ and Cl⁻).
+
+@ 3645fcdd U1.1.2.6 | Diamond and graphite
+**In a sentence**
+  Diamond and graphite are both pure carbon, but diamond's 3D network of four bonds per atom makes it hard and non-conducting, while graphite's layers of three bonds per atom leave free electrons and slippery layers.
+**Key terms**
+  **Allotropes**: different structural forms of the same element (diamond, graphite, graphene, fullerenes).
+  **Covalent network lattice**: a continuous structure of atoms joined by covalent bonds, with no separate molecules.
+  **Delocalised electron**: an electron not tied to one bond or atom, free to move through a structure.
+**Covalent network (lattice) substances**
+  In a covalent network, atoms are joined by covalent bonds in a continuous 3D (or layered) structure — there are no separate molecules.
+  To melt them, strong covalent bonds must be broken, so melting points are very high.
+**Diamond**
+  Each carbon is covalently bonded to **four** others in a tetrahedral 3D network.
+  **Very hard**: every atom is locked in place by strong covalent bonds in all directions.
+  **Very high melting point** (about 3550 °C).
+  **No electrical conductivity**: all four valence electrons are in bonds, so none are free to move.
+  **Excellent heat conductor**: the rigid, tightly bonded lattice passes vibrations (heat) very efficiently.
+  Uses: cutting, drilling and grinding tools; jewellery; heat sinks in electronics.
+**Graphite**
+  Each carbon is covalently bonded to **three** others in flat layers of hexagons.
+  The fourth valence electron of each carbon is **delocalised**, free to move along the layer.
+  Layers are held together by weak dispersion forces.
+  **Conducts electricity** along the layers (delocalised electrons move).
+  **Soft and slippery**: layers slide over each other easily.
+  **Very high melting point**: melting still means breaking the covalent bonds within layers.
+  Conducts heat well along the layers.
+  Uses: pencil "lead", lubricants, electrodes (in batteries and electrolysis), brushes in electric motors.
+**Linking structure to use**
+  Always explain a use with a property **and** the structural reason for it.
+    Graphite electrodes: conducts electricity (delocalised electrons) and has a high melting point (covalent network), and is unreactive.
+**Going deeper**
+  Graphene is a single layer of graphite: extremely strong, light, flexible and an excellent conductor — being researched for batteries, touchscreens and composites.
+  Fullerenes (like C₆₀) and carbon nanotubes are also allotropes of carbon with delocalised electrons.
+  Why graphite is less dense than diamond (2.2 vs 3.5 g cm⁻³): the gap between layers is much larger than the C–C bond length.
+  Graphite conducts much better along its layers than across them, because the delocalised electrons move within the layers.
+**Common mistakes**
+  Saying graphite is soft because its covalent bonds are weak. The covalent bonds are strong; the forces **between** layers are weak.
+  Saying diamond conducts heat because of free electrons — it has none; heat moves as lattice vibrations.
+**Exam tips**
+  Link every property to structure in one sentence: property → particles → bonding → consequence. "Graphite conducts because each carbon forms only three covalent bonds, leaving one delocalised electron per atom that can move along the layers."
+**Connections**
+  Bonding and intermolecular forces: graphite has both covalent bonds (within layers) and dispersion forces (between layers).
+  Metallic bonding: delocalised electrons explain conduction in both metals and graphite.
+  Properties of molecular substances: contrast low melting points with covalent networks.
+**Practice questions**
+  Why is diamond used on the tips of drill bits?
+    It is the hardest natural substance, because every carbon is held by strong covalent bonds in a rigid 3D network, so it can cut other materials without wearing away.
+  Explain why graphite can be used both as a lubricant and as an electrode.
+    Lubricant: its layers are held by weak dispersion forces and slide over each other. Electrode: each carbon has a delocalised electron, so it conducts electricity, and its covalent network gives it a very high melting point.
+  Both diamond and graphite have high melting points. What must be broken for them to melt?
+    Strong covalent bonds between carbon atoms in the network.
+**Flashcards**
+  Describe the bonding in diamond. :: Each carbon is covalently bonded to four others in a rigid 3D tetrahedral network.
+  Why is diamond hard? :: Every atom is held by strong covalent bonds in all directions in a 3D network.
+  Why does graphite conduct electricity but diamond doesn't? :: In graphite each C bonds to three others, leaving one delocalised electron per atom that can move along the layers; in diamond all four electrons are in bonds.
+  Why is graphite soft and slippery? :: Its layers are held together only by weak dispersion forces, so they slide over each other.
+  Why do both diamond and graphite have very high melting points? :: Melting requires breaking strong covalent bonds in the network.
+  Give a use of graphite and the property it relies on. :: Electrodes — it conducts electricity (delocalised electrons) and has a very high melting point. (Or a lubricant — layers slide.)
+  What are allotropes? :: Different structural forms of the same element, e.g. diamond and graphite.
+  Why is graphite less dense than diamond? :: Its layers are far apart compared with the tightly packed 3D network of diamond.
+
+@ cbe85345 U1.1.3.1 | Metallic bonding and properties of metals
+**In a sentence**
+  Metals are cations held in a sea of delocalised electrons, and that single model explains why they conduct, shine, bend without breaking, and mostly melt at high temperatures.
+**Key terms**
+  **Metallic bonding**: the electrostatic attraction between a lattice of cations and delocalised valence electrons.
+  **Delocalised electrons**: valence electrons free to move through the whole lattice.
+  **Malleable**: can be hammered or pressed into shape. **Ductile**: can be drawn into wires.
+  **Lustre**: the shiny appearance of a clean metal surface.
+  **Alloy**: a mixture of a metal with other elements (e.g. steel, brass, bronze).
+**The model**
+  A metal is a regular 3D lattice of **cations** (positive ions) surrounded by a "sea" of **delocalised valence electrons**.
+  **Metallic bonding** is the electrostatic attraction between the cations and the delocalised electrons. It acts in all directions (non-directional).
+  In a solid metal, atoms pack in regular arrangements called **metallic crystals** (grains). Real metals are made of many small crystals.
+**Explaining the properties**
+  **Electrical conductivity**: delocalised electrons can move through the lattice when a voltage is applied.
+  **Heat conductivity**: free electrons (and vibrating cations) transfer kinetic energy quickly through the metal.
+  **Lustre** (shiny): delocalised electrons absorb and re-emit light.
+  **Malleable** (can be hammered into shapes) and **ductile** (can be drawn into wires): layers of cations can slide over each other without breaking the bonding, because the electron sea moves with them and the attraction is non-directional.
+  **Mostly high melting points**: strong attraction between cations and delocalised electrons must be overcome. Melting points vary widely (Hg −39 °C, W 3422 °C).
+  **High density**: atoms are closely packed.
+**Changing the properties**
+  **Alloys** (e.g. steel = iron + carbon) contain atoms of different sizes that disrupt the layers, so they slide less easily — harder and stronger but less malleable.
+  **Work hardening** (cold working): hammering creates more small grains and dislocations, making the metal harder and more brittle.
+  **Heat treatment**: annealing (heat, cool slowly → larger crystals, softer); quenching (heat, cool fast → small crystals, hard but brittle); tempering (gentle reheating after quenching → less brittle).
+**Going deeper**
+  Metallic bond strength increases with more delocalised electrons per atom and smaller cations: sodium (1 electron) melts at 98 °C, magnesium (2) at 650 °C, aluminium (3) at 660 °C.
+  Transition metals are generally harder and have higher melting points because d electrons also contribute to bonding.
+  Limitations of the model: it doesn't explain why some metals are magnetic (iron, cobalt, nickel) or why melting points vary so much between metals with the same number of valence electrons.
+  Substitutional alloys (atoms of similar size replace metal atoms, e.g. brass: Cu and Zn) and interstitial alloys (small atoms fit in the gaps, e.g. steel: C in Fe) both disrupt the sliding of layers.
+**Common mistakes**
+  Describing metals as "atoms in a sea of electrons" — they are positive ions (cations).
+  Saying metals are malleable because the bonds are weak. The bonding stays intact as layers slide.
+**Exam tips**
+  For malleability, say that the layers slide **and** that the bonding is non-directional, so the attraction is kept — that's the mark examiners look for.
+**Connections**
+  Reactivity series of metals: metals react by losing their valence electrons.
+  Metal recycling: metals can be melted and reformed because metallic bonding re-forms.
+  Contrast with ionic bonding (brittle, conducts only when molten).
+**Practice questions**
+  Why is magnesium's melting point much higher than sodium's?
+    Magnesium contributes two valence electrons per atom and forms 2+ cations, so the attraction between cations and delocalised electrons is stronger than in sodium (one electron, 1+ cations).
+  Explain why copper is used for electrical wiring.
+    It is an excellent electrical conductor (delocalised electrons move through the lattice) and ductile, so it can be drawn into wires.
+  Why is steel harder than pure iron?
+    Carbon atoms in the iron lattice disrupt the regular layers, so the layers can't slide past each other as easily.
+**Flashcards**
+  Describe metallic bonding. :: Electrostatic attraction between a lattice of cations and a sea of delocalised valence electrons.
+  Why do metals conduct electricity? :: Delocalised electrons are free to move through the lattice.
+  Why are metals malleable and ductile? :: Layers of cations can slide past each other while the delocalised electrons keep holding them together (non-directional bonding).
+  Why are metals lustrous? :: Delocalised electrons absorb and re-emit light.
+  Why is an alloy usually harder than the pure metal? :: Atoms of different sizes disrupt the regular layers, so they can't slide as easily.
+  What is a metallic crystal? :: A region (grain) in a solid metal where the cations are packed in a regular arrangement.
+  Why does magnesium have a higher melting point than sodium? :: More delocalised electrons (2 vs 1) and higher-charged cations → stronger metallic bonding.
+  Give one limitation of the metallic bonding model. :: It doesn't explain magnetism, or the wide range of melting points between similar metals.
+
+@ b126552c U1.1.3.2 | Reactivity series of metals
+**In a sentence**
+  Metals can be ranked by how readily they lose electrons, and experiments with water, dilute acids and oxygen reveal that order.
+**Key terms**
+  **Reactivity series**: a list of metals in order of how readily they react (are oxidised).
+  **Oxidation**: loss of electrons.
+  **Displacement**: a more reactive metal taking the place of a less reactive metal in a compound.
+**What reactivity means**
+  A metal's reactivity is how readily it loses electrons (is **oxidised**) to form positive ions: M → Mⁿ⁺ + ne⁻.
+  A reactivity series lists metals from most to least reactive, worked out by comparing how fast and how vigorously they react.
+**A typical series**
+  K > Na > Ca > Mg > Al > Zn > Fe > Sn > Pb > (H) > Cu > Ag > Au
+  Metals above hydrogen react with dilute acids to produce hydrogen gas; those below do not.
+**Reactions used to compare metals**
+  **With water**: very reactive metals react with cold water to form a hydroxide and hydrogen.
+    2Na(s) + 2H₂O(l) → 2NaOH(aq) + H₂(g)
+    Ca reacts steadily with cold water; Mg only slowly (faster with steam, forming MgO + H₂).
+  **With dilute acids**: metals above H form a salt and hydrogen.
+    Zn(s) + 2HCl(aq) → ZnCl₂(aq) + H₂(g)
+    Mg fizzes quickly, Zn steadily, Fe slowly; Cu doesn't react.
+  **With oxygen**: most metals form oxides; reactive ones burn brightly.
+    2Mg(s) + O₂(g) → 2MgO(s) (bright white flame)
+    Iron rusts slowly; gold doesn't react.
+**Designing a fair comparison**
+  Controlled variables: same acid and concentration, same volume, same temperature, same mass and surface area of metal (e.g. same-sized strips or powder).
+  Measure: rate of bubbling, volume of gas in a set time, temperature rise, or time for the metal to disappear.
+  Safety: potassium and sodium are too dangerous for student experiments with acid — use teacher demonstrations.
+  Aluminium can look unreactive at first because of a protective oxide layer.
+**Going deeper**
+  Reactivity links to the periodic table: group 1 and 2 metals have low ionisation energies and lose electrons easily, so they are at the top of the series. Transition metals and those below hydrogen hold their electrons more tightly.
+  Hydrogen is included as a reference point: metals above it can reduce H⁺ in dilute acids to H₂ gas.
+  How vigorously a reaction looks can mislead — aluminium's oxide layer and magnesium's slow reaction with cold water both hide their true reactivity.
+  Gold and platinum are found native (as the element) because they are so unreactive; very reactive metals like sodium are never found uncombined.
+**Worked example 2**
+  A student adds equal masses of metals X, Y and Z to 1.0 M HCl. X fizzes rapidly, Y slowly, Z not at all. Rank them and suggest identities.
+    Reactivity: X > Y > Z.
+    X could be magnesium, Y iron (or zinc), Z copper (below hydrogen).
+**Common mistakes**
+  Saying copper reacts with dilute HCl — it doesn't (below hydrogen).
+  Forgetting states in equations, or writing H instead of H₂.
+**Exam tips**
+  In method questions, list controlled variables specifically (e.g. "same 2 cm strip of metal, same 20 mL of 1.0 M HCl at 20 °C") and say what you'd measure.
+**Connections**
+  Reactivity series and metal displacement (Unit 2) extends this with redox equations.
+  Periodic table trends (metallic character, ionisation energy) explain the order.
+  Corrosion: more reactive metals corrode more readily.
+**Practice questions**
+  Write a balanced equation with states for calcium reacting with water.
+    Ca(s) + 2H₂O(l) → Ca(OH)₂(aq) + H₂(g)
+  Why is potassium stored under oil?
+    It reacts rapidly with oxygen and water vapour in air; oil keeps air and moisture away.
+  Suggest how to measure the rate of reaction of zinc with acid.
+    Collect the hydrogen in a gas syringe (or measure mass loss) and record the volume every 10 s, using the same mass and surface area of zinc and the same acid volume, concentration and temperature each time.
+**Flashcards**
+  What does it mean for a metal to be reactive? :: It readily loses electrons (is oxidised) to form positive ions.
+  Write the equation for sodium reacting with water. :: 2Na(s) + 2H₂O(l) → 2NaOH(aq) + H₂(g)
+  Write the equation for zinc reacting with hydrochloric acid. :: Zn(s) + 2HCl(aq) → ZnCl₂(aq) + H₂(g)
+  Which metals react with dilute acids to produce hydrogen? :: Metals above hydrogen in the reactivity series (e.g. Mg, Zn, Fe — not Cu, Ag, Au).
+  Name three variables to control when comparing metal reactivity with acid. :: Acid type and concentration; volume and temperature of acid; mass and surface area of metal.
+  Why can aluminium seem less reactive than expected? :: A thin protective layer of aluminium oxide forms on its surface and slows the reaction.
+  Equation for calcium with water? :: Ca(s) + 2H₂O(l) → Ca(OH)₂(aq) + H₂(g)
+  Why are gold and platinum found as the pure element? :: They are so unreactive that they don't combine with other elements in nature.
+
+@ 4dc546b0 U1.1.3.3 | Metal recycling and the circular economy
+**In a sentence**
+  Metals can be recycled again and again without losing quality, which makes them a model for moving from a take-make-dispose economy to a circular one.
+**Key terms**
+  **Linear economy**: take → make → use → dispose.
+  **Circular economy**: keep materials in use at their highest value through design, reuse, repair, remanufacture and recycling.
+  **Closed-loop recycling**: material recycled into the same product (can → can).
+  **Open-loop recycling (repurposing)**: material recycled into a different product.
+  **Life cycle assessment**: an analysis of the environmental impacts of a product from raw material to disposal.
+**Linear vs circular economy**
+  **Linear economy**: take → make → use → dispose. Resources end up in landfill.
+  **Circular economy**: materials are kept in use as long as possible — designed to be repaired, reused, remanufactured and recycled — so waste and the need for new raw materials are minimised.
+**The life cycle of a metal**
+  **Mining**: ore is extracted — energy-intensive, damages land, produces waste rock and tailings.
+  **Refining**: ore is processed to pure metal (e.g. aluminium by electrolysis, iron in a blast furnace) — large energy use and CO₂ emissions.
+  **Manufacture** into a product → **use** → **disposal via recycling**.
+  **Reprocessing**: the metal is melted and made into the **same product** again (closed loop — e.g. aluminium can to can) or **repurposed** into a new product (open loop).
+**Why metals suit a circular economy**
+  Metals can be melted and recycled over and over without losing their properties (unlike plastics, whose chains degrade).
+  Recycling aluminium uses about 5% of the energy needed to produce it from bauxite ore.
+  Recycling reduces mining, landfill, energy use, greenhouse emissions and dependence on imported ore.
+**Challenges**
+  Collecting and sorting metals (mixed products, alloys and coatings are hard to separate).
+  Contamination lowers the quality of recycled metal.
+  Some products aren't designed to be taken apart.
+**Going deeper**
+  Aluminium is the classic case: extracting it from bauxite needs huge amounts of electricity for electrolysis, but remelting scrap uses about 5% of that energy. Australian aluminium cans can be recycled and back on shelves in weeks.
+  Steel is the world's most recycled material by mass; magnets make it easy to separate from mixed waste.
+  Barriers to circularity: products designed to be glued rather than taken apart; small amounts of many metals in electronics; exporting e-waste; low collection rates.
+  Circular design ideas: modular products, standard fasteners, labelling materials, take-back schemes, deposit schemes (like container deposit refunds).
+**Common mistakes**
+  Treating "recycling" and "circular economy" as the same thing — recycling is one part of it; design, reuse and repair are also key.
+**Exam tips**
+  Describe the stages in order (mined → refined → made → used → recycled → reprocessed) and say which stage recycling replaces (mining and refining).
+**Connections**
+  Critical elements and recycling: circularity secures scarce elements.
+  Plastic recycling and the circular economy (polymers) — contrast: plastics degrade on recycling, metals don't.
+  Green chemistry and sustainable development (Area of Study 3).
+**Practice questions**
+  Explain why recycling aluminium saves so much energy compared with producing it from ore.
+    Producing aluminium from bauxite needs a lot of electricity for electrolysis to reduce Al³⁺ to Al; recycling only melts metal that is already reduced, using about 5% of the energy.
+  Distinguish closed-loop and open-loop recycling with an example of each.
+    Closed-loop: an aluminium can recycled into a new can. Open-loop: steel from a car recycled into construction reinforcing bar.
+  Give two design changes that would make a phone more circular.
+    Screws instead of glue so it can be repaired; replaceable battery; labelled, easily separated materials; a manufacturer take-back scheme (any two).
+**Flashcards**
+  What is a circular economy? :: An economy where materials are kept in use as long as possible through reuse, repair and recycling, minimising waste and new raw material use.
+  What is a linear economy? :: Take, make, use, dispose — materials end up as waste.
+  Why are metals well suited to recycling? :: They can be melted and reformed repeatedly without losing their properties.
+  About how much of the energy of primary production does recycling aluminium need? :: About 5%.
+  Give two environmental benefits of recycling metals. :: Less mining (land damage and waste), less energy use and CO₂ emissions, less landfill.
+  Give one challenge in recycling metals. :: Separating metals from mixed products, alloys and coatings; contamination; collection.
+  What is closed-loop recycling? :: Recycling a material back into the same product (e.g. can to can).
+  Why is steel easy to separate from mixed waste? :: It is magnetic.
+
+@ 1b66bfbf U1.1.4.1 | Ionic bonding and properties
+**In a sentence**
+  Ionic compounds are lattices of oppositely charged ions held by strong attractions in every direction, which makes them hard, high-melting and brittle, and able to conduct only when the ions can move.
+**Key terms**
+  **Ionic bond**: the electrostatic attraction between oppositely charged ions.
+  **Crystal lattice**: a regular, repeating 3D arrangement of ions.
+  **Brittle**: breaks or shatters rather than bending.
+  **Electrolyte**: a substance that conducts electricity when molten or dissolved, because of mobile ions.
+**The model**
+  An **ionic compound** is a lattice of positive and negative ions held together by **ionic bonding**: the electrostatic attraction between oppositely charged ions, acting in all directions.
+  Each ion is surrounded by ions of the opposite charge in a regular 3D **crystal lattice** (e.g. in NaCl each Na⁺ has six Cl⁻ neighbours).
+  There are no molecules — the formula (NaCl) is the simplest ratio of ions.
+**Explaining the properties**
+  **High melting points**: many strong ionic bonds must be broken throughout the lattice. NaCl melts at 801 °C.
+  **Hard**: the strong attractions resist being scratched or dented.
+  **Brittle**: if a force shifts one layer, ions of the **same** charge line up next to each other; they repel and the crystal shatters.
+  **Electrical conductivity**
+    **Solid**: does not conduct — the ions are held in fixed positions and there are no free electrons.
+    **Molten (liquid) or dissolved in water**: conducts — the ions are free to move and carry charge.
+**Comparing structures**
+  Metals: conduct as solids (electrons); malleable.
+  Ionic compounds: conduct only when molten/aqueous (ions); brittle.
+  Molecular: never conduct; low melting points.
+  Covalent networks: very high melting points; graphite is the only one that conducts.
+**Going deeper**
+  Ionic bond strength increases with higher ion charges and smaller ions (charges closer together): MgO (Mg²⁺, O²⁻) melts at 2852 °C, NaCl (Na⁺, Cl⁻) at 801 °C.
+  In NaCl each ion has six nearest neighbours of opposite charge (coordination number 6).
+  Limitations of the model: it doesn't predict which ionic compounds dissolve in water (solubility rules are needed), and real compounds show some covalent character.
+**Common mistakes**
+  Saying ionic solids conduct via electrons. In ionic compounds the charge carriers are **ions**.
+  Explaining brittleness as "weak bonds". It's the repulsion between like charges after a shift.
+**Exam tips**
+  For conductivity, always name the particles: "In the solid the ions are in fixed positions; when molten, the ions are free to move and carry charge."
+**Connections**
+  Forming ionic compounds (electron transfer) explains where the ions come from.
+  Precipitation reactions depend on which ionic compounds are insoluble.
+  Salts in water and electrical conductivity (Unit 2) use the same idea of mobile ions.
+**Practice questions**
+  Explain why MgO has a much higher melting point than NaCl.
+    Mg²⁺ and O²⁻ have double the charges of Na⁺ and Cl⁻ and are smaller, so the electrostatic attraction between them is much stronger and more energy is needed to break the lattice.
+  Why does solid NaCl not conduct electricity, while NaCl solution does?
+    In the solid, ions are fixed in the lattice. In solution, the ions are separated and free to move, so they can carry charge.
+  Explain why hitting an ionic crystal with a hammer shatters it.
+    The force shifts one layer of ions so that ions of the same charge line up next to each other; they repel strongly and the crystal splits apart.
+**Flashcards**
+  What is ionic bonding? :: The electrostatic attraction between positive and negative ions in a lattice.
+  Why do ionic compounds have high melting points? :: Many strong electrostatic attractions between ions throughout the lattice must be overcome.
+  Why are ionic compounds brittle? :: A shift in the lattice brings ions of the same charge next to each other; they repel and the crystal shatters.
+  When do ionic compounds conduct electricity, and why? :: When molten or dissolved in water, because the ions are free to move. Not when solid — the ions are fixed.
+  In an ionic compound, the charge carriers that conduct electricity are {{ions}}, not electrons.
+  Why does MgO melt higher than NaCl? :: Its ions have higher charges (2+ and 2−) and are smaller, so the attraction is stronger.
+  What is an electrolyte? :: A substance that conducts electricity when molten or dissolved, due to mobile ions.
+
+@ 09de887e U1.1.4.2 | Formulas and names of ionic compounds
+**In a sentence**
+  An ionic formula is the simplest ratio of ions that makes the total charge zero, and the name is the cation followed by the anion.
+**Key terms**
+  **Polyatomic ion**: a charged group of covalently bonded atoms that acts as a unit (e.g. SO₄²⁻).
+  **Empirical formula (for ionic compounds)**: the simplest whole-number ratio of ions.
+  **Roman numeral in a name**: the charge of a metal ion that can have more than one charge.
+**Rules for formulas**
+  The total positive charge must equal the total negative charge — the compound is neutral.
+  Write the cation first, then the anion. Use subscripts for the ratio; don't write charges in the formula.
+  **Criss-cross shortcut**: the size of each ion's charge becomes the subscript of the other ion; then simplify.
+    Al³⁺ and O²⁻ → Al₂O₃. Ca²⁺ and O²⁻ → Ca₂O₂ → CaO.
+  Put brackets around a polyatomic ion when there is more than one of it: Ca(OH)₂, (NH₄)₂SO₄, Mg₃(PO₄)₂.
+**Polyatomic ions to learn**
+  NH₄⁺ ammonium
+  OH⁻ hydroxide
+  NO₃⁻ nitrate
+  HCO₃⁻ hydrogen carbonate
+  CO₃²⁻ carbonate
+  SO₄²⁻ sulfate
+  PO₄³⁻ phosphate
+**Naming**
+  Name the cation, then the anion. A simple anion ends in **-ide**: chloride, oxide, sulfide, nitride, bromide, iodide, fluoride.
+  Polyatomic ions keep their own names: sodium hydrogen carbonate (NaHCO₃), ammonium nitrate (NH₄NO₃).
+  Transition metals with more than one possible charge show it in Roman numerals: iron(II) chloride FeCl₂, iron(III) oxide Fe₂O₃, copper(II) sulfate CuSO₄.
+**Worked example**
+  Write the formula for aluminium sulfate.
+    Ions: Al³⁺ and SO₄²⁻.
+    Charges balance with 2 × (+3) = +6 and 3 × (−2) = −6.
+    Formula: Al₂(SO₄)₃.
+**Going deeper**
+  Some useful patterns in polyatomic ion names: -ate ions contain oxygen (nitrate, sulfate, phosphate, carbonate); "hydrogen" in front means one H⁺ has been added and the charge is one less negative (CO₃²⁻ → HCO₃⁻, SO₄²⁻ → HSO₄⁻).
+  Other ions worth recognising: ethanoate CH₃COO⁻, hydrogen sulfate HSO₄⁻, dihydrogen phosphate H₂PO₄⁻, permanganate MnO₄⁻, dichromate Cr₂O₇²⁻.
+  Ammonium (NH₄⁺) is the one common polyatomic cation — its compounds behave like group 1 compounds (always soluble).
+**Worked example 2**
+  Write the formula of iron(III) hydrogen carbonate.
+    Ions: Fe³⁺ and HCO₃⁻.
+    Three HCO₃⁻ balance one Fe³⁺.
+    Formula: Fe(HCO₃)₃.
+**Common mistakes**
+  Forgetting brackets: CaOH₂ means one O and two H — wrong. Ca(OH)₂ is correct.
+  Changing a polyatomic ion's own subscripts (writing SO₃ for sulfate).
+  Naming Fe₂O₃ "iron oxide" without the Roman numeral.
+**Exam tips**
+  Check your formula by adding the charges: (NH₄)₃PO₄ → 3(+1) + (−3) = 0. If it doesn't come to zero, it's wrong.
+**Connections**
+  Forming ionic compounds explains the ion charges used here.
+  Precipitation reactions need correct formulas for balanced equations.
+  Molar mass calculations need correct formulas (Area of Study 2).
+**Practice questions**
+  Write the formula of ammonium phosphate.
+    (NH₄)₃PO₄
+  Name Cu(NO₃)₂.
+    Copper(II) nitrate
+  Write the formula of aluminium hydroxide and of potassium carbonate.
+    Al(OH)₃ and K₂CO₃
+  Name NaHCO₃ and give one everyday use.
+    Sodium hydrogen carbonate (baking soda) — a raising agent in baking or an antacid.
+**Flashcards**
+  Formula and charge of the ammonium ion? :: NH₄⁺
+  Formula and charge of the carbonate ion? :: CO₃²⁻
+  Formula and charge of the phosphate ion? :: PO₄³⁻
+  Formula and charge of the hydrogen carbonate ion? :: HCO₃⁻
+  Formula of calcium nitrate? :: Ca(NO₃)₂
+  Formula of ammonium sulfate? :: (NH₄)₂SO₄
+  Name Fe₂(SO₄)₃. :: Iron(III) sulfate
+  Formula of magnesium phosphate? :: Mg₃(PO₄)₂
+  Formula of ammonium phosphate? :: (NH₄)₃PO₄
+  Formula of iron(III) hydroxide? :: Fe(OH)₃
+
+@ f3925434 U1.1.4.3 | Forming ionic compounds
+**In a sentence**
+  When a metal meets a non-metal, electrons move from the metal to the non-metal so both reach stable arrangements, and the resulting ions attract into a lattice.
+**Key terms**
+  **Cation**: a positive ion (formed by losing electrons).
+  **Anion**: a negative ion (formed by gaining electrons).
+  **Noble gas configuration**: a full outer shell like the nearest noble gas.
+  **Transition metal**: an element in the d-block (groups 3–12).
+**Electron transfer**
+  Ionic compounds form when metal atoms **transfer** electrons to non-metal atoms.
+  Metals (low ionisation energy, few valence electrons) lose electrons to reach a stable noble-gas arrangement: Mg (2,8,2) → Mg²⁺ (2,8) + 2e⁻.
+  Non-metals (high electronegativity, nearly full shells) gain electrons: O (2,6) + 2e⁻ → O²⁻ (2,8).
+  The oppositely charged ions then attract, forming the lattice.
+**Predicting charges from the group (main-group elements)**
+  Group 1 → 1+; Group 2 → 2+; Group 13 → 3+ (Al³⁺)
+  Group 15 → 3− (N³⁻, P³⁻); Group 16 → 2− (O²⁻, S²⁻); Group 17 → 1− (F⁻, Cl⁻, Br⁻, I⁻)
+**Transition metal ions**
+  Transition metals can form ions of more than one charge, because the 4s and some 3d electrons can be lost.
+    Iron: Fe²⁺ and Fe³⁺. Copper: Cu⁺ and Cu²⁺. Also Zn²⁺, Ag⁺, Ni²⁺, Cr³⁺, Mn²⁺.
+  The Roman numeral in the name tells you which: copper(I) oxide Cu₂O vs copper(II) oxide CuO.
+**Showing the transfer**
+  Electron-dot or shell diagrams: draw the metal's valence electrons moving to the non-metal; show the ions in square brackets with charges.
+  Or with half equations: Na → Na⁺ + e⁻ and Cl₂ + 2e⁻ → 2Cl⁻, overall 2Na + Cl₂ → 2NaCl.
+**Worked example**
+  Describe how magnesium and chlorine form magnesium chloride.
+    Each Mg atom loses its two valence electrons to become Mg²⁺.
+    Each Cl atom gains one electron to become Cl⁻, so two Cl atoms are needed per Mg.
+    The ions attract in a lattice with formula MgCl₂.
+**Going deeper**
+  Why metals give electrons and non-metals take them: metals have low first ionisation energies and few valence electrons; non-metals have high electronegativity and nearly full shells. Ionic bonding happens when the electronegativity difference is large (roughly above 1.7).
+  Transition metal ions don't usually reach a noble gas configuration: Fe³⁺ is [Ar] 3d⁵. Their variable charges and partly filled d subshells also make many of their compounds coloured (e.g. Cu²⁺ blue, Fe³⁺ yellow-brown).
+  Silver (Ag⁺) and zinc (Zn²⁺) are transition metals with only one common charge, so their names don't need Roman numerals.
+**Worked example 2**
+  Show, with half equations, how aluminium and oxygen form aluminium oxide.
+    Al → Al³⁺ + 3e⁻ (×4 = 12 electrons lost)
+    O₂ + 4e⁻ → 2O²⁻ (×3 = 12 electrons gained)
+    Overall: 4Al(s) + 3O₂(g) → 2Al₂O₃(s)
+**Common mistakes**
+  Describing ionic bonding as "sharing" electrons.
+  Giving transition metals a group-based charge (e.g. saying iron is always 2+).
+**Exam tips**
+  In electron-transfer diagrams, show the correct number of electrons moving, put ions in square brackets with charges outside, and balance the ratio (e.g. one Mg²⁺ to two Cl⁻).
+**Connections**
+  Periodic table trends (ionisation energy, electronegativity) explain which atoms lose or gain electrons.
+  Redox (Unit 2): forming ionic compounds from elements is an oxidation–reduction reaction.
+  Formulas and names of ionic compounds.
+**Practice questions**
+  Write the electron configuration (shell model) of Na⁺ and Cl⁻.
+    Na⁺: 2, 8. Cl⁻: 2, 8, 8.
+  Explain why magnesium forms Mg²⁺ rather than Mg⁺.
+    Magnesium has two valence electrons (2, 8, 2); losing both gives a stable noble gas arrangement (2, 8).
+  Write the formulas of chromium(III) oxide and silver sulfide.
+    Cr₂O₃ and Ag₂S
+**Flashcards**
+  How do ionic compounds form? :: Metal atoms transfer electrons to non-metal atoms, forming oppositely charged ions that attract.
+  What charge do group 16 elements usually form as ions? :: 2− (e.g. O²⁻, S²⁻)
+  Why can transition metals form ions with different charges? :: They can lose their 4s electrons and a varying number of 3d electrons.
+  Formula of copper(I) oxide? :: Cu₂O
+  Formula of iron(III) chloride? :: FeCl₃
+  Write the half equation for a magnesium atom forming an ion. :: Mg → Mg²⁺ + 2e⁻
+  Why are many transition metal compounds coloured? :: Their partly filled d subshells absorb some visible light.
+  Overall equation for aluminium reacting with oxygen? :: 4Al(s) + 3O₂(g) → 2Al₂O₃(s)
+
+@ d1f6705c U1.1.4.4 | Precipitation reactions
+**In a sentence**
+  Mix two ionic solutions and, if any new cation–anion pairing is insoluble, it drops out as a solid precipitate — the solubility table tells you which.
+**Key terms**
+  **Precipitate**: an insoluble solid formed from a reaction in solution.
+  **Soluble / insoluble**: dissolves to a significant extent / barely dissolves in water.
+  **Spectator ion**: an ion present that doesn't change during the reaction.
+  **Ionic equation**: an equation showing only the particles that react.
+**Precipitation**
+  When two ionic solutions are mixed, a **precipitate** forms if any cation–anion combination is **insoluble**. The insoluble solid appears as cloudiness or solid.
+**General solubility rules (use the table you're given in the exam)**
+  **Soluble**: all compounds of Na⁺, K⁺ and NH₄⁺; all nitrates (NO₃⁻); all ethanoates (CH₃COO⁻).
+  **Mostly soluble**: chlorides, bromides and iodides — except with Ag⁺ and Pb²⁺.
+  **Mostly soluble**: sulfates — except BaSO₄ and PbSO₄ (CaSO₄ and Ag₂SO₄ only slightly soluble).
+  **Mostly insoluble**: carbonates, phosphates and hydroxides — except with Na⁺, K⁺, NH₄⁺ (Ba(OH)₂ is soluble, Ca(OH)₂ slightly soluble).
+  Many sulfides and oxides are insoluble.
+**Writing the equations**
+  **Full (molecular) equation**: all reactants and products as compounds, with states.
+    AgNO₃(aq) + NaCl(aq) → AgCl(s) + NaNO₃(aq)
+  **Ionic equation**: only the ions that form the precipitate. Leave out **spectator ions** (ions that stay dissolved and unchanged).
+    Ag⁺(aq) + Cl⁻(aq) → AgCl(s)
+  State symbols: (s) solid, (l) liquid, (aq) dissolved in water, (g) gas. A precipitate is always (s).
+**Method**
+  1. Write the four ions present.
+  2. Swap partners and check each new combination in the table.
+  3. The insoluble one is the precipitate; the other ions are spectators.
+  4. Balance the charges and atoms in the ionic equation.
+**Worked example**
+  Lead(II) nitrate solution is mixed with potassium iodide solution.
+    Ions: Pb²⁺, NO₃⁻, K⁺, I⁻. New pairs: PbI₂ (insoluble — yellow precipitate) and KNO₃ (soluble).
+    Full: Pb(NO₃)₂(aq) + 2KI(aq) → PbI₂(s) + 2KNO₃(aq)
+    Ionic: Pb²⁺(aq) + 2I⁻(aq) → PbI₂(s). Spectators: K⁺ and NO₃⁻.
+**Going deeper**
+  "Insoluble" is relative: AgCl dissolves only about 0.002 g per litre, but that tiny amount still matters in analysis.
+  Precipitation is used for identifying ions (tests), removing ions from water, making pigments, and gravimetric analysis (Unit 2).
+  Colours of common precipitates help identification: AgCl white, AgBr cream, AgI yellow, PbI₂ bright yellow, BaSO₄ white, Cu(OH)₂ blue, Fe(OH)₃ orange-brown, Fe(OH)₂ green.
+**Worked example 2**
+  Write the full and ionic equations for copper(II) sulfate solution mixed with sodium hydroxide solution.
+    New pairings: Cu(OH)₂ (insoluble — blue precipitate) and Na₂SO₄ (soluble).
+    Full: CuSO₄(aq) + 2NaOH(aq) → Cu(OH)₂(s) + Na₂SO₄(aq)
+    Ionic: Cu²⁺(aq) + 2OH⁻(aq) → Cu(OH)₂(s)
+**Common mistakes**
+  Leaving state symbols out, or writing the precipitate as (aq).
+  Including spectator ions in the ionic equation.
+  Writing ionic compounds that are soluble as if they were solids.
+**Exam tips**
+  Balance charge as well as atoms in ionic equations, and always include state symbols — both usually carry marks.
+**Connections**
+  Formulas of ionic compounds are needed to predict products.
+  Precipitation to remove impurities from water and gravimetric analysis (Unit 2) use the same reactions.
+**Practice questions**
+  Will a precipitate form when sodium chloride solution is added to potassium nitrate solution? Explain.
+    No — the possible new pairings (NaNO₃ and KCl) are both soluble, so all ions stay in solution.
+  Write the ionic equation for the reaction of barium nitrate with sodium carbonate solutions.
+    Ba²⁺(aq) + CO₃²⁻(aq) → BaCO₃(s)
+  How could you tell apart solutions of sodium chloride and sodium sulfate?
+    Add barium chloride (or barium nitrate) solution: sodium sulfate gives a white precipitate of BaSO₄; sodium chloride gives none. (Or add silver nitrate: chloride gives white AgCl.)
+**Flashcards**
+  What is a precipitate? :: An insoluble solid formed when two solutions are mixed.
+  What are spectator ions? :: Ions present in the solution that don't take part in the reaction; they're left out of the ionic equation.
+  Ionic equation for silver nitrate + sodium chloride? :: Ag⁺(aq) + Cl⁻(aq) → AgCl(s)
+  Ionic equation for lead(II) nitrate + potassium iodide? :: Pb²⁺(aq) + 2I⁻(aq) → PbI₂(s)
+  Which ions form soluble compounds with every anion (in the VCE rules)? :: Na⁺, K⁺ and NH₄⁺. (All nitrates are also soluble.)
+  Barium chloride solution is added to sodium sulfate solution. Ionic equation? :: Ba²⁺(aq) + SO₄²⁻(aq) → BaSO₄(s)
+  The state symbol for a substance dissolved in water is {{(aq)}}.
+  Ionic equation for CuSO₄(aq) + NaOH(aq)? :: Cu²⁺(aq) + 2OH⁻(aq) → Cu(OH)₂(s)
+  Colour of a lead(II) iodide precipitate? :: Bright yellow.
+
+@ e77fc227 U1.1.5.1 | Polarity and solubility
+**In a sentence**
+  A substance dissolves when the attractions it can form with the solvent are about as strong as the ones it has to break, so polar goes with polar and non-polar with non-polar.
+**Key terms**
+  **Solute / solvent / solution**: what dissolves / what it dissolves in / the mixture.
+  **Miscible**: liquids that mix in all proportions (ethanol and water). **Immiscible**: liquids that form separate layers (oil and water).
+  **Hydration**: water molecules surrounding dissolved ions or polar molecules.
+  **Ion–dipole attraction**: the attraction between an ion and the partial charges of polar molecules.
+**"Like dissolves like"**
+  **Polar solutes dissolve in polar solvents** (e.g. sugar, ethanol, salts in water).
+  **Non-polar solutes dissolve in non-polar solvents** (e.g. oil or wax in hexane).
+  Polar and non-polar substances don't mix well (oil floats on water as a separate layer).
+**Why**
+  To dissolve, the attractions between solute and solvent particles must be comparable to the attractions they replace (solute–solute and solvent–solvent).
+  Water molecules are strongly attracted to each other by hydrogen bonds. A non-polar molecule can only form weak dispersion forces with water, so it can't break into the hydrogen-bonded network.
+  Polar solutes form dipole–dipole or hydrogen bonds with water, which compensate for the forces broken.
+  Ionic compounds dissolve in water through **ion–dipole** attractions: the δ− O ends of water surround cations, and δ+ H ends surround anions (hydration).
+**Molecules with both parts**
+  Alcohols have a polar –OH and a non-polar hydrocarbon chain. Small alcohols (methanol, ethanol) are fully soluble in water; solubility falls as the non-polar chain gets longer.
+  Soaps and detergents have a polar head and non-polar tail, so they let oil and water mix.
+**Going deeper**
+  Dissolving is a trade: solute–solute and solvent–solvent attractions are broken, and solute–solvent attractions form. If the new attractions are much weaker, dissolving doesn't happen to any great extent.
+  Not all ionic compounds dissolve: when the lattice is very strong (e.g. CaCO₃, BaSO₄), hydration can't compensate, so they are insoluble — that's why solubility tables are needed.
+  Detergents and soaps: a long non-polar tail dissolves in grease; a polar or ionic head dissolves in water; they form micelles that carry grease away.
+  Dry-cleaning uses non-polar solvents for stains that water can't dissolve.
+**Common mistakes**
+  Saying non-polar substances don't dissolve in water "because water rejects them". Explain it with the forces.
+  Forgetting that ionic solids dissolve through ion–dipole attractions.
+**Exam tips**
+  Explain solubility in terms of forces: name the forces between solute and solvent and compare them with the forces that must be overcome.
+**Connections**
+  Polarity of molecules decides which solvents work.
+  Chromatography separates substances using differences in polarity and solubility.
+  Water as a solvent and solubility curves (Unit 2).
+**Practice questions**
+  Explain why iodine dissolves in hexane but only slightly in water.
+    Iodine and hexane are both non-polar and attract through dispersion forces of similar strength. Iodine can't form attractions with water strong enough to replace water's hydrogen bonds.
+  Why are methanol and water miscible?
+    Methanol has an –OH group that forms hydrogen bonds with water, and its non-polar part is very small.
+  Explain how water dissolves potassium chloride.
+    The δ− oxygen ends of water molecules attract K⁺ ions, and the δ+ hydrogen ends attract Cl⁻ ions (ion–dipole attractions), pulling ions from the lattice and surrounding them.
+**Flashcards**
+  What does "like dissolves like" mean? :: Polar solutes dissolve in polar solvents; non-polar solutes dissolve in non-polar solvents.
+  Why doesn't oil dissolve in water? :: Oil is non-polar and can only form weak dispersion forces with water, which can't compensate for breaking water's strong hydrogen bonds.
+  How does water dissolve an ionic compound? :: Ion–dipole attractions: the δ− O of water surrounds cations and the δ+ H surrounds anions, pulling ions out of the lattice.
+  Why is ethanol soluble in water but octan-1-ol is not? :: Both have a polar –OH that hydrogen bonds with water, but octanol's long non-polar chain dominates.
+  Ionic compounds dissolve in water by forming {{ion–dipole}} attractions.
+  What does miscible mean? :: Liquids that mix completely in all proportions.
+  How does soap remove grease? :: Its non-polar tail dissolves in the grease and its polar head in water, so grease is carried away in micelles.
+
+@ 8e042420 U1.1.5.2 | Chromatography and Rf values
+**In a sentence**
+  Chromatography separates a mixture because each component shares its time differently between a stationary phase it sticks to and a mobile phase that carries it, so they travel different distances.
+**Key terms**
+  **Stationary phase**: the phase that doesn't move (paper, or silica/alumina on a TLC plate).
+  **Mobile phase**: the solvent that moves through the stationary phase.
+  **Adsorption**: attraction of a component to the surface of the stationary phase.
+  **Desorption**: a component leaving the stationary phase and dissolving back into the mobile phase.
+  **Rf value**: distance moved by a component ÷ distance moved by the solvent front.
+  **Solvent front**: the furthest point the solvent reaches.
+**How chromatography works**
+  A mixture is separated using a **stationary phase** (paper or a coated plate that stays still) and a **mobile phase** (a solvent that moves through it).
+  Components move at different speeds depending on the balance between:
+    **adsorption** — how strongly they stick to the stationary phase (slows them), and
+    **solubility (desorption)** — how well they dissolve in the mobile phase (carries them along).
+  Components more attracted to the stationary phase move less; components more soluble in the mobile phase move further.
+**Paper and thin-layer chromatography (TLC)**
+  Draw a baseline in **pencil** (ink would separate too). Spot the samples on it.
+  Stand the paper in solvent with the solvent level **below** the baseline (or the spots dissolve into the solvent).
+  Cover the container so the solvent vapour saturates the air.
+  Remove when the solvent front is near the top; mark the solvent front straight away.
+  Colourless spots can be seen with UV light or a developing agent (e.g. iodine, ninhydrin).
+**Rf value**
+  $R_f = \frac{\text{distance moved by the component}}{\text{distance moved by the solvent front}}$
+  Both distances are measured from the baseline. Rf has no units and is always between 0 and 1.
+  Rf depends on the solvent, stationary phase and temperature, so compare with standards run on the **same** plate.
+**Identification and purity**
+  A component is identified by matching its Rf (and colour) to a known standard under the same conditions.
+  A **pure** substance gives one spot. More than one spot means the sample is a mixture.
+  One spot does not prove purity — two substances could have the same Rf in that solvent. Try a second solvent to check.
+**Polarity and Rf**
+  Paper and silica are polar. A polar component is attracted more strongly to a polar stationary phase, so it has a **lower** Rf.
+  A more polar solvent carries polar components further, increasing their Rf.
+**Worked example**
+  The solvent front moved 8.0 cm; a red spot moved 5.2 cm. Find the Rf.
+    Rf = 5.2 ÷ 8.0 = 0.65
+**Going deeper**
+  Components are constantly adsorbing and desorbing. One that spends more time adsorbed moves slowly (low Rf); one that spends more time dissolved in the mobile phase moves fast (high Rf).
+  Thin-layer chromatography (TLC) is faster and gives sharper spots than paper; column chromatography uses the same idea to separate larger amounts.
+  Changing the solvent changes Rf values, so a pair of substances that doesn't separate in one solvent may separate in another — this is also how you check purity more carefully.
+  Uses: testing food colourings, forensic ink comparison, checking drug purity, identifying amino acids (with ninhydrin).
+**Worked example 2**
+  A food colouring gives two spots with Rf 0.30 and 0.72; standards of dyes A (Rf 0.72), B (0.45) and C (0.30) are run on the same paper. What does the colouring contain?
+    Match Rf values: 0.72 = A, 0.30 = C.
+    The colouring contains dyes A and C, not B.
+**Common mistakes**
+  Measuring from the bottom of the paper instead of the baseline.
+  Putting the baseline below the solvent level.
+  Giving Rf units, or a value greater than 1.
+**Exam tips**
+  Show your Rf working with both distances and give the answer to two significant figures (or match the data); no units.
+**Connections**
+  Polarity and solubility explain why components move different distances.
+  Scientific investigations: chromatography is a common practical in the Area of Study 3 investigation.
+**Practice questions**
+  A spot moves 3.6 cm while the solvent front moves 9.0 cm. Calculate its Rf.
+    Rf = 3.6 ÷ 9.0 = 0.40
+  Why must the chromatography container be covered?
+    So the air inside becomes saturated with solvent vapour and the solvent doesn't evaporate from the paper, which would give uneven, unreliable results.
+  On silica (polar), component X has Rf 0.8 and Y has Rf 0.2. Which is more polar? Explain.
+    Y. It is attracted more strongly to the polar stationary phase, so it spends more time adsorbed and moves less.
+  A sample gives one spot. Can you conclude it is pure?
+    No — two substances could have the same Rf in that solvent. Running it again in a different solvent would give stronger evidence.
+**Flashcards**
+  What are the stationary and mobile phases in paper chromatography? :: Stationary: the paper (cellulose with water). Mobile: the solvent moving up the paper.
+  Formula for the Rf value? :: Rf = distance moved by the component ÷ distance moved by the solvent front (both from the baseline).
+  Why is the baseline drawn in pencil? :: Pencil (graphite) doesn't dissolve and move in the solvent; ink would separate and interfere.
+  How can chromatography show a substance is impure? :: It produces more than one spot.
+  On a polar stationary phase, a more polar component has a {{lower}} Rf value.
+  Why must the solvent level start below the baseline? :: Otherwise the sample spots dissolve into the solvent in the container instead of moving up the paper.
+  What two processes decide how far a component moves? :: Adsorption onto the stationary phase and desorption (solubility) into the mobile phase.
+  Rf of a spot that moved 3.6 cm when the solvent front moved 9.0 cm? :: 0.40
+  Why run a chromatogram in a second solvent? :: Two substances might have the same Rf in one solvent; a second solvent can separate them.

@@ -1,0 +1,740 @@
+% VCE English Language — Unit 1, Area of Study 2: language acquisition.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ 18e1e303 U1.2.1.1 | Stages of language development
+**In a sentence**
+  Children move through predictable stages — crying, cooing, babbling, one word, two words, telegraphic speech, then full sentences — while additional-language learners build a developing "interlanguage" shaped by the language they already know.
+**Key terms**
+  **Pre-linguistic stage**: the period before a child's first words (crying, cooing, babbling).
+  **Cooing**: vowel-like sounds made from about 6–8 weeks.
+  **Babbling**: consonant–vowel syllables ("ba", "da") from about 6 months, reduplicated ("ba-ba") then variegated ("ba-da").
+  **Holophrastic (one-word) stage**: single words that do the work of whole sentences.
+  **Two-word stage**: combining two words to express relationships ("more milk").
+  **Telegraphic stage**: short utterances of content words with function words and inflections left out ("me want biscuit").
+  **Interlanguage**: an additional-language learner's developing system, with its own rules, between the first language and the target language.
+**First-language stages (ages vary widely)**
+  **Crying** (from birth): the first vocal communication — different cries for hunger, pain, discomfort.
+  **Cooing** (about 6–8 weeks): vowel-like sounds such as "ooo", "aaa", often in response to a carer.
+  **Babbling** (about 6–12 months): reduplicated babble ("mamama") then variegated babble ("badagu"). Babbling gradually narrows to the sounds of the home language; deaf infants exposed to sign "babble" with their hands.
+  **Holophrastic** (about 12–18 months): first words, mostly nouns for people, food, animals and toys, plus social words ("bye", "no"). "Juice!" can mean "I want juice" or "That's juice".
+  **Two-word** (about 18–24 months): "Daddy gone", "big dog", "my ball" — expressing relations such as agent–action, possession and description. Vocabulary grows rapidly (the "vocabulary spurt").
+  **Telegraphic** (about 24–36 months): "Mummy go shop", "Me want that" — word order is mostly right, but function words (articles, auxiliaries) and inflections are missing.
+  **Post-telegraphic** (3 years+): function words and inflections appear; questions, negatives and complex sentences develop; over-generalisations ("goed", "mouses") show rules being learned; by about 5 a child has a large vocabulary and most adult grammar.
+**Additional-language learners**
+  A **silent period**, often in young children, when the learner listens more than speaks.
+  **Formulaic chunks** learned whole ("How are you?", "I don't know").
+  **Interlanguage**: rule-governed but different from the target ("He go yesterday") — it develops as the learner's rules change.
+  **Transfer** from the first language: accent, word order, missing articles (e.g. speakers of languages without articles such as Mandarin or Vietnamese).
+  **Fossilisation**: some features stop changing, even after years.
+**Worked example**
+  A child says "Doggie run!" and "Mummy shoe". Identify the stage and explain.
+    Two-word stage (about 18–24 months).
+    Each utterance combines two content words expressing a relationship: agent–action ("Doggie run") and possession ("Mummy shoe" = Mummy's shoe).
+    Function words and inflections are absent — "the", "is", "-ing", possessive "-'s".
+**Going deeper**
+  Stages are a description of typical development, not strict boxes: children overlap stages, and the ages vary a lot between children without any problem.
+  Comprehension runs ahead of production — toddlers understand far more words than they say.
+**Worked example 2**
+  An adult learner of English says, "Yesterday I go to shop and buy the rice." Explain two features using the idea of interlanguage.
+    The missing past-tense inflections ("go", "buy") show a rule still developing — the learner marks time with "Yesterday" instead.
+    The article is missing before "shop" and an unneeded "the" appears before "rice" — typical of transfer from a first language without English-style articles.
+    These aren't random errors: they follow the learner's current rules.
+**Common mistakes**
+  Giving exact ages as if every child is the same. Always say "about" and allow for variation.
+  Calling babbling "meaningless noise" — it practises the sounds of the home language.
+  Calling a learner's patterned errors "random mistakes".
+**Exam tips**
+  Name the stage, give the approximate age, and point to features in the sample (word count, missing function words, over-generalisation) as evidence.
+**Connections**
+  Development across the subsystems: what changes at each stage in phonology, morphology, lexis, syntax and semantics.
+  Universal grammar and usage-based theories: how each explains the stages.
+  Child and adult learning compared.
+**Practice questions**
+  Describe the telegraphic stage and give an example.
+    At about 2–3 years, children produce short utterances of mainly content words in the correct order but without function words and inflections, like a telegram: "Daddy go work", "Me want that".
+  What is the holophrastic stage and why is it given that name?
+    At about 12–18 months, children use single words to express whole ideas; "holophrase" means a whole phrase in one word ("Up!" = "Pick me up").
+  Explain what interlanguage is.
+    The developing language system of an additional-language learner. It has its own rules — influenced by the first language and by the learner's hypotheses about the target — and changes as they learn.
+**Flashcards**
+  Order the first-language stages. :: Crying, cooing, babbling, holophrastic, two-word, telegraphic, post-telegraphic.
+  When does babbling typically begin? :: About 6 months.
+  "Me want biscuit" is typical of the {{telegraphic}} stage.
+  What is a holophrase? :: A single word used to express a whole idea.
+  Reduplicated vs variegated babbling? :: Reduplicated repeats a syllable ("bababa"); variegated mixes syllables ("badagu").
+  What is the silent period? :: A time when an additional-language learner listens more than speaks.
+  What is fossilisation? :: Features of a learner's interlanguage that stop changing.
+  Why do comprehension and production differ? :: Children understand many more words than they can say.
+
+@ ccdd24f6 U1.2.1.2 | Universal grammar and usage-based theories
+**In a sentence**
+  Universal grammar says children are born with an innate grammar that input simply switches on; usage-based accounts say children build language from what they hear, using general skills for reading intentions and finding patterns.
+**Key terms**
+  **Universal grammar (UG)**: Noam Chomsky's theory that humans are born with knowledge of the principles shared by all languages.
+  **Language Acquisition Device (LAD)**: the innate mental faculty Chomsky proposed for acquiring language.
+  **Poverty of the stimulus**: the argument that the language children hear is too limited and messy to explain the grammar they acquire.
+  **Principles and parameters**: universal principles, plus parameters (options) set by the language a child hears — e.g. verb before or after its object.
+  **Usage-based accounts**: theories (associated with Michael Tomasello) that language is learned from use through general cognitive skills.
+  **Intention-reading**: understanding what others mean and are attending to (joint attention).
+  **Pattern-finding**: noticing regularities in what's heard and generalising from them.
+**Universal grammar (nativist)**
+  Children are born "wired" for language; the environment triggers it.
+  Evidence claimed:
+    Poverty of the stimulus — children learn rules nobody teaches them, and hear ungrammatical adult speech yet still acquire the grammar.
+    Speed and uniformity — all normally developing children acquire their language in a few years, through similar stages, whatever the culture.
+    Creative errors — "goed", "mouses": children apply rules they haven't heard, rather than copying.
+    Children resist correction ("Nobody don't like me" repeated after correction).
+    Creoles and new sign languages (Nicaraguan Sign Language) developed grammar when children were the learners.
+    A critical period.
+  Criticisms: UG is hard to test; its content has kept changing; it plays down the rich interaction children get; languages vary more than expected.
+**Usage-based (social-cognitive)**
+  Language is learned, like other skills, from **usage** — the language children hear in interaction.
+  **Intention-reading**: joint attention (looking at the same thing), pointing, following gaze — infants learn words by working out what the speaker means.
+  **Pattern-finding**: children track how often things occur and build categories: first item-based phrases ("more juice", "more bikkie" → "more X"), then broader constructions.
+  Evidence: early grammar is tied to specific words; children's language mirrors the frequency of what they hear; joint attention at 12–18 months predicts vocabulary; children with more child-directed talk develop faster.
+  Criticisms: struggles to explain how children avoid over-generalising wrongly, and how they learn structures that are rare in input.
+**Using samples as evidence**
+  Over-generalisations ("I runned") → support UG (rule-application) but usage-based accounts explain them as pattern-finding from frequent regular forms.
+  Item-based phrases tied to particular words ("Where's Daddy?", "Where's ball?") → support usage-based accounts.
+  Rapid, uniform development despite little explicit teaching → cited for UG.
+**Worked example**
+  A 2½-year-old says "Two foots!" after hearing "two cats", "two dogs". Explain how each theory accounts for this.
+    UG: the child has an innate capacity for grammatical rules and has applied a plural rule (-s) productively — it can't be imitation, because adults don't say "foots".
+    Usage-based: the child has found the frequent pattern "noun + -s = more than one" from the input and generalised it before learning the irregular exception.
+**Going deeper**
+  Chomsky's ideas date from the late 1950s and 1960s, partly as a reply to B. F. Skinner's behaviourist view that language is learned by imitation and reinforcement. Tomasello's usage-based theory was set out in "Constructing a Language" (2003).
+  The theories aren't always opposites: many researchers accept some innate readiness for language and a large role for input and interaction.
+**Common mistakes**
+  Saying UG means children need no input. They need input to set parameters and learn vocabulary.
+  Saying usage-based means "imitation". It involves active pattern-finding and intention-reading, not copying.
+  Claiming a sample "proves" a theory. Samples provide evidence that supports or challenges a theory.
+**Exam tips**
+  Name the theory and the key idea, then link a specific feature of the sample to it: "The over-generalised 'goed' supports UG because…".
+  In a discussion, weigh both theories and reach a judgement.
+**Connections**
+  Stages of language development: each theory explains the stages differently.
+  The critical period: part of the case for UG.
+  Development across the subsystems: over-generalisation in morphology and semantics.
+**Practice questions**
+  Outline the poverty of the stimulus argument.
+    The language children hear is incomplete, full of errors and false starts, and rarely includes explicit correction of grammar, yet children still acquire a complex, rule-governed grammar. Chomsky argued this means some grammatical knowledge must be innate.
+  Explain the role of intention-reading in usage-based accounts.
+    Children learn words by understanding what others mean: through joint attention, pointing and following gaze they work out which object or action a speaker is referring to, and link the word to it.
+  How might each theory explain the rapid growth of vocabulary around 18 months?
+    UG: the innate language faculty is maturing and the child is ready to map words onto concepts quickly. Usage-based: improving joint attention and pattern-finding, combined with lots of input, let the child learn words faster.
+  "Where's ball? Where's Daddy? Where's cup?" Which theory does this pattern support? Explain.
+    Usage-based accounts: the child uses a fixed frame ("Where's ___?") learned from input and fills the slot with different words — an item-based construction built from use.
+**Flashcards**
+  Who proposed universal grammar? :: Noam Chomsky.
+  What is the LAD? :: The Language Acquisition Device — an innate faculty for acquiring language, proposed by Chomsky.
+  Whose theory is the usage-based account? :: Michael Tomasello (and others).
+  The two key skills in usage-based accounts are {{intention-reading}} and {{pattern-finding}}.
+  What is poverty of the stimulus? :: The argument that input is too limited to explain the grammar children acquire, so some must be innate.
+  How does UG explain "goed"? :: The child applies an innate capacity for rules — the past-tense rule — to an irregular verb.
+  What is joint attention? :: A child and adult attending to the same thing — vital for learning words in usage-based accounts.
+  What are item-based constructions? :: Early frames tied to specific words, like "more ___".
+
+@ 85f60740 U1.2.1.3 | Child and adult language learning
+**In a sentence**
+  Young children pick up languages naturally within a critical period, while adults usually learn them more deliberately and rarely reach native-like pronunciation — and growing up with several languages is normal, not confusing.
+**Key terms**
+  **Critical period hypothesis**: the idea that there is a window (roughly birth to puberty) during which language can be acquired naturally and fully.
+  **First language (L1)**: a language acquired from birth.
+  **Additional language (L2)**: a language learned after the first.
+  **Simultaneous bilingualism**: acquiring two languages from birth.
+  **Sequential bilingualism**: learning a second language after the first is established.
+  **Multilingualism**: using more than two languages.
+**The critical period**
+  Eric Lenneberg (1967) proposed that the brain is especially ready for language until about puberty.
+  Evidence:
+    **Genie** — found in Los Angeles in 1970, aged 13, after extreme isolation; she learned many words but never mastered grammar.
+    Deaf children who get access to sign language late show lasting grammatical difficulties compared with those exposed early.
+    Migrants who arrive as young children usually sound native; those who arrive as adults usually keep an accent (Johnson and Newport, 1989, found grammar skills declined with age of arrival).
+  Cautions: cases like Genie involve abuse and trauma, so language can't be separated from other harm; "sensitive period" may be more accurate than a sharp cut-off.
+**Children vs adults**
+  Children: acquire implicitly through immersion and interaction; native-like pronunciation; slower at first with vocabulary but eventually complete.
+  Adults: learn explicitly (rules, study), use their first language and literacy, may progress faster at first, often keep an accent and some fossilised errors; motivation and exposure matter greatly.
+**Bilingual and multilingual children**
+  Simultaneous bilinguals reach milestones in the normal range across their two languages combined; mixing languages is normal and systematic.
+  Sequential bilinguals often go through a silent period, then transfer skills from their first language.
+  Myths: bilingualism doesn't cause language delay or confusion; keeping the home language supports learning English.
+  In Australia, over a fifth of people use a language other than English at home (2021 Census: about 22%), the most common being Mandarin, Arabic and Vietnamese.
+**Worked example**
+  Anh moved from Vietnam to Melbourne aged 4, her father aged 35. Twenty years later, she sounds like any Melbourne speaker, while he still has a strong accent. Explain using the critical period hypothesis.
+    Anh began learning English within the critical period, when phonology is acquired naturally from immersion, so she developed native-like pronunciation.
+    Her father began after puberty; learning was more explicit and shaped by his Vietnamese phonology, so features of his first language persist (transfer and fossilisation).
+**Going deeper**
+  The critical period seems strongest for phonology (accent) and grammar, and weakest for vocabulary — adults keep learning new words all their lives.
+  "Feral children" such as Victor of Aveyron (France, c. 1800) are often cited, but their cases are poorly documented.
+**Common mistakes**
+  Saying adults "can't" learn languages. They can learn them well; native-like accent and some grammar are what's hard.
+  Presenting Genie's case as clear proof. Her severe deprivation affected far more than language.
+  Treating bilingual code mixing as confusion.
+**Exam tips**
+  Compare on specific points (pronunciation, grammar, method of learning, speed, outcome) rather than general statements.
+**Connections**
+  Stages of language development: for first- and additional-language learners.
+  Universal grammar: the critical period supports an innate, time-limited capacity.
+  Code switching in language learning.
+**Practice questions**
+  Explain the critical period hypothesis and give one piece of evidence.
+    It proposes a window up to about puberty when language can be acquired naturally and fully. Genie, isolated until 13, learned vocabulary but never full grammar, suggesting the window had closed.
+  Give two differences between child and adult additional-language learning.
+    Children acquire implicitly through immersion and usually reach native-like pronunciation; adults learn more explicitly, draw on their first language and literacy, and usually keep an accent.
+  A parent worries that speaking Arabic at home will delay their child's English. What does research suggest?
+    Bilingualism doesn't cause delay or confusion; children develop both languages normally, and a strong home language supports learning English.
+**Flashcards**
+  Who proposed the critical period hypothesis? :: Eric Lenneberg (1967).
+  Roughly when does the critical period end? :: Around puberty.
+  Acquiring two languages from birth is {{simultaneous}} bilingualism.
+  What does the case of Genie suggest? :: Grammar may not be fully acquired if exposure begins after the critical period.
+  Why is Genie's case limited evidence? :: Her abuse and deprivation affected more than language.
+  Which aspect of language is most affected by the critical period? :: Pronunciation (phonology), then grammar.
+  About what share of Australians use a language other than English at home? :: About 22% (2021 Census).
+
+@ aad23e97 U1.2.1.4 | Code switching in language learning
+**In a sentence**
+  Code switching is moving between languages in one conversation, and for learners it's a normal, skilled strategy for filling gaps, matching the listener and showing what they know — not a sign of confusion.
+**Key terms**
+  **Code switching**: alternating between two or more languages (or varieties) within a conversation.
+  **Code**: a language or variety of a language.
+  **Intra-sentential switching**: switching within a sentence.
+  **Inter-sentential switching**: switching between sentences.
+  **Lexical gap**: a word the speaker doesn't know (or that doesn't exist) in the language they're using.
+**Why learners code switch**
+  To fill a lexical gap: "Can I have the cuchara? The spoon!"
+  To match the listener: speaking Italian to Nonna and English to a friend, sometimes in the same breath.
+  Because a word fits the context better in one language (a food, a family term, a school word).
+  For emphasis or quotation: repeating a command in the home language to make it stronger.
+  To show identity and belonging to a bilingual group (studied more in Units 3–4).
+**What it shows about acquisition**
+  Switches follow rules — bilingual children switch at points where both languages' grammars allow it, showing knowledge of both systems.
+  Young bilinguals adjust their language to the person they're talking to by about age 2.
+  It is part of normal bilingual development, not a failure to separate languages.
+**Worked example**
+  A 5-year-old says, "Mum, can I have more pho? It's so ngon!" Explain the code switching.
+    "pho" — a culturally specific food word used in its Vietnamese form; it has no English equivalent in everyday use.
+    "ngon" (Vietnamese "delicious") — an intra-sentential switch, perhaps because it's the word used for food at home, or for emphasis.
+    The switch fits both grammars (an adjective after "so"), showing the child knows the structure of both languages.
+**Going deeper**
+  Code switching and "code mixing" are sometimes distinguished (mixing within a sentence or word), but VCE uses code switching for both.
+  In the study design's metalanguage table, code switching appears in Unit 1 as language learning and again in Unit 4 as a marker of group membership and belonging.
+**Common mistakes**
+  Treating code switching as a deficit or confusion.
+  Assuming only learners code switch — fluent bilinguals do it constantly.
+  Not explaining the reason for the particular switch.
+**Exam tips**
+  For each switch, identify where it happens (within or between sentences) and suggest a reason (gap, listener, emphasis, identity).
+**Connections**
+  Child and adult learners: bilingual development.
+  Stages of development for additional-language learners.
+  Units 3–4: code switching as a marker of identity.
+**Practice questions**
+  Define code switching and give an example.
+    Alternating between languages within a conversation, e.g. "I'll see you at the festa, OK?" using Italian "festa" (party) in an English sentence.
+  Give two reasons a language learner might code switch.
+    To fill a lexical gap when they don't know the word in the language they're using, and to match their listener (using the language the listener speaks).
+  Why do linguists argue code switching shows competence rather than confusion?
+    Switches follow the grammatical rules of both languages and are adjusted to the listener, which shows the speaker knows both systems and when to use them.
+**Flashcards**
+  Define code switching. :: Alternating between two or more languages or varieties within a conversation.
+  Switching within one sentence is {{intra-sentential}} switching.
+  What is a lexical gap? :: A word the speaker doesn't have in the language they're using.
+  Is code switching a sign of confusion? :: No — it follows rules and shows knowledge of both languages.
+  By what age do bilingual children adjust language to their listener? :: About 2.
+  Give a reason for code switching besides a lexical gap. :: To match the listener, for emphasis, or to show identity.
+  Inter-sentential switching happens {{between}} sentences.
+
+@ 1777f3d4 U1.2.1.5 | Phonetics, phonology and the IPA
+**In a sentence**
+  The IPA gives each speech sound one symbol, and consonants are described by voicing, place and manner of articulation, vowels by height, backness and lip rounding — using the Harrington, Cox and Evans system for Australian English.
+**Key terms**
+  **International Phonetic Alphabet (IPA)**: a set of symbols with one symbol for each speech sound.
+  **Voicing**: whether the vocal folds vibrate (voiced, e.g. /b/) or not (voiceless, e.g. /p/).
+  **Place of articulation**: where in the vocal tract a consonant is made.
+  **Manner of articulation**: how the airflow is shaped or stopped.
+  **Monophthong**: a vowel with one steady quality.
+  **Diphthong**: a vowel that glides from one quality to another.
+  **Phonemic transcription**: broad transcription of the sounds that change meaning, in /slashes/.
+  **Phonetic transcription**: narrow transcription of the actual sounds produced, in [square brackets].
+**Why the IPA?**
+  English spelling is inconsistent: "ough" in "tough", "though", "through", "cough"; the sound /f/ in "fish", "phone", "laugh".
+  One symbol per sound lets us record exactly what someone said — essential for child language.
+  VCE uses the Harrington, Cox and Evans (1997) system for Australian English (HCE).
+**Consonants — voicing, place, manner**
+  Place (from the lips back):
+    Bilabial (both lips): /p b m w/.
+    Labiodental (lip and teeth): /f v/.
+    Dental (tongue and teeth): /θ/ "thin", /ð/ "then".
+    Alveolar (tongue and the ridge behind the teeth): /t d s z n l ɹ/.
+    Post-alveolar (just behind the ridge): /ʃ/ "ship", /ʒ/ "beige", /tʃ/ "chip", /dʒ/ "judge".
+    Palatal (hard palate): /j/ "yes".
+    Velar (soft palate): /k ɡ ŋ/ ("sing" ends in /ŋ/).
+    Glottal (vocal folds): /h/, and the glottal stop [ʔ] ("bu'er" for "butter").
+  Manner:
+    Stops (plosives): air completely blocked then released — /p b t d k ɡ/.
+    Fricatives: air forced through a narrow gap — /f v θ ð s z ʃ ʒ h/.
+    Affricates: a stop released into a fricative — /tʃ dʒ/.
+    Nasals: air through the nose — /m n ŋ/.
+    Approximants: articulators close but not enough for friction — /w j ɹ/ and the lateral /l/.
+  Voicing pairs: /p–b/, /t–d/, /k–ɡ/, /f–v/, /θ–ð/, /s–z/, /ʃ–ʒ/, /tʃ–dʒ/. Nasals and approximants are voiced.
+  Full description order: voicing + place + manner. /b/ = voiced bilabial stop; /s/ = voiceless alveolar fricative; /ŋ/ = voiced velar nasal.
+**Vowels — height, backness, rounding (HCE)**
+  Long monophthongs: /iː/ heed, /ɐː/ hard, /oː/ hoard, /ʉː/ who'd, /ɜː/ herd, /eː/ hair.
+  Short monophthongs: /ɪ/ hid, /e/ head, /æ/ had, /ɐ/ mud, /ɔ/ pod, /ʊ/ hood, /ə/ the (schwa, in unstressed syllables).
+  Diphthongs: /æɪ/ say, /ɑe/ high, /oɪ/ toy, /əʉ/ so, /æɔ/ how, /ɪə/ here, /ʊə/ cure.
+  Height: high (/iː/) to low (/æ/, /ɐː/). Backness: front (/iː/, /e/) to back (/oː/, /ɔ/). Rounding: lips rounded (/oː/, /ʉː/) or spread (/iː/).
+  /iː/ = high front unrounded vowel; /oː/ = mid-high back rounded.
+**Connected speech processes (Unit 1)**
+  Assimilation: a sound becomes more like its neighbour — "ten bikes" /tem bɑeks/.
+  Vowel reduction: unstressed vowels become schwa — "to" in "going to go" /tə/.
+  Elision: a sound is left out — "camera" /kæmɹə/, "family" /fæmli/.
+  Insertion: a sound is added — linking r in "law and order" /loːɹ ənd oːdə/.
+**Worked example**
+  Transcribe "fish and chips" phonemically (HCE) and describe the first consonant.
+    /fɪʃ ən tʃɪps/ — "and" reduced to /ən/ in connected speech (vowel reduction and elision of /d/).
+    /f/ is a voiceless labiodental fricative.
+**Going deeper**
+  HCE uses /ʉː/ for "who'd" because the Australian vowel is central rather than back, and /ɐː/ for "hard", reflecting how Australians actually pronounce these vowels rather than British spelling-based symbols.
+  Australian /t/ between vowels is often a quick tap, which is why "water" and "wader" can sound alike.
+**Worked example 2**
+  A child says [tɐn] for "sun". Describe the change.
+    Target /s/ is a voiceless alveolar fricative; the child produced [t], a voiceless alveolar stop.
+    Voicing and place are unchanged; only the manner changed (fricative → stop). This is called stopping.
+**Common mistakes**
+  Transcribing from spelling ("knee" as /kniː/ instead of /niː/).
+  Forgetting that "th" is two different sounds, /θ/ (thin) and /ð/ (then).
+  Using slashes and brackets interchangeably.
+  Describing a consonant without all three parts (voicing, place, manner).
+**Exam tips**
+  Learn the consonant chart by place and manner; practise describing sounds in the order voicing–place–manner.
+  When comparing a child's sound with the target, say which of the three features changed.
+**Connections**
+  Introducing phonology and discourse: phonology as a subsystem.
+  Development across the subsystems: speech sound development.
+  Interpreting samples and IPA transcriptions (key skill).
+**Practice questions**
+  Describe /d/ and /ŋ/ using voicing, place and manner.
+    /d/: voiced alveolar stop. /ŋ/: voiced velar nasal.
+  Transcribe "cat" and "sheep" phonemically in HCE.
+    /kæt/ and /ʃiːp/.
+  Explain why linguists use the IPA rather than English spelling.
+    English spelling represents the same sound in different ways and different sounds with the same letters; the IPA uses one symbol per sound, so speech can be recorded exactly.
+  Name and explain the connected speech process in "handbag" pronounced /hæmbæɡ/.
+    Assimilation (and elision): the /d/ is dropped and /n/ becomes bilabial /m/ to match the following bilabial /b/.
+**Flashcards**
+  Three features used to describe a consonant? :: Voicing, place of articulation, manner of articulation.
+  Describe /p/. :: Voiceless bilabial stop.
+  Describe /v/. :: Voiced labiodental fricative.
+  Three features used to describe a vowel? :: Height, backness and lip rounding.
+  HCE symbol for the vowel in "hard"? :: /ɐː/
+  The unstressed vowel /ə/ is called {{schwa}}.
+  Phonemic vs phonetic transcription brackets? :: Phonemic /slashes/; phonetic [square brackets].
+  Name the connected speech process: "ten bikes" /tem bɑeks/. :: Assimilation.
+
+@ 0167f735 U1.2.1.6 | Development across the subsystems
+**In a sentence**
+  As children grow, their language develops in every subsystem at once — they simplify sounds they can't yet make, over-generalise grammatical rules, stretch and shrink word meanings, and build longer, more complex sentences.
+**Key terms**
+  **Phonological processes**: patterned simplifications children make to adult pronunciations.
+  **Over-generalisation (morphological)**: applying a regular rule to an irregular form ("goed", "mouses").
+  **Over-extension**: using a word for a wider range of things than adults do ("doggie" for all four-legged animals).
+  **Under-extension**: using a word for a narrower range ("dog" only for the family dog).
+  **Semantic over-generalisation**: another term for over-extension of meaning.
+  **Mean length of utterance (MLU)**: the average number of morphemes per utterance — a measure of grammatical development.
+**Phonology and speech sound production**
+  Sounds tend to appear in an order: vowels, then stops and nasals (/p b m n t d/) and glides (/w j/) early; velars (/k ɡ/) around 2–3; fricatives and affricates (/f s ʃ tʃ dʒ/) later; /ɹ/, /θ/ and /ð/ last (up to about 7–8).
+  Common processes:
+    Deletion — final consonant ("ca" [kæ] for "cat"), weak syllable ("nana" for "banana").
+    Consonant cluster reduction — "pider" [pɑedə] for "spider".
+    Stopping — a fricative replaced by a stop: "tun" [tɐn] for "sun".
+    Fronting — a velar replaced by an alveolar: "tat" [tæt] for "cat".
+    Gliding — /ɹ/ or /l/ replaced by /w/ or /j/: "wabbit" for "rabbit".
+    Assimilation — one sound becomes like another in the word: "gog" [ɡɔɡ] for "dog".
+    Reduplication — repeating a syllable: "bo-bo" for "bottle".
+**Morphology**
+  Inflections appear in a rough order (Roger Brown's research): -ing and plural -s early; possessive -'s, regular past -ed and third-person -s later.
+  Over-generalisation: "goed", "runned", "sheeps", "foots" — then correction. Children often say "went" correctly first, then "goed", then "went" again (U-shaped learning), showing a rule has been learned.
+**Lexicology and semantics**
+  First words: people, food, animals, toys, body parts, social words ("hi", "bye").
+  Vocabulary spurt at about 18 months; roughly 50 words at 18 months, several hundred by 2, thousands by school age.
+  Over-extension ("ball" for the moon and oranges), under-extension ("shoes" only for their own shoes).
+  Content words first; function words later.
+**Syntax**
+  One word → two words → telegraphic → complex sentences; MLU rises.
+  Questions: rising intonation ("Daddy go?") → wh-words ("Where Daddy go?") → auxiliary inversion ("Where did Daddy go?").
+  Negation: "No bed" → "Me not go" → "I don't want to go".
+**Discourse and pragmatics**
+  Turn-taking starts in "conversations" of coos with a carer; later come politeness words ("please", "thank you" — often taught explicitly), topic maintenance and storytelling (about 4–5).
+**Worked example**
+  Analyse this sample from a 3-year-old: "Me goed to the zoo. I seed two big lions!"
+    Morphology: over-generalisation of past "-ed" ("goed", "seed") — the child has learned the regular rule and applies it to irregular verbs.
+    Lexicology: "Me" used as a subject pronoun — a common early non-standard form.
+    Syntax: mostly complete, post-telegraphic sentences with determiners ("the", "two") and an adjective in the noun phrase ("two big lions").
+    Stage: post-telegraphic.
+**Going deeper**
+  MLU is counted in morphemes, not words: "Doggies running" = doggy + -s + run + -ing = 4 morphemes.
+  Children's "errors" are rule-governed and predictable, which is why linguists find them so revealing.
+**Common mistakes**
+  Calling over-generalisation "copying adults". Adults don't say "goed" — it's a rule the child created.
+  Confusing over-extension (meaning too broad) with over-generalisation of a grammatical rule.
+  Naming a phonological process without showing target and child forms.
+**Exam tips**
+  Present sound changes as target → child form with IPA, then name the process.
+  Organise sample analysis by subsystem, with a quoted example each time.
+**Connections**
+  Phonetics, phonology and the IPA.
+  Universal grammar and usage-based theories: explaining over-generalisation.
+  Interpreting samples (key skill).
+**Practice questions**
+  A child says "wed" for "red" and "wun" for "run". Name and explain the process.
+    Gliding: the approximant /ɹ/ is replaced by the glide /w/, a sound the child can already produce.
+  Distinguish over-extension from under-extension, with examples.
+    Over-extension uses a word too broadly ("daddy" for all men); under-extension uses it too narrowly ("cat" only for the family pet).
+  Explain why "I goed" is evidence of language development rather than an error.
+    It shows the child has learned the productive rule "add -ed for past tense" and is applying it — a stage before learning the irregular exception.
+  Calculate the MLU in morphemes of "Doggy run" and "Mummy's shoes".
+    "Doggy run" = 2 morphemes; "Mummy's shoes" = Mummy + 's + shoe + s = 4 morphemes; MLU = (2 + 4) ÷ 2 = 3.
+**Flashcards**
+  Name the process: "tun" for "sun". :: Stopping.
+  Name the process: "tat" for "cat". :: Fronting.
+  Name the process: "wabbit" for "rabbit". :: Gliding.
+  "pider" for "spider" shows consonant {{cluster reduction}}.
+  What is over-extension? :: Using a word for a wider range of things than adults do.
+  What is MLU? :: Mean length of utterance — average morphemes per utterance.
+  Which sounds are usually acquired last? :: /ɹ/, /θ/ and /ð/ (up to about 7–8).
+  What is U-shaped learning? :: Correct form → over-generalised form → correct form again, as a rule is learned.
+
+@ c7a34ff2 U1.2.1.7 | Linguistic field work and consent
+**In a sentence**
+  Field work means collecting real language data — recordings, observations, transcriptions, interviews — to answer a question, and it must be done ethically, with informed consent from everyone involved.
+**Key terms**
+  **Field work**: collecting language data from real speakers in real settings.
+  **Research question**: the focused question the field work aims to answer.
+  **Informed consent**: agreement to take part given after being told the purpose, what's involved, how data is used and the right to withdraw.
+  **Data**: the language evidence collected — recordings, transcriptions, notes, survey answers.
+  **De-identification**: removing names and details that could identify participants.
+**Planning field work**
+  Ask a focused question: "How does a two-year-old's speech support usage-based accounts?"
+  Choose participants and a setting: a younger sibling at home, a family friend's child, a childcare centre (with permission), published videos.
+  Choose methods: audio or video recording, observation notes, IPA transcription, interviews with parents, surveys.
+  Plan what to record, how long and how often.
+**Consent and ethics**
+  Consent is needed from everyone data is collected from.
+  For a child: consent from a parent or guardian (and the child's willing participation).
+  For a school or childcare centre: consent from the principal or operator.
+  Participants must be told the nature and purpose of the data collected and how privacy and safety will be protected.
+  Keep data secure; use pseudonyms; allow withdrawal; don't collect more than needed.
+**Analysing and reporting**
+  Transcribe with conventions (IPA for sounds; symbols for pauses and overlaps).
+  Analyse by subsystem, link to theories, note limitations (small sample, one child, recording effects).
+  Report in a formal format: question, method, findings, analysis, conclusion.
+**Worked example**
+  Design a small field-work task to test whether a 3-year-old over-generalises past-tense forms.
+    Question: Does the child apply the regular "-ed" rule to irregular verbs?
+    Method: with a parent's written consent, record 20 minutes of play where the child retells events ("What did the bear do?").
+    Data: transcribe the verbs used; count regular, irregular and over-generalised forms ("goed").
+    Ethics: pseudonym, recording kept private and deleted after the task.
+**Going deeper**
+  The "observer's paradox": people talk differently when they know they're being recorded. Longer recordings and familiar settings help reduce it.
+  Researchers keep field notes about context (who was present, what activity), because transcripts alone lose it.
+**Common mistakes**
+  Collecting data before getting consent.
+  Asking a question too broad to answer with a small sample.
+  Over-generalising conclusions from one child.
+**Exam tips**
+  For an ethics question, name who gives consent and what they must be told.
+**Connections**
+  Interpreting samples and IPA transcriptions.
+  Development across the subsystems: what to look for in the data.
+  Universal grammar and usage-based theories: framing research questions.
+**Practice questions**
+  Who must give consent if a student records a 2-year-old at a childcare centre?
+    The child's parent or guardian, and the principal or operator of the childcare centre.
+  What must participants be told when giving informed consent?
+    The nature and purpose of the data being collected, how it will be used, how their privacy and safety will be protected, and that they can withdraw.
+  Give one limitation of field work with a single child.
+    One child may not be typical, so findings can't be generalised to all children.
+**Flashcards**
+  What is linguistic field work? :: Collecting language data from real speakers in real settings.
+  Who gives consent for a child participant? :: A parent or guardian.
+  What is informed consent? :: Agreement given after being told the purpose, what's involved, how data is used and the right to withdraw.
+  Removing names and identifying details is {{de-identification}}.
+  What is the observer's paradox? :: People speak differently when they know they're being observed or recorded.
+  Name three types of language data. :: Recordings, transcriptions, observation notes (also interviews, surveys).
+  Why use a focused research question? :: So the data collected can actually answer it.
+
+@ 87313e5d U1.2.1.8 | Metalanguage for language acquisition
+**In a sentence**
+  Discussing acquisition well means using its technical terms — stages, theories, phonological processes, over-generalisation and IPA descriptions — precisely and with evidence from samples.
+**Key terms**
+  **Metalanguage**: technical terms for describing language.
+  **Language sample**: a recorded or transcribed piece of someone's language used as evidence.
+  **Target form**: the adult form the child is aiming for.
+**Terms to control**
+  Stages: cooing, babbling (reduplicated, variegated), holophrastic, two-word, telegraphic, post-telegraphic; silent period, interlanguage, transfer, fossilisation.
+  Theories: universal grammar, Language Acquisition Device, poverty of the stimulus, principles and parameters; usage-based, intention-reading, pattern-finding, joint attention, item-based constructions; critical period.
+  Phonology: IPA, voicing, place, manner, height, backness, rounding; deletion, cluster reduction, stopping, fronting, gliding, assimilation, reduplication.
+  Morphology and semantics: morpheme, inflection, over-generalisation, over-extension, under-extension, MLU.
+  Bilingualism: simultaneous, sequential, code switching (intra- and inter-sentential).
+  Unit 1 table extras: morphological over-generalisation, semantic over-generalisation, content and function words.
+**Using it well**
+  Always pair the term with evidence: "Stopping is evident in [tɐn] for /sɐn/."
+  Describe, don't judge: a child's forms are "developing" or "non-adult", not "wrong".
+**Worked example**
+  Rewrite with metalanguage: "The kid says words wrong and leaves stuff out."
+    "The child's speech shows phonological processes such as final consonant deletion ([kæ] for /kæt/), and telegraphic syntax that omits function words and inflections ('Mummy go shop')."
+**Going deeper**
+  The target form is the benchmark for describing children's speech: always show target → child form, so the reader sees exactly what changed.
+**Common mistakes**
+  Using a term without a quoted or transcribed example.
+  Mixing up similar terms (over-extension vs over-generalisation; phonemic vs phonetic).
+**Exam tips**
+  Keep a glossary with IPA examples for each phonological process; examiners reward precise, evidence-backed terms.
+**Connections**
+  All learning points in this area.
+  Metalanguage for language and its functions (Area of Study 1).
+**Practice questions**
+  Rewrite "the child can't say her r's" with metalanguage.
+    "The child shows gliding, replacing the alveolar approximant /ɹ/ with the bilabial approximant /w/, e.g. [wed] for /ɹed/."
+  Why should analysis show the target form?
+    It shows exactly what the child changed, so the process can be identified and described accurately.
+**Flashcards**
+  What is a target form? :: The adult form a child is aiming to produce.
+  Descriptive alternative to "wrong" in child language? :: Non-adult or developing form.
+  Replacing /ɹ/ with /w/ is called {{gliding}}.
+  Name three terms from usage-based accounts. :: Intention-reading, pattern-finding, joint attention (also item-based constructions).
+  Over-generalisation vs over-extension? :: Over-generalisation applies a grammatical rule too widely; over-extension stretches a word's meaning.
+  What should always accompany a term in analysis? :: Evidence from the sample — a quotation or transcription.
+  Name three phonological processes. :: Stopping, fronting, gliding (also deletion, cluster reduction, assimilation, reduplication).
+
+@ b9118cd3 U1.2.2.1 | Using acquisition concepts and theories
+**In a sentence**
+  This skill is applying stages, the critical period and the two theories to explain real examples of children's and learners' language.
+**Key terms**
+  **Apply**: use a concept or theory to explain an example.
+  **Evaluate**: judge how well a theory explains the evidence.
+**How to do it**
+  Identify the relevant concept in the example (a stage, an over-generalisation, a critical-period effect).
+  Explain what the concept predicts or claims.
+  Show how the example fits (or doesn't) — then weigh the theories.
+**Going deeper**
+  Strong answers say what a theory explains well and what it struggles with, rather than declaring one theory "right".
+**Worked example**
+  Apply a theory to: a child hears "sheep" for months but says "sheeps".
+    Universal grammar: the child is using an innate capacity for rules — applying plural "-s" — not copying what was heard.
+    Usage-based: the child has generalised the very frequent "noun + -s" pattern from input; the rarer irregular form comes later.
+    Both explain it; UG stresses the rule, usage-based stresses frequency in the input.
+**Connections**
+  Universal grammar and usage-based theories.
+  Stages of language development.
+**Practice questions**
+  What makes an evaluation of a theory strong?
+    It weighs what the theory explains well and what it struggles to explain, using specific evidence.
+  Apply the critical period hypothesis to a migrant who arrived in Australia aged 30 and still has a strong accent.
+    Learning began after the critical period, so phonology was not acquired naturally; features of the first language's sound system persist.
+**Flashcards**
+  To apply a theory you… :: Use it to explain a specific example.
+  To evaluate a theory you… :: Judge how well it explains the evidence, including its weaknesses.
+  Which theory stresses frequency in the input? :: The usage-based account.
+  Which theory stresses innate rules? :: Universal grammar.
+
+@ 4c60b390 U1.2.2.2 | Describing learner language objectively
+**In a sentence**
+  This skill is describing children's and learners' language with precise metalanguage, subsystem by subsystem, without judging it.
+**Key terms**
+  **Objective**: based on evidence, without judgement.
+  **Systematic**: organised with consistent categories.
+**How to do it**
+  Work through the subsystems in a set order: phonology, morphology, lexicology, syntax, semantics, discourse.
+  For each feature: label it, give the example (with IPA for sounds), explain what it shows.
+  Use neutral words: "non-adult", "developing", "non-standard".
+**Going deeper**
+  Systematic analysis makes gaps visible: if you have nothing on syntax, look again at the sample.
+**Worked example**
+  Describe systematically: "Daddy car gone."
+    Syntax: a three-word telegraphic utterance; subject + verb order preserved ("Daddy … gone").
+    Morphology: no possessive "-'s" ("Daddy car" = Daddy's car); no auxiliary ("has gone").
+    Lexicology: content words only (nouns and a verb); function words absent.
+    Semantics: possession and disappearance — typical early meanings.
+**Connections**
+  Metalanguage for language acquisition.
+  Working with the subsystems (Area of Study 1).
+**Practice questions**
+  Why analyse subsystem by subsystem?
+    It ensures every aspect of the sample is considered and makes the analysis clear and consistent.
+  Replace the judgemental "babyish grammar" with an objective description.
+    "Telegraphic syntax: content words in the correct order, with function words and inflections omitted."
+**Flashcards**
+  What order can a systematic analysis follow? :: Phonology, morphology, lexicology, syntax, semantics, discourse.
+  Neutral word for a child's non-adult form? :: Developing (or non-adult) form.
+  Why include IPA when describing sounds? :: It shows exactly what was said.
+  "Daddy car" omits the possessive {{-'s}}.
+
+@ c12f7779 U1.2.2.3 | What children acquire in the critical period
+**In a sentence**
+  This skill is investigating everything children must learn to become spoken-language users — sounds, words, grammar, meanings and the social uses of language — and how they learn it.
+**Key terms**
+  **Communicative competence**: knowing not just grammar but how to use language appropriately in context.
+  **Halliday's functions**: the purposes children's language develops to serve.
+**What must be acquired**
+  Phonology: the language's sounds, their contrasts, stress and intonation.
+  Morphology and syntax: inflections, word order, questions, negatives, complex sentences.
+  Lexicon and semantics: thousands of words and their meanings, relations between words.
+  Pragmatics: turn-taking, politeness, adjusting to the listener, storytelling.
+  Functions (Michael Halliday): instrumental ("I want"), regulatory ("do as I tell you"), interactional ("me and you"), personal ("here I come"), heuristic ("tell me why"), imaginative ("let's pretend"), representational ("I've got something to tell you").
+**Going deeper**
+  Children learn through interaction: child-directed speech (slower, higher pitch, simpler, repeated) and carers' expansions ("Doggy run" → "Yes, the doggy is running") give models to learn from.
+**Worked example**
+  Identify Halliday's functions: a child says "Want juice!", "Why sky blue?" and "I'm a dinosaur, roar!"
+    "Want juice!" — instrumental (getting needs met).
+    "Why sky blue?" — heuristic (finding out about the world).
+    "I'm a dinosaur, roar!" — imaginative (creating a pretend world).
+**Connections**
+  Development across the subsystems.
+  Functions of language (Area of Study 1): the adult model.
+  Child and adult learners: the critical period.
+**Practice questions**
+  Explain the heuristic function with an example.
+    Using language to learn about the world, e.g. "What's that?" or "Why is it raining?"
+  Why is pragmatics part of what children must acquire?
+    Knowing grammar isn't enough; children must learn how to use language appropriately — taking turns, being polite, adjusting to different listeners.
+**Flashcards**
+  Name Halliday's seven functions. :: Instrumental, regulatory, interactional, personal, heuristic, imaginative, representational.
+  "Give me that!" serves the {{instrumental}} function.
+  What is communicative competence? :: Knowing how to use language appropriately in context, not just grammar.
+  What is child-directed speech? :: Simplified, slower, higher-pitched speech carers use with young children.
+
+@ 30089510 U1.2.2.4 | Analysing child language samples
+**In a sentence**
+  This skill is using phonetics and phonology, morphology, lexicology, syntax and semantics to analyse real samples of children's language.
+**Key terms**
+  **Sample analysis**: identifying and explaining the features of a language sample.
+  **Developmental feature**: a feature that shows the child's current stage of acquisition.
+**A checklist**
+  Phonology: compare child forms with targets in IPA; name the processes.
+  Morphology: which inflections are present, missing or over-generalised?
+  Lexicology: content vs function words; word classes used.
+  Syntax: utterance length (MLU), word order, questions, negatives, clause complexity.
+  Semantics: over- or under-extension; semantic domains of the child's words.
+  Conclude with an estimated stage and the evidence for it.
+**Going deeper**
+  The same utterance can show features at several levels — "Me goed" shows a pronoun form (lexicology/syntax) and over-generalisation (morphology).
+**Worked example**
+  Analyse: [tɪ tæt ɹʉːn] — "Kitty cat run" — said about a cat running.
+    Phonology: fronting of /k/ to [t] in "kitty" and "cat" ([tɪ], [tæt]); /ɹ/ produced correctly.
+    Morphology: no "-ing" or third-person "-s" on "run".
+    Syntax: subject + verb order; telegraphic, no auxiliary or article.
+    Stage: late two-word/early telegraphic (about 2 years).
+**Connections**
+  Development across the subsystems.
+  Phonetics, phonology and the IPA.
+**Practice questions**
+  What should a morphology analysis of child language look for?
+    Which inflections are present or missing, and any over-generalisation of regular rules.
+  How can you estimate a child's stage from a sample?
+    From utterance length (MLU), whether function words and inflections are present, and the kinds of errors, compared with typical stages.
+**Flashcards**
+  First step in a phonological analysis of child speech? :: Compare the child's form with the target form in IPA.
+  What measure shows syntactic development? :: Mean length of utterance (MLU).
+  [tæt] for "cat" shows {{fronting}}.
+  What does a missing "-ing" suggest? :: The child is at an early stage (before inflections are consistently used).
+
+@ f339a4ce U1.2.2.5 | Doing linguistic field work
+**In a sentence**
+  This skill is carrying out a small field-work investigation — planning, getting consent, collecting and transcribing data, then interpreting it.
+**Key terms**
+  **Data collection**: gathering language evidence using planned methods.
+  **Transcription**: writing down spoken language using agreed conventions.
+**The steps**
+  1. Write a focused research question.
+  2. Get informed consent (parent/guardian; principal or operator for an institution).
+  3. Collect data (recording, observation notes, interviews).
+  4. Transcribe using IPA and transcription symbols.
+  5. Analyse by subsystem and link to theory.
+  6. Report findings and limitations.
+**Going deeper**
+  Pilot your method: a short trial recording shows whether the activity produces the language you want to study.
+**Worked example**
+  A student wants to test whether a bilingual 4-year-old code switches to fill lexical gaps. Outline the field work.
+    Consent from both parents; explain purpose and privacy.
+    Record 30 minutes of the child playing with an English-speaking friend.
+    Transcribe; mark each switch; note whether the switched word has a known English equivalent for the child (check with parents).
+    Analyse the reasons for each switch; note the small sample as a limitation.
+**Connections**
+  Linguistic field work and consent.
+  Interpreting samples and IPA transcriptions.
+**Practice questions**
+  Why pilot a field-work method?
+    To check that the activity produces the kind of language needed and that recording works, before collecting the main data.
+  List the steps of a field-work investigation.
+    Research question, consent, data collection, transcription, analysis, report with limitations.
+**Flashcards**
+  First step in field work? :: Write a focused research question.
+  What comes before any data collection? :: Informed consent.
+  Writing down speech with agreed conventions is {{transcription}}.
+  Why note limitations in a field-work report? :: Small samples and recording effects limit how far results can be generalised.
+
+@ 4f3c5d0a U1.2.2.6 | Interpreting samples and IPA transcriptions
+**In a sentence**
+  This skill is reading child and additional-language samples — including IPA transcriptions — and explaining what they show about acquisition.
+**Key terms**
+  **Transcript**: a written record of speech.
+  **Phonetic transcription**: narrow IPA transcription of the actual sounds, in [brackets].
+**How to read a sample**
+  Note the speaker's age and context.
+  Read IPA carefully sound by sound; compare with the target /phonemic/ form.
+  Look for patterns across several words, not one-off slips.
+  For additional-language learners, look for transfer from the first language and interlanguage rules.
+**Going deeper**
+  A single pattern across many words (all /k/ → [t]) is strong evidence of a process; one instance may be a slip.
+**Worked example**
+  A 3-year-old says [pʉːn] for "spoon", [tɔp] for "stop" and [næɪk] for "snake". Identify the pattern.
+    Each target begins with /s/ + consonant: /spʉːn/, /stɔp/, /snæɪk/.
+    The child drops the /s/ each time and keeps the second consonant.
+    Pattern: consonant cluster reduction — consistent across words, so it's a process, not a slip.
+**Connections**
+  Phonetics, phonology and the IPA.
+  Development across the subsystems.
+**Practice questions**
+  Why look for patterns across several words?
+    A consistent pattern shows a phonological process; a single instance could be a slip.
+  An adult Japanese speaker says [ɹɑet] and [lɑet] interchangeably for "right" and "light". Suggest a reason.
+    Transfer: Japanese doesn't contrast /l/ and /ɹ/ as separate phonemes, so the learner hasn't yet established the English contrast.
+**Flashcards**
+  What goes in [square brackets]? :: Phonetic (narrow) transcription of the sounds actually produced.
+  Why compare with the target form? :: To see exactly what the speaker changed.
+  A consistent pattern across words shows a {{phonological process}}.
+  What is transfer in L2 speech? :: Features of the first language carried into the additional language.
+
+@ 0a1ba28e U1.2.2.7 | Discussing acquisition with metalanguage
+**In a sentence**
+  This skill is writing and speaking about language acquisition — in essays, reports and discussions — using the right terms accurately and supporting every point with evidence.
+**Key terms**
+  **Discussion**: an extended response that explores a question from more than one angle and reaches a judgement.
+  **Evidence**: examples from samples, case studies or research used to support a point.
+**How to do it**
+  Frame a clear position ("Usage-based accounts better explain early two-word combinations…").
+  Build paragraphs as point → metalanguage → evidence → link to the question.
+  Refer to theorists and cases accurately (Chomsky, Tomasello, Lenneberg, Genie, Halliday).
+  Acknowledge counter-evidence and reach a judgement.
+**Going deeper**
+  Discussion topics often ask "to what extent": the answer should be a qualified judgement, e.g. "largely, but…", not a simple yes or no.
+**Worked example**
+  Write a topic sentence and evidence for: "Children learn language mainly by imitation. Discuss."
+    Topic sentence: "Imitation alone cannot account for acquisition, because children produce forms they have never heard."
+    Evidence: over-generalisations such as "goed" and "mouses" do not appear in adult input, so they must come from rules or patterns the child has formed.
+    Link: this supports universal grammar and usage-based pattern-finding over simple imitation.
+**Connections**
+  Metalanguage for language acquisition.
+  Universal grammar and usage-based theories.
+**Practice questions**
+  What makes a discussion paragraph effective?
+    A clear point, accurate metalanguage, specific evidence, and a link back to the question.
+  How should a "to what extent" question be answered?
+    With a qualified judgement weighing evidence on both sides, rather than a simple yes or no.
+**Flashcards**
+  Structure of a discussion paragraph? :: Point, metalanguage, evidence, link to the question.
+  Why is imitation not enough to explain acquisition? :: Children produce forms adults never say, such as "goed".
+  A "to what extent" question needs a {{qualified}} judgement.
+  Name three theorists or cases to cite in acquisition discussions. :: Chomsky, Tomasello, Lenneberg (also Genie, Halliday).

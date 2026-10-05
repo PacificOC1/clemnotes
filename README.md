@@ -379,6 +379,108 @@ In your repo: **Settings → Secrets and variables → Actions → New repositor
 secret**, add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. The deploy
 workflow already reads them.
 
+### 7. OneDrive for images and PDFs (optional)
+
+Rems, cards and reviews always sync through Supabase's tables. The *bytes* of
+images and PDFs can live in Supabase Storage (1 GB on the free plan) or in a
+OneDrive — personal (5 GB free) or a work/school one (often 1 TB). Clemnotes
+only ever gets its own folder there, `Apps/<app name>`, and can't see anything
+else in the OneDrive.
+
+**Register an app with Microsoft** (free, one-off):
+
+1. Go to the [Microsoft Entra admin center](https://entra.microsoft.com) →
+   **Entra ID → App registrations → New registration**. Sign in with your
+   college account if it's allowed to register apps; if not, a personal one
+   (Microsoft may ask you to create a free Azure account first). Which one you
+   register with doesn't limit which accounts can sign in later.
+2. **Name**: `Clemnotes` — this becomes the folder name, `Apps/Clemnotes`.
+3. **Supported account types**: *Any Entra ID Tenant + Personal Microsoft
+   accounts*. Then **Register**.
+4. Copy the **Application (client) ID** from the Overview page.
+5. **Authentication → Add Redirect URI → Single-page application**, and add
+   both, exactly:
+   - `https://<your-github-username>.github.io/clemnotes/`
+   - `http://localhost:5173/`
+6. **API permissions → Add a permission → Microsoft Graph → Delegated** →
+   `Files.ReadWrite.AppFolder`. (No admin consent needed for this one on a
+   personal account; see below for college accounts.)
+
+**Give the build the ID**: `VITE_ONEDRIVE_CLIENT_ID=<the client ID>` in `.env`,
+and the same as a GitHub Actions secret, passed to the build step in
+`.github/workflows/deploy.yml` next to the Supabase ones:
+
+```yaml
+          VITE_ONEDRIVE_CLIENT_ID: ${{ secrets.VITE_ONEDRIVE_CLIENT_ID }}
+```
+
+The ID isn't secret (it's in every sign-in URL); the secret is just where the
+workflow reads build settings from.
+
+**Then**: open the sync panel → *Images & PDFs* → **Sign in to OneDrive**. A
+build with the ID set keeps new files in OneDrive on every device by default
+(each device can switch back under the same heading). Files already in
+Supabase stay readable; **Move them to OneDrive** copies each one across and
+then deletes the Supabase copy — stop any time and press it again to carry on.
+
+- **Signing in again.** Microsoft limits a web app's sign-in to 24 hours.
+  After that it renews quietly, except in browsers that block third-party
+  cookies (Safari, including on iPhone), where the sidebar asks you to sign in
+  again — one click if the browser is still signed in to Microsoft. Until you
+  do, new files wait on the device and upload afterwards.
+- **College accounts.** Your college may require an administrator to approve
+  new apps; if so, Microsoft says *Need admin approval* and you can use a
+  personal account instead. A college account also ends some time after you
+  leave — move your files (back to Supabase, or to a personal OneDrive via
+  Supabase) before then. Deleted files go to the OneDrive recycle bin, which on
+  work/school OneDrives counts toward the quota until it empties.
+
+### 8. Google Drive for images and PDFs (optional, recommended)
+
+The roomiest free option: 15 GB (shared with Gmail and Google Photos), and no
+card needed anywhere. Files go in Drive's hidden **app-data folder** —
+invisible in Drive, and Clemnotes can't see anything else you keep there.
+
+Google only lets a browser app hold Drive access for about an hour, so a small
+Supabase **Edge Function** keeps the connection: it holds the Google client
+secret and your long-lived Google token (in a table only it can read) and hands
+the app short-lived tokens. Because the connection belongs to your Clemnotes
+account, connecting once connects every device you sync on.
+
+**Google Cloud** ([console.cloud.google.com](https://console.cloud.google.com), no billing needed):
+
+1. Create a project called `Clemnotes`.
+2. **APIs & Services → Library** → *Google Drive API* → **Enable**.
+3. **Google Auth Platform → Branding**: app name `Clemnotes`, your email as
+   support and developer contact. **Audience**: *External*, then **Publish
+   app** (left in *Testing*, Google ends the connection every 7 days).
+   **Data Access → Add or remove scopes**: `.../auth/drive.appdata`.
+4. **Clients → Create client → Web application**. Under *Authorized redirect
+   URIs* add, exactly, `https://<your-github-username>.github.io/clemnotes/`
+   and `http://localhost:5173/`. Copy the **Client ID** and **Client secret**.
+
+**Supabase**:
+
+5. SQL Editor: run `supabase/migration-008-google-drive.sql`.
+6. **Edge Functions → Deploy a new function → Via Editor**, name it
+   `google-drive`, replace the example with the whole of
+   `supabase/functions/google-drive/index.ts`, and **Deploy**. (Or
+   `supabase functions deploy google-drive` with the CLI.)
+7. **Edge Functions → Secrets**: add `GOOGLE_CLIENT_ID` and
+   `GOOGLE_CLIENT_SECRET`.
+
+**The app**: `VITE_GOOGLE_CLIENT_ID=<client ID>` in `.env`, and the same as a
+GitHub Actions secret passed to the build step in `deploy.yml`:
+
+```yaml
+          VITE_GOOGLE_CLIENT_ID: ${{ secrets.VITE_GOOGLE_CLIENT_ID }}
+```
+
+Then open the sync panel → *Images & PDFs* → **Connect Google Drive**, and
+**Move them to Google Drive** for anything already in Supabase. If Google says
+*Google hasn't verified this app*, choose **Advanced → Go to Clemnotes** — it's
+your own app, asking only for its own folder.
+
 ### How sync works
 
 - **Auth**: email + password via Supabase Auth, from the sidebar.
@@ -436,10 +538,12 @@ workflow already reads them.
   leaves its bytes in place (so undo works); **Clean up unused images** clears
   them. It runs per device — another device still holding an image it uploaded
   itself is unaffected.
-- **Image upload to Supabase Storage hasn't been run against a live project
-  yet.** It uses the documented storage API and fails soft — images keep working
-  on the device they were added on — but it is the one part of this that is
-  untested end to end.
+- **Image upload to Supabase Storage, OneDrive and Google Drive hasn't been run
+  against a live account yet.** All use the documented APIs (supabase-js
+  storage; Microsoft Graph with MSAL; Drive v3 and Google OAuth via the Edge
+  Function) and fail soft — files keep working on the device
+  they were added on — but they are the parts of this that are untested end to
+  end.
 
 ## Deploying to GitHub Pages
 

@@ -1,12 +1,51 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { Component, lazy, Suspense, useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import type { User } from '@supabase/supabase-js';
 import { getSupabase, isSyncConfigured, syncConfigProblem } from '../sync/supabaseClient';
 import { describeNetworkError } from '../sync/syncConfig';
+import { logError } from '../diagnostics';
 import { syncWithCloud } from '../sync/syncEngine';
 import { clearCursors } from '../sync/cursors';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { getUnseenConflicts } from '../db/versionRepository';
 import { VersionHistory } from './VersionHistory';
+import type { ImageSyncResult } from '../sync/imageSync';
+
+// Only drawn with the panel open; the drives' sign-in code with it.
+const FileStoragePanel = lazy(() => import('./FileStoragePanel').then((m) => ({ default: m.FileStoragePanel })));
+
+/**
+ * The file-storage section is a separate chunk. If it can't load — offline
+ * with a stale cache, a deploy that replaced it, a missing dependency in
+ * development — say so here instead of taking the whole app down with it.
+ */
+class FilePanelBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
+  state: { error: Error | null } = { error: null };
+
+  static getDerivedStateFromError(error: Error) {
+    return { error };
+  }
+
+  componentDidCatch(error: Error): void {
+    logError('files', error);
+  }
+
+  render() {
+    if (!this.state.error) return this.props.children;
+    return (
+      <div className="sync-error">
+        Image &amp; PDF storage settings couldn’t load ({this.state.error.message.split('\n')[0]}). Syncing still
+        works; reload the page to try again.
+      </div>
+    );
+  }
+}
+
+function signInToDrive(store: 'onedrive' | 'gdrive') {
+  if (store === 'gdrive') void import('../sync/files/googleDriveAuth').then((m) => m.signInToGoogleDrive());
+  else void import('../sync/files/oneDriveAuth').then((m) => m.signInToOneDrive());
+}
+
+const DRIVE_NAMES = { onedrive: 'OneDrive', gdrive: 'Google Drive' } as const;
 
 type SyncStatus = 'idle' | 'syncing' | 'error';
 
@@ -52,6 +91,8 @@ export function SyncPanel() {
   const [lastSyncedAt, setLastSyncedAt] = useState<number | null>(null);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [missingTables, setMissingTables] = useState<string[]>([]);
+  /** How the last sync's file uploads went (a drive sign-in, connection). */
+  const [files, setFiles] = useState<ImageSyncResult | null>(null);
   const [expanded, setExpanded] = useState(false);
   const conflicts = useLiveQuery(() => getUnseenConflicts(), []) ?? [];
   const [conflictOpen, setConflictOpen] = useState<string | null>(null);
@@ -83,6 +124,7 @@ export function SyncPanel() {
       const result = await syncWithCloud(userId);
       setLastSyncedAt(Date.now());
       setMissingTables(result.failed);
+      setFiles(result.files ?? null);
       setStatusMessage(
         result.pushed || result.pulled ? `Synced ↑${result.pushed} ↓${result.pulled}` : 'Up to date'
       );
@@ -160,6 +202,7 @@ export function SyncPanel() {
     setStatusMessage(null);
     setLastSyncedAt(null);
     setMissingTables([]);
+    setFiles(null);
   }
 
   /**
@@ -243,6 +286,27 @@ export function SyncPanel() {
         </div>
       )}
 
+      {files && files.store !== 'supabase' && files.error && (
+        <div className="sync-warning">
+          {files.needsSignIn ? (
+            <>
+              <strong>
+                {files.pending} file{files.pending === 1 ? '' : 's'} waiting for {DRIVE_NAMES[files.store]}.
+              </strong>{' '}
+              {files.error}{' '}
+              <button type="button" className="link-btn" onClick={() => signInToDrive(files.store as 'onedrive' | 'gdrive')}>
+                {files.store === 'gdrive' ? 'Connect Google Drive' : 'Sign in to OneDrive'}
+              </button>
+            </>
+          ) : (
+            <>
+              <strong>Files aren’t reaching {DRIVE_NAMES[files.store]}:</strong> {files.error} They stay on this device
+              and upload on a later sync.
+            </>
+          )}
+        </div>
+      )}
+
       {expanded && (
         <div className="sync-detail">
           <div className="sync-email">{user.email}</div>
@@ -267,6 +331,11 @@ export function SyncPanel() {
           {lastSyncedAt && status !== 'syncing' && (
             <div className="sync-time">Last synced {new Date(lastSyncedAt).toLocaleTimeString()}</div>
           )}
+          <FilePanelBoundary>
+            <Suspense fallback={null}>
+              <FileStoragePanel onChanged={() => void runSync(user.id)} />
+            </Suspense>
+          </FilePanelBoundary>
         </div>
       )}
     </div>

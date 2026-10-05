@@ -1,0 +1,829 @@
+% VCE Chemistry — Unit 1, Area of Study 2: quantifying and classifying materials.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ 5bac605e U1.2.1.1 | Relative isotopic mass
+**In a sentence**
+  Because atoms are far too small to weigh individually, their masses are compared on a scale where one carbon-12 atom is exactly 12.
+**Key terms**
+  **Relative isotopic mass (Ir)**: the mass of an atom of an isotope relative to 1/12 of the mass of a carbon-12 atom.
+  **Carbon-12 standard**: the reference isotope, assigned a relative mass of exactly 12.
+  **Atomic mass unit (u)**: 1/12 of the mass of a carbon-12 atom, about 1.66 × 10⁻²⁴ g.
+  **Relative atomic mass (Ar)**: the weighted mean of the relative isotopic masses of an element's isotopes.
+**Key ideas**
+  Atoms are far too light to weigh in grams usefully, so chemists compare their masses on a **relative** scale.
+  The standard is the **carbon-12 isotope**, which is given a relative mass of **exactly 12**.
+  The **relative isotopic mass (Ir)** of an isotope is the mass of one atom of that isotope compared with 1/12 of the mass of a carbon-12 atom.
+    Example: a hydrogen-1 atom is about 1/12 of a C-12 atom, so its Ir is about 1.008.
+  Relative masses have **no units** — they are ratios.
+  Relative isotopic mass is close to, but not exactly equal to, the mass number (protons and neutrons don't weigh exactly 1, and electrons add a little). Only C-12 is exactly a whole number.
+**Related terms**
+  **Relative atomic mass (Ar)**: the weighted average of the relative isotopic masses of an element's naturally occurring isotopes (next dot point). This is the number on the periodic table.
+  **Relative molecular mass (Mr)** or formula mass: the sum of the Ar values of the atoms in a formula.
+**Going deeper**
+  Why carbon-12? It is common, easy to handle and measure precisely by mass spectrometry, and it gives relative masses very close to whole numbers for most isotopes.
+  Relative isotopic masses aren't exactly whole numbers because protons and neutrons don't each weigh exactly 1 u, and some mass is converted into the energy that binds the nucleus.
+  The relative scale and the mole are connected: 12 g of carbon-12 contains exactly one mole of atoms — which is how Avogadro's constant is linked to the scale.
+**Common mistakes**
+  Giving units (g) to a relative mass.
+  Mixing up relative isotopic mass (one isotope) with relative atomic mass (average of all isotopes).
+**Connections**
+  Isotopes (Unit 1, Area of Study 1) are what is being compared.
+  Relative atomic mass from mass spectrometry averages these values.
+  The mole: molar mass in g mol⁻¹ equals the relative mass.
+**Practice questions**
+  What does it mean that the relative isotopic mass of ²⁴Mg is 23.99?
+    One ²⁴Mg atom has a mass 23.99 times 1/12 of the mass of a carbon-12 atom.
+  Why doesn't relative isotopic mass have units?
+    It is a ratio of two masses (the isotope's mass divided by 1/12 of a C-12 atom's), so the units cancel.
+  Why is ¹⁶O's relative isotopic mass (15.995) not exactly 16?
+    Protons and neutrons don't each have a mass of exactly 1 u, and a little mass is converted into nuclear binding energy.
+**Flashcards**
+  What is the standard for the relative mass scale? :: The carbon-12 isotope, assigned a relative isotopic mass of exactly 12.
+  Define relative isotopic mass. :: The mass of an atom of an isotope relative to 1/12 of the mass of a carbon-12 atom.
+  What are the units of relative isotopic mass? :: None — it is a ratio.
+  How does relative isotopic mass differ from relative atomic mass? :: Relative isotopic mass is for one isotope; relative atomic mass is the weighted average for all naturally occurring isotopes of the element.
+  The only isotope whose relative isotopic mass is exactly a whole number is {{carbon-12}}.
+  What is an atomic mass unit? :: 1/12 of the mass of a carbon-12 atom (about 1.66 × 10⁻²⁴ g).
+  Why is carbon-12 used as the standard? :: It is common and can be measured very precisely, giving near-whole-number relative masses for other isotopes.
+
+@ b736e1b4 U1.2.1.2 | Relative atomic mass and mass spectra
+**In a sentence**
+  A mass spectrum shows each isotope of an element and how common it is, and a weighted average of those gives the relative atomic mass on the periodic table.
+**Key terms**
+  **Mass spectrometer**: an instrument that separates particles by mass (mass-to-charge ratio) and measures their abundance.
+  **Mass spectrum**: a graph of relative abundance against m/z.
+  **Relative abundance**: how common each isotope is, as a percentage or relative to the largest peak.
+  **Weighted mean**: an average in which each value counts in proportion to how common it is.
+**Mass spectrometry (what it tells you)**
+  A mass spectrometer separates the isotopes of an element by mass and measures how much of each is present.
+  The output (mass spectrum) shows a peak for each isotope: its position gives the **relative isotopic mass** (m/z), its height gives the **relative abundance**.
+  You don't need to know how the instrument works — only how to read a spectrum.
+**Calculating relative atomic mass**
+  Ar is the **weighted mean** of the isotopic masses:
+  $A_r = \frac{\sum(\text{relative isotopic mass} \times \text{abundance})}{\text{total abundance}}$
+  If abundances are percentages, the total is 100.
+**Worked example**
+  Chlorine: ³⁵Cl (Ir 34.97, 75.8%) and ³⁷Cl (Ir 36.97, 24.2%).
+    Ar = (34.97 × 75.8 + 36.97 × 24.2) ÷ 100
+    = (2650.7 + 894.7) ÷ 100 = 35.45
+    The Ar is closer to 35 because ³⁵Cl is more abundant.
+**Worked example — finding an abundance**
+  Copper has isotopes ⁶³Cu (62.93) and ⁶⁵Cu (64.93) and Ar = 63.55. Find the % of ⁶³Cu.
+    Let x = % of ⁶³Cu, so ⁶⁵Cu = 100 − x.
+    63.55 × 100 = 62.93x + 64.93(100 − x)
+    6355 = 6493 − 2.00x, so x = 69.0%
+**Going deeper**
+  The spectrometer works with positive ions, so peaks are at mass-to-charge ratios (m/z); for singly charged ions m/z equals the relative isotopic mass.
+  Peak heights are sometimes given relative to the biggest peak (= 100) rather than as percentages; then divide by the sum of the heights, not by 100.
+  Ar values vary slightly with where a sample came from (isotope ratios differ in nature), which is used in forensic and archaeological "fingerprinting".
+**Worked example 2**
+  Magnesium's spectrum has peaks at 24 (height 79), 25 (height 10) and 26 (height 11). Find Ar (use mass numbers).
+    Sum of heights = 79 + 10 + 11 = 100
+    Ar = (24 × 79 + 25 × 10 + 26 × 11) ÷ 100 = (1896 + 250 + 286) ÷ 100 = 24.32
+**Common mistakes**
+  Taking a simple average of the isotope masses instead of a weighted one.
+  Forgetting to divide by the total abundance when peak heights aren't percentages.
+  Expecting Ar to be a whole number.
+**Exam tips**
+  Show the formula with values substituted — method marks are available even if the final arithmetic slips. Give Ar to two decimal places unless told otherwise.
+**Connections**
+  Relative isotopic mass is the input; the mole and molar mass use the result.
+  Isotopes (Area of Study 1).
+**Practice questions**
+  Gallium is 60.1% ⁶⁹Ga (68.93) and 39.9% ⁷¹Ga (70.92). Calculate its Ar.
+    Ar = (68.93 × 60.1 + 70.92 × 39.9) ÷ 100 = (4142.7 + 2829.7) ÷ 100 = 69.72
+  Silver's Ar is 107.87 and its isotopes are ¹⁰⁷Ag (106.91) and ¹⁰⁹Ag (108.90). Which is more abundant?
+    ¹⁰⁷Ag — the average (107.87) is closer to 106.91 than to 108.90.
+  What does the number of peaks in an element's mass spectrum tell you?
+    How many isotopes the element has (for singly charged atomic ions).
+**Flashcards**
+  What does the position of a peak in a mass spectrum show? :: The relative isotopic mass (m/z) of that isotope.
+  What does the height of a peak in a mass spectrum show? :: The relative abundance of that isotope.
+  Formula for relative atomic mass from isotopes? :: Ar = Σ(relative isotopic mass × abundance) ÷ total abundance
+  Boron is 19.9% ¹⁰B (10.01) and 80.1% ¹¹B (11.01). Find Ar. :: (10.01 × 19.9 + 11.01 × 80.1) ÷ 100 = 10.81
+  Why is chlorine's Ar (35.45) closer to 35 than 37? :: ³⁵Cl is much more abundant (about 76%), so it weights the average towards 35.
+  What is plotted on the x-axis of a mass spectrum? :: Mass-to-charge ratio (m/z).
+  Peaks are given relative to the largest (100). What do you divide by to find Ar? :: The sum of all the peak heights.
+
+@ f514a387 U1.2.1.3 | The mole and Avogadro's constant
+**In a sentence**
+  The mole is chemistry's counting unit: 6.02 × 10²³ particles, chosen so that one mole of a substance weighs its relative mass in grams.
+**Key terms**
+  **Mole (mol)**: the amount of substance containing 6.02 × 10²³ particles.
+  **Avogadro's constant (NA)**: 6.02 × 10²³ mol⁻¹.
+  **Amount (n)**: the quantity of a substance in moles.
+  **Molar mass (M)**: the mass of one mole of a substance, in g mol⁻¹.
+**The mole**
+  A **mole** is the amount of substance containing 6.02 × 10²³ particles (atoms, molecules, ions or electrons). This number is **Avogadro's constant**, NA = 6.02 × 10²³ mol⁻¹.
+  The mole links the relative mass scale to grams: one mole of any substance has a mass in grams equal to its relative mass.
+    1 mol of C-12 atoms = 12.00 g. 1 mol of H₂O (Mr 18.0) = 18.0 g.
+  **Molar mass (M)**: the mass of one mole, in g mol⁻¹. Numerically equal to Ar or Mr.
+**The key formulas**
+  $n = \frac{m}{M}$ — amount (mol) = mass (g) ÷ molar mass (g mol⁻¹)
+  $N = n \times N_A$ — number of particles = amount × Avogadro's constant
+**Counting atoms within molecules**
+  1 mol of H₂O contains 1 mol of O atoms and 2 mol of H atoms (3 mol of atoms in total).
+**Worked example**
+  How many molecules are in 9.0 g of water?
+    M(H₂O) = 2(1.0) + 16.0 = 18.0 g mol⁻¹
+    n = 9.0 ÷ 18.0 = 0.50 mol
+    N = 0.50 × 6.02 × 10²³ = 3.0 × 10²³ molecules
+  How many H atoms is that? 2 × 3.0 × 10²³ = 6.0 × 10²³
+**Worked example — mass of one atom**
+  Mass of one carbon-12 atom = 12.00 g ÷ 6.02 × 10²³ = 1.99 × 10⁻²³ g
+**Going deeper**
+  Why we need moles: reactions happen particle by particle, so equations are ratios of particles. Weighing gives mass; the mole converts mass into a count of particles.
+  Scale: 6.02 × 10²³ grains of sand would cover Australia many metres deep, yet it's only 18 g of water molecules.
+  Always say what the particles are: "1 mol of oxygen" is ambiguous — 1 mol of O₂ molecules contains 2 mol of O atoms.
+**Worked example 2**
+  What is the mass of 3.01 × 10²² molecules of CO₂?
+    n = N ÷ NA = 3.01 × 10²² ÷ 6.02 × 10²³ = 0.0500 mol
+    M(CO₂) = 12.0 + 2(16.0) = 44.0 g mol⁻¹
+    m = n × M = 0.0500 × 44.0 = 2.20 g
+**Common mistakes**
+  Multiplying by NA when you should divide (or the reverse). Check: more moles means more particles.
+  Forgetting to count atoms per molecule when asked for atoms.
+  Giving answers to the wrong number of significant figures (match the data).
+**Exam tips**
+  Write the formula first (n = m/M, N = n × NA), then substitute with units. Keep 3 significant figures unless the data says otherwise.
+**Connections**
+  Relative atomic mass gives molar masses.
+  Empirical formulas, concentration (c = n/V) and gas volumes (n = V/Vm) all convert to moles first.
+**Practice questions**
+  How many moles of atoms are in 0.25 mol of CH₄?
+    Each molecule has 5 atoms, so 0.25 × 5 = 1.25 mol of atoms.
+  Calculate the number of chloride ions in 5.85 g of NaCl (M = 58.5 g mol⁻¹).
+    n(NaCl) = 5.85 ÷ 58.5 = 0.100 mol; n(Cl⁻) = 0.100 mol; N = 0.100 × 6.02 × 10²³ = 6.02 × 10²² ions.
+  What mass of water contains 1.20 × 10²⁴ molecules?
+    n = 1.20 × 10²⁴ ÷ 6.02 × 10²³ = 1.99 mol; m = 1.99 × 18.0 = 35.9 g
+**Flashcards**
+  What is a mole? :: The amount of substance containing 6.02 × 10²³ particles (Avogadro's constant).
+  Value of Avogadro's constant? :: 6.02 × 10²³ mol⁻¹
+  Formula linking amount, mass and molar mass? :: n = m ÷ M
+  Formula linking number of particles and amount? :: N = n × NA
+  How many moles are in 4.4 g of CO₂ (M = 44.0 g mol⁻¹)? :: 0.10 mol
+  How many oxygen atoms are in 0.50 mol of CO₂? :: 0.50 × 2 × 6.02 × 10²³ = 6.0 × 10²³ atoms
+  The molar mass of a substance in g mol⁻¹ equals its {{relative molecular (or atomic) mass}}.
+  Mass of 0.0500 mol of CO₂? :: 2.20 g (0.0500 × 44.0)
+  How many moles of O atoms are in 1 mol of O₂? :: Two.
+
+@ 7bde0544 U1.2.1.4 | Empirical and molecular formulas
+**In a sentence**
+  From a compound's percentage composition you can find the simplest ratio of its atoms (the empirical formula), and its molar mass then tells you the actual molecule (the molecular formula).
+**Key terms**
+  **Percentage composition**: the percentage by mass of each element in a compound.
+  **Empirical formula**: the simplest whole-number ratio of atoms.
+  **Molecular formula**: the actual number of each atom in one molecule.
+**Molar mass of a compound**
+  Add the molar masses of every atom in the formula. M(C₆H₁₂O₆) = 6(12.0) + 12(1.0) + 6(16.0) = 180.0 g mol⁻¹
+**Percentage composition by mass**
+  $\%\text{ element} = \frac{\text{mass of that element in 1 mol}}{M} \times 100$
+  Example: % carbon in CO₂ = 12.0 ÷ 44.0 × 100 = 27.3%
+**Empirical formula**
+  The **simplest whole-number ratio** of atoms of each element in a compound.
+  Steps (the "percent to mass, mass to mole, divide by small, multiply till whole" method):
+    1. Assume 100 g, so each % becomes a mass in g.
+    2. Convert each mass to moles (n = m ÷ M).
+    3. Divide all by the smallest number of moles.
+    4. If not close to whole numbers, multiply all by the same small factor (×2 for .5, ×3 for .33 or .67).
+**Molecular formula**
+  The **actual** number of atoms in one molecule. It's a whole-number multiple of the empirical formula.
+  Multiple = molar mass of the compound ÷ molar mass of the empirical formula.
+**Worked example**
+  A hydrocarbon is 85.7% C and 14.3% H by mass, with molar mass 56 g mol⁻¹.
+    In 100 g: 85.7 g C and 14.3 g H.
+    n(C) = 85.7 ÷ 12.0 = 7.14 mol; n(H) = 14.3 ÷ 1.0 = 14.3 mol
+    Divide by 7.14: C 1, H 2.00. Empirical formula CH₂ (M = 14.0).
+    Multiple = 56 ÷ 14.0 = 4. Molecular formula C₄H₈.
+**Going deeper**
+  Percentage composition can come from combustion analysis: burning an organic compound and weighing the CO₂ and H₂O formed tells you how much C and H it contained (all the C ends up in CO₂, all the H in H₂O).
+  Different compounds can share an empirical formula: CH₂O is the empirical formula of methanal (CH₂O), ethanoic acid (C₂H₄O₂) and glucose (C₆H₁₂O₆).
+  Ionic compounds are only ever written as empirical formulas (there are no molecules).
+**Worked example 2**
+  A compound is 40.0% C, 6.7% H and 53.3% O, with molar mass 60 g mol⁻¹. Find its molecular formula.
+    In 100 g: C 40.0 ÷ 12.0 = 3.33 mol; H 6.7 ÷ 1.0 = 6.7 mol; O 53.3 ÷ 16.0 = 3.33 mol
+    Divide by 3.33: C 1, H 2.0, O 1 → empirical formula CH₂O (M = 30.0)
+    Multiple = 60 ÷ 30.0 = 2 → molecular formula C₂H₄O₂ (ethanoic acid)
+**Common mistakes**
+  Rounding ratios like 1.5 to 2 instead of multiplying everything by 2.
+  Dividing masses by atomic numbers instead of molar masses.
+  Using the percentage of a diatomic element with M of the molecule (e.g. 32 for O) — use the atom's molar mass (16.0).
+**Exam tips**
+  Set out working in a table (element / mass / moles / ratio) — it keeps the steps clear and earns method marks. Don't round ratios more than about ±0.1.
+**Connections**
+  The mole and molar mass provide the conversions.
+  Families of organic compounds: molecular formulas lead to structures and names.
+  Water of hydration (Unit 2) uses the same mole-ratio method.
+**Practice questions**
+  Find the percentage of oxygen in H₂SO₄ (M = 98.1 g mol⁻¹).
+    4 × 16.0 = 64.0; 64.0 ÷ 98.1 × 100 = 65.2%
+  A hydrocarbon is 82.8% carbon. Find its empirical formula.
+    C 82.8 ÷ 12.0 = 6.90; H 17.2 ÷ 1.0 = 17.2. Ratio 1 : 2.49 → ×2 → C₂H₅.
+  The compound above has molar mass 58 g mol⁻¹. What is its molecular formula?
+    Empirical mass = 29.0; 58 ÷ 29.0 = 2 → C₄H₁₀ (butane or 2-methylpropane).
+**Flashcards**
+  What is an empirical formula? :: The simplest whole-number ratio of atoms of each element in a compound.
+  What is a molecular formula? :: The actual number of atoms of each element in one molecule — a whole-number multiple of the empirical formula.
+  Calculate the percentage of nitrogen in NH₃ (M = 17.0). :: 14.0 ÷ 17.0 × 100 = 82.4%
+  Empirical formula CH₂O, molar mass 180 g mol⁻¹. Molecular formula? :: C₆H₁₂O₆ (180 ÷ 30 = 6)
+  After dividing by the smallest, you get C 1 : H 2.5. What next? :: Multiply both by 2 → C₂H₅
+  Molar mass of Ca(OH)₂? :: 40.1 + 2(16.0 + 1.0) = 74.1 g mol⁻¹
+  Empirical formula of C₆H₁₂O₆? :: CH₂O
+  Percentage of oxygen in H₂SO₄ (M = 98.1)? :: 65.2%
+
+@ 57b53f5f U1.2.2.1 | Families of organic compounds
+**In a sentence**
+  Organic compounds come in families that share a functional group, a general formula and typical properties, and knowing the family tells you how a compound will behave and what it's used for.
+**Key terms**
+  **Hydrocarbon**: a compound of only carbon and hydrogen.
+  **Saturated / unsaturated**: only single C–C bonds / at least one C=C (or C≡C) bond.
+  **Functional group**: the atom or group of atoms that gives a family its characteristic reactions.
+  **Homologous series**: a family with the same functional group, differing by CH₂ from one member to the next.
+  **Hydroxyl group**: –OH (alcohols). **Carboxyl group**: –COOH (carboxylic acids).
+**Organic compounds and homologous series**
+  Organic compounds are based on chains of carbon atoms (carbon forms four bonds and bonds strongly to itself).
+  A **homologous series** is a family with the same functional group and general formula; each member differs from the next by CH₂. Properties change gradually along the series (e.g. boiling point rises with chain length).
+  A **functional group** is the atom or group of atoms that gives a family its characteristic reactions.
+**Alkanes — CₙH₂ₙ₊₂**
+  Only C–C single bonds (saturated). Non-polar: dispersion forces only, insoluble in water, low boiling points rising with chain length.
+  Fairly unreactive: burn in oxygen (combustion) and react with halogens in UV light (substitution).
+  Uses: fuels — methane (natural gas), propane and butane (LPG), octane (petrol); also lubricants, waxes.
+**Alkenes — CₙH₂ₙ**
+  Contain a C=C double bond (unsaturated). Functional group: C=C.
+  More reactive than alkanes: **addition** reactions across the double bond (H₂, halogens, H₂O, HX).
+    Test: alkenes quickly decolourise orange bromine water; alkanes don't.
+  Uses: making polymers (ethene → polyethene), making other chemicals (ethene + water → ethanol); ethene ripens fruit.
+**Haloalkanes — CₙH₂ₙ₊₁X (X = F, Cl, Br, I)**
+  An alkane with a halogen replacing a hydrogen. The C–X bond is polar, so they have dipole–dipole forces and higher boiling points than similar alkanes.
+  Uses: solvents (dichloromethane), refrigerants and propellants (CFCs — now banned because they destroy ozone), anaesthetics, making PVC (from chloroethene).
+**Alcohols — CₙH₂ₙ₊₁OH**
+  Functional group: **hydroxyl** –OH.
+  Hydrogen bonding between molecules → much higher boiling points than alkanes of similar size. Small alcohols dissolve in water.
+  Uses: ethanol as a fuel (E10 petrol), solvent, in drinks and hand sanitiser; methanol as a fuel and feedstock.
+**Carboxylic acids — CₙH₂ₙ₊₁COOH**
+  Functional group: **carboxyl** –COOH.
+  Weak acids (partially donate H⁺ in water). Strong hydrogen bonding → the highest boiling points of these families for their size; small ones dissolve in water.
+  Uses: ethanoic acid in vinegar and food preservatives; citric acid in foods; making esters (flavours) and polymers.
+**Comparing boiling points (similar size molecules)**
+  alkane < alkene (about the same) < haloalkane < alcohol < carboxylic acid
+**Going deeper**
+  Physical properties change steadily along a series: each extra CH₂ adds electrons and surface area, so dispersion forces and boiling points rise.
+  Solubility in water falls along a series: the polar group stays the same while the non-polar chain gets longer. Methanol to propanol and methanoic to butanoic acid are fully miscible; longer ones are not.
+  Combustion: complete combustion of any hydrocarbon or alcohol gives CO₂ and H₂O, e.g. CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l). Limited oxygen gives carbon monoxide or soot (incomplete combustion).
+  Alkenes react by addition because the second bond of C=C is weaker and exposed: CH₂=CH₂ + Br₂ → CH₂BrCH₂Br.
+**Worked example 2**
+  Write the formula of the alkane, alkene and alcohol with 5 carbons.
+    Alkane CₙH₂ₙ₊₂: C₅H₁₂ (pentane)
+    Alkene CₙH₂ₙ: C₅H₁₀ (pentene)
+    Alcohol CₙH₂ₙ₊₁OH: C₅H₁₁OH (pentanol)
+**Common mistakes**
+  Saying alkanes are polar because they have C–H bonds.
+  Writing the alcohol general formula as CₙH₂ₙOH.
+  Counting the COOH carbon separately in the name (ethanoic acid is CH₃COOH — two carbons).
+**Exam tips**
+  When explaining a property, name the functional group, the intermolecular force it causes, and the effect — e.g. "the –OH group allows hydrogen bonding, so…".
+**Connections**
+  Bonding and intermolecular forces explain the property trends.
+  Naming organic compounds (IUPAC) comes next.
+  Addition polymers are made from alkenes.
+**Practice questions**
+  Write a balanced equation for the complete combustion of propane.
+    C₃H₈(g) + 5O₂(g) → 3CO₂(g) + 4H₂O(l)
+  Explain why ethanoic acid has a higher boiling point than ethanol.
+    Both form hydrogen bonds, but ethanoic acid has more electrons and its –COOH group can form more (and pair-wise) hydrogen bonds, so its intermolecular forces are stronger.
+  Write the equation for ethene reacting with bromine and name the product.
+    CH₂=CH₂ + Br₂ → CH₂BrCH₂Br (1,2-dibromoethane).
+  Which family does C₃H₇Cl belong to, and what is its general formula?
+    Haloalkanes, CₙH₂ₙ₊₁X.
+**Flashcards**
+  General formula of alkanes? :: CₙH₂ₙ₊₂
+  General formula of alkenes? :: CₙH₂ₙ
+  General formula of alcohols? :: CₙH₂ₙ₊₁OH
+  General formula of carboxylic acids? :: CₙH₂ₙ₊₁COOH
+  What is a homologous series? :: A family of compounds with the same functional group and general formula, each member differing by CH₂.
+  Why do alcohols have higher boiling points than alkanes of similar size? :: Alcohols have hydrogen bonding between molecules (–OH); alkanes have only dispersion forces.
+  How can you tell an alkene from an alkane? :: An alkene quickly decolourises orange bromine water (addition reaction); an alkane doesn't.
+  The functional group of a carboxylic acid is the {{carboxyl}} group, –COOH.
+  Equation for the complete combustion of methane? :: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l)
+  Why does solubility in water fall along a homologous series? :: The polar group stays the same while the non-polar chain grows.
+
+@ e641b9f7 U1.2.2.2 | Naming organic compounds (IUPAC)
+**In a sentence**
+  IUPAC names are built from the longest carbon chain, the family ending, and numbered positions for anything attached, so every name points to exactly one structure.
+**Key terms**
+  **Semi-structural (condensed) formula**: groups written in order, e.g. CH₃CH₂OH.
+  **Structural isomers**: compounds with the same molecular formula but different structures.
+  **Chain isomers**: differ in the carbon skeleton (butane vs 2-methylpropane).
+  **Position isomers**: differ in the position of a functional group (propan-1-ol vs propan-2-ol).
+  **Alkyl group**: a branch from an alkane (methyl –CH₃, ethyl –CH₂CH₃).
+**Ways to represent a molecule**
+  **Molecular formula**: C₃H₈O — atoms only.
+  **Structural formula**: every atom and bond drawn.
+  **Semi-structural (condensed) formula**: groups written in order, e.g. CH₃CH₂CH₂OH (propan-1-ol), CH₃CH(CH₃)CH₃ (methylpropane).
+**Naming: the parts**
+  Prefix for the number of carbons in the **longest chain**: meth (1), eth (2), prop (3), but (4), pent (5), hex (6), hept (7), oct (8).
+  Suffix for the family: -ane (alkane), -ene (alkene), -ol (alcohol), -oic acid (carboxylic acid). Haloalkanes use a prefix: fluoro-, chloro-, bromo-, iodo-.
+  Branches (alkyl groups) are named as prefixes: methyl (–CH₃), ethyl (–C₂H₅).
+**Naming: the steps**
+  1. Find the longest carbon chain containing the functional group.
+  2. Number from the end that gives the functional group (or C=C) the lowest number. For carboxylic acids, the COOH carbon is always C1.
+  3. Name and number branches and halogens; list them alphabetically; use di-, tri- for repeats (2,2-dimethylpropane).
+  4. Use commas between numbers and hyphens between numbers and words.
+**Examples**
+  CH₃CH=CHCH₃ → but-2-ene
+  CH₂=CHCH₂CH₃ → but-1-ene
+  CH₃CH(OH)CH₃ → propan-2-ol
+  CH₃CH₂COOH → propanoic acid
+  CH₃CHClCH₃ → 2-chloropropane
+  CH₃CH(CH₃)CH₂CH₃ → 2-methylbutane
+**Structural isomers (up to C5)**
+  Same molecular formula, different structural formula (different arrangement of atoms).
+  C₄H₁₀: butane and 2-methylpropane.
+  C₅H₁₂: pentane, 2-methylbutane and 2,2-dimethylpropane.
+  C₄H₈ (alkenes): but-1-ene, but-2-ene and 2-methylpropene.
+  C₃H₇OH: propan-1-ol and propan-2-ol (position isomers).
+  Branched isomers have lower boiling points (less surface contact, weaker dispersion forces).
+**Going deeper**
+  Primary, secondary and tertiary alcohols: the –OH carbon is bonded to one, two or three other carbons (propan-1-ol is primary, propan-2-ol secondary, 2-methylpropan-2-ol tertiary). This matters for their reactions in Unit 3–4.
+  Naming checks: the lowest numbers go to the functional group first, then to branches. Alphabetical order ignores di-/tri-: "3-ethyl-2-methylpentane".
+  Haloalkanes and alkanes number to give substituents the lowest set of numbers: CH₃CHBrCH₂CH₃ is 2-bromobutane, not 3-bromobutane.
+**Worked example 2**
+  Name CH₃CH(CH₃)CH(OH)CH₃.
+    Longest chain containing C–OH: 4 carbons → butan-…-ol.
+    Number from the end nearer the –OH: OH on C2, methyl on C3.
+    Name: 3-methylbutan-2-ol.
+**Common mistakes**
+  Choosing a chain that isn't the longest (a "bent" chain drawn on paper is still one chain).
+  Numbering from the wrong end.
+  Calling 2-methylbutane "3-methylbutane" or "1-methylbutane" (a methyl on C1 just extends the chain).
+**Exam tips**
+  Draw the structure from your own name to check it — if the drawing doesn't match the question, the name is wrong.
+**Connections**
+  Families of organic compounds: the endings (-ane, -ene, -ol, -oic acid) come from the family.
+  Polymer monomers are named the same way (chloroethene, propene).
+**Practice questions**
+  Draw (describe) and name the two structural isomers of C₄H₁₀.
+    Butane (CH₃CH₂CH₂CH₃) and 2-methylpropane (CH₃CH(CH₃)CH₃).
+  Name CH₃CH₂CH₂CH₂CH₂COOH.
+    Hexanoic acid (six carbons including the COOH carbon).
+  Name CH₃CH=CHCH₂CH₃.
+    Pent-2-ene.
+  Name CH₃CHClCH₂CH₂CH₃.
+    2-chloropentane.
+**Flashcards**
+  Prefixes for 1–8 carbons? :: meth, eth, prop, but, pent, hex, hept, oct
+  Name CH₃CH₂CH₂OH. :: Propan-1-ol
+  Name CH₃CH₂CH₂COOH. :: Butanoic acid
+  Name CH₂=CHCH₃. :: Propene (prop-1-ene)
+  What are structural isomers? :: Compounds with the same molecular formula but a different arrangement of atoms (different structural formulas).
+  Name the three structural isomers of C₅H₁₂. :: Pentane, 2-methylbutane, 2,2-dimethylpropane
+  Why does 2,2-dimethylpropane boil lower than pentane? :: Its compact, branched shape gives less surface contact between molecules, so weaker dispersion forces.
+  In a carboxylic acid, the COOH carbon is always numbered {{C1}}.
+  Name CH₃CH(CH₃)CH(OH)CH₃. :: 3-methylbutan-2-ol
+  What are position isomers? :: Isomers that differ in the position of a functional group (e.g. propan-1-ol and propan-2-ol).
+
+@ 0dd84a40 U1.2.2.3 | Biomass as a source of chemicals
+**In a sentence**
+  Many chemicals we get from oil can instead be made from plants, which regrow and recycle carbon from the air — but land, water, energy and food supply have to be weighed.
+**Key terms**
+  **Biomass**: material from living or recently living organisms.
+  **Feedstock**: the raw material a chemical process starts from.
+  **Fermentation**: microorganisms (e.g. yeast) converting sugars into products such as ethanol.
+  **Biorefinery**: a plant that converts biomass into fuels and chemicals, like an oil refinery does with crude oil.
+  **First / second-generation biomass**: food crops (corn, sugarcane) / non-food material (crop waste, wood, algae).
+**The problem with fossil feedstocks**
+  Most organic chemicals (solvents, plastics, dyes, drugs, adhesives) are made from crude oil and natural gas.
+  These are **non-renewable**, and using them releases carbon that was locked underground, adding CO₂ to the atmosphere.
+**Biomass**
+  **Biomass** is material from living or recently living organisms — crops, wood, crop waste, algae.
+  Plants make carbohydrates (cellulose, starch, sugars), oils and lignin from CO₂ and water using sunlight, so their carbon was recently taken from the air.
+  Biomass is **renewable** (it can be regrown on a human timescale).
+**Examples of biomass-derived chemicals**
+  **Solvents**: bioethanol (fermenting sugars or starch); ethyl lactate (from lactic acid); limonene (from citrus peel) replacing petroleum solvents.
+  **Pharmaceuticals**: many drugs come from plant compounds (aspirin is related to salicylic acid from willow bark; paclitaxel from yew trees).
+  **Adhesives**: starch- and lignin-based glues replacing formaldehyde resins.
+  **Dyes and paints**: plant pigments (indigo, madder); drying oils (linseed oil) in paints.
+  **Platform chemicals**: bioethanol can be dehydrated to ethene for making "bio" plastics (Bio-PE).
+**Weighing it up**
+  **Advantages**: renewable; can lower net CO₂ emissions; often less toxic and more biodegradable products; can use waste (crop residues, food waste).
+  **Disadvantages**: land and water use; competition with food crops; fertiliser and energy needed for farming, harvesting and processing (which may use fossil fuels); lower yields or higher costs than petrochemical routes.
+  Using **waste** biomass (second-generation feedstocks like stalks, sawdust) avoids competing with food.
+**Going deeper**
+  Fermentation of glucose: C₆H₁₂O₆(aq) → 2C₂H₅OH(aq) + 2CO₂(g) (yeast, about 35 °C, no oxygen).
+  Bioethanol can be dehydrated to ethene (C₂H₅OH → C₂H₄ + H₂O), a platform chemical for plastics — this is how Bio-PE is made.
+  Cellulose (the main part of plant cell walls) is abundant but hard to break down; enzymes that convert it to sugars are key to second-generation biorefining.
+  Life cycle thinking: a bio-based product is only better if the whole chain — farming, fertiliser, transport, processing, end of life — produces less impact than the fossil route.
+**Common mistakes**
+  Calling biomass "carbon neutral" without qualification — farming, transport and processing still produce emissions.
+  Saying bio-based always means biodegradable (Bio-PE is bio-based but not biodegradable).
+**Exam tips**
+  In evaluate questions, give a benefit and a limitation, each with a reason, and finish with a judgement.
+**Connections**
+  Green chemistry: using renewable feedstocks is one of the 12 principles.
+  Bioplastics (PLA, Bio-PE) are made from biomass.
+  Everyday organic products and their benefits and hazards.
+**Practice questions**
+  Write the equation for fermenting glucose to ethanol.
+    C₆H₁₂O₆(aq) → 2C₂H₅OH(aq) + 2CO₂(g)
+  Explain why biomass-derived ethanol is described as renewable but not necessarily carbon neutral.
+    The plants regrow and absorb CO₂, but farming, fertiliser production, transport and distillation often use fossil fuels, releasing extra CO₂.
+  Give one advantage of second-generation over first-generation biomass.
+    It uses waste or non-food plants, so it doesn't compete with food crops for land.
+**Flashcards**
+  What is biomass? :: Material from living or recently living organisms, such as crops, wood, crop waste or algae.
+  Why is biomass a renewable feedstock? :: It can be regrown on a human timescale, and its carbon was recently absorbed from the air by photosynthesis.
+  Name a solvent that can be made from biomass. :: Bioethanol (or ethyl lactate, or limonene)
+  Give two disadvantages of using crops as a chemical feedstock. :: Competes with food for land and water; farming and processing need energy and fertiliser; often more expensive.
+  How can bio-based ethene be made? :: By fermenting sugars to ethanol, then dehydrating the ethanol to ethene.
+  Why is using crop waste better than growing crops for chemicals? :: It doesn't compete with food production for land and uses material that would otherwise be wasted.
+  Equation for fermentation of glucose? :: C₆H₁₂O₆(aq) → 2C₂H₅OH(aq) + 2CO₂(g)
+  What is a biorefinery? :: A facility that converts biomass into fuels and chemicals.
+
+@ fcad1a8e U1.2.2.4 | Everyday organic products
+**In a sentence**
+  Organic compounds make modern life possible — fabrics, medicines, food, fuels, car parts — but many carry health or environmental costs that have to be managed.
+**Key terms**
+  **Microplastics**: plastic particles smaller than 5 mm, from shedding fibres or broken-down plastics.
+  **Persistent organic pollutant**: a toxic organic compound that doesn't break down easily and accumulates in the environment.
+  **Biomagnification**: increasing concentration of a substance at each level of a food chain.
+  **VOC (volatile organic compound)**: an organic compound that evaporates easily at room temperature.
+**Organic compounds are everywhere**
+  Many everyday materials are made from organic compounds. For each, be ready to state a **benefit** to society and a **health or environmental hazard**, and weigh them.
+**Examples**
+  **Synthetic fabrics** (nylon, polyester, acrylic): strong, cheap, quick-drying, durable. Hazard: made from fossil fuels; shed **microplastic** fibres when washed; not biodegradable.
+  **Foods**: fats, sugars, proteins, vitamins, additives (preservatives, flavours). Benefit: nutrition, longer shelf life, less food waste. Hazard: some additives cause allergies; excess sugar or trans fats harm health.
+  **Natural medicines**: plant-derived compounds (salicylic acid from willow bark → aspirin; morphine from poppies). Benefit: pain relief, treating disease. Hazard: side effects, overdose, variable doses in unregulated products, over-harvesting of plants.
+  **Pesticides** (organochlorines like DDT, organophosphates): protect crops and reduce disease-carrying insects. Hazard: toxic to non-target species; some persist and **bioaccumulate** up food chains (DDT thinned bird eggshells).
+  **Cosmetics**: moisturisers, sunscreens, makeup. Hazard: some ingredients irritate skin; microbeads (now banned in many places) pollute waterways.
+  **Organic solvents** (acetone, hexane, dichloromethane): dissolve paints, glues, grease. Hazard: flammable; volatile organic compounds (VOCs) harm the lungs and contribute to smog; some are toxic or carcinogenic.
+  **Car parts** (polypropylene bumpers, polyurethane seats, nylon parts): light, so cars use less fuel. Hazard: hard to recycle mixed plastics at end of life.
+  **Artificial hearts and medical devices** (polyurethane, silicone, PTFE): biocompatible, flexible, durable — save lives. Hazard: can cause blood clots or infection; very expensive.
+**How to answer an evaluation question**
+  Name the product and the organic compound(s) in it.
+  Give a specific benefit linked to a property (e.g. "polypropylene is low density, so the car is lighter and uses less fuel").
+  Give a specific hazard and who or what it affects.
+  Make a judgement or suggest a way to reduce the hazard (safer design, recycling, regulation).
+**Going deeper**
+  Bioaccumulation (build-up in one organism) and biomagnification (increase up the food chain) happen with fat-soluble, persistent compounds — they are non-polar, so they dissolve in fats rather than being excreted in urine.
+  Risk depends on hazard and exposure: a toxic substance used in a sealed system can be lower risk than a mild one used widely.
+  Regulation responds to evidence: DDT and CFCs were restricted after their harms were shown; microbeads were phased out in Australian cosmetics.
+**Exam tips**
+  Name the specific compound or material, a specific benefit tied to a property, and a specific hazard with who or what is harmed.
+**Connections**
+  Polarity and solubility explain why persistent pollutants accumulate in fatty tissue.
+  Polymers and plastics recycling.
+  Social, economic and legal factors in the Area of Study 3 investigation.
+**Practice questions**
+  Explain why a fat-soluble pesticide biomagnifies but a water-soluble one usually doesn't.
+    A non-polar pesticide dissolves in fatty tissue and isn't excreted, so it builds up and is passed on to predators. A water-soluble one is excreted in urine.
+  Give one benefit and one hazard of polyester clothing.
+    Benefit: durable, cheap, quick-drying. Hazard: sheds microplastic fibres in washing that reach waterways.
+  Suggest one way to reduce the environmental impact of organic solvents in a school lab.
+    Use smaller quantities or safer alternatives (e.g. ethanol or water-based methods), work in a fume hood, and collect waste for proper disposal rather than pouring it down the sink.
+**Flashcards**
+  Give one benefit and one hazard of synthetic fabrics. :: Benefit: strong, cheap, durable. Hazard: shed microplastic fibres; made from fossil fuels; not biodegradable.
+  What is bioaccumulation? :: The build-up of a substance (e.g. a persistent pesticide) in an organism over time, concentrating up the food chain.
+  Why are volatile organic solvents a hazard? :: They are flammable, and their vapours (VOCs) harm health and contribute to smog.
+  Give a benefit of using polymer car parts. :: They are light, so the car uses less fuel; also corrosion-resistant and cheap to mould.
+  Name a medicine derived from a plant compound. :: Aspirin (related to salicylic acid from willow bark); morphine from poppies.
+  What problem did DDT cause for birds? :: It bioaccumulated and thinned their eggshells, reducing breeding success.
+  What is biomagnification? :: The increase in concentration of a substance at each level of a food chain.
+  Why do non-polar pollutants build up in animals? :: They dissolve in fat and aren't excreted in (polar) urine.
+
+@ 1fea2927 U1.2.3.1 | Addition vs condensation polymerisation
+**In a sentence**
+  Polymers are built either by opening double bonds and adding monomers end to end (addition) or by joining monomers with two reactive groups while a small molecule like water is released (condensation).
+**Key terms**
+  **Polymer**: a very large molecule of repeating units.
+  **Monomer**: a small molecule that bonds with others to form a polymer.
+  **Repeating unit**: the smallest part of the chain that repeats.
+  **Addition polymerisation**: monomers with C=C join with no other product.
+  **Condensation polymerisation**: monomers with two functional groups join, releasing a small molecule (usually water).
+  **Ester link / amide link**: –COO– / –CONH– joining units in polyesters / polyamides.
+**Polymers and monomers**
+  A **polymer** is a very large molecule made of many repeating units joined by covalent bonds. The small molecules it is made from are **monomers**.
+  Polymers can be **natural** (proteins, starch, cellulose, DNA, natural rubber) or **manufactured/synthetic** (polyethene, nylon, PET).
+**Addition polymerisation**
+  Monomers with a **C=C double bond** join as the double bond opens up; the monomers add onto each other.
+  **No other product** is formed — all the atoms of the monomers end up in the polymer.
+  Examples: polyethene (from ethene), polypropene, PVC, polystyrene, PTFE (Teflon).
+**Condensation polymerisation**
+  Monomers each have **two functional groups** (e.g. –OH, –COOH, –NH₂) that react with the groups on other monomers.
+  Each new link releases a **small molecule**, usually water (hence "condensation").
+  Examples: polyesters (PET, PLA) from –COOH + –OH, forming ester links; polyamides (nylon) from –COOH + –NH₂, forming amide links; proteins (from amino acids); starch and cellulose (from glucose).
+**Comparing**
+  Addition: monomer needs C=C; one product only; backbone of carbon atoms.
+  Condensation: monomer needs two reactive functional groups; small molecule also formed; backbone contains other atoms (O, N) in the links.
+  Condensation polymers can often be broken back into monomers by **hydrolysis** (adding water), which matters for recycling and biodegradation.
+**Going deeper**
+  Monomers joined by condensation must be bifunctional (two reactive groups); a monomer with one group ends the chain, which is sometimes used deliberately to control chain length.
+  Natural condensation polymers: proteins (amino acids linked by amide/peptide links), starch and cellulose (glucose units linked with loss of water), DNA.
+  Natural rubber is an addition polymer (of isoprene) — not all natural polymers are condensation polymers.
+**Worked example 2**
+  A polymer's repeating unit contains an –O–C(=O)– group in its backbone. How was it made?
+    An ester link in the backbone means a –COOH group reacted with an –OH group.
+    It is a polyester, made by condensation polymerisation (water released).
+**Common mistakes**
+  Saying addition polymers lose water.
+  Forgetting that a condensation monomer needs a functional group at **each** end (one group only would stop the chain).
+**Connections**
+  Addition polymers from alkenes develops addition polymerisation.
+  Hydrolysis and recycling polymers: condensation links can be broken by water.
+  Families of organic compounds: the functional groups (–OH, –COOH) come from alcohols and carboxylic acids.
+**Practice questions**
+  State two differences between addition and condensation polymerisation.
+    Addition needs a C=C monomer and gives only the polymer; condensation needs monomers with two functional groups and also forms a small molecule such as water. Condensation polymers have O or N atoms in the backbone links.
+  Classify: polyethene, nylon, starch, PVC, protein.
+    Addition: polyethene, PVC. Condensation: nylon, starch, protein.
+  Why can't ethanol be used as a monomer for condensation polymerisation?
+    It has only one functional group (–OH), so after it reacts once the chain can't grow from that end.
+**Flashcards**
+  What is a monomer? :: A small molecule that joins with many others to form a polymer.
+  What must a monomer have for addition polymerisation? :: A carbon–carbon double bond (C=C).
+  What must a monomer have for condensation polymerisation? :: Two reactive functional groups (e.g. –OH, –COOH, –NH₂), one at each end.
+  What else forms in condensation polymerisation? :: A small molecule, usually water.
+  Give two natural condensation polymers. :: Proteins, starch, cellulose (or DNA)
+  Is polyethene made by addition or condensation? :: Addition (from ethene's C=C).
+  The link formed between a –COOH and an –OH group in a polyester is an {{ester}} link.
+  Which link joins units in a polyamide? :: An amide link (–CONH–).
+  Is natural rubber an addition or condensation polymer? :: Addition (from isoprene).
+
+@ 50a711c7 U1.2.3.2 | Addition polymers from alkenes
+**In a sentence**
+  In addition polymerisation, each alkene's double bond opens so the monomers can link into a long chain of single-bonded carbons, keeping every atom of every monomer.
+**Key terms**
+  **Addition polymer**: a polymer formed from monomers with C=C and no other product.
+  **Repeating unit**: the two backbone carbons (with their side groups) from one monomer, drawn with continuation bonds.
+  **Side group**: an atom or group attached to the backbone (–CH₃, –Cl, –C₆H₅).
+**How it works**
+  The C=C double bond in each alkene monomer breaks to a single bond, freeing one bond on each carbon to join to the next monomer.
+  Thousands of monomers join into a long chain with a backbone of single-bonded carbon atoms.
+  n CH₂=CH₂ → –(CH₂–CH₂)ₙ–
+**Drawing the repeating unit**
+  Draw the two carbons of the monomer with a single bond between them, keep all the side groups, and add a bond sticking out on each side through brackets, with n outside.
+  To find the monomer from a polymer: identify the two-carbon repeating unit and put the double bond back.
+**Common monomers and polymers**
+  Ethene CH₂=CH₂ → polyethene (PE): bags, bottles, cling film
+  Propene CH₂=CHCH₃ → polypropene (PP): containers, ropes, car parts
+  Chloroethene (vinyl chloride) CH₂=CHCl → polyvinyl chloride (PVC): pipes, cable insulation
+  Phenylethene (styrene) CH₂=CHC₆H₅ → polystyrene (PS): foam packaging, disposable cups
+  Tetrafluoroethene CF₂=CF₂ → polytetrafluoroethene (PTFE): non-stick coatings
+**Worked example**
+  Draw the repeating unit of polypropene.
+    Monomer: CH₂=CH–CH₃.
+    Repeating unit: –(CH₂–CH(CH₃))– — two backbone carbons; the CH₃ is a side group, not part of the chain.
+**Going deeper**
+  Polymerisation of ethene needs a catalyst or initiator and specific conditions; different conditions give LDPE (high pressure, branched) or HDPE (Ziegler–Natta catalyst, low pressure, linear).
+  The molar mass of the polymer ≈ n × molar mass of the monomer, so a chain of 10 000 ethene units has M ≈ 280 000 g mol⁻¹.
+  Copolymers use two different monomers in the chain (e.g. ABS plastic), combining their properties.
+**Worked example 2**
+  Identify the monomer of a polymer with repeating unit –CH₂–CH(CN)–.
+    Two backbone carbons; put the double bond back between them.
+    Monomer: CH₂=CHCN (propenenitrile, "acrylonitrile") — its polymer is used in acrylic fibres.
+**Common mistakes**
+  Putting the CH₃ group of propene into the main chain (three carbons in the backbone).
+  Leaving a double bond in the polymer.
+  Drawing the repeating unit without the continuation bonds through the brackets.
+**Exam tips**
+  Draw the repeating unit with brackets and n, the continuation bonds through the brackets, and all side groups — each is usually worth a mark.
+**Connections**
+  Families of organic compounds: alkenes' C=C makes addition possible.
+  Thermoplastics and designing polymers explain how the chains behave.
+**Practice questions**
+  Write an equation for the polymerisation of chloroethene.
+    n CH₂=CHCl → –(CH₂–CHCl)ₙ–
+  Approximately what is the molar mass of a polypropene chain of 5000 units? (M(propene) = 42.0 g mol⁻¹)
+    5000 × 42.0 = 2.10 × 10⁵ g mol⁻¹
+  What is the monomer of PTFE and why is PTFE non-stick?
+    Tetrafluoroethene, CF₂=CF₂. The C–F bonds are very strong and the surface of fluorine atoms forms only weak dispersion forces with other substances.
+**Flashcards**
+  What happens to the C=C bond during addition polymerisation? :: It breaks to a single bond, letting each carbon bond to a neighbouring monomer.
+  Monomer for PVC? :: Chloroethene, CH₂=CHCl
+  Monomer for polystyrene? :: Phenylethene (styrene), CH₂=CHC₆H₅
+  Repeating unit of polyethene? :: –(CH₂–CH₂)– (two carbons, single bond)
+  How many carbons are in the backbone of each repeating unit of polypropene? :: Two — the CH₃ is a side group.
+  PTFE is made from the monomer {{tetrafluoroethene}}.
+  Equation for polymerisation of chloroethene? :: n CH₂=CHCl → –(CH₂–CHCl)ₙ–
+  What is a copolymer? :: A polymer made from two or more different monomers.
+
+@ a24768eb U1.2.3.3 | Thermoplastic vs thermosetting polymers
+**In a sentence**
+  Whether a plastic melts or chars comes down to cross-links: separate chains slide apart when heated (thermoplastic), chains tied together by covalent bonds can't (thermoset).
+**Key terms**
+  **Thermoplastic (thermosoftening) polymer**: linear or branched chains with no covalent cross-links; softens on heating.
+  **Thermosetting polymer**: chains joined by many covalent cross-links; doesn't soften, decomposes on strong heating.
+  **Cross-link**: a covalent bond between two polymer chains.
+  **Elastomer**: a lightly cross-linked polymer that stretches and returns to shape.
+**Thermoplastics (linear polymers)**
+  Long chains with **no covalent bonds between chains** — held to each other only by intermolecular forces (dispersion, sometimes dipole–dipole or hydrogen bonds).
+  On heating, the weak forces between chains are overcome, chains slide past each other and the plastic **softens and melts**. It hardens again on cooling.
+  Can be **remoulded and mechanically recycled**.
+  Examples: polyethene, polypropene, PVC, polystyrene, PET.
+**Thermosetting polymers (cross-linked)**
+  Chains are joined by **covalent cross-links** into a rigid 3D network.
+  On heating they **don't soften or melt** — the chains can't slide past each other. Strong heating breaks covalent bonds and they **char/decompose**.
+  Hard, rigid, heat resistant; **can't be remoulded** or melted to recycle.
+  Examples: melamine (kitchenware), Bakelite (electrical fittings), epoxy resins, polyurethane foam in some forms.
+**In between: elastomers**
+  A few cross-links let chains stretch then pull back (vulcanised rubber in tyres).
+**Linking structure to properties**
+  More cross-links → more rigid, harder, more heat resistant, less flexible.
+  Longer chains in a thermoplastic → stronger intermolecular forces → higher softening point and strength.
+**Going deeper**
+  Thermosets are usually made in two stages: a liquid resin is shaped, then "cured" (heat or a hardener) to form the cross-links — that's why an epoxy glue sets once mixed.
+  Vulcanisation adds sulfur cross-links to natural rubber: a few links make it elastic and durable (tyres); many make hard ebonite.
+  Recycling: thermoplastics can be remelted; thermosets can only be ground up as filler or burned for energy — a major challenge for circularity.
+**Common mistakes**
+  Saying thermoplastics soften because their covalent bonds break. Only the intermolecular forces between chains are overcome.
+  Saying thermosets melt at a high temperature — they decompose instead.
+**Exam tips**
+  Link each property to structure: "Melamine doesn't soften when heated because covalent cross-links hold its chains in fixed positions."
+**Connections**
+  Designing addition polymers: branching and chain length affect thermoplastics.
+  Plastics and recycling: why thermoplastics can be mechanically recycled and thermosets can't.
+**Practice questions**
+  Why is a thermoset used for saucepan handles?
+    It doesn't soften when hot, because covalent cross-links hold the chains rigidly in place, and it is a poor heat conductor.
+  What happens to a thermoplastic chain structure when it is heated and cooled?
+    Heating overcomes the intermolecular forces so chains move past each other (it softens/melts); cooling re-forms the forces and it sets in a new shape. The covalent bonds are unchanged.
+  Why does a rubber band stretch and return, but a thermoplastic bag stay stretched?
+    Rubber is lightly cross-linked, so chains are pulled back into place; the bag's chains have no cross-links, so they slide to new positions and stay there.
+**Flashcards**
+  What is the structural difference between thermoplastic and thermosetting polymers? :: Thermoplastics have no covalent bonds between chains; thermosets have covalent cross-links between chains.
+  Why do thermoplastics soften when heated? :: The weak intermolecular forces between chains are overcome, so chains can slide past each other.
+  Why don't thermosetting polymers melt? :: Covalent cross-links hold chains in place; heating breaks bonds and decomposes the polymer instead.
+  Which type can be recycled by melting and remoulding? :: Thermoplastics
+  Give an example of a thermosetting polymer. :: Melamine, Bakelite or epoxy resin
+  An elastomer has {{a few}} cross-links, so it stretches and springs back.
+  What does vulcanisation do to rubber? :: Adds sulfur cross-links between chains, making it more elastic and durable.
+  Why can't thermosets be recycled by melting? :: Covalent cross-links stop the chains flowing; heating decomposes them instead.
+
+@ e334f57a U1.2.3.4 | Designing addition polymers for a purpose
+**In a sentence**
+  Chemists tune an addition polymer's properties by choosing the monomer's side group, the chain length and how branched the chains are.
+**Key terms**
+  **Branching**: side chains off the main chain, which stop chains packing closely.
+  **Crystalline region**: an area where chains are packed closely and in order.
+  **Amorphous region**: an area where chains are tangled and disordered.
+  **Plasticiser**: a small molecule added between chains to make a polymer more flexible.
+**What can be varied**
+  **Choice of monomer** (the side group): changes the forces between chains and the chemical properties.
+    –H (polyethene): dispersion forces only — flexible, low melting.
+    –Cl (PVC): polar C–Cl adds dipole–dipole forces — stiffer, harder, flame resistant.
+    –C₆H₅ (polystyrene): bulky group — rigid and brittle; can be foamed.
+    –F on every carbon (PTFE): very unreactive, non-stick, heat resistant.
+  **Chain length**: longer chains → more electrons and more contact → stronger dispersion forces and more tangling → higher melting point, greater strength and toughness.
+  **Degree of branching**: branches stop chains packing closely.
+    **LDPE** (low-density polyethene): many branches → chains far apart → weaker forces, lower density, soft and flexible (plastic bags, cling wrap).
+    **HDPE** (high-density polyethene): few branches → chains pack closely (more crystalline) → stronger forces, denser, stiffer, higher melting (milk bottles, pipes).
+  **Additives**: plasticisers sit between chains and make PVC flexible (hoses, cables); fillers and colourants; UV stabilisers.
+**Answering a design question**
+  Name the property needed (e.g. rigid, heat resistant), the structural feature that gives it, and why (which forces are stronger or weaker).
+**Worked example**
+  Why is HDPE used for milk bottles rather than LDPE?
+    HDPE chains are unbranched, so they pack closely together.
+    This gives stronger dispersion forces between chains, making HDPE stiffer and stronger, so the bottle keeps its shape.
+**Going deeper**
+  Density and strength rise with crystallinity: HDPE is about 0.95 g cm⁻³ and quite crystalline; LDPE about 0.92 g cm⁻³ and more amorphous.
+  Plasticisers such as phthalates make PVC soft, but some can leach out; health concerns have led to restrictions in children's toys.
+  Designing for purpose is always a trade-off: stiffness vs flexibility, strength vs ease of processing, durability vs biodegradability.
+**Worked example 2**
+  Choose between LDPE, HDPE and PVC for a garden hose. Justify.
+    A hose must be flexible, tough and weather resistant.
+    Plasticised PVC: flexible (plasticiser between chains), tough, resists water and weathering — a good choice.
+    LDPE is flexible but less durable; HDPE is too stiff.
+**Exam tips**
+  Structure an answer as: required property → structural feature → effect on forces between chains → property.
+**Connections**
+  Bonding and intermolecular forces: dispersion and dipole–dipole forces between chains.
+  Addition polymers from alkenes: the side group comes from the monomer.
+**Practice questions**
+  Explain why increasing chain length increases the melting point of polyethene.
+    Longer chains have more electrons and more contact with neighbouring chains, so dispersion forces are stronger, and chains are more tangled — more energy is needed to separate them.
+  Why is HDPE more dense than LDPE?
+    Its unbranched chains pack closely together in ordered (crystalline) regions, so more mass fits in the same volume.
+  What is the effect of adding a plasticiser to PVC?
+    It separates the chains and weakens the forces between them, so they slide more easily and the PVC becomes flexible.
+**Flashcards**
+  Why is LDPE less dense and softer than HDPE? :: LDPE's branched chains can't pack closely, so there are weaker dispersion forces between chains.
+  How does increasing chain length affect a polymer? :: Stronger dispersion forces and more tangling → higher melting point and greater strength.
+  Why is PVC more rigid than polyethene? :: The polar C–Cl bonds add dipole–dipole attractions between chains.
+  What does a plasticiser do? :: It sits between polymer chains, pushing them apart so they slide more easily — making the plastic flexible.
+  Give a use of LDPE and explain it. :: Plastic bags or cling wrap — it is flexible and soft because its branched chains are loosely packed.
+  Fewer branches allow chains to pack more closely, increasing {{density and strength}}.
+  What is a crystalline region in a polymer? :: An area where chains are closely packed in an ordered way.
+  Why choose plasticised PVC for a hose? :: It is flexible (plasticiser between chains), tough and weather resistant.
+
+@ c62951ad U1.2.3.5 | Plastics, bioplastics and recycling
+**In a sentence**
+  Plastics can come from oil or plants and can end their life by mechanical, chemical or organic recycling — and "bio", "biodegradable" and "compostable" mean different things.
+**Key terms**
+  **Fossil-fuel-based plastic**: made from crude oil or natural gas feedstocks.
+  **Bioplastic**: a plastic that is bio-based, biodegradable, or both.
+  **Mechanical recycling**: sorting, cleaning, shredding and remelting thermoplastics.
+  **Chemical recycling**: breaking plastics into monomers or other chemicals to make new materials.
+  **Organic recycling**: composting or anaerobic digestion of compostable plastics.
+  **Downcycling**: recycling into a product of lower quality or value.
+**Fossil-fuel-based plastics**
+  Made from monomers derived from crude oil or natural gas.
+  Recycling codes: 1 PET, 2 **HDPE**, 3 **PVC**, 4 **LDPE**, 5 **PP**, 6 **PS**, 7 other.
+**Bioplastics**
+  **Bio-based**: made from renewable biomass rather than fossil fuels.
+  **PLA** (polylactic acid): a condensation polymer (polyester) of lactic acid, made by fermenting sugars from corn or sugarcane. Bio-based **and** industrially compostable.
+  **Bio-PE** and **Bio-PP**: chemically identical to PE and PP, but the monomers come from bioethanol (sugarcane). Bio-based but **not** biodegradable — recycled like ordinary PE and PP.
+**Key terms (often confused)**
+  **Bio-based**: made from biomass. Says nothing about how it breaks down.
+  **Biodegradable**: broken down by microorganisms into CO₂, water and biomass — eventually, under some conditions.
+  **Compostable**: breaks down within a set time in composting conditions without toxic residue. Many need **industrial** composting (high temperature), not a home compost.
+  **Renewable** raw ingredients: from sources that can be replenished (plants), rather than fossil fuels.
+**Recycling methods**
+  **Mechanical**: collect, sort by type, clean, shred, melt, remould. Only for thermoplastics. Chains shorten each time, so quality drops (often **downcycled**). Mixed or contaminated plastics are a problem.
+  **Chemical**: break polymers back into monomers or small molecules (depolymerisation, hydrolysis of PET, pyrolysis to oils), then make new plastic. Can handle mixed plastics and give virgin-quality material, but uses more energy.
+  **Organic**: composting or anaerobic digestion of compostable plastics (e.g. PLA) with food waste.
+**Circularity**
+  A circular plastic keeps its material in use: designed for recycling (single material, no hard-to-remove additives), collected, and made into new products — ideally from renewable raw ingredients.
+**Going deeper**
+  Why mechanical recycling degrades plastic: heat and shear break some chains, shortening them, and contamination and mixed additives creep in — so recycled plastic is often blended with new plastic or used for lower-grade products.
+  Why sorting matters: different plastics have different melting points and don't blend well; a small amount of PVC can ruin a batch of PET.
+  PLA composts in industrial conditions (about 58 °C, controlled moisture) over weeks; in a backyard compost or the ocean it breaks down very slowly.
+  Circularity questions to ask: is the feedstock renewable? Is the product designed for one material and easy recycling? Is there collection infrastructure? Is it actually recycled in practice?
+**Common mistakes**
+  Assuming bioplastics are always biodegradable.
+  Putting compostable plastics in the recycling bin — they contaminate PE/PET streams.
+**Exam tips**
+  Define terms precisely before evaluating — many marks are lost by using "biodegradable" when "bio-based" is meant.
+**Connections**
+  Thermoplastic vs thermosetting: only thermoplastics can be mechanically recycled.
+  Hydrolysis and recycling polymers (chemical recycling of condensation polymers).
+  Biomass as a source of chemicals.
+**Practice questions**
+  Why is recycled PET often mixed with new PET for food packaging?
+    Mechanical recycling shortens polymer chains and may introduce contaminants, lowering strength and purity; blending restores quality.
+  Classify each: PLA, Bio-PE, HDPE — bio-based? biodegradable?
+    PLA: bio-based and (industrially) compostable. Bio-PE: bio-based, not biodegradable. HDPE: fossil-based, not biodegradable.
+  Give one advantage and one disadvantage of chemical recycling compared with mechanical recycling.
+    Advantage: can handle mixed or contaminated plastics and gives virgin-quality material. Disadvantage: uses more energy and is more expensive; not yet widely available.
+**Flashcards**
+  List the fossil-fuel plastics HDPE, PVC, LDPE, PP, PS in full. :: High-density polyethene, polyvinyl chloride, low-density polyethene, polypropene, polystyrene.
+  What is PLA made from, and what type of polymer is it? :: Lactic acid from fermented plant sugars; a condensation polymer (polyester).
+  Is Bio-PE biodegradable? :: No — it is chemically identical to fossil PE. It is bio-based, not biodegradable.
+  Difference between bio-based and biodegradable? :: Bio-based describes the source (biomass); biodegradable describes the end of life (broken down by microorganisms).
+  What is mechanical recycling, and its main limitation? :: Sorting, cleaning, shredding, melting and remoulding thermoplastics. Chains degrade each cycle, so quality drops.
+  What is chemical recycling? :: Breaking polymers back into monomers or small molecules that can be made into new plastic.
+  Composting a compostable plastic like PLA is called {{organic}} recycling.
+  What is downcycling? :: Recycling a material into a product of lower quality or value.
+  Why is PVC contamination a problem in PET recycling? :: Different plastics don't melt or blend together well; a little PVC can ruin a batch.
+
+@ c6961506 U1.2.3.6 | Hydrolysis and recycling polymers
+**In a sentence**
+  Condensation polymers can be broken back into their monomers by hydrolysis, and new processes — including enzymes — use this to recycle plastics like PET in a closed loop.
+**Key terms**
+  **Hydrolysis**: breaking a bond by reaction with water.
+  **Depolymerisation**: breaking a polymer back into monomers.
+  **Enzyme**: a biological catalyst (a protein).
+  **Closed-loop recycling**: turning a used product back into the same product.
+**Hydrolysis — the reverse of condensation**
+  **Hydrolysis** breaks a bond by reaction with water. In condensation polymers it splits ester or amide links, giving back the monomers.
+    Polyester + water → acid + alcohol monomers.
+  Usually needs an acid, base, high temperature or an **enzyme** as a catalyst.
+  Addition polymers (C–C backbones) can't be hydrolysed — one reason they persist in the environment.
+**Innovations in condensation polymers**
+  **PLA**: bio-based polyester that can be composted industrially (hydrolysed and digested by microbes).
+  **PET chemical recycling**: hydrolysis or glycolysis breaks PET back to its monomers, which are purified and repolymerised into food-grade PET — closed-loop recycling without quality loss.
+  **Enzymatic recycling**: enzymes such as PETase (discovered in bacteria) hydrolyse PET at mild temperatures.
+  **Biodegradable polyesters** (PHA, made by bacteria) and new polyamides designed to break down.
+  Dissolvable stitches: polyesters that hydrolyse slowly in the body.
+**Linear → circular**
+  Being able to break polymers back into monomers means the same material can be made into new products repeatedly, rather than landfilled or burned.
+  Limitations: collection and sorting; energy and chemical inputs; cost compared with new plastic; some processes are not yet at large scale.
+**Going deeper**
+  Hydrolysis of an ester link: –COO– + H₂O → –COOH + HO– (the reverse of the condensation that formed it). Acids, bases or enzymes speed it up.
+  PET's monomers are a dicarboxylic acid (terephthalic acid) and a diol (ethane-1,2-diol); after hydrolysis they can be purified and repolymerised to food-grade PET.
+  Enzymatic recycling (e.g. modified PETase and other cutinase-type enzymes) works at mild temperatures, saving energy, and is being scaled up commercially.
+  Biodegradation of polyesters in the environment is really slow hydrolysis, often helped by microbial enzymes.
+**Worked example 2**
+  What are the products of hydrolysing a polyester made from butanedioic acid and ethane-1,2-diol?
+    Hydrolysis reverses each ester link, adding water.
+    Products: butanedioic acid (HOOC–CH₂CH₂–COOH) and ethane-1,2-diol (HO–CH₂CH₂–OH).
+**Exam tips**
+  Link hydrolysis to the circular economy explicitly: monomers recovered → new polymer of the same quality → no downcycling.
+**Connections**
+  Addition vs condensation polymerisation: only condensation polymers have hydrolysable links.
+  Plastics and recycling: chemical recycling methods.
+  Green chemistry: catalysis and design for degradation.
+**Practice questions**
+  Why can nylon be hydrolysed but polypropene can't?
+    Nylon has amide links that react with water; polypropene has only C–C and C–H bonds in its chain.
+  Explain how enzymatic hydrolysis of PET contributes to a circular economy.
+    Enzymes break PET into its monomers at mild temperatures; the monomers are purified and made into new PET of the same quality, so the material stays in use instead of being downcycled or landfilled.
+  Give one limitation of chemical recycling of PET.
+    Collection and sorting are still needed; processes can be energy- or chemical-intensive and cost more than making new PET; some are not yet at large scale.
+**Flashcards**
+  What is hydrolysis? :: Breaking a chemical bond by reaction with water.
+  Why can condensation polymers be hydrolysed but addition polymers can't? :: Condensation polymers have ester or amide links that react with water; addition polymers have a C–C backbone with no such links.
+  What does hydrolysis of a polyester produce? :: Its monomers: a carboxylic acid (dicarboxylic acid) and an alcohol (diol).
+  How does chemical recycling of PET help a circular economy? :: PET is broken back into monomers that are repolymerised into new PET of the same quality, again and again.
+  What is PETase? :: An enzyme from bacteria that hydrolyses PET, enabling low-energy recycling.
+  Hydrolysis is the reverse of {{condensation}} polymerisation.
+  What are the monomers of PET? :: A dicarboxylic acid (terephthalic acid) and a diol (ethane-1,2-diol).
+  Why is enzymatic recycling energy-efficient? :: Enzymes catalyse hydrolysis at mild temperatures.

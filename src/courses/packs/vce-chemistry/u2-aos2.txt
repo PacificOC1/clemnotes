@@ -1,0 +1,767 @@
+% VCE Chemistry — Unit 2, Area of Study 2: measuring and analysing chemicals.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ 8ed00730 U2.2.1.1 | Units of concentration
+**In a sentence**
+  Concentration says how much solute is in a given amount of solution, and the same solution can be described in mol L⁻¹, g L⁻¹, percentages or ppm — converting between them is mostly multiplying by molar mass or powers of ten.
+**Key terms**
+  **Solute / solvent / solution**: what dissolves / what does the dissolving / the mixture.
+  **Molarity (mol L⁻¹, M)**: moles of solute per litre of solution.
+  **%(m/v)**: grams of solute per 100 mL of solution.
+  **%(v/v)**: millilitres of solute per 100 mL of solution.
+  **ppm**: parts per million — mg of solute per L of solution (dilute aqueous) or mg per kg.
+  **ppb**: parts per billion — µg L⁻¹; used for very low concentrations (e.g. lead in drinking water).
+**Concentration**
+  Concentration is the quantity of **solute** dissolved in a given amount of **solution**.
+**The units**
+  **mol L⁻¹ (M, molarity)**: $c = \frac{n}{V}$ — moles of solute per litre of solution. The main unit in VCE calculations.
+  **g L⁻¹**: grams of solute per litre of solution.
+  **%(m/v)**: grams of solute per 100 mL of solution. 0.9%(m/v) saline = 0.9 g NaCl per 100 mL.
+  **%(v/v)**: mL of solute per 100 mL of solution (liquids in liquids). 40%(v/v) spirits = 40 mL ethanol per 100 mL.
+  **%(m/m)**: grams of solute per 100 g of solution (sometimes used for solids).
+  **ppm (parts per million)**: mass of solute per million parts of solution. For dilute aqueous solutions, **1 ppm = 1 mg L⁻¹** (because 1 L of water has a mass of about 1 kg = 10⁶ mg). Also mg kg⁻¹ for soils.
+**Conversions**
+  mol L⁻¹ → g L⁻¹: multiply by molar mass M.
+  g L⁻¹ → mol L⁻¹: divide by M.
+  %(m/v) → g L⁻¹: multiply by 10 (per 100 mL → per 1000 mL).
+  g L⁻¹ → ppm (mg L⁻¹): multiply by 1000.
+  Volume: 1 L = 1000 mL; divide mL by 1000 to get L.
+**Worked example**
+  Express 0.250 M NaCl (M = 58.5 g mol⁻¹) in g L⁻¹, %(m/v) and ppm.
+    g L⁻¹ = 0.250 × 58.5 = 14.6 g L⁻¹
+    %(m/v) = 14.6 ÷ 10 = 1.46%
+    ppm = 14.6 g L⁻¹ × 1000 = 14 600 mg L⁻¹ = 1.46 × 10⁴ ppm
+**Worked example — making a solution**
+  What mass of CuSO₄ (M = 159.6 g mol⁻¹) is needed for 250.0 mL of 0.100 M solution?
+    n = c × V = 0.100 × 0.2500 = 0.0250 mol
+    m = n × M = 0.0250 × 159.6 = 3.99 g
+**Going deeper**
+  A handy chain: mol L⁻¹ ×M→ g L⁻¹ ÷10→ %(m/v); g L⁻¹ ×1000→ mg L⁻¹ (ppm) ×1000→ µg L⁻¹ (ppb).
+  Concentration is per **solution**, not per solvent: 1.0 M means 1.0 mol in a litre of final solution, which is why volumetric flasks are filled to the mark after dissolving.
+  Australian drinking water guidelines use mg L⁻¹: e.g. lead limit 0.01 mg L⁻¹ (10 ppb), fluoride about 1 mg L⁻¹.
+**Worked example 2**
+  Seawater contains about 19 400 ppm chloride. Express this in mol L⁻¹.
+    19 400 mg L⁻¹ = 19.4 g L⁻¹
+    c = 19.4 ÷ 35.5 = 0.546 mol L⁻¹
+**Common mistakes**
+  Using mL instead of L in c = n/V.
+  Treating %(m/v) as grams per litre.
+  Forgetting ppm = mg L⁻¹ only works for dilute aqueous solutions.
+**Exam tips**
+  Write units at every step; most errors in concentration questions are unit errors (mL vs L, mg vs g).
+**Connections**
+  The mole (Unit 1): n = m/M.
+  Titrations and dilution use c = n/V and c₁V₁ = c₂V₂.
+  Salts in water and colorimetry report results in these units.
+**Practice questions**
+  Convert 0.150 M glucose (M = 180 g mol⁻¹) to %(m/v).
+    0.150 × 180 = 27.0 g L⁻¹ → 2.70%(m/v)
+  How many grams of NaCl are in 250 mL of 0.9%(m/v) saline?
+    0.9 g per 100 mL → 2.25 g in 250 mL (2.3 g to 2 sig figs)
+  A water sample has 0.20 mg of lead in 500 mL. Is it within the 0.01 mg L⁻¹ guideline?
+    0.20 mg ÷ 0.500 L = 0.40 mg L⁻¹ — 40 times the guideline, so it is unsafe.
+**Flashcards**
+  Formula for molar concentration? :: c = n ÷ V (mol L⁻¹, with V in litres)
+  What does 5%(m/v) mean? :: 5 g of solute per 100 mL of solution.
+  What is 1 ppm in mg L⁻¹ for a dilute aqueous solution? :: 1 mg L⁻¹
+  Convert 0.50 M NaOH (M = 40.0) to g L⁻¹. :: 0.50 × 40.0 = 20 g L⁻¹
+  Convert 2.0 g L⁻¹ to ppm. :: 2000 ppm (2.0 g = 2000 mg per litre)
+  How many moles are in 25.0 mL of 0.200 M HCl? :: 0.200 × 0.0250 = 5.00 × 10⁻³ mol
+  Convert 3.0%(m/v) to g L⁻¹. :: 30 g L⁻¹
+  Convert 19 400 ppm chloride to mol L⁻¹. :: 0.546 mol L⁻¹ (19.4 g L⁻¹ ÷ 35.5)
+  What is 1 ppb in a dilute aqueous solution? :: 1 µg L⁻¹
+
+@ b3d59a35 U2.2.1.2 | Solubility curves and temperature
+**In a sentence**
+  Solubility tables say which ionic compounds dissolve, and solubility curves show how much dissolves at each temperature — more for most solids when hot, less for gases.
+**Key terms**
+  **Solubility**: the maximum mass of solute that dissolves in a set amount of solvent (usually g per 100 g water) at a given temperature.
+  **Saturated / unsaturated / supersaturated**: at / below / above the solubility limit.
+  **Crystallisation**: solid forming from a solution as solubility is exceeded.
+**Solubility tables**
+  Show which ionic compounds are soluble or insoluble in water — used to predict whether a precipitate forms when solutions are mixed (see Unit 1 precipitation notes).
+**Solubility curves**
+  Graphs of **solubility** (usually g of solute per 100 g of water) against temperature.
+  A point **on** the curve is a **saturated** solution (no more dissolves at that temperature).
+  **Below** the curve: **unsaturated** (more can dissolve). **Above**: **supersaturated** (unstable; excess tends to crystallise).
+  Cooling a saturated solution: mass that crystallises = solubility at the higher temperature − solubility at the lower temperature (per 100 g water).
+**Effect of temperature**
+  **Most solids** become more soluble as temperature rises (e.g. KNO₃ rises steeply); NaCl barely changes; a few (e.g. Ce₂(SO₄)₃, Li₂CO₃) become less soluble.
+  **Gases** become **less** soluble as temperature rises — gas particles gain kinetic energy and escape the solution. Warm water holds less dissolved O₂, which stresses fish (thermal pollution).
+  **Liquids**: many miscible liquids (e.g. ethanol in water) mix in all proportions; for partially miscible liquids solubility usually increases with temperature.
+**Worked example**
+  KNO₃ solubility is 110 g/100 g water at 60 °C and 32 g/100 g at 20 °C. A saturated solution in 100 g water at 60 °C is cooled to 20 °C. What mass crystallises?
+    110 − 32 = 78 g of KNO₃
+  For 50 g of water the answer would be half: 39 g.
+**Going deeper**
+  Why gases dissolve less when warm: dissolving a gas releases energy (it's exothermic), and warmer gas molecules have more kinetic energy to escape the liquid.
+  Why most solids dissolve more when warm: dissolving usually absorbs energy (endothermic), and more energetic water molecules break up the lattice more effectively.
+  Recrystallisation purifies solids: dissolve in hot solvent, filter off insoluble impurities, cool so the product crystallises while soluble impurities stay dissolved.
+  Pressure matters for gases too: fizzy drinks hold CO₂ under pressure; opening the bottle lowers pressure and gas comes out.
+**Worked example 2**
+  At 50 °C, 85 g of KNO₃ dissolves in 100 g water. A solution of 60 g KNO₃ in 50 g water at 50 °C — saturated, unsaturated or supersaturated?
+    Scale to 100 g water: 120 g per 100 g.
+    120 > 85, so more than can dissolve — supersaturated (or undissolved solid would remain).
+**Common mistakes**
+  Reading solubility per 100 g water as per 100 g of **solution**.
+  Saying gases dissolve better in warm water.
+**Exam tips**
+  Read solubility curves carefully: the y-axis is usually "per 100 g of water". Scale your answer if the mass of water is different.
+**Connections**
+  Precipitation reactions (Unit 1) use solubility tables.
+  Removing impurities from water by precipitation.
+  Latent heat and water's properties: thermal pollution of rivers.
+**Practice questions**
+  Explain why fish may die in a river downstream of a power station that releases warm water.
+    Warmer water holds less dissolved oxygen, so fish may not get enough oxygen.
+  Using the data 110 g/100 g at 60 °C and 32 g/100 g at 20 °C for KNO₃, what mass crystallises when a saturated solution in 250 g of water is cooled from 60 °C to 20 °C?
+    (110 − 32) × 2.5 = 195 g
+  Why does a can of soft drink go flat faster when warm?
+    CO₂ is less soluble at higher temperatures, so more gas escapes.
+**Flashcards**
+  What is a saturated solution? :: One in which no more solute can dissolve at that temperature.
+  What does a point above a solubility curve represent? :: A supersaturated solution.
+  How does temperature affect the solubility of most solids in water? :: Solubility increases as temperature increases.
+  How does temperature affect the solubility of gases in water? :: Solubility decreases as temperature increases.
+  Why does warm water harm fish? :: Less oxygen dissolves in warmer water.
+  A solution at 40 °C has 30 g solute per 100 g water; solubility at 40 °C is 60 g. Saturated or unsaturated? :: Unsaturated — more can dissolve.
+  Mass crystallising on cooling = solubility at the {{higher}} temperature minus solubility at the {{lower}} temperature.
+  Why does gas solubility fall with temperature? :: Gas molecules gain kinetic energy and escape; dissolving gases is exothermic.
+  What is recrystallisation used for? :: Purifying a solid by dissolving it hot and letting it crystallise on cooling.
+
+@ 4ec338f8 U2.2.1.3 | Removing impurities by precipitation
+**In a sentence**
+  Unwanted dissolved ions can be pulled out of water by adding something that forms an insoluble solid with them, then settling and filtering the precipitate away.
+**Key terms**
+  **Coagulation / flocculation**: tiny particles clumping into larger ones (flocs) that settle.
+  **Sedimentation**: letting solids settle to the bottom.
+  **Hard water**: water containing dissolved Ca²⁺ and Mg²⁺ ions.
+  **Heavy metals**: toxic metals such as lead, mercury, cadmium and arsenic.
+**The idea**
+  Dissolved ions that make water unsafe or unpleasant can be removed by adding a chemical whose ions form an **insoluble compound** with them. The precipitate is then removed by settling (sedimentation) and filtration.
+**Examples**
+  **Heavy metals** (Pb²⁺, Cd²⁺, Cu²⁺, Hg²⁺ in industrial and mine waste water): add hydroxide (e.g. lime, Ca(OH)₂) or sulfide to precipitate metal hydroxides or sulfides.
+    Pb²⁺(aq) + 2OH⁻(aq) → Pb(OH)₂(s)
+  **Phosphate** (from fertiliser run-off and sewage — causes algal blooms): add Al³⁺ or Fe³⁺ salts.
+    Fe³⁺(aq) + PO₄³⁻(aq) → FePO₄(s)
+  **Hard water** (Ca²⁺ and Mg²⁺ — forms scale): add sodium carbonate to precipitate CaCO₃.
+    Ca²⁺(aq) + CO₃²⁻(aq) → CaCO₃(s)
+  **Flocculation/coagulation** in drinking water treatment: aluminium sulfate (alum) forms a gelatinous Al(OH)₃ precipitate that traps suspended particles, which then settle.
+**Considerations**
+  The added chemical must not leave harmful ions behind; excess reagent may need treatment; the sludge must be disposed of safely (especially if it contains heavy metals).
+**Going deeper**
+  A typical drinking-water treatment sequence: screening → coagulation/flocculation (alum or ferric chloride) → sedimentation → filtration (sand) → disinfection (chlorine or UV) → pH adjustment and fluoridation.
+  Choosing the precipitating agent: it should form a very insoluble compound with the target ion, not add harmful ions, and be cheap. Lime (Ca(OH)₂) is common because Ca²⁺ is harmless and OH⁻ precipitates many metals.
+  Removing phosphate prevents eutrophication: algae bloom when fertiliser phosphate reaches rivers, then die and decompose, using up oxygen.
+**Worked example**
+  What mass of Pb(OH)₂ precipitates from 1000 L of waste water containing 2.07 mg L⁻¹ of Pb²⁺, if all of it precipitates?
+    Mass of Pb²⁺ = 2.07 mg L⁻¹ × 1000 L = 2070 mg = 2.07 g
+    n(Pb²⁺) = 2.07 ÷ 207.2 = 9.99 × 10⁻³ mol = n(Pb(OH)₂)
+    m = 9.99 × 10⁻³ × 241.2 = 2.41 g
+**Connections**
+  Precipitation reactions and solubility tables (Unit 1).
+  Salts in water and soil: detecting the ions.
+  Gravimetric analysis uses the same reactions to measure amounts.
+**Practice questions**
+  Write the ionic equation for removing cadmium ions with hydroxide.
+    Cd²⁺(aq) + 2OH⁻(aq) → Cd(OH)₂(s)
+  Why is it important to dispose of the sludge from heavy-metal precipitation carefully?
+    It concentrates the toxic metals; if dumped, they could leach back into water and soil.
+  Explain why removing phosphate from sewage protects rivers.
+    Phosphate feeds algal blooms; when the algae die and decompose, bacteria use up dissolved oxygen, killing fish (eutrophication).
+**Flashcards**
+  How does precipitation remove dissolved impurities from water? :: A chemical is added whose ions form an insoluble compound with the impurity; the precipitate is settled and filtered out.
+  Ionic equation for removing lead ions with hydroxide? :: Pb²⁺(aq) + 2OH⁻(aq) → Pb(OH)₂(s)
+  How can phosphate be removed from waste water? :: Add Fe³⁺ or Al³⁺ to precipitate insoluble FePO₄ or AlPO₄.
+  How can water hardness (Ca²⁺) be removed by precipitation? :: Add sodium carbonate to precipitate CaCO₃.
+  What does alum do in drinking water treatment? :: Forms a gelatinous Al(OH)₃ precipitate that traps suspended particles so they settle (flocculation).
+  What is eutrophication? :: Excess nutrients (e.g. phosphate) cause algal blooms whose decay uses up oxygen in water.
+  Why is lime used to precipitate metals from waste water? :: Its OH⁻ precipitates many metal ions and Ca²⁺ is harmless; it's cheap.
+
+@ f0e9eb03 U2.2.2.1 | Titrations and standard solutions
+**In a sentence**
+  Volumetric analysis finds an unknown concentration by reacting a measured volume of it with a solution of known concentration until an indicator shows the reaction is exactly complete.
+**Key terms**
+  **Titration**: adding one solution from a burette to another until the reaction is complete.
+  **Standard solution / primary standard**: a solution of accurately known concentration / a substance pure and stable enough to make one by weighing.
+  **Aliquot / titre**: the measured volume from the pipette / the volume delivered from the burette.
+  **Equivalence point / end point**: where reactants are in exact stoichiometric amounts / where the indicator changes colour.
+  **Concordant titres**: titres within 0.10 mL of each other.
+  **Dilution factor**: the ratio of final to initial volume.
+**Key terms**
+  **Standard solution**: a solution of accurately known concentration.
+  **Primary standard**: a substance pure enough to weigh out directly to make a standard solution. It must be very pure, stable (not absorbing water or CO₂ from air), have a known formula and a high molar mass (reduces weighing error). Example: anhydrous sodium carbonate, Na₂CO₃. NaOH is **not** a primary standard (absorbs water and CO₂).
+  **Aliquot**: an accurately measured volume delivered by a **pipette**.
+  **Titre**: the volume delivered from the **burette** to reach the end point.
+  **Equivalence point**: where the reactants have reacted in exactly the mole ratio of the equation.
+  **End point**: where the indicator changes colour. A good indicator makes the end point match the equivalence point.
+  **Concordant titres**: titres that agree within 0.10 mL; average at least three.
+**Preparing a standard solution**
+  Weigh the primary standard accurately; dissolve in a little deionised water; transfer (with rinsings) to a **volumetric flask**; make up to the mark with deionised water; invert to mix.
+**Dilution**
+  Moles of solute stay the same, so $c_1V_1 = c_2V_2$.
+  Example: 20.00 mL of 1.00 M HCl diluted to 250.0 mL: c₂ = 1.00 × 20.00 ÷ 250.0 = 0.0800 M.
+**Rinsing the glassware**
+  Burette: rinse with the solution it will hold (water would dilute it).
+  Pipette: rinse with the solution it will deliver.
+  Volumetric flask and conical flask: rinse with **deionised water** (the moles added are fixed, so water doesn't matter; the solution would add extra moles).
+**Choosing an indicator**
+  Strong acid + strong base: phenolphthalein or methyl orange (both work).
+  Weak acid + strong base (equivalence point basic): phenolphthalein.
+  Strong acid + weak base (equivalence point acidic): methyl orange.
+**Calculation steps**
+  1. Write the balanced equation.
+  2. n(known) = c × V (V in L), using the average concordant titre or the aliquot.
+  3. Use the mole ratio to find n(unknown).
+  4. c(unknown) = n ÷ V; account for any dilution.
+**Worked example**
+  A 20.00 mL aliquot of HCl is titrated with 0.1000 M NaOH. Concordant titres average 18.45 mL. Find c(HCl).
+    HCl + NaOH → NaCl + H₂O (1 : 1)
+    n(NaOH) = 0.1000 × 0.01845 = 1.845 × 10⁻³ mol
+    n(HCl) = 1.845 × 10⁻³ mol
+    c(HCl) = 1.845 × 10⁻³ ÷ 0.02000 = 0.09225 M
+**Worked example — diprotic acid**
+  25.00 mL of H₂SO₄ needs 21.60 mL of 0.1500 M NaOH.
+    H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O
+    n(NaOH) = 0.1500 × 0.02160 = 3.240 × 10⁻³; n(H₂SO₄) = 1.620 × 10⁻³
+    c(H₂SO₄) = 1.620 × 10⁻³ ÷ 0.02500 = 0.06480 M
+**Effect of errors (explain the direction)**
+  Burette rinsed with water: titrant diluted → larger titre → calculated unknown too high (when the burette holds the known solution).
+  Pipette rinsed with water: aliquot diluted → fewer moles → smaller titre → unknown too low.
+  Overshooting the end point → titre too large.
+**Going deeper**
+  Accuracy of glassware: a 20.00 mL pipette and 250.0 mL volumetric flask are accurate to about ±0.03 mL and ±0.3 mL; a measuring cylinder is not accurate enough for standard solutions.
+  Reading the burette: eye level with the bottom of the meniscus, to two decimal places (the second always 0 or 5).
+  Rough titration first: find the approximate end point quickly, then do careful titrations adding drop by drop near the end point.
+  If the unknown was diluted before titrating, multiply back: c(original) = c(diluted) × dilution factor.
+**Worked example 2 (with dilution)**
+  25.00 mL of vinegar is diluted to 250.0 mL. A 20.00 mL aliquot of the diluted solution needs 17.60 mL of 0.1000 M NaOH. Find the ethanoic acid concentration in the vinegar.
+    n(NaOH) = 0.1000 × 0.01760 = 1.760 × 10⁻³ mol
+    CH₃COOH + NaOH → CH₃COONa + H₂O (1 : 1): n(CH₃COOH) = 1.760 × 10⁻³ mol in 20.00 mL
+    c(diluted) = 1.760 × 10⁻³ ÷ 0.02000 = 0.08800 M
+    Dilution factor = 250.0 ÷ 25.00 = 10 → c(vinegar) = 0.8800 M
+**Worked example 3 (standard solution)**
+  What mass of anhydrous Na₂CO₃ (M = 106.0 g mol⁻¹) is needed for 250.0 mL of 0.0500 M solution?
+    n = 0.0500 × 0.2500 = 0.01250 mol; m = 0.01250 × 106.0 = 1.325 g
+**Exam tips**
+  Lay out titration calculations in numbered steps: equation → n(known) → mole ratio → n(unknown) → c(unknown) → dilution. Each step is usually a mark.
+**Connections**
+  Neutralisation reactions (Area of Study 1) are what's being measured.
+  Units of concentration and the mole.
+  Indicators: choosing one whose colour change matches the equivalence point.
+**Practice questions**
+  A 20.00 mL aliquot of NaOH is titrated with 0.0950 M HCl; the average titre is 22.40 mL. Find c(NaOH).
+    n(HCl) = 0.0950 × 0.02240 = 2.128 × 10⁻³ mol = n(NaOH); c = 2.128 × 10⁻³ ÷ 0.02000 = 0.106 M
+  Titres: 21.45, 21.10, 21.15, 21.05 mL. Which are concordant, and what is the average?
+    21.10, 21.15, 21.05 (within 0.10 mL); average 21.10 mL. The first (rough) titre is excluded.
+  A student rinses the pipette with water before taking the aliquot of acid. Effect on the calculated acid concentration?
+    The aliquot is diluted, so fewer moles of acid are present, the titre is smaller, and the calculated concentration is too low.
+  Why is the conical flask rinsed with water, not with the solution it will hold?
+    The number of moles in the aliquot is fixed by the pipette; extra water doesn't change it, but rinsing with solution would add extra moles.
+**Flashcards**
+  What is a primary standard? :: A substance pure and stable enough to be weighed directly to make a solution of accurately known concentration (e.g. anhydrous Na₂CO₃).
+  Why isn't NaOH a primary standard? :: It absorbs water and CO₂ from the air, so its mass doesn't give an accurate amount.
+  Difference between the end point and the equivalence point? :: Equivalence point: reactants in the exact mole ratio. End point: where the indicator changes colour.
+  What are concordant titres? :: Titres that agree within 0.10 mL.
+  What should a burette be rinsed with? :: The solution it will contain.
+  What should the conical flask be rinsed with? :: Deionised water.
+  Dilution formula? :: c₁V₁ = c₂V₂
+  Which indicator for titrating ethanoic acid with NaOH? :: Phenolphthalein (the equivalence point is basic).
+  10.00 mL of 2.00 M HCl is diluted to 100.0 mL. New concentration? :: 0.200 M
+  c(vinegar) if the diluted (×10) solution is 0.08800 M? :: 0.8800 M
+  Mass of Na₂CO₃ for 250.0 mL of 0.0500 M? :: 1.325 g
+
+@ 49fc202a U2.2.3.1 | Greenhouse gases
+**In a sentence**
+  CO₂, CH₄ and water vapour absorb the infrared radiation Earth gives off and send some back down, keeping the planet warm — and extra CO₂ and CH₄ from human activity are strengthening that effect.
+**Key terms**
+  **Infrared (IR) radiation**: longer-wavelength radiation emitted by warm objects like Earth's surface.
+  **Greenhouse gas**: a gas that absorbs and re-emits IR radiation.
+  **Enhanced greenhouse effect**: extra warming from human-added greenhouse gases.
+  **Global warming potential (GWP)**: warming effect of a gas relative to the same mass of CO₂ over a time period.
+  **Carbon sink**: a reservoir that absorbs CO₂ (oceans, forests, soils).
+**The greenhouse effect**
+  The Sun's energy reaches Earth mainly as visible and UV light; the surface absorbs it and re-emits energy as **infrared (IR) radiation**.
+  **Greenhouse gases** absorb some of this IR and re-emit it in all directions, including back towards the surface, keeping the lower atmosphere warmer.
+  The **natural** greenhouse effect keeps Earth's average temperature about 33 °C warmer than it would otherwise be (about 15 °C instead of −18 °C).
+**Why these molecules absorb IR**
+  Molecules with bonds that can bend or stretch in a way that changes the molecule's dipole absorb IR. CO₂, CH₄ and H₂O do; N₂ and O₂ (the main gases in air) do not.
+**The three main gases**
+  **Water vapour (H₂O)**: the most abundant greenhouse gas. Its amount depends on temperature (warmer air holds more), so it acts as a feedback that amplifies warming rather than a direct driver.
+  **Carbon dioxide (CO₂)**: from burning fossil fuels, deforestation, cement making; also respiration and volcanoes. Long-lasting in the atmosphere. Concentration has risen from about 280 ppm before industrialisation to over 420 ppm.
+  **Methane (CH₄)**: from livestock digestion, rice paddies, landfill, natural gas leaks and wetlands. Much more potent per molecule than CO₂ (roughly 28 times over 100 years) but shorter-lived.
+**The enhanced greenhouse effect**
+  Human activities increase the concentrations of CO₂ and CH₄, so more IR is absorbed and re-emitted → global warming and climate change.
+**Going deeper**
+  Why these molecules absorb IR: IR makes bonds vibrate; only vibrations that change the molecule's dipole absorb IR. CO₂'s bending and asymmetric stretching do; N₂ and O₂'s single symmetric stretch doesn't.
+  The atmosphere is transparent to most incoming visible light but absorbs outgoing IR — like a blanket rather than a glass roof.
+  Methane oxidises in the atmosphere over about a decade, but it's much more potent per molecule while it lasts; CO₂ persists for centuries.
+  Feedbacks: warming → more water vapour (amplifies); warming → melting ice → less reflection (amplifies); warming → more plant growth (small dampening).
+**Exam tips**
+  Explain the mechanism in steps: Sun's radiation absorbed by surface → surface emits IR → greenhouse gases absorb IR → re-emit in all directions, some back to the surface → lower atmosphere warms.
+**Connections**
+  Ocean acidification (Area of Study 1): CO₂'s other effect.
+  Gas calculations: measuring gases produced by reactions.
+  Biomass and renewable feedstocks: reducing CO₂ emissions.
+**Practice questions**
+  Explain why N₂ is not a greenhouse gas even though it is 78% of the atmosphere.
+    Its only vibration (a symmetric stretch) doesn't change its dipole, so it doesn't absorb IR radiation.
+  Give two human activities that increase methane levels and one that increases CO₂.
+    Methane: livestock, rice paddies, landfill, natural gas leaks. CO₂: burning fossil fuels (or deforestation, cement making).
+  Why is water vapour's effect called a feedback?
+    Its concentration depends on temperature; warming increases evaporation, and the extra water vapour traps more heat, amplifying the warming.
+**Flashcards**
+  How do greenhouse gases warm the atmosphere? :: They absorb infrared radiation emitted by Earth's surface and re-emit it in all directions, including back towards the surface.
+  Name the three major greenhouse gases in the study design. :: Carbon dioxide (CO₂), methane (CH₄) and water vapour (H₂O).
+  Why don't N₂ and O₂ act as greenhouse gases? :: Their vibrations don't change the molecule's dipole, so they don't absorb IR.
+  Difference between the natural and enhanced greenhouse effect? :: Natural: warming from naturally present greenhouse gases. Enhanced: extra warming from greenhouse gases added by human activity.
+  Give two human sources of methane. :: Livestock, rice paddies, landfill, natural gas leaks (any two).
+  Why is water vapour described as a feedback rather than a driver? :: Its amount depends on air temperature; warming increases water vapour, which amplifies the warming.
+  Greenhouse gases absorb {{infrared}} radiation.
+  Why does CO₂ absorb IR but N₂ doesn't? :: CO₂ has vibrations that change its dipole; N₂'s only vibration doesn't.
+  What is a carbon sink? :: A reservoir that absorbs CO₂, such as oceans, forests or soils.
+
+@ 954c6263 U2.2.3.2 | Gas pressure and SLC
+**In a sentence**
+  Gas pressure comes from particles hitting the container walls, and chemists compare gases at standard laboratory conditions — 25 °C and 100 kPa — where a mole of any gas takes up 24.8 L.
+**Key terms**
+  **Pressure**: force per unit area (p = F ÷ A), in pascals (Pa).
+  **Kinetic molecular theory**: a model of gases as fast, randomly moving particles with elastic collisions.
+  **Absolute zero**: 0 K (−273 °C), the lowest possible temperature.
+  **SLC**: standard laboratory conditions, 25 °C and 100 kPa.
+  **Molar volume (Vm)**: volume of one mole of gas; 24.8 L mol⁻¹ at SLC.
+**Gas pressure**
+  **Pressure** is the force exerted per unit area. Gas pressure comes from gas particles colliding with the walls of their container.
+  More collisions (more particles, smaller volume) or harder collisions (higher temperature) → higher pressure.
+**Units**
+  Pascal (Pa) = 1 N m⁻². 1 kPa = 1000 Pa.
+  1 atm = 101.325 kPa = 101 325 Pa = 760 mmHg.
+**Standard laboratory conditions (SLC)**
+  **25 °C (298 K) and 100 kPa**.
+  At SLC, **1 mole of any gas occupies 24.8 L** (the molar volume, Vm).
+  $n = \frac{V}{V_m}$ with Vm = 24.8 L mol⁻¹ at SLC only.
+**Temperature**
+  Gas calculations use kelvin: T(K) = T(°C) + 273. 0 K is absolute zero, where particles have minimum energy.
+**Kinetic molecular theory (the model behind this)**
+  Gas particles move rapidly and randomly in straight lines, colliding elastically; the volume of the particles is negligible and there are no forces between them (ideal gas); average kinetic energy is proportional to kelvin temperature.
+**Going deeper**
+  Why every gas has the same molar volume at the same T and p: gas particles are tiny compared with the space between them, so volume depends on the number of particles, not their size (Avogadro's law).
+  The kinetic model explains the gas laws: heating makes particles faster → harder, more frequent collisions → higher pressure (or larger volume if pressure is constant).
+  Atmospheric pressure at sea level is about 101 kPa; it falls with altitude, which is why water boils below 100 °C on mountains.
+**Worked example**
+  What volume do 8.00 g of O₂ occupy at SLC?
+    n = 8.00 ÷ 32.0 = 0.250 mol
+    V = 0.250 × 24.8 = 6.20 L
+**Connections**
+  The ideal gas equation handles conditions other than SLC.
+  The mole (Unit 1): n links mass and volume.
+**Practice questions**
+  Using the kinetic molecular theory, explain why pumping more air into a tyre increases its pressure.
+    More particles in the same volume means more frequent collisions with the walls, so a greater force per unit area.
+  How many moles are in 3.72 L of CO₂ at SLC?
+    n = 3.72 ÷ 24.8 = 0.150 mol
+  Why does water boil below 100 °C at the top of a mountain?
+    Atmospheric pressure is lower, so less energy is needed for the vapour pressure to equal the surrounding pressure.
+**Flashcards**
+  What is gas pressure? :: The force per unit area exerted by gas particles colliding with the container walls.
+  What are standard laboratory conditions (SLC)? :: 25 °C and 100 kPa.
+  Molar volume of a gas at SLC? :: 24.8 L mol⁻¹
+  Convert 1.00 atm to kPa. :: 101.3 kPa (101.325)
+  Convert 50 °C to kelvin. :: 323 K
+  Volume of 0.500 mol of gas at SLC? :: 0.500 × 24.8 = 12.4 L
+  At SLC the temperature is {{25 °C}} and the pressure is {{100 kPa}}.
+  Volume of 8.00 g of O₂ at SLC? :: 6.20 L
+  Why do equal moles of different gases occupy the same volume at the same T and p? :: Particle size is negligible compared with the space between particles.
+
+@ 31825668 U2.2.3.3 | The ideal gas equation
+**In a sentence**
+  pV = nRT links pressure, volume, amount and temperature of a gas, so if you know three you can find the fourth — as long as the units are kPa, L, mol and K.
+**Key terms**
+  **Ideal gas**: a model gas with no attractions between particles and negligible particle volume.
+  **Universal gas constant (R)**: 8.31 J K⁻¹ mol⁻¹.
+  **Kelvin temperature**: T(K) = T(°C) + 273.
+**The equation**
+  $pV = nRT$
+  **R = 8.31 J K⁻¹ mol⁻¹**.
+  With p in **kPa** and V in **L**, the units work (kPa × L = J), so use: p (kPa), V (L), n (mol), T (K).
+**Unit conversions**
+  Pressure: Pa ÷ 1000 → kPa; atm × 101.3 → kPa.
+  Volume: mL ÷ 1000 → L. (m³ × 1000 → L)
+  Temperature: °C + 273 → K. Never use °C in pV = nRT.
+**Worked example — find volume**
+  Volume of 0.200 mol of O₂ at 35 °C and 150 kPa?
+    T = 35 + 273 = 308 K
+    V = nRT ÷ p = 0.200 × 8.31 × 308 ÷ 150 = 3.41 L
+**Worked example — find amount**
+  A 500 mL flask holds a gas at 98.0 kPa and 20 °C. How many moles?
+    n = pV ÷ RT = 98.0 × 0.500 ÷ (8.31 × 293) = 0.0201 mol
+**Worked example — combined gas law**
+  With n constant: $\frac{p_1V_1}{T_1} = \frac{p_2V_2}{T_2}$
+  2.00 L at 100 kPa and 300 K is compressed to 1.00 L and heated to 450 K. New p = 100 × 2.00 × 450 ÷ (300 × 1.00) = 300 kPa.
+**Going deeper**
+  Rearrangements: p = nRT/V, V = nRT/p, n = pV/RT, T = pV/nR.
+  The individual gas laws are special cases: Boyle (p ∝ 1/V at constant n, T), Charles (V ∝ T at constant n, p), Gay-Lussac (p ∝ T at constant n, V).
+  Real gases behave most ideally at high temperature and low pressure; deviations appear at high pressure (particle volume matters) and low temperature (attractions matter).
+  Molar mass from pV = nRT: M = mRT/(pV), useful for identifying a gas.
+**Worked example 2**
+  A 2.50 L flask contains 4.40 g of a gas at 27 °C and 99.7 kPa. Find its molar mass.
+    n = pV ÷ RT = 99.7 × 2.50 ÷ (8.31 × 300) = 0.100 mol
+    M = 4.40 ÷ 0.100 = 44.0 g mol⁻¹ (consistent with CO₂)
+**Common mistakes**
+  Using °C, mL or Pa in pV = nRT with R = 8.31.
+  Using 24.8 L mol⁻¹ when the conditions aren't SLC.
+**Exam tips**
+  Convert units before substituting and write them in your working: p (kPa), V (L), T (K). Round only the final answer.
+**Connections**
+  SLC and molar volume (a shortcut at 25 °C and 100 kPa).
+  Stoichiometry with gases.
+  Molar volume and molar mass from experiments.
+**Practice questions**
+  What pressure does 0.500 mol of N₂ exert in a 10.0 L container at 100 °C?
+    p = nRT ÷ V = 0.500 × 8.31 × 373 ÷ 10.0 = 155 kPa
+  At what temperature (°C) would 1.00 mol of gas occupy 30.0 L at 100 kPa?
+    T = pV ÷ nR = 100 × 30.0 ÷ (1.00 × 8.31) = 361 K = 88 °C
+  A gas syringe holds 60.0 mL at 25 °C. At constant pressure, what volume at 50 °C?
+    V₂ = V₁ × T₂ ÷ T₁ = 60.0 × 323 ÷ 298 = 65.0 mL
+**Flashcards**
+  Ideal gas equation and the value of R? :: pV = nRT, R = 8.31 J K⁻¹ mol⁻¹
+  What units must p, V and T be in for pV = nRT with R = 8.31? :: p in kPa, V in L, T in K.
+  Find n for 2.00 L of gas at 200 kPa and 27 °C. :: n = 200 × 2.00 ÷ (8.31 × 300) = 0.160 mol
+  Convert 250 mL to L. :: 0.250 L
+  When can you use 24.8 L mol⁻¹ instead of pV = nRT? :: Only at SLC (25 °C and 100 kPa).
+  Temperature in pV = nRT must always be in {{kelvin}}.
+  Rearrange pV = nRT to find molar mass from mass. :: M = mRT ÷ (pV)
+  When do real gases behave most ideally? :: At high temperature and low pressure.
+
+@ dae2da8e U2.2.3.4 | Stoichiometry with gases
+**In a sentence**
+  Gas stoichiometry is ordinary mole-ratio stoichiometry with one extra conversion — between moles and gas volume using 24.8 L mol⁻¹ at SLC or pV = nRT otherwise.
+**Key terms**
+  **Stoichiometry**: the calculation of quantities in reactions from mole ratios.
+  **Mole ratio**: the ratio of coefficients in a balanced equation.
+  **Limiting reactant / excess reactant**: used up first / left over.
+  **Avogadro's law**: equal volumes of gases at the same T and p contain equal numbers of particles.
+**The method**
+  1. Write the balanced equation.
+  2. Find moles of the known substance (n = m/M, n = cV, n = pV/RT or n = V/24.8 at SLC).
+  3. Use the mole ratio to find moles of the unknown.
+  4. Convert to what's asked: mass (m = nM) or volume (V = nRT/p, or V = n × 24.8 at SLC).
+**Volume–volume shortcut**
+  For gases at the same temperature and pressure, volumes are in the same ratio as moles (Avogadro's law).
+  N₂(g) + 3H₂(g) → 2NH₃(g): 1.0 L N₂ reacts with 3.0 L H₂ to give 2.0 L NH₃ (same conditions).
+**Worked example — mass to gas volume**
+  What volume of CO₂ at SLC forms when 5.00 g of CaCO₃ reacts with excess HCl?
+    CaCO₃(s) + 2HCl(aq) → CaCl₂(aq) + H₂O(l) + CO₂(g)
+    n(CaCO₃) = 5.00 ÷ 100.1 = 0.0500 mol
+    n(CO₂) = 0.0500 mol (1 : 1)
+    V = 0.0500 × 24.8 = 1.24 L
+**Worked example — gas volume to mass (not at SLC)**
+  What mass of Mg reacts with excess acid to give 150 mL of H₂ at 20 °C and 101 kPa?
+    n(H₂) = pV ÷ RT = 101 × 0.150 ÷ (8.31 × 293) = 6.22 × 10⁻³ mol
+    Mg + 2HCl → MgCl₂ + H₂, so n(Mg) = 6.22 × 10⁻³ mol
+    m = 6.22 × 10⁻³ × 24.3 = 0.151 g
+**Limiting reactant**
+  If amounts of two reactants are given, find which one runs out first (compare mole ratios); base the calculation on it.
+**Going deeper**
+  Volume ratios only apply to gases at the same temperature and pressure; don't use them for solids or liquids.
+  Finding the limiting reactant: divide the moles of each reactant by its coefficient — the smallest result is limiting.
+  Percentage yield = actual ÷ theoretical × 100 (gas escaping or incomplete reaction lowers it).
+**Worked example 2 (limiting reactant)**
+  2.43 g of Mg reacts with 50.0 mL of 2.00 M HCl. What volume of H₂ forms at SLC?
+    Mg + 2HCl → MgCl₂ + H₂
+    n(Mg) = 2.43 ÷ 24.3 = 0.100 mol; n(HCl) = 2.00 × 0.0500 = 0.100 mol
+    Mg needs 2 × 0.100 = 0.200 mol HCl, but only 0.100 mol is present → HCl is limiting.
+    n(H₂) = 0.100 ÷ 2 = 0.0500 mol; V = 0.0500 × 24.8 = 1.24 L
+**Exam tips**
+  Always check for a limiting reactant when amounts of two reactants are given.
+**Connections**
+  The mole and molar mass (Unit 1).
+  Titrations use the same mole-ratio steps.
+  Greenhouse gases: calculating CO₂ from burning fuels.
+**Practice questions**
+  What volume of CO₂ at SLC is produced by completely burning 1.00 kg of octane (C₈H₁₈, M = 114.0)?
+    2C₈H₁₈ + 25O₂ → 16CO₂ + 18H₂O. n(octane) = 1000 ÷ 114.0 = 8.77 mol; n(CO₂) = 8 × 8.77 = 70.2 mol; V = 70.2 × 24.8 = 1.74 × 10³ L
+  What volume of O₂ is needed to burn 5.0 L of methane (same conditions)?
+    CH₄ + 2O₂ → CO₂ + 2H₂O: 2 × 5.0 = 10 L
+  4.00 g of CaCO₃ gives 0.780 L of CO₂ at SLC. Calculate the percentage yield.
+    Theoretical n = 4.00 ÷ 100.1 = 0.0400 mol → 0.991 L. Yield = 0.780 ÷ 0.991 × 100 = 78.7%
+**Flashcards**
+  Volume of CO₂ at SLC from burning 0.100 mol of CH₄ in excess O₂? :: CH₄ + 2O₂ → CO₂ + 2H₂O, so 0.100 mol CO₂ × 24.8 = 2.48 L
+  At the same temperature and pressure, how are gas volumes related to moles? :: Volumes are in the same ratio as moles.
+  2.0 L of H₂ reacts with excess O₂ to form water vapour (same conditions). Volume of O₂ used? :: 1.0 L (2H₂ + O₂ → 2H₂O)
+  What is a limiting reactant? :: The reactant that is completely used up first, which limits the amount of product.
+  Mass of CaCO₃ (M = 100.1) needed to make 2.48 L of CO₂ at SLC with excess acid? :: n = 2.48 ÷ 24.8 = 0.100 mol → 10.0 g
+  How do you find the limiting reactant? :: Divide each reactant's moles by its coefficient; the smallest is limiting.
+  Formula for percentage yield? :: actual ÷ theoretical × 100
+
+@ c35c8472 U2.2.3.5 | Measuring a gas’s molar volume and mass
+**In a sentence**
+  By measuring the volume (and mass) of gas a reaction produces, you can work out the molar volume of a gas or the molar mass of an unknown gas — and judge your method by how close you get.
+**Key terms**
+  **Gas syringe**: a calibrated syringe that collects gas and shows its volume.
+  **Collection over water**: displacing water from an inverted container with the gas.
+  **Percentage error**: |experimental − accepted| ÷ accepted × 100.
+**Measuring a gas produced by a reaction**
+  Collect the gas in a gas syringe or by displacing water from an inverted measuring cylinder; record its volume, temperature and pressure.
+  Or measure the **mass lost** from an open reaction flask on a balance as the gas escapes (e.g. CO₂ from a carbonate and acid).
+**Finding molar volume**
+  Molar volume = V ÷ n. Find n from the reaction stoichiometry (e.g. from the mass of a metal that reacted completely).
+  Example: 0.0243 g Mg (1.00 × 10⁻³ mol) with excess acid gives 24.5 mL H₂ at SLC. Molar volume = 0.0245 L ÷ 1.00 × 10⁻³ mol = 24.5 L mol⁻¹ (theory 24.8).
+**Finding molar mass**
+  M = m ÷ n, with n = pV ÷ RT (or V ÷ 24.8 at SLC).
+  Example: 0.440 g of gas occupies 248 mL at SLC. n = 0.248 ÷ 24.8 = 0.0100 mol. M = 0.440 ÷ 0.0100 = 44.0 g mol⁻¹ (consistent with CO₂).
+**Sources of error**
+  Gas escaping before the stopper or syringe is fitted (volume too low).
+  Gas dissolving in water when collected over water (CO₂ is quite soluble).
+  Collecting over water adds water vapour — the gas pressure should be corrected for it.
+  Reaction not complete, or the metal has an oxide coating (fewer moles than assumed).
+  Temperature and pressure not at the assumed values.
+**Going deeper**
+  Collecting over water: the gas collected contains water vapour, so the pressure of the dry gas = atmospheric pressure − vapour pressure of water (about 3.2 kPa at 25 °C).
+  Using a limiting, fully reacting solid (like a weighed piece of magnesium ribbon, cleaned of oxide) gives a known amount of gas to compare against.
+  Systematic errors (gas lost, gas dissolving, oxide layer) usually make the molar volume come out low; the direction helps you identify the cause.
+**Worked example 2**
+  0.0500 g of magnesium reacts with excess acid; 50.2 mL of H₂ is collected at 25 °C and 100 kPa. Find the experimental molar volume and percentage error.
+    n(Mg) = 0.0500 ÷ 24.3 = 2.06 × 10⁻³ mol = n(H₂)
+    Vm = 0.0502 L ÷ 2.06 × 10⁻³ = 24.4 L mol⁻¹
+    Error = (24.8 − 24.4) ÷ 24.8 × 100 = 1.6%
+**Connections**
+  SLC and the ideal gas equation.
+  Accuracy, precision and sources of error (Area of Study 3 investigation).
+**Practice questions**
+  Suggest why a student's molar volume for CO₂ collected over water is much lower than 24.8 L mol⁻¹.
+    CO₂ is quite soluble in water, so some dissolved instead of being collected; gas may also have escaped before the tube was connected.
+  How could the method be improved?
+    Use a gas syringe instead of collecting over water; connect the syringe before the reaction starts (e.g. tip the acid in from a side tube); repeat and average.
+  A 0.100 g sample of gas occupies 56.0 mL at SLC. Find its molar mass.
+    n = 0.0560 ÷ 24.8 = 2.26 × 10⁻³ mol; M = 0.100 ÷ 2.26 × 10⁻³ = 44.3 g mol⁻¹
+**Flashcards**
+  How can the molar mass of a gas be found experimentally? :: Measure the gas's mass, volume, temperature and pressure; n = pV ÷ RT; M = m ÷ n.
+  0.64 g of a gas occupies 0.496 L at SLC. Molar mass? :: n = 0.496 ÷ 24.8 = 0.0200 mol; M = 0.64 ÷ 0.0200 = 32 g mol⁻¹
+  Give two sources of error when collecting a gas over water. :: Some gas dissolves in the water; water vapour mixes with the gas; gas escapes before collection.
+  How can the mass of CO₂ produced be measured without collecting it? :: Record the mass loss of the open reaction flask as the CO₂ escapes.
+  Why correct for water vapour when collecting gas over water? :: The collected gas is mixed with water vapour, so the dry gas pressure is lower than atmospheric.
+  Experimental Vm if 50.2 mL of H₂ comes from 2.06 × 10⁻³ mol? :: 24.4 L mol⁻¹
+
+@ 4a7379f2 U2.2.4.1 | Salts in water and soil
+**In a sentence**
+  Water and soil pick up salts from rocks, farming, industry and mining, and electrical conductivity gives a fast measure of how salty a sample is — though not what's in it.
+**Key terms**
+  **Salinity**: the concentration of dissolved salts.
+  **Electrical conductivity (EC)**: the ability of a solution to conduct electricity; rises with ion concentration.
+  **Total dissolved solids (TDS)**: the mass of dissolved substances per volume (mg L⁻¹); roughly proportional to EC.
+  **Organometallic compound**: a compound containing a metal–carbon bond.
+**Sources of salts**
+  **Minerals**: weathering of rocks releases ions (Na⁺, Ca²⁺, Mg²⁺, K⁺, Cl⁻, SO₄²⁻, CO₃²⁻, HCO₃⁻).
+  **Salinity**: rising water tables (after clearing deep-rooted native vegetation) bring dissolved salt to the surface (dryland salinity); irrigation adds and concentrates salt (irrigation salinity); sea spray near coasts.
+  **Heavy metals** (Pb, Hg, Cd, As, Cr): from mining, smelting, industry, old paint and pipes, e-waste. Toxic, even in low concentrations (ppm or ppb), and can bioaccumulate.
+  **Organometallic substances**: compounds with metal–carbon bonds, e.g. methylmercury (formed by bacteria from mercury; accumulates in fish), tributyltin (old anti-fouling boat paint).
+  Fertilisers add nitrates and phosphates.
+**Why salinity matters**
+  High salt stops plants taking up water (osmosis works against them), reduces crop yields, kills native vegetation, damages soil structure and infrastructure, and makes water unsuitable for drinking or stock.
+**Electrical conductivity (EC)**
+  Pure water barely conducts. Dissolved ions carry charge, so **conductivity increases with the concentration of ions** — a quick measure of **total dissolved salts** (salinity).
+  Measured with a conductivity meter (units such as µS cm⁻¹ or dS m⁻¹).
+  **Limitations**: EC shows the total ionic content but **not which ions** are present (can't detect a toxic heavy metal separately); molecular (non-ionic) pollutants aren't detected; it depends on temperature (meters compensate) and needs calibration.
+  Ions with higher charge or mobility conduct more, so EC isn't an exact concentration unless calibrated for that solution.
+**Going deeper**
+  Rough EC guide: fresh drinking water below about 800 µS cm⁻¹; seawater about 50 000 µS cm⁻¹. Many crops suffer above a few thousand µS cm⁻¹.
+  EC depends on temperature (ions move faster when warm), so meters report values corrected to 25 °C.
+  To find **which** ions are present, other methods are needed: precipitation tests, colorimetry, or instruments like atomic absorption spectroscopy (Unit 3–4).
+  Heavy metals are toxic because they bind to proteins and enzymes, disrupting their function; organometallic forms like methylmercury cross into the brain and bioaccumulate in fish.
+**Connections**
+  Ionic compounds conduct when dissolved (Unit 1).
+  Colorimetry and gravimetric analysis identify and measure specific ions.
+  Units of concentration: mg L⁻¹ and ppm.
+**Practice questions**
+  Two samples have EC readings of 400 and 4000 µS cm⁻¹. What can and can't you conclude?
+    The second has about ten times more dissolved ions (is more saline); you can't tell which ions are present or whether toxic ones are.
+  Why must EC measurements be compared at the same temperature?
+    Conductivity increases with temperature because ions move faster, so readings must be corrected to a standard temperature (25 °C).
+  Give one natural and one human source of salt in Australian soils.
+    Natural: weathering of rocks, sea spray, ancient marine deposits. Human: clearing native vegetation (rising water tables) or irrigation.
+**Flashcards**
+  Why does salty water conduct electricity better than pure water? :: It contains dissolved ions that can move and carry charge.
+  What does electrical conductivity measure in a water sample? :: The total concentration of dissolved ions (salinity) — not which ions.
+  Give a limitation of using EC to assess water quality. :: It can't identify individual ions (e.g. a heavy metal) and doesn't detect non-ionic pollutants.
+  Give two causes of soil salinity in Australia. :: Rising water tables after land clearing (dryland salinity) and irrigation (irrigation salinity).
+  What is an organometallic compound? Give an example. :: A compound with a metal–carbon bond, e.g. methylmercury.
+  Why are heavy metals in water a concern even at low concentration? :: They are toxic and can bioaccumulate up food chains.
+  What does total dissolved solids (TDS) measure? :: The mass of dissolved substances per volume (mg L⁻¹).
+  Why do EC meters correct to 25 °C? :: Conductivity rises with temperature.
+
+@ dc3c5a9a U2.2.4.2 | Water of hydration
+**In a sentence**
+  Heating a hydrated salt to constant mass drives off its water of crystallisation, and the mole ratio of water to salt gives the formula.
+**Key terms**
+  **Hydrated salt**: a salt with water molecules in its crystal lattice.
+  **Anhydrous**: without water of crystallisation.
+  **Water of crystallisation**: water molecules built into a crystal in a fixed ratio.
+  **Constant mass**: repeated weighings after heating that agree, showing the reaction (here, dehydration) is complete.
+**Hydrated salts**
+  Many ionic compounds crystallise with water molecules built into their crystal lattice — **water of crystallisation**.
+  Written with a dot: CuSO₄·5H₂O (copper(II) sulfate pentahydrate — blue). Heating drives off the water to leave anhydrous CuSO₄ (white).
+**Finding the formula (the value of x in salt·xH₂O)**
+  1. Weigh the hydrated salt in a crucible.
+  2. Heat gently, cool (in a desiccator), weigh; repeat **until constant mass** (so all the water has gone).
+  3. Mass of water = mass before − mass after.
+  4. Convert both the water and the anhydrous salt to moles.
+  5. x = n(H₂O) ÷ n(anhydrous salt), rounded to a whole number.
+**Worked example**
+  2.50 g of hydrated copper(II) sulfate gives 1.60 g of anhydrous CuSO₄ (M = 159.6).
+    m(H₂O) = 2.50 − 1.60 = 0.90 g; n(H₂O) = 0.90 ÷ 18.0 = 0.050 mol
+    n(CuSO₄) = 1.60 ÷ 159.6 = 0.0100 mol
+    x = 0.050 ÷ 0.0100 = 5.0 → CuSO₄·5H₂O
+**Errors**
+  Not heating to constant mass → too little water lost → x too **low**.
+  Overheating so the salt decomposes (e.g. loses SO₃) → too much mass lost → x too **high**.
+  Anhydrous salt absorbing moisture from the air while cooling → mass too high → x too low (use a desiccator).
+**Going deeper**
+  Examples: CuSO₄·5H₂O (blue), CoCl₂·6H₂O (pink, turns blue anhydrous — used as a moisture indicator), Na₂CO₃·10H₂O (washing soda), MgSO₄·7H₂O (Epsom salts).
+  Anhydrous CuSO₄ turning blue is a test for water.
+  The dot in the formula isn't multiplication — it means "combined with"; include the water in the molar mass: M(CuSO₄·5H₂O) = 159.6 + 5 × 18.0 = 249.6 g mol⁻¹.
+**Worked example 2**
+  4.30 g of hydrated magnesium sulfate, MgSO₄·xH₂O, gives 2.10 g of anhydrous MgSO₄ (M = 120.4). Find x.
+    m(H₂O) = 4.30 − 2.10 = 2.20 g; n(H₂O) = 2.20 ÷ 18.0 = 0.122 mol
+    n(MgSO₄) = 2.10 ÷ 120.4 = 0.0174 mol
+    x = 0.122 ÷ 0.0174 = 7.0 → MgSO₄·7H₂O
+**Connections**
+  Empirical formulas (Unit 1) use the same ratio method.
+  Gravimetric analysis: heating and weighing to constant mass.
+**Practice questions**
+  Calculate the molar mass of CuSO₄·5H₂O.
+    159.6 + 5 × 18.0 = 249.6 g mol⁻¹
+  What percentage of the mass of CuSO₄·5H₂O is water?
+    90.0 ÷ 249.6 × 100 = 36.1%
+  Why is the crucible cooled in a desiccator before weighing?
+    So the anhydrous salt doesn't absorb moisture from the air, which would increase its mass.
+**Flashcards**
+  What is water of crystallisation? :: Water molecules built into the crystal lattice of a hydrated salt.
+  Why heat a hydrated salt to constant mass? :: To be sure all the water of crystallisation has been removed.
+  A hydrate loses 0.36 g of water leaving 0.02 mol of anhydrous salt. Value of x? :: n(H₂O) = 0.36 ÷ 18 = 0.020 mol; x = 1
+  How would not heating to constant mass affect the calculated x? :: x would be too low (not all the water was removed).
+  Colour change when blue CuSO₄·5H₂O is heated? :: Blue → white (anhydrous CuSO₄).
+  Molar mass of CuSO₄·5H₂O? :: 249.6 g mol⁻¹
+  What does anhydrous CuSO₄ turning blue show? :: Water is present.
+
+@ 63699392 U2.2.4.3 | Gravimetric analysis
+**In a sentence**
+  Gravimetric analysis measures an ion by turning it into an insoluble precipitate of known formula, weighing that dry precipitate, and using mole ratios to work back to the ion.
+**Key terms**
+  **Gravimetric analysis**: quantitative analysis by mass.
+  **Precipitating agent**: the reagent added to form the precipitate.
+  **Co-precipitation**: unwanted substances trapped in or on the precipitate.
+**Gravimetric analysis**
+  A method of finding the amount of a substance by **precipitating** it from solution as an insoluble compound of known formula, and weighing the precipitate.
+**Steps**
+  1. Dissolve an accurately weighed sample in water.
+  2. Add excess precipitating agent so all of the ion of interest precipitates.
+  3. Filter, **wash** the precipitate with deionised water (removes soluble impurities and spectator ions).
+  4. Dry in an oven and weigh; repeat drying and weighing **to constant mass**.
+  5. Calculate using mass–mass stoichiometry.
+**Calculation**
+  n(precipitate) = m ÷ M → mole ratio → n(ion or compound of interest) → mass, then % in the sample.
+**Worked example**
+  A 2.00 g fertiliser sample is dissolved; excess BaCl₂ precipitates the sulfate as 0.466 g of BaSO₄ (M = 233.4). Find the % sulfate.
+    n(BaSO₄) = 0.466 ÷ 233.4 = 2.00 × 10⁻³ mol
+    n(SO₄²⁻) = 2.00 × 10⁻³ mol; m = 2.00 × 10⁻³ × 96.1 = 0.192 g
+    Percentage of SO₄²⁻ = 0.192 ÷ 2.00 × 100 = 9.60%
+**Errors and their effect**
+  Precipitate not dried to constant mass (still wet) → mass too high → result too **high**.
+  Not washing the precipitate (soluble impurities left) → too **high**.
+  Precipitate passing through the filter paper or lost in transfer → too **low**.
+  Not enough precipitating agent (incomplete precipitation) → too **low**.
+  Another ion also precipitating (co-precipitation) → too **high**.
+**Going deeper**
+  A good precipitate for gravimetric analysis is very insoluble, pure, of known composition, and easy to filter (large crystals rather than a fine colloid).
+  Testing for complete precipitation: after filtering, add a drop more precipitating agent to the filtrate — no more cloudiness means all the ion has precipitated.
+  Washing with a little cold deionised water removes soluble impurities while losing very little of the precipitate.
+**Worked example 2**
+  A 1.50 g sample of a chloride salt is dissolved and excess AgNO₃ added. 2.87 g of dry AgCl (M = 143.4) forms. Find the percentage of chloride.
+    n(AgCl) = 2.87 ÷ 143.4 = 0.0200 mol = n(Cl⁻)
+    m(Cl⁻) = 0.0200 × 35.5 = 0.710 g
+    % Cl = 0.710 ÷ 1.50 × 100 = 47.3%
+**Exam tips**
+  For error questions, state the effect on the mass of precipitate first, then the effect on the calculated result (too high or too low).
+**Connections**
+  Precipitation reactions (Unit 1).
+  Water of hydration: heating to constant mass.
+  Removing impurities from water uses the same chemistry on a large scale.
+**Practice questions**
+  How can you check that all the sulfate has precipitated?
+    Add a few more drops of BaCl₂ to the clear filtrate; if no more precipitate forms, precipitation was complete.
+  A student forgets to wash the precipitate. Effect on the result?
+    Soluble impurities stay on the precipitate, increasing its mass, so the calculated amount of the ion is too high.
+  Calculate the mass of BaSO₄ formed from 0.0150 mol of sulfate.
+    0.0150 × 233.4 = 3.50 g
+**Flashcards**
+  What is gravimetric analysis? :: Finding the amount of a substance by precipitating it as an insoluble compound of known formula and weighing it.
+  Why is excess precipitating agent added? :: So all of the ion being measured is precipitated.
+  Why is the precipitate washed? :: To remove soluble impurities and spectator ions that would add mass.
+  Effect on the result if the precipitate isn't fully dried? :: The mass is too high, so the calculated amount is too high.
+  0.287 g of AgCl (M = 143.4) precipitates. Moles of chloride in the sample? :: 0.287 ÷ 143.4 = 2.00 × 10⁻³ mol
+  A precipitate is dried and weighed repeatedly until it reaches {{constant mass}}.
+  How do you test that precipitation is complete? :: Add a little more precipitating agent to the filtrate — no further precipitate forms.
+  Percentage chloride if 2.87 g AgCl forms from a 1.50 g sample? :: 47.3%
+
+@ 55b326f2 U2.2.4.4 | Colorimetry and calibration curves
+**In a sentence**
+  Coloured solutions absorb light in proportion to their concentration, so measuring the absorbance of standards and an unknown at the right wavelength lets you read the unknown's concentration off a calibration curve.
+**Key terms**
+  **Absorbance (A)**: how much light a sample absorbs (no units).
+  **Colorimeter / UV-visible spectrophotometer**: instruments measuring absorbance of visible / UV and visible light.
+  **λmax**: the wavelength of maximum absorbance.
+  **Calibration curve**: a graph of absorbance against concentration for standards.
+  **Blank**: a sample with everything except the analyte, used to zero the instrument.
+  **Cuvette**: the small transparent container holding the sample.
+**The principle**
+  Coloured solutions absorb some wavelengths of light. The amount of light absorbed (**absorbance, A**) is proportional to the concentration of the absorbing species (for a set path length and wavelength).
+  A **colorimeter** uses visible light; a **UV-visible spectrophotometer** uses UV and visible light and can select a precise wavelength.
+**Choosing the wavelength**
+  Use the wavelength the substance absorbs most strongly (**λmax**) — gives the greatest sensitivity. It's the **complementary** colour to the solution's colour (a blue solution absorbs orange/red light).
+**Making ions visible**
+  Colourless or weakly coloured ions can be reacted with a complexing agent to form a strongly coloured complex (e.g. Fe³⁺ + thiocyanate → deep red complex; phosphate with molybdate → blue complex).
+**Calibration curve**
+  1. Prepare a series of **standard solutions** of known concentration (by dilution of a stock solution) that cover the expected range.
+  2. Zero the instrument with a **blank** (the solvent and any reagents, without the analyte).
+  3. Measure the absorbance of each standard at λmax and plot absorbance (y) against concentration (x). It should be a straight line through the origin.
+  4. Measure the unknown under the same conditions and read its concentration from the graph (or use the line's equation).
+  5. The unknown must fall **within** the range of the standards (don't extrapolate); dilute it if it's too concentrated, then multiply back by the dilution factor.
+**Worked example**
+  The calibration line is A = 0.125 × c (c in mg L⁻¹). A diluted sample (diluted 10 times) reads A = 0.500.
+    c(diluted) = 0.500 ÷ 0.125 = 4.00 mg L⁻¹
+    c(original) = 4.00 × 10 = 40.0 mg L⁻¹
+**Limitations**
+  Other substances absorbing at the same wavelength interfere; very concentrated solutions don't give a linear response; bubbles, fingerprints or scratched cuvettes cause errors.
+**Going deeper**
+  Beer–Lambert relationship: A = εcl — absorbance is proportional to concentration (c) and path length (l); ε depends on the substance and wavelength. You only need the proportionality.
+  Complementary colours: a solution looks the colour it doesn't absorb. Blue copper(II) solutions absorb orange-red light (around 600–800 nm), so a red/orange filter is used.
+  Standards should bracket the unknown and be made by accurate dilution of a stock solution with volumetric glassware.
+**Worked example 2**
+  Standards of Cu²⁺ give: 0.00 M → A 0.00; 0.020 M → 0.24; 0.040 M → 0.48; 0.060 M → 0.72. An unknown reads 0.36. Find its concentration.
+    The line is A = 12 × c (0.24 ÷ 0.020 = 12).
+    c = 0.36 ÷ 12 = 0.030 M
+**Exam tips**
+  Draw the line of best fit through the standards (and origin), read the unknown from the line, and state that it lies within the calibration range.
+**Connections**
+  Units of concentration and dilution.
+  Salts in water and soil: measuring specific ions.
+  Presenting data: calibration curves (key science skills).
+**Practice questions**
+  Why is a red filter used to analyse a blue-green copper solution?
+    The solution absorbs red/orange light most strongly (its complementary colour), giving the greatest change in absorbance with concentration.
+  An unknown reads A = 0.95, but the highest standard is 0.72. What should you do?
+    Dilute the unknown accurately (e.g. ×2) so it falls within the range, measure again, then multiply the result by the dilution factor.
+  Why is the cuvette handled only on its frosted sides?
+    Fingerprints on the clear faces absorb or scatter light, giving an absorbance that's too high.
+**Flashcards**
+  What is the relationship between absorbance and concentration? :: Absorbance is directly proportional to concentration (at a fixed wavelength and path length).
+  Why is λmax used? :: The substance absorbs most strongly there, giving the greatest sensitivity.
+  What is a blank used for? :: To zero the instrument, so only absorbance by the analyte is measured.
+  What is a calibration curve? :: A graph of absorbance against concentration for standards of known concentration, used to find an unknown's concentration.
+  Why should the unknown's absorbance fall within the range of the standards? :: The relationship is only known (and linear) over that range; extrapolation may be inaccurate.
+  A red solution absorbs mainly which colour? :: Green (the complementary colour).
+  How can a colourless ion be measured by colorimetry? :: React it with a complexing agent to form a coloured complex.
+  Absorbance has {{no}} units.
+  What does the Beer–Lambert relationship say? :: Absorbance is proportional to concentration (and path length).
+  Concentration if A = 0.36 on a line A = 12c? :: 0.030 M

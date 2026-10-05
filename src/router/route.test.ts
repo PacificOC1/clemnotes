@@ -24,7 +24,7 @@ describe('parseRoute', () => {
   });
 
   it('ignores a rem id on a tab that has no rems', () => {
-    expect(parseRoute('#/review/abc')).toEqual({ tab: 'review', nodeId: null });
+    expect(parseRoute('#/dictionary/abc')).toEqual({ tab: 'dictionary', nodeId: null });
   });
 
   it('survives a malformed percent-escape', () => {
@@ -101,5 +101,30 @@ describe('a PDF beside the outline (#53)', () => {
 
   it('tells two pages of the same PDF apart', () => {
     expect(sameRoute(parseRoute('#/notes/a/pdf/f/2'), parseRoute('#/notes/a/pdf/f/3'))).toBe(false);
+  });
+});
+
+describe('courses and scoped review in the URL', () => {
+  it('reads the courses tab, with and without a course open', () => {
+    expect(parseRoute('#/courses')).toEqual({ tab: 'courses', nodeId: null });
+    expect(parseRoute('#/courses/page-1')).toEqual({ tab: 'courses', nodeId: null, courseId: 'page-1' });
+    expect(parseRoute('#/courses/page-1/a%2Fb')).toEqual({ tab: 'courses', nodeId: null, courseId: 'page-1', courseItem: 'a/b' });
+  });
+
+  it('keeps the review scope in the URL', () => {
+    expect(parseRoute('#/review/a%2Fb')).toEqual({ tab: 'review', nodeId: null, scope: 'a/b' });
+    expect(formatRoute({ tab: 'review', nodeId: null, scope: 'a/b' })).toBe('#/review/a%2Fb');
+  });
+
+  it('round-trips both', () => {
+    for (const hash of ['#/courses', '#/courses/x', '#/courses/x/y', '#/review', '#/review/y']) {
+      expect(formatRoute(parseRoute(hash))).toBe(hash);
+    }
+  });
+
+  it('tells two courses and two scopes apart', () => {
+    expect(sameRoute(parseRoute('#/courses/a'), parseRoute('#/courses/b'))).toBe(false);
+    expect(sameRoute(parseRoute('#/courses/a/x'), parseRoute('#/courses/a/y'))).toBe(false);
+    expect(sameRoute(parseRoute('#/review'), parseRoute('#/review/a'))).toBe(false);
   });
 });

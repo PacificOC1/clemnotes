@@ -13,6 +13,7 @@
     "check:bundle": "node scripts/check-bundle.mjs"
   },
   "dependencies": {
+    "@azure/msal-browser": "^5.23.0",
     "@fontsource/inter": "^5.2.8",
     "@supabase/supabase-js": "^2.110.6",
     "@tiptap/core": "^3.28.0",

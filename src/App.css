@@ -4445,3 +4445,147 @@ body.is-resizing .app-shell {
 .pdf-toolbar-btn:hover {
   background: var(--bg-hover);
 }
+
+/* ==========================================================================
+   File storage (images & PDFs): store choice, OneDrive, meter, move
+   ========================================================================== */
+
+.files-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.files-heading {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.files-choice {
+  display: flex;
+  gap: 2px;
+  background: var(--bg-panel);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.files-choice button {
+  flex: 1;
+  min-width: 0;
+  padding: 4px 2px;
+  white-space: nowrap;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.files-choice button.active {
+  background: var(--bg-raised);
+  color: var(--text);
+}
+
+.files-choice button:disabled:not(.active) {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.files-account {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.files-account-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11.5px;
+  color: var(--text-dim);
+}
+
+.files-account-kind {
+  margin-left: 6px;
+  font-size: 10.5px;
+  color: var(--text-faint);
+}
+
+.files-signin {
+  flex: 1;
+  min-width: 0;
+  font-size: 12.5px;
+  padding: 6px 10px;
+}
+
+.files-signin-again {
+  flex-basis: 100%;
+}
+
+.files-meter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.files-meter-line {
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--text-faint);
+}
+
+.files-meter-bar {
+  height: 5px;
+  border-radius: 3px;
+  background: var(--bg-panel);
+  overflow: hidden;
+}
+
+.files-meter-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--accent);
+}
+
+.files-meter.is-nearly-full .files-meter-bar span {
+  background: var(--amber);
+}
+
+.files-meter-warning {
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--amber-text);
+}
+
+.files-move {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--text-dim);
+}
+
+.files-move .ghost-btn {
+  font-size: 12px;
+  padding: 5px;
+}
+
+.files-move progress {
+  width: 100%;
+  height: 5px;
+  accent-color: var(--accent);
+}
+
+.files-move .link-btn {
+  align-self: flex-start;
+}

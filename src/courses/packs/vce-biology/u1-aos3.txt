@@ -1,0 +1,500 @@
+% VCE Biology — Unit 1, Area of Study 3: a student-designed practical investigation.
+% Original study notes. Format: see src/courses/notesPack.ts.
+% A running example is used throughout: "How does sucrose concentration affect the change in mass of potato strips?"
+
+@ 5e918e57 U1.3.1.1 | Key concepts behind your investigation
+**In a sentence**
+  Before you design anything, you need to understand — and be able to define — the biology your investigation tests, and explain why it matters.
+**Key terms**
+  **Background (introduction)**: the part of a report that explains the biology behind the question.
+  **Key term**: a word your investigation depends on, which you must define precisely.
+  **Significance**: why the question is worth answering — what it tells us or how it could be used.
+**Building the biology behind the question**
+  List the concepts the question depends on. For the potato investigation: osmosis, solute concentration, hypotonic, isotonic and hypertonic solutions, turgor, the plasma membrane.
+  Define each in your own words, precisely: "osmosis is the net movement of water across a selectively permeable membrane from a region of lower solute concentration to one of higher solute concentration".
+  Explain how the concepts predict an outcome: potato cells in a hypertonic solution should lose water and mass; in a hypotonic solution they should gain it.
+  Say why it matters: e.g. knowing the solute concentration of plant tissue helps explain irrigation with salty water, or why a salted lettuce wilts.
+**Going deeper**
+  A good background moves from general to specific: the concept, then the evidence others have found, then the gap your investigation fills.
+**Common mistakes**
+  Defining terms vaguely ("osmosis is water moving") — include direction and the membrane.
+  Writing background biology that the investigation never uses.
+**Connections**
+  Aims, hypotheses, models, theories and laws: the background leads to the hypothesis.
+  Scientific report conventions: the introduction section.
+**Practice questions**
+  A student is investigating the effect of temperature on the rate of transpiration. List three key terms they should define.
+    Transpiration, stomata, and concentration gradient (also diffusion, rate, evaporation).
+  Why should the background explain the biology behind the expected result?
+    It justifies the hypothesis: the reader can see why the result is predicted, and later whether the data support that reasoning.
+**Flashcards**
+  What goes in the background of a report? :: The biology behind the question, definitions of key terms, and why the question matters.
+  Why define key terms precisely? :: So the reader knows exactly what is being measured and discussed, and so the concepts are used consistently.
+  For an osmosis investigation, name three key terms to define. :: Osmosis, solute concentration, hypertonic/hypotonic/isotonic (also turgor, selectively permeable).
+  The part of a report that explains the biology behind the question is the {{background}} or introduction.
+  What is the "significance" of an investigation? :: Why the question is worth answering — what the result tells us or how it could be used.
+
+@ be56946c U1.3.1.2 | Choosing a methodology
+**In a sentence**
+  The methodology is the overall type of investigation, and it must suit the question — a controlled experiment to test cause and effect, a correlational study or fieldwork to look for relationships you can't control, and so on.
+**Key terms**
+  **Methodology**: the overall approach an investigation takes.
+  **Method**: the specific steps, equipment and measurements within that approach.
+  **Controlled experiment**: changing one variable (independent) and measuring its effect on another (dependent) while keeping all others constant.
+  **Correlational study**: observing and measuring variables that aren't manipulated to see whether they are related.
+**The options for this investigation**
+  **Classification and identification**: sorting organisms or cells into groups, or identifying which group something belongs to (using a dichotomous key to identify leaf litter invertebrates).
+  **Controlled experiment**: testing cause and effect (how sucrose concentration affects potato mass change).
+  **Correlational study**: measuring things as they are (is stomatal density related to how much sun a plant grows in?). Shows association, not cause.
+  **Fieldwork**: observing and sampling in a natural environment (quadrat surveys of a schoolyard).
+  **Modelling**: building a physical, conceptual or mathematical model (agar cubes as model cells for SA:V).
+  **Product, process or system development**: designing something to meet a need (a device to measure transpiration cheaply).
+  **Simulation**: using a model to study a system that is too big, slow, dangerous or complex to study directly (a computer simulation of blood glucose regulation).
+**Matching question to methodology**
+  "Does X cause Y?" → controlled experiment.
+  "Is X related to Y in nature?" → correlational study or fieldwork.
+  "What is this and which group is it in?" → classification and identification.
+  "Can we represent or predict this system?" → modelling or simulation.
+**Going deeper**
+  Real research often combines methodologies: ecologists may use fieldwork to spot a correlation, then a controlled glasshouse experiment to test whether one factor causes it.
+**Common mistakes**
+  Claiming a correlational study proves cause. Only a controlled experiment can show cause and effect.
+  Confusing methodology (the approach) with method (the steps).
+**Connections**
+  Variables (key science skills): the independent, dependent and controlled variables in a controlled experiment.
+  Limitations of methods: each methodology has its own limitations.
+**Practice questions**
+  A student wants to know whether the number of stomata on eucalypt leaves is related to the tree's distance from the coast. Which methodology fits, and why can't it show cause?
+    A correlational study (fieldwork): she measures leaves as they are, without changing anything. Other variables (soil, rainfall, tree age) differ between sites, so any relationship might be caused by something else.
+  Give an example of a modelling investigation relevant to Unit 1.
+    Using agar cubes of different sizes containing an indicator to model how SA:V affects diffusion into cells.
+**Flashcards**
+  Which methodology can show cause and effect? :: A controlled experiment.
+  What does a correlational study show? :: Whether variables are associated — not that one causes the other.
+  Methodology vs method? :: Methodology is the type of investigation; method is its specific steps and equipment.
+  Agar cubes used to represent cells are an example of {{modelling}}.
+  When is a simulation useful? :: When the real system is too big, small, slow, fast, dangerous or complex to study directly.
+
+@ ca2e5f4d U1.3.1.3 | Generating qualitative and quantitative data
+**In a sentence**
+  Choose techniques that give data that actually answer your question — numbers (quantitative) where you can measure, and careful descriptions (qualitative) where you can't.
+**Key terms**
+  **Quantitative data**: numerical measurements (mass, length, time, counts).
+  **Qualitative data**: descriptive observations in words or categories (colour, shape, "plasmolysed/not").
+  **Resolution**: the smallest change a measuring instrument can show.
+  **Primary data**: data you generate yourself.
+**Common biology techniques**
+  Mass: electronic balance (e.g. 0.01 g resolution) for potato strips before and after soaking.
+  Length and volume: rulers, measuring cylinders, pipettes; a potometer for water uptake.
+  Counting: cells in each stage of mitosis in a root tip squash; stomata in a nail-polish leaf impression; organisms in a quadrat.
+  Microscopy: observing and drawing cells, e.g. onion cells plasmolysing in salt solution.
+  Physiological measures: heart rate, body temperature, blood glucose with a meter (with ethics approval and consent).
+  Data loggers: temperature, oxygen or CO₂ probes record continuously.
+**Choosing well**
+  Pick the instrument with enough resolution for the size of the change (a 0.01 g balance for changes of a few tenths of a gram).
+  Turn qualitative into quantitative when you can: count plasmolysed cells out of 50 instead of writing "many".
+  Decide how many trials and how many samples per trial before you start.
+**Going deeper**
+  Qualitative observations become more objective with a scale or key — e.g. a 0–4 wilting score with a photo of each level — so different observers record the same thing.
+**Common mistakes**
+  Recording only qualitative data when a measurement was possible.
+  Using an instrument whose resolution is too coarse to detect the change.
+**Connections**
+  Accuracy, precision and validity: good techniques improve all three.
+  Characteristics of primary data.
+**Practice questions**
+  Classify each as qualitative or quantitative: potato strip mass; colour of an agar cube; number of stomata in a field of view.
+    Quantitative; qualitative; quantitative.
+  How could a student turn "the cells looked shrivelled" into quantitative data?
+    Count the number of plasmolysed cells in a set number of cells (e.g. 50) in each solution and calculate the percentage.
+**Flashcards**
+  Define quantitative data. :: Numerical measurements, such as mass, time or counts.
+  Define qualitative data. :: Descriptive observations in words or categories, such as colour or shape.
+  What is the resolution of an instrument? :: The smallest change it can show.
+  Counting stomata in a leaf impression gives {{quantitative}} data.
+  Suggest a technique to measure water uptake by a leafy shoot. :: A potometer (distance a bubble moves per minute).
+
+@ 3c1bb1d1 U1.3.1.4 | Accuracy, precision and validity
+**In a sentence**
+  Accurate data are close to the true value, precise data are close to each other, repeatable data agree when you redo them, reproducible data agree when someone else does it differently, and valid data measure what you meant to measure.
+**Key terms**
+  **Accuracy**: how close a measurement is to the true value.
+  **Precision**: how closely repeated measurements agree with each other.
+  **Repeatability**: agreement between results under the same conditions (same person, method, equipment, place, short time).
+  **Reproducibility**: agreement between results under changed conditions (different person, method, equipment, place or time).
+  **Validity**: whether a measurement or experiment actually tests what it claims to.
+  **True value**: the value that would be found if the quantity could be measured perfectly.
+**Telling them apart**
+  Dartboard picture: darts clustered together but off the bullseye are precise but not accurate; darts spread evenly around the bullseye average out accurately but are imprecise; darts clustered on the bullseye are both.
+  Precision says nothing about accuracy: a balance that always reads 0.20 g too high gives precise but inaccurate data.
+  Repeatability is you getting the same result again; reproducibility is others getting it too.
+**Improving each in the potato investigation**
+  Accuracy: calibrate (zero) the balance; blot strips the same way every time before weighing.
+  Precision: use strips cut with a cork borer to the same size; repeat trials.
+  Repeatability: follow exactly the same written method each trial.
+  Validity: control other variables (temperature, time in solution, strip size, potato variety) so only sucrose concentration affects mass.
+**Going deeper**
+  Validity depends on design as much as on measurement: an accurate balance can't rescue an experiment in which temperature varied between treatments.
+**Common mistakes**
+  Using "accurate" and "precise" as if they mean the same thing.
+  Saying repeating trials improves accuracy — it improves precision; accuracy needs removing systematic error.
+  Calling an experiment "valid" just because it was repeated.
+**Connections**
+  Errors (key science skills): random errors reduce precision; systematic errors reduce accuracy.
+  Limitations of methods: often explained using these terms.
+**Practice questions**
+  A student's potato strips all gained 0.30 g, but the balance had not been zeroed and read 0.10 g high. Were the results precise, accurate, both or neither?
+    Precise (the readings agree) but not accurate (all shifted from the true value by the same amount — a systematic error).
+  Explain why failing to control temperature reduces validity.
+    Temperature also affects the rate of osmosis, so changes in mass could be caused by temperature differences rather than sucrose concentration; the experiment would no longer test only what it claims to.
+**Flashcards**
+  Define accuracy. :: How close a measurement is to the true value.
+  Define precision. :: How closely repeated measurements agree with each other.
+  Repeatability vs reproducibility? :: Repeatability: same conditions and person. Reproducibility: different person, method, equipment or place.
+  An experiment is {{valid}} if it tests what it claims to test.
+  Does repeating trials improve accuracy or precision? :: Precision (it reduces the effect of random error).
+  Results clustered tightly but far from the true value are… :: precise but not accurate.
+
+@ d15d26dc U1.3.1.5 | Safety and ethics in your investigation
+**In a sentence**
+  Every investigation needs a risk assessment based on the safety data sheets for what you use, safe lab practice, and ethical treatment of any living things or people involved.
+**Key terms**
+  **Hazard**: something that could cause harm (a chemical, sharp blade, microbe, heat).
+  **Risk**: the chance that harm happens and how serious it would be.
+  **Risk assessment**: identifying hazards, judging risks, and deciding control measures.
+  **Safety data sheet (SDS)**: a document describing a chemical's hazards, safe handling, first aid and disposal.
+  **Informed consent**: a participant's agreement after being told what the study involves and that they can withdraw.
+**Safety**
+  Read the SDS for every chemical (e.g. iodine solution, ethanol, hydrochloric acid for a root tip squash).
+  For each hazard: the risk, and the control. Scalpels and cork borers — cut away from yourself on a tile. Hot water baths — heatproof gloves. Microbes — aseptic technique, disinfect benches, sealed plates.
+  Wear appropriate PPE (safety glasses, gloves, lab coat); know first aid and spill procedures; dispose of biological and chemical waste properly.
+**Ethics**
+  Animals: follow animal ethics guidelines — the 3 Rs: **replace** animals where possible, **reduce** the number used, **refine** methods to minimise harm. Schools need approval for most animal work.
+  Humans: informed consent, freedom to withdraw, privacy and confidentiality of data, no harm (e.g. exercise tests only for healthy volunteers).
+  Honesty: record all data truthfully, including results that don't fit.
+  Environment: collect only what you need from the field and return organisms where you found them.
+**Going deeper**
+  In Australia, human research is approved by human research ethics committees following the NHMRC's National Statement; animal research needs approval from an animal ethics committee before it starts.
+**Common mistakes**
+  Listing hazards without saying how the risk is controlled.
+  Treating ethics as only about animals — honesty in reporting and consent for human data count too.
+**Connections**
+  Key science skills: safety and ethics.
+  Logbooks: the risk assessment belongs in the logbook.
+**Practice questions**
+  Complete a risk assessment line for using a scalpel to cut potato strips.
+    Hazard: sharp blade. Risk: cuts to fingers. Control: cut downwards onto a tile, away from the body, keep fingers clear, carry the scalpel blade-down, dispose of blades in a sharps container.
+  A student wants to measure classmates' heart rates before and after exercise. Give two ethical requirements.
+    Obtain informed consent (including the right to withdraw), keep data confidential/anonymous, and ensure no harm — only healthy volunteers, moderate exercise.
+**Flashcards**
+  What is an SDS? :: A safety data sheet: a chemical's hazards, safe handling, first aid and disposal.
+  Hazard vs risk? :: A hazard is something that could cause harm; risk is how likely and how serious that harm is.
+  The 3 Rs of animal ethics are replace, {{reduce}} and {{refine}}.
+  What is informed consent? :: Agreement to take part after being told what's involved, including the right to withdraw.
+  Name one control for working with bacteria in the lab. :: Aseptic technique (also disinfecting benches, sealing plates, autoclaving waste).
+
+@ a2a45fe1 U1.3.2.1 | Aims, hypotheses, models, theories and laws
+**In a sentence**
+  An aim says what you'll do, a hypothesis is a testable prediction with a reason, a model is a simplified representation, a theory is a well-tested explanation, and a law describes what always happens without explaining why.
+**Key terms**
+  **Aim**: a statement of what the investigation sets out to find out.
+  **Hypothesis**: a testable, falsifiable prediction about the relationship between variables, with a biological reason.
+  **Model**: a simplified representation of a system, used to explain or predict.
+  **Theory**: a broad, well-tested explanation supported by a large body of evidence.
+  **Law**: a statement (often mathematical) describing a pattern that always holds, without explaining it.
+**Aim and hypothesis**
+  Aim: "To investigate the effect of sucrose concentration on the change in mass of potato strips."
+  Hypothesis: "If the sucrose concentration increases, then the potato strips will lose more mass, because water will leave the cells by osmosis into the more concentrated solution."
+  A hypothesis must be testable and able to be shown wrong. It is supported or not supported by data — never "proven".
+**Models, theories and laws in biology**
+  Models: the fluid mosaic model of the membrane; the stimulus–response model; agar cubes as model cells; a Punnett square. All simplify, so all have limitations.
+  Theories: cell theory; the theory of evolution by natural selection; endosymbiotic theory. "Theory" in science does not mean a guess.
+  Laws: rarer in biology; Mendel's law of segregation (each parent passes on one of its two alleles) is an example.
+  A theory explains why; a law describes what. A law never "grows up" into a theory — they do different jobs.
+**Going deeper**
+  The philosopher Karl Popper argued that science advances by trying to falsify ideas: a hypothesis that no result could ever contradict is not scientific.
+**Common mistakes**
+  Writing an aim as a question or a hypothesis without a reason.
+  Saying results "prove" a hypothesis.
+  Using "theory" to mean an untested idea.
+**Connections**
+  Key science skills: formulating hypotheses and making predictions.
+  Evidence consistent with or challenging models: how theories change.
+**Practice questions**
+  Write a hypothesis for an investigation into the effect of light intensity on the rate of transpiration.
+    If light intensity increases, then the rate of transpiration will increase, because more stomata open in brighter light, allowing more water vapour to diffuse out of the leaf.
+  Give one limitation of the stimulus–response model.
+    It shows a simple linear pathway, whereas real responses involve many receptors, effectors and overlapping signals (nerves and hormones at once) and several variables changing together.
+**Flashcards**
+  Aim vs hypothesis? :: An aim says what you'll investigate; a hypothesis is a testable prediction with a reason.
+  What makes a hypothesis scientific? :: It is testable and could be shown to be false.
+  Cell theory is an example of a scientific {{theory}}.
+  Theory vs law? :: A theory explains why something happens; a law describes what happens without explaining it.
+  Why does every model have limitations? :: It simplifies the real system, leaving some features out.
+
+@ 21f9a8b9 U1.3.2.2 | Evidence that supports or challenges models
+**In a sentence**
+  Scientific ideas are always open to change: new observations either fit current models and theories, strengthening them, or challenge them, forcing them to be refined or replaced.
+**Key terms**
+  **Consistent with**: evidence that fits a model's predictions.
+  **Challenge**: evidence that contradicts a model's predictions.
+  **Provisional**: accepted for now, but open to change with new evidence.
+**Examples from biology**
+  Spontaneous generation (life arising from non-living matter) was challenged by Pasteur's swan-neck flask experiment (1859): broth open to air but protected from dust stayed sterile, supporting "cells come from cells".
+  Cell theory built up over 200 years as microscopes improved: Hooke (1665), Schleiden and Schwann (1830s), Virchow (1855).
+  Membrane models: an early model had protein layers coating a lipid bilayer like a sandwich; evidence that proteins pass through the membrane and move within it led to the fluid mosaic model (Singer and Nicolson, 1972).
+  Stomach ulcers were thought to be caused by stress and acid until Australians Barry Marshall and Robin Warren showed the bacterium Helicobacter pylori causes most of them (Marshall famously drank a culture) — Nobel Prize 2005.
+**Your own results**
+  If your data match the prediction, say they are consistent with the model and support the hypothesis.
+  If they don't, don't hide them: check for errors, then discuss whether the model might not apply to your conditions.
+**Going deeper**
+  Models are often refined rather than thrown out: the fluid mosaic model has been updated (membranes are more crowded with proteins than first drawn) but is still used because it explains so much.
+**Common mistakes**
+  Saying one experiment disproves an established theory. It raises questions; theories change when evidence builds and is reproduced.
+  Ignoring data that don't fit.
+**Connections**
+  Aims, hypotheses, models, theories and laws.
+  Limitations of methods: unexpected results often reveal them.
+**Practice questions**
+  Explain how the discovery of Helicobacter pylori shows the provisional nature of scientific knowledge.
+    Doctors had accepted that stress and acid caused ulcers. New evidence (the bacterium found in ulcer patients, and ulcers cured with antibiotics) challenged that model, and after being reproduced it replaced it.
+  Your results contradict what osmosis predicts. What should you do?
+    Check the method and data for errors (e.g. strips not blotted, balance not zeroed), repeat if possible, and discuss honestly whether the result reflects an error or a real limitation of the model under your conditions.
+**Flashcards**
+  What does "provisional" mean for scientific knowledge? :: Accepted for now but open to change if new evidence challenges it.
+  Whose experiment challenged spontaneous generation? :: Louis Pasteur's swan-neck flask experiment.
+  Which bacterium did Marshall and Warren show causes most stomach ulcers? :: Helicobacter pylori.
+  The fluid mosaic model replaced an earlier "sandwich" model of the {{membrane}}.
+  What should you do with results that don't fit your model? :: Report them honestly, check for errors, and discuss possible explanations.
+
+@ 89e444f7 U1.3.2.3 | Characteristics of primary data
+**In a sentence**
+  Primary data is data you generate yourself, first-hand, for your own question — so you know exactly how it was collected and what its limitations are.
+**Key terms**
+  **Primary data**: data generated first-hand by the investigator.
+  **Secondary data**: data collected by someone else.
+  **Raw data**: data as first recorded, before any processing.
+**Characteristics**
+  Collected for your specific question, so it fits your variables exactly.
+  You control the method, so you know its conditions, errors and limitations.
+  It's original — recorded directly in your logbook as you collect it.
+  Limited by your time, equipment, skill and sample size.
+**Going deeper**
+  Pooling class data increases sample size, but only if everyone followed the same method — check before combining results.
+**Common mistakes**
+  Calling class-pooled data "secondary" — data your class generated with your method is primary for your class.
+  Changing raw data after recording it. Cross out and note the reason; never erase.
+**Connections**
+  Generating qualitative and quantitative data.
+  Logbooks: where primary data are authenticated.
+  Primary vs secondary data (Unit 2).
+**Practice questions**
+  Give one advantage and one limitation of primary data.
+    Advantage: collected exactly for your question with a method you know and control. Limitation: small sample and limited equipment, so it may be less precise or less representative than large published data sets.
+  A student measures her own potato strips and also uses a textbook value for the solute concentration of potato cells. Classify each.
+    Her measurements are primary data; the textbook value is secondary data.
+**Flashcards**
+  Define primary data. :: Data generated first-hand by the investigator.
+  Why do you know the limitations of primary data? :: You designed and carried out the method yourself.
+  Data recorded as first collected is called {{raw}} data.
+  Give one limitation of primary data. :: Small sample size or limited equipment and time.
+  What should you do if you make a mistake recording raw data? :: Cross it out neatly and note why — never erase it.
+
+@ 65e70f3d U1.3.2.4 | Analysing data and sources of error
+**In a sentence**
+  Put raw data into clear tables, process it (means, percentage change), graph it to see the pattern, and then ask how errors might have affected it.
+**Key terms**
+  **Mean**: the sum of values divided by how many there are.
+  **Percentage change**: (final − initial) ÷ initial × 100.
+  **Trend**: the overall pattern in the data.
+  **Random error**: unpredictable variation that scatters results; reduces precision.
+  **Systematic error**: a consistent shift in all results in one direction; reduces accuracy.
+  **Personal error**: a mistake by the investigator (misreading, miscalculating) — not a measurement error; the trial should be redone.
+  **Outlier**: a value far from the others.
+**Organising**
+  Table: independent variable in the first column, dependent variable (and each trial) next, units in the headings not in the cells, then the processed data (mean).
+  Graph: independent variable on the x-axis, dependent on the y-axis; line graph (or scatter with a line of best fit) for continuous data, bar chart for categories; title, labelled axes with units.
+**Processing the potato example**
+  Use percentage change in mass, not change in grams, so strips that started with different masses can be compared.
+  Calculate the mean of the trials for each concentration.
+  Where the line crosses 0% change, the solution is isotonic with the potato cells — an estimate of their solute concentration.
+**Errors**
+  Random: blotting strips slightly differently each time; reading a scale at slightly different angles. Reduce by more trials and averaging.
+  Systematic: an unzeroed balance; a solution made up at the wrong concentration. Repeating doesn't help — fix the equipment or method.
+  Outliers: check for a personal error; if one is found, exclude and explain it; otherwise keep it and discuss it.
+**Going deeper**
+  The range of repeat readings (highest minus lowest) is a quick guide to precision: a large range means more random error.
+**Worked example**
+  Three strips in 0.4 M sucrose changed mass by −4.2%, −3.8% and −4.6%. Find the mean and interpret it.
+    Mean = (−4.2 + −3.8 + −4.6) ÷ 3 = −12.6 ÷ 3 = −4.2%.
+    The strips lost mass, so 0.4 M sucrose is hypertonic to potato cells: water left them by osmosis.
+**Common mistakes**
+  Graphing change in grams when starting masses differ.
+  Deleting outliers without a reason.
+  Calling a personal mistake a "random error".
+**Connections**
+  Accuracy and precision: random errors affect precision, systematic errors accuracy.
+  Key science skills: processing data and plotting graphs.
+**Practice questions**
+  A potato strip went from 2.50 g to 2.20 g. Calculate the percentage change.
+    (2.20 − 2.50) ÷ 2.50 × 100 = −12%.
+  Explain why repeating trials does not fix a systematic error.
+    A systematic error shifts every result by the same amount in the same direction, so averaging repeated results gives the same wrong value.
+  Which type of graph suits sucrose concentration (0, 0.2, 0.4, 0.6 M) against percentage change in mass?
+    A line graph (or scatter with a line of best fit), because both variables are continuous.
+**Flashcards**
+  Formula for percentage change? :: (final − initial) ÷ initial × 100.
+  Random errors affect {{precision}}; systematic errors affect {{accuracy}}.
+  Why use percentage change in mass rather than change in grams? :: The strips may start at different masses; percentage change allows fair comparison.
+  Which variable goes on the x-axis? :: The independent variable.
+  Mean of −2%, −4% and −6%? :: −4%.
+  How should you treat an outlier? :: Check for a mistake; exclude only with a stated reason, otherwise keep and discuss it.
+
+@ 5b878326 U1.3.2.5 | The logbook
+**In a sentence**
+  A logbook is your dated, first-hand record of everything in the investigation — planning, risk assessments, raw data, changes and early analysis — and it proves the work is yours.
+**Key terms**
+  **Logbook**: a bound or digital record, kept as you work, of an investigation from planning to analysis.
+  **Authentication**: evidence that the work and data are genuinely your own.
+**What goes in it**
+  Date on every entry.
+  Research question, background notes, hypothesis and planning (including rejected ideas).
+  Risk assessment.
+  Method, and any changes made during the investigation, with reasons.
+  Raw data, recorded straight away, including observations and problems.
+  Calculations, rough graphs, first thoughts on patterns and outliers.
+**Good practice**
+  Record immediately — don't copy up later.
+  Never erase: cross out with a single line so it can still be read.
+  A hard copy is recommended for assessment because it is harder to alter.
+**Going deeper**
+  Professional lab notebooks are legal records — they have been used to settle patent disputes and to investigate research misconduct.
+**Common mistakes**
+  Writing up results neatly afterwards instead of recording them as they happen.
+  Leaving out failed trials or changes to the method.
+**Connections**
+  Characteristics of primary data.
+  Safety and ethics: the risk assessment goes in the logbook.
+**Practice questions**
+  Why must logbook entries be dated?
+    Dates show the order and timing of the work, which helps authenticate that the data were generated by the student when claimed.
+  A trial fails because a solution was spilled. Should it go in the logbook?
+    Yes — record what happened and why the trial was repeated. It shows an honest record and explains any changes.
+**Flashcards**
+  What is the main purpose of a logbook? :: To record the investigation as it happens and authenticate the student's own work and data.
+  Should errors in a logbook be erased? :: No — cross out with one line so they can still be read.
+  Every logbook entry should be {{dated}}.
+  Name three things recorded in a logbook. :: Planning and hypothesis, risk assessment, raw data (also method changes, early analysis).
+  Why is a hard-copy logbook recommended for assessment? :: It is harder to alter or falsify than an electronic one.
+
+@ 8dd8e210 U1.3.2.6 | Limitations of methods and data
+**In a sentence**
+  Every investigation has weaknesses — small samples, variables you couldn't control, imprecise equipment — and a good report names the ones that matter and suggests realistic improvements.
+**Key terms**
+  **Limitation**: a weakness in the methodology, method or data that reduces confidence in the conclusion.
+  **Sample size**: the number of individuals, samples or trials measured.
+  **Uncontrolled variable**: a variable that could affect the result but wasn't kept constant.
+**Common limitations in biology practicals**
+  Small sample size or few trials: results may not be representative and random error has a bigger effect.
+  Biological variation: no two potatoes, leaves or people are identical.
+  Uncontrolled variables: room temperature, time between cutting and weighing, light.
+  Equipment: resolution of the balance, accuracy of homemade solutions.
+  Methodology: a correlational study can't show cause; a model (agar cube) isn't a real cell.
+  Analysis: too few data points to see the shape of a curve (e.g. only three concentrations).
+**Writing about them**
+  Name the limitation → explain its effect on the data → suggest a specific improvement.
+  "Only three trials were done, so one unusual strip strongly affected the mean; using ten strips per concentration would reduce the effect of random error."
+**Going deeper**
+  Separate limitations of the method (what you did) from limitations of the conclusion (how far the results can be generalised); strong discussions cover both.
+**Common mistakes**
+  Vague limitations ("human error", "more trials") without explaining the effect.
+  Suggesting improvements that aren't realistic in a school lab.
+**Connections**
+  Organising and analysing data; sources of error.
+  Presenting key findings: limitations belong in the discussion.
+**Practice questions**
+  Identify one limitation of using agar cubes to model cells and explain its effect.
+    Agar cubes have no membrane or active transport, so diffusion into them doesn't reflect how real cells control exchange; conclusions about real cells are limited.
+  Rewrite "there was human error" as a useful limitation.
+    "Strips were blotted by hand, so different amounts of surface water may have remained, adding random error to the mass readings; blotting with a set number of presses on the same paper would reduce this."
+**Flashcards**
+  What three parts make a good limitation statement? :: The limitation, its effect on the data, and a specific improvement.
+  Why does a small sample size limit a conclusion? :: Random variation has a larger effect, so results may not be representative.
+  Why is "human error" a weak limitation? :: It doesn't say what went wrong, how it affected the data or how to fix it.
+  Biological {{variation}} between individuals is a limitation of most biology practicals.
+  Suggest one improvement for an investigation with only three concentrations. :: Test more concentrations over a wider range to show the shape of the trend.
+
+@ 6614d11b U1.3.3.1 | Scientific report conventions
+**In a sentence**
+  A scientific report follows set sections and conventions — clear terminology, SI units, standard abbreviations and correctly drawn tables and graphs — so any scientist can follow and check it.
+**Key terms**
+  **SI units**: the international system of units (metre, kilogram, second, mole).
+  **Convention**: an agreed way of writing or presenting something in science.
+  **Binomial name**: the two-part scientific name of a species, genus then species.
+**Structure of a practical report**
+  Title — the question or aim.
+  Introduction — background biology, aim, hypothesis.
+  Method — equipment and numbered steps someone else could follow (variables identified).
+  Results — tables and graphs, with processed data.
+  Discussion — interpret the results, link to the biology, evaluate (errors, limitations, improvements).
+  Conclusion — a direct answer to the question, stating whether the hypothesis was supported; no new information.
+  References and acknowledgements.
+**Conventions**
+  Formal, objective language, usually third person and past tense ("the strips were weighed").
+  Units: g, mL, cm, °C, M or mol/L; a space between number and unit (2.50 g).
+  Binomial names written genus capitalised, species lower case, in italics when typed or underlined when handwritten: Solanum tuberosum (potato).
+  Tables: units in headings; graphs: title, axes labelled with units, independent variable on x.
+  Standard abbreviations: DNA, ATP, ADH, mL, min.
+**Going deeper**
+  Journal articles open with an abstract — a short summary of the whole study. Writing one for a school report forces you to state the key finding clearly.
+**Common mistakes**
+  Putting interpretation in the results section, or new data in the conclusion.
+  Writing units in every table cell instead of the heading.
+**Connections**
+  Presenting key findings and implications.
+  Key science skills: communication conventions.
+**Practice questions**
+  In which section of a report should sources of error be discussed?
+    The discussion.
+  Correct this table heading: "Mass" with values "2.1g, 2.3g".
+    Heading "Mass (g)", with values 2.1 and 2.3 in the cells.
+**Flashcards**
+  List the sections of a practical report. :: Title, introduction, method, results, discussion, conclusion, references.
+  What must a conclusion do? :: Answer the question and state whether the hypothesis was supported, with no new information.
+  How is a binomial name written? :: Genus capitalised, species lower case, italicised (or underlined by hand), e.g. Homo sapiens.
+  Units belong in the table {{heading}}, not in each cell.
+  What tense and voice are usual in a method? :: Past tense, third person (passive), e.g. "the strips were weighed".
+
+@ 91e7eed5 U1.3.3.2 | Presenting findings and implications
+**In a sentence**
+  Communicate the key finding in one clear sentence, show the evidence for it, explain what it means and what should be investigated next — in a format that suits your audience.
+**Key terms**
+  **Key finding**: the main result that answers the investigation question.
+  **Implication**: what the finding means for understanding or real-world use.
+  **Audience**: who the communication is for (scientists, classmates, the public).
+**Presenting**
+  Lead with the key finding: "As sucrose concentration increased, potato strips lost more mass; they were isotonic at about 0.25 M."
+  Back it with the most important graph, not every table.
+  Discuss: does it support the hypothesis? How does it link to osmosis? How confident can we be (errors, limitations)?
+  Implications: e.g. plants irrigated with salty water may lose water from their roots; further work could test sweet potato or different temperatures.
+  Formats: practical report, scientific poster, oral or multimedia presentation, article. Match the language and detail to the audience.
+**Going deeper**
+  People read a scientific poster in seconds, so the key finding sits in the centre in large type; the detail is there for anyone who stops to read.
+**Common mistakes**
+  Burying the key finding among details.
+  Claiming more than the data show ("this proves all plant cells…").
+**Connections**
+  Scientific report conventions.
+  Limitations of methods and data.
+  Effective science communication (Unit 2).
+**Practice questions**
+  Write a one-sentence key finding for an investigation that found transpiration rate doubled when a fan was used.
+    Moving air doubled the rate of water uptake by the shoot, from 3.0 to 6.0 mm per minute, consistent with faster transpiration when humid air is removed from the leaf surface.
+  Suggest one further investigation following the potato osmosis experiment.
+    Repeat with sodium chloride instead of sucrose, or compare potato with sweet potato, or test the effect of temperature on the rate of mass change.
+**Flashcards**
+  What is a key finding? :: The main result that answers the investigation question, stated in one clear sentence.
+  What is an implication? :: What a finding means for understanding or for real-world applications.
+  How should presentation change for a general audience? :: Less jargon, clear explanations of key terms, focus on the main finding and why it matters.
+  A finding should be backed by the most important {{graph}} or data, not every table.
+  Why suggest further investigations? :: To show what remains unanswered and how the question could be extended or confirmed.

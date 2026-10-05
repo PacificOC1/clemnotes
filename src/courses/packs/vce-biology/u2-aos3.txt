@@ -1,0 +1,506 @@
+% VCE Biology — Unit 2, Area of Study 3: investigating a contemporary bioethical issue.
+% Original study notes. Format: see src/courses/notesPack.ts.
+% A running example is used throughout: "Should cloning be used to conserve endangered species?"
+
+@ bc5092a1 U2.3.1.1 | Primary and secondary data
+**In a sentence**
+  Primary data is generated first-hand by you; secondary data was collected by someone else — and a bioethics investigation relies mostly on secondary data, so you need to know where it came from.
+**Key terms**
+  **Primary data**: data generated first-hand by the investigator.
+  **Secondary data**: data collected by others that the investigator gathers and uses.
+  **Collate**: gather and organise data from several sources.
+**In this investigation**
+  You research a bioethical issue using secondary sources: journal articles, government reports, databases (e.g. the Atlas of Living Australia, ABS or AIHW health statistics), scientific organisations, reputable news.
+  You might add a small amount of primary data, such as a survey of opinions — with consent and anonymity.
+**Strengths and limitations**
+  Secondary: large data sets, long time spans and expert methods you couldn't replicate; but you rely on others' methods, may not know their limitations, and data can be out of date or biased.
+  Primary: collected for your exact question and you know how; but limited in size and scope.
+**Going deeper**
+  The same data can be primary for one person and secondary for another: a zoo geneticist's measurements are primary for them and secondary for you.
+**Common mistakes**
+  Calling a journal article "primary data" because it reports an experiment — for you it's secondary.
+  Using secondary data without recording the source.
+**Connections**
+  Characteristics of primary data (Unit 1).
+  Quality of evidence: secondary sources must be judged.
+  Logbook for secondary data.
+**Practice questions**
+  Classify: (a) survival rates of cloned embryos from a published study; (b) a class survey you ran on attitudes to cloning.
+    (a) Secondary. (b) Primary.
+  Give one limitation of relying on secondary data.
+    You depend on other researchers' methods and may not know their errors, assumptions or biases; the data may also be out of date.
+**Flashcards**
+  Define secondary data. :: Data collected by others that you gather and use.
+  Is data from a journal article primary or secondary for you? :: Secondary.
+  Give one advantage of secondary data. :: Large data sets and expert methods beyond what you could produce.
+  Data you generate yourself is {{primary}} data.
+  Name one reputable source of Australian secondary data. :: ABS, AIHW, CSIRO, the Atlas of Living Australia (or a peer-reviewed journal).
+
+@ dd3ac8d6 U2.3.1.2 | Evidence, opinion and anecdote
+**In a sentence**
+  Evidence comes from systematic observation or experiment; an anecdote is one person's story; an opinion is a view — and scientific ideas can be tested, while non-scientific ideas (values, beliefs) can't, though both matter in an ethical debate.
+**Key terms**
+  **Evidence**: data from systematic observation or experiment that can support or refute a claim.
+  **Anecdote**: a personal story or single case, not collected systematically.
+  **Opinion**: a personal view or judgement, which may or may not be based on evidence.
+  **Scientific idea**: an idea that can be tested and possibly shown wrong by evidence.
+  **Non-scientific idea**: an idea that can't be tested by evidence (values, beliefs, aesthetics).
+**Telling them apart**
+  Evidence: "Of 277 fused eggs, one produced a live lamb (Dolly)."
+  Anecdote: "My neighbour's cloned dog seems just like her old one."
+  Opinion: "Cloning pets is a waste of money."
+  Scientific idea: "Cloned animals have a shorter lifespan" — testable with data.
+  Non-scientific idea: "Cloning is unnatural and therefore wrong" — a value judgement, not testable.
+**Why it matters in bioethics**
+  Science can tell you what is likely to happen (risks, success rates); it can't tell you what should happen. Ethical decisions weigh evidence together with values.
+  A strong argument uses evidence for its factual claims and is open about which parts are values.
+**Going deeper**
+  Science can test whether a claim is true (do clones age faster?) but values decide whether an action is right; keeping the two apart makes an ethical argument clearer.
+**Common mistakes**
+  Treating a vivid anecdote as proof.
+  Dismissing values as irrelevant — in ethics they're central, but they aren't evidence.
+**Connections**
+  Quality of evidence.
+  Key science skills: distinguishing opinion, anecdote and evidence.
+  Approaches to bioethics: where values come in.
+**Practice questions**
+  Classify: "Studies of 100 cloned cattle found most were healthy as adults."
+    Evidence (systematically collected data).
+  Is "Genetic testing will make society less accepting of disability" a scientific idea? Explain.
+    Partly. It makes a prediction that could in principle be studied (attitudes could be surveyed over time), but as stated it is mainly an opinion; to be scientific it would need to be framed as a testable claim.
+**Flashcards**
+  Define anecdote. :: A personal story or single case, not collected systematically.
+  Define evidence. :: Data from systematic observation or experiment that can support or refute a claim.
+  "Cloning is unnatural" is a {{non-scientific}} idea (a value judgement).
+  What makes an idea scientific? :: It can be tested and possibly shown wrong by evidence.
+  Can science alone decide an ethical question? :: No — it provides evidence about outcomes; values decide what should be done.
+
+@ 7cd87ab1 U2.3.1.3 | Judging the quality of evidence
+**In a sentence**
+  Good evidence comes from authoritative, current, unbiased sources using valid methods with large enough samples — so check who produced it, how, when and why.
+**Key terms**
+  **Validity**: whether the evidence actually addresses the question it's used for.
+  **Authority**: the expertise and credibility of the source.
+  **Bias**: a lean in how information is gathered or presented that distorts it.
+  **Peer review**: evaluation of research by independent experts before publication.
+  **Conflict of interest**: when a source stands to gain from a particular conclusion.
+**Questions to ask of a source**
+  Who wrote it, and what is their expertise? (A geneticist at a university vs an anonymous blog.)
+  Was it peer reviewed?
+  When was it published — is it still current?
+  What was the method and sample size? Were there controls?
+  Who funded it, and could that influence the conclusion?
+  Does it agree with other good sources? Is it reproducible?
+  Is it presenting facts, or trying to persuade?
+**Types of bias**
+  Funding or conflict of interest (a company selling a product studying its own product).
+  Selection bias (only surveying people who already agree).
+  Publication bias (successful results more likely to be published).
+  Selective reporting (quoting only the data that support one side).
+**Going deeper**
+  Systematic reviews and meta-analyses combine many studies and are usually the strongest evidence; a single study, however well reported, is weaker.
+**Common mistakes**
+  Trusting a source because it looks professional.
+  Rejecting all industry-funded research automatically — judge the method, but note the conflict.
+**Connections**
+  Evidence, opinion and anecdote.
+  Organising and evaluating secondary data.
+  Key science skills: evaluating scientific and media texts.
+**Practice questions**
+  A website selling pet cloning claims clones "are exact copies of your pet". Evaluate this source.
+    It has a conflict of interest (it profits from sales), is not peer reviewed, and the claim is inaccurate: clones share nuclear DNA but differ in environment, epigenetics and even features such as coat pattern. Low reliability.
+  Why is peer review a sign of higher-quality evidence?
+    Independent experts have checked the methods, analysis and conclusions before publication, making serious errors less likely.
+**Flashcards**
+  What is peer review? :: Evaluation of research by independent experts before it is published.
+  Name two questions to judge a source's authority. :: Who wrote it and what is their expertise? Is it peer reviewed or from a reputable organisation?
+  A company testing its own product has a {{conflict of interest}}.
+  Why does sample size matter to quality? :: Small samples are more affected by chance, so results may not be representative.
+  What is publication bias? :: Studies with positive results are more likely to be published than those with negative results.
+
+@ f4d2f552 U2.3.1.4 | Organising and evaluating secondary data
+**In a sentence**
+  Pull the data from your sources into tables and graphs you can compare, look for patterns and disagreements, and judge how much weight each source deserves.
+**Key terms**
+  **Synthesis**: combining information from several sources into one coherent picture.
+  **Trend**: a general pattern across the data.
+  **Contradictory data**: data from different sources that disagree.
+  **Provisional data**: data or conclusions that may change as more evidence comes in.
+**Organising**
+  Summary table of sources: author, date, type, key finding, sample size, strengths and limitations.
+  Convert data to comparable units (e.g. all success rates as percentages).
+  Graph key figures (e.g. cloning success rates across species or over time).
+**Analysing and evaluating**
+  Look for agreement across independent sources — it strengthens a conclusion.
+  Where sources disagree, compare their methods, sample sizes, dates and funding to explain why.
+  Note where the evidence is limited or provisional (new technologies often have few studies).
+  Separate the data from the authors' interpretations.
+**Going deeper**
+  When sources disagree, check they measured the same thing — live births per embryo transferred and per egg used give very different cloning success rates.
+**Worked example**
+  Three sources report live-birth rates from cloned embryos of 1%, 3% and 15%. How should you deal with this?
+    Check what each measured (per embryo transferred or per egg fused), the species and the year.
+    Newer studies and some species (e.g. cattle) have higher success than early work.
+    Report the range, explain the differences, and avoid quoting one figure as "the" success rate.
+**Common mistakes**
+  Copying data without checking it measures the same thing.
+  Ignoring sources that disagree with your position.
+**Connections**
+  Judging the quality of evidence.
+  Logbook for secondary data.
+  Analysing data (Unit 1): similar tools for primary data.
+**Practice questions**
+  Why is it useful to tabulate sources with their sample sizes and dates?
+    It lets you compare sources directly and weigh them — larger, more recent, better-designed studies usually deserve more weight.
+  Two reputable studies disagree about the health of cloned cattle. Suggest two reasons.
+    Different sample sizes or selection of animals, different ages at assessment, different cloning methods or years (techniques improved), or different definitions of "healthy".
+**Flashcards**
+  What is synthesis? :: Combining information from several sources into one coherent picture.
+  What should you do when sources disagree? :: Compare their methods, sample sizes, dates and funding to explain the difference.
+  Agreement across independent sources {{strengthens}} a conclusion.
+  What does "provisional" mean for data? :: It may change as more evidence becomes available.
+  Why convert data to the same units? :: So values from different sources can be compared fairly.
+
+@ e6300eb8 U2.3.1.5 | Logbook for secondary data
+**In a sentence**
+  Your logbook records every source you find, what you took from it and how your question and position developed — proving the research and thinking are your own.
+**Key terms**
+  **Logbook**: a dated record of the investigation as it develops.
+  **Authentication**: evidence that the work is genuinely the student's own.
+  **Annotation**: notes you add explaining a source's relevance, reliability or meaning.
+**What to record**
+  The development of your research question (first ideas, refinements).
+  Each source: full reference details, date accessed, URL.
+  Key data and quotes (in quotation marks), plus your summary in your own words.
+  Your evaluation of each source (authority, bias, currency).
+  Notes on perspectives and stakeholders; your developing position and reasons.
+  Dates on every entry.
+**Going deeper**
+  Reference managers (such as Zotero) store sources and notes, but the logbook should still show your dated thinking in your own words.
+**Common mistakes**
+  Recording sources without enough detail to reference them later.
+  Copying text without quotation marks — this leads to accidental plagiarism.
+**Connections**
+  The logbook (Unit 1): the same idea for primary data.
+  Referencing.
+**Practice questions**
+  Why should you record the date you accessed a website?
+    Web pages change or disappear; the access date shows what version you used and is part of the reference.
+  How does a logbook help authenticate a research investigation?
+    Dated entries show the question, sources, notes and reasoning developing over time, which demonstrates the work was done by the student.
+**Flashcards**
+  What should be recorded for each source in a logbook? :: Full reference details, date accessed, key information and your evaluation of it.
+  Why put copied text in quotation marks in your logbook? :: To avoid accidentally presenting someone else's words as your own.
+  Every logbook entry should be {{dated}}.
+  What is an annotation? :: A note explaining a source's relevance, reliability or meaning.
+  What does a logbook authenticate? :: That the research and reasoning are the student's own work.
+
+@ 16d700e8 U2.3.2.1 | Biology concepts for your issue
+**In a sentence**
+  An ethics investigation still has to get the biology right: explain the science behind the issue accurately, define key terms, and use correct terminology and diagrams.
+**Key terms**
+  **Terminology**: the specialised words of a subject, used precisely.
+  **Representation**: a diagram, flow chart, graph or model used to communicate an idea.
+**For the cloning example**
+  Explain SCNT step by step, with a flow chart.
+  Define clone, somatic cell, enucleated egg, surrogate, genetic diversity, inbreeding.
+  Explain why cloning frozen cells from dead animals could add alleles to a population — and why cloning living animals doesn't add diversity.
+  Use real examples: Przewalski's horse, black-footed ferret, northern white rhino efforts.
+**Why the science matters**
+  Ethical arguments depend on facts: whether cloning helps a species depends on how it affects genetic diversity, success rates and animal welfare.
+  Errors in the biology undermine every conclusion built on them.
+**Going deeper**
+  Where the science is uncertain (e.g. the long-term health of clones), say so — uncertainty is itself relevant to an ethical decision.
+**Common mistakes**
+  Letting the ethics section crowd out the biology.
+  Using terms loosely ("clones are exact copies").
+**Connections**
+  Reproductive cloning technologies; genetic diversity.
+  Effective science communication.
+**Practice questions**
+  Why does the accuracy of the biology matter in an ethics investigation?
+    Ethical conclusions rest on facts about outcomes and risks. If the biology is wrong, the weighing of benefits and harms is wrong too.
+  Name three key terms to define in an investigation of prenatal genetic testing.
+    Karyotype (or genetic test), chromosome abnormality/aneuploidy, allele, carrier, amniocentesis (any three relevant terms).
+**Flashcards**
+  Why explain the biology in a bioethics report? :: Ethical judgements depend on accurate facts about outcomes and risks.
+  Give an example of a scientific representation. :: A flow chart, labelled diagram, graph or model.
+  Using words precisely is using correct {{terminology}}.
+  Why can cloning cells frozen decades ago add genetic diversity? :: They carry alleles that have since been lost from the living population.
+  What should accompany a complex process like SCNT in a report? :: A clear diagram or flow chart of the steps.
+
+@ 27a090ce U2.3.2.2 | Effective science communication
+**In a sentence**
+  Good science communication is accurate, clear, set in context, concise and coherent, and pitched to its purpose and audience.
+**Key terms**
+  **Audience**: the people the communication is for.
+  **Purpose**: what the communication aims to do (inform, explain, persuade, recommend).
+  **Coherence**: ideas linked logically so the argument flows.
+**The characteristics**
+  **Accuracy**: correct biology, correct data, sources acknowledged.
+  **Clarity**: concepts explained simply, jargon defined, good diagrams.
+  **Context**: why the issue matters and what the findings imply.
+  **Conciseness and coherence**: no padding; each point builds on the last.
+  **Appropriate for purpose and audience**: a report for scientists uses technical detail; a brochure for the public uses plain language and examples.
+**Adapting to an audience**
+  Scientists: technical terms, data, methods, references.
+  Policy makers: key evidence, options and consequences, a recommendation.
+  General public: plain words, relatable examples, visuals, what it means for them.
+**Going deeper**
+  Framing matters: "a 90% survival rate" and "a 10% death rate" state the same fact but lead audiences to different judgements.
+**Common mistakes**
+  Using the same language for every audience.
+  Presenting only one side while claiming to "inform".
+**Connections**
+  Biology concepts for your issue.
+  Presenting findings (Unit 1).
+  Key science skills: communicating to specific audiences.
+**Practice questions**
+  Rewrite for a Year 7 audience: "SCNT involves transferring a diploid somatic nucleus into an enucleated oocyte."
+    Scientists take the DNA-containing centre (nucleus) out of a body cell and put it into an egg cell that has had its own nucleus removed.
+  Name three characteristics of effective science communication.
+    Accuracy, clarity, contextual relevance (also conciseness, coherence, suitability for audience and purpose).
+**Flashcards**
+  Five characteristics of effective science communication? :: Accurate, clear, in context, concise and coherent, suited to purpose and audience.
+  How should communication for the public differ from one for scientists? :: Plainer language, fewer technical terms, relatable examples and visuals.
+  Linking ideas logically so an argument flows is {{coherence}}.
+  What does "context" add to science communication? :: Why the issue matters and what the findings imply.
+  Why define jargon? :: So the audience understands key terms and the explanation is clear.
+
+@ ee7df0a2 U2.3.2.3 | Data representations, models and limits
+**In a sentence**
+  Graphs, diagrams and models make complex biology understandable — but every one simplifies, so say what it leaves out.
+**Key terms**
+  **Data representation**: a graph, table, chart or infographic showing data.
+  **Model**: a simplified representation of a system or process.
+  **Limitation of a model**: what the model leaves out or gets wrong compared with reality.
+**Using them**
+  Choose the representation that fits: a line graph for change over time (population of a species), a bar chart to compare categories (success rates by species), a flow chart for a process (SCNT), a food web for interactions.
+  Models used in Unit 2: Punnett squares, pedigree charts, food webs, the stimulus–response model, population graphs.
+**Their limits**
+  A Punnett square gives probabilities, not what will happen in one family.
+  A food web leaves out many species and doesn't show the strength of each interaction.
+  A graph can mislead: a y-axis that doesn't start at zero exaggerates differences; cherry-picked time ranges hide trends.
+**Going deeper**
+  Every graph involves choices — the scale, the range, which data to include. Asking what was left out is a good test of a source.
+**Common mistakes**
+  Presenting a model as if it were reality.
+  Using a graph type that hides the pattern.
+**Connections**
+  Aims, hypotheses, models, theories and laws (Unit 1).
+  Key science skills: models and their limitations.
+**Practice questions**
+  Give one limitation of using a food web to predict the effect of removing dingoes.
+    It shows who eats whom but not how strongly each species depends on another, and it leaves out non-feeding effects (e.g. prey changing where they feed) and other factors such as rainfall.
+  How can a graph mislead a reader?
+    By starting the y-axis above zero to exaggerate differences, choosing a selective time range, or using inconsistent scales.
+**Flashcards**
+  Why does every model have limitations? :: It simplifies reality, leaving some features out.
+  Limitation of a Punnett square? :: It predicts probabilities, not the actual outcome for a small number of offspring.
+  A {{flow chart}} suits showing the steps of a process.
+  How can a truncated y-axis mislead? :: It makes small differences look large.
+  What graph suits change in a population over time? :: A line graph.
+
+@ dfcdba2a U2.3.2.4 | Social, economic, legal and political factors
+**In a sentence**
+  Bioethical issues sit in the real world, so decisions are shaped by social values, costs and benefits, laws, and politics as well as by science.
+**Key terms**
+  **Social factors**: people's values, beliefs, culture and wellbeing; equity of access.
+  **Economic factors**: costs, benefits, funding and who profits or pays.
+  **Legal factors**: laws and regulations that permit or restrict an action.
+  **Political factors**: government policy, priorities, funding decisions and lobbying.
+  **Stakeholder**: any person or group affected by, or with an interest in, the issue.
+**Applying them — cloning endangered species**
+  Social: public support for saving iconic species; some see cloning as "playing God"; cultural values of Traditional Owners about their Country's species.
+  Economic: cloning is expensive — could the money protect more habitat? Zoos and tourism may benefit.
+  Legal: animal welfare laws; Australia's Gene Technology Act 2000 and threatened species laws (the EPBC Act); cloning humans for reproduction is banned under the Prohibition of Human Cloning for Reproduction Act 2002.
+  Political: which species governments choose to fund; election priorities; international agreements.
+**Other examples**
+  Genetic testing: whether insurers can use results. An industry moratorium limited this from 2019; a federal law passed in April 2026 bans life insurers from using genetic test results to deny or restrict cover, applying from October 2026.
+  Mitochondrial donation: legalised in Australia under Maeve's Law (2022) after long public debate.
+**Going deeper**
+  Stakeholders often weigh the same factors differently: a farmer and a conservationist can agree on the costs of feral horse control and still disagree on what should be done.
+**Common mistakes**
+  Listing the four factors without applying them to your issue.
+  Mixing up economic (money) and political (policy and power).
+**Connections**
+  Stakeholders and perspectives in analysing bioethical issues.
+  Approaches to bioethics and ethical concepts.
+**Practice questions**
+  Give one economic and one legal factor relevant to prenatal genetic screening in Australia.
+    Economic: cost of tests and who pays (Medicare or the family). Legal: laws on privacy of genetic information, or on what can be done with test results.
+  Why might political factors decide which endangered species are cloned?
+    Governments fund conservation and choose priorities; iconic or politically popular species may attract funding, while others are overlooked.
+**Flashcards**
+  Name the four factors that influence bioethical decisions. :: Social, economic, legal and political.
+  What is a stakeholder? :: Any person or group affected by, or with an interest in, the issue.
+  Cost and funding are {{economic}} factors.
+  What does Maeve's Law (2022) allow in Australia? :: Mitochondrial donation to prevent mitochondrial disease.
+  Which Australian law bans cloning humans for reproduction? :: The Prohibition of Human Cloning for Reproduction Act 2002.
+
+@ b54975eb U2.3.2.5 | Referencing and acknowledging sources
+**In a sentence**
+  Every idea, data point, image or quote you use from someone else must be acknowledged with an in-text citation and a full reference list entry in a standard style.
+**Key terms**
+  **In-text citation**: a brief acknowledgement at the point of use, e.g. (Smith 2022).
+  **Reference list**: full details of every source cited, at the end of the work.
+  **Plagiarism**: presenting someone else's work or ideas as your own.
+  **Referencing style**: an agreed format, such as APA or Harvard.
+**What to include (APA-style example)**
+  Journal article: author(s), year, title, journal name, volume(issue), pages, DOI.
+  Website: author or organisation, year, title, site name, URL, and date accessed if the page may change.
+  In text: (Author, year) — or "Author (year) found…".
+**Good practice**
+  Record details as you research (in the logbook).
+  Quote exactly with quotation marks, or paraphrase in your own words — both still need a citation.
+  Acknowledge help from people (teachers, experts) too.
+**Going deeper**
+  Referencing lets readers check your claims — it is part of scientific integrity, not just a rule against plagiarism.
+**Common mistakes**
+  Citing "Google" or "the internet" as a source.
+  Paraphrasing without a citation, which is still plagiarism.
+**Connections**
+  Logbook for secondary data.
+  Scientific report conventions (Unit 1).
+**Practice questions**
+  Why is paraphrasing without a citation still plagiarism?
+    The ideas belong to the original author; changing the words doesn't make them your own, so the source must be acknowledged.
+  What two parts make up referencing in a report?
+    In-text citations where each source is used, and a full reference list at the end.
+**Flashcards**
+  What is plagiarism? :: Presenting someone else's work or ideas as your own.
+  Two parts of referencing? :: In-text citations and a reference list.
+  Is Google a source? :: No — it's a search engine; cite the actual page or article found.
+  APA in-text citations show the author and {{year}}.
+  Does a paraphrase need a citation? :: Yes — the ideas are still someone else's.
+
+@ db7c66dc U2.3.3.1 | Identifying bioethical issues
+**In a sentence**
+  A bioethical issue arises when a use of biology raises a question of right and wrong with competing interests and more than one reasonable answer.
+**Key terms**
+  **Bioethics**: the study of ethical questions arising from biology and medicine.
+  **Bioethical issue**: a situation involving biology where people disagree about what ought to be done, because of differing values and interests.
+  **Stakeholder**: a person or group affected by or interested in the issue.
+**Recognising one**
+  There is a decision to make ("should…?"), not just a fact to find.
+  Different stakeholders have competing interests or values.
+  Reasonable people can disagree.
+  It involves living things, their welfare, rights or environment.
+**Example issues for Unit 2**
+  Cloning to conserve endangered species, or for agriculture.
+  Prenatal and predictive genetic testing; embryo screening.
+  Assisted reproductive technologies (IVF, surrogacy, mitochondrial donation).
+  Genomic and epigenetic research and privacy.
+  Culling or introducing species; gene drives to control pests like cane toads.
+  Biomimicry, and biopiracy of Indigenous knowledge.
+**Framing a research question**
+  Specific and debatable: "Should Australia fund cloning to increase the genetic diversity of the northern hairy-nosed wombat?" rather than "What is cloning?"
+**Going deeper**
+  Many issues look technical but are ethical at the core: "Can we clone a mammoth?" is a scientific question; "Should we?" is a bioethical one.
+**Common mistakes**
+  Choosing a question with a factual answer ("How does SCNT work?") — that's not an ethical issue.
+  Framing so broadly that it can't be researched in the time.
+**Connections**
+  Effective analysis of bioethical issues.
+  Approaches to bioethics and ethical concepts.
+**Practice questions**
+  Is "What percentage of IVF cycles result in a birth?" a bioethical question? Explain.
+    No. It has a factual answer found from data. A bioethical question asks what ought to be done, e.g. "Should IVF be publicly funded for everyone who wants it?"
+  Identify two stakeholders in the question of whether to cull feral horses in the Australian Alps.
+    Conservation scientists and environmental groups (protecting native ecosystems), and horse advocates and some local communities (valuing the horses) — also governments, Traditional Owners and landholders.
+**Flashcards**
+  What makes an issue bioethical? :: A biology-related decision with competing values and interests and more than one reasonable answer.
+  Define stakeholder. :: A person or group affected by, or interested in, the issue.
+  Bioethical questions usually ask what {{should}} be done.
+  Give two Unit 2 bioethical issues. :: E.g. cloning endangered species; prenatal genetic testing (also IVF, gene drives, biopiracy).
+  Is "How does cloning work?" a bioethical question? :: No — it has a factual answer.
+
+@ 704cc66e U2.3.3.2 | Analysing bioethical issues well
+**In a sentence**
+  An effective analysis explains the science, identifies stakeholders and their views, applies ethical approaches and concepts, weighs the wider factors, and reaches a justified position that answers counter-arguments.
+**Key terms**
+  **Perspective**: the point of view of a person or group on an issue.
+  **Justification**: the reasons and evidence given for a position.
+  **Counter-argument**: an argument against your position, which you acknowledge and respond to.
+**The steps**
+  1. Explain the relevant biology accurately.
+  2. Identify stakeholders and their perspectives (with evidence of what they actually think).
+  3. Apply one or more approaches to bioethics and relevant ethical concepts.
+  4. Consider social, economic, legal and political factors.
+  5. Reach a position or course of action, justified by reasoning and evidence.
+  6. Acknowledge the strongest counter-arguments and respond to them.
+**What makes it effective**
+  Balanced: all serious views are represented fairly before you decide.
+  Evidence-based: factual claims backed by credible sources.
+  Reasoned: the position follows from the analysis rather than from gut feeling.
+  Reflective: open about uncertainty and limitations.
+**Going deeper**
+  A position can be conditional — "cloning should be funded only if it adds genetic diversity and doesn't divert money from habitat protection" — which often reflects the evidence more honestly.
+**Common mistakes**
+  Stating an opinion first and only presenting evidence that supports it.
+  Describing stakeholders without explaining why they hold their views.
+**Connections**
+  Identifying bioethical issues.
+  Approaches to bioethics and ethical concepts.
+  Judging the quality of evidence.
+**Practice questions**
+  Why should you present counter-arguments in an ethical analysis?
+    It shows the issue has been considered fairly, and responding to the strongest objections makes your own position more convincing.
+  What distinguishes a justified position from an opinion?
+    A justified position is supported by evidence and reasoning drawn from the analysis (including ethical approaches and concepts); an opinion may have no stated basis.
+**Flashcards**
+  List the main steps of analysing a bioethical issue. :: Explain the science, identify stakeholders, apply ethical approaches/concepts, consider wider factors, reach and justify a position.
+  What is a counter-argument? :: An argument against your position that you acknowledge and respond to.
+  A position backed by evidence and reasoning is {{justified}}.
+  Why must an analysis be balanced? :: All serious views should be considered fairly before deciding.
+  What is a perspective? :: The point of view of a person or group on the issue.
+
+@ 00187253 U2.3.3.3 | Approaches to bioethics and ethical concepts
+**In a sentence**
+  Ethical approaches ask whether an action is right by its consequences, by duties and rules, or by what a virtuous person would do — and ethical concepts (integrity, justice, beneficence, non-maleficence, respect) give the principles to weigh.
+**Key terms**
+  **Consequences-based approach**: judges an action by its outcomes — aims to maximise benefits and minimise harms (the ends).
+  **Duty- and/or rule-based approach**: some actions are right or wrong in themselves, whatever the outcome; people must follow certain duties or rules (the means).
+  **Virtues-based approach**: focuses on the character of the person acting — what would a good, honest, compassionate person do?
+  **Integrity**: honest searching for knowledge and honest reporting of all results, favourable or not.
+  **Justice**: fair consideration of competing claims, no unfair burden on any group, and fair access to benefits.
+  **Beneficence**: maximising benefits and minimising risks and harms.
+  **Non-maleficence**: avoiding harm — or ensuring any harm is not out of proportion to the benefits.
+  **Respect**: recognising the intrinsic and instrumental value of living things; respecting welfare, autonomy, beliefs and culture; protecting those with reduced capacity to decide for themselves.
+**Applying the approaches — cloning an endangered species**
+  Consequences-based: benefits (restoring lost alleles, public interest in conservation) versus harms (many failed pregnancies and animal suffering, money diverted from protecting habitat). Supports cloning if benefits clearly outweigh harms.
+  Duty/rule-based: a duty to prevent extinctions caused by humans may support it; a rule against causing unnecessary animal suffering, or against "interfering with nature", may oppose it — regardless of outcomes.
+  Virtues-based: would a responsible, compassionate conservationist do this? Is it motivated by care for the species or by publicity?
+**Applying the concepts**
+  Integrity: report low success rates honestly, not just the successes.
+  Justice: is money spent fairly across species? Do Traditional Owners share in decisions about species on their Country?
+  Beneficence: maximise conservation benefit; choose methods with the best chance of success.
+  Non-maleficence: minimise harm to surrogate and cloned animals.
+  Respect: value the species itself and the welfare of individual animals; respect cultural values.
+**Going deeper**
+  The approaches often point the same way. When they conflict, say which you give more weight to and why — that reasoning is what earns marks.
+**Common mistakes**
+  Naming an approach without applying it to the issue.
+  Confusing beneficence (doing good) with non-maleficence (avoiding harm).
+  Assuming each approach leads to only one answer — the same approach can support different positions depending on how outcomes or duties are weighed.
+**Exam tips**
+  Name the approach or concept, define it briefly, then apply it with a specific example from the issue.
+**Connections**
+  Analysing bioethical issues well.
+  Social, economic, legal and political factors.
+  Key science skills: analysing and evaluating bioethical issues.
+**Practice questions**
+  Distinguish between a consequences-based and a duty/rule-based approach.
+    A consequences-based approach judges an action by its outcomes, aiming for the greatest benefit and least harm. A duty/rule-based approach judges the action itself against duties or rules, regardless of the outcomes it produces.
+  Apply the concept of justice to publicly funded genetic testing.
+    Justice asks whether access is fair: if testing is expensive, only wealthier families may benefit, placing an unfair burden on others. Public funding could make access more equal, but costs must be weighed against other health needs.
+  Explain the difference between beneficence and non-maleficence.
+    Beneficence is actively maximising benefits and minimising risks; non-maleficence is avoiding causing harm, or ensuring any harm is proportionate to the benefits.
+**Flashcards**
+  What does a consequences-based approach focus on? :: The outcomes (ends) — maximising benefits and minimising harms.
+  What does a duty/rule-based approach focus on? :: Whether the action itself follows duties or rules (the means), regardless of outcomes.
+  What does a virtues-based approach ask? :: What would a person of good character do?
+  Avoiding harm, or keeping harm proportionate to benefit, is {{non-maleficence}}.
+  Define justice as an ethical concept. :: Fair consideration of competing claims, no unfair burden on any group, and fair access to benefits.
+  Name the five ethical concepts. :: Integrity, justice, beneficence, non-maleficence, respect.
+  Honest reporting of all results, favourable or not, reflects {{integrity}}.

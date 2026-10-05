@@ -1,0 +1,1128 @@
+% VCE Economics — Unit 1, Area of Study 1: thinking like an economist.
+% Original study notes. Format: see src/courses/notesPack.ts. Money is written \$ (a bare $ starts maths).
+
+@ 8c78961d U1.1.1.1 | Microeconomics and macroeconomics
+**In a sentence**
+  Microeconomics zooms in on individual consumers, businesses and markets; macroeconomics zooms out to the whole economy — output, jobs, prices and growth.
+**Key terms**
+  **Economics**: the study of how society allocates scarce resources to satisfy needs and wants.
+  **Microeconomics**: the study of the decisions of individual economic agents and of individual markets.
+  **Macroeconomics**: the study of the economy as a whole — aggregates such as total output (GDP), unemployment, inflation and economic growth.
+  **Aggregate**: a total for the whole economy, such as aggregate demand (total spending).
+**Microeconomics**
+  Asks how one household, firm or market behaves: why the price of avocados rose, how a café sets its prices, whether a teenager takes a part-time job.
+  Its main tools are demand and supply, costs and revenue, and market structures — the content of Unit 1 Area of Study 2.
+**Macroeconomics**
+  Asks how the whole economy performs: why unemployment rose to 4.6% in August 2026, why the Reserve Bank lifted the cash rate to 4.60% in September 2026, whether real GDP is growing.
+  Its main tools are the circular flow model, aggregate demand and aggregate supply, and the business cycle — the content of Unit 2 Area of Study 1.
+**One issue, two lenses**
+  A jump in petrol prices is a micro issue (the fuel market: why the price rose, how drivers respond) and a macro issue (it pushes up the consumer price index and lowers real incomes across the economy).
+  Good answers say which lens they are using.
+**Worked example**
+  Classify each as micro or macro: (a) Woolworths raises the price of milk; (b) Australia's inflation rate is 3.5%; (c) a farmer switches from wheat to canola; (d) the government cuts income tax for all workers.
+    (a) Micro — one firm's pricing in one market.
+    (b) Macro — the general price level of the whole economy.
+    (c) Micro — one producer's decision about how to use resources.
+    (d) Macro — a policy aimed at total spending and incomes across the economy (even though each worker also feels it individually).
+**Going deeper**
+  The line blurs: macro outcomes are the sum of millions of micro decisions, and modern macroeconomics builds its models from how individual households and firms behave ("micro foundations").
+  Behavioural economics (Area of Study 3) is mainly micro — it studies individual decision-making.
+**Common mistakes**
+  Thinking "macro" means "big". A decision by BHP, a very large firm, about one mine is still micro; the national unemployment rate is macro.
+  Thinking a policy is micro just because it affects individuals — an income tax cut for everyone targets the whole economy.
+**Exam tips**
+  When asked to "distinguish", give a definition of each plus one contrasting example.
+**Connections**
+  Positive and normative economics: both branches use both kinds of statement.
+  The three-sector circular flow model: the first macro model you meet.
+  Decision-making in markets (Unit 1 Area of Study 2): the heart of microeconomics.
+**Practice questions**
+  Distinguish between microeconomics and macroeconomics, using an example of each.
+    Microeconomics studies individual agents and markets, such as how a rise in the price of beef changes the quantity households buy. Macroeconomics studies the economy as a whole, such as the national unemployment rate or the rate of economic growth.
+  Is the Reserve Bank's decision to change the cash rate a micro or a macro issue? Explain.
+    Macro: the cash rate is set to influence total spending, inflation and employment across the whole economy, not the outcome of one market.
+  Explain how a rise in petrol prices could be studied from both a micro and a macro perspective.
+    Micro: how the fuel market reaches a new price and how drivers and transport firms respond. Macro: how higher fuel prices raise the CPI, cut real incomes and may slow total spending in the economy.
+**Flashcards**
+  What does microeconomics study? :: Individual economic agents and individual markets.
+  What does macroeconomics study? :: The economy as a whole — aggregates like GDP, unemployment and inflation.
+  The national unemployment rate is a {{macroeconomic}} variable.
+  Is a single firm's pricing decision micro or macro? :: Micro, however large the firm.
+  What is an aggregate? :: A total for the whole economy, e.g. aggregate demand.
+  Main micro tool? :: Demand and supply (markets).
+  Main macro tools? :: The circular flow model, AD/AS and the business cycle.
+
+@ 40a21d83 U1.1.1.2 | Positive and normative economics
+**In a sentence**
+  Positive economics describes what is and can be tested against evidence; normative economics says what ought to be and rests on value judgements.
+**Key terms**
+  **Positive statement**: a statement about what is, was or will be that can be tested with data — it may be true or false.
+  **Normative statement**: a statement about what should be, based on opinion or values; it cannot be proved true or false.
+  **Value judgement**: a view about what is good, fair or desirable.
+**Positive economics**
+  Examples: "Australia's unemployment rate was 4.6% in August 2026." "A higher tobacco excise reduces the number of cigarettes sold." "Raising the minimum wage by 6% will raise the incomes of award-reliant workers."
+  Test: could you check it with data or an experiment? If yes, it is positive — even if it turns out to be wrong.
+**Normative economics**
+  Examples: "The minimum wage should be raised." "Inequality in Australia is too high." "Governments ought to spend more on public transport than on roads."
+  Signal words: should, ought, too, fair, unfair, better, worse, deserve.
+**Why the distinction matters**
+  Economists can settle positive disagreements with evidence; normative disagreements come down to values (efficiency vs equity, present vs future).
+  Most policy debates mix both: evidence on what a policy does (positive) feeds a judgement about whether to do it (normative).
+**Worked example**
+  Classify: (a) "The RBA raised the cash rate to 4.60% in September 2026." (b) "Interest rates are too high for young home buyers." (c) "Higher interest rates reduce consumer spending." (d) "The government should cut GST on groceries."
+    (a) Positive — a checkable fact (and true).
+    (b) Normative — "too high" is a judgement.
+    (c) Positive — a testable cause-and-effect claim.
+    (d) Normative — "should" signals a recommendation based on values.
+**Going deeper**
+  Positive economics is not value-free in practice: choosing which question to study, or which data to use, involves judgement. But the statements themselves can still be classified.
+  A normative argument is stronger when it is backed by positive evidence: "Because the Age Pension is below the poverty line for renters (positive), it should be raised (normative)."
+**Common mistakes**
+  Calling a statement normative because it is false. "Australia has no unemployment" is false, but it is positive — it can be tested.
+  Calling a statement positive because it contains numbers. "A 6% wage rise is fair" contains a number but is normative.
+**Exam tips**
+  To justify a classification, say why: "positive because it can be tested against ABS data" or "normative because it contains the value judgement 'fair'".
+**Connections**
+  Microeconomics and macroeconomics: both use positive and normative statements.
+  Trade-offs and cost-benefit analysis: weighing costs and benefits often ends in a normative choice.
+  Evaluating responses to the issue (Unit 2 Area of Study 2).
+**Practice questions**
+  Explain the difference between positive and normative economic statements, with an example of each.
+    A positive statement can be tested with evidence, e.g. "Unemployment rose to 4.6% in August 2026." A normative statement expresses a value judgement that can't be tested, e.g. "The government should do more to reduce unemployment."
+  "A tax on sugary drinks would reduce obesity, so the government should introduce one." Identify the positive and normative parts.
+    Positive: "a tax on sugary drinks would reduce obesity" (testable). Normative: "the government should introduce one" (a recommendation based on values).
+  Can a positive statement be false? Explain.
+    Yes. A positive statement is one that can be tested; testing may show it is false, but it remains positive.
+**Flashcards**
+  What is a positive statement? :: A statement about what is that can be tested with evidence.
+  What is a normative statement? :: A value judgement about what ought to be; it can't be tested.
+  Words like "should", "fair" and "too high" signal a {{normative}} statement.
+  "Higher interest rates reduce spending" — positive or normative? :: Positive: it can be tested.
+  Can a positive statement be false? :: Yes — it is still testable.
+  Why do most policy debates involve both? :: Evidence on effects (positive) informs a judgement on what to do (normative).
+  Classify "The minimum wage should rise 6%." :: Normative.
+
+@ 73953b70 U1.1.1.3 | Resources and needs and wants
+**In a sentence**
+  Everything we produce comes from four kinds of resources — land, labour, capital and enterprise — and we use them to satisfy needs, which keep us alive, and wants, which never run out.
+**Key terms**
+  **Resources (factors of production)**: the inputs used to produce goods and services.
+  **Land (natural resources)**: gifts of nature — minerals, soil, water, forests, fish, sunlight, wind.
+  **Labour**: human effort, physical and mental, used in production; it has quantity (hours, workers) and quality (skills, education — human capital).
+  **Capital**: man-made goods used to produce other goods and services — machinery, tools, buildings, vehicles, software, infrastructure.
+  **Enterprise (entrepreneurship)**: the organising of the other resources and bearing of risk to start and run a business.
+  **Need**: something required for survival — food, water, shelter, clothing, basic health care.
+  **Want**: something desired beyond survival — a new phone, a holiday, a streaming subscription.
+**The factors and their rewards**
+  Each factor earns an income: land earns rent, labour earns wages, capital earns interest, enterprise earns profit.
+  These incomes flow to households, which own the factors — the link to the circular flow model.
+**Australian examples**
+  Land: iron ore in the Pilbara, the Murray–Darling Basin's water, Victorian farmland, offshore gas.
+  Labour: about 14.8 million employed people in 2026, from nurses to software engineers.
+  Capital: the Metro Tunnel, a dairy's robotic milking machines, a café's coffee machine, cloud servers.
+  Enterprise: the founders of Canva, or a local bakery owner who risks their savings.
+**Needs versus wants**
+  Needs are limited; wants are unlimited — satisfy one want and another appears.
+  The line depends on context: a car is a want in inner Melbourne but close to a need for work in rural Victoria.
+**Worked example**
+  A bakery uses flour, an oven, the baker's work, its shop and the owner's decision to open a second store. Classify each resource.
+    Flour: comes from wheat, a natural resource, so it traces back to land (strictly, milled flour is an intermediate good made from land).
+    Oven: capital — man-made and used to produce bread.
+    Baker's work: labour.
+    The shop building: capital.
+    The owner's decision and risk: enterprise.
+**Going deeper**
+  Money is not capital in the economist's sense — it is a claim on resources. "Capital" means real productive goods; "financial capital" is the money used to buy them.
+  Human capital (skills, education, health) raises the quality of labour, which is why governments fund schools and TAFE.
+  Some resources are renewable (fish stocks, forests if managed) and some are non-renewable (coal, iron ore) — central to environmental sustainability in Unit 2.
+**Common mistakes**
+  Calling money a resource. Money buys resources; it isn't one.
+  Calling a factory worker "capital". Workers are labour; the machines they use are capital.
+  Treating needs and wants as fixed lists — context matters.
+**Exam tips**
+  Name the specific factor and give its reward if asked how resources link to incomes.
+**Connections**
+  Relative scarcity: resources are limited relative to wants.
+  The production possibility frontier: resources and technology fix the frontier.
+  The three-sector circular flow model: households own resources and earn factor incomes.
+**Practice questions**
+  Identify and give an example of each of the factors of production.
+    Land — natural resources such as iron ore; labour — human effort such as a nurse's work; capital — man-made goods used in production such as a tractor; enterprise — the risk-taking and organisation of an entrepreneur starting a business.
+  Distinguish between a need and a want, using an example of each.
+    A need is required for survival, such as food or shelter; a want is desired but not essential, such as a new gaming console.
+  Why isn't money considered capital by economists?
+    Capital means man-made goods used to produce other goods. Money doesn't produce anything itself; it is a means of buying resources.
+**Flashcards**
+  Four factors of production? :: Land, labour, capital and enterprise.
+  What is capital? :: Man-made goods used to produce other goods and services.
+  Reward for each factor? :: Land — rent; labour — wages; capital — interest; enterprise — profit.
+  Iron ore in the ground is an example of {{land}}.
+  What is human capital? :: The skills, education and health that raise the quality of labour.
+  Is money capital? :: No — it buys resources but produces nothing itself.
+  Needs are limited but wants are {{unlimited}}.
+
+@ 02939696 U1.1.1.4 | Relative scarcity
+**In a sentence**
+  Because resources are limited compared with our unlimited wants, every person, business and country must choose how to use them — that is the basic economic problem.
+**Key terms**
+  **Relative scarcity**: the situation where resources are limited relative to the unlimited needs and wants they could satisfy.
+  **Basic economic problem**: how to allocate scarce resources to best satisfy society's needs and wants.
+  **Economic decision-making**: choosing between alternative uses of scarce resources.
+**Relative, not absolute**
+  Scarcity is relative: there may be plenty of water in the world, but not enough to satisfy every farmer, household, mine and river at once. Something can be common and still scarce.
+  Absolute scarcity (none at all) is rare; relative scarcity is universal — it affects billionaires (time) and governments (budgets) as much as students.
+**Why it forces decisions**
+  If we can't have everything, we must choose — and every choice means giving something up (opportunity cost).
+  Society must answer the three economic questions: what and how much to produce, how, and for whom.
+**Australian examples**
+  Water in the Murray–Darling Basin: irrigators, towns and the environment all want more than the river provides.
+  The health budget: money for a new hospital in one suburb isn't available for mental-health services.
+  A student's time: 24 hours to split between study, work, sport, sleep and friends.
+**Worked example**
+  A council has \$5 million. Residents want a new pool (\$4 million), road repairs (\$3 million) and a library upgrade (\$2 million). Explain how this shows relative scarcity.
+    Total wants cost \$9 million but only \$5 million is available: resources are limited relative to wants.
+    The council must decide — for example the pool alone, or roads plus library — and whatever it doesn't fund is given up.
+**Going deeper**
+  Technology and growth push out the limits of what can be produced, but wants grow too, so scarcity never disappears.
+  Free goods (air to breathe, in most places) are the exception: when there's more than enough for everyone at zero price, no choice is needed. Clean air in a polluted city, though, is scarce.
+**Common mistakes**
+  Confusing scarcity with a shortage. A shortage is a market situation (quantity demanded exceeds supply at the current price); scarcity is permanent and universal.
+  Saying rich countries don't face scarcity. They still must choose.
+**Exam tips**
+  Define relative scarcity precisely ("limited resources relative to unlimited wants") and then link it to the need to choose and to opportunity cost.
+**Connections**
+  Resources and needs and wants: the two sides of the problem.
+  Opportunity cost: the price of every choice scarcity forces.
+  The three basic economic questions: what society must decide because of scarcity.
+**Practice questions**
+  Explain the basic economic problem of relative scarcity.
+    Resources such as land, labour and capital are limited, while needs and wants are unlimited. So society can't satisfy every want and must decide how to allocate resources among competing uses.
+  Why does relative scarcity affect even very wealthy people?
+    Their wants still exceed their resources in some way — especially time — so they must still make choices and give things up.
+  Distinguish between scarcity and a shortage.
+    Scarcity is the permanent condition of limited resources relative to wants. A shortage is a temporary market situation where, at the current price, quantity demanded exceeds quantity supplied.
+**Flashcards**
+  What is relative scarcity? :: Limited resources relative to unlimited needs and wants.
+  What is the basic economic problem? :: How to allocate scarce resources to best satisfy society's needs and wants.
+  Scarcity is {{relative}}, not absolute.
+  Why does scarcity force decisions? :: We can't have everything, so we must choose between alternative uses.
+  Scarcity vs shortage? :: Scarcity is permanent and universal; a shortage is a temporary market imbalance at a price.
+  Australian example of relative scarcity? :: Water in the Murray–Darling Basin, wanted by farmers, towns and the environment.
+  Does growth end scarcity? :: No — wants grow too.
+
+@ 16939555 U1.1.1.5 | Opportunity cost
+**In a sentence**
+  The opportunity cost of any choice is the value of the next best alternative you give up to make it.
+**Key terms**
+  **Opportunity cost**: the value of the next best alternative forgone when a choice is made.
+  **Next best alternative**: the single most valued option you didn't choose — not every option.
+  **Trade-off**: giving up some of one thing to get more of another.
+**What it includes**
+  Money is only part of it: time, effort and enjoyment count too.
+  The cost of going to university is not just the fees (a HECS debt) but the wages you could have earned working full-time.
+**Applications**
+  Individuals: a Saturday shift at \$20 an hour means giving up footy training (if that was your next best use of the time).
+  Businesses: a farmer who plants wheat gives up the canola that land could have grown; a café that buys a second coffee machine gives up the money's next best use, such as new seating.
+  Governments: \$10 billion on a new motorway is \$10 billion not spent on hospitals, schools or tax cuts.
+  Society: using land for housing means it can't be used for farming or bushland.
+**Worked example**
+  Ella has a free Saturday. Her options, in order of preference: (1) work a 6-hour shift at \$25 an hour; (2) study for a SAC; (3) go to the beach. She chooses to work. What is her opportunity cost? If she had chosen to study, what would it have been?
+    Choosing work: the opportunity cost is the next best alternative, studying for the SAC — not the beach as well.
+    Choosing study: the opportunity cost is the shift, which is worth 6 × \$25 = \$150 in wages (plus anything else she valued about working).
+    Sense check: opportunity cost is always one alternative — the best one given up.
+**Going deeper**
+  Sunk costs — money already spent that can't be recovered — are not part of opportunity cost. If a non-refundable \$50 concert ticket clashes with a better option, the \$50 is gone either way; the decision should rest only on what each option gives from now on.
+  Opportunity cost explains specialisation and trade: countries produce what they give up least to make (comparative advantage, Unit 2).
+**Common mistakes**
+  Adding up all the alternatives. Only the next best one counts.
+  Counting only money. Time and satisfaction are costs too.
+  Counting sunk costs.
+**Exam tips**
+  Name the specific alternative forgone: "The opportunity cost of the \$10 billion motorway is the next best use of those funds, such as a new hospital."
+**Connections**
+  Relative scarcity: the reason every choice has an opportunity cost.
+  The production possibility frontier: its slope shows opportunity cost.
+  Trade-offs and cost-benefit analysis.
+**Practice questions**
+  Define opportunity cost and give an example for a government.
+    The value of the next best alternative forgone. If the government spends \$2 billion on defence, the opportunity cost might be the new public hospitals that money could have built.
+  Sam gives up a \$120 shift to go to a friend's party. His next best alternative was the shift. What is his opportunity cost?
+    The shift and the \$120 of wages it would have paid.
+  Why should a sunk cost be ignored when making a decision?
+    It has already been paid and can't be recovered whichever option is chosen, so it doesn't change what each option gives up from now on.
+**Flashcards**
+  What is opportunity cost? :: The value of the next best alternative forgone.
+  Does opportunity cost include every alternative? :: No — only the next best one.
+  Does opportunity cost include non-money costs? :: Yes — time, effort, enjoyment.
+  A cost already paid that can't be recovered is a {{sunk cost}}.
+  Opportunity cost of going to uni full-time? :: The next best use of the time — e.g. full-time wages — as well as fees.
+  Why does every choice have an opportunity cost? :: Relative scarcity means choosing one use gives up another.
+  Calculate: a 5-hour shift at \$24 an hour is forgone. Money value of the opportunity cost? :: \$120.
+
+@ 5278c60e U1.1.1.6 | The production possibility frontier
+**In a sentence**
+  The production possibility frontier (PPF) shows the maximum combinations of two goods an economy can produce with its resources and technology, so it pictures scarcity, choice, opportunity cost, efficiency and unused resources in one graph.
+**Key terms**
+  **Production possibility frontier (PPF)**: a curve showing the maximum combinations of two goods that can be produced when all resources are used fully and efficiently with the current technology.
+  **Productive efficiency**: producing on the frontier — getting the most output from the resources available.
+  **Under-utilisation of resources**: resources idle or not used to capacity (unemployment, empty factories), shown by a point inside the frontier.
+  **Unattainable**: a point outside the frontier — impossible with current resources and technology.
+**Reading the model**
+  Axes: quantity of one good on each (e.g. wool bales and wheat tonnes).
+  On the curve: efficient — all resources employed.
+  Inside the curve: under-utilisation — the economy could produce more of both goods (Australia in mid-2020, when COVID lockdowns left workers and businesses idle).
+  Outside the curve: unattainable — for now.
+**What the PPF illustrates**
+  Scarcity: the frontier is a limit; we can't reach points beyond it.
+  Choice: society must pick one point on (or inside) the curve.
+  Opportunity cost: moving along the curve means giving up some of one good to get more of the other.
+  Efficiency and under-utilisation: on the curve vs inside it.
+**Why the curve bows outward**
+  Resources aren't equally good at making both goods. The first resources moved into wool are those least useful for wheat, so little wheat is lost; the last are the best wheat land, so a lot is lost. Opportunity cost increases as you produce more of one good.
+  A straight-line PPF would mean constant opportunity cost (resources equally suited to both).
+**Shifting the frontier**
+  Outward: more resources (skilled migration, new mineral finds), better quality resources (education, training), better technology or productivity (AI tools, better seed varieties). This is economic growth.
+  Inward: loss of resources (a severe drought, bushfires, a pandemic that kills or disables workers, emigration).
+  If new technology helps only one good, the frontier pivots outward on that axis.
+**Worked example**
+  A farm's possible output: A (0 wool, 100 wheat), B (10 wool, 90 wheat), C (20 wool, 70 wheat), D (30 wool, 40 wheat), E (40 wool, 0 wheat). (a) Find the opportunity cost of each extra 10 bales of wool. (b) What does producing 20 wool and 50 wheat show? (c) Can it produce 30 wool and 60 wheat?
+    (a) A→B: 100 − 90 = 10 t wheat (1 t per bale). B→C: 90 − 70 = 20 t (2 t per bale). C→D: 70 − 40 = 30 t (3 t per bale). D→E: 40 − 0 = 40 t (4 t per bale).
+    The opportunity cost increases, which is why the curve bows outward.
+    (b) 20 wool with 50 wheat is inside the frontier (the farm could make 70 wheat with 20 wool): under-utilisation — 20 t of wheat is being lost.
+    (c) No: with 30 wool the most wheat is 40 t, so (30, 60) is outside the frontier — unattainable unless resources or technology improve.
+**Going deeper**
+  Choosing capital goods (machinery, infrastructure) over consumer goods today gives up some present consumption but pushes the frontier out faster in future — a trade-off between living standards now and later.
+  The PPF shows productive efficiency, not allocative efficiency: every point on the curve is productively efficient, but only one is the combination society values most.
+**Common mistakes**
+  Saying a point inside the curve is "unattainable". It is attainable — just inefficient.
+  Shifting the curve when resources become unemployed. Unemployment moves the economy to a point inside the curve; the curve only shifts when the quantity or quality of resources or technology changes.
+  Measuring opportunity cost in the good you gain instead of the good you give up.
+**Exam tips**
+  Label axes, the curve, and every point. When explaining a movement, state the opportunity cost in units of the good given up.
+**Connections**
+  Opportunity cost: the slope of the frontier.
+  Resources and needs and wants: resources and technology fix where the frontier lies.
+  Measuring growth with real GDP (Unit 2): an outward shift of the frontier.
+**Practice questions**
+  Using a PPF, explain the difference between a point on the curve and a point inside it.
+    A point on the curve is productively efficient: all resources are fully used. A point inside shows under-utilisation, e.g. unemployment: more of both goods could be produced without giving anything up.
+  Explain why a PPF is usually bowed outward.
+    Resources are not equally suited to producing both goods, so as more of one good is produced, increasingly unsuitable resources are moved across and the opportunity cost rises.
+  What would shift Australia's PPF outward? Give two examples.
+    An increase in the quantity or quality of resources or better technology — e.g. skilled migration adding workers, or AI and automation raising productivity.
+  A drought destroys crops for a year. How would you show this on a PPF of food and manufactured goods?
+    The frontier shifts (pivots) inward on the food axis, because the productive capacity of land has fallen.
+**Flashcards**
+  What does the PPF show? :: The maximum combinations of two goods producible with current resources and technology.
+  A point inside the PPF shows {{under-utilisation}} of resources.
+  A point outside the PPF is {{unattainable}} with current resources and technology.
+  Why is the PPF bowed outward? :: Increasing opportunity cost — resources aren't equally suited to both goods.
+  What shifts the PPF outward? :: More or better resources, or improved technology/productivity.
+  Does rising unemployment shift the PPF? :: No — it moves the economy to a point inside it.
+  Calculate: wheat falls from 90 t to 70 t as wool rises from 10 to 20 bales. Opportunity cost per bale? :: 2 t of wheat.
+  Five concepts the PPF illustrates? :: Scarcity, choice, opportunity cost, efficiency and under-utilisation.
+
+@ 8287dbf8 U1.1.1.7 | Trade-offs and cost-benefit analysis
+**In a sentence**
+  Because we can't have everything, decision-makers trade off one thing for another, and cost-benefit analysis weighs up the costs and benefits of each option — with opportunity cost as the key cost.
+**Key terms**
+  **Trade-off**: accepting less of one thing in order to get more of another.
+  **Cost-benefit analysis (CBA)**: a systematic comparison of the costs and benefits of a decision, in money terms where possible, to see whether it is worthwhile.
+  **Private costs and benefits**: those borne or received by the decision-maker.
+  **External (social) costs and benefits**: effects on third parties, such as pollution or reduced traffic.
+**Trade-offs**
+  Every trade-off has an opportunity cost: what you give up is the cost of what you get.
+  Individuals trade off study vs work, spending vs saving; businesses trade off wages vs new machines; governments trade off tax cuts vs services, growth vs environment, efficiency vs equity.
+**How a cost-benefit analysis works**
+  1. List the options, including doing nothing.
+  2. Identify costs and benefits for all affected groups, now and in the future, including external ones.
+  3. Put a money value on them where possible (and describe the rest).
+  4. Compare: proceed if benefits exceed costs; choose the option with the largest net benefit.
+  5. Remember the opportunity cost: the benefit of the best alternative use of the resources.
+**Relationship to opportunity cost**
+  A project's true cost is what else the resources could have done. A CBA that ignores that alternative overstates the case for the project.
+  So a project should go ahead only if its net benefit is greater than the net benefit of the next best alternative.
+**Worked example**
+  A council considers a \$6 million skate park. Estimated benefits over 10 years: \$4 million in health and recreation value, \$1.5 million from reduced youth crime, \$1 million in extra trade for nearby shops. Costs: \$6 million to build, \$0.8 million in maintenance, and some noise for neighbours (not valued). Should it proceed?
+    Benefits: 4 + 1.5 + 1 = \$6.5 million.
+    Measurable costs: 6 + 0.8 = \$6.8 million.
+    Net benefit: 6.5 − 6.8 = −\$0.3 million, before counting the noise.
+    On these numbers, costs exceed benefits, so it shouldn't proceed — unless the council values unmeasured benefits (community pride) highly. And even a positive result would need to beat the best alternative use of \$6 million.
+**Going deeper**
+  CBA is only as good as its estimates: benefits such as lives saved or clean air are hard to value, and future amounts are usually "discounted" because a dollar today is worth more than a dollar in ten years.
+  Who gains and who pays matters too: a project with a net benefit can still leave some groups worse off, which is a normative question about fairness.
+**Common mistakes**
+  Leaving out external costs and benefits.
+  Leaving out the opportunity cost — comparing the project only with "nothing".
+  Treating a CBA result as the final answer; unquantified factors and equity still matter.
+**Exam tips**
+  In a "discuss the costs and benefits" answer, cover at least two groups (e.g. consumers and government), short and long term, and end with a judgement based on an economic criterion (living standards, efficiency, equity).
+**Connections**
+  Opportunity cost: the central cost in every trade-off.
+  The roles of government: CBA is used to judge public projects.
+  Benefits of economic growth and Costs of economic growth (Unit 2).
+**Practice questions**
+  Explain the relationship between a trade-off and opportunity cost.
+    A trade-off means accepting less of one thing to get more of another; the amount given up is the opportunity cost of what is gained.
+  Outline the steps in a cost-benefit analysis.
+    List the options; identify private and external costs and benefits for all affected groups, now and later; value them in money where possible; compare them, choosing the option with the greatest net benefit, and compare with the best alternative use of the resources.
+  Why might a project with benefits greater than costs still be rejected?
+    The same resources might produce an even larger net benefit elsewhere (a higher opportunity cost), or the gains and losses may be distributed unfairly.
+**Flashcards**
+  What is a trade-off? :: Accepting less of one thing to get more of another.
+  What is cost-benefit analysis? :: A systematic comparison of the costs and benefits of a decision to judge whether it is worthwhile.
+  Costs and benefits to third parties are called {{external}} costs and benefits.
+  When should a project proceed under CBA? :: When benefits exceed costs — and beat the best alternative use of the resources.
+  Why include opportunity cost in a CBA? :: The true cost of a project is what the resources could have done elsewhere.
+  A common government trade-off? :: Economic growth vs environmental protection (or efficiency vs equity).
+  Calculate net benefit: benefits \$6.5m, costs \$6.8m. :: −\$0.3 million.
+
+@ 0e02891e U1.1.1.8 | The three basic economic questions
+**In a sentence**
+  Every society must decide what and how much to produce, how to produce it, and who gets it — the three questions that scarcity forces.
+**Key terms**
+  **What and how much to produce**: which goods and services, and in what quantities.
+  **How to produce**: which combination of resources and technology to use.
+  **For whom to produce**: how output (and income) is distributed among people.
+**What and how much**
+  Should Australia produce more housing or more hospitals? More coal or more solar panels? How many international student places?
+  In a market economy, consumer spending signals the answer: goods people will pay for are produced.
+**How**
+  Labour-intensive (hand-picked grapes) or capital-intensive (mechanical harvesters)? Coal or renewable electricity? Local or offshore production?
+  Firms choose the lowest-cost method; governments may push towards sustainable or safer methods through taxes and regulations.
+**For whom**
+  In markets, goods go to those with the income and willingness to pay — so it depends on the distribution of income and wealth.
+  Governments change the answer through taxes, transfer payments (the Age Pension, JobSeeker) and free or subsidised services (Medicare, public schools) so that need, not just income, counts.
+**Worked example**
+  Apply the three questions to Victoria's electricity supply.
+    What and how much: how much electricity, and from which sources (coal, wind, solar, batteries)? Victoria targets 95% renewable electricity by 2035.
+    How: with large wind and solar farms, rooftop solar, or the ageing brown-coal generators in the Latrobe Valley?
+    For whom: who can afford it? Energy bill relief and concession cards shift the answer towards low-income households.
+**Going deeper**
+  The answers are linked: choosing how to produce (e.g. automation) changes whose incomes rise (owners of capital vs workers), and so changes for whom.
+  "For whom" is where efficiency and equity most clearly clash: a market can allocate efficiently yet leave some without essentials.
+**Common mistakes**
+  Merging "what" and "how". What is the product; how is the method.
+  Assuming "for whom" is decided only by the government — in Australia it is mostly decided by incomes in markets, then adjusted by government.
+**Exam tips**
+  Use the question words exactly and apply each to the same example for a coherent answer.
+**Connections**
+  Relative scarcity: the reason the questions must be answered.
+  Economic systems: each system answers the questions differently.
+  The market mechanism and relative prices (Unit 1 Area of Study 2).
+**Practice questions**
+  State the three basic economic questions and explain one with an example.
+    What and how much to produce; how to produce; for whom to produce. For example, "how" asks which method to use — a winery can pick grapes by hand (labour-intensive) or by machine (capital-intensive).
+  How does the government influence the "for whom" question in Australia?
+    Through progressive taxes, transfer payments such as the Age Pension and JobSeeker, and free or subsidised services such as Medicare and public schooling, which give people access according to need as well as income.
+  Why must every economy answer these questions?
+    Resources are relatively scarce, so society can't produce everything for everyone and must choose.
+**Flashcards**
+  Three basic economic questions? :: What and how much to produce; how to produce; for whom to produce.
+  Choosing between robots and workers answers which question? :: How to produce.
+  In a market, "for whom" is mainly decided by {{income}} (ability to pay).
+  How does government change "for whom"? :: Taxes, transfer payments and free or subsidised services.
+  What signals "what to produce" in a market? :: Consumer spending and prices.
+  Why must the questions be answered? :: Relative scarcity.
+  Example of "what to produce" in Australia? :: More housing or more hospitals; coal or renewables.
+
+@ bdca52a5 U1.1.1.9 | Economic systems
+**In a sentence**
+  Market, planned, mixed and traditional economies answer the three economic questions in different ways — by prices, by government plan, by a mix of both, or by custom.
+**Key terms**
+  **Market economy**: resources are privately owned and allocated by prices set through demand and supply, with little government intervention.
+  **Planned (command) economy**: the government owns most resources and decides what, how and for whom through a central plan.
+  **Mixed economy**: markets allocate most resources, but the government provides some goods and services and regulates markets.
+  **Traditional economy**: decisions are made by custom, tradition and kinship, often for subsistence.
+**Market economies**
+  What: whatever consumers are willing to pay for. How: the lowest-cost method, chosen by profit-seeking firms. For whom: those with the income to buy.
+  Strengths: efficiency, choice, innovation, responsiveness. Weaknesses: inequality, under-provision of public goods (street lighting, defence), negative externalities (pollution), instability.
+  Closest real examples: Hong Kong, Singapore, the United States.
+**Planned economies**
+  What, how and for whom: set by government planners, often with production quotas and fixed prices.
+  Strengths: can direct resources quickly to national goals and reduce inequality. Weaknesses: planners lack information, so shortages and surpluses are common; weak incentives to innovate or work hard; less freedom.
+  Examples: North Korea and Cuba today; the former Soviet Union.
+**Mixed economies**
+  Australia is a mixed economy: most goods (groceries, cars, housing) are produced by private firms for profit, but government provides Medicare, public schools, roads and welfare, owns some businesses (Australia Post, NBN Co) and regulates markets (the ACCC, minimum wages).
+  Aims to combine market efficiency with government action on equity and market failure. Almost every modern economy is mixed; they differ in the balance.
+**Traditional economies**
+  Decisions follow custom: people produce what their parents produced, in the same way, and share according to kinship obligations. Found in some subsistence farming and fishing communities.
+  Aboriginal and Torres Strait Islander economies sustained people on Country for tens of thousands of years through custom, kinship and trade networks (such as trade in ochre and stone axes from Mount William, Wurundjeri Country) — and many communities today combine these practices with the market economy.
+  Strengths: stability, sustainability, strong community. Weaknesses: slower growth, less choice, vulnerability to disasters.
+**Worked example**
+  Explain how Australia's mixed economy answers "for whom" for health care.
+    Market element: people with private health insurance or who pay privately can choose their doctor and skip public waiting lists — allocation by ability to pay.
+    Government element: Medicare and public hospitals give everyone access based on need, funded by taxes including the Medicare levy.
+    Result: a mix of allocation by price and by need.
+**Going deeper**
+  The balance shifts over time: Australia privatised the Commonwealth Bank (1991–96), Qantas (1993–95) and Telstra (1997–2006), but built the NBN as a government business in 2009.
+  Arguments about the size of government — lower taxes and more markets vs more public services — are largely normative.
+**Common mistakes**
+  Calling Australia a market economy without qualification — it is mixed.
+  Treating "traditional economy" as primitive or historical. It describes decision-making by custom, and traditional practices continue today.
+**Exam tips**
+  When comparing systems, answer each of the three questions for each system — a table in your head: what / how / for whom × market / planned / mixed / traditional.
+**Connections**
+  The three basic economic questions.
+  The market mechanism and relative prices (Unit 1 Area of Study 2).
+  Economic agents; public and private sectors: the two parts of a mixed economy.
+**Practice questions**
+  Explain how a market economy answers the three economic questions.
+    What: goods consumers are willing and able to buy, signalled by prices and profits. How: firms choose the lowest-cost methods to maximise profit. For whom: those with the income and willingness to pay.
+  Why is Australia described as a mixed economy? Give two examples.
+    Most resources are allocated by markets, but the government also provides goods and services and regulates markets — e.g. Medicare and public schools, and the ACCC enforcing competition law.
+  Outline one strength and one weakness of a planned economy.
+    Strength: resources can be directed to national goals and income made more equal. Weakness: planners lack information, causing shortages and surpluses, and incentives to innovate are weak.
+**Flashcards**
+  How does a market economy allocate resources? :: By prices set through demand and supply, with private ownership.
+  How does a planned economy allocate resources? :: By a central government plan.
+  Australia is a {{mixed}} economy.
+  Traditional economies decide by? :: Custom, tradition and kinship.
+  Main weakness of planned economies? :: Planners lack information, so shortages and surpluses occur; weak incentives.
+  Main weakness of pure market economies? :: Inequality, under-provided public goods, externalities.
+  Two government-provided services in Australia's mixed economy? :: Medicare and public schools (also roads, welfare).
+
+@ 856f1ed7 U1.1.1.10 | The three-sector circular flow model
+**In a sentence**
+  The circular flow model shows how money and resources flow between households, businesses and the government: households sell their resources to firms for income, spend it on goods and services, and pay taxes that fund government spending.
+**Key terms**
+  **Circular flow model**: a diagram of the flows of resources, goods and services, incomes and spending between sectors of the economy.
+  **Households (consumers)**: own the factors of production and buy goods and services.
+  **Businesses (producers, firms)**: hire factors to produce goods and services.
+  **Government**: collects taxes and spends on goods, services and transfer payments.
+  **Factor incomes**: rent, wages, interest and profit paid to households for their resources.
+  **Transfer payments**: government payments that aren't in exchange for goods or services — the Age Pension, JobSeeker, Family Tax Benefit.
+**The flows**
+  Households → firms: resources (land, labour, capital, enterprise), a real flow.
+  Firms → households: factor incomes (rent, wages, interest, profit), a money flow.
+  Firms → households: goods and services, a real flow.
+  Households → firms: consumption spending, a money flow.
+  Households and firms → government: taxes (income tax, GST, company tax).
+  Government → households and firms: spending on goods and services (roads, schools, hospitals), wages of public servants, and transfer payments to households.
+**Real and money flows**
+  Real flows (resources, goods and services) run one way; money flows (incomes, spending) run the other. Each money flow pays for a real flow — except transfer payments and taxes.
+**What the model shows**
+  One agent's spending is another's income. If households cut spending, firms' revenue falls, they employ fewer workers, and household incomes fall — activity shrinks.
+  Taxation is a leakage (money taken out of the flow); government spending is an injection (money put back in).
+**Worked example**
+  Trace what happens in the three-sector model when the government cuts income tax.
+    Households keep more of their income (a smaller leakage), so disposable income rises.
+    Consumption spending rises, so firms' revenue rises.
+    Firms produce more and may hire more workers, paying more wages, which raises household incomes again.
+    Government tax revenue from income tax falls, so it must spend less, borrow or collect more elsewhere.
+**Going deeper**
+  The model is simplified: it has no saving, investment, banks or trade. The five-sector model in Unit 2 adds the financial sector (saving and investment) and the overseas sector (exports and imports).
+  The flows balance over time: total spending = total income = total output — the basis of how GDP is measured.
+**Common mistakes**
+  Drawing the arrows the wrong way — resources go from households to firms, incomes go from firms to households.
+  Calling transfer payments income from production. They are payments for which no good or service is given in return.
+  Forgetting that households pay taxes and receive government services as well as transfers.
+**Exam tips**
+  Label each arrow with what flows (e.g. "wages", "GST") and use the model to trace a chain of effects step by step.
+**Connections**
+  Resources and needs and wants: the factors households supply and the incomes they earn.
+  The five-sector circular flow model (Unit 2): adds saving, investment, exports and imports.
+  The roles of government: taxation and spending in the flow.
+**Practice questions**
+  Describe the flows between households and businesses in the circular flow model.
+    Households supply resources to businesses and receive factor incomes (wages, rent, interest, profit). Businesses supply goods and services to households, which pay for them with consumption spending.
+  Explain the role of government in the three-sector model.
+    Government collects taxes from households and businesses (a leakage) and returns money through spending on goods and services and transfer payments (an injection).
+  Using the model, explain why a fall in consumer spending can lead to rising unemployment.
+    Lower spending cuts firms' revenue, so they produce less and need fewer workers; some workers lose jobs or hours, which cuts household incomes and spending further.
+**Flashcards**
+  Three sectors in the simple circular flow? :: Households, businesses and government.
+  What flows from households to firms? :: Resources (and consumption spending).
+  What flows from firms to households? :: Factor incomes (and goods and services).
+  In the circular flow, taxation is a {{leakage}} and government spending is an {{injection}}.
+  What is a transfer payment? :: A government payment with no good or service given in return, e.g. the Age Pension.
+  Why is one agent's spending another's income? :: Spending by households becomes firms' revenue, which pays wages and other incomes.
+  Trace a tax cut in one line. :: Higher disposable income → more spending → more output and jobs → higher incomes.
+
+@ 00ae9d6c U1.1.1.11 | Economic activity and living standards
+**In a sentence**
+  The purpose of economic activity — producing, distributing and consuming goods and services — is to satisfy needs and wants and so raise living standards, both material and non-material.
+**Key terms**
+  **Economic activity**: the production, distribution, exchange and consumption of goods and services.
+  **Living standards**: the wellbeing of people, depending on their access to goods and services and their quality of life.
+  **Material living standards**: the quantity and quality of goods and services people can access; they are tangible and measurable (e.g. real income per person).
+  **Non-material living standards**: aspects of wellbeing that are hard to measure in money — health, education, safety, the environment, leisure, freedom, community.
+**The purpose of activity**
+  Households work to earn income to buy what they need and want; firms produce to earn profit; governments aim to raise living standards for the community. The end point is always satisfying needs and wants.
+**Effects on material living standards**
+  More activity means more goods and services and higher incomes: more people can afford housing, cars, holidays and technology.
+  Measured by real GDP per capita or real household disposable income.
+**Effects on non-material living standards**
+  Positive: higher incomes and tax revenue fund hospitals, schools and parks; jobs give purpose and social connection.
+  Negative: longer working hours reduce leisure and family time; production can pollute and congest cities; stress and overwork rise.
+**Worked example**
+  A new lithium processing plant opens near Geelong, creating 400 jobs. Assess its likely effect on living standards.
+    Material: 400 workers earn wages and local businesses sell more, so incomes and consumption rise; tax revenue rises.
+    Non-material (positive): jobs improve wellbeing and self-worth; taxes fund services.
+    Non-material (negative): more trucks, noise and possible air and water pollution; possible harm to local environment.
+    Judgement: material living standards clearly rise; non-material effects depend on how well pollution is regulated.
+**Going deeper**
+  Material and non-material living standards can move in opposite directions — the core idea of Unit 2's costs of economic growth and of "affluenza".
+  Living standards also depend on distribution: an average rise can hide people who are worse off.
+**Common mistakes**
+  Equating living standards with income alone.
+  Listing non-material factors without linking them to economic activity (how does activity change health, leisure or the environment?).
+**Exam tips**
+  In any "effect on living standards" answer, cover both material and non-material, positive and negative, then make a judgement.
+**Connections**
+  Resources and needs and wants: activity uses resources to meet them.
+  The roles of government.
+  Material and non-material living standards (Unit 2): the fuller treatment.
+**Practice questions**
+  What is the purpose of economic activity?
+    To produce and distribute goods and services that satisfy people's needs and wants, and so improve living standards.
+  Distinguish between material and non-material living standards, with an example of each.
+    Material living standards are the tangible goods and services people can access, such as housing and cars; non-material living standards are quality-of-life factors that are hard to measure, such as health, safety and a clean environment.
+  Explain how increased economic activity might lower non-material living standards.
+    It may mean longer working hours (less leisure), more pollution and congestion, and environmental damage, which reduce quality of life even as incomes rise.
+**Flashcards**
+  Purpose of economic activity? :: To satisfy needs and wants and so raise living standards.
+  Material living standards are {{tangible}} and measurable.
+  Two examples of non-material living standards? :: Health and environmental quality (also safety, leisure, freedom).
+  Measure of material living standards? :: Real GDP per capita or real household disposable income.
+  How can more activity lower non-material living standards? :: Longer hours, pollution, congestion, stress.
+  How can more activity raise non-material living standards? :: Tax revenue funds health and education; jobs give purpose.
+  Why can an average rise in living standards mislead? :: It hides how gains are distributed.
+
+@ ac1919ce U1.1.2.1 | Economic agents; public and private sectors
+**In a sentence**
+  Economic agents are the decision-makers in the economy — consumers, businesses and the government — and the economy splits into a private sector owned by individuals and a public sector owned or run by government.
+**Key terms**
+  **Economic agent**: an individual or organisation that makes economic decisions — consumers/households, businesses/producers, government (and, in Unit 2, the financial and overseas sectors).
+  **Private sector**: the part of the economy owned and controlled by individuals and private businesses, usually aiming for profit or their own wellbeing.
+  **Public sector**: the part of the economy owned, funded or controlled by government, aiming to raise the community's living standards.
+  **Privatisation**: the sale of a government-owned business to private owners.
+**The agents**
+  Consumers/households: buy goods and services, supply labour and other resources, save and pay taxes.
+  Businesses: combine resources to produce goods and services for profit; hire workers; invest.
+  Government: federal, state and local; taxes, spends, provides services, regulates, redistributes.
+**The private sector**
+  Examples: Wesfarmers, a local café, a sole-trader plumber, a household.
+  Motive: profit (businesses) and utility (households). Most Australian goods and services and jobs come from here.
+**The public sector**
+  Examples: public hospitals and schools, Australia Post, the ABC, V/Line and Metro trains (state-owned services), NBN Co, local council libraries.
+  Motive: living standards, equity and providing goods markets under-supply (roads, defence, street lighting).
+  Funded by taxes, charges and borrowing.
+**Worked example**
+  Classify: (a) Telstra today; (b) Melbourne's Royal Children's Hospital; (c) NBN Co; (d) a family buying groceries.
+    (a) Private — Telstra was fully privatised between 1997 and 2006 and is owned by shareholders.
+    (b) Public — a state-government hospital funded by taxes.
+    (c) Public — a government business enterprise owned by the federal government.
+    (d) Private — households are part of the private sector.
+**Going deeper**
+  Government business enterprises (NBN Co, Australia Post) sell services like a firm but are owned by government and may pursue social goals, such as delivering mail to remote towns at a uniform price.
+  Some services mix sectors: private schools receive government funding; private companies build public roads under public–private partnerships (e.g. West Gate Tunnel).
+**Common mistakes**
+  Thinking "public company" (listed on the stock exchange) means public sector. A company listed on the ASX, such as Qantas, is private sector.
+  Leaving households out of the private sector.
+**Exam tips**
+  Classify by ownership and control, then state the motive (profit vs living standards).
+**Connections**
+  The traditional view of the consumer, of business and of government: each agent's assumed goal.
+  Economic systems: a mixed economy has both sectors.
+  The three-sector circular flow model: the agents as sectors.
+**Practice questions**
+  Distinguish between the public and private sectors, using an example of each.
+    The private sector is owned by individuals and businesses, usually for profit — e.g. Coles. The public sector is owned or run by government to benefit the community — e.g. public hospitals.
+  Is Qantas part of the public sector because it is a "public company"? Explain.
+    No. Qantas is listed on the ASX and owned by shareholders, so it is private sector; it was privatised in the 1990s.
+  Identify the three main economic agents in Unit 1 and one decision each makes.
+    Consumers decide what to buy; businesses decide what and how to produce; government decides how much to tax and spend.
+**Flashcards**
+  Three economic agents in Unit 1? :: Consumers/households, businesses and government.
+  What is the private sector? :: The part of the economy owned by individuals and private businesses.
+  What is the public sector? :: The part owned, funded or controlled by government.
+  Qantas, listed on the ASX, is in the {{private}} sector.
+  What is privatisation? :: Selling a government-owned business to private owners.
+  Example of a government business enterprise? :: NBN Co or Australia Post.
+  Main motive of the public sector? :: Raising the community's living standards (not profit).
+
+@ b3115beb U1.1.2.2 | The traditional view of the consumer
+**In a sentence**
+  Traditional economics assumes consumers are self-interested, rational and well informed, and buy each extra unit only while its marginal benefit is at least its price, so as to maximise utility.
+**Key terms**
+  **Self-interest**: acting to benefit yourself.
+  **Utility**: the satisfaction or benefit a consumer gets from consuming a good or service.
+  **Utility maximisation**: choosing the combination of goods that gives the most total satisfaction from a limited income.
+  **Rationality**: making consistent, logical decisions by weighing costs and benefits.
+  **Informed decision-making**: having and using full information about prices, quality and alternatives.
+  **Marginal benefit (marginal utility)**: the extra satisfaction from consuming one more unit.
+  **Diminishing marginal utility**: each additional unit gives less extra satisfaction than the one before.
+**The "homo economicus" consumer**
+  Self-interested: chooses what makes them better off.
+  Maximises utility: gets the most satisfaction from a limited budget.
+  Rational: compares costs and benefits; consistent choices.
+  Informed: knows prices, quality and alternatives.
+  Thinks at the margin: asks "is one more worth it?"
+**Marginal thinking**
+  A rational consumer keeps buying while the marginal benefit of one more unit is greater than or equal to its price, and stops when it falls below.
+  Because marginal utility diminishes, the first slice of pizza is worth more than the fourth — this is one reason demand curves slope down.
+**Worked example**
+  Jack values slices of pizza at: 1st \$8, 2nd \$6, 3rd \$4, 4th \$2. Slices cost \$4 each. How many does a rational Jack buy, and what is his total benefit less spending?
+    Compare marginal benefit with price: 1st \$8 ≥ \$4 (buy); 2nd \$6 ≥ \$4 (buy); 3rd \$4 ≥ \$4 (buy, indifferent); 4th \$2 < \$4 (don't buy).
+    He buys 3 slices. Total benefit = 8 + 6 + 4 = \$18; spending = 3 × \$4 = \$12; net benefit = \$6.
+    If the price fell to \$2, he would buy 4 — the law of demand.
+**Going deeper**
+  The model doesn't claim everyone is a calculating machine; it claims people act as if they weigh costs and benefits, which predicts market outcomes well.
+  Behavioural economics (Area of Study 3) challenges each assumption with evidence of bounded rationality, bounded willpower and bounded self-interest.
+**Common mistakes**
+  Confusing total utility (overall satisfaction) with marginal utility (the extra from one more).
+  Thinking rational means selfish in a narrow sense. Self-interest includes whatever a person values, but the traditional model assumes it is their own benefit.
+**Exam tips**
+  List the assumptions using the exact terms — self-interest, utility maximisation, rationality, informed decision-making, marginal benefit — then explain one with an example.
+**Connections**
+  The law of demand: diminishing marginal utility explains the downward slope.
+  Bounded rationality, willpower, self-interest: the challenge to these assumptions.
+  Consumers, workers and incentives.
+**Practice questions**
+  Outline the traditional economic view of consumer behaviour.
+    Consumers are assumed to be self-interested, rational and well informed; they aim to maximise utility with their limited income and buy an extra unit only while its marginal benefit is at least its price.
+  Explain diminishing marginal utility with an example.
+    Each extra unit gives less additional satisfaction: the first drink on a hot day is very satisfying, the third much less so.
+  A rational consumer values a 3rd coffee at \$3; coffees cost \$4.50. Will they buy it? Explain.
+    No: the marginal benefit (\$3) is less than the price (\$4.50), so buying it would reduce their net benefit.
+**Flashcards**
+  Five traditional assumptions about consumers? :: Self-interest, utility maximisation, rationality, full information, marginal decision-making.
+  What is utility? :: Satisfaction from consuming a good or service.
+  What is marginal benefit? :: The extra benefit from one more unit.
+  Each extra unit gives less extra satisfaction — {{diminishing marginal utility}}.
+  When does a rational consumer stop buying? :: When the marginal benefit of the next unit falls below its price.
+  Calculate: MB of slices \$8, \$6, \$4, \$2; price \$4. How many bought? :: Three.
+  Which area of study challenges these assumptions? :: Behavioural economics (Unit 1 Area of Study 3).
+
+@ 93901182 U1.1.2.3 | Consumers, workers and incentives
+**In a sentence**
+  Consumers and workers change what they buy and how much they work when taxes, rebates, subsidies and regulations change the costs and benefits of their choices.
+**Key terms**
+  **Incentive**: something that encourages a behaviour by increasing its benefit or lowering its cost.
+  **Disincentive**: something that discourages a behaviour by raising its cost or lowering its benefit.
+  **Tax**: a compulsory payment to government (income tax, GST, excise).
+  **Tax rebate (offset)**: a reduction in tax owed, e.g. for eligible expenses.
+  **Subsidy**: a government payment that lowers the cost of a good, service or activity.
+  **Regulation**: a rule backed by law that requires or forbids behaviour.
+**Taxes**
+  Excise on tobacco makes smoking more expensive, a disincentive: smoking rates in Australia have fallen steadily as excise rose (a pack of 25 now costs around \$50 or more).
+  Higher income tax rates can reduce the incentive to work extra hours; tax cuts (such as the cut in the lowest rate from 16% to 15% on 1 July 2026) increase take-home pay and the reward for working.
+**Tax rebates and offsets**
+  Deductions and offsets (for work expenses, medical costs, or the private health insurance rebate) lower the net cost of an activity, encouraging it.
+**Subsidies**
+  The Child Care Subsidy lowers the cost of childcare, an incentive for parents (especially mothers) to work more days.
+  The Cheaper Home Batteries rebate (about 30% off from July 2025) and past solar rebates encourage households to install batteries and panels.
+  Fee-Free TAFE encourages people to train in areas of skills shortage.
+**Regulations**
+  Smoke-free zones, speed limits, compulsory superannuation and minimum working age all require or forbid behaviours. Fines for breaking them act as disincentives.
+**Why responses differ**
+  Income: a \$1 rise in the price of a coffee matters more to a student than a surgeon.
+  Preferences and habits: addicted smokers respond less to price rises than occasional smokers.
+  Information: people can't respond to a rebate they don't know about.
+  Availability of substitutes and time to adjust.
+**Worked example**
+  The government raises tobacco excise by 10% a year. Predict the responses of different consumers.
+    Occasional smokers and young people (lower incomes, less addicted) cut back most or quit — the disincentive works.
+    Heavily addicted smokers cut back less and may spend more of their income on tobacco, lowering their other consumption.
+    Some switch to illegal tobacco or vapes — an unintended response, which is why enforcement and regulation of the illegal trade matter.
+**Going deeper**
+  Unintended consequences are common: a tax on one good pushes people to substitutes; generous subsidies can be captured partly by sellers raising prices.
+  Behavioural economics shows people respond to how incentives are framed, not just their size — a "bonus" and a "rebate" of the same value can have different effects.
+**Common mistakes**
+  Assuming everyone responds the same way to an incentive.
+  Mixing up a tax (raises cost, a disincentive) with a subsidy (lowers cost, an incentive).
+**Exam tips**
+  Structure: incentive → change in cost or benefit → predicted change in behaviour → effect on living standards (and any unintended consequence).
+**Connections**
+  The traditional view of the consumer: rational agents respond to changed costs and benefits.
+  Businesses and incentives.
+  Government nudges and their effectiveness (behavioural economics).
+**Practice questions**
+  Explain how a subsidy can act as an incentive for consumers, using an example.
+    A subsidy lowers the price consumers pay, raising the net benefit of buying. For example, the home battery rebate cuts the cost of installing a battery by about 30%, so more households install one.
+  Why might two workers respond differently to a cut in income tax?
+    Their circumstances differ — one may want more hours to raise income (substitution towards work), while another with high income or caring duties may prefer the same hours and more leisure; information and job flexibility also differ.
+  Identify one unintended consequence of large tobacco tax increases.
+    Growth in illegal tobacco sales, which reduces tax revenue and undermines health aims.
+**Flashcards**
+  What is an incentive? :: Something that encourages a behaviour by raising its benefit or lowering its cost.
+  A tax on a good is usually a {{disincentive}} to consume it.
+  What is a subsidy? :: A government payment that lowers the cost of a good or activity.
+  Example of a subsidy encouraging work? :: The Child Care Subsidy.
+  Why do people respond differently to the same incentive? :: Different incomes, preferences, habits and information.
+  Example of a regulation affecting consumers? :: Smoke-free zones or speed limits.
+  Unintended effect of big tobacco excise rises? :: More illegal tobacco sales.
+
+@ 3f91ea7b U1.1.2.4 | The traditional view of business
+**In a sentence**
+  Traditional economics assumes businesses aim to maximise profit — the difference between total revenue and total costs — and make every decision with that goal in mind.
+**Key terms**
+  **Profit**: total revenue minus total costs.
+  **Total revenue**: price × quantity sold.
+  **Total costs**: all costs of production — fixed costs (rent, insurance) plus variable costs (materials, hourly wages).
+  **Profit maximisation**: choosing the output and price that give the largest possible profit.
+**Why profit?**
+  Profit rewards enterprise and risk-taking, funds investment and growth, and signals where resources are most valued.
+  In the traditional model, owners (shareholders) want the highest return, and managers act for them.
+**How firms raise profit**
+  Raise revenue: sell more, raise prices (if demand allows), launch products, enter new markets.
+  Cut costs: better technology, cheaper inputs, higher productivity, economies of scale.
+  Firms compare the extra revenue from producing one more unit with its extra cost, producing while the extra revenue is at least the extra cost.
+**Worked example**
+  A food truck sells 400 tacos a week at \$7. Weekly costs: \$600 fixed (permits, insurance, loan) plus \$3 per taco. Find its profit. Would cutting the price to \$6 and selling 550 raise profit?
+    Now: revenue = 400 × \$7 = \$2 800; costs = \$600 + 400 × \$3 = \$1 800; profit = \$1 000.
+    At \$6: revenue = 550 × \$6 = \$3 300; costs = \$600 + 550 × \$3 = \$2 250; profit = \$1 050.
+    Yes — profit rises by \$50, so a profit-maximising owner would cut the price (if the sales estimate is right).
+**Going deeper**
+  Real firms have other goals: market share or growth (Amazon for years), survival, sales revenue, customer satisfaction, corporate social responsibility (B Corps, e.g. Who Gives A Crap donates half its profits), or managers' own goals. Many argue these serve long-run profit anyway.
+  Not-for-profit organisations (charities, co-operatives) are businesses without a profit-maximising aim.
+**Common mistakes**
+  Confusing revenue with profit.
+  Assuming a higher price always means higher profit — sales may fall by more.
+**Exam tips**
+  Show revenue and costs separately before stating profit, with units.
+**Connections**
+  Businesses and incentives: taxes and subsidies change costs and so profit.
+  The law of supply: higher prices raise the profit from supplying more.
+  Strategies to increase profit (Unit 1 Area of Study 2).
+**Practice questions**
+  Outline the traditional economic view of business behaviour.
+    Businesses aim to maximise profit (total revenue minus total costs), choosing output, price and methods of production to make profit as large as possible.
+  Calculate the profit of a firm that sells 1 000 units at \$12 with fixed costs of \$3 000 and variable costs of \$5 per unit.
+    Revenue = 1 000 × \$12 = \$12 000. Costs = \$3 000 + 1 000 × \$5 = \$8 000. Profit = \$4 000.
+  Identify one business goal other than profit maximisation.
+    Increasing market share (or survival, growth, social responsibility).
+**Flashcards**
+  Traditional goal of business? :: Profit maximisation.
+  Profit = ? :: Total revenue − total costs.
+  Total revenue = ? :: Price × quantity sold.
+  Rent and insurance are {{fixed}} costs.
+  Calculate profit: revenue \$2 800, costs \$1 800. :: \$1 000.
+  Another business goal besides profit? :: Market share, growth, survival or social responsibility.
+  Why can a price rise reduce profit? :: Quantity sold may fall by more than the price rises.
+
+@ 7313c451 U1.1.2.5 | Businesses and incentives
+**In a sentence**
+  Because businesses chase profit, taxes, rebates, subsidies and regulations that change their costs or revenue change what, how much and how they produce.
+**Key terms**
+  **Company tax**: tax on business profits — 25% for base rate entities (smaller companies), 30% for others.
+  **Tax incentive**: a tax rule that lowers tax for a chosen activity, e.g. the R&D Tax Incentive.
+  **Instant asset write-off**: small businesses can deduct the full cost of eligible assets (up to a threshold, \$20 000 in recent years) in the year they buy them.
+  **Production subsidy**: a payment per unit produced, lowering the cost of production.
+  **Regulation**: a legal rule businesses must follow.
+**Taxes and tax incentives**
+  Lower company tax raises after-tax profit, encouraging investment; higher taxes on a product (e.g. fuel excise, tobacco excise) raise costs and reduce supply.
+  The instant asset write-off and R&D Tax Incentive bring forward investment in equipment and research.
+**Subsidies**
+  Future Made in Australia offers production tax credits (e.g. \$2 per kilogram of green hydrogen produced) to encourage new green industries.
+  Wage subsidies (JobKeeper in 2020, apprentice incentives) encourage firms to keep or hire workers.
+**Regulations**
+  The Safeguard Mechanism requires Australia's largest emitters to cut emissions each year, so they invest in cleaner technology or buy credits.
+  Minimum wages, workplace safety rules and food standards raise costs but protect workers and consumers.
+  Bans (on single-use plastics in Victoria since 2023) force firms to change products.
+**How responses differ**
+  Large firms with cash can respond quickly; small firms may lack information or funds.
+  Firms facing strong competition can't pass on cost rises as easily as firms with market power.
+**Worked example**
+  The government offers a subsidy of \$2 per kilogram for green hydrogen. Predict the responses of producers and the effect on the market.
+    Lower net cost per kilogram raises the profit from producing, so existing producers expand and new firms enter.
+    Supply increases: the price of green hydrogen falls and quantity rises.
+    Firms may also invest in research to cut costs further once scale grows. The cost to taxpayers is the opportunity cost of the subsidy.
+**Going deeper**
+  Incentives can be gamed: firms may reclassify spending as "R&D" to claim tax offsets, or relocate profits to lower-tax countries — so governments pair incentives with rules and audits.
+  Regulations can create barriers to entry that protect incumbents (licensing costs fall more heavily on small firms).
+**Common mistakes**
+  Saying a regulation "has no cost". Compliance costs are real; the question is whether the benefits outweigh them.
+  Forgetting the response depends on market power (whether costs can be passed on).
+**Exam tips**
+  Chain: incentive → change in cost or revenue → change in profit → change in production decision → effect on consumers or living standards.
+**Connections**
+  The traditional view of business: profit is why firms respond.
+  Consumers, workers and incentives.
+  What shifts supply (Unit 1 Area of Study 2): costs of production.
+**Practice questions**
+  Explain how a subsidy could change a business's production decision.
+    A subsidy lowers the cost of production, raising profit per unit, so the business has an incentive to produce more (supply increases).
+  How might a large emitter respond to the Safeguard Mechanism?
+    It must reduce emissions below a falling baseline, so it may invest in cleaner technology, change processes, or buy carbon credits — all raise short-term costs but reduce emissions.
+  Why might a small business respond more slowly to an incentive than a large one?
+    It may lack information, cash or staff to act, and a new asset may be a big risk relative to its size.
+**Flashcards**
+  Company tax rate for base rate entities? :: 25% (others 30%).
+  How does a subsidy affect a firm's supply? :: It lowers costs, raising profit per unit, so supply increases.
+  A rule that requires big emitters to cut emissions each year is the {{Safeguard Mechanism}}.
+  What is the instant asset write-off? :: An immediate tax deduction for eligible assets bought by small businesses.
+  Why might firms with market power respond differently to a cost rise? :: They can pass more of it on as higher prices.
+  Example of a regulation raising business costs? :: Minimum wages, safety rules or plastics bans.
+  Example of a production subsidy? :: \$2/kg green hydrogen production credit.
+
+@ 1f090803 U1.1.2.6 | The traditional view of government
+**In a sentence**
+  Traditional economics assumes the government acts to maximise the living standards of the whole community, stepping in where markets alone would fail to do so.
+**Key terms**
+  **Living standards**: the community's wellbeing, material and non-material.
+  **Public interest**: the wellbeing of the community as a whole, not of a group.
+  **Market failure**: when markets alone allocate resources inefficiently or unfairly — under-providing public goods, ignoring externalities, abusing market power.
+**What maximising living standards means**
+  Using taxes, spending and regulation to achieve efficiency (the most value from scarce resources), equity (a fair distribution), stability (steady growth, low inflation, low unemployment) and sustainability.
+  Governments consider the whole community — including future generations — where households and firms consider themselves.
+**Examples**
+  Providing public goods markets won't supply profitably: defence, roads, street lighting, public health campaigns.
+  Funding health (Medicare) and education so everyone can access them.
+  Regulating markets (the ACCC, environmental laws) and redistributing income (JobSeeker, the Age Pension).
+**Worked example**
+  Why might the government fund free vaccines rather than leave them to the market?
+    Vaccines have external benefits: a vaccinated person protects others too, but buyers consider only their own benefit, so the market would under-provide them.
+    Free vaccines raise vaccination rates, improving health (non-material) and productivity (material) for the whole community — maximising living standards.
+**Going deeper**
+  The "public choice" critique: governments are made of people with their own interests — winning votes, pleasing lobby groups — so policy may not maximise community living standards (pork-barrelling in marginal seats, for example).
+  Government intervention has costs too: taxes change incentives, and government may fail (poorly designed programs, waste).
+**Common mistakes**
+  Saying government "maximises profit" — that is the business goal.
+  Assuming government always succeeds in raising living standards; the traditional view is an assumption about its aim.
+**Exam tips**
+  Link any government action to a specific aspect of living standards (e.g. "raises non-material living standards by improving health").
+**Connections**
+  Economic agents; public and private sectors.
+  The roles of government: stabilisation, efficiency and redistribution.
+  Government nudges and their effectiveness (behavioural economics).
+**Practice questions**
+  State the traditional economic view of the role of government.
+    The government aims to maximise the living standards of the community as a whole.
+  Give two examples of government actions intended to raise living standards.
+    Funding Medicare and public hospitals (health); paying the Age Pension and JobSeeker (a fairer income distribution).
+  Why might government action not always maximise living standards?
+    Politicians may pursue votes or respond to lobby groups, programs may be poorly designed, and taxes to fund them can reduce incentives.
+**Flashcards**
+  Traditional aim of government? :: To maximise the community's living standards.
+  Aim of business vs government? :: Business — profit; government — living standards.
+  When markets alone allocate resources badly, this is {{market failure}}.
+  Example of a public good? :: Defence or street lighting.
+  Why fund free vaccines? :: External benefits mean the market would under-provide them.
+  Public choice critique? :: Governments may act for votes or lobby groups, not the community.
+  Four aims within "living standards"? :: Efficiency, equity, stability and sustainability.
+
+@ 3ab8213b U1.1.2.7 | The roles of government
+**In a sentence**
+  Government improves living standards in three main ways: stabilising the economy, improving the efficiency of resource allocation, and redistributing income more fairly.
+**Key terms**
+  **Economic stabilisation**: smoothing the business cycle to keep growth steady, inflation low and unemployment low.
+  **Fiscal policy**: the government's use of its budget — spending and taxation — to influence the economy.
+  **Monetary policy**: the Reserve Bank of Australia's use of interest rates (the cash rate) to influence spending and inflation.
+  **Efficiency in resource allocation**: resources going to the uses society values most.
+  **Redistribution of income**: using taxes, transfers and services to reduce inequality.
+  **Progressive tax**: a tax where higher incomes pay a higher percentage (Australia's income tax).
+**Stabilisation**
+  In downturns, government spends more or cuts taxes (fiscal stimulus — e.g. JobKeeper in 2020) and the RBA cuts rates (to 0.10% in November 2020).
+  When inflation is high, the RBA raises rates — it lifted the cash rate four times in 2026 to 4.60% in September — and the government may restrain spending.
+  Stability protects jobs and purchasing power, raising living standards.
+**Improving efficiency**
+  Providing public goods (roads, defence) that markets under-supply.
+  Correcting externalities: taxing or regulating pollution (the Safeguard Mechanism), subsidising education and vaccines.
+  Promoting competition: the ACCC enforces the Competition and Consumer Act 2010, so firms can't collude or misuse market power.
+  Providing information (Health Star Ratings, unit pricing in supermarkets).
+**Redistribution**
+  Progressive income tax: 0% up to \$18 200 of taxable income, rising to 45% above \$190 000.
+  Transfer payments: the Age Pension, JobSeeker, Family Tax Benefit, Commonwealth Rent Assistance.
+  Services free or subsidised by need: Medicare, public schools, social housing.
+  Minimum wages (set by the Fair Work Commission) lift low incomes.
+**Worked example**
+  Classify each action by role: (a) the RBA raises the cash rate; (b) the ACCC takes Coles to court over "Down Down" pricing; (c) JobSeeker payments rise; (d) the government builds a new motorway.
+    (a) Stabilisation — reducing spending to bring inflation back to the 2–3% target.
+    (b) Efficiency — protecting consumers and competition so markets work properly.
+    (c) Redistribution — raising the incomes of unemployed people.
+    (d) Efficiency — providing infrastructure the market would under-supply (and, in a downturn, stabilisation too).
+**Going deeper**
+  The roles can conflict: higher taxes to redistribute may reduce incentives to work (efficiency); cutting spending to fight inflation may slow redistribution. Governments trade them off.
+  The RBA is independent of government, so monetary policy is set by its Monetary Policy Board rather than by ministers.
+**Common mistakes**
+  Saying the government sets interest rates — the RBA sets the cash rate independently.
+  Listing a policy without linking it to the role and to living standards.
+**Exam tips**
+  Name the role, give a current Australian example, and explain how it affects living standards.
+**Connections**
+  The traditional view of government.
+  Market power and market structures and Strategies to increase profit (Unit 1 Area of Study 2): the efficiency role.
+  Aggregate demand and the business cycle (Unit 2): the stabilisation role.
+**Practice questions**
+  Explain the stabilisation role of government, with a recent example.
+    Government and the RBA try to smooth the business cycle. In 2026, with inflation above target, the RBA raised the cash rate four times to 4.60% to slow spending and reduce inflation.
+  How does a progressive income tax redistribute income?
+    Higher-income earners pay a higher percentage of their income in tax, and the revenue funds transfer payments and services for lower-income people, narrowing the gap.
+  Outline two ways government improves efficiency in resource allocation.
+    Providing public goods such as roads that markets under-supply; enforcing competition law through the ACCC so firms can't collude and raise prices.
+  Identify a possible conflict between the redistribution and efficiency roles.
+    High tax rates used to fund redistribution may reduce the incentive to work or invest, lowering efficiency.
+**Flashcards**
+  Three roles of government? :: Stabilisation, efficiency in resource allocation, redistribution of income.
+  Who sets Australia's cash rate? :: The Reserve Bank of Australia (independently).
+  Using the budget to influence the economy is {{fiscal}} policy.
+  Example of redistribution? :: Progressive income tax, the Age Pension or JobSeeker.
+  How does the ACCC improve efficiency? :: By enforcing competition law so markets stay competitive.
+  What is a progressive tax? :: One where higher incomes pay a higher percentage.
+  RBA's inflation target? :: 2–3%.
+  Cash rate after the September 2026 rise? :: 4.60%.
+
+@ 59dfe365 U1.1.3.1 | Using economic terms precisely
+**In a sentence**
+  This skill is defining economic terms accurately and using them correctly in context, so every answer speaks the language of economics.
+**Key terms**
+  **Definition**: a precise statement of what a term means.
+  **Application**: using a term correctly about a specific situation.
+**How to do it**
+  Learn a short, exact definition for each key term in this area: relative scarcity, opportunity cost, PPF, trade-off, cost-benefit analysis, economic systems, circular flow, living standards, utility, incentive, public and private sector.
+  Use the term, then apply it: "The opportunity cost of the \$10 billion motorway is the next best use of those funds, such as a new hospital."
+  Avoid everyday meanings: "capital" isn't money; "efficiency" isn't just "fast"; "scarcity" isn't "rare".
+**Going deeper**
+  Precision separates similar terms: scarcity vs shortage; material vs non-material; incentive vs subsidy (a subsidy is one kind of incentive).
+**Worked example**
+  Improve: "Scarcity means there isn't much of something so it costs a lot."
+    Better: "Relative scarcity is the situation where resources are limited relative to society's unlimited needs and wants, so choices must be made about how to use them."
+**Connections**
+  Every key knowledge point in this area.
+  Using economic terms precisely in the other areas.
+**Practice questions**
+  Define opportunity cost and use it correctly in a sentence about a student.
+    Opportunity cost is the value of the next best alternative forgone. "The opportunity cost of Mia's Saturday shift is the study time she gave up for her SAC."
+  What's wrong with saying "Australia is a market economy"?
+    It is imprecise: Australia is a mixed economy — mostly market-based but with significant government provision and regulation.
+**Flashcards**
+  Two steps in using a term well? :: Define it precisely, then apply it to the example.
+  Is "capital" money in economics? :: No — man-made goods used in production.
+  Precise term for "limited resources relative to unlimited wants"? :: Relative scarcity.
+  A subsidy is one kind of {{incentive}}.
+
+@ e138ef94 U1.1.3.2 | Predicting with economic theory
+**In a sentence**
+  This skill is using economic theory — incentives, opportunity cost, the PPF, the circular flow — to predict what will happen after a change, and explaining the prediction step by step.
+**Key terms**
+  **Prediction**: a reasoned statement of the likely effect of a change.
+  **Ceteris paribus**: "other things being equal" — assuming only the change being studied happens.
+  **Chain of reasoning**: a sequence of linked cause-and-effect steps.
+**How to do it**
+  Identify the change and the agents affected.
+  Pick the theory that applies (an incentive changes costs or benefits; the circular flow traces spending and income; the PPF shows capacity).
+  Write a chain: change → effect on costs/benefits or spending → agents' response → outcome → effect on living standards.
+  State the assumption (ceteris paribus) and note anything that could change the result.
+**Going deeper**
+  Predictions are positive statements — they can be tested later. Separate them from your view on whether the result is good (normative).
+**Worked example**
+  Predict the effect of a new \$3 000 grant for apprentices on the number of apprentices hired.
+    The grant lowers the cost of hiring an apprentice (an incentive for businesses).
+    Firms that were close to hiring now find it profitable, so more apprentices are hired, ceteris paribus.
+    More skilled workers in future increase the quality of labour, shifting the PPF outward over time.
+    Uncertainty: if the economy slows, firms may hire fewer despite the grant.
+**Connections**
+  Consumers, workers and incentives and Businesses and incentives.
+  The production possibility frontier and The three-sector circular flow model.
+**Practice questions**
+  Use the circular flow model to predict the effect of a large rise in government spending on schools.
+    Government spending (an injection) rises, so firms supplying schools earn more revenue, hire more workers and pay more wages; households spend more, raising activity further, ceteris paribus.
+  Why should a prediction state "ceteris paribus"?
+    Many things change at once in the real economy; the assumption isolates the effect of the one change being analysed.
+**Flashcards**
+  Meaning of ceteris paribus? :: Other things being equal.
+  Shape of a good prediction? :: A chain: change → effect on costs/benefits → response → outcome → living standards.
+  Is a prediction positive or normative? :: Positive — it can be tested.
+  The {{circular flow}} model traces how a change in spending affects incomes.
+
+@ 78e8997b U1.1.3.3 | Gathering and using economic data
+**In a sentence**
+  This skill is finding reliable economic data and information, combining it, and using it as evidence to analyse an issue and the effect of decisions on consumers, businesses and government.
+**Key terms**
+  **Primary data**: collected yourself (a survey, an interview, an experiment).
+  **Secondary data**: collected by others (ABS, RBA, Treasury, news reports).
+  **Synthesise**: combine information from several sources into one coherent picture.
+  **Reliability**: how trustworthy a source is — its authority, method, date and bias.
+**How to do it**
+  Go to authoritative sources first: the ABS (labour force, CPI, GDP), the RBA (cash rate, statements), Treasury (the budget), the ACCC (market inquiries), then quality news (ABC, AFR) for context.
+  Record the figure, the date, the unit and the source: "unemployment 4.6%, August 2026 (ABS)".
+  Check whether the source has an interest (a lobby group's report may be selective).
+  Synthesise: combine figures and viewpoints to answer the question, not a list of facts.
+  Link the evidence to the agents: who gains, who loses?
+**Going deeper**
+  Watch the difference between levels and rates (inflation 3.5% means prices rose 3.5%, not that they are 3.5% high) and between nominal and real (adjusted for inflation) figures.
+**Worked example**
+  Use data to assess how a rise in the cash rate affects households.
+    Data: the RBA raised the cash rate to 4.60% (Sep 2026); average new owner-occupier loan rates around 6.5%.
+    Synthesis: a borrower with a \$600 000 loan pays about \$1 500 more interest a year for each 0.25 percentage point rise (0.25% × \$600 000 = \$1 500), so mortgage holders cut spending, while savers earn more interest.
+    Conclusion: borrowers' material living standards fall in the short term; savers gain.
+**Connections**
+  Every key knowledge point: evidence for any claim.
+  Spotting trends in economic data (Unit 2).
+**Practice questions**
+  Name two reliable sources of Australian economic data and what each publishes.
+    The ABS — labour force, CPI and GDP statistics; the RBA — the cash rate and its monetary policy statements.
+  Why should you record the date of every statistic you use?
+    Economic data change often; an old figure may no longer describe the economy, and markers expect current, dated evidence.
+**Flashcards**
+  Primary vs secondary data? :: Primary — collected yourself; secondary — collected by others.
+  Australia's main official statistics agency? :: The ABS.
+  Four things to record with a statistic? :: Figure, date, unit, source.
+  Combining sources into one coherent picture is to {{synthesise}}.
+
+@ 528c3b67 U1.1.3.4 | Building and applying economic models
+**In a sentence**
+  This skill is drawing, reading and using models — especially the production possibility frontier and the three-sector circular flow — to explain the consequences of economic decisions.
+**Key terms**
+  **Economic model**: a simplified representation of how part of the economy works, used to explain and predict.
+  **Assumption**: a simplification the model relies on (fixed resources and technology; only two goods).
+**How to do it**
+  Construct: draw with ruled axes, labels (good and units), a title, and labelled points or arrows.
+  Interpret: say what each point, shift or flow means ("point C is inside the frontier: under-utilisation").
+  Apply: use the model to show the effect of a decision — a movement along or a shift of the PPF; a change in a flow in the circular flow.
+  State the model's limits (a PPF has only two goods; the three-sector flow has no saving or trade).
+**Going deeper**
+  Models are useful because they are simple — "all models are wrong, but some are useful". Say what the model leaves out when it matters.
+**Worked example**
+  Use a PPF to show the effect of Australia accepting more skilled migrants.
+    Draw a PPF of two goods (e.g. health services and manufactured goods).
+    More skilled workers increase the quantity and quality of labour, so the frontier shifts outward.
+    Points once unattainable are now attainable: Australia can produce more of both goods, raising material living standards.
+**Connections**
+  The production possibility frontier.
+  The three-sector circular flow model.
+  Drawing demand and supply graphs (Unit 1 Area of Study 2).
+**Practice questions**
+  Draw and explain the effect of a recession on a PPF.
+    A recession leaves workers and capital unemployed, so the economy moves to a point inside the frontier; the frontier itself doesn't shift because resources still exist.
+  Identify one limitation of the three-sector circular flow model.
+    It leaves out saving, investment and trade (the financial and overseas sectors).
+**Flashcards**
+  What is an economic model? :: A simplified representation of the economy used to explain and predict.
+  Two assumptions of the PPF? :: Fixed resources and technology; only two goods.
+  Effect of skilled migration on the PPF? :: An outward shift.
+  A recession moves the economy {{inside}} the PPF.
+
+@ 5bd4340f U1.1.3.5 | Weighing trade-offs, costs and benefits
+**In a sentence**
+  This skill is identifying the trade-offs in a decision, discussing its costs and benefits for different agents, and reaching a conclusion based on economic criteria.
+**Key terms**
+  **Economic criteria**: standards for judging a decision — effect on living standards (material and non-material), efficiency, equity, sustainability, and opportunity cost.
+  **Discuss**: consider more than one side and reach a supported conclusion.
+**How to do it**
+  Name the trade-off: what is gained and what is given up (the opportunity cost).
+  List costs and benefits for each agent (consumers, workers, businesses, government), short and long term.
+  Weigh them using a criterion: "On balance the policy raises living standards because…"
+  Acknowledge the strongest counter-argument.
+**Going deeper**
+  "Efficiency vs equity" is the classic trade-off: a policy can make the pie bigger but share it less evenly, or the reverse. Name which you are prioritising and why.
+**Worked example**
+  Discuss the costs and benefits of a government raising the tobacco excise.
+    Benefits: fewer smokers, better health (non-material living standards), lower future health-care costs, more tax revenue.
+    Costs: falls hardest on low-income smokers (equity), growth of illegal tobacco (lower revenue and safety), job losses for tobacco retailers.
+    Conclusion: on health and efficiency grounds the benefits likely outweigh the costs, provided enforcement against illegal tobacco is strong.
+**Connections**
+  Trade-offs and cost-benefit analysis.
+  Opportunity cost.
+**Practice questions**
+  Identify the trade-off facing a student deciding whether to work more hours.
+    More income now (material living standards) vs less study and leisure time (possible lower results and wellbeing) — the opportunity cost of work is the next best use of that time.
+  What makes a conclusion to a "discuss" question strong?
+    It is based on a named economic criterion, weighs the most important costs and benefits, and acknowledges a counter-argument.
+**Flashcards**
+  Five economic criteria for judging a decision? :: Living standards, efficiency, equity, sustainability, opportunity cost.
+  The classic policy trade-off? :: Efficiency vs equity.
+  A "discuss" answer must reach a supported {{conclusion}}.
+  What is given up in a trade-off? :: The opportunity cost.

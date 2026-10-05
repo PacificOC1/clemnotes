@@ -1,0 +1,585 @@
+% VCE English Language — Unit 2, Area of Study 2: Englishes in contact.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ 0f9404fc U2.2.1.1 | How English became a world language
+**In a sentence**
+  English spread first through British trade and colonisation, then through American economic, military and cultural power after 1945, and now through science, business, education and the internet — so today far more people speak it as an additional language than as a first language.
+**Key terms**
+  **World language (global language)**: a language used widely across many countries for international communication.
+  **Colonisation**: settling and controlling other territories, often imposing the colonisers' language.
+  **Kachru's three circles**: a model of world English — inner, outer and expanding circles.
+  **Inner circle**: countries where English is the main first language (UK, USA, Australia, New Zealand, Canada, Ireland).
+  **Outer circle**: former colonies where English is an official or second language (India, Nigeria, Singapore, Philippines).
+  **Expanding circle**: countries where English is learned as a foreign language (China, Japan, Indonesia, Brazil).
+**Historical factors**
+  British colonisation and trade (1600s–1900s): North America, Australia, India, Africa, the Caribbean, Asia; English became the language of government, courts and education in colonies.
+  Settler colonies (USA, Australia, Canada, New Zealand): English became the majority first language, while Indigenous languages were suppressed.
+  The Industrial Revolution: Britain led technology and trade, spreading technical English.
+**Modern factors**
+  US power after World War II: economics, the military, diplomacy.
+  Popular culture: film, music, television, gaming, social media.
+  Science and technology: most research is published in English; the internet grew in the US.
+  International organisations and business: the UN, ASEAN, multinational companies, aviation and shipping.
+  Education: English taught as a school subject almost everywhere; international students.
+**The numbers**
+  About 1.5 billion people speak English: roughly 390 million as a first language and over 1.1 billion as an additional language (Ethnologue, 2025).
+  So most English conversations now happen between non-native speakers.
+**Worked example**
+  Explain how India became part of the outer circle.
+    British trade (the East India Company from 1600) and then colonial rule made English the language of administration, courts and higher education.
+    After independence in 1947, English stayed as an "associate" official language, useful as a neutral link across India's many languages.
+    It is a second language for millions, with its own features — Indian English.
+**Going deeper**
+  Kachru's circles are a simplification: countries like Singapore are moving towards the inner circle as English becomes a home language, and the model doesn't show how many individuals in each country actually speak English.
+  David Crystal argues a language becomes global because of the power of its speakers, not because of anything in its structure.
+**Common mistakes**
+  Saying English is global because it's "easier" or "better". Its spread came from political, economic and cultural power.
+  Forgetting the scale of second-language use.
+**Exam tips**
+  Separate historical factors (colonisation, trade) from contemporary ones (US influence, technology, globalisation) and give a country example for each.
+**Connections**
+  English-based varieties: what happens to English when it spreads.
+  English as a lingua franca.
+  Language change and loss: the cost to other languages.
+**Practice questions**
+  Describe Kachru's three circles with an example of each.
+    Inner circle: English is the main first language (Australia). Outer circle: English is an official or second language after colonisation (India). Expanding circle: English is learned as a foreign language (Japan).
+  Give two contemporary factors in the spread of English.
+    The dominance of the internet and technology (much online content is in English) and US popular culture (film, music, social media); also business and science.
+  Why do more people speak English as an additional language than as a first language?
+    English is learned worldwide for education, business, science and travel, and serves as a lingua franca, so second-language speakers now greatly outnumber native speakers.
+**Flashcards**
+  What are Kachru's three circles? :: Inner (first language), outer (official/second language), expanding (foreign language).
+  Which circle is India in? :: The outer circle.
+  About how many people speak English as a first language? :: About 390 million.
+  Roughly how many people speak English in total? :: About 1.5 billion.
+  English spread first through British {{colonisation}} and trade.
+  Name a modern factor in the spread of English. :: US cultural and economic power (also the internet, science, business).
+  Why did English become global, according to Crystal? :: The power of its speakers, not the language's structure.
+
+@ bdf763ad U2.2.1.2 | English-based varieties
+**In a sentence**
+  As English spread it adapted to each place, producing national, regional and ethnic varieties — Indian, Singapore, Nigerian, Australian and Aboriginal Englishes — each with its own sounds, words, grammar and ways of speaking.
+**Key terms**
+  **Variety**: a distinct form of a language used by a particular group or in a particular place.
+  **National variety**: a variety associated with a country (Australian English, Indian English).
+  **Ethnic variety**: a variety associated with an ethnic or cultural group (Aboriginal English, Lebanese-Australian English).
+  **Regional variety**: a variety associated with a region within a country.
+  **World Englishes**: the many varieties of English used around the world.
+  **Standard variety**: the form used in formal writing and education in a particular country.
+**Features of some varieties**
+  **Indian English**:
+    Lexis: "prepone" (bring forward), "do the needful", "cousin-brother", "timepass".
+    Syntax: invariant tag "isn't it?" ("You are coming, isn't it?"); progressive for states ("I am knowing").
+    Phonology: retroflex /t/ and /d/; syllable-timed rhythm.
+  **Singapore English** (standard) and **Singlish** (colloquial):
+    Discourse particles: "lah", "lor", "meh" ("Can lah!").
+    Syntax: "Can or not?"; dropped subjects and copulas ("She very clever").
+    Lexis from Malay and Chinese languages: "kiasu" (afraid of missing out), "makan" (eat).
+  **Nigerian English**: "flash" (to ring and hang up so someone calls back), "go-slow" (traffic jam), extended family terms.
+  **Australian English**: lexis ("arvo", "servo", "fair dinkum", "doona"), hypocoristics, borrowings from Aboriginal languages; HCE vowels (/æɪ/ in "day", /ɑe/ in "high"); the rising intonation on statements; a range of accents from broad through general to cultivated.
+**Why varieties differ**
+  Contact with local languages (substrate influence on sounds and grammar).
+  Local culture and environment needing new words.
+  Separation from the "home" variety and local norms developing (e.g. the Macquarie Dictionary codifying Australian English).
+  Identity: speakers use their variety to show belonging.
+**Worked example**
+  Analyse: "Wah, the queue so long one! Can or not, we go makan first?" (Singlish)
+    Discourse: "Wah" as an exclamation particle expressing surprise.
+    Syntax: no copula ("the queue so long"); sentence-final "one" for emphasis; the tag "Can or not?" asking whether something is possible.
+    Lexis: "makan" (eat) from Malay — a borrowing reflecting Singapore's multilingual context.
+    Function: informal, friendly tone showing local identity.
+**Going deeper**
+  The Singapore government's Speak Good English Movement (from 2000) promotes standard English, while many Singaporeans value Singlish as a marker of identity — a live debate about standards and identity.
+  Many varieties are now codified in their own dictionaries, which shows they're treated as standards in their own right.
+**Common mistakes**
+  Calling varieties "broken" or "incorrect" English. They are rule-governed systems.
+  Listing features without naming the subsystem.
+**Exam tips**
+  Analyse a variety subsystem by subsystem, and link features to contact languages and cultural context.
+**Connections**
+  Pidgins and creoles: varieties formed through intense contact.
+  Language, culture and worldview: varieties express local culture.
+  Analysing texts across the subsystems (key skill).
+**Practice questions**
+  Give two features of Indian English, naming the subsystem.
+    Lexis: "prepone" meaning to bring forward. Syntax: the invariant tag "isn't it?" used with any statement.
+  Explain why English varieties develop distinctive vocabulary.
+    Speakers need words for local culture, food, places and environment, and borrow them from local languages — e.g. "makan" in Singapore English, "kangaroo" in Australian English.
+  Is Singlish "bad English"? Respond as a linguist.
+    No. It is a rule-governed contact variety with consistent grammar and discourse particles, used appropriately in informal contexts and as a marker of Singaporean identity; standard English is used in formal contexts.
+**Flashcards**
+  What is a language variety? :: A distinct form of a language used by a particular group or in a particular place.
+  What does "prepone" mean in Indian English? :: To bring forward (the opposite of postpone).
+  "lah" in Singlish is a discourse {{particle}}.
+  Give two Australian English words. :: "arvo", "servo" (also "doona", "fair dinkum").
+  What are World Englishes? :: The many varieties of English used around the world.
+  What is an ethnic variety of English? :: A variety associated with an ethnic or cultural group, e.g. Aboriginal English.
+  Why do varieties develop? :: Contact with local languages, local culture and environment, separation and identity.
+
+@ 50aeb5b3 U2.2.1.3 | Pidgins and creoles
+**In a sentence**
+  A pidgin is a simplified contact language nobody speaks natively, built so groups without a shared language can communicate; when children grow up speaking it, it becomes a creole — a full, expanded language — like Tok Pisin in Papua New Guinea or Kriol in northern Australia.
+**Key terms**
+  **Pidgin**: a simplified contact language with no native speakers, used between groups with no common language.
+  **Creole**: a language that develops from a pidgin when it becomes a community's first language.
+  **Lexifier**: the language that supplies most of a pidgin's or creole's vocabulary (e.g. English).
+  **Substrate**: the local languages that influence a pidgin's or creole's sounds and grammar.
+  **Creolisation**: the process by which a pidgin becomes a creole.
+  **Decreolisation**: a creole becoming more like its lexifier through contact.
+**How they form**
+  Trade, plantations, slavery, missions and colonisation brought together speakers of many languages with no shared language.
+  A pidgin forms: vocabulary mainly from the dominant (lexifier) language, simplified grammar, influence from local (substrate) languages.
+  When children acquire the pidgin as their first language, it expands into a creole with a fuller vocabulary and grammar.
+**Typical features**
+  Few inflections: no plural "-s" or past "-ed"; time shown by separate words ("bin" for past).
+  Fixed SVO order.
+  Reduplication for emphasis or meaning ("tok" talk, "toktok" chatter).
+  Circumlocution — describing things with phrases: Tok Pisin "gras bilong het" (hair = "grass belonging to head").
+  A smaller set of sounds and simple syllables.
+**Tok Pisin (Papua New Guinea)**
+  An official language of PNG and a first language for many; used in parliament, media and daily life.
+  "haus sik" (hospital), "pikinini" (child), "save" (know), "mi" (I), "yu" (you), "em" (he, she, it).
+  "yumi" (we, including you) vs "mipela" (we, not including you) — a distinction English lacks.
+  The suffix "-pela" on adjectives and pronouns: "bikpela haus" (big house).
+**Australian creoles**
+  **Kriol**: developed from pidgin at the Roper River Mission (Ngukurr, NT) from about 1908 and spread across northern Australia; now the first language of thousands of Aboriginal people. Features: "im" (he/she), "bin" as a past marker ("im bin go"), "mob" as a plural ("olabat" or "dat mob" for them). A full Kriol Bible was published in 2007.
+  **Yumplatok** (Torres Strait Creole): a creole spoken across the Torres Strait and by Torres Strait Islanders on the mainland.
+  NILS3 identified Kriol and Yumplatok as new languages with strong and growing numbers of speakers.
+**Worked example**
+  Analyse the Tok Pisin phrase "Mi laik go long haus bilong yu."
+    Meaning: "I want to go to your house."
+    Lexis: English-derived words ("laik" from like, "haus" from house, "bilong" from belong) — English is the lexifier.
+    Syntax: SVO order; "long" as a general preposition ("to"); possession shown by "bilong" after the noun rather than an inflection.
+    Morphology: no inflections on the verb.
+**Going deeper**
+  Creoles are sometimes stigmatised as "broken English", but they are full languages with their own grammar — Kriol and Tok Pisin have written literatures, dictionaries and Bible translations.
+  Derek Bickerton argued that similarities among creoles worldwide point to an innate "bioprogram" — linking creoles to the universal grammar debate in Unit 1.
+**Common mistakes**
+  Using pidgin and creole as if they mean the same thing. A creole has native speakers.
+  Describing creoles as simplified English. They are distinct languages with their own rules.
+**Exam tips**
+  Define both terms with the "native speakers" distinction, then give specific features from a named example.
+**Connections**
+  How English became a world language: colonisation and trade created contact.
+  Aboriginal and Torres Strait Islander languages: Kriol and Yumplatok.
+  Universal grammar (Unit 1): creoles in the acquisition debate.
+**Practice questions**
+  Distinguish a pidgin from a creole.
+    A pidgin is a simplified contact language with no native speakers; a creole develops when a pidgin becomes the first language of a community's children and expands into a full language.
+  Explain "gras bilong het" as an example of a typical pidgin/creole feature.
+    It's circumlocution — a descriptive phrase ("grass belonging to head") used for "hair", built from a small vocabulary instead of a single dedicated word.
+  How did Kriol develop?
+    Aboriginal people of different language groups brought together at the Roper River Mission from about 1908 used an English-based pidgin, which children acquired as their first language, turning it into a creole that spread across northern Australia.
+**Flashcards**
+  Define pidgin. :: A simplified contact language with no native speakers.
+  Define creole. :: A language that develops from a pidgin when it becomes a community's first language.
+  The language that supplies most of a creole's vocabulary is the {{lexifier}}.
+  Tok Pisin "haus sik" means… :: Hospital.
+  Where did Kriol develop? :: At the Roper River Mission (Ngukurr) in the Northern Territory, from about 1908.
+  Tok Pisin "yumi" vs "mipela"? :: "yumi" = we including you; "mipela" = we excluding you.
+  Name the creole of the Torres Strait. :: Yumplatok (Torres Strait Creole).
+  How is past tense shown in Kriol? :: With the marker "bin" ("im bin go").
+
+@ 3c22c98f U2.2.1.4 | English as a lingua franca
+**In a sentence**
+  English is now the world's main lingua franca — the shared language people use when they don't have a first language in common — in business, science, aviation, diplomacy and online.
+**Key terms**
+  **Lingua franca**: a language used for communication between people who don't share a first language.
+  **English as a lingua franca (ELF)**: English used between speakers of different first languages.
+  **Intelligibility**: how easily a speaker is understood.
+  **Native-speaker norms**: the standards of inner-circle English, which ELF speakers may not follow.
+**Where English is the lingua franca**
+  ASEAN: English is the working language of the Association of Southeast Asian Nations.
+  Aviation: pilots and air traffic controllers use English internationally.
+  Science and academia: most research journals publish in English.
+  Business, tourism, the internet, international sport, diplomacy.
+**Features of ELF communication**
+  Priority on intelligibility over "correctness": speakers adapt, simplify, repeat and check understanding.
+  Non-native forms that don't hinder understanding are accepted ("She look very happy").
+  Idioms and cultural references from inner-circle English ("a sticky wicket") can confuse — clear, plain English works better.
+**Benefits and costs**
+  Benefits: global communication, access to education and jobs, science shared quickly.
+  Costs: pressure on other languages; advantage to native speakers; spread of Anglo-American cultural norms; people may feel their own language is less valuable.
+**Worked example**
+  A Vietnamese engineer and a Brazilian manager discuss a project in English. Explain why this is English as a lingua franca, and one feature you might see.
+    Neither has English as a first language; English is their shared language — a lingua franca.
+    They are likely to focus on intelligibility — checking understanding ("You mean the deadline is Friday?") and avoiding idioms — rather than native-speaker norms.
+**Going deeper**
+  Earlier lingua francas include Latin in medieval Europe, Arabic across the Islamic world, and Swahili in East Africa — a lingua franca depends on history and power, and none lasts forever.
+  Some linguists argue ELF should be judged by its own success in communication, not against native-speaker English.
+**Common mistakes**
+  Assuming a lingua franca must be someone's native language. Most ELF users are non-native speakers.
+  Giving only benefits without discussing costs to other languages.
+**Exam tips**
+  Define lingua franca, give specific domains (ASEAN, aviation, science) and weigh benefits against costs.
+**Connections**
+  How English became a world language.
+  Language maintenance, shift and reclamation: the pressure English puts on other languages.
+  Debates about language change and influence (key skill).
+**Practice questions**
+  Define lingua franca and give two examples of English used as one.
+    A lingua franca is a shared language between people without a common first language. English is the working language of ASEAN and the international language of aviation.
+  Give one advantage and one disadvantage of English as a global lingua franca.
+    Advantage: it allows people across the world to communicate in business, science and travel. Disadvantage: it puts pressure on other languages and advantages native English speakers.
+  Why might idioms cause problems in ELF communication?
+    Idioms depend on inner-circle cultural knowledge and can't be worked out from their words, so non-native speakers may not understand them.
+**Flashcards**
+  Define lingua franca. :: A language used between people who don't share a first language.
+  What does ELF stand for? :: English as a lingua franca.
+  English is the working language of {{ASEAN}}.
+  What matters most in ELF communication? :: Intelligibility — being understood.
+  Name an earlier lingua franca. :: Latin in medieval Europe (also Arabic, Swahili).
+  Give one cost of English as a lingua franca. :: Pressure on other languages (also native-speaker advantage).
+  Name three domains where English is a lingua franca. :: Aviation, science, business (also diplomacy, the internet).
+
+@ cd927cdb U2.2.1.5 | Language, culture and worldview
+**In a sentence**
+  Languages carry the cultures and ways of seeing the world of their speakers — in their words for family, direction, time and nature — so when people shift to English or reshape it, they carry, change or lose parts of their worldview.
+**Key terms**
+  **Worldview**: a group's beliefs about and ways of understanding the world.
+  **Culture**: the shared beliefs, practices and values of a group.
+  **Linguistic relativity (Sapir–Whorf hypothesis)**: the idea that the language we speak influences how we think and perceive the world.
+  **Kinship terms**: words for family relationships.
+  **Representation**: how a language or text portrays people, places and ideas.
+**How languages encode worldviews**
+  **Kinship**: many Aboriginal languages have skin names and precise kin terms that assign responsibilities and relationships across a whole community; English "cousin" or "aunty" can't capture this. In Aboriginal English, "Aunty" and "Uncle" are respectful terms for Elders.
+  **Space and direction**: Guugu Yimithirr speakers (Cape York) use compass directions instead of left and right ("There's an ant on your north leg"), and so keep constant track of orientation.
+  **Relationship to land**: many Aboriginal languages have rich vocabularies for Country, plants and seasons, reflecting deep knowledge of the environment.
+  **Politeness and hierarchy**: Japanese and Korean grammar marks social status through honorifics.
+  **Colour**: Russian has separate basic words for light blue ("goluboy") and dark blue ("siniy").
+**Representing worldviews in English**
+  Varieties reshape English to express local culture: Aboriginal English "Country", "sorry business", "mob"; Indian English "cousin-brother".
+  Global English can carry Anglo-American values (individualism, directness) that don't fit every culture.
+  Representations matter: colonial English described Aboriginal land as "empty" or "discovered", reflecting and reinforcing a worldview; terms like "invasion" vs "settlement" still carry competing worldviews.
+**Worked example**
+  Explain how Aboriginal English "Country" represents a worldview.
+    In Standard Australian English "country" can mean a nation or rural land.
+    In Aboriginal English, "Country" (often capitalised) means the land, waters, sky and all living things to which a person belongs, with spiritual and family connection and responsibility to care for it.
+    The word carries a relational worldview in which people belong to land rather than owning it.
+**Going deeper**
+  The strong version of Sapir–Whorf (language determines thought) is rejected — people can think about things their language has no word for. The weak version (language influences habits of attention and memory) has research support, e.g. Guugu Yimithirr speakers' orientation.
+  When a language is lost, its unique categories and knowledge often go with it — a key argument for language maintenance.
+**Common mistakes**
+  Claiming speakers "can't think" of something their language lacks a word for.
+  Discussing culture without quoting language examples.
+**Exam tips**
+  Pair each claim about worldview with a specific word or structure and explain what it reveals.
+**Connections**
+  Language maintenance, shift and reclamation.
+  Effects of language loss on Aboriginal and Torres Strait Islander peoples.
+  English-based varieties: expressing local culture in English.
+**Practice questions**
+  What is linguistic relativity? Distinguish its strong and weak forms.
+    It is the idea that language influences thought. The strong form says language determines thought (widely rejected); the weak form says it influences perception, attention and memory (supported by some research).
+  How does Guugu Yimithirr show a link between language and worldview?
+    Its speakers use compass directions rather than left/right, so they must always know their orientation — the language shapes how they attend to space.
+  Explain how colonial English represented a particular worldview.
+    Words like "discovered" and "empty land" presented Australia as unoccupied, reflecting and justifying a colonial worldview that ignored Aboriginal ownership and presence.
+**Flashcards**
+  What is a worldview? :: A group's beliefs about and ways of understanding the world.
+  What is the Sapir–Whorf hypothesis? :: The idea that language influences (or determines) thought.
+  Which Cape York language uses compass directions instead of left and right? :: Guugu Yimithirr.
+  Is the strong form of linguistic relativity accepted? :: No — language influences but does not determine thought.
+  What does "Country" mean in Aboriginal English? :: The land, waters, sky and living things a person belongs to and cares for.
+  "Aunty" and "Uncle" in Aboriginal English are terms of {{respect}} for Elders.
+  Why does language loss mean cultural loss? :: Knowledge, categories and ways of seeing are encoded in the language.
+
+@ 5596278d U2.2.1.6 | Language maintenance, shift and reclamation
+**In a sentence**
+  Communities can keep a language strong (maintenance), move to another language over generations (shift), or bring back a language that stopped being spoken (reclamation) — and all three are happening in Australia today.
+**Key terms**
+  **Language maintenance**: keeping a language in use across generations.
+  **Language shift**: a community moving from one language to another over time.
+  **Language reclamation (revival, reawakening)**: bringing back a language no longer fully spoken, using records and community knowledge.
+  **Language death**: when a language has no remaining speakers.
+  **Intergenerational transmission**: parents passing a language on to children — the key to a language's survival.
+**Shift**
+  Often happens when another language brings jobs, education and status, and the home language is stigmatised or banned.
+  A common migrant pattern is a three-generation shift: grandparents speak the home language, parents are bilingual, children speak mainly English.
+  Colonisation forced shift on Aboriginal and Torres Strait Islander peoples through violence, removal of children, missions and bans on speaking languages.
+**Maintenance**
+  Home use and intergenerational transmission.
+  Community schools, bilingual education (e.g. programs in NT Aboriginal schools), media and radio in the language.
+  Official status and use in public life (Welsh in Wales, Māori in New Zealand).
+  Language nests: Māori "kōhanga reo" (from 1982) immerse young children in the language.
+**Reclamation**
+  Uses historical records (missionary wordlists, recordings), surviving words and Elders' knowledge.
+  **Kaurna** (Adelaide Plains): no fluent speakers by the early 1900s; reclaimed from records by German missionaries (1840s) and now taught in schools and used in public place names and speeches.
+  In Victoria, the Victorian Aboriginal Corporation for Languages (from 1994) supports reclamation of languages such as Woiwurrung, Wadawurrung and Wemba Wemba.
+  Hebrew is the famous success: revived as an everyday spoken language in the late 1800s–1900s.
+  NILS4 (2026) reports 113 Aboriginal and Torres Strait Islander languages in revival, reawakening or revitalisation.
+**Worked example**
+  Explain how the Kaurna language is being reclaimed.
+    Kaurna stopped being spoken fluently after colonisation, but German missionaries recorded words and grammar in the 1840s.
+    From the 1980s, Kaurna people and linguists used these records to rebuild the language.
+    It is now taught in schools, used in songs, speeches (Welcomes to Country) and place names — rebuilding identity and connection to Country.
+**Going deeper**
+  UNESCO rates languages from "safe" to "extinct" mainly by intergenerational transmission — if children aren't learning it, a language is endangered even with many adult speakers.
+  Reclaimed languages change: new words are created for modern things, and learners may speak differently from past speakers. Communities decide what is authentic.
+**Common mistakes**
+  Calling a sleeping language "dead" when communities are reawakening it.
+  Treating shift as a free choice — it is often caused by pressure and policy.
+**Exam tips**
+  Define each term with an Australian example, and link shift to its social and political causes.
+**Connections**
+  Effects of language change and loss on Aboriginal and Torres Strait Islander peoples.
+  Language, culture and worldview.
+  Applying maintenance, shift and reclamation (key skill).
+**Practice questions**
+  Distinguish language shift from language maintenance.
+    Shift is when a community moves from one language to another over generations; maintenance is keeping a language in use across generations, for example through home use and schooling.
+  Give two strategies used to maintain a language.
+    Intergenerational transmission at home, bilingual education or language nests, and media in the language (also official status).
+  What is a three-generation shift?
+    A pattern in migrant families where grandparents speak the heritage language, parents are bilingual and grandchildren speak mainly the dominant language (English).
+**Flashcards**
+  Define language shift. :: A community moving from one language to another over time.
+  Define language reclamation. :: Bringing back a language no longer fully spoken, using records and community knowledge.
+  The key to a language's survival is {{intergenerational}} transmission.
+  Which Adelaide language has been reclaimed from missionary records? :: Kaurna.
+  What is a language nest? :: An immersion program for young children, e.g. Māori kōhanga reo.
+  Which organisation supports Victorian Aboriginal languages? :: The Victorian Aboriginal Corporation for Languages (VACL).
+  Name a famous successful language revival. :: Hebrew.
+
+@ 596c60b7 U2.2.1.7 | Language loss in Australia
+**In a sentence**
+  Of the roughly 250 Aboriginal and Torres Strait Islander languages spoken before 1788, most have been damaged by colonisation, with deep effects on culture, identity and wellbeing — while Aboriginal Englishes, creoles and reclamation show strength and continuity.
+**Key terms**
+  **Language loss**: the decline and eventual disappearance of a language.
+  **Aboriginal English**: varieties of English spoken by Aboriginal people, with their own rule-governed features and cultural meanings.
+  **Sleeping language**: a term many communities prefer to "dead" for a language no longer spoken but able to be reawakened.
+  **Stolen Generations**: Aboriginal and Torres Strait Islander children forcibly removed from their families by governments and churches.
+**The scale**
+  About 250 languages (and 800 or more dialects) were spoken at the time of colonisation.
+  NILS3 (2019): 123 languages in use or being revitalised, but only 12 traditional languages still learned by children as a first language.
+  NILS4 (2026): 177 languages spoken or used and 113 in revival — growth driven by community-led reclamation — but 24 had no speakers under 20.
+**Causes of loss**
+  Violence, disease and dispossession from Country broke up language communities.
+  Missions and reserves grouped different language groups and often banned traditional languages.
+  The Stolen Generations separated children from families and languages.
+  English-only schooling and assimilation policies; stigma attached to speaking languages.
+**Cultural and social effects**
+  Languages carry knowledge of Country, law, kinship, songlines and ceremony; losing a language cuts access to that knowledge.
+  Loss of identity and connection; intergenerational trauma.
+  Research links speaking or learning a traditional language with better wellbeing for Aboriginal and Torres Strait Islander people.
+**Aboriginal Englishes**
+  Rule-governed varieties, not "broken English", expressing Aboriginal culture in English.
+  Lexis: "deadly" (excellent), "mob" (family, community group), "gammon" (joking, pretending), "yarn" (talk, conversation), "shame" (embarrassment), "Country", "sorry business" (mourning practices).
+  Grammar: optional copula ("He sick"), "been" as a past marker ("I been go"), plural shown by a number or context ("two dog").
+  Phonology: some varieties use /p/ for /f/, or drop /h/.
+  Pragmatics: indirect questioning; silence as a normal, respectful part of conversation; avoiding direct eye contact as a sign of respect.
+  Educational issue: speakers may be misjudged as rude or less capable when their pragmatics differ from SAE norms — why bidialectal ("two-way") education matters.
+**Worked example**
+  A teacher asks an Aboriginal student a direct question in front of the class; the student stays silent and looks down. Explain using pragmatics.
+    In many Aboriginal communities, direct questioning can be seen as intrusive, and public attention can cause "shame".
+    Silence and avoiding eye contact can be respectful, not a sign of not knowing.
+    Differences in pragmatic norms between Aboriginal English and SAE can cause misunderstanding; indirect approaches or small-group talk may work better.
+**Going deeper**
+  2019 was the UN International Year of Indigenous Languages, and 2022–2032 is the International Decade of Indigenous Languages — part of a global effort, including in Australia, to support language revival.
+  Place names are one visible form of recognition: dual naming (Uluru / Ayers Rock, from 1993) and growing use of Woiwurrung names in Melbourne, such as Birrarung for the Yarra River.
+**Common mistakes**
+  Describing all Aboriginal languages as extinct. Many are spoken, and many are being revived.
+  Treating Aboriginal English as incorrect Standard English.
+  Using the past tense only — Aboriginal and Torres Strait Islander languages are living cultures.
+**Exam tips**
+  Link causes (policies) → effects (loss of knowledge, identity) → responses (reclamation, Aboriginal English as identity), with named examples.
+**Connections**
+  Language maintenance, shift and reclamation.
+  Pidgins and creoles: Kriol and Yumplatok.
+  Language, culture and worldview.
+**Practice questions**
+  Give three causes of the decline of Aboriginal languages.
+    Dispossession and violence breaking up communities; missions banning the use of traditional languages; the Stolen Generations separating children from their families and languages (also English-only schooling).
+  Explain two cultural effects of language loss.
+    Loss of knowledge encoded in the language, such as law, kinship and knowledge of Country; and loss of identity and connection, contributing to intergenerational trauma.
+  Why is Aboriginal English described as a variety rather than "incorrect English"?
+    It has consistent, rule-governed features in its sounds, grammar, vocabulary and pragmatics, and it expresses Aboriginal culture and identity.
+  What did NILS4 (2026) find?
+    177 Aboriginal and Torres Strait Islander languages are spoken or used and 113 are being revived, but 24 have no speakers under 20.
+**Flashcards**
+  About how many Aboriginal and Torres Strait Islander languages were spoken before colonisation? :: About 250 (with 800+ dialects).
+  How many traditional languages were still learned by children as a first language (NILS3)? :: 12.
+  "deadly" in Aboriginal English means… :: Excellent.
+  "mob" in Aboriginal English means… :: Family or community group.
+  "I been go" shows "been" used as a {{past}} marker.
+  Why can silence be respectful in Aboriginal English conversation? :: Silence is a normal part of conversation, and direct questioning can be intrusive.
+  Name one policy that caused language loss. :: Missions banning traditional languages (also the Stolen Generations).
+  How many languages were in revival according to NILS4? :: 113.
+
+@ 835f1945 U2.2.1.8 | Metalanguage for the global spread of English
+**In a sentence**
+  Discussing English around the world means using its terms precisely — circles, varieties, pidgins and creoles, lingua franca, maintenance, shift, reclamation and worldview — each with a named example.
+**Key terms**
+  **Language contact**: speakers of different languages interacting, leading to influence and change.
+  **Global English**: English as used worldwide for international communication.
+  **Linguistic imperialism**: the view that the spread of English serves the interests of powerful English-speaking countries at others' expense.
+**Terms to control**
+  Spread: colonisation, world/global language, Kachru's inner, outer and expanding circles, ENL/ESL/EFL.
+  Varieties: national, regional, ethnic variety, World Englishes, Standard Australian English, Aboriginal English.
+  Contact languages: pidgin, creole, lexifier, substrate, creolisation.
+  Global use: lingua franca, ELF, intelligibility.
+  Culture: worldview, linguistic relativity, representation, kinship terms.
+  Language health: maintenance, shift, reclamation (revival, reawakening), loss, language death, sleeping language, intergenerational transmission.
+  Unit 2 table terms: borrowings, neologism, commonisation, etymology, semantic change.
+**Using it well**
+  Always give a named example: not "a creole" but "Kriol, spoken across northern Australia".
+  Describe varieties neutrally: "non-standard", "variety", not "broken".
+**Worked example**
+  Rewrite with metalanguage: "English has taken over and wiped out lots of languages."
+    "The spread of English through colonisation and globalisation has contributed to language shift and loss, particularly for Aboriginal and Torres Strait Islander languages, though maintenance and reclamation efforts such as the Kaurna revival are reversing some of this."
+**Going deeper**
+  Robert Phillipson's idea of linguistic imperialism is debated: critics argue many people choose English for their own benefit and reshape it as their own variety.
+**Common mistakes**
+  Using "slang" or "dialect" loosely for any variety.
+  Making claims about "all Indigenous languages" without examples.
+**Exam tips**
+  Keep a glossary with an Australian and an international example for each term.
+**Connections**
+  All learning points in this area.
+  Metalanguage for language change (Area of Study 1).
+**Practice questions**
+  What is linguistic imperialism, and what is one criticism of the idea?
+    The view that English spreads in ways that benefit powerful English-speaking nations and disadvantage other languages. Critics say many people choose English freely for their own benefit and make it their own.
+  Rewrite "Tok Pisin is bad English" using metalanguage.
+    "Tok Pisin is an English-lexified creole with its own grammar and native speakers; it is an official language of Papua New Guinea."
+**Flashcards**
+  What is language contact? :: Speakers of different languages interacting, leading to influence and change.
+  What is linguistic imperialism? :: The view that English spreads in ways that benefit powerful English-speaking nations at others' expense.
+  Neutral term instead of "broken English"? :: Variety, or non-standard variety.
+  A creole's vocabulary comes mainly from its {{lexifier}}.
+  What is a "sleeping" language? :: A language no longer spoken but able to be reawakened — preferred to "dead".
+  Name three terms for language health. :: Maintenance, shift, reclamation (also loss, death).
+  Why name specific examples? :: General claims need evidence, e.g. "Kriol" not "a creole".
+
+@ 69a3ebd6 U2.2.2.1 | Using world English concepts
+**In a sentence**
+  This skill is applying concepts like the three circles, varieties, lingua franca and linguistic imperialism to explain how and why English developed as a world language.
+**Key terms**
+  **Concept**: an idea used to explain examples (e.g. the outer circle).
+  **Application**: using a concept to explain a specific case.
+**How to do it**
+  Identify the country or situation and the relevant concept.
+  Explain the historical and contemporary factors.
+  Give language evidence (features, domains of use).
+**Going deeper**
+  Concepts are tools, not boxes: a country can fit several (Singapore is outer circle, with English a lingua franca between its ethnic groups and increasingly a home language).
+**Worked example**
+  Apply the concepts to Nigeria.
+    Outer circle: English came with British colonisation and is an official language.
+    Lingua franca: with over 500 languages in Nigeria, English is a neutral link between groups.
+    Variety: Nigerian English has its own features ("flash" for a missed call; "go-slow" for a traffic jam).
+**Connections**
+  How English became a world language.
+  English as a lingua franca.
+**Practice questions**
+  Why is English useful as a lingua franca in a multilingual country like Nigeria?
+    It provides a neutral common language between speakers of hundreds of different languages, avoiding favouring one ethnic group's language.
+  Which circle is Japan in, and why?
+    The expanding circle: English is learned as a foreign language rather than used as an official or first language.
+**Flashcards**
+  Which circle is Nigeria in? :: The outer circle.
+  Why is English a neutral lingua franca in Nigeria? :: It doesn't favour any one of Nigeria's many ethnic languages.
+  Japan is in the {{expanding}} circle.
+  What does "go-slow" mean in Nigerian English? :: A traffic jam.
+
+@ c4e4d3a7 U2.2.2.2 | Analysing varieties across the subsystems
+**In a sentence**
+  This skill is using the subsystems of language to analyse written and spoken texts in different varieties of English.
+**Key terms**
+  **Text**: any piece of spoken or written language used as evidence.
+  **Feature**: a specific language item that shows something about the variety.
+**How to do it**
+  Establish the variety and context (who, where, purpose).
+  Work through phonology (if spoken), morphology, lexicology, syntax, semantics, discourse and pragmatics.
+  For each feature: quote, name, compare with SAE if helpful, explain (contact, culture, identity).
+**Going deeper**
+  Compare with SAE only to describe a difference, not to judge — "the copula is absent where SAE uses 'is'".
+**Worked example**
+  Analyse the Aboriginal English utterance "My mob been go to the footy, deadly game!"
+    Lexis: "mob" (family or community group); "deadly" (excellent) — distinctive Aboriginal English meanings.
+    Syntax/morphology: "been go" — "been" marks past tense rather than an inflection on "go".
+    Discourse: an exclamative fragment ("deadly game!") showing enthusiasm.
+    Function: expresses identity and belonging.
+**Connections**
+  English-based varieties.
+  Working with the subsystems (Unit 1).
+**Practice questions**
+  Why should comparisons with SAE be descriptive, not judgemental?
+    Varieties are rule-governed systems; SAE is one variety, not the correct form, so comparison should describe differences without calling them errors.
+  Identify the feature in the Singlish "She very clever".
+    Absence of the copula (SAE "She is very clever") — a syntactic feature shared with Chinese and Malay.
+**Flashcards**
+  What does "copula absence" mean? :: Leaving out "be" as a linking verb, e.g. "He sick".
+  Why establish context before analysing a variety? :: Features are explained by who uses the variety, where and why.
+  "deadly" in Aboriginal English is an example of {{lexical}} difference from SAE.
+  How should you compare a variety with SAE? :: Descriptively — to show difference, not error.
+
+@ 42c5ad63 U2.2.2.3 | Debates about language change and influence
+**In a sentence**
+  This skill is explaining and weighing debates about English — is it a "killer language"? Is Australian English being Americanised? Should Singlish or Aboriginal English be used in schools?
+**Key terms**
+  **Debate**: an issue on which informed people take different positions.
+  **Americanisation**: the influence of American English on other varieties.
+  **Killer language**: a language whose spread is blamed for the loss of other languages.
+**The main debates**
+  English as a killer language vs a tool of opportunity.
+  Americanisation of Australian English ("guys", "awesome", "zee" for Z, "-ize" spellings) vs natural borrowing that Australian English absorbs.
+  Standard English vs local varieties in education (Singapore's Speak Good English Movement; bidialectal education for Aboriginal students).
+  Protecting languages by law (France's rules on English words) vs letting change happen.
+**How to explain a debate**
+  State both positions with their reasons and evidence.
+  Identify underlying attitudes (prescriptive or descriptive; identity; power).
+  Reach a reasoned view.
+**Going deeper**
+  Americanisation fears are old — 19th-century Britons complained about Americanisms that are now standard British English.
+**Worked example**
+  Outline both sides: "American English is ruining Australian English."
+    For: widespread American vocabulary ("guys", "movie"), spellings (-ize) and pronunciations ("zee") through media and the internet.
+    Against: borrowing is natural; Australian English keeps distinctive features (vowels, hypocoristics, "arvo"); many "Americanisms" were once British; Australians choose words for effect.
+    Judgement: influence is real, but Australian English is adapting rather than disappearing.
+**Connections**
+  Prescriptivism and descriptivism (Area of Study 1).
+  English as a lingua franca.
+**Practice questions**
+  Give one argument for and one against the idea that English is a "killer language".
+    For: its spread has contributed to shift away from many local languages, including Aboriginal languages. Against: loss has been driven by policies and power, not the language itself, and people often learn English alongside their languages.
+  Why are fears of Americanisation described as part of the complaint tradition?
+    Similar complaints have been made for centuries about new words and influences, reflecting attitudes rather than evidence of decline.
+**Flashcards**
+  What is Americanisation? :: The influence of American English on other varieties.
+  What does "killer language" mean? :: A language whose spread is blamed for the loss of others.
+  Singapore's {{Speak Good English}} Movement promotes standard English over Singlish.
+  Name an American influence on Australian English. :: "guys", "zee", "-ize" spellings (also "movie", "awesome").
+
+@ 5c6bb460 U2.2.2.4 | Maintenance, shift and loss in practice
+**In a sentence**
+  This skill is using the concepts of maintenance, shift, reclamation, change and loss to analyse real communities and programs.
+**Key terms**
+  **Case study**: a detailed look at one language or community.
+  **Language vitality**: how strong a language is, judged mainly by whether children are learning it.
+**How to do it**
+  Identify the situation: which language, which community, what's happening.
+  Name the process (shift, maintenance, reclamation, loss) with evidence.
+  Explain causes (policy, economics, attitudes) and effects (identity, knowledge, wellbeing).
+  Evaluate responses (schools, media, recognition).
+**Going deeper**
+  The same community can show several processes at once: a language shifting in one generation while being reclaimed by another.
+**Worked example**
+  Apply the concepts to a Greek-Australian family in Melbourne.
+    Maintenance: grandparents speak Greek at home; children attend Greek school and church services in Greek.
+    Shift: the youngest generation uses English with siblings and friends — a typical three-generation shift.
+    Factors: English dominance in school and work; the value placed on Greek identity supports maintenance.
+**Connections**
+  Language maintenance, shift and reclamation.
+  Language loss and Aboriginal and Torres Strait Islander languages.
+**Practice questions**
+  What is the main measure of a language's vitality?
+    Whether children are learning it — intergenerational transmission.
+  Can one community experience shift and maintenance at once? Explain.
+    Yes — older members may maintain the language while younger members shift to English, or a community may lose fluency but begin reclamation.
+**Flashcards**
+  What is language vitality? :: How strong a language is, judged mainly by whether children learn it.
+  A detailed look at one language community is a {{case study}}.
+  Two processes that can occur together in one community? :: Shift and maintenance (or loss and reclamation).
+  What drives most language shift? :: Economic, social and political pressure from a dominant language.

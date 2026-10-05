@@ -10,6 +10,8 @@ import { snapshotBeforeUpgrade } from './db/migrationSafety'
 import { UpgradeBlocked } from './components/UpgradeBlocked'
 import { applyStoredTheme } from './theme'
 import { captureGlobalErrors, logEvent } from './diagnostics'
+import { isSignInResponse } from './sync/files/oneDriveConfig'
+import { isGoogleSignInResponse } from './sync/files/googleDriveConfig'
 
 // Before anything is drawn, so the first paint is already the right theme.
 applyStoredTheme()
@@ -28,6 +30,21 @@ function render(node: ReactNode) {
  * gets a chance to run a query early.
  */
 async function start() {
+  // Back from Google's or Microsoft's sign-in page (file storage): finish that
+  // and put the address back before the router ever sees it.
+  if (isSignInResponse(window.location.search)) {
+    // Inside the hidden frame MSAL uses to renew a sign-in quietly: MSAL reads
+    // the answer from this frame's address itself. Booting the app in here
+    // would start a second copy — syncing, and renewing in frames of its own.
+    if (window.parent !== window) return
+    if (isGoogleSignInResponse(window.location.search)) {
+      const { completeGoogleDriveSignIn } = await import('./sync/files/googleDriveAuth')
+      await completeGoogleDriveSignIn()
+    } else {
+      const { completeOneDriveSignIn } = await import('./sync/files/oneDriveAuth')
+      await completeOneDriveSignIn()
+    }
+  }
   const outcome = await snapshotBeforeUpgrade(db.verno)
   if (outcome.status === 'snapshotted') {
     const { fromVersion, toVersion, counts } = outcome.snapshot

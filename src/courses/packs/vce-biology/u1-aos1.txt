@@ -1,0 +1,643 @@
+% VCE Biology — Unit 1, Area of Study 1: how cells function.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ 114477ad U1.1.1.1 | Prokaryotic and eukaryotic cells
+**In a sentence**
+  Every living thing is made of cells; prokaryotic cells are small and have no nucleus or membrane-bound organelles, while eukaryotic cells keep their DNA in a nucleus and divide their work among organelles.
+**Key terms**
+  **Cell theory**: all living things are made of cells, the cell is the smallest unit of life, and cells only come from pre-existing cells.
+  **Prokaryote**: a single-celled organism with no nucleus and no membrane-bound organelles (bacteria and archaea).
+  **Eukaryote**: an organism whose cells have a nucleus and membrane-bound organelles (protists, fungi, plants, animals).
+  **Nucleoid**: the region of a prokaryotic cell where its single circular chromosome sits.
+  **Plasmid**: a small, extra loop of DNA in many prokaryotes, often carrying genes such as antibiotic resistance.
+  **Organelle**: a structure inside a cell with a specific job, usually surrounded by a membrane.
+**The cell as the unit of life**
+  The cell is the smallest thing that shows all the features of life: it takes in materials, releases energy, grows, responds and reproduces.
+  Some organisms are one cell (bacteria, yeast, Paramecium); others are trillions of cells working together (a human has around 30 trillion).
+  Cell theory grew from microscope work: Hooke named "cells" (1665), Schleiden and Schwann said all plants and animals are made of cells (1830s), and Virchow added that cells come from cells (1855).
+**What every cell has**
+  A **plasma membrane** that controls what enters and leaves.
+  **Cytosol**, the fluid the cell's reactions happen in.
+  **DNA** carrying the cell's instructions.
+  **Ribosomes** that make proteins.
+**Prokaryotic cells**
+  Domains Bacteria and Archaea. Usually about 1–10 µm long.
+  No nucleus: one circular chromosome lies free in the nucleoid region.
+  No membrane-bound organelles. Ribosomes are smaller (70S).
+  Often have plasmids, a cell wall (peptidoglycan in bacteria), and sometimes a capsule, pili or flagella.
+  Divide by binary fission.
+**Eukaryotic cells**
+  Domain Eukarya. Usually about 10–100 µm.
+  DNA is linear chromosomes inside a nucleus bounded by a double membrane.
+  Membrane-bound organelles: mitochondria, endoplasmic reticulum, Golgi apparatus, lysosomes, and chloroplasts in plants.
+  Larger ribosomes (80S) in the cytosol. Divide by mitosis.
+**Plant, animal and fungal cells compared**
+  Plant cells: cellulose cell wall, large central vacuole, chloroplasts, usually a regular box shape.
+  Animal cells: no cell wall, small vacuoles if any, no chloroplasts, centrioles, varied shapes.
+  Fungal cells: cell wall made of chitin, no chloroplasts.
+**Worked example**
+  A cell is 2 µm long, has a cell wall, ribosomes and a single circular chromosome, but no nucleus. Classify it and justify.
+    Prokaryotic: it has no nucleus and its DNA is a single circular chromosome.
+    The small size (2 µm) and lack of membrane-bound organelles fit a bacterium.
+    Having a cell wall does not make it a plant cell — bacteria have walls too, made of peptidoglycan.
+**Going deeper**
+  Mitochondria and chloroplasts have their own circular DNA, 70S ribosomes and a double membrane. This is evidence for endosymbiotic theory: they descend from prokaryotes that were engulfed by an ancestral cell and lived inside it.
+  Archaea look like bacteria under a microscope but differ in their membrane lipids and in many genes — many live in extreme places such as hot springs and salt lakes.
+**Common mistakes**
+  Saying prokaryotes have no DNA or no ribosomes. They have both; they lack a nucleus and membrane-bound organelles.
+  Saying plant cells have no mitochondria. Plant cells respire, so they have mitochondria as well as chloroplasts.
+  Writing that bacterial DNA is "in the nucleus". It is in the nucleoid region, not enclosed by a membrane.
+  Treating "has a cell wall" as proof of a plant cell. Bacteria and fungi also have walls, made of different materials.
+**Exam tips**
+  When comparing, write matched pairs: "prokaryotes have …, whereas eukaryotes have …". One-sided lists rarely get full marks.
+  Name the feature and say where it is: "DNA in a membrane-bound nucleus" beats "has a nucleus".
+**Connections**
+  Surface area to volume ratio explains why prokaryotes stay small and eukaryotes need organelles.
+  Organelles: the structures that make eukaryotic cells different.
+  Binary fission and the eukaryotic cell cycle: how each type of cell divides.
+**Practice questions**
+  State the three parts of cell theory.
+    All living things are made of one or more cells; the cell is the smallest unit of life; all cells come from pre-existing cells.
+  Give three differences between a prokaryotic and a eukaryotic cell.
+    Prokaryotes have no nucleus (DNA in a nucleoid), eukaryotes have a membrane-bound nucleus. Prokaryotes lack membrane-bound organelles, eukaryotes have them (e.g. mitochondria). Prokaryotic DNA is one circular chromosome (often plus plasmids), eukaryotic DNA is several linear chromosomes. Also: prokaryotes are smaller and have smaller (70S) ribosomes.
+  A student sees a cell with a cell wall, a large central vacuole and chloroplasts. Which kingdom is it most likely from, and why can't a bacterium be ruled out on the wall alone?
+    A plant: the vacuole and chloroplasts are plant features. Bacteria also have cell walls (peptidoglycan), so the wall alone doesn't decide it; the organelles do.
+  Explain why the presence of mitochondria in both plant and animal cells makes sense.
+    Both kinds of cell need ATP from aerobic respiration. Plants make glucose by photosynthesis but still have to respire it in mitochondria to release usable energy.
+**Flashcards**
+  Name the four structures every cell has. :: Plasma membrane, cytosol, DNA and ribosomes.
+  Where is the DNA of a prokaryotic cell? :: In the nucleoid region, as one circular chromosome (plus any plasmids) — not in a nucleus.
+  Prokaryotes belong to the domains {{Bacteria}} and {{Archaea}}.
+  What is a plasmid? :: A small extra loop of DNA in many prokaryotes, often carrying genes such as antibiotic resistance.
+  What is the cell wall made of in plants, fungi and bacteria? :: Plants cellulose, fungi chitin, bacteria peptidoglycan.
+  Why is having your own DNA evidence that mitochondria were once bacteria? :: Like bacteria they have circular DNA, 70S ribosomes and divide on their own — fitting descent from engulfed prokaryotes (endosymbiosis).
+  Classify: 3 µm, cell wall, no nucleus, circular DNA. :: Prokaryotic (a bacterium or archaeon).
+
+@ 50c759ce U1.1.1.2 | Surface area to volume ratio
+**In a sentence**
+  As a cell grows its volume rises faster than its surface area, so it can no longer exchange materials fast enough — which is why cells stay small, change shape, or split their work into organelles.
+**Key terms**
+  **Surface area to volume ratio (SA:V)**: a cell's surface area divided by its volume.
+  **Diffusion distance**: how far a substance must travel to reach the part of the cell that needs it.
+  **Compartmentalisation**: dividing the inside of a cell into membrane-bound organelles, each with its own conditions and job.
+  **Microvilli**: tiny finger-like folds of the plasma membrane that increase surface area.
+**Why SA:V falls as cells grow**
+  Surface area grows with the square of the length; volume grows with the cube.
+  For a cube of side l: SA = 6l², V = l³, so SA:V = 6 ÷ l. Double the side and the ratio halves.
+  A 1 cm cube has SA:V of 6 : 1; a 2 cm cube 3 : 1; a 3 cm cube 2 : 1.
+**Why it limits cell size**
+  A cell's **demand** — how much oxygen and glucose it uses and how much waste it makes — depends on its volume (the amount of cytoplasm doing reactions).
+  Its **supply** — how fast materials cross in and out — depends on its surface area (the membrane).
+  As the cell grows, demand outstrips supply, and the distance from the membrane to the centre gets too long for diffusion to keep up.
+  So most cells divide before they get too big, keeping SA:V high.
+**How cells get around it**
+  Stay small and divide (most cells are 10–100 µm).
+  Change shape: flattened cells (squamous epithelium lining alveoli), long thin cells (neurons, root hair cells).
+  Fold the membrane: microvilli on the epithelial cells lining the small intestine; root hairs on roots.
+  **Compartmentalise**: organelles let a large eukaryotic cell keep enzymes and reactants concentrated in small spaces, keep incompatible reactions apart (a lysosome's digestive enzymes away from the cytosol), and add huge areas of internal membrane (mitochondrial cristae, chloroplast thylakoids) where reactions happen.
+**Worked example**
+  Compare the SA:V of cubes with sides 1 cm and 4 cm.
+    1 cm cube: SA = 6 × 1² = 6 cm²; V = 1³ = 1 cm³; SA:V = 6 : 1 (6 cm⁻¹).
+    4 cm cube: SA = 6 × 4² = 96 cm²; V = 4³ = 64 cm³; SA:V = 96 ÷ 64 = 1.5 : 1.
+    The larger cube has a quarter of the SA:V, so each cm³ of its inside is served by a quarter as much surface.
+    Sense check: SA:V = 6 ÷ l gives 6 and 1.5. ✓
+**Going deeper**
+  The same idea works at every scale. Large animals can't rely on diffusion through their skin, so they have lungs, gills and a gut with enormous folded surfaces, plus a circulatory system to shorten diffusion distances.
+  Small mammals (a pygmy possum) lose heat faster than large ones (a kangaroo) because of their higher SA:V — links to thermoregulation.
+**Worked example 2**
+  In a prac, agar cubes containing phenolphthalein (pink) are soaked in dilute acid for 10 minutes. The acid turns the agar colourless as it diffuses in. Predict which cube loses the most colour as a percentage of its volume, and explain.
+    The smallest cube. Acid diffuses in the same distance from every face in every cube, but in a small cube that distance covers a larger fraction of the volume, because it has the highest SA:V.
+**Common mistakes**
+  Saying a larger cell has "more surface area, so it exchanges better". It has more in total but less per unit of volume — it's the ratio that matters.
+  Mixing up units: surface area is in cm² (or µm²), volume in cm³; the ratio can be written as x : 1 or in cm⁻¹.
+  Forgetting the second half of the explanation: you need both "demand depends on volume" and "supply depends on surface area".
+**Exam tips**
+  A full explanation links three things: SA:V decreases as size increases → rate of exchange per unit volume falls → the cell can't meet its needs or remove wastes fast enough.
+  Show working for SA and V separately before dividing.
+**Connections**
+  Prokaryotic and eukaryotic cells: why bacteria can manage without organelles.
+  Organelles: cristae and thylakoids are internal surface area.
+  The plasma membrane: exchange across it is what SA:V limits.
+  Plant tissues and water: root hair cells and leaf shape use high SA:V.
+**Practice questions**
+  Calculate the SA:V of a cube-shaped cell with sides of 10 µm.
+    SA = 6 × 10² = 600 µm²; V = 10³ = 1000 µm³; SA:V = 600 ÷ 1000 = 0.6 : 1 (0.6 µm⁻¹).
+  Explain why a cell divides rather than growing indefinitely.
+    As it grows, volume increases faster than surface area, so SA:V falls. The cell's needs (set by volume) would outstrip the rate at which the membrane (surface area) can take in nutrients and remove wastes. Dividing restores a high SA:V.
+  Explain how microvilli on cells lining the small intestine help them absorb nutrients.
+    Microvilli fold the plasma membrane, greatly increasing surface area without much extra volume. A higher SA:V means more nutrients can cross the membrane per second.
+  Give two ways compartmentalisation helps a large eukaryotic cell.
+    It keeps enzymes and substrates concentrated in small volumes so reactions run efficiently, and it separates reactions that would interfere (e.g. lysosomal enzymes kept away from the cytosol). Internal membranes also add surface area for reactions.
+**Flashcards**
+  For a cube of side l, what is SA:V? :: 6 ÷ l — it halves every time the side doubles.
+  As a cell grows, its volume increases {{faster}} than its surface area, so SA:V {{decreases}}.
+  Why does a low SA:V limit a cell? :: Its needs (set by volume) outstrip the rate of exchange across its membrane (set by surface area).
+  SA:V of a 2 cm cube? :: SA 24 cm², V 8 cm³, so 3 : 1.
+  Name two cell shapes or features that increase SA:V. :: Flattened or long thin cells; membrane folds such as microvilli or root hairs.
+  How does compartmentalisation help a large cell? :: Organelles concentrate enzymes, separate incompatible reactions and add internal membrane surface.
+  SA:V of a 1 cm cube vs a 3 cm cube? :: 6 : 1 vs 2 : 1.
+
+@ 6f05e398 U1.1.1.3 | Organelles and their functions
+**In a sentence**
+  Each organelle's structure suits its job, and a cell's mix of organelles matches what it specialises in — chloroplasts capture light energy to make glucose, and mitochondria release that energy as ATP.
+**Key terms**
+  **Organelle**: a structure within a cell with a specific function.
+  **Mitochondrion**: double-membraned organelle where aerobic cellular respiration makes most of the cell's ATP.
+  **Chloroplast**: double-membraned organelle in plant and algal cells where photosynthesis makes glucose.
+  **Cristae**: the folds of a mitochondrion's inner membrane.
+  **Thylakoids**: flattened membrane sacs inside a chloroplast, stacked into grana, holding chlorophyll.
+  **Stroma**: the fluid inside a chloroplast around the thylakoids.
+  **Matrix**: the fluid inside a mitochondrion's inner membrane.
+**Control and protein-making organelles**
+  **Nucleus**: double membrane (nuclear envelope) with pores; holds the DNA and controls the cell by deciding which proteins are made. The **nucleolus** inside makes ribosomal RNA and assembles ribosomes.
+  **Ribosomes**: made of RNA and protein, no membrane; build proteins. Free ribosomes make proteins used in the cytosol; ribosomes on rough ER make proteins for export or for membranes.
+  **Rough endoplasmic reticulum**: a network of membrane channels studded with ribosomes; folds and transports new proteins.
+  **Smooth endoplasmic reticulum**: no ribosomes; makes lipids and steroid hormones, and detoxifies drugs (abundant in liver cells).
+  **Golgi apparatus**: a stack of flattened membrane sacs; modifies, sorts and packages proteins into vesicles.
+  **Vesicles**: small membrane sacs that carry substances around the cell and to the membrane.
+**Breakdown, storage and support**
+  **Lysosomes** (mainly in animal cells): vesicles of digestive (hydrolytic) enzymes that break down worn-out organelles and engulfed material.
+  **Vacuole**: in plants, one large central vacuole surrounded by a membrane (tonoplast) that stores water and solutes and keeps the cell firm (turgid). Animal cells have small, temporary vacuoles.
+  **Cell wall** (plants): cellulose layer outside the membrane that supports the cell and stops it bursting.
+  **Cytoskeleton**: protein fibres (microtubules and microfilaments) that give shape, move organelles and form the spindle during division.
+  **Centrioles** (animal cells): pairs of microtubule cylinders that help organise the spindle.
+**Mitochondria**
+  Structure: outer membrane; highly folded inner membrane (cristae); fluid matrix; their own circular DNA and ribosomes.
+  Function: aerobic cellular respiration. Glucose + oxygen → carbon dioxide + water, releasing energy that is stored in ATP.
+  The cristae give a large surface area for the enzymes of the final stage, so more ATP is made.
+  Found in both plant and animal cells; numerous in very active cells — muscle cells, sperm (in the midpiece), and root hair cells that actively pump ions.
+**Chloroplasts**
+  Structure: double membrane; thylakoid membranes stacked into grana (holding chlorophyll); fluid stroma; their own DNA and ribosomes; often starch grains.
+  Function: photosynthesis. Carbon dioxide + water → glucose + oxygen, using light energy absorbed by chlorophyll.
+  The light-dependent stage happens on the thylakoid membranes; the light-independent stage (making glucose) happens in the stroma.
+  Found only in plants and algae, and mostly in leaf palisade mesophyll cells near the upper surface where light is strongest.
+**The protein secretion pathway**
+  How a cell makes and exports a protein such as a digestive enzyme or insulin:
+    1. The gene's instructions leave the nucleus.
+    2. Ribosomes on the rough ER build the protein, which enters the ER.
+    3. A transport vesicle carries it to the Golgi apparatus.
+    4. The Golgi modifies and packages it into a secretory vesicle.
+    5. The vesicle fuses with the plasma membrane and releases the protein by exocytosis.
+**Specialised cells have matching organelles**
+  Muscle cells and sperm: many mitochondria (lots of ATP for movement).
+  Pancreatic cells that secrete enzymes or insulin: lots of rough ER, Golgi and vesicles.
+  Palisade mesophyll cells: many chloroplasts.
+  Liver cells: lots of smooth ER (detoxification) and mitochondria.
+  White blood cells (phagocytes): many lysosomes to digest engulfed bacteria.
+  Root hair cells: no chloroplasts (underground), many mitochondria.
+**Worked example**
+  A cell from the pancreas makes large amounts of a digestive enzyme. Predict which organelles are abundant and explain.
+    Rough ER — its ribosomes build the enzyme (a protein) and it transports it.
+    Golgi apparatus — modifies and packages the enzyme into vesicles.
+    Secretory vesicles — carry the enzyme to the membrane for exocytosis.
+    Mitochondria — supply the ATP needed for protein synthesis and exocytosis.
+**Going deeper**
+  Chloroplasts and mitochondria are partners: the glucose and oxygen made by photosynthesis are the inputs of respiration, and respiration's carbon dioxide and water are the inputs of photosynthesis. The detailed stages are Unit 3.
+  Both organelles have double membranes, their own DNA and 70S ribosomes, and divide on their own — the evidence for endosymbiotic theory.
+**Common mistakes**
+  "Mitochondria make energy." Energy can't be made; mitochondria transfer the energy in glucose into ATP.
+  "Plants have chloroplasts instead of mitochondria." They have both.
+  Saying ribosomes have a membrane. They don't — that's why prokaryotes can have them.
+  Confusing the cell wall (outside, cellulose, support) with the plasma membrane (inside it, controls entry and exit).
+**Exam tips**
+  For "explain how structure suits function", name a structural feature and link it to the job: "the inner membrane is folded into cristae, giving a larger surface area for the enzymes of respiration, so more ATP can be produced".
+  In a secretion pathway question, give the organelles in order and say what each does.
+**Connections**
+  Prokaryotic and eukaryotic cells: organelles are what prokaryotes lack.
+  The plasma membrane and transport: exocytosis ends the secretion pathway.
+  Plant tissues and water: palisade cells, guard cells and root hair cells.
+  Homeostasis: insulin and glucagon are secreted by exactly this pathway.
+**Practice questions**
+  Describe two structural features of a mitochondrion and explain how each helps it function.
+    The inner membrane is folded into cristae, giving a large surface area for respiratory enzymes, so more ATP is made. It has its own DNA and ribosomes, so it can make some of its own proteins and divide when the cell needs more ATP.
+  Explain why palisade mesophyll cells have many more chloroplasts than root cells.
+    Palisade cells are near the upper leaf surface where light is strongest, so many chloroplasts maximise photosynthesis. Root cells are underground with no light, so chloroplasts would be useless there.
+  Outline the pathway by which a cell makes and secretes a protein hormone.
+    Ribosomes on the rough ER make the protein, which enters the ER; a vesicle takes it to the Golgi, which modifies and packages it into a secretory vesicle; the vesicle fuses with the plasma membrane and releases it by exocytosis.
+  Sperm cells have many mitochondria packed into their midpiece. Suggest why.
+    The tail needs a lot of ATP to move the sperm towards the egg, and mitochondria produce ATP by aerobic respiration; packing them next to the tail supplies it efficiently.
+**Flashcards**
+  Function of the rough ER? :: Its ribosomes make proteins, which it folds and transports (often for export).
+  Function of the Golgi apparatus? :: Modifies, sorts and packages proteins into vesicles for secretion or use in the cell.
+  Function of lysosomes? :: Contain digestive enzymes that break down worn-out organelles and engulfed material.
+  In a chloroplast, chlorophyll sits on the {{thylakoid}} membranes, which are stacked into {{grana}}.
+  Why is the inner membrane of a mitochondrion folded into cristae? :: To give a large surface area for the enzymes of aerobic respiration, so more ATP is made.
+  Word equation for photosynthesis? :: Carbon dioxide + water → glucose + oxygen (using light energy absorbed by chlorophyll).
+  Word equation for aerobic respiration? :: Glucose + oxygen → carbon dioxide + water, releasing energy stored as ATP.
+  Name three organelles found in plant cells but not animal cells. :: Cell wall, chloroplasts, large central vacuole.
+
+@ 534ecf65 U1.1.1.4 | The plasma membrane and transport
+**In a sentence**
+  The plasma membrane is a fluid phospholipid bilayer studded with proteins: small hydrophobic molecules slip straight through it, while water, ions and large hydrophilic molecules need protein channels and carriers — passively down a gradient, or by active transport against one.
+**Key terms**
+  **Fluid mosaic model**: the membrane as a moving bilayer of phospholipids with proteins scattered through it.
+  **Hydrophilic**: attracted to water (polar or charged) — e.g. glucose, ions.
+  **Hydrophobic**: repelled by water (non-polar) — e.g. oxygen, lipids, steroid hormones.
+  **Selectively permeable**: lets some substances through and not others.
+  **Diffusion**: net movement of particles from a region of higher to lower concentration.
+  **Facilitated diffusion**: diffusion through a channel or carrier protein, with no energy used.
+  **Osmosis**: net movement of water across a selectively permeable membrane from a region of lower solute concentration to one of higher solute concentration.
+  **Active transport**: movement against the concentration gradient through a carrier protein, using energy from ATP.
+**Structure: the fluid mosaic model**
+  **Phospholipids** form two layers. Their phosphate heads are hydrophilic and face the watery fluid on each side; their fatty-acid tails are hydrophobic and point inwards, away from water.
+  **Proteins** float in the bilayer: channel proteins (pores), carrier proteins (change shape to move a substance), receptor proteins, and enzymes.
+  **Cholesterol** (animal cells) sits between phospholipids and keeps the membrane stable across temperatures.
+  **Glycoproteins and glycolipids** (with carbohydrate chains) act as recognition markers — how the immune system knows "self".
+  "Fluid" because the molecules move around; "mosaic" because the proteins are scattered like tiles.
+**Which substances cross how**
+  Small, non-polar (hydrophobic) molecules dissolve in the lipid core and cross by **simple diffusion**: O₂, CO₂, steroid hormones, alcohol.
+  Ions and large polar (hydrophilic) molecules are blocked by the hydrophobic core and need proteins: Na⁺, K⁺, Cl⁻, glucose, amino acids.
+  **Water** is small and polar: a little squeezes through the bilayer, but most crosses quickly through channel proteins called **aquaporins**.
+**Passive transport — no ATP, down the gradient**
+  **Simple diffusion**: straight through the bilayer.
+  **Facilitated diffusion**: through channel proteins (e.g. ion channels, aquaporins) or carrier proteins (e.g. glucose transporters).
+  **Osmosis**: water moves from a dilute solution (lower solute, higher free water) to a concentrated one (higher solute).
+  Diffusion is faster with a steeper concentration gradient, higher temperature, larger surface area and shorter distance.
+**Tonicity — describing a solution compared with the cell**
+  **Hypotonic** solution (lower solute than the cell): water enters. Animal cells swell and may burst (lyse). Plant cells become **turgid** — the wall stops them bursting.
+  **Isotonic** solution (equal): no net water movement.
+  **Hypertonic** solution (higher solute than the cell): water leaves. Animal cells shrivel (crenate). Plant cells become **flaccid**, then **plasmolysed** — the membrane pulls away from the wall.
+**Active transport — ATP, against the gradient**
+  A specific carrier ("pump") protein uses energy from ATP to move a substance from low to high concentration.
+  Examples: the sodium–potassium pump (3 Na⁺ out, 2 K⁺ in) in nerve cells; root hair cells taking in nitrate ions from dilute soil water; the gut absorbing the last of the glucose.
+  Cells doing a lot of active transport have many mitochondria.
+**Bulk transport — for very large particles (also uses ATP)**
+  **Endocytosis**: the membrane folds in around material and pinches off a vesicle — phagocytosis for solids (a white blood cell engulfing a bacterium), pinocytosis for fluid.
+  **Exocytosis**: a vesicle fuses with the membrane and releases its contents (secreting insulin or digestive enzymes).
+**Worked example**
+  Potato strips were soaked in sucrose solutions for 1 hour. The strip in 0.0 M sucrose went from 2.00 g to 2.24 g. Calculate the percentage change in mass and explain it.
+    Change = 2.24 − 2.00 = 0.24 g.
+    Percentage change = 0.24 ÷ 2.00 × 100 = +12%.
+    Pure water is hypotonic to the potato cells, so water entered the cells by osmosis and the mass increased.
+    Sense check: a gain in dilute solution is expected; a loss would appear in concentrated sucrose.
+**Going deeper**
+  Channel proteins are specific: a potassium channel won't let sodium through, and aquaporins pass water but not ions. That specificity is how the kidney controls water reabsorption with ADH.
+  Water potential is the formal way to describe osmosis (water moves from higher to lower water potential); VCE accepts the solute-concentration description.
+**Worked example 2**
+  Oxygen and glucose both enter a muscle cell. Explain why they cross the membrane differently.
+    Oxygen is small and non-polar, so it dissolves in the hydrophobic core and crosses by simple diffusion.
+    Glucose is large and polar (hydrophilic), so the hydrophobic core repels it; it needs a carrier protein (facilitated diffusion down its gradient).
+**Common mistakes**
+  "Water moves to where there is more water." It's the reverse: water moves towards the higher solute concentration.
+  "Osmosis is the movement of solute." Osmosis is only ever water.
+  "Facilitated diffusion uses energy because it uses a protein." Proteins don't make it active; only moving against the gradient with ATP does.
+  Calling a solution hypertonic without saying compared with what. Tonicity always compares a solution to the cell.
+  Saying a plant cell bursts in pure water. The cell wall prevents bursting — it becomes turgid.
+**Exam tips**
+  For osmosis, write the full chain: which side has the higher solute concentration → net movement of water by osmosis from … to … → effect on the cell.
+  Say "net movement" and "down/against the concentration gradient" — these are the words markers look for.
+  If a question says energy or ATP is used, the answer is active transport (or bulk transport), never diffusion.
+**Connections**
+  Surface area to volume ratio: why exchange across the membrane limits cell size.
+  Organelles: the secretion pathway ends in exocytosis.
+  Plant tissues and water: root hair cells use active transport of ions and osmosis of water.
+  Homeostasis: ADH adds aquaporins to kidney cells; insulin adds glucose carriers to muscle cells.
+**Practice questions**
+  Describe the arrangement of phospholipids in the plasma membrane and explain why they form a bilayer.
+    Two layers, with hydrophilic phosphate heads facing the watery fluid inside and outside the cell and hydrophobic fatty-acid tails facing each other in the middle. Water attracts the heads and repels the tails, so a bilayer is the stable arrangement.
+  Red blood cells placed in a 3% salt solution shrivel. Explain.
+    The 3% solution is hypertonic to the cells (higher solute concentration outside). There is a net movement of water out of the cells by osmosis, so they lose volume and shrivel.
+  Root hair cells absorb nitrate ions from soil where nitrate is less concentrated than inside the cell. Name the process and explain why the cells have many mitochondria.
+    Active transport: nitrate must be moved against its concentration gradient by carrier proteins using ATP. Many mitochondria produce the ATP needed.
+  Distinguish between facilitated diffusion and active transport.
+    Both use membrane proteins. Facilitated diffusion moves substances down their concentration gradient and needs no ATP; active transport moves them against the gradient using ATP.
+**Flashcards**
+  Why can O₂ cross the membrane without help? :: It is small and non-polar, so it dissolves through the hydrophobic core by simple diffusion.
+  Define osmosis. :: Net movement of water across a selectively permeable membrane from lower to higher solute concentration.
+  Water crosses the membrane quickly through channel proteins called {{aquaporins}}.
+  An animal cell in a hypotonic solution… :: gains water by osmosis, swells and may burst.
+  A plant cell in a hypertonic solution… :: loses water, becomes flaccid and then plasmolysed.
+  What makes active transport different from all diffusion? :: It moves substances against the concentration gradient using ATP and a carrier protein.
+  Name the process: a white blood cell engulfs a bacterium. :: Phagocytosis (a type of endocytosis).
+  Percentage change in mass: 5.0 g to 4.6 g. :: −8% ((4.6 − 5.0) ÷ 5.0 × 100).
+
+@ 44aff63e U1.1.2.1 | Binary fission
+**In a sentence**
+  A prokaryote copies its single circular chromosome, grows, and pinches in two, giving two genetically identical cells — fast, simple and with no mitosis.
+**Key terms**
+  **Binary fission**: asexual division of a prokaryotic cell into two genetically identical daughter cells.
+  **Generation time**: the time a population takes to double in number.
+  **Septum**: the new wall and membrane that grows across the middle of a dividing bacterium.
+**The steps**
+  1. The circular chromosome, attached to the plasma membrane, is replicated, starting at one point (the origin).
+  2. The two copies attach to the membrane at different points.
+  3. The cell grows longer, and the growing membrane between the attachment points pulls the copies apart.
+  4. The membrane and wall pinch inwards across the middle, forming a septum.
+  5. The cell splits into two daughter cells, each with a full copy of the chromosome. Plasmids are copied and shared too.
+**Why it's fast**
+  One small chromosome, no nucleus to break down and rebuild, and no spindle.
+  In ideal conditions E. coli divides about every 20 minutes. Numbers grow exponentially: after n generations one cell becomes 2ⁿ.
+**How it differs from mitosis**
+  No nucleus, no condensed chromosomes, no spindle fibres, no prophase–metaphase–anaphase–telophase.
+  Mitosis in eukaryotes separates many linear chromosomes; binary fission separates one circular chromosome.
+**Worked example**
+  A bacterium divides every 20 minutes. How many cells will there be after 3 hours if one cell starts and conditions stay ideal?
+    Number of generations = 180 min ÷ 20 min = 9.
+    Cells = 2⁹ = 512.
+    Sense check: 2, 4, 8 … doubling nine times from 1 gives 512. ✓
+**Going deeper**
+  Daughter cells are clones, yet bacterial populations still vary: mutations arise during the many rounds of copying, and bacteria can swap genes (for example on plasmids) — the way antibiotic resistance spreads.
+  Mitochondria and chloroplasts divide by a process like binary fission — more evidence of their bacterial origin.
+**Common mistakes**
+  Calling binary fission "mitosis". Mitosis is nuclear division in eukaryotes; prokaryotes have no nucleus.
+  Saying binary fission creates variation. The daughters are genetically identical; variation comes only from mutation or gene transfer.
+  Forgetting that the DNA is copied before the cell divides.
+**Exam tips**
+  When comparing with mitosis, write matched pairs: "binary fission separates one circular chromosome, whereas mitosis separates many linear chromosomes".
+  For growth calculations, find the number of generations first (time ÷ generation time), then use 2ⁿ.
+**Connections**
+  Prokaryotic and eukaryotic cells: why prokaryotes can divide this simply.
+  The eukaryotic cell cycle: the more complex process eukaryotes use.
+  Asexual reproduction (Unit 2): binary fission is asexual reproduction in single-celled organisms.
+**Practice questions**
+  Describe the process of binary fission.
+    The circular chromosome is replicated and the two copies attach to the membrane. The cell elongates, separating the copies, then the membrane and wall pinch in across the middle, producing two genetically identical cells.
+  Give two ways binary fission differs from mitosis.
+    Binary fission has no nucleus to divide and no spindle; it copies and separates one circular chromosome, whereas mitosis separates many linear chromosomes through distinct phases (prophase to telophase).
+  A culture starts with 100 bacteria that divide every 30 minutes. How many are there after 2 hours?
+    4 generations, so 100 × 2⁴ = 1600 bacteria.
+**Flashcards**
+  What kind of cell divides by binary fission? :: Prokaryotic cells (bacteria and archaea).
+  Binary fission produces two {{genetically identical}} daughter cells.
+  First step of binary fission? :: The circular chromosome is replicated.
+  Why is binary fission faster than mitosis? :: One small circular chromosome, no nucleus to break down and no spindle to build.
+  One bacterium, 20-minute generation time: cells after 2 hours? :: 2⁶ = 64.
+  Is binary fission sexual or asexual reproduction? :: Asexual — one parent, genetically identical offspring.
+  What happens to plasmids in binary fission? :: They are copied and shared between the daughter cells.
+
+@ 7193e191 U1.1.2.2 | The cell cycle, mitosis and cytokinesis
+**In a sentence**
+  A eukaryotic cell spends most of its life in interphase growing and copying its DNA, then divides its nucleus by mitosis (prophase, metaphase, anaphase, telophase) and its cytoplasm by cytokinesis, making two identical cells.
+**Key terms**
+  **Cell cycle**: the sequence of growth, DNA replication and division a eukaryotic cell goes through.
+  **Interphase**: the stage between divisions — G1, S and G2.
+  **Mitosis**: division of the nucleus into two genetically identical nuclei.
+  **Cytokinesis**: division of the cytoplasm into two cells.
+  **Chromatid**: one of the two identical copies of a replicated chromosome.
+  **Centromere**: the point where two sister chromatids are held together.
+  **Spindle**: fibres of microtubules that attach to chromosomes and move them.
+  **Checkpoint**: a point in the cycle where the cell checks conditions before going on.
+**Interphase (about 90% of the cycle)**
+  **G1** (gap 1): the cell grows, makes proteins and organelles, and carries out its normal jobs.
+  **S** (synthesis): DNA is replicated. Each chromosome becomes two identical sister chromatids joined at the centromere.
+  **G2** (gap 2): more growth; the cell makes the proteins and organelles needed for division.
+  **G0**: cells that stop dividing leave the cycle here (most mature nerve and muscle cells).
+**Mitosis — the four sub-phases**
+  **Prophase**: chromatin coils up (condenses) so chromosomes become visible, each as two chromatids; the nuclear membrane and nucleolus break down; the spindle forms from the poles.
+  **Metaphase**: spindle fibres attach at each centromere, and the chromosomes line up single-file across the middle (the equator or metaphase plate).
+  **Anaphase**: the centromeres split and the sister chromatids are pulled to opposite poles — each is now a chromosome.
+  **Telophase**: chromosomes arrive at the poles and uncoil; a nuclear membrane forms around each set; the spindle breaks down.
+  Memory aid: **PMAT** — Prophase, Metaphase, Anaphase, Telophase.
+**Cytokinesis**
+  **Animal cells**: a ring of protein fibres (microfilaments) under the membrane contracts, forming a **cleavage furrow** that pinches the cell in two.
+  **Plant cells**: the rigid wall can't pinch in. Vesicles from the Golgi gather at the equator and fuse into a **cell plate**, which grows outwards to become the new cell wall and membranes.
+  Plant cells also have no centrioles, but they still build a spindle.
+**Regulation — the checkpoints**
+  **G1 checkpoint**: is the cell big enough, are there enough nutrients, and is the DNA undamaged?
+  **G2 checkpoint**: has all the DNA been copied correctly?
+  **Spindle (M) checkpoint**: is every chromosome attached to the spindle before anaphase starts?
+  Proteins called cyclins drive the cell through the cycle. Proteins such as p53 stop the cycle — and can trigger apoptosis — if DNA is damaged.
+**Why mitosis matters**
+  Growth, repair and replacement of cells (skin, gut lining, blood), and asexual reproduction.
+  Both daughter cells have the same number of chromosomes as the parent and are genetically identical to it.
+**Counting chromosomes and chromatids (human cell)**
+  G1: 46 chromosomes, each one chromatid.
+  After S phase: still 46 chromosomes, but 92 chromatids.
+  Anaphase: 92 separate chromosomes moving apart (46 to each pole).
+  Each daughter cell: 46 chromosomes.
+**Worked example**
+  In a root tip, 200 cells were counted: 176 interphase, 12 prophase, 4 metaphase, 3 anaphase, 5 telophase. The cycle takes 24 hours. Estimate how long prophase lasts.
+    Fraction in prophase = 12 ÷ 200 = 0.06.
+    Time ≈ 0.06 × 24 h = 1.44 h ≈ 1.4 hours (about 86 minutes).
+    Mitotic index = (12 + 4 + 3 + 5) ÷ 200 × 100 = 12%.
+    Sense check: interphase 176 ÷ 200 = 88% of the cycle, as expected.
+**Going deeper**
+  Cells in an onion or garlic root tip squash can be counted at each stage. The fraction of cells in a stage is roughly the fraction of time the cycle spends there, which is how we know interphase is so long.
+  The mitotic index = cells dividing ÷ total cells × 100%. A high index means a tissue is growing fast — root tips, or a tumour.
+**Common mistakes**
+  Calling interphase a "resting stage". The cell is busy growing and copying its DNA.
+  Saying DNA replicates in prophase. It replicates in S phase; in prophase it only condenses.
+  Saying cytokinesis is part of mitosis. Mitosis is nuclear division; cytokinesis is the separate division of the cytoplasm.
+  Drawing a cleavage furrow in a plant cell. Plant cells form a cell plate.
+  Mixing up chromosomes and chromatids when counting.
+**Exam tips**
+  Name each stage with one feature you can see: metaphase — chromosomes lined up in the middle; anaphase — chromatids moving to opposite poles.
+  When describing cytokinesis, always compare plant (cell plate) and animal (cleavage furrow) if the question mentions both.
+**Connections**
+  Binary fission: the simpler prokaryotic version.
+  Cancer: what happens when checkpoints fail.
+  Meiosis (Unit 2): a different division that halves chromosome number.
+  Stem cells: divide by mitosis to renew tissues.
+**Practice questions**
+  Describe what happens during metaphase and anaphase of mitosis.
+    Metaphase: spindle fibres attach to the centromeres and the chromosomes line up single-file across the equator. Anaphase: the centromeres split and sister chromatids are pulled to opposite poles of the cell.
+  Compare cytokinesis in plant and animal cells.
+    Animal cells pinch in two when a ring of microfilaments contracts to form a cleavage furrow. Plant cells have a rigid wall, so vesicles fuse at the equator to form a cell plate that grows outward into a new wall.
+  A cell has 16 chromosomes in G1. How many chromosomes and chromatids does it have in G2, and how many chromosomes does each daughter cell get?
+    G2: 16 chromosomes, 32 chromatids. Each daughter cell: 16 chromosomes.
+  Explain the purpose of the G1 checkpoint.
+    It stops the cycle unless the cell is large enough, has enough nutrients and has undamaged DNA, so damaged or unready cells don't divide.
+**Flashcards**
+  Order the stages of the cell cycle. :: G1 → S → G2 → mitosis (prophase, metaphase, anaphase, telophase) → cytokinesis.
+  In which phase is DNA replicated? :: S phase of interphase.
+  In {{metaphase}}, chromosomes line up across the equator; in {{anaphase}}, sister chromatids move to opposite poles.
+  What happens to the nuclear membrane in prophase? :: It breaks down.
+  How does cytokinesis happen in a plant cell? :: Vesicles fuse at the equator to form a cell plate that becomes the new cell wall.
+  What does p53 do if DNA is damaged? :: Halts the cell cycle for repair or triggers apoptosis.
+  Why are the two cells made by mitosis genetically identical? :: DNA is copied exactly in S phase and each daughter receives one of each pair of sister chromatids.
+
+@ b0d55189 U1.1.2.3 | Apoptosis: programmed cell death
+**In a sentence**
+  Apoptosis is a cell's orderly, controlled self-destruction: enzymes called caspases take it apart from the inside, the pieces are packaged into membrane-bound fragments, and phagocytes eat them — with no leaking and no inflammation.
+**Key terms**
+  **Apoptosis**: programmed, regulated cell death.
+  **Caspases**: protease enzymes that, once activated, break down the cell's proteins and dismantle it.
+  **Blebbing**: bulging of the plasma membrane as the cytoskeleton breaks down.
+  **Apoptotic bodies**: membrane-bound fragments of an apoptotic cell.
+  **Necrosis**: uncontrolled cell death caused by injury, toxins or lack of oxygen.
+  **Phagocyte**: a white blood cell (e.g. a macrophage) that engulfs and digests material.
+**Why cells need to die**
+  Shaping the body in development: removing the webbing between fingers and toes; removing a tadpole's tail; pruning extra nerve cells.
+  Removing damaged, infected or mutated cells before they cause harm — a key defence against cancer.
+  Balancing cell numbers: in a healthy tissue, mitosis and apoptosis are matched.
+  Removing immune cells that are no longer needed or that would attack the body's own tissues.
+**Two pathways — both end in caspases**
+  **Intrinsic (mitochondrial) pathway**: signals from inside the cell, such as DNA damage or severe stress. The mitochondria release cytochrome c into the cytosol, which activates caspases. Proteins of the Bcl-2 family decide whether this happens.
+  **Extrinsic (death-receptor) pathway**: a signal from outside. Another cell (e.g. a cytotoxic T cell) releases a death signal molecule that binds a death receptor on the target cell's membrane, activating caspases.
+**The sequence of events**
+  1. The cell receives the signal and caspases are activated.
+  2. Caspases break down proteins; the cell shrinks and the cytoskeleton collapses.
+  3. Chromatin condenses and the DNA is cut into fragments.
+  4. The membrane blebs, and the cell breaks into apoptotic bodies.
+  5. Phagocytes recognise and engulf the apoptotic bodies, recycling the contents.
+**Apoptosis compared with necrosis**
+  Apoptosis: triggered by signals, controlled, the cell shrinks, the contents stay wrapped in membrane, no inflammation, affects single cells.
+  Necrosis: caused by injury or damage, uncontrolled, the cell swells and bursts, contents leak out, triggers inflammation and can damage neighbouring cells.
+**Going deeper**
+  Too little apoptosis lets damaged cells survive (cancer, autoimmune disease). Too much destroys cells that are needed — the loss of nerve cells in neurodegenerative diseases such as Parkinson's involves excess apoptosis.
+  Sunburn: skin cells whose DNA is badly damaged by UV undergo apoptosis and peel off — the body sacrificing cells rather than risk a mutation.
+**Common mistakes**
+  Describing apoptosis as a cell "dying from damage". That's necrosis; apoptosis is a controlled response to a signal.
+  Saying apoptosis causes inflammation. Its contents never leak, so it doesn't.
+  Forgetting the last step: phagocytes engulf the apoptotic bodies.
+**Exam tips**
+  If asked to compare, contrast the trigger, the process and the outcome (inflammation or none).
+  Name the enzymes (caspases) and the two pathways — both are frequent short-answer marks.
+**Connections**
+  The cell cycle: p53 at the checkpoints can trigger apoptosis.
+  Cancer: what happens when apoptosis fails.
+  Stem cells and renewal: tissues stay the same size because division and death are balanced.
+**Practice questions**
+  Explain the difference between the intrinsic and extrinsic pathways of apoptosis.
+    The intrinsic pathway starts inside the cell (e.g. DNA damage): mitochondria release cytochrome c, activating caspases. The extrinsic pathway starts outside: a signal molecule binds a death receptor on the membrane, activating caspases. Both end with caspases dismantling the cell.
+  Give two reasons apoptosis is important in a healthy organism.
+    It shapes structures during development (e.g. separating fingers) and removes damaged or mutated cells that could become cancerous. It also balances cell division so tissues stay the right size.
+  Explain why apoptosis does not cause inflammation but necrosis does.
+    In apoptosis the cell's contents are packaged in membrane-bound apoptotic bodies that phagocytes engulf, so nothing leaks. In necrosis the cell swells and bursts, releasing its contents, which triggers an inflammatory response.
+**Flashcards**
+  Define apoptosis. :: Programmed, regulated cell death.
+  What enzymes carry out apoptosis? :: Caspases (proteases that break down the cell's proteins).
+  In the intrinsic pathway, mitochondria release {{cytochrome c}}.
+  What starts the extrinsic pathway? :: A signal molecule binding a death receptor on the cell's surface.
+  What removes apoptotic bodies? :: Phagocytes, such as macrophages.
+  Why is apoptosis a defence against cancer? :: Cells with damaged DNA are destroyed before they can divide and pass on mutations.
+  Apoptosis or necrosis: which causes inflammation? :: Necrosis — the cell bursts and its contents leak out.
+
+@ 71ff92b5 U1.1.2.4 | Cancer: when the cycle and apoptosis fail
+**In a sentence**
+  Cancer happens when mutations switch on genes that drive division (oncogenes) and switch off genes that stop it or trigger apoptosis (tumour suppressors), so a cell divides without control, avoids death and can spread.
+**Key terms**
+  **Cancer**: a disease in which cells divide uncontrollably and can invade other tissues.
+  **Proto-oncogene**: a normal gene that promotes cell division when the body signals for it.
+  **Oncogene**: a mutated proto-oncogene that is permanently "on", driving division.
+  **Tumour suppressor gene**: a gene whose protein stops the cell cycle or triggers apoptosis (e.g. p53).
+  **Tumour**: an abnormal mass of cells.
+  **Benign tumour**: stays in one place and doesn't invade.
+  **Malignant tumour**: invades nearby tissue and can spread — this is cancer.
+  **Metastasis**: spread of cancer cells through the blood or lymph to form secondary tumours.
+  **Carcinogen**: something that causes cancer by damaging DNA.
+**How regulation breaks**
+  Think of a car: proto-oncogenes are the accelerator, tumour suppressor genes are the brakes.
+  A mutation in a proto-oncogene can jam the accelerator down — the oncogene keeps telling the cell to divide.
+  A mutation in a tumour suppressor gene cuts the brakes — checkpoints stop working and damaged cells aren't sent into apoptosis. Usually both copies must be damaged.
+  Most cancers need several mutations in both kinds of gene, built up over years — which is why cancer is more common with age.
+**Malfunctions in apoptosis**
+  If p53 is lost, a cell with damaged DNA is neither repaired nor destroyed; it keeps dividing and passes mutations on.
+  Some cancer cells make too much of proteins that block apoptosis, so they survive signals that should kill them.
+**Characteristics of cancer cells**
+  Divide without growth signals and ignore signals to stop.
+  No contact inhibition: they keep dividing when crowded, piling up into a tumour.
+  Avoid apoptosis.
+  Can divide indefinitely (normal cells stop after a limited number of divisions).
+  Often unspecialised, abnormal in shape, with large or multiple nuclei.
+  Trigger new blood vessels to grow into the tumour (angiogenesis) to get oxygen and nutrients.
+  Invade surrounding tissue and metastasise.
+**Causes and risk factors**
+  Carcinogens that damage DNA: UV radiation (skin cancers, including melanoma — Australia has among the highest rates in the world), tobacco smoke, asbestos.
+  Some viruses: human papillomavirus (HPV) causes cervical cancer — now largely preventable by vaccination.
+  Inherited mutations that raise risk, such as faulty BRCA1 or BRCA2 (breast and ovarian cancer).
+  Random copying errors and ageing.
+**Worked example**
+  Explain how a mutation in the gene for p53 can lead to a tumour.
+    p53 normally stops the cell cycle when DNA is damaged and triggers apoptosis if the damage can't be repaired.
+    If p53 is non-functional, cells with damaged DNA are not halted or destroyed.
+    They keep dividing, passing on and adding to mutations, and can grow into a tumour.
+**Going deeper**
+  Chemotherapy and radiotherapy target rapidly dividing cells. Their side effects — hair loss, nausea, low blood counts — happen because hair follicles, the gut lining and bone marrow also divide rapidly.
+  Sun protection (slip, slop, slap, seek, slide) reduces the UV damage that starts skin cancer.
+**Common mistakes**
+  "Cancer cells divide faster." The defining problem is that division is uncontrolled, not necessarily faster.
+  "One mutation causes cancer." Usually several are needed, in both oncogenes and tumour suppressor genes.
+  Confusing proto-oncogene (normal) with oncogene (mutated).
+  Calling every tumour cancer. Benign tumours don't invade or spread.
+**Exam tips**
+  Link the cause to the cell cycle or apoptosis explicitly: "the checkpoint no longer stops the cycle, so…".
+  List characteristics as things the cell does, not just adjectives: "does not undergo apoptosis", "continues dividing when in contact with other cells".
+**Connections**
+  The cell cycle: the checkpoints that fail.
+  Apoptosis: the defence that cancer cells escape.
+  Stem cells: stem cells divide indefinitely too, which is one reason stem-cell therapies carry a tumour risk.
+**Practice questions**
+  Distinguish between a proto-oncogene and a tumour suppressor gene.
+    A proto-oncogene codes for a protein that promotes cell division when signalled; a tumour suppressor gene codes for a protein that stops the cycle or triggers apoptosis. Mutation makes a proto-oncogene overactive (an oncogene) but makes a tumour suppressor inactive.
+  List four characteristics of cancer cells.
+    Uncontrolled division; no contact inhibition; they avoid apoptosis; they can invade tissues and metastasise. Others: divide indefinitely, abnormal shape, stimulate blood vessel growth.
+  Explain why the risk of most cancers increases with age.
+    Cancer usually needs several mutations in different genes. Mutations accumulate over many rounds of cell division and years of exposure to carcinogens, so older people are more likely to have the combination needed.
+  Distinguish between a benign and a malignant tumour.
+    A benign tumour stays in one place and does not invade nearby tissue. A malignant tumour invades surrounding tissue and can metastasise through the blood or lymph to form secondary tumours.
+**Flashcards**
+  What is an oncogene? :: A mutated proto-oncogene that is permanently active, driving cell division.
+  p53 is an example of a {{tumour suppressor}} gene.
+  What is metastasis? :: Spread of cancer cells through the blood or lymph to form secondary tumours elsewhere.
+  Benign vs malignant tumour? :: Benign stays in place; malignant invades nearby tissue and can spread.
+  What is contact inhibition? :: Normal cells stop dividing when they touch neighbouring cells — cancer cells don't.
+  Name two carcinogens. :: UV radiation, tobacco smoke (also asbestos, HPV).
+  Why do chemotherapy patients lose hair? :: Chemotherapy targets rapidly dividing cells, and hair follicle cells divide rapidly.
+
+@ 92658c66 U1.1.2.5 | Stem cells and differentiation
+**In a sentence**
+  Stem cells are unspecialised cells that can keep dividing and can become specialised cells; totipotent cells can form a whole organism, pluripotent cells any body cell, and multipotent cells only a family of related cells.
+**Key terms**
+  **Stem cell**: an unspecialised cell that can self-renew and differentiate into specialised cells.
+  **Self-renewal**: dividing by mitosis to make more stem cells.
+  **Differentiation**: the process by which a cell becomes specialised for a particular function.
+  **Totipotent**: able to become any cell, including placental (extra-embryonic) cells — a whole organism.
+  **Pluripotent**: able to become any cell of the body, but not the placenta.
+  **Multipotent**: able to become a limited range of related cells.
+  **Induced pluripotent stem cell (iPSC)**: an adult cell reprogrammed in the lab to become pluripotent.
+**The two properties of stem cells**
+  They **self-renew** — divide many times, keeping a supply of stem cells.
+  They **differentiate** — produce specialised cells such as muscle, nerve or blood cells.
+**Levels of potency**
+  **Totipotent**: the zygote and the cells of the very early embryo (up to about the 8-cell stage). Each could form a complete organism, placenta included — which is why identical twins can form.
+  **Pluripotent**: embryonic stem cells from the inner cell mass of a blastocyst (about 5 days old), and iPSCs. They can form every cell type in the body.
+  **Multipotent**: adult (somatic) stem cells, e.g. bone marrow stem cells that make every kind of blood cell; stem cells in umbilical cord blood; stem cells in skin and the gut lining.
+  **Unipotent** (going further): make only one cell type, e.g. muscle satellite cells.
+  Potency narrows as development goes on: totipotent → pluripotent → multipotent → specialised.
+**How cells differentiate**
+  Every cell in your body has the same DNA.
+  Cells become different by **switching different genes on and off** in response to chemical signals and their position in the body.
+  The genes that are expressed decide which proteins are made, and the proteins decide the cell's structure and function.
+  Differentiation is normally one-way: a nerve cell doesn't turn back into a stem cell on its own.
+**Renewal of tissues**
+  Adult stem cells replace cells that wear out: the gut lining is renewed every few days, the outer skin every few weeks, and bone marrow makes billions of blood cells every day.
+  They also repair damaged tissue after injury.
+**Plant stem cells**
+  Plants keep regions of undifferentiated cells called **meristems** at their root and shoot tips (and in the cambium) for their whole life.
+  This is why a cutting can grow roots, and why whole plants can be grown from a few cells (tissue culture) — links to cloning in Unit 2.
+**Uses and issues**
+  Established: bone marrow and cord-blood transplants for leukaemia and other blood disorders; skin grafts grown for burns patients.
+  In research and trials: macular degeneration, Parkinson's disease, spinal cord injury, type 1 diabetes (making new insulin-producing cells), and iPSCs for testing drugs on a patient's own cells.
+  Ethical issues: obtaining embryonic stem cells destroys an embryo; iPSCs and adult stem cells avoid this. Pluripotent cells can form tumours, and donor cells can be rejected unless they are matched to the patient.
+**Going deeper**
+  Shinya Yamanaka showed in 2006 that switching on just four genes can reprogramme adult skin cells into iPSCs — he shared the 2012 Nobel Prize for it. Because iPSCs come from the patient, they are less likely to be rejected.
+**Common mistakes**
+  Swapping totipotent and pluripotent. Only totipotent cells can make the placenta and a whole organism.
+  Saying specialised cells "lose" the genes they don't use. They keep all their DNA; the unused genes are switched off.
+  Calling adult stem cells pluripotent. Most are multipotent.
+**Exam tips**
+  Define both properties of a stem cell (self-renewal and differentiation) — one alone rarely earns full marks.
+  When explaining differentiation, use the chain: signals → different genes expressed → different proteins → different structure and function.
+**Connections**
+  The cell cycle: stem cells divide by mitosis.
+  Cancer: stem cells and cancer cells both divide indefinitely.
+  Reproductive cloning (Unit 2): relies on totipotent embryo cells and plant meristems.
+  Bioethical issues (Unit 2): embryonic stem cell research is a common topic.
+**Practice questions**
+  Distinguish between totipotent, pluripotent and multipotent stem cells, giving an example of each.
+    Totipotent cells can form any cell including the placenta (the zygote). Pluripotent cells can form any body cell but not the placenta (embryonic stem cells from the inner cell mass). Multipotent cells form a limited range of related cells (bone marrow stem cells, which make blood cells).
+  Explain how cells with identical DNA can become as different as a nerve cell and a red blood cell.
+    Different chemical signals switch on different genes in each cell. The expressed genes determine which proteins are made, and these proteins give each cell its particular structure and function.
+  Give one advantage of using induced pluripotent stem cells rather than embryonic stem cells.
+    No embryo is destroyed, avoiding that ethical objection, and cells made from the patient's own tissue are less likely to be rejected.
+  Explain why a gardener can grow a new plant from a stem cutting.
+    Stems contain meristem tissue whose undifferentiated cells can divide and differentiate into all the tissues needed, including new roots.
+**Flashcards**
+  Two defining properties of stem cells? :: Self-renewal (dividing to make more stem cells) and differentiation into specialised cells.
+  Which stem cells can form the placenta? :: Totipotent cells (the zygote and very early embryo cells).
+  Embryonic stem cells from the inner cell mass are {{pluripotent}}.
+  Bone marrow stem cells are {{multipotent}}: they make all types of blood cell.
+  How does a cell differentiate? :: Signals switch particular genes on and off, so it makes the proteins that give it its specialised structure and function.
+  What is an iPSC? :: An adult cell reprogrammed in the lab to become pluripotent.
+  What are meristems? :: Regions of undifferentiated, dividing cells in plants, at root and shoot tips.

@@ -3,7 +3,7 @@ import { db } from './database';
 import { createEmptyNode, type OutlinerNode } from './schema';
 import { getChildren, getAllNodes, getAllPages } from './repository';
 import { addPageToFolder } from './folderRepository';
-import { reconcileCards } from './cardRepository';
+import { makesCards, reconcileCardsBulk } from './cardRepository';
 import { indexNode } from './searchIndex';
 import { noteCreated, pushUndo, takeSnapshot } from './undo';
 import { docToPlainText, extractReferences, parseDoc, renumberClozesInDoc, type DocNode } from '../tiptap/docUtils';
@@ -60,6 +60,7 @@ function build(drafts: DraftRem[], parentId: string | null, orders: number[], no
         updatedAt: now,
       }),
     };
+    row.isCard = makesCards(row);
     rows.push(row);
     (draft.children ?? []).forEach((child, i) => add(child, id, now + (i + 1) * ORDER_STEP));
     return id;
@@ -94,10 +95,9 @@ async function resolveReferences(rows: OutlinerNode[]): Promise<void> {
 }
 
 async function finish(rows: OutlinerNode[]): Promise<void> {
-  for (const row of rows) {
-    await reconcileCards(row);
-    indexNode(row);
-  }
+  // All the cards in one read and one write (see `reconcileCardsBulk`).
+  await reconcileCardsBulk(rows);
+  for (const row of rows) indexNode(row);
 }
 
 export interface Inserted {
@@ -212,4 +212,36 @@ export async function subtreeAsDrafts(parentId: string): Promise<DraftRem[]> {
       children: await subtreeAsDrafts(child.id),
     }))
   );
+}
+
+/**
+ * Several trees, each as the last children of its own parent, as one
+ * transaction and one undo — a course's study notes going under every dot
+ * point at once. Returns every rem created.
+ */
+export async function insertTreesUnder(
+  items: ReadonlyArray<{ parentId: string; drafts: DraftRem[] }>,
+  label = 'Insert'
+): Promise<string[]> {
+  const work = items.filter((item) => item.drafts.length > 0);
+  if (work.length === 0) return [];
+  const now = Date.now();
+
+  const rows: OutlinerNode[] = [];
+  for (const { parentId, drafts } of work) {
+    const siblings = await getChildren(parentId);
+    const last = siblings[siblings.length - 1]?.order ?? now;
+    rows.push(...build(drafts, parentId, drafts.map((_, i) => last + ORDER_STEP * (i + 1)), now).rows);
+  }
+  await resolveReferences(rows);
+
+  const entry = await takeSnapshot(label, work.map((item) => item.parentId));
+  await db.transaction('rw', db.nodes, async () => {
+    await db.nodes.bulkAdd(rows);
+  });
+  noteCreated(entry, rows.map((r) => r.id));
+  pushUndo(entry);
+
+  await finish(rows);
+  return rows.map((r) => r.id);
 }

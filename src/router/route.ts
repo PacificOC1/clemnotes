@@ -12,7 +12,7 @@
  * one case this change is most meant to fix.
  */
 
-export type AppTab = 'notes' | 'review' | 'dictionary';
+export type AppTab = 'notes' | 'review' | 'dictionary' | 'courses';
 
 export interface Route {
   tab: AppTab;
@@ -22,11 +22,17 @@ export interface Route {
   splitId?: string;
   /** A PDF open beside it (#53), and the page to show. Absent when there isn't one. */
   pdf?: { fileId: string; page?: number };
+  /** On the courses tab: the course whose roadmap is open. Absent = the subject list. */
+  courseId?: string;
+  /** Inside a course: the unit, area of study or learning point open (its rem id). Absent = the course overview. */
+  courseItem?: string;
+  /** On the review tab: review only this page, or this rem and what's under and linked to it. */
+  scope?: string;
 }
 
 export const HOME: Route = { tab: 'notes', nodeId: null };
 
-const TABS: AppTab[] = ['notes', 'review', 'dictionary'];
+const TABS: AppTab[] = ['notes', 'review', 'dictionary', 'courses'];
 
 function isTab(value: string): value is AppTab {
   return (TABS as string[]).includes(value);
@@ -47,6 +53,20 @@ export function parseRoute(hash: string): Route {
   const [head, ...rest] = segments;
   if (!head) return { ...HOME };
   if (!isTab(head)) return { ...HOME };
+  if (head === 'courses' || head === 'review') {
+    // `#/courses/<page>` — a course's roadmap; `#/review/<rem>` — a scoped session.
+    const raw = rest[0];
+    if (!raw) return { tab: head, nodeId: null };
+    try {
+      const id = decodeURIComponent(raw);
+      if (head === 'review') return { tab: head, nodeId: null, scope: id };
+      // `#/courses/<course>/<unit, area or point>`
+      const item = rest[1] ? decodeURIComponent(rest[1]) : null;
+      return { tab: head, nodeId: null, courseId: id, ...(item ? { courseItem: item } : {}) };
+    } catch {
+      return { tab: head, nodeId: null };
+    }
+  }
   if (head !== 'notes') return { tab: head, nodeId: null };
 
   const raw = rest[0];
@@ -73,6 +93,11 @@ export function parseRoute(hash: string): Route {
 
 /** The canonical hash for a route. Always absolute, always with a leading `#/`. */
 export function formatRoute(route: Route): string {
+  if (route.tab === 'courses' && route.courseId) {
+    const course = `#/courses/${encodeURIComponent(route.courseId)}`;
+    return route.courseItem ? `${course}/${encodeURIComponent(route.courseItem)}` : course;
+  }
+  if (route.tab === 'review' && route.scope) return `#/review/${encodeURIComponent(route.scope)}`;
   if (route.tab !== 'notes') return `#/${route.tab}`;
   if (!route.nodeId) return '#/notes';
   const main = `#/notes/${encodeURIComponent(route.nodeId)}`;
@@ -87,6 +112,9 @@ export function sameRoute(a: Route, b: Route): boolean {
     a.nodeId === b.nodeId &&
     (a.splitId ?? null) === (b.splitId ?? null) &&
     (a.pdf?.fileId ?? null) === (b.pdf?.fileId ?? null) &&
-    (a.pdf?.page ?? null) === (b.pdf?.page ?? null)
+    (a.pdf?.page ?? null) === (b.pdf?.page ?? null) &&
+    (a.courseId ?? null) === (b.courseId ?? null) &&
+    (a.courseItem ?? null) === (b.courseItem ?? null) &&
+    (a.scope ?? null) === (b.scope ?? null)
   );
 }

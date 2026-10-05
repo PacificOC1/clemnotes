@@ -1,0 +1,625 @@
+% VCE English Language — Unit 1, Area of Study 1: the nature and functions of language.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ d5766624 U1.1.1.1 | Language as a system of signs
+**In a sentence**
+  Language is a system of signs whose link between form and meaning is arbitrary, but whose use is governed by conventions that a community shares — which is why "dog" means nothing in itself, yet "the barked dog" sounds wrong.
+**Key terms**
+  **Sign**: a form (a sound sequence, written word or gesture) paired with a meaning.
+  **Arbitrary**: having no natural connection between a word's form and what it means.
+  **Convention**: a rule or pattern of language use agreed on by a community of speakers.
+  **Meaning-making system**: language as an organised set of units and rules that speakers use to create and share meaning.
+  **Onomatopoeia**: a word whose sound imitates what it refers to ("buzz", "sizzle").
+**Arbitrariness**
+  Nothing about the sounds /dɔɡ/ is dog-like. The same animal is "chien" in French, "Hund" in German and "inu" in Japanese.
+  Because the link is arbitrary, meanings can change: "mouse" now also names a computer device.
+  Even onomatopoeia is partly arbitrary — a dog says "woof" in English, "wan wan" in Japanese and "guau" in Spanish.
+**Conventions**
+  Every level of language runs on shared conventions:
+    Sounds: English allows "str" at the start of a word ("street") but not "tsr".
+    Morphology: plural "-s" goes on the end ("cats"), not the front.
+    Syntax: subject–verb–object order ("The dog chased the cat" means something different from "The cat chased the dog").
+    Discourse: we say "Hello" before starting a phone call and "Bye" to end it.
+    Spelling and punctuation in writing.
+  Conventions are learned from the community, differ between communities (Australian "arvo" vs American "afternoon") and change over time.
+  Breaking a convention can confuse ("dog the barked") or be done deliberately for effect (poetry, advertising, slang).
+**Why both matter**
+  Arbitrariness gives language flexibility: any form can be paired with any meaning, so new words can always be made.
+  Conventions give it reliability: because speakers agree, the listener can decode the message.
+**Worked example**
+  A brand names its new drink "Zoomba". Explain how this shows language is both arbitrary and conventional.
+    Arbitrary: "Zoomba" had no meaning before; the company simply paired a new form with a product, and the pairing only works because people accept it.
+    Conventional: the name still follows English conventions — it uses English sounds in an allowed order (/zʉːmbə/), stress on the first syllable, and it can take English grammar ("two Zoombas").
+**Going deeper**
+  The linguist Ferdinand de Saussure described a sign as two sides: the **signifier** (the form) and the **signified** (the concept). The relationship between them is arbitrary.
+  Sign languages are full languages with the same properties: Auslan signs are mostly arbitrary too, though some are iconic (they look like what they mean).
+**Common mistakes**
+  Saying language is "random". The form–meaning link is arbitrary, but use is highly rule-governed.
+  Treating conventions as fixed "correct" rules. Conventions are agreements that differ between groups and change.
+  Forgetting that onomatopoeia is only partly an exception.
+**Exam tips**
+  Use both key words in one explanation: "arbitrary in form, but governed by conventions in use".
+  Give an example at more than one level (a sound pattern, a word order, a spelling) to show conventions are everywhere.
+**Connections**
+  What makes human communication unique: arbitrariness is one of the design features.
+  The subsystems of language: each subsystem has its own conventions.
+  Semantic change (Unit 2): arbitrariness is what lets meanings shift.
+**Practice questions**
+  Explain what it means to say that language is arbitrary. Use an example.
+    There is no natural link between a word's form and its meaning. The animal we call "dog" is called "chien" in French and "Hund" in German; none of these sounds resembles the animal.
+  If language is arbitrary, why can't we invent any word order we like?
+    The form–meaning link is arbitrary, but language use is governed by conventions shared by the community. English uses subject–verb–object order to show who did what, so changing the order changes or destroys the meaning.
+  Is "sizzle" an exception to arbitrariness? Explain.
+    Partly. As onomatopoeia, its sound imitates what it describes, so it is less arbitrary. But it still follows English sound and spelling conventions, and other languages represent the same sound differently, so it isn't completely natural.
+**Flashcards**
+  What does it mean that language is arbitrary? :: There is no natural connection between a word's form and its meaning.
+  What is a linguistic convention? :: A rule or pattern of use agreed on by a community of speakers.
+  Language is {{arbitrary}} in form but governed by {{conventions}} in use.
+  Give an example of a syntactic convention in English. :: Subject–verb–object order: "The dog chased the cat."
+  Why is onomatopoeia only partly an exception to arbitrariness? :: Different languages imitate the same sound differently ("woof", "wan wan").
+  Saussure's two sides of a sign? :: The signifier (form) and the signified (concept).
+  Why is arbitrariness useful? :: New forms can be paired with new meanings, so the language can always grow.
+
+@ ca6a87f5 U1.1.1.2 | Functions of language
+**In a sentence**
+  People use language to do things — inform, express feelings, get others to act, build relationships, play with form and talk about language itself — and a single utterance often does several at once.
+**Key terms**
+  **Function**: what a piece of language is used to do in its context.
+  **Referential (informational) function**: conveying information or facts.
+  **Expressive (emotive) function**: expressing the speaker's feelings or attitudes.
+  **Conative (directive) function**: getting the listener to do something.
+  **Phatic function**: establishing or maintaining social contact rather than exchanging information.
+  **Poetic (aesthetic) function**: drawing attention to the form of the language itself.
+  **Metalingual function**: using language to talk about language.
+**The six functions (Jakobson's model)**
+  **Referential**: "The train leaves at 8.15 from platform 2." News reports, textbooks, instructions.
+  **Expressive**: "Ugh, I'm so over this weather!" Interjections, evaluative words, exclamations.
+  **Conative**: "Close the door, please." "Vote 1 for Nguyen." Imperatives, requests, persuasive language.
+  **Phatic**: "How's it going?" "Not bad, you?" Greetings, small talk about the weather, backchannels like "yeah".
+  **Poetic**: "Slip, slop, slap." Rhyme, alliteration, puns, slogans, poetry — the form is part of the point.
+  **Metalingual**: "What does 'deadly' mean here?" "I said 'affect', not 'effect'." Definitions and corrections.
+**Function and context**
+  The same words can do different jobs: "It's cold in here" is referential on a weather report, but conative when said to someone next to an open window.
+  Most texts combine functions: an ad informs (referential), urges you to buy (conative) and uses a catchy slogan (poetic).
+  To identify a function, ask: what is the speaker trying to achieve, and how do the language features show it?
+**Worked example**
+  Identify the functions in this text message: "Hey!! 😊 Heaps good to see u today. Can u send me the notes from bio pls?"
+    Phatic: "Hey!!" and "Heaps good to see u today" maintain the friendship.
+    Expressive: the emoji, the double exclamation mark and "heaps good" show positive feelings.
+    Conative: "Can u send me the notes … pls?" is a request — the main purpose.
+    Referential: minor — it identifies which notes ("from bio").
+**Going deeper**
+  Michael Halliday described the functions children's language develops to serve: instrumental ("I want"), regulatory ("do as I tell you"), interactional ("me and you"), personal ("here I come"), heuristic ("tell me why"), imaginative ("let's pretend") and representational ("I've got something to tell you"). These are used in Unit 1 Area of Study 2.
+  Indirect speech acts: many conative utterances are phrased as questions ("Could you pass the salt?") for politeness — the form is interrogative but the function is directive.
+**Common mistakes**
+  Assuming each utterance has only one function.
+  Identifying a function from sentence type alone — a question can be a request, a declarative can be a command.
+  Naming a function without quoting the language that shows it.
+**Exam tips**
+  Structure: function → quoted example → how the features achieve it in this context.
+  Use the function names as the study design does (e.g. "phatic", "referential"), then explain in plain words.
+**Connections**
+  Situational and cultural context: function depends on context.
+  Register, tenor and audience: phatic talk builds tenor.
+  Language acquisition: children's language serves Halliday's functions as it develops.
+**Practice questions**
+  Explain the phatic function with an Australian example.
+    The phatic function builds or maintains social contact rather than passing on information. "How ya going?" "Good, you?" isn't a real question about health — it opens a friendly exchange.
+  How can "It's getting late" serve two different functions?
+    It can be referential (stating the time of day) or conative — said by a host to guests, it's a polite hint that they should leave.
+  Identify two functions in the slogan "Slip, slop, slap" and explain each.
+    Conative: it tells people to slip on a shirt, slop on sunscreen and slap on a hat. Poetic: the repeated "sl-" sounds, rhythm and single-syllable verbs make it memorable.
+**Flashcards**
+  What is the referential function? :: Conveying information or facts.
+  What is the phatic function? :: Establishing or maintaining social contact rather than exchanging information.
+  "Close the door, please" mainly serves the {{conative}} function.
+  "What does 'arvo' mean?" shows the {{metalingual}} function.
+  Which function draws attention to the language's own form? :: The poetic (aesthetic) function.
+  Can one utterance serve several functions? :: Yes — e.g. an ad is referential, conative and poetic at once.
+  Why is "Could you pass the salt?" conative, not just a question? :: It's an indirect request — its function is to get someone to act.
+
+@ 2c831bbd U1.1.1.3 | What makes human language unique
+**In a sentence**
+  Human language has a combination of properties no animal system shares — it is arbitrary, built from discrete units, endlessly productive, able to talk about things far away in time and space, and learned from a community.
+**Key terms**
+  **Arbitrariness**: no natural link between form and meaning.
+  **Discreteness**: language is built from separate, distinct units (sounds, morphemes, words).
+  **Duality of patterning**: meaningless sounds combine into meaningful units, which combine into larger structures.
+  **Productivity (creativity)**: the ability to make and understand new utterances never heard before.
+  **Displacement**: the ability to talk about things not present — the past, the future, other places, the imaginary.
+  **Cultural transmission**: language is learned from other people, not inherited genetically.
+  **Spontaneity**: humans can start communication freely, not only in response to a stimulus.
+**The properties, with examples**
+  **Arbitrariness**: "tree", "arbre" and "Baum" all name the same thing.
+  **Discreteness**: "pin" and "bin" differ by one distinct sound, /p/ vs /b/; we don't hear a blend between them.
+  **Duality of patterning**: the sounds /t/, /æ/, /p/ mean nothing alone but make "tap", "pat" and "apt".
+  **Productivity**: you've never heard "The purple kangaroo borrowed my calculator", but you understand it immediately.
+  **Displacement**: "Last summer in Bali…", "Tomorrow I'll…", "Dragons breathe fire."
+  **Cultural transmission**: a child of Vietnamese parents raised in Melbourne speaks Australian English; language isn't in the genes.
+  **Spontaneity**: we choose when to speak and what about.
+  Going further: **reflexivity** (talking about language itself) and **prevarication** (the ability to lie or make up fiction).
+**Animal communication compared**
+  Honeybee dance: shows displacement (the location of food far away) but can only talk about nectar, is innate and can't create new messages.
+  Vervet monkey alarm calls: different calls for leopards, eagles and snakes — meaningful, but a small, fixed set with no grammar.
+  Trained apes (Washoe the chimpanzee, Kanzi the bonobo) learned hundreds of signs or symbols, but produced short combinations without the complex syntax children develop.
+**Worked example**
+  A parrot says "Pretty bird, hello!" Does this show human-like language? Explain using two properties.
+    Productivity: no — the parrot repeats memorised sounds; it doesn't create new sentences from parts.
+    Displacement: no — it can't use the phrase to talk about something absent or in the past.
+    It is imitation of form without the combinable, rule-governed system human language has.
+**Going deeper**
+  These properties come from Charles Hockett's "design features" (1960). He argued that no animal system has all of them together, especially productivity, displacement and duality of patterning.
+  Productivity comes from recursion: a clause can be placed inside another ("I think that she said that he knows…"), so sentences have no upper length.
+**Common mistakes**
+  Claiming animals have "no" communication. They do; they lack the combination of features human language has.
+  Confusing discreteness (separate units) with duality (two levels of structure).
+  Defining displacement as "talking about the past" only — it includes the future, distant places and imaginary things.
+**Exam tips**
+  Name the property, define it, give a human example and, if asked to compare, an animal contrast.
+**Connections**
+  Language as a system of signs: arbitrariness.
+  Language acquisition: cultural transmission — children must acquire language from others.
+  The subsystems of language: discreteness and duality at the level of sounds and morphemes.
+**Practice questions**
+  Explain displacement and why it matters to humans.
+    Displacement is the ability to talk about things not present in time or space. It lets humans plan the future, share history, teach, and tell stories — things a system limited to "here and now" can't do.
+  Why do bee dances show only limited displacement?
+    Bees can communicate the direction and distance of food not present, but only about food sources; they can't talk about the past, invent new topics or combine elements in new ways.
+  Use an example to explain productivity.
+    Speakers can create and understand sentences they have never heard, e.g. "The koala ordered a pizza with extra eucalyptus." A finite set of words and rules produces infinite new messages.
+**Flashcards**
+  Define displacement. :: The ability to talk about things not present — the past, the future, distant or imaginary things.
+  Define productivity. :: The ability to create and understand new utterances never heard before.
+  Language being learned from others rather than inherited is {{cultural transmission}}.
+  What is duality of patterning? :: Meaningless sounds combine into meaningful units, which combine into larger structures.
+  "pin" vs "bin" illustrates which property? :: Discreteness — distinct units that contrast.
+  Whose "design features" list the properties of human language? :: Charles Hockett's.
+  Name one property animal communication lacks. :: Productivity (or full displacement, or cultural transmission).
+
+@ 03e5bf6a U1.1.1.4 | Register, tenor and audience
+**In a sentence**
+  Speakers adjust how formal their language is (register) to suit the relationship between the people involved (tenor) and who is listening or reading (audience).
+**Key terms**
+  **Register**: a variety of language defined by its use in a situation, on a scale from formal to informal.
+  **Formal register**: careful, standard language — complete sentences, technical or Latinate words, few contractions.
+  **Informal register**: relaxed language — contractions, slang, colloquialisms, ellipsis, non-standard grammar.
+  **Tenor**: the relationship between participants — how well they know each other, their relative status and power.
+  **Social distance**: how close or distant participants are.
+  **Audience**: the people a text is directed to, with their knowledge, expectations and values.
+**Register**
+  A continuum, not two boxes: frozen (legal oaths) → formal (a speech, a report) → consultative (a doctor with a patient) → casual (friends) → intimate (family, partners).
+  Features that mark register:
+    Lexis: "commence" vs "start" vs "kick off"; "purchase" vs "buy"; colloquialisms like "heaps", "reckon".
+    Contractions: "I'll", "gonna".
+    Syntax: complex sentences and passives (formal) vs fragments and ellipsis (informal: "Coming?").
+    Terms of address: "Dr Chen" vs "mate".
+    Hedging and politeness: "Would you mind…" vs "Pass it".
+**Tenor**
+  Close tenor (friends): informal register, shared jokes, nicknames, swearing between some friends.
+  Distant tenor (strangers, authority figures): more formal, polite forms, full names and titles.
+  Power difference shows up in who controls topics, who interrupts, how requests are phrased.
+**Audience**
+  Writers and speakers tailor language to the audience's age, knowledge and expectations: jargon for experts, explanations for the public, simple syntax for children.
+  An audience can be known (a friend) or wide and unknown (a newspaper's readers).
+**Worked example**
+  Compare two emails asking for an extension: (A) "Dear Ms Rossi, I'm writing to request a short extension for the history essay due to illness. I have attached a medical certificate." (B) "hey can i get an extension on the essay pls, been sick".
+    A: formal register — salutation with title and surname, complete sentences, "request", no slang; reflects distant tenor (student–teacher, unequal status) and a formal written mode.
+    B: informal register — no salutation, lower case, ellipsis ("been sick"), "pls"; inappropriate for the tenor, which may undermine the request.
+**Going deeper**
+  Speakers often **converge** (shift their language towards their listener's to build rapport) or **diverge** (shift away to stress difference) — communication accommodation theory, used more in Units 3–4.
+  Register is chosen, not fixed: the same person moves across many registers in a day.
+**Common mistakes**
+  Treating "formal" as "good" and "informal" as "bad". Each is appropriate in some situations.
+  Confusing tenor (relationship) with tone (attitude or mood).
+  Describing register without evidence from the text.
+**Exam tips**
+  Link each feature to a reason: "the colloquial 'heaps' and the contraction 'I'll' create an informal register suited to the close tenor between friends".
+**Connections**
+  Situational and cultural context: field, mode, setting and text type also shape register.
+  Speech vs writing: mode affects formality.
+  Functions of language: phatic talk shapes tenor.
+**Practice questions**
+  Define tenor and explain how it affects language choice.
+    Tenor is the relationship between participants, including social distance and status. A distant or unequal tenor (a student and principal) leads to formal language and politeness; a close tenor (friends) allows informal language, slang and nicknames.
+  List four features that would mark a text as informal.
+    Contractions ("don't"), colloquial lexis ("heaps", "arvo"), ellipsis or fragments ("Coming?"), first names or nicknames, non-standard spelling in writing ("u", "pls").
+  A radio host says, "G'day, folks, it's a ripper of a morning!" Identify the register and explain it.
+    Informal: the greeting "G'day", the familiar address "folks" and the colloquial "ripper" create a friendly, casual tone that builds a close tenor with a broad audience of listeners.
+**Flashcards**
+  Define register. :: A variety of language defined by its situation of use, on a scale of formality.
+  Define tenor. :: The relationship between participants — social distance, status and power.
+  A student emailing a principal has a {{distant}} tenor, so uses a {{formal}} register.
+  Give three features of a formal register. :: Complete sentences, Latinate or technical words, no contractions (also titles, passives).
+  Tenor vs tone? :: Tenor is the relationship between participants; tone is attitude or mood.
+  What is convergence? :: Shifting your language towards your listener's to build rapport.
+  Why tailor language to an audience? :: So it matches their knowledge and expectations and achieves its purpose.
+
+@ 26ca8215 U1.1.1.5 | Situational and cultural context
+**In a sentence**
+  Language choices depend on the situation — the topic (field), whether it's spoken or written (mode), the time and place (setting) and the kind of text — as well as on the cultural values of the people involved, the author's purpose, and how much it was prepared.
+**Key terms**
+  **Situational context**: the immediate circumstances of a text: field, mode, setting, text type, participants and purpose.
+  **Field**: the subject matter or topic.
+  **Mode**: whether a text is spoken or written (or multimodal).
+  **Setting**: the time and place where the exchange happens.
+  **Text type**: the kind of text or genre (a conversation, a speech, a recipe, a news article).
+  **Cultural context**: the values, attitudes and beliefs of the participants and the wider community that affect language use.
+  **Authorial intent**: what the speaker or writer wants the text to achieve.
+  **Preparedness**: how planned or spontaneous a text is.
+**The situational elements**
+  **Field** shapes vocabulary: a football commentary uses a football semantic domain ("handball", "mark", "behind"); a medical consultation uses clinical terms.
+  **Mode** shapes structure: spoken texts use prosody, fillers and turn-taking; written texts use punctuation, paragraphs and edited syntax.
+  **Setting**: a funeral vs a party; a classroom vs a bus stop; the 1950s vs today.
+  **Text type** brings conventions: a recipe uses imperatives and numbered steps; a news report uses a headline, the inverted pyramid and reported speech.
+**Cultural context**
+  Values, attitudes and beliefs affect what's appropriate: attitudes to swearing, directness, first names, humour and taboo topics.
+  In many Aboriginal communities it is respectful not to name a person who has died, and direct questions can be avoided in favour of indirect ones.
+  Australian culture's value on egalitarianism shows in informal address ("mate") and in "tall poppy" dislike of boastful language.
+**Authorial intent and preparedness**
+  Intent: to inform, persuade, entertain, instruct, build rapport. It drives the choice of function and features.
+  Preparedness: spontaneous (casual conversation — fillers, repairs, overlaps), semi-prepared (a class presentation from notes), prepared (a scripted speech, an edited article — few non-fluency features, deliberate rhetorical patterns).
+**Worked example**
+  Explain how context shapes this weather report: "Tomorrow, Melbourne can expect a top of 31 degrees with a gusty northerly change in the afternoon."
+    Field: weather — domain-specific lexis ("top", "northerly change", "gusty").
+    Mode and preparedness: spoken but scripted — complete, fluent sentences with no fillers.
+    Text type: a weather report — future forms ("can expect"), numbers, place names, concise information.
+    Authorial intent: referential — to inform a wide audience clearly.
+**Going deeper**
+  The study design's focus on "language choice" means asking: why this word, this structure, here? Good analysis always joins a feature to a contextual reason.
+  Online contexts complicate mode: a group chat is written but spontaneous, interactive and speech-like.
+**Common mistakes**
+  Listing context factors without linking them to language features in the text.
+  Confusing mode (spoken/written) with medium (phone, paper, screen).
+  Writing "the author's intent is to inform" without evidence.
+**Exam tips**
+  Use the chain: context factor → language feature (quoted) → effect or function.
+  Cover at least one situational and one cultural factor in a full analysis.
+**Connections**
+  Register, tenor and audience.
+  Speech vs writing: mode in detail.
+  Functions of language: authorial intent chooses the function.
+  Semantic domain (semantics): field shapes vocabulary.
+**Practice questions**
+  Explain the difference between situational and cultural context.
+    Situational context is the immediate circumstances — field, mode, setting, text type and participants. Cultural context is the broader values, attitudes and beliefs of the participants and community that affect what language is appropriate.
+  How does preparedness affect a spoken text? Give two features.
+    A spontaneous text has non-fluency features such as filled pauses ("um") and false starts; a prepared speech has few of these and uses deliberate structures such as repetition or tricolon.
+  Explain how the field of a text can be identified from its vocabulary. Use an example.
+    Words from one semantic domain signal the topic: "wicket", "over" and "bowled" show a cricket commentary.
+**Flashcards**
+  Define field. :: The subject matter or topic of a text.
+  Define mode. :: Whether a text is spoken or written (or multimodal).
+  Name the situational context elements. :: Field, mode, setting, text type (plus participants and purpose).
+  Values, attitudes and beliefs make up the {{cultural}} context.
+  What is preparedness? :: How planned or spontaneous a text is.
+  What is authorial intent? :: What the speaker or writer wants the text to achieve.
+  How does text type affect language? :: Each type has conventions, e.g. a recipe uses imperatives and numbered steps.
+
+@ d398a1b3 U1.1.1.6 | Morphology, lexicology, syntax and semantics
+**In a sentence**
+  Four subsystems let you describe any stretch of language precisely: morphology (how words are built), lexicology (words and word classes), syntax (how words form phrases, clauses and sentences) and semantics (meaning).
+**Key terms**
+  **Morpheme**: the smallest unit of meaning or grammatical function.
+  **Free morpheme**: a morpheme that can stand alone as a word ("cat").
+  **Bound morpheme**: a morpheme that must attach to another ("-s", "un-").
+  **Inflectional morpheme**: a bound morpheme that adds grammatical information without changing word class ("-s", "-ed", "-ing").
+  **Derivational morpheme**: a bound morpheme that makes a new word, often changing word class ("-ness", "un-").
+  **Word class**: a category of words by grammatical behaviour (noun, verb, adjective, adverb, preposition, conjunction, determiner, interjection).
+  **Phrase**: a group of words built around a head word (noun phrase, verb phrase…).
+  **Clause**: a structure containing a verb phrase (predicate), usually with a subject.
+  **Semantics**: the study of meaning in words, phrases and sentences.
+**Morphology — how words are built**
+  "unhappiness" = un- (bound, derivational prefix) + happy (free root) + -ness (bound, derivational suffix, adjective → noun).
+  English has eight inflectional suffixes: plural -s, possessive -'s, third-person -s, past -ed, past participle -ed/-en, progressive -ing, comparative -er, superlative -est.
+  Root: the core morpheme; stem: the part an inflection attaches to ("unhappy" is the stem of "unhappier").
+  Infixes are rare in English: "abso-bloody-lutely".
+**Lexicology — words and word classes**
+  Nouns (including pronouns: "she", "them"), verbs (including auxiliary verbs "be", "have", "do" and modal verbs "can, could, may, might, must, shall, should, will, would"), adjectives, adverbs, prepositions, conjunctions (coordinating "and, but, or, so…"; subordinating "because, although, when, if…"), determiners ("the, a, this, my, some"), interjections ("ouch", "wow").
+  **Content words** (open class — nouns, main verbs, adjectives, adverbs) carry meaning and admit new members; **function words** (closed class — pronouns, determiners, prepositions, conjunctions, auxiliaries) mainly show grammatical relationships.
+**Syntax — phrases, clauses, sentences**
+  Phrases: noun phrase ("the tired koala"), verb phrase ("was sleeping"), adjective phrase ("very tired"), adverb phrase ("quite slowly"), prepositional phrase ("in the gum tree").
+  Clause elements: subject (S), predicate/verb (V), object (O), complement (C), adverbial (A). "The koala (S) ate (V) the leaves (O) slowly (A)." "She (S) seems (V) happy (C)."
+  Sentence structures: simple (one main clause), compound (main clauses joined by a coordinator), complex (a main clause + a subordinate clause), compound-complex; fragments (no main verb — "Great game!").
+  Sentence types: declarative (statement), interrogative (question), imperative (command), exclamative ("What a game!").
+**Semantics — meaning**
+  The relation of meaning and sign: words stand for concepts by convention.
+  Semantic domain: a group of words from one area of meaning (a cooking domain: "simmer, dice, whisk").
+  Inference: understanding meaning that isn't stated ("The bin's full" → "please empty it").
+**Worked example**
+  Analyse "The students quickly finished their assignments."
+    Morphology: "students" = student + -s (inflectional plural); "quickly" = quick + -ly (derivational, adjective → adverb); "finished" = finish + -ed (inflectional past).
+    Lexicology: "The", "their" determiners; "students", "assignments" nouns; "quickly" adverb; "finished" verb.
+    Syntax: simple declarative sentence; S "The students", A "quickly", V "finished", O "their assignments".
+    Semantics: an academic domain ("students", "assignments").
+**Going deeper**
+  A word's class depends on how it's used: "Google" is a noun in "Google is huge" and a verb in "Just google it" (conversion).
+  Derivational morphemes usually sit closer to the root than inflectional ones: "nation-al-ise-d", never "nation-ed-al".
+**Common mistakes**
+  Calling "-ly" inflectional. It's derivational (it changes adjective to adverb).
+  Treating every "-s" as a plural (it can be third-person "runs" or possessive "-'s").
+  Labelling determiners ("the", "my") as adjectives.
+  Confusing a phrase (no finite verb needed) with a clause (has a verb phrase).
+**Exam tips**
+  Always quote the exact word or phrase and label it with the correct metalanguage.
+  In morphology questions, identify every morpheme and say free/bound and inflectional/derivational.
+**Connections**
+  Introduction to phonetics/phonology and discourse/pragmatics: the other two subsystems.
+  Language acquisition: children develop across these subsystems.
+  Language change (Unit 2): morphological, lexical, syntactic and semantic change.
+**Practice questions**
+  Divide "rewritten" into morphemes and classify each.
+    re- (bound, derivational prefix meaning "again"); write (free root); -en (bound, inflectional past participle suffix).
+  Distinguish between content words and function words, with examples.
+    Content words carry meaning and form open classes that admit new words (nouns "koala", verbs "run", adjectives "happy", adverbs "quickly"). Function words mainly show grammatical relationships and form closed classes (determiners "the", prepositions "in", conjunctions "and", pronouns "she").
+  Identify the sentence structure: "Although it rained, we played the match."
+    Complex: a subordinate clause ("Although it rained") plus a main clause ("we played the match").
+  Label the clause elements in "Mia gave her brother a book yesterday."
+    S "Mia"; V "gave"; O (indirect) "her brother"; O (direct) "a book"; A "yesterday".
+**Flashcards**
+  Define morpheme. :: The smallest unit of meaning or grammatical function.
+  Inflectional vs derivational morpheme? :: Inflectional adds grammatical information without changing word class; derivational makes a new word, often changing class.
+  In "happiness", "-ness" is a {{derivational}} suffix.
+  Name the eight word classes. :: Noun, verb, adjective, adverb, preposition, conjunction, determiner, interjection.
+  Give three modal verbs. :: Can, could, may (also might, must, shall, should, will, would).
+  What makes a sentence complex? :: It has a main clause and at least one subordinate clause.
+  The five clause elements? :: Subject, verb (predicate), object, complement, adverbial.
+  What is a semantic domain? :: A group of words from one area of meaning.
+
+@ 87b4b24d U1.1.1.7 | Introducing phonology and discourse
+**In a sentence**
+  Two more subsystems complete the toolkit: phonetics and phonology describe speech sounds and how a language organises them, and discourse and pragmatics describe how texts and conversations hang together and how context shapes meaning.
+**Key terms**
+  **Phonetics**: the study of how speech sounds are produced, transmitted and perceived.
+  **Phonology**: the study of how a language organises and uses sounds to make meaning.
+  **Phoneme**: a sound that makes a difference to meaning in a language (/p/ and /b/ in "pat" and "bat").
+  **Prosody**: features of speech across stretches of sound — pitch, stress, volume, tempo and intonation.
+  **Discourse**: language beyond the sentence — how whole texts and conversations are structured.
+  **Pragmatics**: how meaning depends on context, including what the speaker intends and what the listener infers.
+**Phonetics and phonology**
+  Phonetics describes sounds physically: where and how they're made in the mouth (studied in detail in Area of Study 2).
+  Phonology asks which sounds contrast in a language. In English /l/ and /ɹ/ are different phonemes ("light" vs "right"); in Japanese they aren't.
+  The IPA (International Phonetic Alphabet) gives one symbol per sound, because English spelling doesn't ("tough", "though", "through").
+  Prosody carries meaning: stress distinguishes "REcord" (noun) from "reCORD" (verb); rising intonation can turn "You're coming?" into a question.
+**Discourse and pragmatics**
+  Discourse covers how a text is organised: openings and closings, turn-taking in conversation, how sentences link together.
+  Pragmatics covers meaning in context: "Can you open the window?" is literally about ability but pragmatically a request.
+  Politeness, implied meaning and speaker intention all belong here.
+**Worked example**
+  A teacher says, "Someone's left their lunch on my desk." Explain the pragmatics.
+    Literally, the sentence is a statement about a lunch box (referential).
+    In context, the teacher implies a request for the owner to collect it; students infer this.
+    The indirectness is a politeness strategy — it avoids naming or accusing anyone.
+**Going deeper**
+  Intonation units in Australian English sometimes end with a rise on statements ("high rising terminal"), which can signal checking understanding or inclusiveness rather than a question.
+  The same sentence can be pragmatically polite or rude depending on tone and relationship — pragmatics links language to people.
+**Common mistakes**
+  Confusing phonetics (the physical sounds) with phonics (teaching reading through letter–sound links).
+  Writing IPA symbols from spelling rather than from sound.
+  Treating pragmatics as literal meaning.
+**Exam tips**
+  When discussing prosody, name the feature (stress, intonation, pitch, volume, tempo) and say what meaning or effect it creates.
+**Connections**
+  Speech vs writing: prosody and paralinguistics are features of speech.
+  Phonetics, phonology and the IPA (Area of Study 2): the full detail.
+  Functions of language: pragmatics explains indirect functions.
+**Practice questions**
+  Explain the difference between phonetics and phonology.
+    Phonetics studies the physical production and perception of speech sounds; phonology studies how a particular language organises sounds into a system of contrasts (phonemes) to create meaning.
+  How can stress change the meaning of a word? Give an example.
+    Stress on the first syllable of "PREsent" makes it a noun (a gift); stress on the second, "preSENT", makes it a verb (to show).
+  Explain what pragmatics adds to our understanding of "Is that your phone ringing?"
+    Literally it's a yes/no question, but in context it may be a hint or complaint that the phone is disturbing others — pragmatics explains this intended meaning.
+**Flashcards**
+  Define phonology. :: The study of how a language organises and uses sounds to make meaning.
+  What is a phoneme? :: A sound that makes a difference to meaning in a language.
+  Pitch, stress, volume, tempo and intonation are {{prosodic}} features.
+  Define pragmatics. :: How meaning depends on context, including speaker intention and listener inference.
+  What does discourse study? :: Language beyond the sentence — how whole texts and conversations are structured.
+  Why do linguists use the IPA? :: One symbol represents one sound, unlike English spelling.
+  How does stress distinguish "REcord" from "reCORD"? :: First-syllable stress makes a noun; second-syllable stress makes a verb.
+
+@ 0f99e950 U1.1.1.8 | Speech and writing
+**In a sentence**
+  Speech is usually spontaneous, interactive and fleeting, and uses prosody, paralinguistics and non-fluency features; writing is usually planned, edited and permanent, relying on punctuation and layout — though digital texts blur the line.
+**Key terms**
+  **Spoken mode**: language produced with the voice.
+  **Written mode**: language produced as marks on a surface or screen.
+  **Paralinguistic features**: non-verbal features that accompany speech — vocal effects (laughter, whispers), gestures, facial expression, eye contact, creaky or breathy voice.
+  **Prosodic features**: pitch, stress, volume, tempo, intonation.
+  **Non-fluency features**: pauses, filled pauses ("um"), false starts, repetitions and repairs.
+  **Deixis**: words whose meaning depends on the context ("this", "here", "now", "you").
+  **Lexical density**: the proportion of content words in a text — usually higher in writing.
+**Typical features of speech**
+  Spontaneous and interactive: turn-taking, overlaps, backchannels ("yeah", "mm").
+  Non-fluency features: "I, um, I was gonna — I mean, I did go."
+  Prosody and paralinguistics carry meaning — sarcasm through tone, emphasis through stress, a shrug.
+  Shared context allows deixis ("put it over there") and ellipsis ("Coming?").
+  Looser syntax: clauses chained with "and", "so", "and then"; fragments.
+  Transient: gone once said (unless recorded).
+**Typical features of writing**
+  Planned and edited: few errors, no fillers.
+  Permanent: can be reread, so it can be more complex.
+  Punctuation, capitals, paragraphs, headings, fonts and layout do the work that prosody does in speech.
+  Standardised spelling and grammar; more complex sentences, nominalisation ("the implementation of the policy") and higher lexical density.
+  The writer and reader are usually separated in time and space, so more must be made explicit.
+**Blurred boundaries**
+  Texting and social media: written, but spontaneous, interactive and speech-like (abbreviations, emoji as paralinguistic cues, "sooo" for prosody).
+  Speeches and news bulletins: spoken, but scripted — few non-fluency features.
+  A continuum works better than two boxes.
+**Worked example**
+  Identify three features that show this is transcribed spontaneous speech: "So I was like, um, (.) going to the shops, right, and — oh my God — guess who I saw?"
+    Filled pause "um" and a micropause "(.)" — non-fluency features of unplanned speech.
+    Discourse markers "So", "right" and "like" organising the talk and checking the listener's attention.
+    An interrupted structure with an inserted interjection ("— oh my God —") and a direct question to the listener — interactive, loosely structured syntax.
+**Going deeper**
+  Emoji and punctuation choices ("ok." vs "ok!!") act like paralinguistic and prosodic cues in writing — a full stop in a text message can read as cold.
+  Transcription conventions let linguists show speech on paper: (.) for a micropause, (2.0) for a timed pause, [ for the start of overlapping speech, and a colon for a lengthened sound, e.g. "so:o".
+**Common mistakes**
+  Assuming speech is "careless" or "worse" than writing. It follows its own conventions suited to real-time interaction.
+  Listing features without explaining why they occur (spontaneity, interaction, shared context).
+  Calling gestures "prosodic" — they're paralinguistic.
+**Exam tips**
+  Explain features through the conditions of the mode: "the false start occurs because speech is planned in real time".
+**Connections**
+  Situational context: mode and preparedness.
+  Introduction to phonology and discourse: prosody and discourse features.
+  Metalanguage: paralinguistic features appear throughout Units 1–4.
+**Practice questions**
+  Give three differences between spontaneous speech and formal writing.
+    Speech has non-fluency features (fillers, false starts), writing is edited; speech uses prosody and paralinguistics, writing uses punctuation and layout; speech relies on shared context (deixis, ellipsis), writing makes more explicit and has higher lexical density.
+  Explain how a text message can share features of speech.
+    It is written but typically spontaneous and interactive, with informal lexis, ellipsis, abbreviations, and emoji or repeated letters standing in for tone of voice and facial expression.
+  Distinguish prosodic from paralinguistic features.
+    Prosodic features are properties of the voice across speech — pitch, stress, volume, tempo, intonation. Paralinguistic features accompany speech: vocal effects such as laughter or whispering, and non-verbal cues such as gestures, facial expressions and eye contact.
+**Flashcards**
+  Name three non-fluency features. :: Filled pauses, false starts, repairs (also repetitions, unfilled pauses).
+  What are paralinguistic features? :: Non-verbal features accompanying speech — laughter, gestures, facial expression, eye contact, voice quality.
+  Writing usually has higher {{lexical density}} than speech.
+  What is deixis? :: Words whose meaning depends on context, e.g. "this", "here", "now".
+  Why does spontaneous speech contain false starts? :: It is planned in real time, so speakers revise as they go.
+  How do emoji work in texting? :: As paralinguistic cues, showing tone and facial expression in writing.
+  Transcription symbol for a micropause? :: (.)
+
+@ a35aced7 U1.1.1.9 | Metalanguage for language and its functions
+**In a sentence**
+  Metalanguage is the technical vocabulary linguists use to describe language, and using it accurately is what turns an opinion about a text into an objective linguistic analysis.
+**Key terms**
+  **Metalanguage**: language used to describe and analyse language.
+  **Objective description**: describing language as it is used, without judging it as good or bad.
+  **Systematic analysis**: working through a text with consistent categories (e.g. subsystem by subsystem).
+**The core terms for this area**
+  Nature of language: sign, arbitrary, convention, meaning-making system.
+  Functions: referential, expressive, conative, phatic, poetic, metalingual.
+  Properties: arbitrariness, discreteness, duality of patterning, productivity, displacement, cultural transmission, spontaneity.
+  Context: register (formal/informal), tenor, audience, field, mode, setting, text type, cultural context, authorial intent, preparedness.
+  Subsystems: phonetics and phonology; morphology; lexicology; syntax; semantics; discourse and pragmatics.
+  Unit 1 metalanguage from the study design's table: consonant voicing, place and manner; vowel height, backness and rounding; connected speech (assimilation, vowel reduction, elision, insertion); the IPA; prosody; morphemes (root, stem, free, bound, affix, inflectional, derivational); morphological over-generalisation; word classes; function and content words; phrases, clauses, sentences, word order; paralinguistic features; code switching; the relation of meaning and sign; semantic domain; semantic over-generalisation; inference.
+**Using metalanguage well**
+  Precise: "the modal verb 'must' creates a strong obligation", not "the word 'must' is bossy".
+  Evidence-based: always attach a term to a quoted example.
+  Descriptive: "non-standard" not "wrong"; "informal" not "sloppy".
+**Worked example**
+  Rewrite with metalanguage: "The ad uses cool words and a catchy bit to make people buy stuff."
+    "The ad's informal register, created by colloquial lexis such as 'heaps' and 'epic', builds a close tenor with a young audience, while the alliterative slogan 'Big bites, better bites' serves a poetic function that makes the conative message memorable."
+**Going deeper**
+  VCE English Language examiners reward "sophisticated and accurate use of metalanguage" — but a term used wrongly costs more than a plain description.
+**Common mistakes**
+  Using a term without an example from the text.
+  Using judgemental words ("lazy", "incorrect", "bad grammar") instead of descriptive ones.
+**Exam tips**
+  Build a personal glossary with a definition and an example for each term, and practise feature → example → effect sentences.
+**Connections**
+  Every other learning point in this area: this is the vocabulary that ties them together.
+  Key skill: describing Australian texts objectively and systematically.
+**Practice questions**
+  Why is metalanguage important in English Language?
+    It lets you describe language precisely, consistently and objectively, so your analysis is based on evidence rather than personal opinion.
+  Replace the judgemental description "bad grammar" in describing "We was going" with an objective one.
+    "The non-standard subject–verb agreement 'we was' (Standard Australian English 'we were') is typical of informal spoken varieties."
+**Flashcards**
+  Define metalanguage. :: Language used to describe and analyse language.
+  What makes a description objective? :: It describes language use without judging it as good or bad.
+  Instead of "wrong", linguists say {{non-standard}}.
+  Why attach a quotation to every term? :: It provides evidence that the feature is actually in the text.
+  Name the six subsystems of language. :: Phonetics and phonology, morphology, lexicology, syntax, semantics, discourse and pragmatics.
+  Rewrite "the word 'must' is bossy" with metalanguage. :: "The modal verb 'must' expresses strong obligation."
+  What is a systematic analysis? :: One that works through a text with consistent categories, e.g. subsystem by subsystem.
+
+@ 8ef4e556 U1.1.2.1 | Describing key linguistic concepts
+**In a sentence**
+  This skill is identifying concepts like function, register, arbitrariness or displacement in real language and describing them clearly with evidence.
+**Key terms**
+  **Identify**: recognise and name a concept or feature in a text.
+  **Describe**: give the characteristics of the feature and show where it appears.
+  **Evidence**: a direct quotation from the text that shows the feature.
+**How to do it**
+  Read for the context first: who, to whom, where, why, spoken or written.
+  Spot the concept: what is the text doing (function)? how formal is it (register)? what relationship does it show (tenor)?
+  Name it, quote it, explain it: "The phatic function is evident in 'How ya going, love?', which opens a friendly exchange rather than seeking information."
+**Going deeper**
+  One quotation can illustrate several concepts; choose the best example for each point rather than repeating the same one.
+**Worked example**
+  A child says to a parent, "Tomorrow we go beach?" Identify and describe one property of human language shown.
+    Displacement: the child talks about a future event ("Tomorrow"), not the here and now — a property animal communication largely lacks.
+**Connections**
+  All nine key knowledge points of this area.
+  Objective, systematic description of Australian texts.
+**Practice questions**
+  Identify and describe the main function of the sign "Please take your rubbish with you."
+    Conative: the imperative "take", softened by "Please", directs readers to act.
+  What three steps make a strong description of a concept in a text?
+    Name the concept, quote the evidence from the text, and explain how the evidence shows the concept in this context.
+**Flashcards**
+  Three steps to describe a concept in a text? :: Name it, quote it, explain it.
+  Why read for context first? :: Functions, register and tenor can only be judged in context.
+  A direct quotation used to support a point is {{evidence}}.
+  Can one quotation show several concepts? :: Yes — but choose the best example for each point.
+
+@ 6fe15b88 U1.1.2.2 | Working with the subsystems
+**In a sentence**
+  This skill is using morphology, lexicology, syntax and semantics as practical tools: breaking words into morphemes, labelling word classes and clause elements, and explaining meaning.
+**Key terms**
+  **Parse**: break a sentence into its parts and label their grammatical roles.
+  **Morphological analysis**: dividing words into morphemes and classifying them.
+  **Word class analysis**: labelling words by their grammatical category.
+**Practical routines**
+  Morphology: underline roots, circle affixes, label each morpheme free/bound and inflectional/derivational.
+  Lexicology: test a word's class by what it does — can it be made plural (noun)? take -ed (verb)? follow "very" (adjective or adverb)?
+  Syntax: find the verb phrase first, then ask "who or what?" for the subject and object; bracket phrases; count main clauses.
+  Semantics: group words into semantic domains; note connotations; explain inferences.
+**Going deeper**
+  Tests beat guesses: "fast" is an adjective in "a fast car" and an adverb in "she ran fast" — decide by function in the sentence.
+**Worked example**
+  Parse "My sister has bought a new bike."
+    NP "My sister" (determiner + noun) — subject.
+    VP "has bought" (auxiliary "has" + main verb "bought") — predicate.
+    NP "a new bike" (determiner + adjective + noun) — object.
+    Simple declarative sentence (one main clause, statement).
+**Connections**
+  Morphology, lexicology, syntax and semantics (key knowledge).
+  Child language samples (Area of Study 2) are analysed the same way.
+**Practice questions**
+  How can you test whether a word is a noun?
+    See if it can be made plural or follow a determiner ("the", "a"): "a koala", "two koalas".
+  Identify the word class of "fast" in "She ran fast" and explain.
+    Adverb: it modifies the verb "ran", describing how she ran.
+**Flashcards**
+  What does it mean to parse a sentence? :: Break it into parts and label their grammatical roles.
+  First step in finding the subject of a clause? :: Find the verb phrase, then ask who or what did it.
+  Words grouped by an area of meaning form a {{semantic domain}}.
+  How do you decide a word's class? :: By what it does in the sentence, not by the word alone.
+
+@ 95fae45b U1.1.2.3 | Analysing Australian texts objectively
+**In a sentence**
+  This skill is analysing real Australian spoken and written texts in a consistent, evidence-based way, describing what the language does rather than judging it.
+**Key terms**
+  **Systematic**: following a consistent method (e.g. context, then each subsystem in turn).
+  **Objective**: descriptive and evidence-based, not judgemental.
+  **Australian texts**: spoken and written texts produced in Australian contexts — conversations, radio, podcasts, ads, news, social media.
+**A method**
+  1. Context: field, mode, setting, text type, participants, purpose, cultural context.
+  2. Features by subsystem: lexis and semantics (e.g. Australian colloquialisms "arvo", "reckon"), morphology, syntax, discourse and pragmatics, prosody and paralinguistics (for speech).
+  3. Link each feature to its function and context.
+  4. Stay descriptive: "informal", "non-standard", "colloquial" rather than "lazy" or "bad".
+**Going deeper**
+  Australian texts are great for analysis because features like hypocoristics ("brekkie", "servo"), the tag "but" ("It's hot, but"), and "yeah no" carry clear social meaning.
+**Worked example**
+  Analyse the language of this café sign: "Brekkie served till 11. No worries if you're late — we'll whip you up a toastie!"
+    Context: written, public sign; audience of customers; persuasive and phatic purpose.
+    Lexis: Australian colloquialisms "Brekkie", "No worries", "toastie" — hypocoristic forms create an informal register and a friendly, local identity.
+    Syntax: a fragment ("Brekkie served till 11") for concise information, then an exclamative-style declarative with an exclamation mark.
+    Function: referential (opening hours) plus phatic and conative (welcoming customers, encouraging them to come in).
+**Connections**
+  Situational and cultural context.
+  Metalanguage for the nature and functions of language.
+  Units 3–4 analytical commentaries use the same method.
+**Practice questions**
+  Why must analysis be objective?
+    Linguistics describes how language is actually used; judging varieties or features as "wrong" reflects personal attitudes, not evidence.
+  List the steps of a systematic analysis.
+    Establish the context; identify features subsystem by subsystem with quoted examples; link each feature to its function and context; use descriptive, not judgemental, metalanguage.
+**Flashcards**
+  What makes an analysis systematic? :: It follows a consistent method, e.g. context then each subsystem in turn.
+  What makes an analysis objective? :: It describes language with evidence, without judging it.
+  "Brekkie" and "servo" are Australian {{hypocoristics}}.
+  Descriptive alternative to "sloppy language"? :: Informal or colloquial language.

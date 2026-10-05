@@ -1,0 +1,853 @@
+% VCE Chemistry — Unit 2, Area of Study 1: how chemicals interact with water.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ 96f5da2b U2.1.1.1 | Water on Earth
+**In a sentence**
+  Earth is unusual in having water as solid, liquid and gas at its surface, yet only a tiny fraction of all that water is fresh, unfrozen and easy to reach for drinking.
+**Key terms**
+  **Water cycle**: the continuous movement of water through evaporation, condensation, precipitation, run-off and infiltration.
+  **Fresh water**: water with low dissolved salt (below about 0.05%).
+  **Groundwater / aquifer**: water held underground in soil and rock / a rock layer that holds usable groundwater.
+  **Desalination**: removing salt from seawater (e.g. by reverse osmosis).
+**Water in three states**
+  Earth is the only known planet where water exists naturally as solid (ice, snow), liquid (oceans, rivers) and gas (water vapour) at the surface.
+  This is possible because Earth's surface temperature range (roughly −90 °C to 55 °C) spans water's melting point (0 °C) and a range where it evaporates, and because of water's unusually high melting and boiling points for its size (hydrogen bonding).
+  The **water cycle** moves water between states: evaporation, condensation (clouds), precipitation, melting, run-off, infiltration.
+**How much water is drinkable?**
+  About **97%** of Earth's water is salt water in the oceans.
+  About **3%** is fresh water, and most of that is frozen in ice caps and glaciers (about two-thirds) or is groundwater (about one-third).
+  Only a tiny fraction — well under **1%** of all water — is accessible fresh surface water in lakes, rivers and shallow groundwater.
+  Fresh water is unevenly distributed; Australia is the driest inhabited continent.
+**Pressures on drinking water**
+  Population growth, agriculture (the largest user), industry, pollution, drought and climate change.
+  Responses: water treatment and recycling, desalination (energy intensive), stormwater capture, reducing use.
+**Going deeper**
+  Rough budget: of all Earth's water, about 97% is in the oceans. Of the 3% that's fresh, roughly two-thirds is ice and snow and almost one-third groundwater; lakes, rivers, soil moisture and the atmosphere share the small remainder.
+  Changes of state in the water cycle move enormous amounts of energy around the planet: evaporation absorbs it, condensation in clouds releases it.
+  Australian responses to scarce water include desalination plants (Wonthaggi near Melbourne and Kurnell in Sydney), recycled water for irrigation, and household water restrictions during drought.
+**Connections**
+  The anomalous properties of water (next learning points) explain why it's liquid at Earth's temperatures.
+  Latent heat of vaporisation: evaporation moves energy through the water cycle.
+  Salts in water and soil, and removing impurities, look at water quality.
+**Practice questions**
+  Why is only a small fraction of Earth's fresh water available for drinking?
+    Most fresh water is frozen in ice caps and glaciers or deep underground; only a small part is in accessible lakes, rivers and shallow groundwater.
+  Name the processes in the water cycle where water changes state.
+    Evaporation (liquid → gas), condensation (gas → liquid), freezing and melting, and sublimation (ice → vapour).
+  Give one advantage and one disadvantage of desalination.
+    Advantage: a reliable supply not dependent on rainfall. Disadvantage: high energy use (and cost), and concentrated brine waste returned to the sea.
+**Flashcards**
+  Roughly what percentage of Earth's water is salt water? :: About 97%
+  Where is most of Earth's fresh water? :: Frozen in ice caps and glaciers (then groundwater).
+  About how much of Earth's water is accessible fresh surface water? :: Well under 1%.
+  Why can water exist in all three states at Earth's surface? :: Earth's temperature range spans water's melting point and evaporation range, helped by water's high melting and boiling points from hydrogen bonding.
+  Name two ways to increase drinking water supply. :: Desalination, water recycling, stormwater capture (any two).
+  Where is most of Earth's fresh water? :: Frozen in ice caps and glaciers.
+  One disadvantage of desalination? :: High energy use and cost (and brine waste).
+
+@ 9a42b58c U2.1.1.2 | Boiling points of the Group 16 hydrides
+**In a sentence**
+  Water should be a gas at room temperature if you follow the trend of the Group 16 hydrides, but hydrogen bonding makes it boil at 100 °C.
+**Key terms**
+  **Hydride**: a compound of an element with hydrogen (H₂O, H₂S, H₂Se, H₂Te).
+  **Hydrogen bond**: attraction between an H bonded to N, O or F and a lone pair on N, O or F of another molecule.
+  **Anomalous**: not following the expected pattern.
+**The pattern**
+  Group 16 hydrides: H₂O, H₂S, H₂Se, H₂Te. All are bent, polar molecules.
+  Boiling points: H₂O 100 °C, H₂S −60 °C, H₂Se −41 °C, H₂Te −2 °C.
+  From H₂S → H₂Te, boiling point **rises** with molecular size: more electrons → stronger dispersion forces.
+  By that trend water should boil at about −80 °C. Instead it boils at **100 °C** — an anomaly.
+**Why water is anomalous**
+  O is small and very electronegative (3.4), so O–H bonds are highly polar and H is strongly δ+.
+  Water forms **hydrogen bonds**: each molecule can form up to four (two via its H atoms, two via its lone pairs).
+  S, Se and Te are much less electronegative, so their hydrides have only weak dipole–dipole and dispersion forces.
+  Much more energy is needed to overcome the hydrogen bonding between water molecules, so its boiling point is much higher.
+**How to write the explanation**
+  1. State the trend and water's anomaly.
+  2. Name the intermolecular forces in each (dispersion rising down the group; hydrogen bonding only in water).
+  3. Link: stronger forces → more energy to separate molecules → higher boiling point.
+**Going deeper**
+  The same anomaly shows in groups 15 and 17: NH₃ and HF boil much higher than the trend predicts, for the same reason. Group 14 (CH₄, SiH₄, GeH₄, SnH₄) shows no anomaly, because CH₄ can't hydrogen bond.
+  Water's hydrogen bonding is especially extensive because each molecule has two H atoms and two lone pairs, so it forms an extended 3D network (up to four hydrogen bonds per molecule).
+**Worked example**
+  Sketch the trend (in words) for boiling points of group 14 and group 16 hydrides, and explain the difference.
+    Group 14: CH₄ lowest, rising smoothly to SnH₄ — dispersion forces increase with size; no hydrogen bonding anywhere.
+    Group 16: H₂S lowest, rising to H₂Te, but H₂O far above all of them — hydrogen bonding in water only.
+**Common mistakes**
+  Saying boiling water breaks O–H bonds.
+  Saying H₂S has hydrogen bonds (S isn't N, O or F).
+**Exam tips**
+  Use the word "overcome" and name the forces: "More energy is needed to overcome the hydrogen bonds between water molecules than the dipole–dipole and dispersion forces between H₂S molecules."
+**Connections**
+  Bonding and intermolecular forces (Unit 1) provides the forces.
+  Density of ice and specific heat capacity are also explained by hydrogen bonding.
+**Practice questions**
+  Explain why NH₃ has a higher boiling point than PH₃.
+    NH₃ forms hydrogen bonds (H bonded to small, electronegative N with a lone pair); PH₃ has only weaker dipole–dipole and dispersion forces, so less energy is needed to boil it.
+  Why does the boiling point increase from H₂S to H₂Te?
+    Larger molecules with more electrons have stronger dispersion forces.
+  Why does methane show no anomaly in the group 14 trend?
+    Carbon isn't electronegative enough, and CH₄ has no lone pairs, so it can't form hydrogen bonds.
+**Flashcards**
+  Why does the boiling point increase from H₂S to H₂Te? :: The molecules get larger with more electrons, so dispersion forces get stronger.
+  Why does water have a much higher boiling point than H₂S? :: Water molecules form hydrogen bonds (H bonded to small, highly electronegative O); H₂S has only weaker dipole–dipole and dispersion forces.
+  Up to how many hydrogen bonds can one water molecule form? :: Four — two through its H atoms and two through its lone pairs.
+  If the trend held, roughly what would water's boiling point be? :: About −80 °C (instead of 100 °C).
+  H₂S has {{dipole–dipole and dispersion}} forces but no hydrogen bonding.
+  Which group 14 hydride shows an anomalous boiling point? :: None — CH₄ can't hydrogen bond, so the trend is smooth.
+  Why does NH₃ boil higher than PH₃? :: NH₃ forms hydrogen bonds; PH₃ doesn't.
+
+@ 1edc1b62 U2.1.1.3 | Why ice floats
+**In a sentence**
+  Hydrogen bonds lock ice into an open hexagonal lattice that takes up more space than liquid water, so ice floats.
+**Key terms**
+  **Density**: mass per unit volume (g mL⁻¹ or g cm⁻³); ρ = m ÷ V.
+  **Hexagonal lattice**: the open, ordered arrangement of water molecules in ice.
+**The anomaly**
+  For most substances the solid is **denser** than the liquid, so it sinks.
+  Ice (about 0.92 g mL⁻¹) is **less dense** than liquid water (1.00 g mL⁻¹), so ice floats.
+  Liquid water is densest at about **4 °C**.
+**Why**
+  In ice, each water molecule forms four hydrogen bonds in a fixed, open **hexagonal lattice**. Hydrogen bonds are directional, which holds molecules further apart than in the liquid.
+  When ice melts, some hydrogen bonds break and the open structure collapses, so molecules pack more closely — the liquid is denser.
+  Between 0 °C and 4 °C the remaining ice-like clusters keep breaking up (contraction), which beats thermal expansion; above 4 °C normal expansion wins.
+**Consequences**
+  Ice forms on top of lakes and insulates the water below, so aquatic life survives winter.
+  Water expanding as it freezes can burst pipes and crack rocks (weathering).
+**Going deeper**
+  Water expands by about 9% when it freezes, which is why frozen pipes burst and why freeze–thaw cycles crack rocks.
+  Because water is densest at about 4 °C, in winter the 4 °C water sinks to the bottom of a lake while colder water and ice stay on top — the bottom stays liquid.
+**Worked example**
+  1.00 L of water (1.00 g mL⁻¹) freezes into ice of density 0.917 g mL⁻¹. What volume does the ice occupy?
+    Mass = 1000 mL × 1.00 g mL⁻¹ = 1000 g
+    V = m ÷ ρ = 1000 ÷ 0.917 = 1090 mL — about 9% bigger.
+**Connections**
+  Hydrogen bonding (group 16 hydrides).
+  Water on Earth: freezing and melting in the water cycle.
+**Practice questions**
+  Explain, using structure, why ice is less dense than liquid water.
+    In ice each molecule forms four directional hydrogen bonds in an open hexagonal lattice with lots of space; when ice melts, some hydrogen bonds break and molecules pack closer, so the liquid is denser.
+  Calculate the volume of 500 g of ice (density 0.917 g mL⁻¹).
+    V = 500 ÷ 0.917 = 545 mL
+  Why do lakes freeze from the top down?
+    Ice and the coldest water (below 4 °C) are less dense than 4 °C water, so they stay at the surface.
+**Flashcards**
+  Why does ice float on water? :: Ice is less dense than liquid water because hydrogen bonding holds molecules in an open hexagonal lattice.
+  At what temperature is liquid water most dense? :: About 4 °C.
+  What happens to the hydrogen-bonded lattice when ice melts? :: Some hydrogen bonds break and the open structure collapses, so molecules pack closer and density increases.
+  Why is ice floating important for aquatic life? :: The ice layer insulates the water beneath so it doesn't freeze solid.
+  In ice, each water molecule forms {{four}} hydrogen bonds in an open hexagonal arrangement.
+  By about how much does water expand when it freezes? :: About 9%.
+  Volume of 500 g of ice (0.917 g mL⁻¹)? :: 545 mL
+
+@ 1e365d90 U2.1.1.4 | Specific heat capacity of water
+**In a sentence**
+  Water takes a lot of energy to warm up — 4.18 J for every gram per degree — because much of the energy goes into disrupting hydrogen bonds.
+**Key terms**
+  **Specific heat capacity (c)**: energy needed to raise 1 g of a substance by 1 °C (1 K); symbol c, units J g⁻¹ K⁻¹.
+  **Heat energy (q)**: energy transferred, in J or kJ.
+  **Temperature change (ΔT)**: final − initial temperature.
+**Definition**
+  **Specific heat capacity (c)** is the energy needed to raise the temperature of 1 g of a substance by 1 °C (or 1 K).
+  Water: c = **4.18 J g⁻¹ K⁻¹** (equivalently J g⁻¹ °C⁻¹). This is very high compared with most substances (e.g. ethanol 2.44, iron 0.45).
+**The formula**
+  $q = mc\Delta T$
+  q = energy (J), m = mass (g), c = specific heat capacity (J g⁻¹ K⁻¹), ΔT = temperature change (°C or K — the same size step).
+  Divide by 1000 to convert J to kJ.
+**Why water's value is high**
+  Energy added to water first goes into breaking or stretching the many hydrogen bonds between molecules, rather than only increasing their kinetic energy. So more energy is needed per degree of temperature rise.
+**Why it matters**
+  Oceans and lakes warm and cool slowly, moderating coastal climates.
+  Bodies (mostly water) resist temperature change; water is a good coolant (car radiators, power stations).
+**Worked example**
+  How much energy heats 250 g of water from 20.0 °C to 80.0 °C?
+    q = mcΔT = 250 × 4.18 × 60.0 = 62 700 J = 62.7 kJ
+**Worked example — finding ΔT**
+  5.00 kJ is added to 100 g of water. Temperature rise?
+    ΔT = q ÷ (mc) = 5000 ÷ (100 × 4.18) = 12.0 °C
+**Going deeper**
+  A change of 1 °C equals a change of 1 K, so ΔT is the same number in both scales — you don't add 273 for a temperature change.
+  Calorimetry uses q = mcΔT to measure energy released by reactions or fuels: heat a known mass of water and measure its temperature rise. Heat lost to surroundings makes measured values too low.
+**Worked example 2**
+  Burning 0.500 g of ethanol heats 200 g of water from 20.0 °C to 36.5 °C. Energy absorbed by the water? Energy per gram of ethanol?
+    q = 200 × 4.18 × 16.5 = 13 794 J = 13.8 kJ
+    Per gram: 13.8 ÷ 0.500 = 27.6 kJ g⁻¹ (lower than the data-book value, about 29.6 kJ g⁻¹, because heat is lost to the surroundings).
+**Common mistakes**
+  Forgetting to convert kJ to J (or mL to g — for water 1 mL ≈ 1 g).
+  Using the final temperature instead of the change.
+**Exam tips**
+  Write the formula, substitute with units, give the answer with units and correct significant figures; convert J to kJ only at the end if asked.
+**Connections**
+  Hydrogen bonding explains the high value.
+  Latent heat of vaporisation: the other energy property of water.
+**Practice questions**
+  How much energy is needed to heat 2.00 kg of water from 15.0 °C to 95.0 °C?
+    q = 2000 × 4.18 × 80.0 = 668 800 J = 669 kJ
+  The same energy (10.0 kJ) is added to 100 g of water and to 100 g of ethanol (c = 2.44 J g⁻¹ K⁻¹). Which heats more, and by how much each?
+    Water: ΔT = 10 000 ÷ (100 × 4.18) = 23.9 °C. Ethanol: 10 000 ÷ (100 × 2.44) = 41.0 °C. Ethanol heats more because its specific heat capacity is lower.
+  Why is water used in car radiators?
+    It has a high specific heat capacity, so it absorbs a lot of heat from the engine for a small temperature rise.
+**Flashcards**
+  Define specific heat capacity. :: The energy needed to raise the temperature of 1 g of a substance by 1 °C (1 K).
+  Specific heat capacity of water, with units? :: 4.18 J g⁻¹ K⁻¹
+  Formula for heat energy and temperature change? :: q = mcΔT
+  Energy to heat 100 g of water by 10 °C? :: q = 100 × 4.18 × 10 = 4180 J (4.18 kJ)
+  Why does water have a high specific heat capacity? :: Added energy goes into disrupting the many hydrogen bonds between molecules, not just raising their kinetic energy.
+  Why do coastal areas have milder climates? :: Oceans have a high heat capacity, so they warm and cool slowly and moderate air temperature.
+  Do you add 273 to a temperature change? :: No — a change of 1 °C equals a change of 1 K.
+  Energy to heat 2.00 kg of water by 80.0 °C? :: 669 kJ
+
+@ 309f5b0c U2.1.1.5 | Latent heat of vaporisation of water
+**In a sentence**
+  Turning liquid water into vapour takes an unusually large amount of energy, so evaporation cools the surface and keeps oceans and lakes at stable temperatures.
+**Key terms**
+  **Latent heat of vaporisation**: energy to change a liquid to a gas at constant temperature (kJ mol⁻¹ or kJ g⁻¹).
+  **Evaporation**: molecules escaping from a liquid's surface below its boiling point.
+  **Evaporative cooling**: the fall in temperature when the most energetic molecules leave a liquid.
+**Definition**
+  **Latent heat of vaporisation**: the energy needed to change a set amount of a liquid into a gas **without a change in temperature**.
+  For water: about **44 kJ mol⁻¹** at 25 °C (about 40.7 kJ mol⁻¹ at 100 °C) — high for such a small molecule.
+  The energy goes into overcoming the hydrogen bonds so molecules can escape into the gas phase.
+**Calculations**
+  $q = n \times L$ (L in kJ mol⁻¹) — or with mass, convert g to mol first (n = m ÷ 18.0).
+  Example: energy to evaporate 36.0 g of water at 25 °C: n = 2.00 mol; q = 2.00 × 44.0 = 88.0 kJ.
+**Impact on oceans and aquatic life**
+  Evaporation carries a lot of energy away from water surfaces, cooling oceans, lakes and organisms (sweating, transpiration).
+  Because so much energy is needed to evaporate water, bodies of water lose water slowly and keep a stable temperature — a stable habitat for aquatic life.
+  Energy released when water vapour condenses (in clouds) moves heat around the planet and drives weather systems.
+**Going deeper**
+  Evaporation cools because the molecules that escape are the most energetic ones; the average kinetic energy (temperature) of those left behind drops.
+  Per gram, water's latent heat is about 2.4 kJ g⁻¹ at 25 °C (44 ÷ 18) — about six times the energy needed to heat the same water from 0 °C to 100 °C.
+  Sweating and panting in animals and transpiration in plants all use evaporative cooling.
+**Worked example 2**
+  How much energy is needed to evaporate 90.0 g of water at 25 °C (44.0 kJ mol⁻¹)?
+    n = 90.0 ÷ 18.0 = 5.00 mol
+    q = 5.00 × 44.0 = 220 kJ
+**Common mistakes**
+  Thinking temperature rises while water boils — the energy goes into changing state, not into kinetic energy.
+  Confusing latent heat (change of state) with specific heat capacity (temperature change).
+**Connections**
+  Specific heat capacity (temperature change) vs latent heat (change of state).
+  Water on Earth: evaporation in the water cycle.
+  Hydrogen bonding explains both.
+**Practice questions**
+  Explain how sweating cools the body.
+    Sweat evaporates, absorbing a large amount of energy (latent heat) from the skin; the most energetic molecules leave, lowering the skin's temperature.
+  Energy to evaporate 1.00 kg of water at 25 °C?
+    n = 1000 ÷ 18.0 = 55.6 mol; q = 55.6 × 44.0 = 2.44 × 10³ kJ
+  Why does the temperature of boiling water stay at 100 °C while it's still being heated?
+    The energy supplied goes into overcoming hydrogen bonds to change liquid to gas (latent heat), not into increasing the molecules' kinetic energy.
+**Flashcards**
+  What is the latent heat of vaporisation? :: The energy needed to turn a liquid into a gas at constant temperature.
+  Approximate latent heat of vaporisation of water at 25 °C? :: About 44 kJ mol⁻¹
+  Why is water's latent heat of vaporisation high? :: Strong hydrogen bonds between molecules must be overcome for molecules to escape as gas.
+  How does water's high latent heat help regulate ocean temperatures? :: Evaporation removes a lot of energy from the surface, cooling it, and the large energy needed limits evaporation and temperature swings.
+  Energy to evaporate 18.0 g of water at 25 °C? :: 1.00 mol × 44 kJ mol⁻¹ = 44 kJ
+  During a change of state, the energy absorbed does not change the {{temperature}}.
+  Why does evaporation cool a liquid? :: The most energetic molecules escape, lowering the average kinetic energy of those left.
+  Energy to evaporate 90.0 g of water at 25 °C? :: 220 kJ (5.00 mol × 44.0)
+
+@ ec8c2d30 U2.1.2.1 | Brønsted–Lowry acids and bases
+**In a sentence**
+  An acid gives away a proton (H⁺) and a base takes one, so every acid–base reaction is a proton transfer between a conjugate pair on each side.
+**Key terms**
+  **Brønsted–Lowry acid / base**: proton donor / proton acceptor.
+  **Conjugate acid–base pair**: two species differing by one H⁺ (e.g. NH₄⁺/NH₃).
+  **Hydronium ion**: H₃O⁺, formed when water accepts a proton.
+  **Amphiprotic**: able to act as an acid or a base (e.g. H₂O, HCO₃⁻).
+  **Polyprotic acid**: can donate more than one proton per molecule (diprotic, triprotic).
+  **Ionisation**: formation of ions when a molecular acid reacts with water.
+**Definitions**
+  A **Brønsted–Lowry acid** is a **proton (H⁺) donor**.
+  A **Brønsted–Lowry base** is a **proton acceptor**.
+  An acid–base reaction is a **proton transfer**.
+**Acids in water**
+  In water, an acid donates a proton to a water molecule, forming the **hydronium ion** H₃O⁺.
+    HCl(aq) + H₂O(l) → H₃O⁺(aq) + Cl⁻(aq)
+  H₃O⁺ is often shortened to H⁺(aq).
+**Bases in water**
+  A base accepts a proton from water, producing hydroxide ions.
+    NH₃(aq) + H₂O(l) ⇌ NH₄⁺(aq) + OH⁻(aq)
+  Ionic hydroxides (NaOH) release OH⁻ directly when they dissolve: NaOH(s) → Na⁺(aq) + OH⁻(aq).
+**Conjugate acid–base pairs**
+  Two species that differ by one H⁺. When an acid donates a proton, what's left is its **conjugate base**.
+    HCl / Cl⁻, H₃O⁺ / H₂O, NH₄⁺ / NH₃, H₂O / OH⁻, H₂CO₃ / HCO₃⁻
+**Amphiprotic species**
+  Can act as an acid **or** a base, depending on what they react with.
+  Water: acid with NH₃ (gives OH⁻), base with HCl (gives H₃O⁺).
+  Others: HCO₃⁻, HSO₄⁻, H₂PO₄⁻, HPO₄²⁻.
+    HCO₃⁻(aq) + H₂O(l) ⇌ CO₃²⁻(aq) + H₃O⁺(aq) (acting as an acid)
+    HCO₃⁻(aq) + H₂O(l) ⇌ H₂CO₃(aq) + OH⁻(aq) (acting as a base)
+**Polyprotic acids**
+  Can donate more than one proton, one step at a time.
+  **Diprotic**: H₂SO₄, H₂CO₃. **Triprotic**: H₃PO₄.
+    H₃PO₄(aq) + H₂O(l) ⇌ H₂PO₄⁻(aq) + H₃O⁺(aq)
+    H₂PO₄⁻(aq) + H₂O(l) ⇌ HPO₄²⁻(aq) + H₃O⁺(aq)
+    HPO₄²⁻(aq) + H₂O(l) ⇌ PO₄³⁻(aq) + H₃O⁺(aq)
+  Each step donates less readily than the one before.
+**Going deeper**
+  A "proton" here is just an H⁺ ion — a hydrogen atom that has lost its only electron.
+  In every acid–base equation there are two conjugate pairs: HCl + H₂O → H₃O⁺ + Cl⁻ has HCl/Cl⁻ and H₃O⁺/H₂O.
+  Each successive ionisation of a polyprotic acid is harder, because removing a positive proton from an increasingly negative ion is more difficult.
+  Water's self-ionisation is itself an acid–base reaction between two water molecules: H₂O + H₂O ⇌ H₃O⁺ + OH⁻.
+**Worked example 2**
+  Write equations showing HSO₄⁻ acting as an acid and as a base in water, and identify the conjugate pairs.
+    Acid: HSO₄⁻(aq) + H₂O(l) ⇌ SO₄²⁻(aq) + H₃O⁺(aq) — pairs HSO₄⁻/SO₄²⁻ and H₃O⁺/H₂O
+    Base: HSO₄⁻(aq) + H₂O(l) ⇌ H₂SO₄(aq) + OH⁻(aq) — pairs H₂SO₄/HSO₄⁻ and H₂O/OH⁻
+**Common mistakes**
+  Writing H⁺ donation without water as the base (in water, write H₃O⁺).
+  Using → for weak acids and bases — use ⇌ (partial reaction).
+  Getting conjugate pairs wrong by more than one H⁺.
+**Exam tips**
+  Include water and states in ionisation equations and use ⇌ for weak acids. Conjugate pairs differ by exactly one H⁺ — check by counting.
+**Connections**
+  Strong vs weak acids: how completely the proton transfer happens.
+  Neutralisation reactions and pH calculations.
+  Acid rain and ocean acidification (carbonic acid, hydrogen carbonate).
+**Practice questions**
+  Identify the acid, base and conjugate pairs: NH₃(aq) + H₂O(l) ⇌ NH₄⁺(aq) + OH⁻(aq).
+    H₂O is the acid (donates H⁺), NH₃ the base. Pairs: NH₄⁺/NH₃ and H₂O/OH⁻.
+  Write the three ionisation steps of phosphoric acid.
+    H₃PO₄ + H₂O ⇌ H₂PO₄⁻ + H₃O⁺; H₂PO₄⁻ + H₂O ⇌ HPO₄²⁻ + H₃O⁺; HPO₄²⁻ + H₂O ⇌ PO₄³⁻ + H₃O⁺ (all aq, water l).
+  Show that HCO₃⁻ is amphiprotic.
+    Acid: HCO₃⁻ + H₂O ⇌ CO₃²⁻ + H₃O⁺. Base: HCO₃⁻ + H₂O ⇌ H₂CO₃ + OH⁻.
+  What is the conjugate base of H₂O and the conjugate acid of H₂O?
+    Conjugate base OH⁻; conjugate acid H₃O⁺.
+**Flashcards**
+  Define a Brønsted–Lowry acid and base. :: Acid: proton (H⁺) donor. Base: proton acceptor.
+  What is the conjugate base of H₂SO₄? :: HSO₄⁻
+  What is the conjugate acid of NH₃? :: NH₄⁺
+  What is an amphiprotic species? Give an example. :: A species that can act as an acid or a base, e.g. H₂O, HCO₃⁻, HSO₄⁻.
+  Write the equation for HNO₃ reacting with water. :: HNO₃(aq) + H₂O(l) → H₃O⁺(aq) + NO₃⁻(aq)
+  Write the first ionisation of carbonic acid in water. :: H₂CO₃(aq) + H₂O(l) ⇌ HCO₃⁻(aq) + H₃O⁺(aq)
+  What is a polyprotic acid? :: An acid that can donate more than one proton per molecule, one at a time (e.g. H₂SO₄, H₃PO₄).
+  When an acid reacts with water, the ion formed is the {{hydronium}} ion, H₃O⁺.
+  Conjugate pairs in HCl + H₂O → H₃O⁺ + Cl⁻? :: HCl/Cl⁻ and H₃O⁺/H₂O
+  Why is each successive ionisation of a polyprotic acid harder? :: A positive proton must be removed from an increasingly negative ion.
+
+@ dbfedf72 U2.1.2.2 | Strong vs weak, concentrated vs dilute
+**In a sentence**
+  "Strong" and "weak" describe how completely an acid or base reacts with water; "concentrated" and "dilute" describe how much of it is in each litre — the two are independent.
+**Key terms**
+  **Strong acid / base**: ionises / reacts completely in water.
+  **Weak acid / base**: ionises / reacts only partially in water.
+  **Concentrated / dilute**: a large / small amount of solute per volume.
+  **Degree of ionisation**: the fraction of molecules that have ionised.
+**Strength = how completely it ionises**
+  **Strong acid**: donates protons (ionises) completely in water. Written with →.
+    Examples: HCl, HNO₃, H₂SO₄ (first proton).
+  **Weak acid**: ionises only partially — most molecules stay un-ionised. Written with ⇌.
+    Examples: ethanoic acid CH₃COOH, carbonic acid H₂CO₃, phosphoric acid H₃PO₄, citric acid.
+  **Strong base**: fully dissociates or accepts protons completely — soluble ionic hydroxides NaOH, KOH (and Ca(OH)₂, Ba(OH)₂ as far as they dissolve).
+  **Weak base**: accepts protons only partially — ammonia NH₃, carbonate ion CO₃²⁻.
+**Concentration = how much per volume**
+  **Concentrated**: a large amount of acid or base per litre. **Dilute**: a small amount per litre.
+  Strength and concentration are **independent**:
+    Dilute strong acid: 0.001 M HCl.
+    Concentrated weak acid: 10 M CH₃COOH.
+**Comparing solutions of equal concentration**
+  A strong acid has a higher [H₃O⁺], lower pH, higher electrical conductivity and reacts faster (e.g. with Mg or CaCO₃) than a weak acid of the same concentration.
+  But both neutralise the **same amount** of base (the weak acid keeps ionising as H₃O⁺ is used up).
+**Going deeper**
+  In 0.1 M ethanoic acid only about 1% of molecules are ionised at any moment; the rest stay as CH₃COOH. That's why its pH (about 2.9) is higher than 0.1 M HCl (pH 1).
+  Conductivity tests show strength: at equal concentration, strong acids have more ions, so they conduct better and a bulb in the circuit glows brighter.
+  Reaction rate tests show it too: magnesium fizzes faster in 1 M HCl than in 1 M CH₃COOH (more H₃O⁺ at any moment), though both eventually give the same volume of H₂ from the same amount of acid.
+**Common mistakes**
+  Using "strong" to mean concentrated, or "weak" to mean dilute.
+  Saying a weak acid needs less base to neutralise it.
+**Exam tips**
+  Never use "strong" to mean concentrated. If a question asks about strength, talk about ionisation; if about concentration, talk about mol L⁻¹.
+**Connections**
+  Brønsted–Lowry theory: strength is about proton transfer.
+  pH calculations assume complete ionisation for strong acids and bases.
+  Choosing indicators for titrations depends on strength (Area of Study 2).
+**Practice questions**
+  Describe an experiment to show that HCl is a stronger acid than ethanoic acid.
+    Use equal concentrations (e.g. 0.1 M) at the same temperature; measure pH (HCl lower), conductivity (HCl higher) or rate of reaction with equal pieces of magnesium (HCl faster).
+  Can a solution of a weak acid have a lower pH than a solution of a strong acid? Explain.
+    Yes, if the weak acid is much more concentrated — e.g. 10 M ethanoic acid (pH about 1.9) has a lower pH than 0.001 M HCl (pH 3).
+  Why does 1 mol of ethanoic acid neutralise the same amount of NaOH as 1 mol of HCl?
+    As OH⁻ removes H₃O⁺, more ethanoic acid ionises, until all of it has reacted — the total amount of acid is the same.
+**Flashcards**
+  What makes an acid strong? :: It ionises (donates protons) completely in water.
+  What makes an acid weak? :: It only partially ionises in water.
+  Difference between a concentrated and a strong acid? :: Concentrated = a lot of acid per volume; strong = ionises completely. They are independent.
+  Give two strong acids and two weak acids. :: Strong: HCl, HNO₃, H₂SO₄. Weak: CH₃COOH, H₂CO₃, H₃PO₄.
+  Is ammonia a strong or weak base? :: Weak — it only partially accepts protons from water.
+  0.1 M HCl vs 0.1 M CH₃COOH — which has the lower pH and why? :: HCl, because it ionises completely, giving a higher [H₃O⁺].
+  Equal amounts of a strong and a weak acid need {{the same}} amount of base to neutralise.
+  Approximate pH of 0.1 M ethanoic acid? :: About 2.9 (only about 1% ionised)
+  Why does HCl conduct better than ethanoic acid at the same concentration? :: It is fully ionised, so it has more ions.
+
+@ 8efb34a5 U2.1.2.3 | Neutralisation reactions
+**In a sentence**
+  Acids react with hydroxides to make a salt and water, and with carbonates to make a salt, water and carbon dioxide — and ionic equations show what's really reacting.
+**Key terms**
+  **Neutralisation**: an acid reacting with a base to produce a salt and water.
+  **Salt**: an ionic compound formed from the cation of a base and the anion of an acid.
+  **Spectator ion**: an ion that doesn't change in the reaction.
+**Neutralisation**
+  An acid reacts with a base to form a **salt** (an ionic compound) and water.
+**Acid + metal hydroxide → salt + water**
+  HCl(aq) + NaOH(aq) → NaCl(aq) + H₂O(l)
+  Ionic: H₃O⁺(aq) + OH⁻(aq) → 2H₂O(l)  (or H⁺(aq) + OH⁻(aq) → H₂O(l))
+  With an insoluble hydroxide, keep it as a solid: Mg(OH)₂(s) + 2H₃O⁺(aq) → Mg²⁺(aq) + 4H₂O(l)
+**Acid + metal carbonate → salt + water + carbon dioxide**
+  2HCl(aq) + Na₂CO₃(aq) → 2NaCl(aq) + H₂O(l) + CO₂(g)
+  Ionic (soluble carbonate): 2H₃O⁺(aq) + CO₃²⁻(aq) → 3H₂O(l) + CO₂(g)
+  Solid carbonate (e.g. marble chips): CaCO₃(s) + 2H₃O⁺(aq) → Ca²⁺(aq) + 3H₂O(l) + CO₂(g)
+  Fizzing (CO₂) is the sign; CO₂ turns limewater milky.
+**Also: acid + hydrogen carbonate → salt + water + CO₂**
+  NaHCO₃(aq) + HCl(aq) → NaCl(aq) + H₂O(l) + CO₂(g)
+**Naming the salt**
+  The metal from the base + the anion from the acid: HCl → chlorides; H₂SO₄ → sulfates; HNO₃ → nitrates; CH₃COOH → ethanoates.
+**Method for ionic equations**
+  1. Write the full equation with states.
+  2. Split soluble ionic compounds (aq) and strong acids into ions. Keep solids, liquids, gases and weak acids as they are.
+  3. Cancel spectator ions. Check atoms and charges balance.
+**Going deeper**
+  Every strong acid + strong base neutralisation has the same ionic equation, H₃O⁺ + OH⁻ → 2H₂O, which is why they all release about the same energy per mole of water formed.
+  Carbonates first form carbonic acid, which breaks down: 2H₃O⁺ + CO₃²⁻ → H₂CO₃ + 2H₂O, then H₂CO₃ → H₂O + CO₂.
+  With weak acids, the ionic equation keeps the acid as a molecule: CH₃COOH(aq) + OH⁻(aq) → CH₃COO⁻(aq) + H₂O(l).
+**Worked example 2**
+  Write the full and ionic equations for nitric acid reacting with solid magnesium carbonate.
+    Full: MgCO₃(s) + 2HNO₃(aq) → Mg(NO₃)₂(aq) + H₂O(l) + CO₂(g)
+    Ionic: MgCO₃(s) + 2H₃O⁺(aq) → Mg²⁺(aq) + 3H₂O(l) + CO₂(g) (NO₃⁻ is a spectator)
+**Exam tips**
+  In ionic equations, solids, liquids, gases and weak acids are written whole; only soluble ionic compounds and strong acids are split into ions.
+**Connections**
+  Formulas of ionic compounds (Unit 1) for naming salts.
+  Antacids use these reactions.
+  Titrations (Area of Study 2) measure these reactions quantitatively.
+**Practice questions**
+  Write a full equation for hydrochloric acid and calcium hydroxide.
+    2HCl(aq) + Ca(OH)₂(aq) → CaCl₂(aq) + 2H₂O(l)
+  Write the ionic equation for ethanoic acid reacting with sodium hydroxide.
+    CH₃COOH(aq) + OH⁻(aq) → CH₃COO⁻(aq) + H₂O(l)
+  What would you observe when sulfuric acid is added to sodium carbonate solution?
+    Effervescence (fizzing) as CO₂ gas is produced.
+**Flashcards**
+  General products of an acid and a metal hydroxide? :: A salt and water.
+  General products of an acid and a metal carbonate? :: A salt, water and carbon dioxide.
+  Full equation for sulfuric acid + potassium hydroxide? :: H₂SO₄(aq) + 2KOH(aq) → K₂SO₄(aq) + 2H₂O(l)
+  Ionic equation for a strong acid with a soluble hydroxide? :: H₃O⁺(aq) + OH⁻(aq) → 2H₂O(l)
+  Ionic equation for calcium carbonate (solid) with hydrochloric acid? :: CaCO₃(s) + 2H₃O⁺(aq) → Ca²⁺(aq) + 3H₂O(l) + CO₂(g)
+  What salt forms from nitric acid and magnesium hydroxide? :: Magnesium nitrate, Mg(NO₃)₂
+  The gas produced when an acid reacts with a carbonate is {{carbon dioxide}}.
+  Ionic equation for ethanoic acid + NaOH? :: CH₃COOH(aq) + OH⁻(aq) → CH₃COO⁻(aq) + H₂O(l)
+  Full equation for HNO₃ + MgCO₃(s)? :: MgCO₃(s) + 2HNO₃(aq) → Mg(NO₃)₂(aq) + H₂O(l) + CO₂(g)
+
+@ ef430a4b U2.1.2.4 | Antacids and stomach acid
+**In a sentence**
+  Antacids are weak bases that neutralise excess stomach acid, and choosing between them is a balance of speed, capacity and side effects.
+**Key terms**
+  **Antacid**: a base taken to neutralise excess stomach acid.
+  **Gastric acid**: the hydrochloric acid solution produced in the stomach.
+  **Neutralising capacity**: how much acid a dose can neutralise.
+**Stomach acid**
+  The stomach contains hydrochloric acid (pH about 1.5–3.5) that helps digest protein and kill bacteria.
+  Too much acid, or acid reaching the oesophagus, causes indigestion and heartburn (reflux).
+**Antacids**
+  Weak bases that neutralise excess stomach acid. Common active ingredients:
+    **Magnesium hydroxide**: Mg(OH)₂(s) + 2HCl(aq) → MgCl₂(aq) + 2H₂O(l)
+    **Aluminium hydroxide**: Al(OH)₃(s) + 3HCl(aq) → AlCl₃(aq) + 3H₂O(l)
+    **Calcium carbonate**: CaCO₃(s) + 2HCl(aq) → CaCl₂(aq) + H₂O(l) + CO₂(g)
+    **Sodium hydrogen carbonate** (baking soda): NaHCO₃(s) + HCl(aq) → NaCl(aq) + H₂O(l) + CO₂(g)
+**Why weak bases?**
+  Strong bases like NaOH are corrosive and would damage tissue; weak, often insoluble, bases neutralise gradually and safely.
+**Comparing antacids**
+  Carbonates produce CO₂ (bloating, burping).
+  Magnesium compounds can be laxative; aluminium compounds can cause constipation (often combined to balance these).
+  Moles of acid neutralised per gram differ — compare using stoichiometry (e.g. Al(OH)₃ neutralises 3 mol H⁺ per mol).
+**Going deeper**
+  Neutralising capacity per gram depends on molar mass and stoichiometry: Mg(OH)₂ (M = 58.3) neutralises 2 mol H⁺ per mol, so about 0.034 mol H⁺ per gram; NaHCO₃ (M = 84.0) only 1 mol per mol, about 0.012 mol per gram.
+  Sodium hydrogen carbonate acts fast (soluble) but adds sodium and produces CO₂; insoluble hydroxides act more slowly but for longer.
+  The stomach needs acid for digestion and to kill microbes, so antacids aim to reduce excess, not neutralise it all.
+**Worked example**
+  How many moles of HCl can a 500 mg tablet of CaCO₃ neutralise?
+    n(CaCO₃) = 0.500 ÷ 100.1 = 5.00 × 10⁻³ mol
+    CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂, so n(HCl) = 2 × 5.00 × 10⁻³ = 1.00 × 10⁻² mol
+**Connections**
+  Neutralisation reactions with hydroxides and carbonates.
+  Stoichiometry (Area of Study 2) to compare doses.
+**Practice questions**
+  Which neutralises more acid per gram, Mg(OH)₂ or Al(OH)₃ (M = 78.0)? Show working.
+    Mg(OH)₂: 2 ÷ 58.3 = 0.0343 mol H⁺ g⁻¹. Al(OH)₃: 3 ÷ 78.0 = 0.0385 mol H⁺ g⁻¹. Al(OH)₃ neutralises slightly more per gram.
+  Why might a doctor advise against sodium hydrogen carbonate for someone with high blood pressure?
+    It adds sodium to the body, which can raise blood pressure.
+  Why shouldn't an antacid neutralise all stomach acid?
+    Acid is needed to digest proteins and kill harmful microorganisms.
+**Flashcards**
+  Why are antacids weak bases rather than strong bases? :: Strong bases are corrosive and would damage tissue; weak bases neutralise excess acid gradually and safely.
+  Equation for magnesium hydroxide neutralising stomach acid? :: Mg(OH)₂(s) + 2HCl(aq) → MgCl₂(aq) + 2H₂O(l)
+  Why can carbonate antacids cause bloating? :: They react with acid to produce carbon dioxide gas.
+  What acid is in the stomach? :: Hydrochloric acid (pH about 1.5–3.5).
+  How many moles of HCl does one mole of Al(OH)₃ neutralise? :: Three.
+  Moles of HCl neutralised by 500 mg of CaCO₃? :: 1.00 × 10⁻² mol
+  Why do antacids aim to reduce, not remove, stomach acid? :: The acid is needed for digestion and to kill microbes.
+
+@ 9d2dad5a U2.1.2.5 | pH and pH calculations
+**In a sentence**
+  pH is minus the log of the hydronium ion concentration, so each step on the scale is a tenfold change, and Kw lets you find [H₃O⁺] in basic solutions from [OH⁻].
+**Key terms**
+  **pH**: −log₁₀[H₃O⁺].
+  **[H₃O⁺]**: hydronium ion concentration in mol L⁻¹.
+  **Kw (ionic product of water)**: [H₃O⁺][OH⁻] = 1.00 × 10⁻¹⁴ at 25 °C.
+  **Neutral solution**: [H₃O⁺] = [OH⁻] (pH 7 only at 25 °C).
+**The pH scale**
+  $\text{pH} = -\log_{10}[\text{H}_3\text{O}^+]$ and $[\text{H}_3\text{O}^+] = 10^{-\text{pH}}$
+  Square brackets mean concentration in mol L⁻¹.
+  The scale is **logarithmic**: each unit of pH is a tenfold change in [H₃O⁺]. pH 3 has 10 times the [H₃O⁺] of pH 4 and 100 times that of pH 5.
+  At 25 °C: pH < 7 acidic, pH = 7 neutral, pH > 7 basic.
+**The ionic product of water**
+  Water self-ionises slightly: H₂O(l) + H₂O(l) ⇌ H₃O⁺(aq) + OH⁻(aq)
+  $K_w = [\text{H}_3\text{O}^+][\text{OH}^-] = 1.0 \times 10^{-14}$ at 25 °C
+  Kw increases with temperature (the self-ionisation is endothermic), so neutral water has pH below 7 when hot (about 6.1 at 100 °C) — it's still neutral because [H₃O⁺] = [OH⁻].
+**Strong acid**
+  [H₃O⁺] = concentration of the acid (monoprotic, fully ionised).
+  0.010 M HCl: [H₃O⁺] = 0.010 → pH = −log(0.010) = 2.00
+**Strong base**
+  [OH⁻] = concentration of the base × number of OH⁻ per formula (NaOH 1, Ba(OH)₂ 2).
+  Then [H₃O⁺] = Kw ÷ [OH⁻], then pH.
+  0.010 M NaOH: [OH⁻] = 0.010; [H₃O⁺] = 1.0 × 10⁻¹⁴ ÷ 0.010 = 1.0 × 10⁻¹²; pH = 12.00
+**Ranking solutions**
+  Strong acid (lowest pH) < weak acid < neutral salt < weak base < strong base (highest pH), for equal concentrations.
+**Worked example — dilution**
+  10.0 mL of 0.10 M HCl is diluted to 100 mL. New pH?
+    New [H₃O⁺] = 0.010 M → pH = 2.0 (a tenfold dilution raises the pH of a strong acid by 1).
+**Going deeper**
+  Using your calculator: pH = −log(0.020) = 1.70; [H₃O⁺] = 10^(−pH), e.g. 10^(−3.4) = 4.0 × 10⁻⁴ M.
+  Significant figures for pH: the number of decimal places in the pH equals the significant figures in [H₃O⁺] (0.020 M, 2 sig figs → pH 1.70).
+  Diluting: every tenfold dilution of a strong acid raises pH by 1, but the pH of an acid can only approach 7, never pass it (water's own ionisation takes over).
+  Strong bases with two OH⁻ per formula (Ba(OH)₂, Ca(OH)₂) give [OH⁻] = 2 × concentration.
+**Worked example 2**
+  Find the pH of 0.0050 M Ba(OH)₂ at 25 °C.
+    [OH⁻] = 2 × 0.0050 = 0.010 M
+    [H₃O⁺] = 1.00 × 10⁻¹⁴ ÷ 0.010 = 1.0 × 10⁻¹² M
+    pH = 12.00
+**Worked example 3**
+  What volume of water must be added to 10.0 mL of HCl at pH 1.0 to raise its pH to 3.0?
+    pH up by 2 → concentration down by 10² = 100 times.
+    Final volume = 10.0 × 100 = 1000 mL, so add 990 mL of water.
+**Common mistakes**
+  Using −log[OH⁻] directly as the pH of a base (that's pOH).
+  Assuming pH 7 is neutral at every temperature.
+  Forgetting that diluting an acid can never make its pH go above 7.
+**Exam tips**
+  Always write [H₃O⁺] (or [OH⁻]) first, then the pH. For bases, show the Kw step.
+**Connections**
+  Strong vs weak acids: these calculations only work directly for strong acids and bases.
+  Dilution (c₁V₁ = c₂V₂) in Area of Study 2.
+  Indicators and pH meters measure pH.
+**Practice questions**
+  Calculate the pH of 0.025 M HNO₃.
+    [H₃O⁺] = 0.025; pH = −log(0.025) = 1.60
+  A solution has pH 11.3 at 25 °C. Find [OH⁻].
+    [H₃O⁺] = 10⁻¹¹·³ = 5.0 × 10⁻¹² M; [OH⁻] = 1.00 × 10⁻¹⁴ ÷ 5.0 × 10⁻¹² = 2.0 × 10⁻³ M
+  Rank these 0.1 M solutions from lowest to highest pH: NaOH, NaCl, HCl, CH₃COOH, NH₃.
+    HCl < CH₃COOH < NaCl < NH₃ < NaOH
+**Flashcards**
+  Formula for pH? :: pH = −log₁₀[H₃O⁺]
+  Value of Kw at 25 °C? :: 1.0 × 10⁻¹⁴ (Kw = [H₃O⁺][OH⁻])
+  pH of 0.0010 M HNO₃? :: 3.00
+  pH of 0.10 M KOH at 25 °C? :: [H₃O⁺] = 10⁻¹⁴ ÷ 0.10 = 10⁻¹³, so pH = 13.00
+  How many times more acidic is pH 2 than pH 5? :: 1000 times (10³) higher [H₃O⁺].
+  [H₃O⁺] in a solution of pH 4.0? :: 1.0 × 10⁻⁴ mol L⁻¹
+  Why is pure water at 50 °C still neutral even though its pH is below 7? :: [H₃O⁺] still equals [OH⁻]; Kw is larger at higher temperature, so both are higher.
+  Diluting a strong acid tenfold raises its pH by {{1}}.
+  pH of 0.0050 M Ba(OH)₂? :: 12.00 ([OH⁻] = 0.010 M)
+  pH of 0.025 M HNO₃? :: 1.60
+
+@ 8f7ed9ed U2.1.2.6 | Indicators and pH meters
+**In a sentence**
+  Indicators give a quick colour-based estimate of pH while a calibrated pH meter gives a precise number, and comparing them is a lesson in accuracy, precision and resolution.
+**Key terms**
+  **Indicator**: a substance (usually a weak acid) whose colour depends on pH.
+  **Transition range**: the pH range over which an indicator changes colour.
+  **Calibration**: adjusting an instrument using standards of known value (buffers for a pH meter).
+  **Resolution**: the smallest change an instrument can show.
+**Measuring acidity**
+  **Natural indicators**: plant pigments (anthocyanins in red cabbage, beetroot, blueberries) change colour across the pH range. Cheap, but colours are subjective and change gradually.
+  **Commercial indicators**: litmus (red in acid, blue in base), universal indicator (a range of colours for pH 1–14), phenolphthalein (colourless → pink at about pH 8–10), methyl orange (red → yellow at about pH 3–4.4). Each changes over a set range.
+  **pH meters and probes**: an electrode measures [H₃O⁺] electronically, giving a numerical value (often to 0.01 pH units).
+**Accuracy vs precision**
+  **Accuracy**: how close a measurement is to the true value.
+  **Precision**: how close repeated measurements are to each other.
+  **Resolution**: the smallest change the instrument can show.
+  Indicators give a colour range — low resolution and limited accuracy (reading colour is subjective).
+  A pH meter has high resolution and precision, but is only **accurate** if **calibrated** with buffer solutions of known pH; a dirty or uncalibrated probe gives precise but inaccurate readings (a systematic error).
+**Comparing acid and base strength**
+  To compare strength, test solutions of the **same concentration**: the stronger acid gives the lower pH.
+**Going deeper**
+  An indicator is a weak acid whose acid form and conjugate base form have different colours: HIn(aq) + H₂O(l) ⇌ In⁻(aq) + H₃O⁺(aq). High [H₃O⁺] pushes it to the HIn colour; low [H₃O⁺] to the In⁻ colour.
+  Universal indicator is a mixture of several indicators, so it changes colour many times across the range.
+  pH meters drift and their electrodes age; calibrate with at least two buffers (e.g. pH 4 and 7) before use, rinse between samples, and keep the probe wet.
+**Connections**
+  pH scale: what's being measured.
+  Accuracy, precision and resolution (Unit 2 investigation and key science skills).
+  Choosing indicators for titrations (Area of Study 2).
+**Practice questions**
+  Why does an indicator change colour with pH?
+    It is a weak acid whose un-ionised form (HIn) and ionised form (In⁻) are different colours; changing [H₃O⁺] shifts which form dominates.
+  A student measures three solutions with universal indicator and gets "green, green, green". A pH meter reads 6.6, 7.0, 7.4. Comment on resolution.
+    The indicator's resolution is too low to distinguish them (all look neutral); the meter's higher resolution shows the difference.
+  Why must a pH meter probe be rinsed between samples?
+    Leftover solution would contaminate the next sample and change its reading.
+**Flashcards**
+  Define accuracy and precision. :: Accuracy: closeness to the true value. Precision: closeness of repeated measurements to each other.
+  Why must a pH meter be calibrated? :: To make its readings accurate — calibration against buffers of known pH removes systematic error.
+  Give one advantage and one limitation of universal indicator. :: Advantage: cheap, quick, shows approximate pH. Limitation: low resolution, subjective colour matching.
+  Colour of phenolphthalein in acid and in base? :: Colourless in acid; pink in base.
+  Where do natural indicators like red cabbage get their colour change from? :: Plant pigments called anthocyanins, which change structure (and colour) with pH.
+  A pH meter reading 6.52, 6.53, 6.52 for a solution of true pH 7.00 is {{precise but not accurate}}.
+  Why is universal indicator many colours? :: It is a mixture of several indicators with different transition ranges.
+  How should a pH meter be calibrated? :: With buffer solutions of known pH (at least two, e.g. pH 4 and 7).
+
+@ 121e1830 U2.1.2.7 | Acid rain and ocean acidification
+**In a sentence**
+  Carbon dioxide makes rain and oceans slightly acidic naturally, but extra CO₂, SO₂ and nitrogen oxides from human activity cause acid rain and ocean acidification that damage buildings and marine life.
+**Key terms**
+  **Acid rain**: rain with pH below about 5.6 due to dissolved pollutant gases.
+  **Ocean acidification**: the fall in ocean pH as it absorbs extra CO₂.
+  **Carbonic acid**: H₂CO₃, a weak acid formed when CO₂ dissolves in water.
+  **Calcification**: marine organisms building shells or skeletons of CaCO₃.
+**Natural acidity of rain**
+  Rain is naturally slightly acidic, about **pH 5.6**, because CO₂ in the air dissolves to form carbonic acid, a weak acid:
+    CO₂(g) + H₂O(l) ⇌ H₂CO₃(aq)
+    H₂CO₃(aq) + H₂O(l) ⇌ HCO₃⁻(aq) + H₃O⁺(aq)
+**Acid rain**
+  Rain with pH **below about 5.6** caused by pollutants: sulfur dioxide (burning coal, smelting sulfide ores) and nitrogen oxides (car engines, power stations).
+    SO₂ is oxidised and dissolves to form sulfuric acid; NO₂ forms nitric acid — both **strong** acids.
+  Effects: damages forests and soils (leaches nutrients), acidifies lakes (harms fish), corrodes limestone and marble buildings (CaCO₃ + acid) and metals.
+  Solutions: scrubbers removing SO₂ from flue gases, low-sulfur fuels, catalytic converters, renewable energy.
+**Ocean acidification**
+  The ocean absorbs about a quarter of the CO₂ humans emit. More dissolved CO₂ forms more carbonic acid, lowering ocean pH (from about 8.2 before industrialisation to about 8.1 now — a 26% rise in [H₃O⁺]).
+  The extra H₃O⁺ reacts with carbonate ions: CO₃²⁻(aq) + H₃O⁺(aq) → HCO₃⁻(aq) + H₂O(l)
+  Fewer carbonate ions are left for marine invertebrates (corals, oysters, molluscs, some plankton) to build **calcium carbonate shells and skeletons**: Ca²⁺(aq) + CO₃²⁻(aq) → CaCO₃(s). Shells grow thinner and can dissolve.
+**Going deeper**
+  Forming the acids: 2SO₂(g) + O₂(g) → 2SO₃(g), then SO₃(g) + H₂O(l) → H₂SO₄(aq); nitrogen dioxide forms nitric acid.
+  Acid rain on limestone: CaCO₃(s) + 2H₃O⁺(aq) → Ca²⁺(aq) + 3H₂O(l) + CO₂(g) — statues and buildings slowly dissolve.
+  Ocean chemistry: CO₂(aq) + H₂O(l) ⇌ H₂CO₃(aq) ⇌ H⁺ + HCO₃⁻, and H⁺ + CO₃²⁻ → HCO₃⁻. Carbonate ions are used up, so shells are harder to build and can dissolve.
+  The Great Barrier Reef is threatened by warming and acidification together.
+**Common mistakes**
+  Saying all rain below pH 7 is acid rain (normal rain is about 5.6).
+  Saying the ocean is "acidic" — it is still basic, but becoming less basic (acidifying).
+**Exam tips**
+  Distinguish natural acidity (CO₂, weak acid, pH ~5.6) from acid rain (SO₂/NOx, strong acids, pH lower). Always include balanced equations with states.
+**Connections**
+  Brønsted–Lowry acids: carbonic acid and hydrogen carbonate.
+  Greenhouse gases (Area of Study 2): CO₂'s other effect.
+  Neutralisation with carbonates.
+**Practice questions**
+  Write equations showing how sulfur dioxide forms sulfuric acid in the atmosphere.
+    2SO₂(g) + O₂(g) → 2SO₃(g); SO₃(g) + H₂O(l) → H₂SO₄(aq)
+  Why is a drop in ocean pH from 8.2 to 8.1 significant?
+    pH is logarithmic: a 0.1 drop is about a 26% increase in [H₃O⁺], enough to reduce carbonate available for shell-building.
+  Write the equation for acid rain dissolving a marble statue.
+    CaCO₃(s) + 2H₃O⁺(aq) → Ca²⁺(aq) + 3H₂O(l) + CO₂(g)
+**Flashcards**
+  Why is unpolluted rain slightly acidic? :: Dissolved CO₂ forms carbonic acid, a weak acid, giving a pH of about 5.6.
+  What causes acid rain? :: SO₂ and nitrogen oxides from burning fossil fuels and smelting form strong acids (sulfuric and nitric acid) in rain.
+  Give two effects of acid rain. :: Corrodes limestone/marble buildings and metals; acidifies lakes and soils, harming fish and forests.
+  Why does ocean acidification harm shellfish and corals? :: Extra H₃O⁺ reacts with carbonate ions, leaving less CO₃²⁻ to form calcium carbonate shells and skeletons.
+  Equation for carbonate ions reacting with acid in seawater? :: CO₃²⁻(aq) + H₃O⁺(aq) → HCO₃⁻(aq) + H₂O(l)
+  Rain is called acid rain when its pH is below about {{5.6}}.
+  How does SO₂ become sulfuric acid? :: 2SO₂ + O₂ → 2SO₃, then SO₃ + H₂O → H₂SO₄
+  By about how much does a 0.1 pH drop raise [H₃O⁺]? :: About 26% (10^0.1 = 1.26)
+
+@ c92dcb4f U2.1.3.1 | Redox reactions and half equations
+**In a sentence**
+  In redox reactions electrons move from the reducing agent (which is oxidised) to the oxidising agent (which is reduced), and half equations show each side of that transfer.
+**Key terms**
+  **Oxidation / reduction**: loss / gain of electrons.
+  **Oxidising agent (oxidant)**: accepts electrons; is reduced.
+  **Reducing agent (reductant)**: donates electrons; is oxidised.
+  **Half equation**: an equation for just the oxidation or just the reduction, with electrons shown.
+  **Oxidation number**: a number assigned to an atom to track electron transfer.
+**Definitions**
+  **Oxidation** is the **loss** of electrons. **Reduction** is the **gain** of electrons. ("OIL RIG")
+  They always happen together — a **redox** reaction is an electron transfer.
+  The **oxidising agent (oxidant)** accepts electrons, so **it is reduced**.
+  The **reducing agent (reductant)** donates electrons, so **it is oxidised**.
+**Half equations**
+  Each half shows one process with electrons written in:
+    Oxidation: Mg(s) → Mg²⁺(aq) + 2e⁻
+    Reduction: Cu²⁺(aq) + 2e⁻ → Cu(s)
+  Combine by making the electrons equal, then add and cancel: Mg(s) + Cu²⁺(aq) → Mg²⁺(aq) + Cu(s)
+**Balancing half equations in acidic solution (KOHES)**
+  **K**ey element: balance the atoms other than O and H.
+  **O**xygen: add H₂O to the side that needs O.
+  **H**ydrogen: add H⁺ to the side that needs H.
+  **E**lectrons: add e⁻ to the more positive side so charges balance.
+  **S**tates: add them.
+  Example — permanganate to manganese(II):
+    MnO₄⁻ → Mn²⁺ (Mn balanced)
+    MnO₄⁻ → Mn²⁺ + 4H₂O
+    MnO₄⁻ + 8H⁺ → Mn²⁺ + 4H₂O
+    MnO₄⁻(aq) + 8H⁺(aq) + 5e⁻ → Mn²⁺(aq) + 4H₂O(l)  (charge left 8 − 1 − 5 = +2; right +2)
+**Oxidation numbers (a checking tool)**
+  An element's oxidation number goes **up** when it is oxidised and **down** when it is reduced.
+  Rules: elements 0; simple ions = charge; O usually −2; H usually +1; sum = overall charge.
+    In MnO₄⁻: Mn + 4(−2) = −1 → Mn = +7. It goes to +2 in Mn²⁺: reduced.
+**Going deeper**
+  Oxidation number rules (for checking): element 0; monatomic ion = its charge; O is −2 (except in peroxides, −1); H is +1 with non-metals (−1 in metal hydrides); F is always −1; the sum equals the overall charge.
+  Recognising redox: if any element's oxidation number changes, it's redox. Neutralisation and precipitation don't change oxidation numbers, so they aren't redox.
+  Combining half equations: multiply each so the electrons are equal, add, then cancel electrons and anything that appears on both sides (like H⁺ and H₂O).
+**Worked example 2**
+  Write the overall equation for acidified permanganate oxidising Fe²⁺ to Fe³⁺.
+    Oxidation: Fe²⁺(aq) → Fe³⁺(aq) + e⁻ (×5)
+    Reduction: MnO₄⁻(aq) + 8H⁺(aq) + 5e⁻ → Mn²⁺(aq) + 4H₂O(l)
+    Overall: MnO₄⁻(aq) + 8H⁺(aq) + 5Fe²⁺(aq) → Mn²⁺(aq) + 4H₂O(l) + 5Fe³⁺(aq)
+    Check charge: left −1 + 8 + 10 = +17; right +2 + 15 = +17 ✓
+**Common mistakes**
+  Saying the oxidising agent is oxidised (it's the other way round).
+  Adding electrons to the wrong side, or not multiplying half equations so electrons cancel.
+  Adding OH⁻ in "acidic conditions" — use H⁺ and H₂O.
+**Exam tips**
+  Check the final equation: atoms balance, charges balance, no electrons left.
+**Connections**
+  Reactivity series and metal displacement.
+  Corrosion and primary cells apply half equations.
+  Forming ionic compounds from elements (Unit 1) is also redox.
+**Practice questions**
+  Balance the half equation for H₂O₂ being reduced to water in acid.
+    H₂O₂(aq) + 2H⁺(aq) + 2e⁻ → 2H₂O(l)
+  Identify the oxidising agent: Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂.
+    Cl₂ — it gains electrons and is reduced to Cl⁻.
+  Is NaOH + HCl → NaCl + H₂O a redox reaction? Explain.
+    No — no oxidation numbers change (Na +1, O −2, H +1, Cl −1 throughout); it is a neutralisation.
+  Find the oxidation number of Cr in Cr₂O₇²⁻.
+    2Cr + 7(−2) = −2 → Cr = +6
+**Flashcards**
+  Define oxidation and reduction in terms of electrons. :: Oxidation is loss of electrons; reduction is gain of electrons.
+  What happens to an oxidising agent in a redox reaction? :: It gains electrons, so it is reduced.
+  Half equation for iron(III) being reduced to iron(II)? :: Fe³⁺(aq) + e⁻ → Fe²⁺(aq)
+  List the KOHES steps for balancing a half equation in acid. :: Key element, Oxygen (add H₂O), Hydrogen (add H⁺), Electrons (balance charge), States.
+  Balance: Cr₂O₇²⁻ → Cr³⁺ (acidic). :: Cr₂O₇²⁻(aq) + 14H⁺(aq) + 6e⁻ → 2Cr³⁺(aq) + 7H₂O(l)
+  Oxidation number of S in SO₄²⁻? :: +6
+  In Zn + Cu²⁺ → Zn²⁺ + Cu, what is the reducing agent? :: Zn (it donates electrons and is oxidised).
+  A reducing agent {{loses}} electrons and is {{oxidised}}.
+  Half equation for H₂O₂ reduced to water (acid)? :: H₂O₂(aq) + 2H⁺(aq) + 2e⁻ → 2H₂O(l)
+  How do you recognise a redox reaction using oxidation numbers? :: An element's oxidation number changes.
+
+@ 6f451b69 U2.1.3.2 | Reactivity series and metal displacement
+**In a sentence**
+  A metal will push a less reactive metal out of solution by giving its ions electrons, and which pairs react tells you the order of reactivity.
+**Key terms**
+  **Displacement reaction**: a more reactive element replacing a less reactive one in a compound.
+  **Reactivity series**: metals ranked by how readily they are oxidised.
+**The idea**
+  A more reactive metal (a stronger reducing agent) gives electrons to the ions of a less reactive metal, **displacing** it from solution.
+  Zn(s) + CuSO₄(aq) → ZnSO₄(aq) + Cu(s)
+    Ionic: Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)
+    Observations: the blue solution fades, and brown/pink copper coats the zinc.
+  If the metal is **less** reactive than the ions in solution, no reaction occurs (Cu does not react with Zn²⁺).
+**Reactivity series (most to least reactive)**
+  K, Na, Ca, Mg, Al, Zn, Fe, Sn, Pb, (H), Cu, Ag, Au
+  Metal atoms higher up are stronger reducing agents; ions of metals lower down are stronger oxidising agents (Ag⁺ > Cu²⁺ > Fe²⁺ …).
+**Worked example**
+  Copper wire is placed in silver nitrate solution. Write the half and overall equations.
+    Oxidation: Cu(s) → Cu²⁺(aq) + 2e⁻
+    Reduction: Ag⁺(aq) + e⁻ → Ag(s)   (×2)
+    Overall: Cu(s) + 2Ag⁺(aq) → Cu²⁺(aq) + 2Ag(s)
+    Observations: silver crystals grow on the wire; the solution turns blue.
+**Using displacement to build a series**
+  Put each metal in solutions of the others' ions and record where a reaction happens. The metal that displaces the most others is the most reactive.
+**Going deeper**
+  The series of metal atoms (as reducing agents) runs in the opposite order to their ions (as oxidising agents): K is the strongest reductant, so K⁺ is the weakest oxidant; Au is the weakest reductant, so Au⁺ the strongest oxidant.
+  This idea becomes the electrochemical series in Unit 3, which gives each half-reaction a voltage and predicts reactions quantitatively.
+  Displacement is used in extraction (e.g. copper recovered from solutions using scrap iron) and in the thermite reaction (Al reducing Fe₂O₃).
+**Worked example 2**
+  Metals A, B and C are tested: A reacts with B²⁺ and C²⁺; B reacts with C²⁺ only; C reacts with neither. Order them.
+    A displaces both → most reactive. C displaces neither → least.
+    Order: A > B > C.
+**Exam tips**
+  State observations as well as equations (solid deposit forms, solution colour changes, metal dissolves).
+**Connections**
+  Reactivity series of metals (Unit 1).
+  Galvanic cells use displacement reactions separated into half-cells.
+**Practice questions**
+  Write the overall equation and observations for zinc in lead(II) nitrate solution.
+    Zn(s) + Pb²⁺(aq) → Zn²⁺(aq) + Pb(s). Grey/dark crystals of lead form on the zinc; the zinc slowly dissolves (solution stays colourless).
+  Scrap iron is used to recover copper from copper(II) sulfate waste. Write the equation.
+    Fe(s) + Cu²⁺(aq) → Fe²⁺(aq) + Cu(s)
+  Will silver react with copper(II) nitrate? Explain.
+    No — silver is less reactive than copper, so it can't reduce Cu²⁺.
+**Flashcards**
+  What is a metal displacement reaction? :: A more reactive metal reduces the ions of a less reactive metal in solution, displacing it as the solid metal.
+  Will iron react with copper(II) sulfate solution? :: Yes — iron is more reactive: Fe(s) + Cu²⁺(aq) → Fe²⁺(aq) + Cu(s).
+  Will copper react with zinc sulfate solution? :: No — copper is less reactive than zinc.
+  Overall equation for magnesium in silver nitrate solution? :: Mg(s) + 2Ag⁺(aq) → Mg²⁺(aq) + 2Ag(s)
+  Observations when zinc is placed in copper(II) sulfate? :: Blue colour fades; a brown/pink coating of copper forms on the zinc.
+  The more reactive metal is the stronger {{reducing}} agent.
+  Equation for scrap iron recovering copper? :: Fe(s) + Cu²⁺(aq) → Fe²⁺(aq) + Cu(s)
+  If K is the strongest reducing agent, which ion is the weakest oxidising agent? :: K⁺
+
+@ 2a30b9f8 U2.1.3.3 | Corrosion and primary cells
+**In a sentence**
+  Redox shapes everyday life: it corrodes iron unless we protect it, and it powers batteries by making electrons flow through a circuit.
+**Key terms**
+  **Corrosion**: the gradual oxidation of a metal by its environment.
+  **Sacrificial protection**: attaching a more reactive metal that is oxidised instead of the protected metal.
+  **Galvanic (voltaic) cell**: a device converting chemical energy into electrical energy through a spontaneous redox reaction.
+  **Anode / cathode**: electrode where oxidation / reduction occurs.
+  **Salt bridge**: a connection of ions that completes the circuit between half-cells.
+  **Primary cell**: a single-use (non-rechargeable) cell.
+**Corrosion of iron (rusting)**
+  Iron is oxidised in the presence of **both oxygen and water**:
+    Oxidation: Fe(s) → Fe²⁺(aq) + 2e⁻
+    Reduction: O₂(g) + 2H₂O(l) + 4e⁻ → 4OH⁻(aq)
+  Fe²⁺ and OH⁻ form Fe(OH)₂, which is further oxidised to Fe(OH)₃ and then to rust, hydrated iron(III) oxide Fe₂O₃·xH₂O.
+  Salt water speeds corrosion (ions increase conductivity).
+**Preventing corrosion**
+  **Barrier protection**: paint, oil, plastic coating, tin plating — keeps O₂ and water away.
+  **Galvanising**: coating with zinc. Zinc is a barrier and, being more reactive, is oxidised instead of iron even if scratched (**sacrificial protection**).
+  **Sacrificial anodes**: blocks of Mg or Zn attached to ship hulls and pipelines corrode instead of the steel.
+  **Alloying**: stainless steel (with chromium) forms a protective oxide layer.
+**Primary (galvanic) cells**
+  A **galvanic cell** converts chemical energy into electrical energy using a spontaneous redox reaction, with the oxidation and reduction separated so electrons flow through a wire.
+  **Anode**: where oxidation occurs (negative electrode in a galvanic cell).
+  **Cathode**: where reduction occurs (positive electrode).
+  Electrons flow from anode to cathode through the external circuit.
+  A **salt bridge** (e.g. KNO₃ solution) lets ions flow between half-cells to keep them electrically neutral: anions move towards the anode, cations towards the cathode.
+  Example — Zn/Cu (Daniell) cell: anode Zn(s) → Zn²⁺(aq) + 2e⁻; cathode Cu²⁺(aq) + 2e⁻ → Cu(s).
+  **Primary** cells are single-use (not rechargeable), e.g. alkaline cells, button cells.
+  The further apart two metals are in the reactivity series, the greater the voltage.
+**Going deeper**
+  Rust forms fastest where there is oxygen, water and dissolved ions (sea spray, road salt); electrons flow through the iron from where it's oxidised to where O₂ is reduced, which is why rust can appear away from the pitted spot.
+  The overall rusting reaction: 2Fe(s) + O₂(g) + 2H₂O(l) → 2Fe(OH)₂(s), then further oxidation to Fe(OH)₃ and Fe₂O₃·xH₂O.
+  Aluminium doesn't rust away because its oxide layer is tough and sticks to the surface; iron oxide flakes off, exposing fresh metal.
+  An alkaline cell: zinc anode (oxidised) and manganese dioxide cathode (reduced) in a potassium hydroxide paste. Primary cells can't be recharged because their reactions aren't easily reversed.
+**Worked example**
+  A cell is built from a magnesium half-cell and a copper half-cell. Identify the anode and cathode, write the half equations and describe electron flow.
+    Mg is more reactive, so it is oxidised: anode, Mg(s) → Mg²⁺(aq) + 2e⁻ (negative).
+    Cu²⁺ is reduced: cathode, Cu²⁺(aq) + 2e⁻ → Cu(s) (positive).
+    Electrons flow through the wire from Mg to Cu; anions in the salt bridge move towards the Mg half-cell.
+**Common mistakes**
+  Saying electrons flow through the salt bridge (only ions move through it).
+  Saying rust forms with just oxygen or just water — it needs both.
+**Exam tips**
+  "An Ox and a Red Cat" — Anode Oxidation, Reduction Cathode. In a galvanic cell the anode is negative.
+**Connections**
+  Redox half equations and the reactivity series.
+  Metal recycling: corrosion shortens product life.
+  Unit 3 builds galvanic cells into fuel cells and rechargeable batteries.
+**Practice questions**
+  Why does a scratched galvanised bucket not rust at the scratch?
+    Zinc is more reactive than iron, so it is oxidised instead (sacrificial protection), supplying electrons that stop the iron being oxidised.
+  Write the overall equation for a Zn/Cu galvanic cell.
+    Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)
+  Why doesn't painting protect iron once the paint is scratched?
+    Paint is only a barrier; at a scratch, oxygen and water reach the iron and it rusts.
+  In a Mg/Cu cell, which electrode loses mass and which gains mass?
+    Mg (anode) loses mass as it is oxidised to Mg²⁺; Cu (cathode) gains mass as Cu is deposited.
+**Flashcards**
+  What two substances does iron need to rust? :: Oxygen and water.
+  Reduction half equation in the rusting of iron? :: O₂(g) + 2H₂O(l) + 4e⁻ → 4OH⁻(aq)
+  How does galvanising protect iron? :: Zinc coats the iron as a barrier and, being more reactive, is oxidised instead of the iron (sacrificial protection).
+  In a galvanic cell, which electrode is the anode and what is its sign? :: The electrode where oxidation occurs; negative.
+  What is the role of the salt bridge? :: It lets ions flow to keep each half-cell electrically neutral, completing the circuit.
+  Which way do electrons flow in the external circuit of a galvanic cell? :: From the anode to the cathode.
+  A cell that can't be recharged is called a {{primary}} cell.
+  Overall equation for a Zn/Cu cell? :: Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)
+  Why doesn't aluminium rust away like iron? :: Its oxide layer is tough and sticks to the surface, protecting the metal.

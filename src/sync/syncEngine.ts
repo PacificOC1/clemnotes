@@ -15,7 +15,7 @@ import {
 } from './merge';
 import { readCursor, writeCursor, type SyncCursor } from './cursors';
 import { invalidateSearchIndex } from '../db/searchIndex';
-import { uploadPendingImages } from './imageSync';
+import { uploadPendingImages, type ImageSyncResult } from './imageSync';
 import type { OutlinerNode } from '../db/schema';
 import { forRemote, recordAgreed, resolveNodeConflicts } from './nodeMerge';
 import { logEvent } from '../diagnostics';
@@ -36,6 +36,8 @@ export interface SyncResult {
   tables: TableSyncResult[];
   /** Tables that failed — almost always because the Supabase migration hasn't been run yet. */
   failed: string[];
+  /** How image and PDF uploads went, and to which store. */
+  files?: ImageSyncResult;
 }
 
 /**
@@ -339,15 +341,20 @@ export async function syncWithCloud(userId: string, now = Date.now(), client?: S
     throw new Error(first);
   }
 
-  // Image bytes go to Storage rather than a table, after the rows: a rem that
-  // shows an image is more useful arriving before its picture than after.
-  // Reported like a table so a missing bucket reads like a missing migration.
-  const images = await uploadPendingImages(userId, supabase).catch((err: unknown) => ({
+  // Image bytes go to a file store rather than a table, after the rows: a rem
+  // that shows an image is more useful arriving before its picture than after.
+  // With Supabase Storage, a failure is reported like a table's, so a missing
+  // bucket reads like a missing migration. With OneDrive, it is a sign-in or
+  // a connection problem, which the sidebar shows on its own.
+  const files: ImageSyncResult = await uploadPendingImages(userId, supabase).catch((err: unknown) => ({
+    store: 'supabase' as const,
     uploaded: 0,
+    pending: 0,
     error: err instanceof Error ? err.message : String(err),
   }));
-  tables.push({ table: 'images', pushed: images.uploaded, pulled: 0, reconciled: false, error: images.error });
-  if (images.error) failed.push('images');
+  const bucketFailed = files.store === 'supabase' && Boolean(files.error);
+  tables.push({ table: 'images', pushed: files.uploaded, pulled: 0, reconciled: false, error: bucketFailed ? files.error : undefined });
+  if (bucketFailed) failed.push('images');
 
   const pushed = tables.reduce((sum, t) => sum + t.pushed, 0);
   const pulled = tables.reduce((sum, t) => sum + t.pulled, 0);
@@ -370,5 +377,6 @@ export async function syncWithCloud(userId: string, now = Date.now(), client?: S
     pulled: tables.reduce((sum, t) => sum + t.pulled, 0),
     tables,
     failed,
+    files,
   };
 }

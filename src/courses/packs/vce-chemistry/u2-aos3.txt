@@ -1,0 +1,453 @@
+% VCE Chemistry — Unit 2, Area of Study 3: the quantitative scientific investigation.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ 7a1c500c U2.3.1.1 | Key concepts for your investigation
+**In a sentence**
+  Your investigation stands on its chemistry: know the reaction, define the terms, and explain how the concepts connect to your question.
+**Key terms**
+  **Research question**: the specific, testable question the investigation answers.
+  **Background theory**: the chemistry that explains and predicts the results.
+**What this means**
+  Your investigation (on gases, acid–base or redox reactions, or analysing substances in water) must rest on the right chemistry — explained accurately and with key terms defined.
+**Do this**
+  Identify the core concepts your question depends on (e.g. for "How does temperature affect the rate of CO₂ production from an antacid?": neutralisation, the carbonate–acid reaction, gas volumes, the ideal gas equation).
+  Define each key term precisely (e.g. "titre", "limiting reactant", "molar volume").
+  Write the balanced equation(s) with states for the reaction you studied.
+  Explain why the concepts matter to your question — how they let you predict or interpret results.
+**Going deeper**
+  A strong introduction moves from general to specific: the chemistry concept → why it matters in the real world → the gap your question addresses → your hypothesis.
+  Suitable Unit 2 topics: gas production (e.g. CO₂ from antacids or carbonates), acid–base reactions (e.g. ethanoic acid in vinegar brands), redox (e.g. metal reactivity, simple cells), analysis of water (e.g. salinity, hardness).
+**Worked example**
+  Question: "How does the concentration of hydrochloric acid affect the volume of CO₂ produced per minute from marble chips?"
+    Key concepts: acid–carbonate neutralisation, rate of reaction and collision theory, measuring gas volumes.
+    Equation: CaCO₃(s) + 2HCl(aq) → CaCl₂(aq) + H₂O(l) + CO₂(g)
+    Key terms to define: concentration (mol L⁻¹), rate of reaction, limiting reactant.
+**Connections**
+  Every Area of Study 1 and 2 learning point can be the chemistry behind an investigation.
+  Writing a scientific report: where the concepts go.
+**Practice questions**
+  Why should the balanced equation for your reaction appear in your report?
+    It shows the chemistry being studied and is needed for any stoichiometry (predicted amounts, yield).
+  Suggest the key concepts behind an investigation of the ethanoic acid content of different vinegar brands.
+    Acid–base neutralisation, titration (standard solutions, indicators, concordant titres), concentration units and dilution.
+**Flashcards**
+  Why must you define key terms in an investigation report? :: So your chemistry is precise and your reader understands exactly what was measured and concluded.
+  What should accompany the chemistry of a reaction studied in an investigation? :: A balanced equation with states, and an explanation of how the concepts relate to the research question.
+  Which concepts underpin an investigation into the volume of CO₂ from an antacid? :: Acid–carbonate reactions, stoichiometry and gas volumes (molar volume or pV = nRT).
+  Why should the chemistry in your introduction be linked to your question? :: It shows how the concepts let you predict and explain your results.
+  Define "titre". :: The volume of solution delivered from the burette to reach the end point.
+
+@ f21735a8 U2.3.1.2 | Choosing a scientific methodology
+**In a sentence**
+  The methodology is the overall approach — experiment, fieldwork, modelling and so on — and it has to match what your question is asking.
+**Key terms**
+  **Methodology**: the overall approach used to answer a question.
+  **Method**: the specific steps and equipment used.
+  **Fieldwork**: gathering data in the natural environment.
+  **Simulation**: imitating a real process with a model to study it.
+**The methodologies (choose the one that fits the question)**
+  **Classification and identification**: sorting or identifying substances by their properties (e.g. identifying unknown salts by precipitation tests).
+  **Controlled experiment**: changing one **independent variable**, measuring the **dependent variable**, keeping everything else **controlled** (e.g. effect of acid concentration on the volume of gas produced).
+  **Fieldwork**: observing or sampling in the natural environment (e.g. measuring the salinity of a local creek at several sites).
+  **Modelling**: building a physical, conceptual or mathematical model to represent and predict (e.g. modelling ocean acidification with CO₂ bubbled through water).
+  **Product, process or system development**: designing or improving something to meet a need (e.g. designing a cheap water-filtration method and testing its effectiveness).
+  **Simulation**: using a model to mimic a real process that's too big, slow, dangerous or expensive to study directly (e.g. a computer simulation of titration curves).
+**How to choose**
+  Match the methodology to what the question asks: "what effect does X have on Y" → controlled experiment; "what is present" → classification and identification; "how much is in the local environment" → fieldwork.
+  Justify the choice in your report.
+**Going deeper**
+  Controlled experiments give the strongest evidence of cause and effect because only one variable changes.
+  Fieldwork is realistic but has many uncontrolled variables (weather, time, location), so conclusions are about patterns, not causes.
+  Product or process development is judged against design criteria (cost, effectiveness, safety) rather than a hypothesis alone.
+**Connections**
+  Choosing an investigation methodology (key science skills).
+  Variables: independent, dependent and controlled.
+**Practice questions**
+  Which methodology fits: "Which of three commercial antacids neutralises the most acid per tablet?"
+    Controlled experiment (or classification/comparison using titration) — the antacid is the independent variable, the acid neutralised is the dependent variable.
+  Give one strength and one limitation of fieldwork.
+    Strength: real-world data. Limitation: many variables can't be controlled, so it's hard to show cause and effect.
+**Flashcards**
+  What is a controlled experiment? :: An experiment where one independent variable is changed, the dependent variable is measured, and all other variables are kept constant.
+  Which methodology suits "How salty is the creek at different points"? :: Fieldwork.
+  What is the difference between modelling and simulation? :: Modelling builds a representation to explain or predict; simulation uses a model to imitate a real process that's hard to study directly.
+  Give an example of product or process development in chemistry. :: Designing and testing a low-cost water filter, or improving a method to make a bioplastic.
+  Identifying unknown salts by their reactions uses the {{classification and identification}} methodology.
+
+@ ca2e5f4d U2.3.1.3 | Generating primary data
+**In a sentence**
+  Plan exactly what you'll observe and measure, with equipment fine enough to detect the changes you expect, and record it all as it happens.
+**Key terms**
+  **Qualitative data**: descriptions (colour, fizzing, precipitate).
+  **Quantitative data**: numerical measurements with units.
+  **Data logger**: an electronic device that records measurements (temperature, pH, pressure) over time.
+**Kinds of data**
+  **Qualitative**: descriptions without numbers — colour changes, precipitate formed, fizzing, smell. Useful for identification and for noticing problems.
+  **Quantitative**: numerical measurements with units — mass, volume, temperature, pH, time, absorbance, conductivity.
+**Techniques relevant to Unit 2**
+  Titration (burette, pipette, volumetric flask) for concentrations.
+  Gas collection (gas syringe, displacement of water) or mass loss for gas volumes.
+  Gravimetric analysis (precipitate, filter, dry to constant mass).
+  pH meters and indicators; conductivity meters; colorimetry with a calibration curve; data loggers and probes (temperature, pressure).
+**Good practice**
+  Choose equipment with suitable resolution (a burette reads to 0.05 mL; a measuring cylinder is much coarser).
+  Calibrate instruments; repeat measurements (at least three); record raw data immediately in your logbook with units and uncertainties.
+**Going deeper**
+  Match resolution to the size of change: if the temperature only rises 2 °C, a thermometer marked in 1 °C steps gives large relative uncertainty; a 0.1 °C probe is better.
+  Record uncertainty with measurements where possible (e.g. 25.0 ± 0.1 mL for a burette reading).
+  Plan the range and interval of the independent variable: at least five values across a sensible range, with repeats of each.
+**Connections**
+  Accuracy, precision and validity.
+  Techniques from Area of Study 2: titration, gas collection, gravimetric analysis, colorimetry.
+**Practice questions**
+  Which is more suitable for measuring 20 mL of acid for a titration: a 25 mL measuring cylinder or a 20.00 mL pipette? Why?
+    The pipette — it delivers a fixed volume far more accurately (about ±0.03 mL).
+  Give two qualitative observations you might record when magnesium reacts with acid.
+    Fizzing (bubbles of gas); the magnesium gets smaller and disappears; the flask gets warm.
+**Flashcards**
+  Difference between qualitative and quantitative data? :: Qualitative: descriptive, non-numerical (e.g. colour). Quantitative: numerical measurements with units.
+  Give three techniques for generating quantitative data in Unit 2 chemistry. :: Titration, gas-volume collection, gravimetric analysis, pH or conductivity measurement, colorimetry (any three).
+  Why choose a burette rather than a measuring cylinder for a titration? :: It has a much finer resolution and is more accurate for delivering variable volumes.
+  Give an example of qualitative data in a precipitation experiment. :: The colour of the precipitate, or that a precipitate formed at all.
+  Give an example of a data logger measurement. :: Temperature, pH or gas pressure recorded automatically over time.
+
+@ 0ca503f9 U2.3.1.4 | Accuracy, precision and validity
+**In a sentence**
+  Good measurements are accurate (near the true value), precise (consistent), repeatable, reproducible, fine enough (resolution) and valid (actually measuring what you intend).
+**Key terms**
+  **Uncertainty**: the range within which the true value is likely to lie.
+  **True value**: the value that would be obtained in an ideal measurement.
+  **Measurement error**: the difference between a measured value and the true value.
+**The terms (learn these word-perfect)**
+  **Accuracy**: how close a measurement is to the true value.
+  **Precision**: how close repeated measurements are to each other (little scatter).
+  **Repeatability**: how close results are when the same person repeats the measurement with the same method, equipment and conditions.
+  **Reproducibility**: how close results are when the measurement is repeated by different people, equipment or labs.
+  **Resolution**: the smallest change in a quantity that an instrument can detect (e.g. a balance reading to 0.01 g).
+  **Validity**: whether the method actually investigates what it claims to (fair test, controlled variables, measuring the right thing).
+**Errors**
+  **Random errors** → scatter → reduce precision. Reduce by repeating and averaging, and using higher-resolution equipment.
+  **Systematic errors** → consistent offset → reduce accuracy. Caused by uncalibrated equipment or a flawed method; not fixed by repeating; fix by calibrating or changing the method.
+  **Mistakes** (personal errors, e.g. misreading or spilling) aren't errors to analyse — discard the result and repeat.
+**Example**
+  Titres of 21.30, 21.32 and 21.31 mL are precise. If the NaOH had absorbed CO₂ (lowering its real concentration), every titre would be too high — precise but inaccurate (systematic error).
+**Going deeper**
+  A dartboard picture: tight cluster on the bullseye = accurate and precise; tight cluster off-centre = precise, not accurate (systematic error); scattered around the centre = accurate on average, not precise (random error).
+  Resolution isn't accuracy: a digital balance reading to 0.001 g can still be wrong if it hasn't been calibrated.
+  Validity is threatened by uncontrolled variables and by measuring the wrong thing (e.g. measuring gas volume over water for a soluble gas).
+**Connections**
+  Accuracy, precision, repeatability and errors (key science skills).
+  Indicators and pH meters: a worked comparison of these ideas.
+**Practice questions**
+  A student's titres are 18.20, 18.25, 18.20 mL, but the true value is 19.50 mL. Describe the data and suggest a cause.
+    Precise but inaccurate — a systematic error, e.g. the NaOH solution being more concentrated than labelled or the burette not rinsed correctly.
+  Why does repeating an experiment improve precision but not accuracy?
+    Averaging reduces the effect of random scatter, but a systematic error shifts every result the same way.
+  What is the difference between repeatability and reproducibility?
+    Repeatability: same person, method and conditions. Reproducibility: different people, equipment or labs.
+**Flashcards**
+  Define repeatability. :: The closeness of results when the same person repeats a measurement with the same method, equipment and conditions.
+  Define reproducibility. :: The closeness of results when the measurement is repeated by different people, with different equipment or in different labs.
+  Define resolution. :: The smallest change in a quantity that an instrument can detect.
+  What type of error affects precision, and how is it reduced? :: Random error; reduce by repeating and averaging (and higher-resolution equipment).
+  What type of error affects accuracy, and how is it reduced? :: Systematic error; reduce by calibrating equipment or improving the method (repeating won't help).
+  What makes an experiment valid? :: It measures what it's meant to, with the independent variable changed and all other variables controlled.
+  Results clustered tightly but far from the true value are {{precise but not accurate}}.
+  Precise but inaccurate results suggest what kind of error? :: Systematic error.
+
+@ d15d26dc U2.3.1.5 | Health, safety and ethics
+**In a sentence**
+  Before any practical, identify the hazards, assess the risks, plan how to control them, and conduct and report your work ethically.
+**Key terms**
+  **Hazard**: something that could cause harm (a corrosive acid, a flame).
+  **Risk**: the likelihood and severity of harm from a hazard.
+  **Control measure**: an action that reduces risk.
+  **PPE**: personal protective equipment (safety glasses, lab coat, gloves).
+**Risk assessment**
+  Before practical work, identify **hazards** (e.g. corrosive acids, flammable solvents, toxic heavy-metal salts, hot equipment, glassware), assess the **risk** (how likely and how serious), and plan **control measures**.
+  Use **safety data sheets (SDS)** for each chemical: hazards, safe handling, PPE, first aid, spills, disposal.
+**Common control measures**
+  Safety glasses, lab coat, gloves; work in a fume hood for volatile or toxic substances; use the lowest concentration and smallest quantities that work; know where eyewash, shower and extinguisher are; dispose of heavy metals and solvents in labelled waste containers, not the sink.
+**Ethics**
+  Report data honestly (no fabricating or selectively deleting results); acknowledge sources and help; respect people and the environment (e.g. permission and minimal disturbance in fieldwork; informed consent if surveying people).
+**Going deeper**
+  The hierarchy of controls: eliminate the hazard → substitute something safer → engineering controls (fume hood) → administrative controls (procedures, signage) → PPE (the last line of defence).
+  Common Unit 2 hazards: concentrated acids and bases (corrosive), hydrogen gas (flammable), heavy-metal salts (toxic), hot equipment, broken glass.
+**Connections**
+  Risk assessments and SDS; lab safety; ethical conduct (key science skills).
+**Practice questions**
+  Complete a risk assessment line for 2 M hydrochloric acid.
+    Hazard: corrosive, irritant. Risk: burns to skin and eyes if spilled or splashed. Controls: safety glasses and lab coat, use lowest concentration that works, small volumes, rinse spills with water, eyewash nearby.
+  Why is PPE the last line of defence?
+    It only protects the wearer after exposure happens; eliminating or reducing the hazard stops the harm at its source.
+**Flashcards**
+  What is a safety data sheet (SDS)? :: A document for a chemical giving its hazards, safe handling and storage, PPE, first aid, spill and disposal information.
+  Difference between a hazard and a risk? :: A hazard is something that can cause harm; risk is the likelihood and severity of harm occurring.
+  How should heavy-metal waste be disposed of? :: In a labelled waste container for proper treatment, never down the sink.
+  Give an example of ethical conduct in reporting investigations. :: Recording and reporting all data honestly, including unexpected results, and acknowledging sources.
+  What is the hierarchy of controls (in order)? :: Eliminate, substitute, engineering, administrative, PPE.
+
+@ a2a45fe1 U2.3.2.1 | Aim, hypothesis, model, theory, law
+**In a sentence**
+  An aim says what you'll find out, a hypothesis predicts it, a model represents it, a theory explains it broadly, and a law describes a consistent pattern.
+**Key terms**
+  **Aim**: the purpose of an investigation.
+  **Hypothesis**: a testable prediction with a reason.
+  **Model**: a simplified representation.
+  **Theory**: a well-supported explanation of many observations.
+  **Law**: a description (often mathematical) of a consistent relationship.
+**Definitions**
+  **Aim**: a statement of what the investigation sets out to do or find. "To determine how temperature affects the solubility of KNO₃."
+  **Hypothesis**: a testable prediction of the relationship between the independent and dependent variables, with a reason. "If temperature increases, then the solubility of KNO₃ will increase, because…"
+  **Model**: a representation (physical, visual, mathematical or conceptual) used to explain or predict phenomena.
+  **Theory**: a well-tested, evidence-supported **explanation** of a broad range of observations (e.g. kinetic molecular theory). Explains why.
+  **Law**: a statement or equation describing **what happens** consistently under set conditions, usually without explaining why (e.g. the law of conservation of mass; pV = nRT describes ideal gas behaviour).
+**Key distinctions**
+  A hypothesis is tested by one investigation; a theory is supported by many.
+  A law describes; a theory explains. A theory never "becomes" a law.
+**Going deeper**
+  Examples from Unit 2: the ideal gas law (pV = nRT) describes how gases behave; kinetic molecular theory explains why; the "particles as tiny billiard balls" picture is a model.
+  Theories are never "proven" but can be extremely well supported; a single reliable contradictory result can force them to be revised.
+**Connections**
+  Formulating hypotheses (key science skills).
+  Results that fit or challenge models and theories.
+**Practice questions**
+  Classify: "pV = nRT", "Gas particles move randomly and collide elastically", "To determine the molar volume of hydrogen".
+    Law; theory (kinetic molecular theory); aim.
+  Rewrite as a proper hypothesis: "Temperature will affect solubility."
+    "If the temperature of the water increases, then more KNO₃ will dissolve per 100 g of water, because dissolving KNO₃ absorbs energy and higher temperatures provide it."
+**Flashcards**
+  What is a hypothesis? :: A testable prediction of how the independent variable will affect the dependent variable, usually with a reason.
+  Difference between a theory and a law? :: A law describes what happens (often as an equation); a theory explains why it happens.
+  Write a hypothesis for how acid concentration affects the rate of gas production with magnesium. :: If the acid concentration increases, then the rate of H₂ production will increase, because more frequent collisions occur between acid particles and magnesium.
+  What is an aim? :: A statement of what the investigation is trying to find out or do.
+  Kinetic molecular theory is a {{theory}} because it explains the behaviour of gases.
+
+@ 21f9a8b9 U2.3.2.2 | Results vs models and theories
+**In a sentence**
+  When results agree with accepted theory they support it; when they don't, check your method first — and if the disagreement is real and repeatable, the model may need refining.
+**Key terms**
+  **Consistent with**: in agreement with, within experimental uncertainty.
+  **Anomalous result**: a result that doesn't fit the pattern or prediction.
+**How science responds to evidence**
+  Results that agree with a model or theory **support** it (but never prove it absolutely).
+  Results that disagree may mean: an error in the investigation, conditions where the model doesn't apply, or that the model is incomplete and needs changing.
+  First check the method and errors; if the result is repeatable and reproducible, it may lead to a refined or new model.
+**Examples**
+  Real gases deviate from the ideal gas equation at high pressure and low temperature (particles do have volume and attract each other) — the model is useful within limits.
+  Water's anomalously high boiling point challenged simple "size decides boiling point" reasoning, and is explained by hydrogen bonding.
+  Measured molar volume of H₂ close to 24.8 L mol⁻¹ supports the model.
+**In your report**
+  Compare your results with the accepted value or prediction; discuss whether they support the theory and explain any disagreement.
+**Going deeper**
+  Historical example: the shell model of the atom was refined into subshells because some ionisation energy data didn't fit it.
+  "Within uncertainty" matters: 24.5 L mol⁻¹ vs 24.8 L mol⁻¹ may be consistent if your uncertainty is ±0.4 L mol⁻¹.
+**Connections**
+  Models, theories and their limits.
+  Analysing primary data and errors.
+**Practice questions**
+  A student's molar volume at SLC is 22.1 L mol⁻¹. Does this challenge the ideal gas model? Explain.
+    Probably not — an 11% difference points to an error in the method (gas lost, gas dissolved, oxide on the metal). It would only challenge the model if careful, repeated measurements consistently disagreed.
+  How can a model be useful even though real systems don't follow it exactly?
+    It explains and predicts behaviour well within certain conditions, which is enough for most purposes.
+**Flashcards**
+  What should you check first if results disagree with an accepted theory? :: Sources of error and the method; whether the results are repeatable.
+  Why can't results prove a theory true? :: New evidence could always contradict it; results can only support it.
+  When does the ideal gas model not fit real gases well? :: At high pressure and low temperature, where particle volume and attractions matter.
+  Measured molar volume of H₂ is 24.6 L mol⁻¹. Does this support the model? :: Yes — it is close to the predicted 24.8 L mol⁻¹ at SLC (within about 1%).
+
+@ 89e444f7 U2.3.2.3 | Characteristics of primary data
+**In a sentence**
+  Primary data is yours: you know exactly how it was made, but it's limited by your time, sample size and equipment.
+**Key terms**
+  **Raw data**: measurements as recorded, before processing.
+  **Processed data**: data after calculation (averages, rates, concentrations).
+  **Sample size**: the number of measurements or samples.
+**What primary data is**
+  Data you generate yourself during your investigation, first-hand.
+**Its characteristics**
+  You know exactly how it was collected: the method, equipment, conditions and any problems.
+  It's specific to your question.
+  Limited in amount by time and resources (small sample sizes).
+  Subject to your own random and systematic errors, and to the resolution of your equipment.
+  Must be recorded raw (as measured, with units) in your logbook before any processing.
+  Can be **qualitative** or **quantitative**.
+**Connections**
+  Primary and secondary data (Unit 1 research investigation).
+  Logbooks for primary data.
+**Practice questions**
+  Why should both raw and processed data appear in a report?
+    Raw data shows exactly what was measured (and lets others check the processing); processed data shows the results and trends.
+  Why is a larger sample size better?
+    It reduces the effect of random variation and outliers, making results more reliable.
+**Flashcards**
+  Give two strengths of primary data. :: You know exactly how it was collected and its limitations; it directly addresses your question.
+  Give a limitation of primary data from a school investigation. :: Small sample size; limited equipment resolution; limited time for repeats.
+  Why record raw data rather than only averages? :: So calculations can be checked, outliers identified and the data authenticated.
+  Is primary data qualitative or quantitative? :: It can be either — observations (qualitative) or measurements (quantitative).
+
+@ dd997af6 U2.3.2.4 | Analysing primary data and errors
+**In a sentence**
+  Organise data in clear tables and graphs, describe the trend and relationship, calculate what's needed, and explain which errors affected the results and how.
+**Key terms**
+  **Line of best fit**: a straight line or smooth curve showing the overall trend.
+  **Gradient**: the slope of a line (rise ÷ run), often a rate.
+  **Random error / systematic error**: unpredictable scatter / consistent bias in one direction.
+**Organising**
+  Tables: independent variable in the first column; headings with quantities and units; consistent decimal places matching the equipment's resolution.
+  Graphs: independent variable on the x-axis, dependent on the y-axis; labelled axes with units; a suitable scale; a line of best fit (straight or smooth curve), not dot-to-dot.
+**Analysing**
+  Calculate means (excluding outliers, with a reason), percentages, percentage error, rates, gradients.
+  Describe the **trend** (as x increases, y increases …) and the **relationship** (linear, directly proportional if through the origin, inverse, non-linear).
+  Percentage error = |experimental − accepted| ÷ accepted × 100.
+**Identifying sources of error**
+  Relate each error to your actual method and say which direction it would push the result.
+  Distinguish random (scatter) from systematic (consistent offset — e.g. uncalibrated balance, heat loss in every trial).
+  Suggest specific improvements (not just "be more careful").
+**Worked example**
+  Measured molar volume 23.9 L mol⁻¹; accepted 24.8. Percentage error = (24.8 − 23.9) ÷ 24.8 × 100 = 3.6%. Consistently low values suggest a systematic error, such as gas escaping before the syringe was attached.
+**Going deeper**
+  Describe relationships precisely: "directly proportional" only if the line is straight **and** through the origin; otherwise "linear" or "positive correlation".
+  When error questions ask for improvements, pair each error with a specific fix (e.g. "heat loss to the surroundings → insulate the beaker and use a lid").
+**Worked example**
+  Gas volume data: 0 s 0 mL, 30 s 18 mL, 60 s 34 mL, 90 s 46 mL, 120 s 54 mL. Describe and interpret.
+    Volume increases with time, but the rate slows (the curve flattens).
+    Initial rate ≈ 18 ÷ 30 = 0.6 mL s⁻¹; between 90 and 120 s ≈ 8 ÷ 30 = 0.27 mL s⁻¹.
+    The rate falls because the acid is used up, so its concentration and collision frequency decrease.
+**Connections**
+  Graphs and relationships; processing data (key science skills).
+  Accuracy, precision and validity.
+**Practice questions**
+  What's the difference between "linear" and "directly proportional"?
+    Linear: a straight line. Directly proportional: a straight line that also passes through the origin (doubling x doubles y).
+  A calorimetry experiment consistently gives values 20% lower than the data book. Identify the likely error and an improvement.
+    Heat loss to the surroundings (systematic). Improve with insulation (polystyrene cup, lid), a draught shield, and less distance between flame and container.
+**Flashcards**
+  Which variable goes on the x-axis of a graph? :: The independent variable.
+  Formula for percentage error? :: |experimental − accepted| ÷ accepted × 100
+  What does a straight line through the origin show? :: The dependent variable is directly proportional to the independent variable.
+  Why is "human error" not an acceptable source of error in a report? :: It's vague; you should name the specific error, whether it's random or systematic, and its effect.
+  How should a line of best fit be drawn? :: A smooth line or curve that follows the trend with points balanced either side — not joining the dots.
+  When is a relationship "directly proportional"? :: When the graph is a straight line through the origin.
+
+@ 49fc305d U2.3.2.5 | Logbooks for primary data
+**In a sentence**
+  Your logbook is the dated, original record of everything you did and measured — it's how your data is authenticated.
+**Key terms**
+  **Authentication**: confirming the work is the student's own.
+  **Raw data**: measurements recorded at the time, unaltered.
+**Purpose**
+  Your logbook proves the investigation is your own and records how it happened — VCAA requires it, and it is monitored during the investigation.
+**What to record**
+  Planning: question, hypothesis, variables, method, risk assessment (with SDS information).
+  Raw data exactly as measured, with units, date and time — including repeats, failed runs and unexpected observations.
+  Changes to the method and why they were made.
+  Preliminary calculations, graphs and reflections.
+**Rules**
+  Date every entry. Record at the time. Never erase — cross out with one line so it's still readable. Don't tear out pages.
+**Connections**
+  Logbooks for collated data (Unit 1).
+  Recording data and the logbook (key science skills).
+**Practice questions**
+  A student copies neat results into their logbook at home the next day. Why is this a problem?
+    The logbook should be the original record made at the time; copying later can introduce errors and doesn't authenticate the data.
+  What should be recorded if a trial goes wrong?
+    The result, what went wrong and why it was excluded or repeated — crossed out with a single line, not erased.
+**Flashcards**
+  Why must raw data be recorded directly in the logbook? :: It authenticates the data as genuinely generated by you at the time of the investigation.
+  How should a mistake be corrected in a logbook? :: Cross it out with a single line so it's still readable; don't erase or remove pages.
+  Name three things recorded in a logbook during a practical investigation. :: Method and changes, raw data with units, risk assessment, observations, dated reflections.
+  Why date every logbook entry? :: It shows when work was done, authenticating the timeline of your investigation.
+
+@ 8dd8e210 U2.3.2.6 | Limitations of your investigation
+**In a sentence**
+  Every investigation has limits — in its methodology, method, data and analysis — and saying honestly what they are shows how far your conclusion can be trusted.
+**Key terms**
+  **Limitation**: a factor that reduces the reliability, validity or scope of findings.
+  **Assumption**: something taken to be true without testing it (e.g. complete reaction, ideal gas behaviour).
+**Kinds of limitation**
+  **Methodology**: a controlled experiment can't control every variable; fieldwork has uncontrolled environmental variables; a simulation is only as good as its model.
+  **Method**: equipment resolution; heat loss; gas escaping or dissolving; incomplete reactions; indicator end-point judgement.
+  **Data generation**: small number of trials; narrow range of the independent variable; few data points to define a trend.
+  **Analysis**: assumptions (ideal gas behaviour, complete reaction, 100% purity), rounding, outliers, choice of line of best fit.
+**Why it matters**
+  Limitations determine how confidently a conclusion can be drawn and how widely it can be applied.
+**Writing it**
+  State the limitation, explain how it affected the results (direction and size if possible), and suggest a specific improvement.
+**Going deeper**
+  Separate limitations of the method (fixable next time) from limitations of the methodology (built into the approach — e.g. a lab model of the ocean can't include every factor).
+  Rank limitations: mention the one with the biggest effect first.
+**Connections**
+  Limitations of conclusions (key science skills).
+  Evaluating and improving methods.
+**Practice questions**
+  State a limitation of using a school lab to model ocean acidification by bubbling CO₂ through seawater.
+    The lab setup can't reproduce ocean conditions (volume, mixing, temperature, living organisms, time scale), so results may not apply directly to real oceans.
+  Why is "the reaction goes to completion" a limitation to state?
+    If it doesn't, the measured amounts will be lower than calculated, affecting accuracy.
+**Flashcards**
+  Give a limitation of using a small number of trials. :: Random errors and outliers have a larger effect, and precision can't be assessed well.
+  Why is "assuming ideal gas behaviour" a limitation? :: Real gases deviate, especially at high pressure and low temperature, so calculated values may be slightly wrong.
+  What three things should a good limitation statement include? :: The limitation, its effect on the results, and a specific improvement.
+  Give a limitation of assuming a reaction goes to completion. :: If it doesn't, the amount of product is less than calculated, so results are too low.
+
+@ 6614d11b U2.3.3.1 | Writing a scientific report
+**In a sentence**
+  A scientific report follows a standard structure and conventions so that any reader can understand, check and repeat your work.
+**Key terms**
+  **Abstract / summary**: a short overview of the whole report.
+  **Discussion**: the section interpreting results, errors and limitations.
+  **Conclusion**: a direct answer to the research question.
+**Structure of a scientific report (or poster)**
+  Title; aim and hypothesis; introduction/background with key chemistry; method (enough to replicate); risk assessment; results (tables and graphs); discussion (analysis, errors, limitations, evaluation against the hypothesis); conclusion (answers the aim); references.
+**Conventions**
+  Formal, objective language; usually third person and past tense for the method ("the solution was titrated…").
+  Correct chemical terminology, formulas, IUPAC names and balanced equations with states.
+  SI units and standard abbreviations: g, kg, mL, L, mol, mol L⁻¹, °C, K, kPa, s. A space between number and unit (25 °C, 10.0 mL).
+  Significant figures consistent with the data; scientific notation for very large or small numbers.
+  Tables and figures numbered and captioned; graphs with labelled axes and units.
+**Going deeper**
+  Past, passive voice is traditional for methods ("25.00 mL was pipetted"), though some teachers accept active first person — check your school's expectations.
+  Tables: title above, units in column headings (not beside each number). Graphs: title, labelled axes with units, sensible scale, line of best fit.
+**Connections**
+  Chemical terminology and conventions.
+  Presenting findings and implications.
+**Practice questions**
+  Where should units go in a results table?
+    In the column headings (e.g. "Volume of CO₂ (mL)"), not after every number.
+  What's the difference between the discussion and the conclusion?
+    The discussion interprets and evaluates the results (trends, errors, limitations, comparison with theory); the conclusion briefly answers the research question with reference to the evidence.
+**Flashcards**
+  Name the main sections of a scientific report. :: Title, aim, hypothesis, introduction, method, results, discussion, conclusion, references.
+  Why is the method written so that it could be repeated? :: So others can replicate the investigation and check the results (reproducibility).
+  What should a conclusion do? :: Answer the aim, state whether the hypothesis was supported, with reference to the evidence.
+  Write "twenty-five degrees Celsius" and "ten millilitres" in conventional form. :: 25 °C and 10 mL
+
+@ 91e7eed5 U2.3.3.2 | Presenting findings and implications
+**In a sentence**
+  Lead with your key finding, back it with your best evidence, and explain what it means and what should come next.
+**Key terms**
+  **Key finding**: the main result that answers the research question.
+  **Implication**: what the finding means for the chemistry, for people or for further research.
+**Key findings**
+  State the main result clearly with the supporting numbers (e.g. "the concentration of ethanoic acid in the vinegar was 0.82 M, within 3% of the label value").
+  Use the best representation: a well-labelled graph showing the trend, or a summary table.
+**Implications**
+  Explain what the findings mean: for the hypothesis, for the wider chemistry, and in a real-world context (e.g. whether the local creek's salinity is safe for stock).
+  Note the confidence you have in the findings, given the limitations.
+  Suggest further investigation.
+**For a poster**
+  Short, clear headings; the key finding stands out; visuals over text; logical flow; concise wording (VCE posters for Unit 4 have a word limit — practise being concise now).
+**Connections**
+  Effective science communication (Unit 1).
+  Implications of findings (key science skills).
+**Practice questions**
+  Write a one-sentence key finding for: vinegar labelled 4% ethanoic acid measured as 4.1 ± 0.1% by titration.
+    "Titration showed the vinegar contained 4.1 ± 0.1% ethanoic acid, consistent with the 4% on its label."
+  What might be an implication of finding high nitrate levels in a local creek?
+    Fertiliser run-off may be entering the creek, risking algal blooms; further sampling and land-management changes may be needed.
+**Flashcards**
+  What makes a key finding clearly presented? :: A direct statement of the main result with supporting data, shown in the clearest representation.
+  What does "implications" mean in a report? :: What the findings mean for the hypothesis, the chemistry and the real world, and what should be investigated next.
+  Give two features of an effective scientific poster. :: Clear headings and logical flow; key finding prominent; visuals rather than text; concise wording.
+  Why state your confidence in a finding? :: Limitations and errors affect how far the result can be trusted and applied.

@@ -108,3 +108,64 @@ export function countByPage(
   }
   return counts;
 }
+
+// ---------------------------------------------------------------------------
+// Everything about one rem
+// ---------------------------------------------------------------------------
+
+/**
+ * The notebook as a tree plus its links, built once so that asking about many
+ * rems (every dot point of a course) costs one pass over the nodes.
+ * Tombstoned rows are left out.
+ */
+export interface TreeIndex {
+  byId: Map<string, OutlinerNode>;
+  /** Live children of each rem, in order. */
+  children: Map<string, OutlinerNode[]>;
+  /** Who links to (or tags) each rem. */
+  linkedFrom: Map<string, string[]>;
+}
+
+export function buildTreeIndex(nodes: readonly OutlinerNode[]): TreeIndex {
+  const byId = new Map<string, OutlinerNode>();
+  const children = new Map<string, OutlinerNode[]>();
+  const linkedFrom = new Map<string, string[]>();
+  for (const node of nodes) {
+    if (node.deletedAt !== null) continue;
+    byId.set(node.id, node);
+  }
+  for (const node of byId.values()) {
+    if (node.parentId) {
+      const list = children.get(node.parentId);
+      if (list) list.push(node);
+      else children.set(node.parentId, [node]);
+    }
+    for (const target of node.outboundLinks ?? []) {
+      const list = linkedFrom.get(target);
+      if (list) list.push(node.id);
+      else linkedFrom.set(target, [node.id]);
+    }
+  }
+  for (const list of children.values()) list.sort((a, b) => a.order - b.order);
+  return { byId, children, linkedFrom };
+}
+
+/**
+ * A rem and what belongs with it: everything under it, and every rem
+ * elsewhere that links to it or to anything under it. What a course dot point
+ * "has", and what "review this" means for a rem that isn't a whole page.
+ */
+export function materialIds(rootId: string, index: TreeIndex): Set<string> {
+  const out = new Set<string>();
+  const stack = [rootId];
+  while (stack.length > 0) {
+    const id = stack.pop()!;
+    if (out.has(id) || !index.byId.has(id)) continue;
+    out.add(id);
+    for (const child of index.children.get(id) ?? []) stack.push(child.id);
+  }
+  for (const id of [...out]) {
+    for (const from of index.linkedFrom.get(id) ?? []) out.add(from);
+  }
+  return out;
+}

@@ -1,0 +1,457 @@
+% VCE Biology — Unit 2, Area of Study 2: how inherited adaptations impact on diversity.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ 0854d9b1 U2.2.1.1 | Asexual reproduction
+**In a sentence**
+  Asexual reproduction uses one parent and makes genetically identical offspring quickly and cheaply — ideal in a stable environment, but risky when conditions change, because a whole population of clones can be wiped out together.
+**Key terms**
+  **Asexual reproduction**: reproduction by one parent without gametes fusing, producing offspring genetically identical to the parent.
+  **Clone**: an organism or cell genetically identical to another.
+  **Budding**: a new individual grows as an outgrowth of the parent, then separates.
+  **Fragmentation**: a piece breaks off the parent and grows into a new individual.
+  **Vegetative propagation**: new plants grow from part of a parent plant (runners, tubers, bulbs, rhizomes).
+  **Parthenogenesis**: an unfertilised egg develops into a new individual.
+**Types, with examples**
+  **Binary fission**: bacteria; also single-celled eukaryotes such as Paramecium and amoebae.
+  **Budding**: yeast; Hydra.
+  **Fragmentation and regeneration**: sea stars, flatworms (planarians), some segmented worms.
+  **Spore formation**: fungi such as bread mould release huge numbers of spores, each able to grow into a new individual.
+  **Vegetative propagation**: strawberry runners, potato tubers, ginger rhizomes, onion and tulip bulbs.
+  **Parthenogenesis**: aphids, some stick insects (including Australia's spiny leaf insect), whiptail lizards, and occasionally Komodo dragons in zoos.
+**Advantages**
+  No mate needed — useful for organisms that are isolated, rare or can't move.
+  Fast: many offspring in a short time, so a population can quickly colonise a new area or exploit a good food supply.
+  Uses less energy: no gametes, courtship or mating.
+  Every individual can reproduce (not only females).
+  A genotype that's well suited to a stable environment is passed on unchanged.
+**Disadvantages**
+  Little or no genetic variation: offspring differ only through mutation.
+  If the environment changes, or a new disease or predator arrives, every individual is equally vulnerable — the whole population can be wiped out.
+    The Gros Michel banana (grown as clones) was almost wiped out by Panama disease, a fungal wilt, by the 1950s; its replacement, the Cavendish, is now threatened by a new strain (Tropical Race 4).
+    The Irish potato famine (1840s): most potatoes were one clonal variety, and all were susceptible to the same blight.
+  Harmful mutations can build up, because there's no recombination to remove them.
+  Offspring stay close together and compete for the same resources.
+**Going deeper**
+  Many organisms switch strategies: aphids reproduce asexually through summer, when food is plentiful, then sexually in autumn, producing varied offspring and eggs that survive winter.
+**Common mistakes**
+  Saying asexual offspring show "no variation at all". Mutations still occur, just rarely.
+  Saying asexual reproduction is "worse". It is better in some conditions (stable, favourable) and worse in others (changing).
+**Exam tips**
+  Link advantages and disadvantages to the environment: "in a stable environment…", "if a new pathogen arrives…".
+**Connections**
+  Binary fission (Unit 1).
+  Sexual reproduction: the comparison.
+  Reproductive cloning: humans using asexual reproduction deliberately.
+  Genetic diversity: why a lack of variation is dangerous.
+**Practice questions**
+  Give two advantages and two disadvantages of asexual reproduction.
+    Advantages: no mate needed; many offspring produced quickly with little energy. Disadvantages: offspring are genetically identical, so a new disease or environmental change can wipe out the population; harmful mutations can accumulate.
+  Explain why commercial bananas are especially vulnerable to disease.
+    They are propagated asexually, so the plants are clones with the same genotype. If a pathogen can infect one, it can infect them all — no plant has a resistant allele.
+  Suggest why a weed that spreads by runners can quickly take over a garden bed.
+    Each plant produces many genetically identical offspring quickly without needing to flower or find a mate, so the population grows rapidly and fills the space.
+**Flashcards**
+  How does asexual reproduction differ from sexual? :: One parent and no fusion of gametes, so offspring are genetically identical to the parent.
+  Name the type: yeast grows an outgrowth that separates. :: Budding.
+  An unfertilised egg developing into an individual is {{parthenogenesis}}.
+  Main disadvantage of asexual reproduction? :: Little genetic variation, so a change in environment or a new disease can wipe out the whole population.
+  Give two advantages of asexual reproduction. :: No mate needed; fast production of many offspring with little energy.
+  Give an example of vegetative propagation. :: Strawberry runners (also potato tubers, bulbs, rhizomes).
+  Why were Gros Michel bananas almost wiped out? :: The plants were clones, so all were susceptible to Panama disease.
+
+@ 960d58f3 U2.2.1.2 | Sexual reproduction and genetic diversity
+**In a sentence**
+  Sexual reproduction mixes the alleles of two parents through meiosis and fertilisation, so every offspring is genetically unique — and that diversity gives a population a better chance of surviving change.
+**Key terms**
+  **Sexual reproduction**: reproduction involving the fusion of two haploid gametes to form a diploid zygote.
+  **Fertilisation**: fusion of a sperm and an egg.
+  **Zygote**: the diploid cell formed by fertilisation.
+  **Genetic diversity**: the variety of alleles and allele combinations in a population.
+**Where the variation comes from**
+  **Crossing over** in prophase I makes new combinations of alleles on each chromosome.
+  **Independent assortment** in metaphase I gives each gamete a random mix of maternal and paternal chromosomes.
+  **Random fertilisation**: any sperm can fuse with any egg.
+  (Plus **mutation**, the only source of brand-new alleles.)
+  Together these mean no two offspring (except identical twins) are genetically the same.
+**The biological advantage**
+  A genetically diverse population is more likely to include some individuals with alleles that help them survive a new disease, predator, climate or food source.
+  Those survivors reproduce and pass on the useful alleles, so the population can adapt through natural selection.
+  Sexual reproduction also brings beneficial mutations from different individuals together, and helps remove harmful ones.
+**The costs (for comparison)**
+  Finding and attracting a mate takes time and energy; mating can be risky.
+  Fewer offspring, produced more slowly.
+  Only part of the population (females) produces young.
+  A successful combination of alleles is broken up in the next generation.
+**Worked example**
+  A new fungal disease reaches two populations of the same plant: one reproduces only asexually, the other sexually. Predict and explain the outcomes.
+    Asexual population: all plants are clones; if one is susceptible they all are, so the whole population may die.
+    Sexual population: plants differ genetically; some may carry alleles giving resistance.
+    Resistant plants survive and reproduce, passing on resistance, so the population survives and adapts.
+**Going deeper**
+  Parasites and pathogens evolve fast. Constantly reshuffling alleles helps hosts stay one step ahead — one of the leading explanations for why sex is so common despite its costs.
+**Common mistakes**
+  Saying sexual reproduction lets individuals adapt. Individuals don't change; the population changes over generations as some survive and reproduce more.
+  Listing only one source of variation — give crossing over, independent assortment and random fertilisation.
+**Exam tips**
+  The mark usually rests on the chain: variation → some individuals survive a change → population survives/adapts.
+**Connections**
+  Meiosis and genetic diversity: the mechanism.
+  Asexual reproduction: the contrast.
+  Genetic diversity: why it matters to populations.
+  Adaptations: variation is what natural selection acts on.
+**Practice questions**
+  Explain how sexual reproduction increases the genetic diversity of offspring.
+    Meiosis produces genetically different gametes through crossing over (new allele combinations on chromosomes) and independent assortment (random mixes of chromosomes). Random fertilisation then combines any two of these gametes, so each offspring has a unique combination of alleles.
+  Explain the biological advantage of genetic diversity in offspring.
+    If the environment changes or a new disease appears, some offspring are likely to have alleles that let them survive and reproduce, so the population is less likely to be wiped out and can adapt.
+  Give two disadvantages of sexual reproduction.
+    It requires finding a mate (time, energy and risk), and fewer offspring are produced more slowly (only females bear young).
+**Flashcards**
+  Three sources of genetic variation in sexual reproduction? :: Crossing over, independent assortment and random fertilisation.
+  What is the main biological advantage of sexual reproduction? :: Genetically diverse offspring, so some are likely to survive environmental change or new diseases.
+  Fertilisation of two haploid gametes forms a diploid {{zygote}}.
+  Give two costs of sexual reproduction. :: Finding a mate takes time and energy; fewer offspring, produced more slowly.
+  What is the only source of brand-new alleles? :: Mutation.
+  Why does sexual reproduction help a population adapt? :: Offspring vary, so natural selection can favour those with useful alleles.
+  Give one situation where asexual reproduction has the advantage. :: A stable environment, or when no mate is available.
+
+@ 9a2a9ad9 U2.2.1.3 | Reproductive cloning technologies
+**In a sentence**
+  Humans make clones on purpose — plants from cuttings, grafts and tissue culture, and animals by embryo splitting or somatic cell nuclear transfer (the method that made Dolly the sheep) — to copy valuable organisms and help save endangered ones.
+**Key terms**
+  **Reproductive cloning**: producing a new organism genetically identical to another.
+  **Somatic cell**: any body cell that is not a gamete.
+  **Somatic cell nuclear transfer (SCNT)**: putting the nucleus of a somatic cell into an egg whose own nucleus has been removed, then growing it into an embryo.
+  **Enucleated egg**: an egg with its nucleus removed.
+  **Embryo splitting**: dividing an early embryo into separate cell groups that each develop into an individual.
+  **Tissue culture (micropropagation)**: growing many plants from small pieces of plant tissue on a sterile nutrient medium.
+  **Surrogate**: a female that carries an embryo that is not genetically her own.
+**Plant cloning**
+  **Cuttings**: a piece of stem is planted; meristem cells grow new roots (grapevines, rosemary). Rooting hormone helps.
+  **Grafting**: a shoot (scion) from a plant with good fruit is joined onto the roots (rootstock) of a hardy, disease-resistant plant. Most apple, citrus and wine-grape varieties are grown this way; every tree of a variety is a clone.
+  **Tissue culture**:
+    1. A tiny piece of meristem tissue (an explant) is taken and sterilised.
+    2. It's placed on sterile agar containing nutrients and plant hormones.
+    3. The cells divide into an undifferentiated mass (a callus).
+    4. Changing the hormones makes shoots, then roots, form.
+    5. Plantlets are moved to soil and hardened off.
+    Thousands of identical, disease-free plants can come from one parent — used for bananas, orchids and potatoes.
+  Australian example: after the Wollemi pine was discovered in 1994 (fewer than 100 wild trees), it was mass-propagated from cuttings and sold, which reduced the pressure to collect from the secret wild site.
+**Animal cloning — embryo splitting (artificial twinning)**
+  1. An egg is fertilised (usually by IVF).
+  2. The early embryo (up to about 8 cells, while the cells are still totipotent) is split into separate cells or groups.
+  3. Each develops into an embryo and is implanted into a surrogate.
+  The offspring are clones of **each other** — like identical twins — but not of either parent. Used in cattle breeding.
+**Animal cloning — somatic cell nuclear transfer**
+  1. Take a somatic cell from the animal to be cloned (the donor). For Dolly: a mammary (udder) cell from a Finn Dorset ewe.
+  2. Take an egg from another female and remove its nucleus (enucleate it). For Dolly: a Scottish Blackface ewe.
+  3. Fuse the donor cell with the enucleated egg, using a small electric pulse, which also starts cell division.
+  4. Grow the embryo in the lab for a few days.
+  5. Implant it into a surrogate mother.
+  6. The offspring's nuclear DNA is identical to the donor's (its mitochondrial DNA comes from the egg).
+  Dolly (born 1996, Roslin Institute, Scotland) was the first mammal cloned from an adult cell. She was the only lamb from 277 fused eggs.
+**Applications**
+  Agriculture: copying elite animals (high milk yield, disease resistance) and the best crop plants; producing uniform, disease-free crops.
+  Conservation: adding lost genetic diversity back into endangered populations using frozen cells — e.g. Kurt the Przewalski's horse (2020) and Elizabeth Ann the black-footed ferret (2020) were cloned from cells frozen decades earlier.
+  Research: genetically identical animals reduce variation in experiments.
+  Other uses: champion polo ponies and racing camels, pets, and animals engineered to make medicines.
+**Limitations**
+  Very low success rate and high cost; many cloned embryos fail or have health problems (some are abnormally large at birth).
+  Clones add no new genetic diversity: a herd of clones is as vulnerable to disease as a clonal crop.
+  Ethical concerns: animal welfare (surrogates, failed pregnancies), and cloning humans for reproduction is illegal in Australia.
+  A clone isn't a perfect copy: environment and epigenetics differ. The first cloned cat, CC, had a different coat pattern from her donor.
+**Going deeper**
+  Therapeutic cloning uses SCNT to make embryonic stem cells matched to a patient, not to make a baby — it's worth distinguishing from reproductive cloning in an ethics discussion.
+**Common mistakes**
+  Saying the SCNT clone is identical to the egg donor or the surrogate. It's identical to the nucleus donor.
+  Confusing embryo splitting (clones of each other) with SCNT (clone of an adult).
+  "Clones are identical in every way." Their environment and epigenetic marks differ.
+**Exam tips**
+  In SCNT questions, say which animal supplied what: the nucleus (genetic identity), the egg (enucleated) and the uterus (surrogate).
+**Connections**
+  Stem cells (Unit 1): totipotent embryo cells and plant meristems make cloning possible.
+  Asexual reproduction: cloning is artificial asexual reproduction.
+  Genetic diversity: clones reduce it — unless old cells restore lost alleles.
+  Bioethical issues (Area of Study 3): cloning is a common investigation topic.
+**Practice questions**
+  Outline the steps of somatic cell nuclear transfer.
+    A somatic cell is taken from the animal to be cloned. An egg from another female has its nucleus removed. The somatic cell (nucleus) is fused with the enucleated egg using an electric pulse, which stimulates division. The embryo is grown briefly, then implanted into a surrogate mother, which gives birth to a clone of the nucleus donor.
+  Dolly's nucleus came from a Finn Dorset (white face), the egg from a Scottish Blackface, and the surrogate was a Scottish Blackface. What colour was Dolly's face, and why?
+    White. Her nuclear DNA, which carries the genes for face colour, came from the Finn Dorset donor.
+  Explain how cloning could help conserve an endangered species, and give one limitation.
+    Cells frozen from individuals that have since died can be cloned to bring their alleles back into a small population, increasing genetic diversity. Limitation: success rates are very low, and clones of one individual don't add diversity to each other.
+  Distinguish between embryo splitting and SCNT.
+    Embryo splitting divides an early embryo from a fertilised egg, making offspring identical to each other but not to either parent. SCNT uses the nucleus of an adult body cell, making an offspring identical to that adult.
+**Flashcards**
+  What does SCNT stand for? :: Somatic cell nuclear transfer.
+  In SCNT, the clone is genetically identical to the {{nucleus donor}}.
+  Embryo splitting makes offspring identical to… :: each other, but not to either parent.
+  Who was Dolly? :: A sheep born in 1996, the first mammal cloned from an adult cell, by SCNT.
+  Name three ways of cloning plants. :: Cuttings, grafting, tissue culture (micropropagation).
+  Why can cells from an 8-cell embryo each form a whole animal? :: They are still totipotent.
+  Give one limitation of animal cloning. :: Low success rate (also high cost, health problems, no added genetic diversity).
+
+@ 88228d86 U2.2.2.1 | Why genetic diversity matters
+**In a sentence**
+  A population with many different alleles is more likely to have some individuals that can survive a new disease or a changing environment, while small, inbred populations with little diversity are vulnerable to extinction.
+**Key terms**
+  **Gene pool**: all the alleles in a population.
+  **Genetic diversity**: the variety of alleles and genotypes in a population or species.
+  **Population**: a group of individuals of one species living in the same area and interbreeding.
+  **Inbreeding**: mating between close relatives.
+  **Inbreeding depression**: reduced survival and fertility caused by inbreeding.
+  **Genetic bottleneck**: a sharp fall in population size that leaves only a small sample of the original gene pool.
+  **Founder effect**: low diversity in a population started by a few individuals.
+  **Genetic rescue**: introducing individuals from another population to add new alleles.
+**Why diversity matters**
+  Environments change: new diseases, climate change, new predators or competitors.
+  In a diverse population some individuals probably carry alleles that help them survive the change; they reproduce, and the population survives and adapts.
+  In a population with little diversity, if one individual is vulnerable, most are — the population can crash.
+**What reduces diversity**
+  Small population size — alleles are lost by chance each generation.
+  Bottlenecks and founder effects.
+  Inbreeding — it increases homozygosity, so harmful recessive alleles are expressed more often (inbreeding depression: lower fertility, weaker immunity, birth defects).
+  Habitat fragmentation isolates small groups.
+  Clonal and monoculture farming.
+**Australian and other examples**
+  **Tasmanian devil**: very low genetic diversity. Devil facial tumour disease (first seen in 1996) is a cancer spread by biting; devils' immune systems don't recognise the tumour cells as foreign because the devils are so genetically alike. Populations fell by around 80%.
+  **Mountain pygmy possum** at Mt Buller, Victoria: by around 2010 only a handful remained and they were inbred. In 2011 males from the larger Mt Hotham population were introduced (genetic rescue). Their hybrid offspring were bigger and had more young that survived, and numbers rose to over 200.
+  **Koalas** in much of Victoria descend from a small number of animals moved from French Island and Phillip Island, so their diversity is low.
+  **Cheetahs** went through a severe bottleneck; they are so similar that skin grafts between unrelated cheetahs were accepted.
+  Clonal crops such as the Cavendish banana.
+**Maintaining genetic diversity**
+  Captive breeding programs using studbooks to avoid inbreeding.
+  Genetic rescue and translocation between populations.
+  Wildlife corridors joining fragmented habitat.
+  Seed banks and frozen tissue banks (the Svalbard Global Seed Vault; the Victorian Conservation Seedbank).
+  Growing many crop varieties rather than one.
+**Going deeper**
+  Genetic diversity is measured by comparing DNA between individuals — for example the proportion of loci where individuals are heterozygous. Conservation geneticists use these data to choose which animals to breed or move.
+**Common mistakes**
+  Saying diversity lets individuals adapt. It lets populations survive and adapt, because some individuals already carry useful alleles.
+  Confusing species diversity (number of species) with genetic diversity (variety of alleles within a species).
+**Exam tips**
+  Name a specific threat and link it to alleles: "if a new strain of disease emerged, a population with more alleles is more likely to include resistant individuals".
+**Connections**
+  Sexual reproduction: how diversity is generated.
+  Reproductive cloning: using frozen cells to restore diversity.
+  Adaptations: natural selection needs variation.
+  Bioethical issues: strategies to maintain diversity are a suggested investigation topic.
+**Practice questions**
+  Explain why low genetic diversity has made Tasmanian devils vulnerable to devil facial tumour disease.
+    Devils are so genetically alike that their immune systems don't recognise the tumour cells (from another devil) as foreign, so the cancer spreads by biting. With few alleles in the population, few if any devils have resistance, so populations crashed.
+  Describe what happened in the genetic rescue of the Mt Buller mountain pygmy possum.
+    The tiny inbred Mt Buller population was given new alleles by bringing in males from Mt Hotham (2011). Hybrid offspring were larger and more fertile, and the population grew to over 200.
+  Explain why inbreeding reduces the survival of a population.
+    Close relatives share many alleles, so their offspring are more often homozygous, including for harmful recessive alleles, which are then expressed. This lowers fertility and survival (inbreeding depression).
+**Flashcards**
+  What is a gene pool? :: All the alleles in a population.
+  Why does genetic diversity help a population survive? :: Some individuals are likely to carry alleles that let them survive a change, such as a new disease.
+  A sharp fall in population size that reduces diversity is a genetic {{bottleneck}}.
+  What is inbreeding depression? :: Reduced survival and fertility from mating close relatives, as harmful recessive alleles become homozygous.
+  What is genetic rescue? :: Introducing individuals from another population to add new alleles.
+  Which Australian marsupial is threatened by a transmissible cancer, worsened by low diversity? :: The Tasmanian devil (devil facial tumour disease).
+  What is the founder effect? :: Low genetic diversity in a population started by a few individuals.
+
+@ f7b476e6 U2.2.2.2 | Adaptations for survival
+**In a sentence**
+  Adaptations are inherited features that help an organism survive and reproduce in its environment — structural (body features), physiological (how the body works) and behavioural (what it does) — and together they let life exist from deserts to deep oceans.
+**Key terms**
+  **Adaptation**: an inherited characteristic that increases an organism's chance of surviving and reproducing in its environment.
+  **Structural adaptation**: a physical feature of the body.
+  **Physiological adaptation**: a feature of how the body's cells, tissues or organs function.
+  **Behavioural adaptation**: an action or behaviour.
+  **Torpor**: a short-term drop in body temperature and metabolism to save energy.
+  **Aestivation**: a dormant state that gets an animal through hot, dry periods.
+  **Extremophile**: an organism that thrives in extreme conditions (heat, salt, acid, pressure).
+**Structural adaptations**
+  Thorny devil: tiny grooves between its scales draw water by capillary action to the corners of its mouth — it can drink dew or damp sand.
+  Bilby: large, thin ears with many blood vessels radiate heat.
+  Kangaroo: long, springy hind legs and tendons for energy-efficient hopping over long distances.
+  Eucalypt leaves: thick cuticle, sunken stomata and a vertical hang to cut water loss.
+  Banksia: tough woody seed pods that protect seeds until fire opens them.
+  Cold-climate animals: small ears and limbs, thick fur and fat (less surface for heat loss).
+**Physiological adaptations**
+  Kangaroos and hopping mice produce very concentrated urine (long loops of Henle), saving water.
+  Embryonic diapause: a kangaroo can pause the development of an embryo when conditions are poor and restart it later.
+  Mountain pygmy possums hibernate under the snow for up to about 7 months, surviving on stored fat.
+  Water-holding frog: buries itself underground in a cocoon of shed skin and aestivates through drought, storing water in its bladder.
+  Salt glands let marine birds, sea turtles and saltwater crocodiles excrete excess salt.
+  Countercurrent heat exchange in the legs of penguins and wading birds: warm arterial blood heats cold returning venous blood, so little heat is lost from the feet.
+  Antifreeze proteins in Antarctic fish stop ice crystals forming in their blood.
+  Eucalypts resprout after fire from lignotubers and epicormic buds under the bark; many Australian seeds germinate only after heat or smoke.
+**Behavioural adaptations**
+  Red kangaroos lick their forearms; evaporation of saliva cools blood in the surface vessels.
+  Desert animals are nocturnal or shelter in burrows during the hottest part of the day.
+  Lizards bask in the sun to warm up and shelter to cool down.
+  Bogong moths migrate each spring to cool alpine caves to wait out summer (aestivation).
+  Emperor penguins huddle and rotate positions to share warmth.
+  Many birds migrate to follow food and suitable breeding conditions.
+**Life in extreme environments**
+  Thermophiles in hot springs — Thermus aquaticus, whose heat-stable enzyme (Taq polymerase) is used in PCR.
+  Halophiles in salt lakes; organisms around deep-sea hydrothermal vents living on chemical energy.
+  Alpine and Antarctic organisms survive cold through insulation, antifreeze proteins and dormancy.
+**Going deeper**
+  Many features combine categories: a kangaroo's concentrated urine is physiological, its kidneys' long loops of Henle are structural, and resting in shade is behavioural — all solving the same problem of water loss.
+  Adaptations come from natural selection acting on existing variation: individuals with helpful alleles survive and reproduce more, so those alleles become more common over generations.
+**Common mistakes**
+  "Organisms develop adaptations because they need them." Adaptations arise because individuals that already have useful inherited variation survive and reproduce more.
+  Calling a learned or temporary change (a tan, acclimatising to altitude) an adaptation. Adaptations are inherited.
+  Naming an adaptation without explaining how it improves survival.
+**Exam tips**
+  Classify, then explain: "Behavioural — licking forearms; evaporation of saliva removes heat from blood near the skin surface, lowering body temperature without using extra water from sweating."
+**Connections**
+  Homeostasis (Unit 1): many physiological adaptations regulate temperature and water.
+  Regulating water balance in plants (Unit 1): xerophyte adaptations.
+  Genetic diversity: variation that natural selection acts on.
+  Aboriginal and Torres Strait Islander knowledge: observation of adaptations over thousands of years.
+**Practice questions**
+  Classify each adaptation and explain how it helps survival: (a) the bilby's large ears; (b) a kangaroo licking its forearms; (c) a kangaroo producing concentrated urine.
+    (a) Structural — large thin ears with many blood vessels radiate heat, helping it stay cool. (b) Behavioural — evaporating saliva cools blood near the skin surface. (c) Physiological — reabsorbing more water in the kidneys conserves water in a dry environment.
+  Explain how countercurrent heat exchange helps a penguin stand on ice.
+    Arteries carrying warm blood to the feet run right next to veins carrying cold blood back. Heat passes from arterial to venous blood, so the feet receive cooler blood and lose little heat to the ice, while heat is returned to the body core.
+  Explain how the water-holding frog survives long droughts.
+    It burrows underground and forms a waterproof cocoon from shed skin, then aestivates with a very low metabolic rate, using water stored in its bladder until rain returns.
+**Flashcards**
+  Define adaptation. :: An inherited characteristic that increases an organism's chance of survival and reproduction in its environment.
+  Classify: kangaroo licking its forearms to cool down. :: Behavioural.
+  Classify: concentrated urine in hopping mice. :: Physiological.
+  The thorny devil's grooved skin channels water to its mouth — a {{structural}} adaptation.
+  What is embryonic diapause? :: Pausing the development of an embryo until conditions improve (e.g. in kangaroos).
+  How do Antarctic fish avoid freezing? :: Antifreeze proteins in their blood stop ice crystals forming.
+  Why is a suntan not an adaptation? :: It is not inherited — it's a response within one lifetime.
+
+@ a49fd0cf U2.2.2.3 | Keystone species and interdependence
+**In a sentence**
+  Species in an ecosystem depend on each other through feeding and other relationships, and a few — keystone species and top predators — have effects far larger than their numbers, holding the distribution, density and size of other populations in place.
+**Key terms**
+  **Population size**: the total number of individuals in a population.
+  **Population density**: the number of individuals per unit area or volume.
+  **Distribution**: where individuals are found and how they are spread (clumped, uniform or random).
+  **Interdependence**: species relying on each other for food, shelter, pollination and more.
+  **Keystone species**: a species with an effect on its ecosystem far greater than its abundance suggests.
+  **Top (apex) predator**: a predator at the top of a food chain with no natural predators of its own.
+  **Trophic cascade**: effects that spread down a food chain when the numbers of a predator change.
+  **Mesopredator release**: an increase in mid-sized predators when a top predator is removed.
+**Describing populations**
+  Size changes with births and immigration (increase) and deaths and emigration (decrease).
+  Limiting factors keep numbers in check: food, water, shelter, disease, predation, competition, and events like fire and drought.
+  Carrying capacity: the largest population an environment can support.
+**Relationships between species**
+  **Predation**: one animal kills and eats another; predator and prey numbers often rise and fall in linked cycles.
+  **Competition**: organisms need the same limited resource — within a species or between species.
+  **Mutualism** (both benefit): honeyeaters pollinating banksias while feeding on nectar; coral and the algae living in its tissues; fungi that help plant roots absorb nutrients.
+  **Commensalism** (one benefits, the other unaffected): remora fish riding sharks; orchids and ferns growing on tree branches.
+  **Parasitism** (one benefits, the host is harmed): ticks, tapeworms, mistletoe, cuckoos laying eggs in other birds' nests.
+**Keystone species**
+  Removing a keystone species changes the whole community, often reducing diversity.
+  Classic study: removing the predatory sea star Pisaster from a rocky shore let mussels crowd out other species, and diversity fell sharply.
+  Sea otters eat sea urchins; without otters, urchins overgraze kelp forests into bare "urchin barrens".
+  **Southern cassowary** (Queensland rainforest): swallows large fruits whole and spreads the seeds of many rainforest trees — some rarely dispersed by any other animal.
+  **Grey-headed flying fox**: pollinates and spreads the seeds of eucalypts and rainforest trees, flying tens of kilometres a night.
+  Ecosystem engineers such as bilbies and bettongs dig constantly, turning over soil, helping water soak in and seeds germinate.
+**Top predators and trophic cascades**
+  Top predators keep herbivore and smaller-predator populations in check, and change where prey feed (their distribution).
+  **Dingoes and the dingo fence**: the fence (over 5600 km) keeps dingoes out of sheep country. Inside, with few dingoes, there are more kangaroos, foxes and feral cats and fewer small native mammals (hopping mice, mulgaras); outside, dingoes suppress kangaroos, foxes and cats, and small mammals and plant cover do better. Removing the dingo releases the mesopredators. It's a natural experiment, not a controlled one, and scientists still debate how strong the effect is.
+  **Rock lobsters, urchins and kelp**: off eastern Tasmania and Victoria, overfishing removed many large rock lobsters (a major predator of sea urchins), while warming currents helped the long-spined sea urchin spread south. The urchins grazed kelp beds into barrens. Protecting large lobsters is part of the response.
+  **Wolves in Yellowstone** (USA): after wolves were reintroduced in 1995, elk numbers fell and elk avoided open river banks; willows and aspens regrew, and beavers and songbirds returned.
+**Tracing a change**
+  Ask: what did the removed or added species eat, and what ate it? What did it do for other species (pollinate, disperse seeds, dig)?
+  Predict the direct effect, then the indirect effects one or two steps away, and describe changes in size, density and distribution.
+**Going deeper**
+  Some ecologists use "keystone" for any species with an outsized role — predators, pollinators, seed dispersers or ecosystem engineers. The key test is the size of its effect relative to its abundance.
+**Common mistakes**
+  "A keystone species is the most common species" or "the top predator". It's defined by its large effect relative to its numbers.
+  Stopping at the direct effect and missing the knock-on effects.
+  Confusing population size (total) with density (per area).
+**Exam tips**
+  Use the three population words — size, density, distribution — when the question asks how a population is affected.
+  Explain each step of a cascade with "because".
+**Connections**
+  Adaptations: many adaptations are about interactions (camouflage, seed dispersal).
+  Aboriginal and Torres Strait Islander knowledge: understanding of interdependence built over tens of thousands of years.
+  Genetic diversity: small, isolated populations are more at risk.
+  Bioethical issues: introduced species and keystone species are suggested investigation topics.
+**Practice questions**
+  Explain what makes a species a keystone species, using an Australian example.
+    Its effect on the ecosystem is much larger than its abundance would suggest. The southern cassowary disperses the seeds of many rainforest trees, some of which few other animals can move; losing cassowaries would change which trees regenerate and where.
+  Predict the effects on small native mammals of removing dingoes from an area, and explain.
+    Small native mammals would decline. Dingoes suppress foxes and feral cats; without dingoes these mesopredators increase in number and density and eat more small mammals. Kangaroo numbers may also rise, reducing plant cover that small mammals shelter in.
+  Distinguish between population density and population distribution.
+    Density is the number of individuals per unit area; distribution is where the individuals are found and how they are spread across the area (clumped, uniform or random).
+  Explain how overfishing of rock lobsters can lead to the loss of kelp forests.
+    Large rock lobsters eat sea urchins. With fewer lobsters, urchin numbers and density increase and they graze the kelp, turning kelp forest into urchin barrens with far fewer species.
+**Flashcards**
+  Define keystone species. :: A species whose effect on its ecosystem is much larger than its abundance suggests.
+  Population density vs population size? :: Density is individuals per unit area; size is the total number.
+  Removing a top predator can increase mid-sized predators — {{mesopredator release}}.
+  Mutualism, commensalism, parasitism: who benefits? :: Mutualism both; commensalism one (other unaffected); parasitism one (host harmed).
+  What is a trophic cascade? :: Knock-on effects through a food chain when a predator's numbers change.
+  What happens to foxes and cats when dingoes are removed? :: They increase (mesopredator release), and small native mammals decline.
+  Why is the southern cassowary called a keystone species? :: It disperses the seeds of many rainforest trees, some rarely dispersed by other animals.
+
+@ 356ff9bc U2.2.2.4 | Aboriginal and Torres Strait Islander knowledge
+**In a sentence**
+  Over more than 60 000 years, Aboriginal and Torres Strait Islander peoples have built detailed, tested knowledge of how Australian species are adapted and how they depend on each other — knowledge that shapes practices from seasonal calendars and eel aquaculture to cultural burning.
+**Key terms**
+  **Country**: the land, waters and sky that a group has a deep spiritual, cultural and custodial connection with.
+  **Indigenous ecological knowledge**: knowledge of species and ecosystems built up through observation and practice and passed on across generations.
+  **Seasonal calendar**: a calendar based on changes in plants, animals and weather rather than fixed months.
+  **Cultural burning**: planned, usually cool and patchy fires lit under cultural authority to care for Country.
+  **Biopiracy**: using Indigenous knowledge or biological resources commercially without consent or fair benefit-sharing.
+**How the knowledge is built and shared**
+  Built by close observation using all the senses over thousands of years, tested through practice, and refined.
+  Passed on through story, song, dance, art and practice on Country.
+  Knowledge belongs to particular peoples and places. It's best to name the people and Country an example comes from, and to use it with permission and respect.
+**Seasonal calendars — reading interdependence**
+  Many calendars mark seasons by ecological signs: when one plant flowers, another resource is ready.
+  The Wurundjeri people of the Kulin Nation (Melbourne area) recognise seven seasons, including:
+    Iuk (eel season, around March), when short-finned eels migrate downstream.
+    Waring (wombat season, around April–July).
+    Guling (orchid season, around August).
+    Poorneet (tadpole season, around September–October).
+    Along with Biderap (dry season), Buath Gurru (grass flowering) and Garrawang (kangaroo-apple season).
+  These calendars record links between species and weather that science is now also measuring — and help track the effects of climate change.
+**Budj Bim — managing eels**
+  On Gunditjmara Country in south-west Victoria, people built channels, weirs and ponds in the Budj Bim lava flow at least 6600 years ago to trap, hold and harvest kooyang (short-finned eels, Anguilla australis).
+  The system relies on detailed knowledge of the eel's life cycle and seasonal migration, and of how water flows through the wetlands.
+  It is one of the world's oldest aquaculture systems and was added to the UNESCO World Heritage List in 2019.
+**Fire and Country**
+  Cool, patchy burns, lit at the right time of year, create a mosaic of vegetation at different ages.
+  This provides varied habitat, fresh growth that attracts grazing animals, and less fuel for intense bushfires.
+  It reflects knowledge of which plants need fire to regenerate or release seed, which animals need unburnt refuges, and when not to burn.
+  Today Indigenous ranger groups and land managers work together on cultural burning programs.
+**Knowledge of adaptations**
+  Finding water in dry country by digging up water-holding frogs, which store water in their bodies while buried.
+  Timing gatherings to the bogong moth migration to alpine caves, where the moths were an important food.
+  Bush foods and medicines: Kakadu plum (very high in vitamin C); eucalyptus and tea tree oils used on wounds and infections.
+**Ethics and respect**
+  Biopiracy: companies have patented compounds from plants identified through Indigenous knowledge without consent or sharing benefits. In the 1990s a compound from Western Australia's smokebush was investigated as an anti-HIV drug, with little benefit to the Traditional Owners who knew the plant.
+  Good practice: free, prior and informed consent; acknowledging knowledge holders; sharing benefits; Indigenous leadership in research on their Country.
+**Going deeper**
+  Science and Indigenous knowledge can complement each other: long-term, place-based observations can fill gaps in scientific records that go back only decades.
+**Common mistakes**
+  Treating Aboriginal and Torres Strait Islander peoples as one group with one set of knowledge. There are hundreds of distinct nations.
+  Describing the knowledge only in the past tense. It is living knowledge, used and developed today.
+  Giving an example without explaining what it shows about adaptation or interdependence.
+**Exam tips**
+  Structure: name the people and practice → the biological knowledge it shows (life cycle, adaptation, interdependence) → the benefit for survival or biodiversity.
+**Connections**
+  Adaptations: knowledge of how Australian species survive drought and fire.
+  Interdependence: seasonal indicators and fire mosaics.
+  Bioethical issues: biopiracy and biomimicry are suggested investigation topics.
+**Practice questions**
+  Explain how the Gunditjmara eel traps at Budj Bim show an understanding of the short-finned eel's biology.
+    The channels and weirs were built to catch and hold eels as they move through the wetlands during their seasonal migration, showing knowledge of when and where eels travel in their life cycle and how water flow carries them.
+  Explain how cultural burning can increase biodiversity.
+    Cool, patchy burns create a mosaic of habitats at different stages after fire, suiting different species; fresh growth attracts grazing animals; plants that need fire to regenerate are helped; and lower fuel loads reduce the risk of intense wildfires that destroy large areas.
+  How can a seasonal calendar reflect interdependence between species?
+    Seasons are marked by linked events — for example the flowering of one plant signalling that eels are running or that an animal is breeding — which shows knowledge of how species' life cycles are connected to each other and to the weather.
+**Flashcards**
+  What is Budj Bim famous for? :: An eel aquaculture system built by the Gunditjmara people at least 6600 years ago, World Heritage listed in 2019.
+  Which eel was farmed at Budj Bim? :: The short-finned eel (kooyang).
+  How does cultural burning benefit biodiversity? :: Patchy, cool burns create a mosaic of habitats and reduce fuel for intense bushfires.
+  The Wurundjeri calendar has {{seven}} seasons.
+  What is biopiracy? :: Using Indigenous knowledge or resources commercially without consent or fair benefit-sharing.
+  How is Indigenous ecological knowledge passed on? :: Through story, song, dance, art and practice on Country.
+  What does "Country" mean? :: The land, waters and sky a group has a deep spiritual, cultural and custodial connection with.

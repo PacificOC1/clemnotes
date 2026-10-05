@@ -1,0 +1,922 @@
+% VCE Economics — Unit 2, Area of Study 1: economic activity.
+% Original study notes. Format: see src/courses/notesPack.ts. Money is written \$ (a bare $ starts maths).
+% Australian figures are dated; the latest checked were for the June quarter / August 2026.
+
+@ 71fcba93 U2.1.1.1 | The purpose of economic activity
+**In a sentence**
+  Economic activity — producing, distributing and consuming goods and services — exists to satisfy needs and wants, and so to raise the living standards of the community.
+**Key terms**
+  **Economic activity**: the production, distribution, exchange and consumption of goods and services in an economy.
+  **Level of economic activity**: how much is being produced and spent overall, usually measured by real GDP.
+  **Living standards**: the wellbeing of people — material and non-material.
+**What activity involves**
+  Production: firms combine land, labour, capital and enterprise to make goods and services.
+  Distribution and exchange: goods move through markets to buyers; incomes flow to resource owners.
+  Consumption: households use goods and services to satisfy needs and wants.
+**Why the level matters**
+  Higher activity means more output, more jobs and higher incomes — more needs and wants satisfied.
+  Too little activity (a recession) leaves resources idle: unemployment rises and incomes fall.
+  Too much (demand racing ahead of capacity) can cause inflation and bottlenecks, which the RBA fought in 2026 by raising the cash rate to 4.60%.
+**Worked example**
+  A Bendigo bakery employs 12 people and sells bread to local families. Explain how its activity contributes to living standards.
+    Production: it combines flour (land), bakers (labour), ovens (capital) and the owner's enterprise to make bread.
+    Incomes: it pays wages, rent and profits, which households spend on their own needs and wants.
+    Consumption: families satisfy a basic need (food).
+    Result: material living standards rise; jobs also give workers purpose and social connection (non-material).
+**Going deeper**
+  The aim isn't activity for its own sake: activity that damages health or the environment can lower overall living standards — the theme of the costs of growth.
+**Common mistakes**
+  Saying the purpose of economic activity is "to make profit". Profit is the business motive; the purpose of activity in the economy is to satisfy needs and wants.
+**Exam tips**
+  Link "purpose" directly to needs and wants and to living standards in your first sentence.
+**Connections**
+  Economic activity and living standards (Unit 1).
+  Material and non-material living standards.
+  Measuring growth with real GDP.
+**Practice questions**
+  What is the purpose of economic activity?
+    To produce and distribute goods and services that satisfy people's needs and wants, raising living standards.
+  Explain why both very low and very high levels of economic activity can be a problem.
+    Low activity leaves resources unemployed and incomes low; activity growing faster than productive capacity creates inflation and bottlenecks that later require slowing the economy.
+  Name the three parts of economic activity.
+    Production, distribution/exchange and consumption.
+**Flashcards**
+  Purpose of economic activity? :: To satisfy needs and wants and raise living standards.
+  Three parts of economic activity? :: Production, distribution/exchange and consumption.
+  The level of economic activity is usually measured by {{real GDP}}.
+  Problem of too little activity? :: Unemployment and falling incomes.
+  Problem of too much activity? :: Inflation and bottlenecks.
+  Is profit the purpose of economic activity? :: No — it's the business motive; the purpose is satisfying needs and wants.
+  Why did the RBA raise rates in 2026? :: To slow demand and bring inflation back to its 2–3% target.
+
+@ fe6be277 U2.1.1.2 | Material and non-material living standards
+**In a sentence**
+  Material living standards are the goods and services people can access and are easy to measure; non-material living standards are the quality-of-life factors — health, education, environment, safety, freedom, leisure — that money measures poorly.
+**Key terms**
+  **Material living standards**: the quantity and quality of goods and services people have access to; tangible and measurable, e.g. real income per person, housing, cars.
+  **Non-material living standards**: aspects of wellbeing that are hard to quantify — health, life expectancy, education, a clean environment, leisure, safety, political freedom, equity, social connection.
+  **Real income**: income adjusted for inflation — what it can actually buy.
+**Material living standards**
+  Measured by real GDP per capita, real household disposable income, home ownership, access to technology.
+  Rise when real incomes grow faster than prices; fall when inflation outpaces wages, as it did for many workers in 2022–23 and again in 2026 (wages +3.2% vs prices +3.5–3.8%).
+**Non-material living standards**
+  Health (life expectancy in Australia is about 83 years), education, the natural environment, safety, freedom of speech and voting, leisure time, stress, community and cultural connection.
+  Harder to measure, so economists use indicators (life expectancy, school completion, air quality, crime rates) or surveys of wellbeing.
+**How they relate**
+  Often together: higher incomes pay for better health care and education.
+  Sometimes in conflict: longer working hours raise income but cut leisure and family time; mining raises incomes but may damage the environment.
+**Worked example**
+  Assess the effect on living standards of an Australian worker taking a fly-in fly-out mining job paying 40% more than their current job.
+    Material: real income rises 40%, so they can afford more goods and services — material living standards rise.
+    Non-material: long rosters away from family, fatigue and social isolation may reduce wellbeing; the job's safety risks also matter.
+    Judgement: material living standards clearly rise; overall wellbeing depends on how the worker values time with family.
+**Going deeper**
+  Treasury's Measuring What Matters framework (2023) tracks 50 indicators across five themes — healthy, secure, sustainable, cohesive, prosperous — because GDP alone misses non-material living standards.
+**Common mistakes**
+  Listing "money" as a non-material factor.
+  Treating non-material living standards as unimportant because they are hard to measure.
+**Exam tips**
+  Define both with the words "tangible/measurable" and "hard to quantify", then give an Australian example of each and show how an event affects both.
+**Connections**
+  The purpose of economic activity.
+  Benefits of economic growth and Costs of economic growth.
+  Alternative measures of living standards.
+**Practice questions**
+  Distinguish between material and non-material living standards.
+    Material living standards are the goods and services people can access and are measurable (e.g. real income per person). Non-material living standards are quality-of-life factors that are hard to measure, such as health, environment and freedom.
+  Explain how an increase in real income could raise non-material living standards.
+    Higher income lets people afford better health care, education and leisure activities, and raises tax revenue that funds public services.
+  Explain how economic growth might reduce non-material living standards.
+    Growth can increase pollution, congestion and working hours, harming health, the environment and leisure.
+**Flashcards**
+  Material living standards are {{tangible}} and measurable.
+  Three examples of non-material living standards? :: Health, environment, freedom (also leisure, safety, education).
+  Measure of material living standards? :: Real GDP per capita or real household disposable income.
+  What is real income? :: Income adjusted for inflation.
+  Australia's life expectancy (approx.)? :: About 83 years.
+  Treasury's wellbeing framework? :: Measuring What Matters (2023).
+  How can higher material living standards lower non-material ones? :: Longer hours, stress, pollution.
+
+@ 4711628c U2.1.1.3 | The five-sector circular flow model
+**In a sentence**
+  The five-sector circular flow model adds the financial sector and the overseas sector to households, firms and government, showing how leakages (saving, taxes, imports) and injections (investment, government spending, exports) raise or lower economic activity.
+**Key terms**
+  **Financial sector**: banks, super funds and other institutions that collect saving and lend it for investment.
+  **Overseas sector**: the rest of the world, which buys Australia's exports and sells us imports.
+  **Leakage (withdrawal)**: income that leaves the circular flow and isn't spent on domestic output — saving (S), taxation (T), imports (M).
+  **Injection**: spending that enters the circular flow from outside household consumption — investment (I), government spending (G), exports (X).
+  **Investment**: spending by firms on capital goods (machinery, buildings, technology).
+**The five sectors and their flows**
+  Households: supply resources, receive incomes, consume, save, pay taxes, buy imports.
+  Firms: produce, pay incomes, borrow to invest, sell exports.
+  Government: taxes (T) and spends (G) — on goods, services and transfer payments.
+  Financial sector: receives saving (S) and lends it for investment (I) and to households.
+  Overseas sector: buys exports (X), sells imports (M).
+**Leakages and injections**
+  If injections (I + G + X) > leakages (S + T + M): spending grows, so production, jobs and incomes rise — economic activity increases.
+  If injections < leakages: spending shrinks and activity falls.
+  If equal: activity is stable.
+**Worked example**
+  In a year (billions of dollars): saving 300, taxes 500, imports 600, investment 400, government spending 550, exports 520. What happens to economic activity?
+    Leakages = 300 + 500 + 600 = \$1 400 billion.
+    Injections = 400 + 550 + 520 = \$1 470 billion.
+    Injections exceed leakages by \$70 billion, so spending is growing: production, employment and incomes are likely to rise.
+**Going deeper**
+  Saving isn't bad: saving flows through the financial sector to fund investment, which builds productive capacity. Problems arise when saving isn't matched by investment (as in a downturn when firms stop borrowing).
+  The model implies a multiplier: an injection is spent and re-spent, raising total income by more than the injection itself (covered in Unit 3).
+**Common mistakes**
+  Confusing saving (a leakage) with investment (an injection).
+  Treating imports as an injection — spending on imports leaves Australia.
+  Forgetting that the overseas sector buys exports (injection) as well as selling imports (leakage).
+**Exam tips**
+  Draw or describe all five sectors, label each flow, and state the injections vs leakages rule when explaining a change.
+**Connections**
+  The three-sector circular flow model (Unit 1): the simpler version.
+  Aggregate demand and its components: C + I + G + (X − M).
+  The business cycle: changes in injections and leakages drive it.
+**Practice questions**
+  Identify the three leakages and three injections in the five-sector model.
+    Leakages: saving, taxation, imports. Injections: investment, government spending, exports.
+  Explain the role of the financial sector in the circular flow.
+    It takes households' saving (a leakage) and lends it to firms for investment (an injection) and to households for consumption, linking saving to investment.
+  A fall in China's demand for Australian iron ore reduces exports by \$20 billion. Use the model to explain the effect on activity.
+    Exports are an injection; if they fall and nothing else changes, injections fall below leakages, so spending on Australian output falls, firms produce less and employ fewer workers, and incomes fall.
+**Flashcards**
+  Five sectors? :: Households, firms, government, financial sector, overseas sector.
+  Three leakages? :: Saving, taxation, imports.
+  Three injections? :: Investment, government spending, exports.
+  If injections exceed leakages, economic activity {{rises}}.
+  Is saving an injection or a leakage? :: A leakage.
+  Role of the financial sector? :: Channels saving into loans for investment and consumption.
+  Calculate: S 300, T 500, M 600; I 400, G 550, X 520 (\$b). Injections minus leakages? :: +\$70 billion — activity rises.
+
+@ 17e15030 U2.1.1.4 | The business cycle
+**In a sentence**
+  The business cycle is the pattern of rises and falls in economic activity around its long-run trend — expansion to a peak, contraction to a trough, and recovery — with typical changes in jobs, prices and confidence at each stage.
+**Key terms**
+  **Business cycle**: fluctuations in the level of economic activity (real GDP) over time.
+  **Trend growth**: the average rate at which the economy's productive capacity grows over the long term (about 2–2.5% a year for Australia).
+  **Expansion (upswing)**: a period of rising activity.
+  **Peak (boom)**: the top of the cycle — activity at its highest; pressure on capacity.
+  **Contraction (downswing)**: a period of slowing or falling activity.
+  **Trough**: the bottom of the cycle.
+  **Recession**: commonly defined as two consecutive quarters of negative real GDP growth; more broadly, a significant fall in activity and rise in unemployment.
+**Phases and their features**
+  Expansion/recovery: spending, production and employment rise; confidence improves; unemployment falls; inflation starts to rise.
+  Peak/boom: resources are close to fully used; labour shortages; inflation and interest rates high; asset prices high.
+  Contraction: spending and production slow; confidence falls; firms cut hours, then jobs; unemployment rises; inflation eases.
+  Trough: activity at its lowest; high unemployment; low inflation and interest rates; the stage is set for recovery.
+**Australian examples**
+  1990–91 recession: unemployment rose above 10%.
+  2020 COVID recession: real GDP fell about 7% in the June quarter of 2020 — the largest fall on record — then recovered quickly with stimulus.
+  2025–26: growth around 2% with inflation above target; the RBA raised rates four times in 2026 to 4.60% to slow demand.
+**Worked example**
+  Quarterly real GDP growth: Q1 +0.8%, Q2 +0.6%, Q3 +0.2%, Q4 −0.3%, Q5 −0.4%, Q6 +0.1%, Q7 +0.5%. Identify the phases and whether a recession occurred.
+    Q1–Q3: expansion, but growth is slowing — approaching a peak around Q3.
+    Q4–Q5: two consecutive negative quarters — a (technical) recession; contraction.
+    Q5–Q6: trough around Q5 (the lowest growth).
+    Q6–Q7: recovery.
+**Going deeper**
+  Cycles are irregular: they vary in length and depth, caused by shocks to aggregate demand (confidence, interest rates, overseas downturns) or aggregate supply (pandemics, energy price shocks).
+  Governments try to smooth the cycle (stabilisation) with monetary and fiscal policy.
+  Real GDP per capita can fall even when total GDP grows (a "per capita recession") if population grows faster — as happened in Australia during 2023–24.
+**Common mistakes**
+  Saying the economy "shrinks" in every downswing. Growth can slow but stay positive.
+  Treating the cycle as perfectly regular or predictable.
+  Confusing the trough (the bottom) with the recession (the period of falling activity).
+**Exam tips**
+  Describe each phase by what happens to real GDP, unemployment and inflation.
+**Connections**
+  Leading, lagging and coincident indicators and Indicators across the business cycle.
+  Aggregate demand and aggregate supply: what drives the cycle.
+  Costs of economic growth: boom and bust.
+**Practice questions**
+  Describe the features of the peak and trough of the business cycle.
+    Peak: activity at its highest, resources nearly fully employed, labour shortages and rising inflation. Trough: activity at its lowest, high unemployment, low inflation and weak confidence.
+  What is a recession? When did Australia last have one?
+    Commonly, two consecutive quarters of negative real GDP growth. Australia's last recession was in 2020 during COVID.
+  Explain how unemployment and inflation typically change during an expansion.
+    As spending and production rise, firms hire more workers, so unemployment falls; as the economy approaches capacity, costs and prices rise faster, so inflation increases.
+**Flashcards**
+  Four phases of the business cycle? :: Expansion, peak, contraction, trough (then recovery).
+  Common definition of a recession? :: Two consecutive quarters of negative real GDP growth.
+  Australia's last recession? :: 2020 (COVID).
+  At the {{peak}}, inflation pressures are highest.
+  At the trough, unemployment is {{high}}.
+  Fall in real GDP in June quarter 2020? :: About 7%.
+  What is a per capita recession? :: Real GDP per person falling while total GDP still grows.
+
+@ 2139425b U2.1.1.5 | Leading, lagging and coincident indicators
+**In a sentence**
+  Economic indicators are statistics that show the state of the economy: leading indicators change before the business cycle turns, coincident ones move with it, and lagging ones change after it.
+**Key terms**
+  **Economic indicator**: a statistic that shows the direction or level of economic activity.
+  **Leading indicator**: changes before the economy as a whole changes, so it helps forecast.
+  **Coincident indicator**: changes at about the same time as the economy.
+  **Lagging indicator**: changes after the economy has changed, so it confirms a trend.
+**Leading indicators**
+  Building approvals: builders get approval months before construction.
+  Job advertisements and vacancies: firms advertise before hiring.
+  Consumer sentiment (Westpac–Melbourne Institute index) and business confidence (NAB survey): expectations drive later spending.
+  Share prices: reflect expected future profits.
+  Interest rate changes and the yield curve.
+**Coincident indicators**
+  Real GDP, retail sales, industrial production, hours worked, employment.
+**Lagging indicators**
+  Unemployment rate: firms cut hours first and delay rehiring, so unemployment peaks after the trough.
+  Inflation (CPI): price pressures build after demand has picked up.
+  Wages growth (Wage Price Index): wages are renegotiated only periodically.
+**Worked example**
+  Classify: (a) building approvals fell 8% in a month; (b) the unemployment rate rose to 4.6% in August 2026; (c) retail sales rose 0.5% in the quarter; (d) consumer sentiment slumped after the September rate rise.
+    (a) Leading — signals less construction activity in coming months.
+    (b) Lagging — reflects earlier slowing in activity.
+    (c) Coincident — measures current spending.
+    (d) Leading — weaker confidence predicts weaker spending ahead.
+**Going deeper**
+  No single indicator is reliable: leading indicators give false signals, so economists look for several pointing the same way.
+  Some indicators can fit different categories depending on context (employment is often coincident; the unemployment rate lags).
+**Common mistakes**
+  Calling unemployment a leading indicator.
+  Mixing up coincident (now) with lagging (after).
+**Exam tips**
+  For each indicator, say why it leads or lags (e.g. "firms apply for approvals before they build").
+**Connections**
+  The business cycle.
+  Indicators across the business cycle.
+  Spotting trends in economic data.
+**Practice questions**
+  Explain why building approvals are a leading indicator.
+    Approvals are granted months before construction begins, so a change in approvals signals a later change in construction activity, jobs and spending.
+  Why is the unemployment rate usually a lagging indicator?
+    Firms respond to falling demand first by cutting hours and not replacing staff, and are slow to hire again in a recovery, so unemployment changes after activity does.
+  Give one example each of a leading, coincident and lagging indicator.
+    Leading: consumer sentiment. Coincident: real GDP. Lagging: inflation.
+**Flashcards**
+  What is a leading indicator? :: One that changes before the economy does.
+  What is a lagging indicator? :: One that changes after the economy has changed.
+  Real GDP is a {{coincident}} indicator.
+  Three leading indicators? :: Building approvals, job ads, consumer/business confidence (also share prices).
+  Three lagging indicators? :: Unemployment rate, inflation, wages growth.
+  Why does unemployment lag? :: Firms cut hours first and hire slowly again.
+  Australian consumer sentiment index? :: Westpac–Melbourne Institute.
+
+@ 08893d43 U2.1.1.6 | Indicators across the business cycle
+**In a sentence**
+  Because different indicators turn at different times, reading them together lets economists forecast turning points (leading), confirm where the economy is now (coincident) and check that a trend has taken hold (lagging).
+**Key terms**
+  **Turning point**: a change from expansion to contraction (a peak) or contraction to expansion (a trough).
+  **Forecast**: a prediction of future economic conditions.
+**Using indicators through the cycle**
+  Before a peak: leading indicators (sentiment, approvals, job ads) start to fall while GDP is still rising and unemployment is still low.
+  Through the downswing: coincident indicators (GDP, retail sales) slow or fall.
+  After the trough: unemployment keeps rising for a while even as leading indicators recover — which is why a recovery can feel like a recession to job seekers.
+**Why it matters for policy**
+  The RBA and Treasury act on forecasts, because policy works with a lag (a rate change takes a year or more to have its full effect). They watch leading indicators to act early.
+**Worked example**
+  In 2026: consumer sentiment fell after rate rises; building approvals weakened; real GDP grew 0.4% in the June quarter; unemployment rose to 4.6% in August. Where is the economy in the cycle?
+    Leading indicators (sentiment, approvals) are falling — they point to slower activity ahead.
+    Coincident (GDP) is still growing but modestly — the economy is expanding slowly.
+    Lagging (unemployment) is starting to rise — confirming earlier slowing.
+    Conclusion: the economy appears to be past a peak and slowing (early contraction phase), though not in recession.
+**Going deeper**
+  Composite indexes combine several leading indicators (e.g. the Westpac–Melbourne Institute Leading Index) to reduce false signals.
+**Common mistakes**
+  Drawing a conclusion from one indicator.
+  Forgetting the time dimension: indicators must be compared over the same period.
+**Exam tips**
+  Classify each indicator in a data set, then synthesise: "Leading indicators suggest…, coincident show…, lagging confirm…".
+**Connections**
+  Leading, lagging and coincident indicators.
+  The business cycle.
+  Spotting trends in economic data.
+**Practice questions**
+  Why do policymakers pay particular attention to leading indicators?
+    Policy takes time to work, so to stabilise the economy they must act before a turning point; leading indicators give early warning.
+  During a recovery, why might unemployment still be rising?
+    It is a lagging indicator — firms first increase hours for existing workers and wait until they are confident before hiring.
+  If consumer sentiment and job ads are rising, but unemployment is still high, where is the economy likely to be?
+    Near the trough, beginning to recover.
+**Flashcards**
+  Which indicators help forecast turning points? :: Leading indicators.
+  Which confirm a trend? :: Lagging indicators.
+  Which indicators show current activity? :: Coincident indicators.
+  Why do policymakers use forecasts? :: Policy works with a lag.
+  Unemployment rising in early recovery shows it is a {{lagging}} indicator.
+  What is a turning point? :: A peak or a trough in the cycle.
+  Mid-2026 reading of indicators? :: Slowing — leading falling, GDP modest, unemployment rising.
+
+@ 4be64e98 U2.1.1.7 | Aggregate demand and its components
+**In a sentence**
+  Aggregate demand is total spending on an economy's final goods and services — consumption, investment, government spending and net exports — and because spending drives production, it largely sets the level of economic activity in the short run.
+**Key terms**
+  **Aggregate demand (AD)**: total planned spending on final goods and services produced in an economy over a period.
+  **Consumption (C)**: household spending on goods and services — the largest component, about half of GDP.
+  **Investment (I)**: spending by firms (and households on new housing) on capital goods — machinery, buildings, equipment, software.
+  **Government spending (G)**: government consumption (public servants' wages, services) and public investment (roads, hospitals). Transfer payments aren't counted directly — they count when households spend them.
+  **Net exports (X − M)**: exports minus imports.
+**The formula**
+  $AD = C + I + G + (X - M)$
+**Why AD matters**
+  Spending is someone's income: when AD rises, firms sell more, produce more, hire more and pay more incomes, so activity and employment rise.
+  If AD grows faster than the economy's capacity (aggregate supply), prices rise — inflation. If it falls, unemployment rises.
+**Worked example**
+  An economy has (\$ billions): C 1 300, I 560, G 700, X 650, M 620. Calculate AD, the share of consumption, and the effect of a \$40 billion fall in investment.
+    AD = 1 300 + 560 + 700 + (650 − 620) = 1 300 + 560 + 700 + 30 = \$2 590 billion.
+    Consumption share = 1 300 ÷ 2 590 × 100 ≈ 50.2%.
+    If I falls by 40: AD = \$2 550 billion, a fall of about 1.5% (40 ÷ 2 590). Firms produce less, employ fewer workers and pay less income — activity slows.
+**Going deeper**
+  Because consumption is so large, household confidence and interest rates are powerful drivers of the cycle: a small percentage change in C moves AD a lot.
+  Net exports can be negative (a trade deficit) — they subtract from AD.
+**Common mistakes**
+  Counting imports as a positive — imports are subtracted.
+  Counting transfer payments as G.
+  Saying investment means buying shares. In economics, investment is spending on real capital goods.
+**Exam tips**
+  Know the formula, which component is largest, and one factor that changes each component.
+**Connections**
+  The five-sector circular flow model: the same flows.
+  What changes aggregate demand.
+  Aggregate supply: AD must be matched by capacity to avoid inflation.
+**Practice questions**
+  Define aggregate demand and list its components.
+    Total spending on final goods and services produced in the economy: consumption, investment, government spending and net exports (exports minus imports).
+  Explain why aggregate demand is important for employment.
+    Firms hire workers to produce what they can sell; higher total spending means more production and more jobs, lower spending means fewer.
+  Calculate AD if C = 800, I = 300, G = 400, X = 350 and M = 380 (\$ billions).
+    AD = 800 + 300 + 400 + (350 − 380) = \$1 470 billion.
+**Flashcards**
+  Aggregate demand formula? :: C + I + G + (X − M).
+  Largest component of AD? :: Household consumption (about half of GDP).
+  What is investment in economics? :: Spending on capital goods — machinery, buildings, equipment.
+  Are transfer payments part of G? :: No — they're counted when households spend them (in C).
+  Imports are {{subtracted}} in the AD formula.
+  If AD grows faster than capacity, what happens? :: Inflation.
+  Calculate AD: C 1 300, I 560, G 700, X 650, M 620 (\$b). :: \$2 590 billion.
+
+@ 5ab96a5a U2.1.1.8 | What changes aggregate demand
+**In a sentence**
+  Anything that changes the spending of households, firms, government or overseas buyers — incomes, interest rates, confidence, wealth, government budgets, world growth, the exchange rate — changes aggregate demand and so the level of economic activity.
+**Key terms**
+  **Interest rate**: the cost of borrowing and reward for saving; the RBA's cash rate influences all other rates.
+  **Wealth effect**: when asset values (houses, shares) rise, people feel richer and spend more.
+  **Exchange rate**: the value of the Australian dollar in terms of other currencies.
+  **Budget (fiscal) stance**: whether government is adding to spending (stimulatory) or restraining it (contractionary).
+**Consumption (C)**
+  Disposable income (wages, tax cuts, transfers): up → C up. The 1 July 2026 cut in the lowest tax rate (16% to 15%) lifts disposable income.
+  Interest rates: up → loan repayments rise and saving is more rewarding → C down. The 2026 rises to 4.60% were meant to do exactly this.
+  Consumer confidence: optimism → C up.
+  Wealth: rising house prices → C up (wealth effect); falling values (down 3.1% in the three months to August 2026) → C down.
+  Inflation: erodes real income → real C down.
+**Investment (I)**
+  Interest rates: higher → borrowing dearer → I down.
+  Business confidence and expected profits: optimism → I up.
+  Capacity utilisation: firms near full capacity invest to expand.
+  Tax incentives and technology: instant asset write-offs, AI and data-centre investment → I up.
+**Government spending (G)**
+  Budget decisions: infrastructure projects, health and education spending, defence. More G → AD up.
+**Net exports (X − M)**
+  World growth, especially China: stronger overseas growth → X up.
+  Commodity prices: higher iron ore and LNG prices raise export earnings.
+  Exchange rate: a lower Australian dollar makes exports cheaper for foreigners and imports dearer for Australians → net exports up.
+  Domestic income: higher Australian incomes → more imports → net exports down.
+**Worked example**
+  Explain the likely effect on AD and economic activity of the RBA raising the cash rate from 4.35% to 4.60% in September 2026.
+    Higher rates raise mortgage and loan repayments: households with debt have less to spend, and saving becomes more attractive → consumption falls.
+    Borrowing for investment becomes dearer → some business investment is delayed.
+    A higher rate can raise the dollar, cutting net exports.
+    AD grows more slowly (or falls), so production and hiring slow; this reduces inflationary pressure — the RBA's aim — but may raise unemployment.
+**Going deeper**
+  Effects take time: most home loans are variable, but fixed-rate borrowers feel rises only when their fixed terms end, so monetary policy works with "long and variable lags".
+  Several factors often pull in different directions (a tax cut raising C while rate rises cut it), so the net effect depends on their relative size.
+**Common mistakes**
+  Saying higher interest rates increase consumption because savers earn more. For the economy as a whole, the borrowing effect usually dominates.
+  Forgetting that a lower dollar raises exports and lowers imports.
+**Exam tips**
+  Factor → which component → direction → effect on AD → effect on activity (production, employment, income, inflation).
+**Connections**
+  Aggregate demand and its components.
+  What shifts demand (Unit 1): the same factors in one market.
+  The business cycle: AD changes drive most cycles.
+**Practice questions**
+  Explain how a fall in consumer confidence affects aggregate demand and activity.
+    Worried households save more and delay spending, so consumption falls; lower AD means firms produce and hire less, so activity slows.
+  How would a depreciation of the Australian dollar affect aggregate demand?
+    Exports become cheaper for overseas buyers and imports dearer for Australians, so exports rise and imports fall: net exports and AD rise.
+  Explain two factors that could increase investment.
+    Lower interest rates (cheaper borrowing) and higher business confidence or expected profits (e.g. from strong demand or new technology).
+  Why might a rise in house prices increase consumption?
+    Homeowners feel wealthier (wealth effect) and can borrow against their homes, so they spend more.
+**Flashcards**
+  Higher interest rates → effect on C and I? :: Both fall.
+  Lower Australian dollar → effect on net exports? :: Rises.
+  Rising house prices boost consumption via the {{wealth effect}}.
+  Stronger Chinese growth → effect on AD? :: Exports rise, AD rises.
+  Two factors affecting investment? :: Interest rates and business confidence (also capacity use, tax incentives).
+  Why does monetary policy work with a lag? :: Fixed loans, contracts and slow spending responses.
+  A tax cut raises AD through which component? :: Consumption (higher disposable income).
+  Cash rate after the 29 September 2026 decision? :: 4.60%.
+
+@ dc0f6669 U2.1.1.9 | Aggregate supply
+**In a sentence**
+  Aggregate supply is the total amount of goods and services an economy's producers are willing and able to supply at each price level — in effect, the economy's productive capacity — and it limits how fast the economy can grow without inflation.
+**Key terms**
+  **Aggregate supply (AS)**: the total quantity of final goods and services that producers in an economy are willing and able to supply at each general price level over a period.
+  **Productive capacity (potential output)**: the maximum sustainable output when resources are fully and efficiently employed.
+  **Capacity constraint**: a limit on output from a shortage of workers, materials or equipment.
+**Why AS matters**
+  Long-run living standards: only by increasing capacity (more and better resources, higher productivity) can an economy produce more per person year after year.
+  Inflation: if AD grows faster than AS, the economy runs into capacity constraints and prices rise — in September 2026 the RBA pointed to capacity constraints and cost pressures as reasons for lifting rates.
+  Sustainable growth: growth in AS lets AD grow without inflation.
+**AS and the PPF**
+  Growth in aggregate supply is the macro version of an outward shift of the production possibility frontier.
+**Worked example**
+  Explain why an economy with strong demand but slow growth in aggregate supply is likely to have inflation.
+    AD rises: households and firms want to buy more.
+    Producers can't expand output quickly: labour shortages, full factories, supply delays.
+    With more spending chasing a limited supply, firms raise prices and wages are bid up.
+    Result: inflation rises, and real growth is limited by capacity.
+**Going deeper**
+  In the short run, AS can rise when firms use spare capacity (overtime, idle machines); in the long run it rises only when the quantity or quality of resources or technology improves.
+  Supply shocks (a pandemic, an energy price spike) reduce AS and cause "stagflation" — rising prices with slowing growth — which is harder to fix with demand policies.
+**Common mistakes**
+  Confusing aggregate supply (capacity, producers) with aggregate demand (spending).
+  Thinking higher AD alone makes an economy richer in the long run.
+**Exam tips**
+  Connect AS to three ideas: capacity, productivity and inflation.
+**Connections**
+  What changes aggregate supply.
+  The production possibility frontier (Unit 1): capacity.
+  Aggregate demand and its components: the other side of the economy.
+**Practice questions**
+  Define aggregate supply.
+    The total quantity of final goods and services producers are willing and able to supply at each general price level, reflecting the economy's productive capacity.
+  Why is growth in aggregate supply important for living standards?
+    It lets the economy produce more goods and services per person over time without causing inflation, raising material living standards sustainably.
+  What is a supply shock? Give an example.
+    A sudden fall (or rise) in the economy's ability to produce, such as the COVID pandemic in 2020 or an energy price spike from conflict in the Middle East.
+**Flashcards**
+  What is aggregate supply? :: Total output producers are willing and able to supply at each price level — the economy's capacity.
+  If AD grows faster than AS, the result is {{inflation}}.
+  Macro version of an outward PPF shift? :: Growth in aggregate supply.
+  What is stagflation? :: Rising inflation with slowing growth, often from a supply shock.
+  How can AS rise in the short run? :: By using spare capacity (overtime, idle machines).
+  How can AS rise in the long run? :: More or better resources and technology (productivity).
+  Example of a negative supply shock? :: COVID (2020) or an energy price spike.
+
+@ 450f1042 U2.1.1.10 | What changes aggregate supply
+**In a sentence**
+  Aggregate supply grows with more and better resources, higher productivity and better technology, and shrinks with higher production costs, disasters and disruptions — shifting the economy's capacity to produce.
+**Key terms**
+  **Productivity**: output per unit of input — especially output per worker per hour (labour productivity).
+  **Labour force participation rate**: the share of the working-age population (15+) employed or looking for work — 67.1% in August 2026.
+  **Human capital**: the skills, knowledge and health of workers.
+  **Infrastructure**: basic facilities — roads, rail, ports, energy grids, broadband.
+**Factors increasing AS**
+  Quantity of labour: population growth, migration, higher participation (childcare subsidies, paid parental leave).
+  Quality of labour: education, training (Fee-Free TAFE), health.
+  Capital and technology: new machinery, automation, AI, faster broadband.
+  Productivity: better management, competition, reform that removes red tape.
+  Infrastructure: better transport and energy networks lower costs for all firms.
+  Natural resources: new mineral or energy discoveries.
+  Favourable climate: good rainfall boosts farm output.
+**Factors decreasing AS**
+  Higher costs of production: wages rising faster than productivity; energy prices (global oil and gas prices rose in 2026 as conflict broadened in the Middle East); raw materials; higher taxes on production.
+  Natural disasters and climate: drought, floods (2022), bushfires (2019–20).
+  Disruptions: pandemics, supply-chain breakdowns, shipping attacks, industrial disputes.
+  Regulation that raises compliance costs.
+  A lower exchange rate raises the cost of imported inputs (fuel, machinery).
+**Worked example**
+  Explain how each affects aggregate supply: (a) an increase in skilled migration; (b) a sharp rise in the world oil price; (c) widespread adoption of AI tools that raise output per worker.
+    (a) More skilled workers increase the quantity and quality of labour → AS increases → more output without inflation pressure.
+    (b) Fuel and transport costs rise for almost all firms → less profitable to produce at each price level → AS decreases; prices rise and output slows.
+    (c) Higher labour productivity lowers the cost per unit of output → AS increases.
+**Going deeper**
+  Australia's labour productivity growth has been weak for over a decade — a key reason real wages have grown slowly, and a focus of Productivity Commission reports.
+  Some factors raise AS in the long run but cost resources now (education, infrastructure) — a trade-off between present consumption and future capacity.
+**Common mistakes**
+  Listing demand factors (confidence, interest rates on consumer loans) as AS factors. Interest rates mainly affect AD, though they also influence investment that later raises capacity.
+  Treating productivity and production as the same thing.
+**Exam tips**
+  Chain: factor → effect on quantity/quality of resources or costs → AS increases/decreases → effect on output, employment and inflation.
+**Connections**
+  Aggregate supply.
+  What shifts supply (Unit 1): costs, technology, productivity, climate.
+  Benefits of economic growth and Costs of economic growth.
+**Practice questions**
+  Explain how improved productivity increases aggregate supply.
+    More output from the same inputs lowers cost per unit, so producers can supply more at every price level: AS increases, allowing growth without extra inflation.
+  How did the 2026 rise in global energy prices affect Australia's aggregate supply?
+    Energy is an input to almost all production; higher costs reduced the profitability of production, decreasing AS and adding to inflation.
+  Identify two government policies that could increase aggregate supply.
+    Funding education and training (e.g. Fee-Free TAFE) to raise the quality of labour; investing in infrastructure to lower firms' costs (also skilled migration and childcare support to raise participation).
+**Flashcards**
+  What is labour productivity? :: Output per worker per hour.
+  Participation rate, August 2026? :: 67.1%.
+  A rise in energy prices {{decreases}} aggregate supply.
+  Two factors increasing the quantity of labour? :: Migration and higher participation.
+  Two factors increasing the quality of labour? :: Education and training (also health).
+  How do natural disasters affect AS? :: They destroy resources and disrupt production — AS decreases.
+  Why has Australian real wage growth been slow? :: Weak labour productivity growth.
+  Effect of AI adoption on AS? :: Increases it via higher productivity.
+
+@ 3605498f U2.1.1.11 | Measuring growth with real GDP
+**In a sentence**
+  Economic growth is measured as the percentage change in real GDP — the value of all final goods and services produced in a period, adjusted for inflation — so it shows whether the economy is producing more, not just charging more.
+**Key terms**
+  **Gross Domestic Product (GDP)**: the market value of all final goods and services produced within a country in a given period.
+  **Nominal GDP**: GDP measured at current prices (includes the effect of inflation).
+  **Real GDP**: GDP adjusted for inflation (measured at constant prices; the ABS publishes "chain volume measures").
+  **Economic growth**: an increase in real GDP over time.
+  **Real GDP per capita**: real GDP divided by population — average output (income) per person.
+**Why "real"?**
+  If prices rise 3.5% and output doesn't change, nominal GDP rises 3.5% but the economy hasn't produced any more. Real GDP removes the price effect.
+  Approximation: real growth ≈ nominal growth − inflation.
+**The formulas**
+  $\text{Growth rate} = \frac{\text{Real GDP}_{\text{this period}} - \text{Real GDP}_{\text{last period}}}{\text{Real GDP}_{\text{last period}}} \times 100$
+  $\text{Real GDP per capita} = \frac{\text{Real GDP}}{\text{Population}}$
+**Australia's recent figures**
+  Nominal GDP is roughly \$2.7 trillion a year.
+  June quarter 2026: real GDP +0.4% in the quarter, +2.1% over the year; real GDP per capita flat in the quarter and +0.7% over the year (ABS).
+  Growth per capita is lower than total growth because Australia's population grows about 1.5% a year.
+**Worked example**
+  Real GDP was \$2 400 billion last year and \$2 448 billion this year. Population rose from 27.2 million to 27.6 million. Calculate real GDP growth and the change in real GDP per capita.
+    Growth = (2 448 − 2 400) ÷ 2 400 × 100 = 48 ÷ 2 400 × 100 = 2.0%.
+    Per capita last year = \$2 400 billion ÷ 27.2 million ≈ \$88 235.
+    Per capita this year = \$2 448 billion ÷ 27.6 million ≈ \$88 696.
+    Change = (88 696 − 88 235) ÷ 88 235 × 100 ≈ 0.5%.
+    Sense check: population grew about 1.5% (0.4 ÷ 27.2), so per capita growth ≈ 2.0 − 1.5 ≈ 0.5%.
+**Worked example 2**
+  Nominal GDP grew 5.5% in a year and the GDP deflator (inflation) was 3.5%. Estimate real growth.
+    Real growth ≈ 5.5 − 3.5 = 2.0%. (Exactly: 1.055 ÷ 1.035 − 1 ≈ 1.9%.)
+**Going deeper**
+  GDP counts only final goods to avoid double counting (the flour in bread isn't counted separately from the bread).
+  GDP can be measured three ways — production, income and expenditure — which in principle give the same total (the circular flow: output = income = spending).
+**Common mistakes**
+  Using nominal GDP to measure growth.
+  Confusing a fall in the growth rate with a fall in GDP. If growth slows from 3% to 1%, GDP is still rising.
+  Forgetting the × 100 or using the new value as the base.
+**Exam tips**
+  Show the formula, substitution and answer with a % sign; always state whether figures are real or nominal.
+**Connections**
+  The business cycle: real GDP is its measure.
+  Limits of real GDP as a measure.
+  Alternative measures of living standards.
+**Practice questions**
+  Distinguish between nominal and real GDP.
+    Nominal GDP is measured at current prices and includes inflation; real GDP is adjusted for inflation, so it measures changes in the quantity of goods and services produced.
+  Real GDP rises from \$1 800 billion to \$1 845 billion. Calculate the growth rate.
+    (1 845 − 1 800) ÷ 1 800 × 100 = 2.5%.
+  Why can real GDP per capita fall even when real GDP grows?
+    If the population grows faster than real GDP, output per person falls.
+  Economic growth slowed from 3% to 1%. Did GDP fall? Explain.
+    No — GDP still grew by 1%; it just grew more slowly.
+**Flashcards**
+  What is GDP? :: The market value of all final goods and services produced in a country in a period.
+  Real vs nominal GDP? :: Real is adjusted for inflation; nominal is at current prices.
+  Economic growth is measured by the percentage change in {{real GDP}}.
+  Real growth ≈ ? :: Nominal growth − inflation.
+  Australia's real GDP growth over the year to June 2026? :: 2.1% (per capita 0.7%).
+  Why count only final goods? :: To avoid double counting.
+  Calculate: real GDP \$2 400b → \$2 448b. Growth? :: 2.0%.
+  Real GDP per capita = ? :: Real GDP ÷ population.
+
+@ 3a602f0f U2.1.1.12 | Benefits of economic growth
+**In a sentence**
+  Economic growth can raise material living standards through higher incomes, create jobs, fund better health, education and services, and drive economic development — so it is usually seen as good for living standards.
+**Key terms**
+  **Economic development**: broad improvement in an economy's structure and people's wellbeing — infrastructure, technology, health, education, institutions — not just more output.
+  **Employment opportunities**: the availability of jobs.
+  **Tax revenue**: income government collects, which funds public services.
+**Potential benefits**
+  Material living standards: more goods and services per person; higher real incomes. Australia's real GDP per capita is roughly three times its 1960 level.
+  Employment: producing more needs more workers — unemployment falls and underemployment falls.
+  Non-material living standards: more tax revenue funds hospitals, schools, research and environmental protection; jobs bring purpose, social connection and lower poverty; wealthier societies usually have longer life expectancy and higher literacy.
+  Economic development: investment in infrastructure (the Metro Tunnel, NBN), new technologies and industries, and stronger institutions.
+  Government finances: growth increases tax revenue and reduces welfare spending, improving the budget.
+**Worked example**
+  Explain how growth after the 2020 recession benefited Australians.
+    Output recovered quickly in 2021–22, and unemployment fell to about 3.5% in 2022, a 50-year low.
+    More people in work raised household incomes (material living standards) and reduced the costs of unemployment such as stress and social exclusion (non-material).
+    Higher tax revenue helped the federal budget return to surplus in 2022–23.
+**Going deeper**
+  The benefits depend on distribution: if growth goes mostly to high-income households, average income can rise while many people's living standards stagnate.
+  Growth in per capita terms is what matters for individuals; population-driven growth raises GDP without necessarily raising average living standards.
+**Common mistakes**
+  Listing benefits without explaining how growth causes them.
+  Treating benefits as automatic — they're "potential".
+**Exam tips**
+  Cover material and non-material benefits, and link each to a mechanism (jobs, incomes, tax revenue).
+**Connections**
+  Measuring growth with real GDP.
+  Costs of economic growth.
+  Material and non-material living standards.
+**Practice questions**
+  Explain two potential benefits of economic growth.
+    Higher real incomes raise material living standards because people can afford more goods and services. More employment reduces unemployment, improving both incomes and non-material wellbeing (purpose, social connection).
+  How can economic growth improve non-material living standards?
+    It raises tax revenue that funds health, education and environmental programs, and it creates jobs, which improve wellbeing and reduce poverty.
+  What is economic development and how does it differ from growth?
+    Development is broad improvement in wellbeing and economic structure (health, education, infrastructure, institutions); growth is simply more real output.
+**Flashcards**
+  Four potential benefits of growth? :: Higher material living standards, more jobs, better non-material living standards, economic development.
+  How does growth fund public services? :: Higher incomes and spending raise tax revenue.
+  Australia's unemployment low after the 2020 recovery? :: About 3.5% (2022).
+  Growth vs development? :: More output vs broad improvement in wellbeing and economic structure.
+  Benefits of growth are {{potential}}, not automatic.
+  Why can average income growth mislead? :: The gains may be unevenly distributed.
+  How does growth help the budget? :: More tax revenue, less welfare spending.
+
+@ e2d61e15 U2.1.1.13 | Costs of economic growth
+**In a sentence**
+  Growth can also bring boom-and-bust cycles, congestion and pollution, environmental damage, wider inequality and "affluenza" — costs that can lower non-material, and sometimes material, living standards.
+**Key terms**
+  **Boom and bust**: rapid growth that overheats (inflation, asset bubbles), followed by a sharp slowdown or recession.
+  **Congestion**: overcrowding of roads, public transport and services as activity and population grow.
+  **Environmental damage**: pollution, land clearing, biodiversity loss, resource depletion and greenhouse gas emissions.
+  **Inequality**: an uneven distribution of income and wealth.
+  **Affluenza**: a term popularised by Clive Hamilton and Richard Denniss (2005) for the overwork, debt, stress and waste that come from the pursuit of ever more consumption without greater happiness.
+**The potential costs**
+  Boom and bust: fast growth pushes up inflation and asset prices; interest rates must rise to cool it (the RBA raised rates four times in 2026), which can tip the economy into a downturn and job losses.
+  Congestion and pollution: more cars, freight and people — longer commutes in Melbourne and Sydney, poorer air quality — lower non-material living standards.
+  Environmental damage: emissions (Australia about 455 Mt CO₂-e a year), land clearing, water over-use, waste — costs for future generations.
+  Widening inequality: gains may go mostly to owners of capital and property; low-skilled workers left behind; housing becomes less affordable.
+  Affluenza: longer working hours, stress, debt, less time with family and community.
+**Worked example**
+  Discuss whether rapid population-driven growth in Melbourne has raised living standards.
+    Benefits: more workers and consumers raise total output, business and jobs; a larger city supports more services and culture.
+    Costs: congestion on roads and trains, pressure on housing (higher rents), strain on schools and hospitals, loss of green space.
+    Per capita: if output grows no faster than population, average material living standards barely rise, while non-material costs increase.
+    Judgement: growth has raised total activity, but without matching infrastructure it may have lowered non-material living standards for many residents.
+**Going deeper**
+  Many costs are negative externalities — they aren't paid by those who cause them, so markets over-produce them (market failure, Unit 3).
+  "Degrowth" advocates argue rich countries should stop pursuing growth; most economists instead argue for "green growth" — decoupling output from emissions, which Australia's electricity sector is starting to show.
+**Common mistakes**
+  Listing costs without linking them to growth.
+  Treating all costs as non-material — boom-and-bust unemployment is a material cost too.
+**Exam tips**
+  In a "discuss the costs and benefits" question, balance both, use Australian examples and end with a judgement.
+**Connections**
+  Benefits of economic growth.
+  Limits of real GDP as a measure: GDP counts some costs as benefits.
+  Environmental sustainability (Unit 2 Area of Study 2).
+**Practice questions**
+  Explain two potential costs of economic growth.
+    Environmental damage: more production raises emissions and resource use, harming the environment and future living standards. Congestion: more activity crowds roads and services, lengthening commutes and lowering quality of life.
+  What is meant by "affluenza"?
+    The social and personal costs of the pursuit of ever more consumption — overwork, debt, stress and waste — without greater happiness.
+  How can economic growth lead to "boom and bust"?
+    When growth outpaces capacity, inflation and asset prices rise; interest rates must be raised to cool demand, which can cause a sharp slowdown or recession.
+**Flashcards**
+  Five potential costs of growth in the study design? :: Boom and bust, congestion and pollution, environmental damage, wider inequality, affluenza.
+  Who popularised "affluenza" in Australia? :: Clive Hamilton and Richard Denniss (2005).
+  Costs imposed on third parties are negative {{externalities}}.
+  How can growth widen inequality? :: Gains go mainly to owners of capital and property.
+  Why is boom and bust costly? :: The bust brings job losses and lower incomes.
+  "Green growth" means? :: Growing output while cutting emissions (decoupling).
+  Example of congestion costs in Australia? :: Longer commutes in Melbourne and Sydney.
+
+@ 27600369 U2.1.1.14 | Limits of real GDP as a measure
+**In a sentence**
+  Real GDP and real GDP per capita measure output, not wellbeing: they leave out unpaid work, leisure, the environment and distribution, and count some harmful activity as positive — so they give only a partial picture of living standards.
+**Key terms**
+  **Non-market production**: goods and services produced without being sold — unpaid housework, childcare, volunteering.
+  **Black (hidden or cash) economy**: unreported or illegal activity, such as cash jobs to avoid tax.
+  **Distribution**: how income is shared among people.
+  **Composition of output**: what is produced (weapons vs hospitals).
+**The limitations**
+  Non-market production excluded: unpaid caring, housework and volunteering are worth hundreds of billions of dollars a year in Australia but aren't in GDP.
+  The hidden economy excluded: cash-in-hand work understates activity.
+  Leisure ignored: working longer hours raises GDP but may reduce wellbeing.
+  Environmental costs ignored — or counted as a plus: cleaning up after bushfires and floods adds to GDP; the loss of forests and species doesn't subtract.
+  Distribution ignored: GDP per capita is an average; it hides inequality. (Australia's wealth Gini of about 0.61 shows wealth is very unevenly spread.)
+  Quality and composition ignored: better, cheaper technology may barely show up; spending on prisons counts the same as spending on schools.
+  Non-material living standards missed: health, freedom, safety and community aren't measured.
+  International comparisons: exchange rates and price levels differ (economists use purchasing power parity).
+**Worked example**
+  After major floods, a region's GDP rises because of rebuilding. Why doesn't this mean living standards rose?
+    The rebuilding spending counts in GDP, but it replaces homes and infrastructure that already existed — the region is just returning to where it was.
+    The losses (destroyed homes, trauma, lost income, environmental damage) aren't subtracted from GDP.
+    So GDP overstates living standards; residents are worse off than before the flood.
+**Going deeper**
+  GDP per capita is still strongly correlated with health and education across countries, so it's a useful starting point — just not the whole story.
+  The ABS's satellite accounts and experimental environmental-economic accounts try to value natural capital and unpaid work alongside GDP.
+**Common mistakes**
+  Saying GDP "doesn't measure" living standards at all. It measures material living standards reasonably; the problem is what it omits.
+  Listing limitations without explaining how each distorts the picture.
+**Exam tips**
+  For each limitation: what GDP leaves out or counts wrongly → whether it over- or understates living standards → an Australian example.
+**Connections**
+  Measuring growth with real GDP.
+  Alternative measures of living standards.
+  Material and non-material living standards.
+**Practice questions**
+  Explain two limitations of real GDP per capita as a measure of living standards.
+    It excludes non-market production such as unpaid caring and volunteering, understating wellbeing. It is an average, so it hides how income is distributed — many people may be worse off even when the average rises.
+  Why can higher GDP coincide with lower non-material living standards?
+    Longer working hours, pollution and congestion can raise output while reducing leisure, health and environmental quality.
+  How does the treatment of the environment distort GDP?
+    Production that depletes resources or pollutes is counted as output, but the loss of natural resources and damage isn't subtracted, and clean-up spending is added.
+**Flashcards**
+  Does GDP include unpaid housework? :: No.
+  Why does GDP per capita hide inequality? :: It's an average.
+  Rebuilding after a flood {{increases}} GDP even though living standards fell.
+  What is the hidden economy? :: Unreported or illegal activity, such as cash jobs.
+  How does GDP treat leisure? :: It ignores it.
+  Why use purchasing power parity? :: To compare GDP across countries with different price levels.
+  Four limitations of GDP? :: Excludes non-market production, ignores leisure, environment and distribution.
+
+@ 5955500a U2.1.1.15 | Alternative measures of living standards
+**In a sentence**
+  Because GDP misses so much, economists also use broader measures — the Human Development Index, wellbeing frameworks like Measuring What Matters, happiness surveys and the Genuine Progress Indicator — each with its own strengths and weaknesses.
+**Key terms**
+  **Human Development Index (HDI)**: the UN Development Programme's index combining health (life expectancy at birth), education (mean and expected years of schooling) and living standards (gross national income per capita, at purchasing power parity); from 0 to 1.
+  **Measuring What Matters**: the Australian Government's wellbeing framework (2023), with about 50 indicators across five themes — healthy, secure, sustainable, cohesive and prosperous.
+  **OECD Better Life Index**: compares countries on 11 dimensions, including housing, income, jobs, community, education, environment, civic engagement, health, life satisfaction, safety and work–life balance.
+  **Genuine Progress Indicator (GPI)**: starts from consumption, adds unpaid work and subtracts costs such as pollution, crime and inequality.
+  **Subjective wellbeing**: people's own ratings of their life satisfaction (World Happiness Report, Australian Unity Wellbeing Index).
+  **Gross National Happiness**: Bhutan's official measure of wellbeing, including psychological wellbeing, culture and ecology.
+**The measures**
+  HDI: Australia scored 0.958 and ranked 7th in the 2025 Human Development Report (2023 data). Strength: adds health and education to income; simple and widely comparable. Weakness: only three dimensions; ignores the environment, inequality and freedom (the UN also publishes an inequality-adjusted HDI).
+  Measuring What Matters: tracks non-material factors (life expectancy, mental health, emissions, trust, social connection) alongside income and wealth. Strength: broad and Australian-specific. Weakness: no single number, so harder to compare; choice of indicators is subjective.
+  OECD Better Life Index: lets users weight the dimensions they value. Strength: broad; reflects priorities. Weakness: results depend on the weights chosen.
+  GPI: adjusts for costs GDP ignores. Strength: shows whether growth is really improving welfare. Weakness: hard to value pollution or leisure in dollars; estimates are subjective.
+  Happiness surveys: Australia usually ranks in the top 15 of the World Happiness Report. Strength: measures wellbeing directly. Weakness: subjective, affected by culture and mood.
+**Worked example**
+  Two countries have similar GDP per capita. Country A's life expectancy is 83 and average schooling 13 years; Country B's is 72 and 8 years. What would the HDI show, and why is this useful?
+    Country A would have a much higher HDI, because it scores better on the health and education components while income is the same.
+    This shows that similar material living standards can come with very different non-material living standards — something GDP per capita alone misses.
+**Going deeper**
+  No measure is perfect; using several together gives a fuller picture. The trade-off is between simplicity (one number, like GDP or the HDI) and completeness (dashboards like Measuring What Matters).
+**Common mistakes**
+  Describing the HDI's components wrongly — it uses GNI per capita (PPP), life expectancy and schooling, not happiness or the environment.
+  Saying alternative measures "replace" GDP. They complement it.
+**Exam tips**
+  For each measure: what it includes → what it adds beyond GDP → one strength and one weakness.
+**Connections**
+  Limits of real GDP as a measure.
+  Material and non-material living standards.
+  Environmental sustainability and distribution of income (Unit 2 Area of Study 2).
+**Practice questions**
+  Outline the components of the Human Development Index.
+    Health (life expectancy at birth), education (mean years and expected years of schooling), and standard of living (gross national income per capita at purchasing power parity).
+  Explain one strength and one weakness of Measuring What Matters as a measure of living standards.
+    Strength: it covers many non-material aspects (health, environment, social cohesion) that GDP misses. Weakness: with about 50 indicators and no single score, it's hard to summarise or compare over time and across countries.
+  Why might the Genuine Progress Indicator grow more slowly than GDP?
+    It subtracts costs such as pollution, resource depletion and inequality that rise with growth, so its growth can lag behind GDP's.
+**Flashcards**
+  Three components of the HDI? :: Life expectancy, education (years of schooling), GNI per capita (PPP).
+  Australia's HDI rank (2025 report)? :: 7th, with 0.958.
+  Five themes of Measuring What Matters? :: Healthy, secure, sustainable, cohesive, prosperous.
+  The GPI adds unpaid work and subtracts costs like {{pollution}}.
+  Weakness of happiness surveys? :: They're subjective and culturally influenced.
+  How many dimensions in the OECD Better Life Index? :: 11.
+  Do alternative measures replace GDP? :: No — they complement it.
+  Country that uses Gross National Happiness? :: Bhutan.
+
+@ 4b7d51a2 U2.1.2.1 | Defining economic terms
+**In a sentence**
+  This skill is using the language of economic activity — real GDP, aggregate demand, aggregate supply, business cycle, indicators, living standards — precisely and correctly.
+**Key terms**
+  **Precision**: using the exact term and its correct meaning.
+**How to do it**
+  Keep the pairs straight: nominal vs real; GDP vs GDP per capita; aggregate demand vs aggregate supply; leading vs lagging; leakage vs injection; material vs non-material; growth slowing vs GDP falling.
+  Define, then apply with Australian data: "Real GDP — output adjusted for inflation — grew 2.1% over the year to June 2026."
+**Going deeper**
+  "Investment" in economics is spending on capital goods, not buying shares; "recession" has a technical and a broader meaning — say which you mean.
+**Worked example**
+  Correct: "GDP fell because the growth rate dropped from 3% to 1%."
+    Corrected: "Real GDP still rose, but more slowly: the growth rate fell from 3% to 1%."
+**Connections**
+  Every key knowledge point in this area.
+**Practice questions**
+  Correct: "Inflation increased real GDP by 3%."
+    Inflation raises nominal GDP; real GDP removes inflation, so price rises alone don't increase real GDP.
+  Define aggregate supply precisely.
+    The total quantity of final goods and services producers are willing and able to supply at each general price level — the economy's productive capacity.
+**Flashcards**
+  Slower growth means GDP is still {{rising}}.
+  Investment in economics means? :: Spending on capital goods.
+  Real vs nominal? :: Adjusted for inflation vs current prices.
+  AD vs AS? :: Total spending vs productive capacity.
+
+@ e8c9fa7d U2.1.2.2 | Using the business cycle and circular flow
+**In a sentence**
+  This skill is drawing and interpreting the business cycle and the five-sector circular flow model, and using them to explain changes in economic activity.
+**Key terms**
+  **Business cycle diagram**: real GDP (vertical) against time (horizontal), with a wavy line around a rising trend line and labelled phases.
+  **Five-sector circular flow diagram**: households and firms linked by flows of resources, incomes, goods and spending, with government, financial and overseas sectors adding leakages and injections.
+**How to do it**
+  Business cycle: rule and label axes; draw the trend line; label expansion, peak, contraction, trough, recovery; mark where you think the economy is now, justified with data.
+  Circular flow: draw all five sectors; label each arrow (wages, consumption, S, T, M, I, G, X); use it to trace a change (e.g. exports fall → injections fall → activity falls).
+**Going deeper**
+  A diagram earns marks only when it's explained in words — refer to it ("as shown at point X…").
+**Worked example**
+  Use the circular flow to explain the effect of households saving more.
+    Saving is a leakage: more saving (with no change in injections) means less consumption spending on firms' output.
+    Firms produce and hire less, so incomes fall and activity slows — unless the financial sector lends the extra saving for investment.
+**Connections**
+  The business cycle.
+  The five-sector circular flow model.
+**Practice questions**
+  What goes on the axes of a business cycle diagram?
+    Real GDP on the vertical axis and time on the horizontal axis.
+  Using the circular flow, explain the effect of a rise in exports.
+    Exports are an injection: overseas spending on Australian output rises, so firms produce more, hire more and pay more incomes — activity rises.
+**Flashcards**
+  Axes of a business cycle diagram? :: Real GDP (vertical) and time (horizontal).
+  In the circular flow, higher saving is a larger {{leakage}}.
+  Rise in exports → effect on activity? :: Injection rises, activity rises.
+  What must accompany every diagram? :: A written explanation referring to it.
+
+@ a5b815f6 U2.1.2.3 | Gathering and synthesising economic data
+**In a sentence**
+  This skill is collecting current macroeconomic data from reliable sources and combining it into a clear analysis of economic activity and living standards.
+**Key terms**
+  **Synthesise**: combine several pieces of data and information into one coherent explanation.
+**How to do it**
+  Sources: ABS (GDP — National Accounts; CPI; Labour Force; Wage Price Index), RBA (Statement on Monetary Policy, cash rate decisions), Treasury (budget forecasts, Measuring What Matters), UNDP (HDI).
+  Record figure, period, unit and source ("real GDP +2.1%, year to June 2026, ABS").
+  Synthesise: link growth, unemployment and inflation data to explain where the economy is in the cycle and what it means for living standards.
+**Going deeper**
+  Check for revisions: GDP figures are revised as more data arrives; use the latest release.
+**Worked example**
+  Synthesise: real GDP +2.1% (y/y, June qtr 2026); CPI 3.5% (July 2026); unemployment 4.6% (Aug 2026); cash rate 4.60% (Sep 2026).
+    The economy is growing at a moderate pace, but inflation is above the RBA's 2–3% target, so the RBA has raised rates to slow demand. Unemployment has begun rising as growth slows. Material living standards are under pressure: prices are rising faster than wages (3.2%).
+**Connections**
+  Spotting trends in economic data.
+  Measuring growth with real GDP.
+**Practice questions**
+  Name the ABS publications for GDP, inflation and unemployment.
+    Australian National Accounts (GDP), Consumer Price Index (inflation), Labour Force, Australia (unemployment).
+  What does "synthesise" mean in economics?
+    Combine several pieces of data and information to form one coherent explanation or conclusion.
+**Flashcards**
+  ABS publication for GDP? :: Australian National Accounts.
+  ABS publication for unemployment? :: Labour Force, Australia.
+  Combining data into one explanation is to {{synthesise}}.
+  Why check the date of GDP data? :: Figures are revised and change each quarter.
+
+@ c179ad75 U2.1.2.4 | Spotting trends in economic data
+**In a sentence**
+  This skill is reading tables and graphs of economic data to identify trends (direction over time), patterns, similarities and differences, and drawing conclusions from them.
+**Key terms**
+  **Trend**: the general direction of data over time (rising, falling, stable).
+  **Pattern**: a regular or repeated feature (seasonal peaks, cycles).
+  **Fluctuation**: short-term ups and downs around a trend.
+**How to do it**
+  Describe the overall trend first, with start and end values and dates.
+  Note the highest and lowest points and any turning points.
+  Compare two series: do they move together (similarity) or opposite (difference)?
+  Explain with economic reasoning: why did it happen?
+  Quote the numbers: "Unemployment rose from 4.1% to 4.6% between…"
+**Going deeper**
+  Distinguish levels from rates of change: inflation falling from 3.8% to 3.5% means prices are still rising, just more slowly.
+**Worked example**
+  Cash rate: 3.60% (Aug 2025), 3.85% (Feb 2026), 4.10% (Mar 2026), 4.35% (May 2026), 4.60% (Sep 2026). Describe and explain the trend.
+    Trend: a steady rise of 1.00 percentage point in about a year (four 0.25-point increases in 2026).
+    Explanation: inflation stayed above the 2–3% target and energy prices rose, so the RBA tightened policy to slow aggregate demand.
+**Connections**
+  Gathering and synthesising economic data.
+  Leading, lagging and coincident indicators.
+**Practice questions**
+  What should the first sentence of a trend description contain?
+    The overall direction, with start and end values and dates.
+  Inflation fell from 3.8% to 3.5%. Did prices fall?
+    No — prices are still rising, just at a slower rate.
+**Flashcards**
+  What is a trend? :: The general direction of data over time.
+  Falling inflation means prices are rising more {{slowly}}.
+  Cash rate rise from Aug 2025 to Sep 2026? :: 1.00 percentage point (3.60% → 4.60%).
+  Short-term ups and downs around a trend are? :: Fluctuations.
+
+@ 8b085ee4 U2.1.2.5 | Weighing the costs and benefits of growth
+**In a sentence**
+  This skill is discussing the potential costs and benefits of higher economic activity for different groups and for material and non-material living standards, and reaching a reasoned judgement.
+**Key terms**
+  **Discuss**: present more than one side and reach a supported conclusion.
+  **Sustainable growth**: growth that can be maintained without causing high inflation, environmental harm or unmanageable debt.
+**How to do it**
+  Benefits: incomes, jobs, tax revenue, development — with data.
+  Costs: inflation and boom-bust, congestion, environmental damage, inequality, affluenza — with examples.
+  Consider who gains and who loses (workers, borrowers, future generations).
+  Judge using a criterion: overall living standards, sustainability or equity.
+**Going deeper**
+  The best answers consider the quality of growth, not just its rate: growth driven by productivity and clean energy has different costs from growth driven by population or resource extraction.
+**Worked example**
+  Discuss whether Australia should aim for faster economic growth.
+    Benefits: more jobs (unemployment has risen to 4.6%), higher real incomes and tax revenue for services.
+    Costs: with inflation above target, faster demand-led growth would add to price pressures and interest rates; more emissions and congestion unless growth is green.
+    Judgement: faster growth driven by productivity (raising aggregate supply) would raise living standards; faster demand-driven growth now would mostly add to inflation.
+**Connections**
+  Benefits of economic growth.
+  Costs of economic growth.
+**Practice questions**
+  What is sustainable growth?
+    Growth that can be maintained over time without causing high inflation, environmental damage or unmanageable debt.
+  Why does the source of growth matter when discussing its costs?
+    Productivity-driven or green growth raises living standards with fewer costs; population- or demand-driven growth may add to congestion, emissions or inflation.
+**Flashcards**
+  What does "discuss" require? :: More than one side and a supported conclusion.
+  Growth that doesn't cause inflation, environmental harm or unmanageable debt is {{sustainable}} growth.
+  Better source of growth when inflation is high? :: Productivity (raising AS).
+  Criteria for judging growth? :: Living standards, sustainability, equity.

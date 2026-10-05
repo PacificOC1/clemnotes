@@ -1,5 +1,5 @@
 import { db } from './database';
-import { buildPageIndex, countByPage, scopeCards } from './cardScope';
+import { buildPageIndex, buildTreeIndex, countByPage, materialIds, scopeCards } from './cardScope';
 import { buildReviewEntry, getReviewsForCard, getTodayCounts } from './reviewRepository';
 import { DEFAULT_PARAMETERS, fsrsSchedule, historySince, type FsrsOptions, type HistoryPoint } from '../srs/fsrs';
 import { DEFAULT_EASE, schedule, type ScheduleUpdate } from '../srs/sm2';
@@ -118,6 +118,57 @@ export async function reconcileCards(node: OutlinerNode): Promise<void> {
   }
 }
 
+/** True when this rem's content makes flashcards — what `isCard` should say. */
+export function makesCards(node: OutlinerNode): boolean {
+  return desiredCards(node).length > 0;
+}
+
+/**
+ * `reconcileCards` for many rems at once: one read of their existing cards,
+ * one write of the changes, one bulk update of `isCard`. For trees going in
+ * together (imports, templates, a course's study notes) — thousands of
+ * separate reconciles, each its own commit, re-ran every live query on screen
+ * each time, and in one long transaction tripped IndexedDB's auto-commit.
+ */
+export async function reconcileCardsBulk(nodes: readonly OutlinerNode[]): Promise<void> {
+  const wanted = nodes
+    .map((node) => ({ node, desired: desiredCards(node) }))
+    .filter(({ node, desired }) => desired.length > 0 || node.isCard);
+  if (wanted.length === 0) return;
+
+  const existing = await db.cards.where('nodeId').anyOf(wanted.map((w) => w.node.id)).toArray();
+  const byNode = new Map<string, Flashcard[]>();
+  for (const card of existing) {
+    const list = byNode.get(card.nodeId);
+    if (list) list.push(card);
+    else byNode.set(card.nodeId, [card]);
+  }
+
+  const now = Date.now();
+  const toPut: Flashcard[] = [];
+  const isCardChanges: Array<{ key: string; changes: { isCard: boolean; updatedAt: number } }> = [];
+  for (const { node, desired } of wanted) {
+    const have = byNode.get(node.id) ?? [];
+    const haveById = new Map(have.map((c) => [c.id, c]));
+    const desiredIds = new Set(desired.map((d) => d.id));
+    for (const want of desired) {
+      const card = haveById.get(want.id);
+      if (!card) toPut.push(newCard(node.id, want, now));
+      else if (card.deletedAt !== null) toPut.push({ ...card, deletedAt: null, updatedAt: now });
+    }
+    for (const card of have) {
+      if (!desiredIds.has(card.id) && card.deletedAt === null) toPut.push({ ...card, deletedAt: now, updatedAt: now });
+    }
+    const isCard = desired.length > 0;
+    if (node.isCard !== isCard) isCardChanges.push({ key: node.id, changes: { isCard, updatedAt: now } });
+  }
+
+  await db.transaction('rw', db.nodes, db.cards, async () => {
+    if (toPut.length > 0) await db.cards.bulkPut(toPut);
+    if (isCardChanges.length > 0) await db.nodes.bulkUpdate(isCardChanges);
+  });
+}
+
 /** Soft-delete every card belonging to a rem — used when the rem itself is deleted. */
 export async function deleteCardsForNode(nodeId: string): Promise<void> {
   const cards = await db.cards.where('nodeId').equals(nodeId).toArray();
@@ -156,7 +207,40 @@ export async function getDueCards(now = Date.now()): Promise<Flashcard[]> {
  */
 async function applyScope(cards: Flashcard[], pageId: string | null): Promise<Flashcard[]> {
   if (!pageId) return cards;
-  return scopeCards(cards, buildPageIndex(await db.nodes.toArray()), pageId);
+  const nodes = await db.nodes.toArray();
+  const scopeNode = nodes.find((n) => n.id === pageId);
+  if (scopeNode && !scopeNode.isPage) {
+    // A rem inside a page (a course's area of study, say): its subtree and
+    // everything linking into it — see `materialIds`.
+    const ids = materialIds(pageId, buildTreeIndex(nodes));
+    return cards.filter((card) => ids.has(card.nodeId));
+  }
+  return scopeCards(cards, buildPageIndex(nodes), pageId);
+}
+
+export interface ScopeSummary {
+  title: string;
+  /** A whole page, rather than a rem inside one. */
+  isPage: boolean;
+  due: number;
+  total: number;
+}
+
+/**
+ * Due and total for any scope — a page or a rem inside one — so the review
+ * screen can describe a scope that the page picker doesn't list. Null when the
+ * rem no longer exists.
+ */
+export async function getScopeSummary(scopeId: string, now = Date.now()): Promise<ScopeSummary | null> {
+  const node = await db.nodes.get(scopeId);
+  if (!node || node.deletedAt !== null) return null;
+  const cards = await applyScope(await getAllCards(), scopeId);
+  return {
+    title: node.plainText.trim() || 'Untitled',
+    isPage: node.isPage,
+    due: cards.filter((card) => !card.suspended && card.dueAt <= now).length,
+    total: cards.length,
+  };
 }
 
 /**

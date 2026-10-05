@@ -1,0 +1,672 @@
+% VCE Biology — Unit 2, Area of Study 1: how inheritance is explained.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ a1b1e90f U2.1.1.1 | Genes, alleles and genomes
+**In a sentence**
+  A gene is a section of DNA coding for a product that influences a trait, an allele is one version of a gene, and the genome is all of an organism's DNA.
+**Key terms**
+  **Gene**: a section of DNA at a particular position on a chromosome that codes for a product (usually a protein) and influences a characteristic.
+  **Allele**: an alternative form of a gene, differing slightly in its DNA sequence.
+  **Genome**: the complete set of genetic material of an organism (or organelle), including non-coding DNA.
+  **Locus** (plural loci): the position of a gene on a chromosome.
+  **Trait**: a characteristic, such as blood group or flower colour.
+**Genes and alleles**
+  A gene is an instruction; alleles are versions of that instruction. The gene for the CFTR protein has a normal allele and a cystic fibrosis allele.
+  Alleles usually differ by just one or a few bases, but this can change the protein — sometimes making it not work at all.
+  In a diploid organism each body cell has two alleles for each autosomal gene (one from each parent). They can be the same (homozygous) or different (heterozygous).
+  A population can have many alleles for one gene: the ABO blood group gene has three common alleles (Iᴬ, Iᴮ, i) — this is called **multiple alleles**.
+**The genome**
+  The human genome is about 3 billion base pairs per set of chromosomes, with roughly 20 000 protein-coding genes.
+  Only a small fraction (a few per cent) of human DNA codes for proteins; the rest includes regulatory sequences and other non-coding DNA.
+  Mitochondrial DNA is also part of the genome.
+  Genome size and gene number don't track how complex an organism looks — some plants and amphibians have far bigger genomes than humans.
+**The hierarchy**
+  Genome → chromosomes → genes → alleles → the base sequence.
+**Going deeper**
+  The Human Genome Project finished sequencing the human genome in 2003. Comparing genomes now helps diagnose genetic disease, choose medicines (pharmacogenomics) and trace human migration.
+  Any two people's genomes are about 99.9% identical; most of our differences come from small variations, such as single-base differences.
+**Common mistakes**
+  Using gene and allele as if they mean the same thing: "the blue-eye gene" should be "the allele for blue eyes of the eye colour gene".
+  Saying the genome is only the genes. It includes all DNA, coding and non-coding.
+  Saying a person has two genes for a trait. They have two alleles of one gene.
+**Exam tips**
+  In definitions, include position (locus) for a gene and "alternative form" for an allele.
+**Connections**
+  Homologous chromosomes: alleles sit at matching loci on each pair.
+  Writing genotypes: symbols stand for alleles.
+  Genetic diversity (Area of Study 2): diversity is the variety of alleles in a population.
+**Practice questions**
+  Distinguish between a gene and an allele.
+    A gene is a section of DNA at a particular locus coding for a product that influences a trait. An allele is one of the alternative forms of that gene, differing slightly in sequence.
+  Explain why a person can carry at most two alleles for the ABO gene, even though three exist in the population.
+    A person has two copies of chromosome 9 (one from each parent), and each copy carries one allele at the ABO locus — so at most two different alleles.
+  Define genome and state approximately how many base pairs are in one set of human chromosomes.
+    All the genetic material of an organism, coding and non-coding; about 3 billion base pairs.
+**Flashcards**
+  Define gene. :: A section of DNA at a particular locus that codes for a product and influences a trait.
+  Define allele. :: An alternative form of a gene.
+  Define genome. :: All the genetic material of an organism, including non-coding DNA.
+  The position of a gene on a chromosome is its {{locus}}.
+  About how many protein-coding genes are in the human genome? :: About 20 000.
+  What are multiple alleles? :: More than two alleles for one gene in a population, e.g. Iᴬ, Iᴮ and i for ABO blood groups.
+  Does most human DNA code for proteins? :: No — only a small fraction (a few per cent) does.
+
+@ b3f305fd U2.1.1.2 | Homologous and sex chromosomes
+**In a sentence**
+  Diploid cells have chromosomes in homologous pairs — one from each parent, carrying the same genes at the same loci but possibly different alleles — and in humans 22 pairs are autosomes and one pair are the sex chromosomes, X and Y.
+**Key terms**
+  **Homologous chromosomes**: a matching pair of chromosomes, one maternal and one paternal, with the same genes at the same loci.
+  **Autosome**: any chromosome that isn't a sex chromosome.
+  **Sex chromosomes**: the chromosomes that determine sex (X and Y in mammals).
+  **Diploid (2n)**: having two sets of chromosomes.
+  **Haploid (n)**: having one set of chromosomes.
+  **Sister chromatids**: the two identical copies of one chromosome after DNA replication.
+**Homologous pairs**
+  One chromosome of each pair came from the mother's egg, the other from the father's sperm.
+  They match in size, centromere position and banding pattern, and carry the same genes in the same order.
+  They are not identical: at any locus they may carry different alleles.
+**Autosomes and sex chromosomes**
+  Humans have 46 chromosomes: 22 pairs of autosomes (numbered 1 to 22, roughly largest to smallest) and one pair of sex chromosomes.
+  Females are XX; males are XY.
+  The X is large and carries around 800–900 protein-coding genes; the Y is small with few genes, including SRY, which triggers male development.
+  X and Y pair up only over small regions, so a male has just one copy of most X genes.
+  Other systems exist: in birds the female is ZW and the male ZZ; in many reptiles incubation temperature sets sex.
+**Counting**
+  Body cells (somatic cells) are diploid: 2n = 46 in humans.
+  Gametes (sperm, eggs) are haploid: n = 23.
+  After S phase each chromosome has two sister chromatids — still one chromosome.
+**Going deeper**
+  Because males have only one X, a single recessive allele on the X is expressed in males — why X-linked conditions such as red–green colour blindness are more common in males.
+**Common mistakes**
+  Calling sister chromatids a homologous pair. Sister chromatids are identical copies; homologues come from different parents.
+  Saying homologous chromosomes are identical. They carry the same genes, not necessarily the same alleles.
+  Saying the X and Y are a fully homologous pair.
+**Exam tips**
+  When counting, say exactly what you are counting — chromosomes, chromatids or pairs: 46 chromosomes is 23 homologous pairs.
+  Define homologous chromosomes with all three parts: one from each parent, the same genes, at the same loci.
+**Connections**
+  Genes, alleles and genomes.
+  Karyotypes: pairs are arranged by homology.
+  Meiosis: homologues pair up and separate.
+  Pedigrees: sex-linked inheritance depends on X and Y.
+**Practice questions**
+  State three features shared by the two chromosomes of a homologous pair.
+    Same size, same centromere position and banding pattern, and the same genes at the same loci.
+  How many autosomes are in a human sperm cell, and which sex chromosome might it carry?
+    22 autosomes, plus either an X or a Y chromosome.
+  Explain why homologous chromosomes are not identical.
+    One comes from each parent, so although they carry the same genes, the alleles at any locus may differ.
+**Flashcards**
+  What is a homologous pair? :: Two chromosomes, one from each parent, carrying the same genes at the same loci.
+  How many pairs of autosomes do humans have? :: 22.
+  A human male's sex chromosomes are {{XY}}; a female's are {{XX}}.
+  Diploid number of a human body cell? :: 2n = 46.
+  Sister chromatids vs homologous chromosomes? :: Sister chromatids are identical copies of one chromosome; homologues are a maternal and a paternal chromosome with the same genes.
+  Which Y-chromosome gene triggers male development? :: SRY.
+  How many chromosomes are in a human gamete? :: 23 (haploid, n).
+
+@ 5f6161ea U2.1.1.3 | Chromosome number and size across species
+**In a sentence**
+  Every species has a characteristic number of chromosomes, but the number and size vary enormously between species and have nothing to do with how complex the organism is.
+**Key terms**
+  **Chromosome number**: the number of chromosomes in a species' body cells (the diploid number).
+  **Polyploidy**: having more than two complete sets of chromosomes.
+  **Hybrid**: offspring of two different species.
+**Variation between species (diploid numbers)**
+  Jack jumper ant (an Australian ant, Myrmecia pilosula): females 2 — males have a single chromosome.
+  Fruit fly: 8. Garden pea: 14. Human: 46. Chimpanzee: 48. Potato: 48. Donkey: 62. Horse: 64. Dog: 78.
+  Some ferns have more than 1000.
+  Size varies too: human chromosome 1 is about five times longer than chromosome 21.
+**Why it matters**
+  Chromosome number is fixed within a species, so all individuals can pair their chromosomes in meiosis.
+  Different chromosome numbers usually stop hybrids being fertile. A horse (64) × donkey (62) gives a mule (63): its chromosomes can't all pair up in meiosis, so it makes almost no viable gametes.
+  More chromosomes doesn't mean more genes or more complexity — dogs have more chromosomes than humans; potatoes as many as chimps.
+**Going deeper**
+  Polyploidy is common in plants: bread wheat has six sets (hexaploid), cultivated strawberries eight. Extra sets often make larger cells, fruit and flowers, which is why many crops are polyploid.
+  Humans and chimpanzees differ by one pair because two ancestral chromosomes fused to form human chromosome 2.
+**Common mistakes**
+  Assuming more chromosomes means a more complex organism.
+  Forgetting to say whether a number is diploid or haploid.
+**Exam tips**
+  Always say whether a number is diploid (2n) or haploid (n).
+  To explain hybrid infertility, link unmatched chromosomes to failed pairing in meiosis — not just "different numbers".
+**Connections**
+  Homologous chromosomes: pairs must match to separate properly.
+  Karyotypes: how chromosome number and size are seen.
+  Meiosis: why mismatched chromosomes make hybrids infertile.
+**Practice questions**
+  A mule has 63 chromosomes. Explain why mules are almost always infertile.
+    A mule gets 32 chromosomes from its horse parent and 31 from its donkey parent. These don't form matching homologous pairs, so meiosis fails and it can't make viable gametes.
+  Use examples to show that chromosome number doesn't indicate complexity.
+    Dogs (78) and potatoes (48) have more chromosomes than humans (46), and some ferns have over 1000.
+  A species has a haploid number of 12. How many chromosomes are in its body cells and in its gametes?
+    Body cells 24 (2n); gametes 12 (n).
+**Flashcards**
+  Diploid chromosome number of a horse and a donkey? :: Horse 64, donkey 62.
+  Why is a mule infertile? :: Its 63 chromosomes can't form matching pairs, so meiosis fails.
+  Does a higher chromosome number mean a more complex organism? :: No — e.g. dogs have 78, humans 46.
+  Having more than two complete sets of chromosomes is called {{polyploidy}}.
+  Which Australian ant has males with a single chromosome? :: The jack jumper ant (Myrmecia pilosula).
+  Diploid number of a human and a chimpanzee? :: Human 46, chimpanzee 48.
+  What is a hybrid? :: The offspring of two different species.
+
+@ 0b6ec480 U2.1.1.4 | Karyotypes and chromosome abnormalities
+**In a sentence**
+  A karyotype is a picture of all an organism's chromosomes, arranged in homologous pairs, used to check the sex and spot abnormalities in chromosome number or large changes in structure.
+**Key terms**
+  **Karyotype**: an image of an individual's chromosomes arranged in pairs by size, centromere position and banding pattern.
+  **Aneuploidy**: having an extra or missing chromosome (e.g. 47 or 45 instead of 46).
+  **Trisomy**: three copies of a chromosome instead of two.
+  **Monosomy**: one copy of a chromosome instead of two.
+  **Non-disjunction**: failure of chromosomes or chromatids to separate properly in meiosis.
+**Making a karyotype**
+  Cells are collected (white blood cells, or before birth by amniocentesis or chorionic villus sampling), grown and stopped in **metaphase**, when chromosomes are most condensed and visible.
+  Chromosomes are stained, photographed, and arranged in pairs by size, centromere position and banding pattern: pairs 1–22 roughly largest to smallest, then the sex chromosomes.
+  Written as number,sex chromosomes: normal female 46,XX; normal male 46,XY.
+**What a karyotype can and can't show**
+  Can show: sex; aneuploidy (extra or missing chromosomes); large structural changes such as deletions, duplications and translocations.
+  Can't show: single-gene mutations or which alleles a person carries (such as the cystic fibrosis allele).
+**How aneuploidy happens — non-disjunction**
+  In meiosis I a homologous pair fails to separate, or in meiosis II sister chromatids fail to separate.
+  Some gametes get an extra chromosome (n + 1), others one fewer (n − 1).
+  Fertilisation by a normal gamete gives a trisomy (2n + 1 = 47) or a monosomy (2n − 1 = 45).
+**Examples**
+  **Down syndrome**: trisomy 21 — 47,XX,+21 or 47,XY,+21. The risk rises with the mother's age.
+  **Edwards syndrome** (trisomy 18) and **Patau syndrome** (trisomy 13): severe, usually fatal in infancy.
+  **Turner syndrome**: 45,X — female, short stature, usually infertile.
+  **Klinefelter syndrome**: 47,XXY — male, often tall with reduced fertility.
+  Most other aneuploidies are lethal before birth.
+**Worked example**
+  A karyotype shows 22 pairs of autosomes, three copies of chromosome 21 and one X and one Y. Describe it.
+    Total chromosomes: 44 autosomes + 1 extra 21 + 2 sex chromosomes = 47.
+    Sex: male (XY).
+    Abnormality: trisomy 21 (Down syndrome). Written 47,XY,+21.
+**Going deeper**
+  A few per cent (about 3–4%) of Down syndrome cases come from a translocation: part of chromosome 21 is attached to another chromosome, so the count can be 46 but there's still extra chromosome 21 material.
+**Common mistakes**
+  Saying a karyotype shows genes or alleles. It shows whole chromosomes only.
+  Forgetting why metaphase is used (chromosomes are most condensed).
+  Writing the notation without the total number first.
+**Exam tips**
+  Write the notation in order: total number, sex chromosomes, then the change (47,XY,+21).
+  When explaining non-disjunction, name the stage (anaphase I or II) and the gametes it makes (n + 1 and n − 1).
+**Connections**
+  Homologous chromosomes: pairing is how karyotypes are arranged.
+  Meiosis: where non-disjunction happens.
+  Bioethical issues: prenatal testing is a common Unit 2 investigation topic.
+**Practice questions**
+  Why are cells stopped at metaphase to make a karyotype?
+    In metaphase the chromosomes are fully condensed, so they are thickest, most visible and easiest to identify and pair.
+  Explain how non-disjunction can result in a child with Turner syndrome (45,X).
+    During meiosis in one parent the sex chromosomes fail to separate, so one gamete has no sex chromosome. If it fuses with a normal gamete carrying an X, the zygote has 45 chromosomes with a single X.
+  Would a karyotype detect cystic fibrosis? Explain.
+    No. Cystic fibrosis is caused by an allele of a single gene; the chromosomes look normal in a karyotype.
+**Flashcards**
+  What is a karyotype? :: An image of an individual's chromosomes arranged in homologous pairs by size, centromere position and banding.
+  At which stage are chromosomes photographed for a karyotype? :: Metaphase.
+  Down syndrome is trisomy {{21}}.
+  Karyotype notation for Turner syndrome? :: 45,X.
+  What is non-disjunction? :: Failure of homologues or sister chromatids to separate in meiosis, giving gametes with an extra or missing chromosome.
+  Name something a karyotype cannot detect. :: A single-gene mutation or allele (e.g. cystic fibrosis).
+  Karyotype notation for Klinefelter syndrome? :: 47,XXY.
+
+@ 958f3320 U2.1.1.5 | Meiosis and genetic diversity
+**In a sentence**
+  Meiosis turns one diploid cell into four haploid, genetically different gametes through two divisions, and crossing over and independent assortment during meiosis I shuffle alleles into new combinations.
+**Key terms**
+  **Meiosis**: cell division that halves the chromosome number, producing four haploid cells.
+  **Gamete**: a haploid sex cell (sperm or egg; pollen and ovules in plants).
+  **Bivalent**: a pair of homologous chromosomes lying side by side in prophase I.
+  **Crossing over**: exchange of DNA between non-sister chromatids of a homologous pair in prophase I.
+  **Chiasma** (plural chiasmata): the point where chromatids cross over.
+  **Independent assortment**: the random orientation of each homologous pair at the equator in metaphase I.
+  **Recombinant chromatid**: a chromatid carrying a new combination of alleles after crossing over.
+**Overview**
+  Happens in the testes and ovaries (anthers and ovules in plants).
+  DNA replicates **once** (in S phase), then the cell divides **twice**.
+  Result: four haploid cells, each genetically different from each other and from the parent cell.
+**Meiosis I — homologous chromosomes separate**
+  **Prophase I**: chromosomes condense; homologous chromosomes pair up to form bivalents; **crossing over** happens at chiasmata; the nuclear membrane breaks down.
+  **Metaphase I**: bivalents line up in **pairs** across the equator, each pair oriented randomly (independent assortment).
+  **Anaphase I**: homologous chromosomes are pulled to opposite poles; sister chromatids stay together.
+  **Telophase I and cytokinesis**: two haploid cells form, each chromosome still made of two chromatids.
+**Meiosis II — sister chromatids separate**
+  Like mitosis, but in haploid cells.
+  **Prophase II**: chromosomes condense again; spindles form.
+  **Metaphase II**: chromosomes line up single-file across the equator.
+  **Anaphase II**: sister chromatids separate and move to opposite poles.
+  **Telophase II and cytokinesis**: four haploid cells.
+**How meiosis creates diversity**
+  **Crossing over** (prophase I): swaps sections between maternal and paternal chromatids, creating new combinations of alleles on the same chromosome.
+  **Independent assortment** (metaphase I): each pair lines up independently, so each gamete gets a random mix of maternal and paternal chromosomes. With n pairs there are 2ⁿ combinations — for humans 2²³, about 8.4 million, before crossing over is counted.
+  **Random fertilisation**: any sperm can fertilise any egg, so one couple could produce about 8.4 million × 8.4 million ≈ 70 trillion combinations.
+  This variation is the raw material natural selection acts on.
+**Mitosis and meiosis compared**
+  Purpose: mitosis for growth and repair; meiosis for making gametes.
+  Divisions: one vs two.
+  Cells produced: two diploid vs four haploid.
+  Genetically: identical vs all different.
+  Homologues pair and cross over: no vs yes (prophase I).
+**Worked example**
+  An organism has a diploid number of 8. How many chromosome combinations can its gametes have from independent assortment alone?
+    n = 8 ÷ 2 = 4 pairs.
+    Combinations = 2⁴ = 16.
+**Going deeper**
+  In males all four cells become sperm. In females meiosis is unequal: one large egg and small polar bodies that break down — the egg keeps most of the cytoplasm for the early embryo.
+**Common mistakes**
+  Saying crossing over happens between sister chromatids. It happens between non-sister chromatids of a homologous pair.
+  Placing crossing over in meiosis II, or independent assortment in anaphase. Crossing over is prophase I; independent assortment is metaphase I.
+  "Meiosis produces two cells." It produces four.
+  Forgetting that DNA is replicated only once, before meiosis I.
+**Exam tips**
+  To explain diversity, name the process, the stage and the effect: "crossing over in prophase I exchanges alleles between non-sister chromatids, producing new combinations of alleles".
+  In diagrams, meiosis I lines up pairs (two chromosomes side by side); meiosis II lines up single chromosomes.
+**Connections**
+  The cell cycle and mitosis (Unit 1): the division meiosis is compared with.
+  Karyotypes: non-disjunction in meiosis causes aneuploidy.
+  Linked genes: crossing over creates recombinants.
+  Sexual reproduction (Area of Study 2): the genetic advantage comes from meiosis.
+**Practice questions**
+  Describe the events of prophase I and explain their significance.
+    Chromosomes condense and homologous chromosomes pair into bivalents. Non-sister chromatids exchange segments at chiasmata (crossing over), producing recombinant chromatids with new allele combinations — increasing genetic diversity of gametes.
+  Explain how independent assortment increases genetic diversity.
+    In metaphase I each homologous pair lines up independently of the others, so whether the maternal or paternal chromosome goes to a particular pole is random. Each gamete therefore gets a different mixture of chromosomes (2ⁿ possibilities).
+  Give three differences between mitosis and meiosis.
+    Mitosis has one division, meiosis two; mitosis makes two diploid cells, meiosis four haploid cells; mitosis cells are identical, meiosis cells are genetically different (homologues pair and cross over only in meiosis).
+  A cell with 2n = 6 undergoes meiosis. How many chromosomes are in each cell at the end of meiosis I and at the end of meiosis II?
+    End of meiosis I: 3 chromosomes (each still two chromatids). End of meiosis II: 3 chromosomes (each a single chromatid).
+**Flashcards**
+  What does meiosis produce? :: Four haploid cells, each genetically different.
+  In which stage does crossing over happen? :: Prophase I.
+  Independent assortment happens in {{metaphase I}}.
+  What separates in anaphase I, and what in anaphase II? :: Anaphase I: homologous chromosomes. Anaphase II: sister chromatids.
+  How many chromosome combinations from independent assortment in humans? :: 2²³, about 8.4 million.
+  Crossing over is between {{non-sister}} chromatids of a homologous pair.
+  Three sources of genetic variation in sexual reproduction? :: Crossing over, independent assortment, random fertilisation.
+
+@ 9d38cfff U2.1.2.1 | Writing genotypes
+**In a sentence**
+  A genotype is written with one letter per gene — capital for a dominant allele, lower case for a recessive one — with superscripts for codominant alleles and for alleles on the X chromosome.
+**Key terms**
+  **Genotype**: the alleles an individual has for a gene.
+  **Phenotype**: the observable characteristic that results (structure, biochemistry, physiology or behaviour).
+  **Homozygous**: two identical alleles (TT or tt).
+  **Heterozygous**: two different alleles (Tt).
+  **Hemizygous**: having only one allele of a gene — males for genes on the X chromosome.
+**The rules**
+  Choose a letter for the gene, often the first letter of the dominant trait: T = tall, t = short.
+  Pick letters whose capital and lower case look different: T/t, B/b, not S/s, O/o or W/w when handwriting.
+  Always write a key first: "Let T = allele for tall, t = allele for short".
+  Write the dominant allele first in a heterozygote: Tt, not tT.
+**Codominance and incomplete dominance**
+  Use a base letter with superscripts, because neither allele is recessive: flower colour Cᴿ (red) and Cᵂ (white) → Cᴿ Cᴿ, Cᴿ Cᵂ, Cᵂ Cᵂ.
+  ABO blood groups: Iᴬ and Iᴮ are codominant, i is recessive. Genotypes: Iᴬ Iᴬ or Iᴬ i (group A), Iᴮ Iᴮ or Iᴮ i (group B), Iᴬ Iᴮ (group AB), i i (group O).
+**Sex-linked (X-linked) genes**
+  Write the allele as a superscript on the X: Xᴴ (normal clotting) and Xʰ (haemophilia).
+  Females: Xᴴ Xᴴ, Xᴴ Xʰ (a carrier), Xʰ Xʰ.
+  Males: Xᴴ Y or Xʰ Y — the Y carries no allele for this gene, so a male is hemizygous.
+**Going deeper**
+  Multiple alleles can form a dominance series. In rabbits, full colour is dominant to chinchilla, which is dominant to Himalayan, which is dominant to albino — four alleles of one gene give four coat types.
+**Common mistakes**
+  Using different letters for alleles of one gene (T for tall and S for short).
+  Writing a sex-linked genotype without the X and Y.
+  Writing gametes with two alleles of one gene — a gamete carries only one.
+**Exam tips**
+  Write a key before every cross ("Let T = tall, t = short"); undefined symbols lose marks.
+  For X-linked traits, write the Y with no allele and never give a male two alleles for that gene.
+**Connections**
+  Dominance, codominance and incomplete dominance.
+  Monohybrid crosses and pedigrees: genotypes are the starting point.
+**Practice questions**
+  In pea plants purple flowers (P) are dominant to white (p). Write the genotypes of a homozygous purple, a heterozygous and a white plant.
+    PP, Pp, pp.
+  Write all possible genotypes of a person with blood group A.
+    Iᴬ Iᴬ or Iᴬ i.
+  Red–green colour blindness is X-linked recessive. Using B and b, write the genotype of a colour-blind man and a carrier woman.
+    Man: Xᵇ Y. Carrier woman: Xᴮ Xᵇ.
+**Flashcards**
+  Define genotype. :: The combination of alleles an individual has for a gene.
+  Define phenotype. :: The observable characteristic resulting from the genotype and environment.
+  Genotype Tt is {{heterozygous}}; tt is {{homozygous}} recessive.
+  Genotype of a man with haemophilia (H = normal, h = haemophilia)? :: Xʰ Y.
+  Genotypes for blood group O and AB? :: O: i i. AB: Iᴬ Iᴮ.
+  Why are males called hemizygous for X-linked genes? :: They have only one X chromosome, so only one allele for those genes.
+  Why use letters like T/t rather than S/s for alleles? :: The capital and lower-case forms must look clearly different.
+
+@ 7f06ea76 U2.1.2.2 | Dominance, codominance, incomplete dominance
+**In a sentence**
+  With complete dominance one allele masks the other in a heterozygote; with codominance both alleles show fully and separately; with incomplete dominance the heterozygote is an intermediate blend.
+**Key terms**
+  **Dominant allele**: an allele expressed in the phenotype whenever it's present.
+  **Recessive allele**: an allele expressed only when there's no dominant allele (homozygous recessive).
+  **Codominance**: both alleles in a heterozygote are fully and separately expressed.
+  **Incomplete dominance**: the heterozygote has an intermediate phenotype between the two homozygotes.
+**Complete dominance**
+  Tall (T) is dominant to short (t) in peas: TT and Tt are both tall; only tt is short.
+  Why: the recessive allele often codes for a protein that doesn't work. One working allele makes enough protein, so the heterozygote looks the same as the dominant homozygote.
+  Dominant doesn't mean common. The allele for Huntington's disease is dominant but rare; extra fingers (polydactyly) is dominant too.
+**Codominance — both show**
+  ABO blood groups: someone with Iᴬ Iᴮ has both A and B antigens on their red blood cells — blood group AB.
+  Roan cattle: a red × white cross gives roan calves with a mix of red hairs and white hairs (not pink hairs).
+**Incomplete dominance — a blend**
+  Snapdragons: red (Cᴿ Cᴿ) × white (Cᵂ Cᵂ) gives pink (Cᴿ Cᵂ). Each allele makes some pigment; one copy of the red allele makes only enough for pink.
+  Crossing two pink plants gives 1 red : 2 pink : 1 white — here the phenotype ratio matches the genotype ratio, because every genotype looks different.
+**Telling them apart**
+  Heterozygote shows both parental traits separately (red hairs and white hairs; A and B antigens) → codominance.
+  Heterozygote is in between (pink) → incomplete dominance.
+  Heterozygote looks like one parent → complete dominance.
+**Worked example**
+  In four-o'clock flowers, red and white show incomplete dominance. Predict the offspring of a pink × white cross.
+    Pink Cᴿ Cᵂ × white Cᵂ Cᵂ.
+    Gametes: Cᴿ or Cᵂ from pink; Cᵂ from white.
+    Offspring: Cᴿ Cᵂ (pink) and Cᵂ Cᵂ (white).
+    Ratio 1 pink : 1 white.
+**Going deeper**
+  Sickle-cell is a useful case: at the level of the whole person the allele is recessive (only homozygotes have the disease), but at the level of the protein both normal and sickle haemoglobin are made — codominance.
+**Common mistakes**
+  Swapping codominance (both shown separately) and incomplete dominance (blended).
+  Saying the dominant allele is "stronger" or "more common".
+  Using capital and lower-case letters for codominant alleles, which implies one is recessive.
+**Exam tips**
+  Name the pattern and describe the heterozygote's phenotype — that is what separates dominance, codominance and incomplete dominance.
+**Connections**
+  Writing genotypes: superscript notation for codominance.
+  Monohybrid crosses: 3 : 1 versus 1 : 2 : 1 ratios.
+  Genes, environment and epigenetics: other influences on phenotype.
+**Practice questions**
+  Distinguish between codominance and incomplete dominance, with an example of each.
+    In codominance both alleles are fully expressed side by side in the heterozygote (AB blood group, roan cattle). In incomplete dominance the heterozygote has an intermediate phenotype (pink snapdragons from red × white).
+  Explain why a heterozygous tall pea plant is as tall as a homozygous tall plant.
+    The tall allele is dominant: one copy produces enough of the functional product for full height, so the recessive allele has no visible effect.
+  Two roan cattle are crossed. Give the expected phenotype ratio of the calves.
+    1 red : 2 roan : 1 white.
+**Flashcards**
+  What is a dominant allele? :: One that is expressed in the phenotype whenever present.
+  Blood group AB is an example of {{codominance}}.
+  Pink snapdragons from red × white parents show {{incomplete dominance}}.
+  Phenotype ratio from crossing two heterozygotes with incomplete dominance? :: 1 : 2 : 1.
+  Why can one functional allele be enough for the dominant phenotype? :: It makes enough working protein, so the non-functional recessive allele is masked.
+  Is a dominant allele always the most common? :: No — e.g. the Huntington's allele is dominant but rare.
+  Roan cattle (red hairs and white hairs) show which pattern? :: Codominance.
+
+@ 5f07321f U2.1.2.3 | Genes, environment and epigenetics
+**In a sentence**
+  A phenotype is the product of genes and the environment working together — some traits are set almost entirely by one gene, others by many genes plus the environment, and epigenetic marks change which genes are switched on without changing the DNA.
+**Key terms**
+  **Monogenic trait**: controlled by one gene (e.g. ABO blood group, cystic fibrosis).
+  **Polygenic trait**: controlled by many genes (e.g. height, skin colour).
+  **Discontinuous variation**: distinct categories with no in-between (blood groups).
+  **Continuous variation**: a range of values, usually a bell curve (height).
+  **Epigenetics**: changes in gene expression that don't change the DNA sequence, and can sometimes be inherited.
+  **DNA methylation**: adding methyl groups to DNA, which usually switches a gene off.
+  **Histone modification**: chemical changes to the proteins DNA wraps around, loosening or tightening the DNA and so switching genes on or off.
+**Genes alone, or genes plus environment**
+  Phenotype = genotype + environment (+ epigenetic effects).
+  Monogenic traits usually show discontinuous variation and are little affected by environment: your ABO group doesn't change with diet.
+  Polygenic traits show continuous variation, and the environment often has a big influence: height depends on many genes and on childhood nutrition.
+**Environment examples**
+  Hydrangea flowers are blue in acid soil and pink in alkaline soil (aluminium availability) — same genotype, different colour.
+  Himalayan rabbits and Siamese cats have a temperature-sensitive pigment enzyme: it works only in cooler body parts, so ears, nose, paws and tail are dark.
+  Skin darkens with UV exposure (tanning).
+  In many reptiles, including saltwater crocodiles and sea turtles, the temperature of the nest decides the sex of the hatchlings.
+  Plants of one clone grown in sun and shade differ in height and leaf size.
+**Epigenetics**
+  DNA methylation: methyl groups on a gene's control region stop it being read — the gene is silenced.
+  Histone modification: acetylation loosens the DNA so genes can be read (switched on); removing it packs DNA tightly (switched off).
+  Triggers include diet, stress, toxins, smoking and ageing.
+  Honeybees: queens and workers have the same genome; larvae fed royal jelly have different methylation patterns and become queens.
+  Agouti mice: genetically identical mice differ in coat colour and body weight depending on their mother's diet during pregnancy, through methylation of the agouti gene.
+  Identical twins start with near-identical epigenetic marks, but their marks drift apart with age and lifestyle — one reason twins can differ in disease.
+  Early environment can leave lasting marks: people conceived during the Dutch Hunger Winter famine (1944–45) still had different methylation of a growth gene (IGF2) about 60 years later, and different rates of some diseases.
+**Weighing the influences**
+  Twin studies compare identical twins (same genotype) with non-identical twins (share about half their alleles). If identical twins are much more alike for a trait, genes have a large influence; if both types of twins are equally alike, environment matters more.
+**Going deeper**
+  "Heritability" measures how much of the variation in a trait in a population is due to genetic differences. It says nothing about a single person, and it changes if the environment changes.
+**Common mistakes**
+  Calling epigenetic changes mutations. The base sequence doesn't change.
+  Saying characteristics gained from the environment (a tan, big muscles) are passed to offspring. Only some epigenetic marks can be inherited.
+  Confusing polygenic (many genes) with multiple alleles (many versions of one gene).
+**Exam tips**
+  When given data (e.g. twin concordance), state which influence is larger and support it with numbers from the data.
+**Connections**
+  Genes, alleles and genomes.
+  Dominance: single-gene traits.
+  Stem cells and differentiation (Unit 1): switching genes on and off is epigenetic control.
+  Adaptations (Area of Study 2): phenotypes that improve survival.
+**Practice questions**
+  Explain why height shows continuous variation but ABO blood group shows discontinuous variation.
+    Height is polygenic and strongly affected by environment (nutrition), so many small effects add up to a smooth range. ABO is controlled by one gene with a few alleles and isn't affected by environment, so people fall into four distinct groups.
+  Identical twins raised apart differ in body mass by 12 kg. What does this suggest?
+    Because they have the same genotype, the difference must come from environmental (and epigenetic) factors such as diet and activity.
+  Describe how DNA methylation can change a phenotype without changing the DNA sequence.
+    Methyl groups added to a gene's control region prevent it being transcribed, so the protein isn't made. The phenotype changes, but the base sequence is the same.
+  Identical twins are 90% concordant for a trait; non-identical twins 30%. What does this suggest?
+    Genes have a strong influence: the pairs who share all their alleles are far more alike than those sharing about half. It isn't 100%, so environment has some effect too.
+**Flashcards**
+  What is a polygenic trait? :: A trait controlled by many genes, e.g. height.
+  Continuous variation vs discontinuous variation? :: Continuous: a range of values (height). Discontinuous: distinct categories (blood group).
+  Define epigenetics. :: Changes in gene expression that don't alter the DNA sequence.
+  DNA {{methylation}} usually switches a gene off.
+  Why are Siamese cats darker on their ears and paws? :: Their pigment enzyme only works at the lower temperatures of these body parts.
+  How do honeybee queens and workers differ genetically? :: They don't — diet (royal jelly) changes gene expression epigenetically.
+  What decides the sex of a saltwater crocodile? :: The incubation temperature of the nest.
+
+@ 80b598d0 U2.1.3.1 | Pedigrees and patterns of inheritance
+**In a sentence**
+  A pedigree chart traces a trait through a family, and by testing each mode of inheritance against specific individuals you can work out whether the trait is dominant or recessive and autosomal or X-linked.
+**Key terms**
+  **Pedigree**: a chart of a family showing who has a trait over several generations.
+  **Autosomal inheritance**: the gene is on an autosome, so males and females are affected equally.
+  **X-linked (sex-linked) inheritance**: the gene is on the X chromosome.
+  **Carrier**: a heterozygous person who has a recessive allele but not the recessive phenotype.
+  **Proband**: the person through whom a family's pedigree was first identified.
+**Reading the symbols**
+  Square = male; circle = female; shaded = affected; unshaded = unaffected; half-shaded (or a dot) = known carrier, if shown.
+  A horizontal line joins parents; a vertical line leads to their children, shown left to right from oldest.
+  Generations in Roman numerals (I, II, III); individuals numbered within each generation (II-3).
+**Autosomal recessive**
+  Two unaffected parents have an affected child → the trait must be recessive (both parents are carriers).
+  Often skips generations; males and females about equally affected.
+  Autosomal, not X-linked, if an affected female has an unaffected son, or an affected daughter has an unaffected father.
+  Examples: cystic fibrosis, phenylketonuria (PKU), sickle-cell anaemia, albinism.
+**Autosomal dominant**
+  Two affected parents have an unaffected child → the trait must be dominant (both parents heterozygous).
+  Every affected person has at least one affected parent; it doesn't skip generations; males and females equally affected.
+  Autosomal, not X-linked, if an affected father has an unaffected daughter, or an affected son has an unaffected mother.
+  Examples: Huntington's disease, achondroplasia, Marfan syndrome.
+**X-linked recessive**
+  Many more males affected than females (males need only one copy).
+  An affected male usually has an unaffected carrier mother; he passes the allele to all his daughters (carriers) and none of his sons.
+  An affected female must have an affected father, and all her sons will be affected.
+  Examples: haemophilia A, red–green colour blindness, Duchenne muscular dystrophy.
+**X-linked dominant**
+  An affected male passes the trait to **all** his daughters and **none** of his sons.
+  An affected male must have an affected mother.
+  Usually more females affected. Example: hypophosphataemic (vitamin D–resistant) rickets.
+**Y-linked (going further)**
+  Only males affected, and every son of an affected male is affected.
+**A method that always works**
+  1. Look for two unaffected parents with an affected child (recessive) or two affected parents with an unaffected child (dominant).
+  2. For the remaining options, find a specific individual (or pair) that rules each one out.
+  3. Assign genotypes to everyone you can, then answer probability questions.
+**Worked example**
+  Two unaffected parents (I-1 male, I-2 female) have an affected daughter (II-2). What is the mode of inheritance, and what is the chance their next child is affected?
+    Unaffected parents with an affected child → recessive.
+    If it were X-linked recessive, the affected daughter's father would have to be affected. He isn't, so it's autosomal recessive.
+    Both parents are Aa (carriers). Aa × Aa → 1 AA : 2 Aa : 1 aa.
+    Chance the next child is affected = 1/4 (25%).
+**Going deeper**
+  Real pedigrees can hide the pattern: small families, new mutations, late-onset conditions (Huntington's disease often appears after 40) and dominant alleles that don't always show (incomplete penetrance) all make them harder to read.
+**Common mistakes**
+  Concluding X-linked just because more males are affected in one small family. Use a rule-out with named individuals.
+  Saying a mode "can't be" without citing the individuals that rule it out.
+  Forgetting that unaffected people in a recessive pedigree may be carriers.
+  Mixing "chance a son is affected" with "chance a child is an affected son".
+**Exam tips**
+  Name individuals by generation and number (II-3) in every justification.
+  For sex-linked probability questions, read exactly what is asked: of the sons? Of all children?
+**Connections**
+  Writing genotypes: Xᴴ Xʰ notation.
+  Monohybrid crosses: predicting risks for future children.
+  Homologous chromosomes: why males show X-linked recessive traits more often.
+**Practice questions**
+  An affected man and an unaffected woman have four children: all daughters affected, all sons unaffected. Which mode of inheritance does this suggest, and why?
+    X-linked dominant: an affected male gives his X (with the dominant allele) to every daughter and his Y to every son, so all daughters are affected and no sons.
+  Explain why two parents who both have an autosomal dominant condition can have an unaffected child.
+    Both parents can be heterozygous (Aa). Each can pass on the recessive allele, so there is a 1/4 chance of an aa child, who is unaffected.
+  A woman is a carrier of haemophilia (Xᴴ Xʰ) and her partner is unaffected (Xᴴ Y). What is the probability that a son will have haemophilia?
+    Sons get Y from their father and either Xᴴ or Xʰ from their mother, so 1/2 (50%) of sons are expected to have haemophilia.
+  Why can an unaffected woman have a son with an X-linked recessive condition?
+    She can be a carrier (heterozygous). Her son gets his only X from her, so if he inherits the X with the recessive allele he is affected.
+**Flashcards**
+  Two unaffected parents have an affected child. What does this tell you? :: The trait is recessive (both parents are carriers).
+  Two affected parents have an unaffected child. What does this tell you? :: The trait is dominant (both parents heterozygous).
+  Rule for X-linked recessive: an affected female must have an affected {{father}}.
+  An affected male with an X-linked dominant trait passes it to… :: all his daughters and none of his sons.
+  Give two examples of X-linked recessive conditions. :: Haemophilia A, red–green colour blindness (also Duchenne muscular dystrophy).
+  Give an example of an autosomal dominant condition. :: Huntington's disease (also achondroplasia, Marfan syndrome).
+  Why are X-linked recessive traits more common in males? :: Males have one X, so a single recessive allele is expressed.
+
+@ 528f41cf U2.1.3.2 | Monohybrid crosses and test crosses
+**In a sentence**
+  A monohybrid cross follows one gene: write the parents' genotypes, their gametes and a Punnett square to predict the offspring ratios — and a test cross with a homozygous recessive reveals whether a dominant-looking individual is homozygous or heterozygous.
+**Key terms**
+  **Monohybrid cross**: a cross that follows the inheritance of one gene.
+  **Punnett square**: a grid showing every combination of the parents' gametes.
+  **P, F1, F2**: the parent generation, their offspring (first filial), and the offspring of F1 × F1.
+  **Test cross**: crossing an individual with the dominant phenotype with a homozygous recessive individual to find its genotype.
+  **True-breeding**: homozygous; always produces offspring like itself when crossed with the same.
+**The steps for any cross**
+  1. Define the alleles (Let B = black, b = brown).
+  2. Write the parents' genotypes and phenotypes.
+  3. Write the gametes each parent can make (one allele each).
+  4. Combine the gametes in a Punnett square.
+  5. Give the genotype and phenotype ratios.
+**The key crosses**
+  BB × bb → all Bb (all black). A true-breeding cross gives a uniform F1.
+  Bb × Bb → 1 BB : 2 Bb : 1 bb; phenotypes 3 black : 1 brown.
+    Punnett: gametes B, b from each parent → BB, Bb, Bb, bb.
+  Bb × bb → 1 Bb : 1 bb; phenotypes 1 black : 1 brown.
+  Codominance or incomplete dominance (e.g. Cᴿ Cᵂ × Cᴿ Cᵂ) → 1 : 2 : 1 phenotypes.
+  X-linked: Xᴴ Xʰ × Xᴴ Y → daughters Xᴴ Xᴴ and Xᴴ Xʰ (all unaffected, half carriers); sons Xᴴ Y and Xʰ Y (half affected).
+  ABO: Iᴬ i × Iᴮ i → Iᴬ Iᴮ (AB), Iᴬ i (A), Iᴮ i (B), i i (O), each 1/4.
+**The test cross**
+  Problem: a black animal could be BB or Bb — they look the same.
+  Cross it with a homozygous recessive (bb), whose gametes can only carry b, so each offspring's phenotype shows which allele came from the unknown parent.
+  All offspring black → the unknown is (almost certainly) BB.
+  About half black, half brown (1 : 1) → the unknown is Bb.
+  Even one brown offspring proves the unknown carries b.
+**Ratios are probabilities**
+  A 3 : 1 ratio means each child has a 3/4 chance of the dominant phenotype. In a family of four, anything can happen; large numbers of offspring get close to the ratio.
+**Worked example**
+  In guinea pigs, black fur (B) is dominant to white (b). Two heterozygous black guinea pigs have 16 offspring. Predict the numbers of each phenotype.
+    Bb × Bb → gametes B, b from each.
+    Punnett: BB, Bb, Bb, bb → 3 black : 1 white.
+    Expected: 16 × 3/4 = 12 black, 16 × 1/4 = 4 white.
+**Going deeper**
+  Mendel crossed pea plants in the 1850s and 1860s. In one F2 he counted 787 tall and 277 short plants — about 2.84 : 1, close to 3 : 1. His large samples let the ratio show through chance variation.
+**Worked example 2**
+  A tall pea plant crossed with a short plant (tt) produces 52 tall and 48 short offspring. What was the tall parent's genotype?
+    This is a test cross (tt is homozygous recessive).
+    52 : 48 is close to 1 : 1, so some offspring received t from the tall parent.
+    The tall parent was Tt.
+**Common mistakes**
+  Writing a gamete with two alleles (Bb). Gametes are haploid: B or b.
+  Treating a ratio as a guarantee for a small family.
+  Forgetting to state both genotype and phenotype ratios when asked.
+  In sex-linked crosses, forgetting that sons get their X from their mother.
+**Exam tips**
+  Always show the key, parental genotypes, gametes and Punnett square — markers award each step.
+  Give probabilities as fractions or percentages exactly as asked.
+**Connections**
+  Writing genotypes.
+  Dominance, codominance and incomplete dominance: why ratios differ.
+  Pedigrees: probabilities for future children.
+  Two genes (linked or independent): the next step up.
+**Practice questions**
+  Cystic fibrosis is autosomal recessive. Two carriers plan a child. What is the probability the child will be a carrier?
+    Ff × Ff → 1 FF : 2 Ff : 1 ff. Probability of a carrier (Ff) = 2/4 = 1/2 (50%).
+  Explain why a homozygous recessive individual is used in a test cross.
+    Its gametes carry only the recessive allele, so it can't mask anything; each offspring's phenotype directly shows the allele it received from the unknown parent.
+  A woman with blood group A and a man with blood group B have a child with blood group O. Give the parents' genotypes.
+    The child is i i, so each parent must carry i: mother Iᴬ i, father Iᴮ i.
+  A test cross of a black mouse gives 8 black and 0 white offspring. Can you be certain it is homozygous?
+    Not certain — with only 8 offspring a heterozygote could, by chance, pass on B every time (probability (1/2)⁸, about 0.4%). It is very likely homozygous (BB); more offspring would increase confidence.
+**Flashcards**
+  Phenotype ratio for Aa × Aa (complete dominance)? :: 3 : 1.
+  Genotype ratio for Aa × Aa? :: 1 AA : 2 Aa : 1 aa.
+  Phenotype ratio for Aa × aa? :: 1 : 1.
+  A test cross crosses the unknown with a {{homozygous recessive}} individual.
+  Test-cross offspring are about half dominant, half recessive. The unknown was… :: Heterozygous.
+  How many alleles of a gene does a gamete carry? :: One.
+  Xᴴ Xʰ × Xᴴ Y: chance a son has haemophilia? :: 1/2.
+
+@ 2814a627 U2.1.3.3 | Two genes: independent assortment and linkage
+**In a sentence**
+  Two genes on different chromosomes assort independently, giving a 9 : 3 : 3 : 1 ratio from two heterozygotes and 1 : 1 : 1 : 1 from a test cross; genes close together on one chromosome are linked, so they're inherited together apart from a few recombinants made by crossing over.
+**Key terms**
+  **Dihybrid cross**: a cross following two genes at once.
+  **Unlinked genes**: genes on different chromosomes (or far apart on one), which assort independently.
+  **Linked genes**: genes close together on the same chromosome, which tend to be inherited together.
+  **Parental type**: an offspring phenotype combination that matches a parent's chromosomes.
+  **Recombinant**: an offspring with a new combination of alleles, produced by crossing over between linked genes.
+  **Recombination frequency**: recombinant offspring ÷ total offspring × 100%.
+**Unlinked genes — independent assortment**
+  Example: in peas, yellow seeds (Y) are dominant to green (y) and round (R) to wrinkled (r). The genes are on different chromosomes.
+  YyRr makes four kinds of gamete in equal numbers: YR, Yr, yR, yr (each 1/4) — because the two pairs of chromosomes line up independently in metaphase I.
+  YyRr × YyRr → a 16-square Punnett square → 9 yellow round : 3 yellow wrinkled : 3 green round : 1 green wrinkled.
+  **Dihybrid test cross**: YyRr × yyrr → 1 yellow round : 1 yellow wrinkled : 1 green round : 1 green wrinkled.
+**Linked genes**
+  Genes close together on one chromosome travel together into gametes, so they don't assort independently.
+  Show which alleles are on the same chromosome by writing them together: AB/ab means one chromosome carries A and B, its homologue a and b.
+  With **no crossing over**, AB/ab makes only AB and ab gametes. A test cross (× ab/ab) gives only the two parental types, 1 : 1 — it looks like a monohybrid cross.
+  With **crossing over** between the two loci in prophase I, a few Ab and aB gametes (recombinants) also form. A test cross then gives:
+    many of the two parental types (roughly equal),
+    few of the two recombinant types (roughly equal).
+**Recombination frequency**
+  Recombination frequency = number of recombinant offspring ÷ total offspring × 100%.
+  The further apart two genes are on a chromosome, the more often crossing over happens between them, so the higher the frequency.
+  The maximum is 50%, which looks the same as independent assortment.
+  Going deeper: 1% recombination is used as 1 map unit, which lets geneticists map the order of genes on a chromosome.
+**Recognising linkage in data**
+  Test cross of a double heterozygote:
+    About 1 : 1 : 1 : 1 → genes assort independently (unlinked).
+    Two large classes and two small classes → linked, with crossing over; the small classes are the recombinants.
+    Only two classes → completely linked (no crossing over between them).
+**Worked example**
+  In fruit flies, grey body (G) is dominant to black (g) and normal wings (N) to vestigial (n). A GgNn fly (from a GGNN × ggnn cross) is test-crossed with ggnn. Offspring: 415 grey normal, 405 black vestigial, 92 grey vestigial, 88 black normal. Are the genes linked? Calculate the recombination frequency.
+    If unlinked, expect about 1 : 1 : 1 : 1 (about 250 each). The results show two large and two small classes, so the genes are linked.
+    The parent's chromosomes are GN/gn (from its GGNN and ggnn parents), so grey normal and black vestigial are parental types; grey vestigial and black normal are recombinants.
+    Recombinants = 92 + 88 = 180. Total = 415 + 405 + 92 + 88 = 1000.
+    Recombination frequency = 180 ÷ 1000 × 100 = 18%.
+**Going deeper**
+  Recombination frequencies can be used to order genes: if A–B is 10%, B–C is 5% and A–C is 15%, the genes must lie in the order A–B–C, with B in the middle.
+**Common mistakes**
+  Expecting 9 : 3 : 3 : 1 for linked genes.
+  Labelling the most common classes as recombinants. Recombinants are the least common.
+  Thinking linked genes can never be separated — crossing over can separate them.
+  Writing gametes with two alleles of the same gene (Yy R).
+**Exam tips**
+  For a dihybrid cross, list the four gametes of each parent before drawing the Punnett square.
+  To decide linkage, compare observed numbers with the numbers expected for independent assortment, and say which classes are recombinant.
+**Connections**
+  Meiosis: independent assortment in metaphase I, crossing over in prophase I.
+  Monohybrid crosses and test crosses: the same method with one gene.
+  Genetic diversity (Area of Study 2): recombination creates new allele combinations.
+**Practice questions**
+  Explain why a plant with genotype AaBb (genes on different chromosomes) makes four types of gamete in equal proportions.
+    In metaphase I the two homologous pairs line up independently, so A is equally likely to go with B or b, and a likewise. This gives AB, Ab, aB and ab, each 1/4.
+  A test cross of a double heterozygote gives 48 : 52 : 50 : 50 across the four phenotypes. Are the genes linked?
+    No. The four classes are roughly equal (1 : 1 : 1 : 1), which is what independent assortment predicts.
+  Two genes are linked. A test cross of AB/ab × ab/ab gives 460 AB, 440 ab, 55 Ab, 45 aB. Calculate the recombination frequency.
+    Recombinants = 55 + 45 = 100; total = 1000; frequency = 100 ÷ 1000 × 100 = 10%.
+  Why do genes further apart on a chromosome have a higher recombination frequency?
+    There is more distance between them in which a crossover can happen, so they are separated by crossing over more often.
+**Flashcards**
+  Phenotype ratio from AaBb × AaBb (unlinked, complete dominance)? :: 9 : 3 : 3 : 1.
+  Phenotype ratio from a dihybrid test cross AaBb × aabb (unlinked)? :: 1 : 1 : 1 : 1.
+  What are linked genes? :: Genes close together on the same chromosome that tend to be inherited together.
+  In a test cross of linked genes, the {{least}} common classes are the recombinants.
+  Formula for recombination frequency? :: Recombinant offspring ÷ total offspring × 100%.
+  What process produces recombinants between linked genes? :: Crossing over in prophase I of meiosis.
+  Gametes made by AaBb (unlinked)? :: AB, Ab, aB, ab — each 1/4.

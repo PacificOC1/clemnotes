@@ -1,0 +1,479 @@
+% VCE Economics — Unit 2, Area of Study 2: applied economic analysis of local, national and international issues.
+% Original study notes. Format: see src/courses/notesPack.ts. Money is written \$ (a bare $ starts maths).
+% Students study two of four issues; each entry covers all four so any pair can be studied:
+% the changing labour market, international trade, the distribution of income and wealth, environmental sustainability.
+
+@ 4c016fef U2.2.1.1 | Defining and measuring the issue
+**In a sentence**
+  Every issue investigation starts by defining the issue precisely and choosing the statistics that measure it — unemployment and wages for the labour market, trade balances and terms of trade for trade, Gini coefficients and poverty rates for inequality, emissions and resource use for sustainability.
+**Key terms**
+  **Economic issue**: a problem or debate about how resources are used that affects living standards.
+  **Measure / statistical indicator**: a statistic that shows the size or direction of an issue.
+  **Labour force**: people aged 15+ who are employed or unemployed (actively looking and available for work).
+  **Unemployment rate**: unemployed ÷ labour force × 100.
+  **Participation rate**: labour force ÷ civilian population aged 15+ × 100.
+  **Underemployment**: employed people who want, and are available for, more hours.
+  **Balance of trade**: the value of exports of goods and services minus imports.
+  **Terms of trade**: the ratio of export prices to import prices (index = export price index ÷ import price index × 100).
+  **Gini coefficient**: a measure of inequality from 0 (perfect equality) to 1 (one person has everything).
+  **Lorenz curve**: a graph of the cumulative share of income (or wealth) against the cumulative share of households; the further it bows from the line of equality, the more unequal.
+  **Environmental sustainability**: using natural resources and the environment to meet present needs without compromising the ability of future generations to meet theirs (Brundtland, 1987).
+**Issue 1 — The changing labour market**
+  Definition: how the demand for and supply of labour — who works, in what jobs, on what terms and for what pay — is changing over time.
+  Measures (August 2026 unless stated): unemployment rate 4.6%; participation rate 67.1%; underemployment 6.2%; youth unemployment 10.8%; employment 14.84 million; Wage Price Index growth 3.2% a year (June quarter 2026); real wages (WPI growth minus CPI inflation — negative in mid-2026); gender pay gap 11.5% (November 2025); casual share of employees (about a fifth to a quarter); job vacancies; share of jobs in services (over three-quarters).
+**Issue 2 — International trade**
+  Definition: the exchange of goods and services across borders, and the policies that shape it.
+  Measures: exports and imports (goods exports \$46.3 billion in July 2026); balance of trade (a goods surplus of about \$1.9 billion in July 2026); current account balance; terms of trade (fell 1.6% in the June quarter 2026); trade as a share of GDP (roughly half); main trading partners (China takes about a third of goods exports); main exports (iron ore, coal, LNG, gold, education services, tourism); tariff rates.
+**Issue 3 — Distribution of income and wealth**
+  Definition: how income (a flow — wages, profits, rent, interest, dividends, transfers) and wealth (a stock — net assets such as housing, super, shares) are shared across households.
+  Measures: Gini coefficient for disposable income about 0.31 (2022–23) and for wealth about 0.61 (ABS); quintile shares — the top 20% of households hold about 63% of household wealth and the bottom 20% under 1% (ABS 2019–20); ratios of top to bottom incomes (P90/P10); poverty rate — 14.2% of people, 3.7 million, including 757 000 children, below a poverty line of 50% of median income (\$584 a week for a single adult; ACOSS/UNSW, 2022–23 data).
+**Issue 4 — Economics and environmental sustainability**
+  Definition: whether economic activity can continue without degrading the natural environment and resources future generations need.
+  Measures: greenhouse gas emissions (about 455.6 Mt CO₂-e in the year to March 2026, roughly a quarter below 2005 levels); emissions per person (about 16–17 t); renewable share of electricity (above 51% of the National Electricity Market in the December quarter 2025); EV share of new car sales (about a fifth); water extraction; land clearing; threatened species numbers; waste and recycling rates.
+**Worked example**
+  Labour force data: employed 14.84 million, unemployed 0.72 million, civilian population aged 15+ about 23.2 million. Calculate the unemployment and participation rates.
+    Labour force = 14.84 + 0.72 = 15.56 million.
+    Unemployment rate = 0.72 ÷ 15.56 × 100 ≈ 4.6%.
+    Participation rate = 15.56 ÷ 23.2 × 100 ≈ 67.1%.
+    Sense check: both match the ABS figures for August 2026.
+**Worked example 2**
+  An export price index rises from 100 to 112 while the import price index rises from 100 to 104. Calculate the new terms of trade and interpret it.
+    Terms of trade = 112 ÷ 104 × 100 ≈ 107.7.
+    It rose about 7.7%: each unit of exports now buys about 7.7% more imports, raising Australia's national income.
+**Going deeper**
+  Headline measures can mislead: unemployment can fall because discouraged job seekers stop looking (participation falls); a trade surplus can reflect weak imports in a downturn; the Gini doesn't show where inequality sits (top vs bottom); emissions per person can fall while total emissions rise with population.
+  Use several measures together and explain what each shows.
+**Common mistakes**
+  Confusing income (a flow) with wealth (a stock).
+  Calculating the unemployment rate as a share of the whole population rather than of the labour force.
+  Saying a higher Gini means more equality — higher means less equal.
+**Exam tips**
+  Define the issue in one sentence, then give three or four current, dated measures and say what each shows.
+**Connections**
+  Why the issue matters, local to global.
+  The factors behind the issue.
+  Measuring growth with real GDP and Alternative measures of living standards (Area of Study 1).
+**Practice questions**
+  Define the unemployment rate and the participation rate.
+    The unemployment rate is the percentage of the labour force that is unemployed; the participation rate is the percentage of the civilian population aged 15 and over that is in the labour force (employed or unemployed).
+  Distinguish between income and wealth.
+    Income is a flow of money received over a period (wages, profits, rent, interest, transfers); wealth is the stock of assets owned minus debts at a point in time (housing, super, shares).
+  What does a Gini coefficient of 0.61 for wealth, compared with 0.31 for income, show?
+    Wealth is distributed much more unequally than income in Australia.
+  Identify two measures used to track environmental sustainability.
+    Greenhouse gas emissions (total and per person) and the renewable share of electricity (also water use, land clearing, threatened species).
+**Flashcards**
+  Unemployment rate formula? :: Unemployed ÷ labour force × 100.
+  Participation rate formula? :: Labour force ÷ civilian population aged 15+ × 100.
+  Unemployment rate, August 2026? :: 4.6%.
+  Terms of trade formula? :: Export price index ÷ import price index × 100.
+  A Gini coefficient of 0 means perfect {{equality}}.
+  Income vs wealth? :: A flow over a period vs a stock of net assets.
+  Share of Australians below the poverty line (2022–23)? :: 14.2% (3.7 million).
+  Brundtland definition of sustainability? :: Meeting present needs without compromising future generations' ability to meet theirs.
+
+@ 5fafb7a0 U2.2.1.2 | Why the issue matters, local to global
+**In a sentence**
+  Each issue matters because it affects living standards at three levels — in local communities, across Australia and around the world — through jobs, incomes, prices, equity and the environment.
+**Key terms**
+  **Local level**: a town, region or community (e.g. the Latrobe Valley, Geelong, Melbourne's outer west).
+  **National level**: Australia as a whole.
+  **International level**: other countries and the global economy.
+**The changing labour market**
+  Local: the closure of Hazelwood power station (2017) cut about 750 jobs in the Latrobe Valley; regional towns with one major employer are most exposed to change.
+  National: employment is the main source of household income; unemployment wastes resources (inside the PPF) and raises welfare costs; weak real wages cut living standards; skills shortages limit growth (aggregate supply).
+  International: AI and automation, offshoring and global competition reshape jobs worldwide; migration links labour markets.
+**International trade**
+  Local: exporting regions (the Pilbara, wine regions, university towns) rely on trade; import competition has cut manufacturing jobs (car making ended in Australia in 2017).
+  National: trade is roughly half of GDP; exports fund imports of goods Australia doesn't make (phones, fuel, machinery); trade raises living standards through specialisation, lower prices and choice; it also exposes Australia to overseas shocks (tariffs, a slowdown in China).
+  International: trade links drive global growth and development; trade tensions (US tariffs from 2025, China's 2020–24 restrictions on Australian barley and wine) spread costs across countries.
+**Distribution of income and wealth**
+  Local: suburbs and regions differ sharply — median incomes in some inner-Melbourne suburbs are more than double those in parts of the outer west and regional Victoria.
+  National: high inequality can reduce opportunity, health and social cohesion; poverty (3.7 million people) lowers living standards; wealth concentrated in housing locks younger Australians out of home ownership.
+  International: global inequality between rich and poor countries; the UN Sustainable Development Goals include reducing inequality (Goal 10).
+**Environmental sustainability**
+  Local: bushfires (2019–20), floods and drought damage towns, farms and tourism; air and water quality.
+  National: climate change threatens agriculture, the Great Barrier Reef (tourism) and infrastructure; the energy transition changes industries and jobs; resource depletion affects future growth.
+  International: emissions are a global problem — Australia's are a small share of the world's (about 1%), but among the highest per person; action requires cooperation (the Paris Agreement).
+**Worked example**
+  Explain why the end of coal-fired power in the Latrobe Valley matters at local, national and international levels.
+    Local: loss of well-paid jobs, falling local spending and population, and a need to retrain workers.
+    National: the energy transition changes electricity prices and supply security; emissions fall, helping meet the 43% by 2030 target.
+    International: lower emissions contribute to global efforts under the Paris Agreement; investment in renewables links Australia to global clean-energy markets.
+**Going deeper**
+  Levels can conflict: a coal mine may benefit a local area and the national budget while adding to a global problem. Good answers show the trade-off.
+**Common mistakes**
+  Giving only national reasons. Cover all three levels.
+  Stating that an issue "is important" without explaining its effect on living standards.
+**Exam tips**
+  Use a three-part structure (local → national → international) with an Australian example at each level, linked to living standards.
+**Connections**
+  Defining and measuring the issue.
+  Perspectives of the economic agents.
+  Benefits of economic growth and Costs of economic growth (Area of Study 1).
+**Practice questions**
+  Explain why unemployment is an issue at the national level.
+    Unemployed workers are wasted resources, so output is lower (inside the PPF); households lose income; government pays more in benefits and collects less tax; and long-term unemployment harms health and wellbeing.
+  Why is international trade important to Australia's living standards?
+    Specialising in what Australia does best (minerals, energy, agriculture, education) and trading for other goods gives consumers more choice and lower prices, and export earnings pay for imports — raising material living standards.
+  Give a local example of the impact of the distribution of income and wealth.
+    Large differences in income and home ownership between inner and outer suburbs of Melbourne affect access to jobs, services and education.
+**Flashcards**
+  Three levels of importance? :: Local, national, international.
+  Local example of labour market change? :: Closure of Hazelwood (2017) in the Latrobe Valley.
+  Roughly what share of Australia's GDP is trade? :: About half.
+  UN Sustainable Development Goal on reducing inequality? :: Goal 10.
+  Australia's share of global emissions? :: About 1% (but high per person).
+  Why does unemployment matter nationally? :: Lost output, lost incomes, welfare costs, social costs.
+  When did car manufacturing end in Australia? :: 2017.
+
+@ 69114f4b U2.2.1.3 | The factors behind the issue
+**In a sentence**
+  Each issue is shaped by economic factors — technology, structural change, globalisation, demographics, prices, government policy and the business cycle — and a good analysis explains how each factor changes the extent of the issue.
+**Key terms**
+  **Structural change**: a long-term shift in the industries, jobs or skills in an economy.
+  **Globalisation**: the growing integration of economies through trade, investment, migration and technology.
+  **Comparative advantage**: the ability to produce a good at a lower opportunity cost than another country.
+  **Protectionism**: government measures that shield local producers from imports (tariffs, quotas, subsidies).
+  **Tariff**: a tax on imports.
+  **Negative externality**: a cost of production or consumption borne by third parties (e.g. pollution).
+  **Tragedy of the commons**: overuse of a shared resource (fish, clean air) because no one owns it.
+**The changing labour market**
+  Technology and AI: automate routine tasks (checkouts, data entry) while creating jobs in tech and care; raise demand for skills.
+  Structural change: the shift from manufacturing to services; strong growth in health care and social assistance (NDIS, aged care).
+  Demographics: an ageing population lowers participation and raises demand for carers; migration adds workers.
+  The business cycle: in a slowdown (2026), firms cut hiring and hours — unemployment rises.
+  Institutions: minimum wages, awards and enterprise bargaining set pay; the rise of casual and gig work (Uber, DoorDash) changes job security.
+  Education and skills mismatches: shortages of nurses, tradespeople and engineers alongside underemployment.
+  Gender norms and caring responsibilities contribute to the gender pay gap.
+**International trade**
+  Comparative advantage: Australia's abundant land and minerals give it a low opportunity cost in iron ore, coal, LNG and agriculture.
+  World growth and commodity prices: Chinese demand for steel drives iron ore prices and export earnings.
+  The exchange rate: a lower Australian dollar makes exports more competitive.
+  Competitiveness: productivity, costs and quality.
+  Protectionism and trade agreements: US tariffs (a 10% baseline from 2025 and up to 50% on steel and aluminium) and China's past restrictions reduce trade; free trade agreements (ChAFTA 2015, the UK agreement 2023, RCEP 2022) expand it.
+  Global disruptions: pandemics, shipping attacks, conflict and energy price shocks.
+**Distribution of income and wealth**
+  Labour market: differences in skills, hours and job security; weak real wages; the growth of high-paid technical jobs.
+  Returns to capital vs labour: when profits, rents and asset prices rise faster than wages, wealth owners gain most.
+  Housing: rising property prices have boosted the wealth of owners, while renters (often younger and lower income) fall behind; rents rose sharply in 2022–24.
+  Tax and transfer policy: progressive taxes and welfare reduce inequality; tax concessions on super and investment property mainly benefit higher earners.
+  Demographics and life stage: older households hold most wealth; inheritance passes it on.
+  Gender, disability, location and Aboriginal and Torres Strait Islander disadvantage (the Closing the Gap targets).
+**Environmental sustainability**
+  Economic and population growth: more production and consumption use more resources and produce more emissions and waste.
+  Market failure: negative externalities (polluters don't pay the cost of emissions) and the tragedy of the commons mean markets over-produce pollution.
+  The energy mix: coal and gas still generate much of Australia's electricity; renewables are growing fast.
+  Technology and costs: the falling cost of solar, wind and batteries speeds the transition; EVs cut transport emissions.
+  Prices and incentives: carbon pricing, subsidies and fuel prices change behaviour.
+  Consumer preferences and business practices.
+  Government policy and international cooperation (or its absence).
+**Worked example**
+  Australia can produce, per worker per week, 10 t of wheat or 5 machines; Country B can produce 4 t of wheat or 4 machines. Which should specialise in what, and why?
+    Opportunity cost of 1 t wheat: Australia gives up 5 ÷ 10 = 0.5 machines; B gives up 4 ÷ 4 = 1 machine. Australia has the comparative advantage in wheat.
+    Opportunity cost of 1 machine: Australia gives up 10 ÷ 5 = 2 t wheat; B gives up 4 ÷ 4 = 1 t. B has the comparative advantage in machines.
+    Australia should specialise in wheat and B in machines, then trade: total output rises and both can consume more — even though Australia is better at both (absolute advantage).
+**Going deeper**
+  Factors interact: technology can raise inequality (higher returns to skill) and help sustainability (cheaper renewables) at the same time; trade can raise average incomes while costing jobs in import-competing industries.
+**Common mistakes**
+  Listing factors without explaining how each changes the issue.
+  Confusing absolute advantage (more output) with comparative advantage (lower opportunity cost).
+**Exam tips**
+  For each factor: name it → explain the mechanism → give a current example → say whether it increases or reduces the extent of the issue.
+**Connections**
+  Defining and measuring the issue.
+  Responses and their effectiveness.
+  What changes aggregate demand and What changes aggregate supply (Area of Study 1).
+**Practice questions**
+  Explain how technological change affects the labour market.
+    It automates routine tasks, reducing demand for some workers (e.g. checkout operators), while creating demand for new skills (data analysts, technicians); workers without those skills may become unemployed or underemployed, and pay gaps may widen.
+  Explain how the exchange rate affects Australia's international trade.
+    A depreciation makes Australian exports cheaper for foreign buyers and imports dearer for Australians, so exports rise and imports fall; an appreciation does the opposite.
+  How does rising house prices affect the distribution of wealth?
+    Home owners' wealth rises while renters don't share in the gain and find it harder to buy, so wealth becomes more unequal — especially between older and younger Australians.
+  Why do markets tend to over-produce pollution?
+    Polluters don't pay the cost their emissions impose on others (a negative externality), so the price of polluting goods is too low and too much is produced.
+**Flashcards**
+  What is comparative advantage? :: Producing a good at a lower opportunity cost than another country.
+  What is a tariff? :: A tax on imports.
+  A cost borne by third parties is a negative {{externality}}.
+  Two factors changing the labour market? :: Technology/AI and structural change (also ageing, the business cycle).
+  How do rising house prices affect wealth inequality? :: Owners gain, renters fall behind — inequality rises.
+  Main reason Australia exports iron ore? :: Comparative advantage from abundant mineral resources.
+  What is the tragedy of the commons? :: Overuse of a shared, unowned resource.
+  Calculate: Australia 10 t wheat or 5 machines. Opportunity cost of 1 t wheat? :: 0.5 machines.
+
+@ a52e7b3b U2.2.1.4 | Perspectives of the economic agents
+**In a sentence**
+  Households (as consumers and workers), businesses, government and other groups see each issue differently because it affects their costs, incomes and goals differently — and a good analysis sets out each view and why it's held.
+**Key terms**
+  **Perspective**: the viewpoint of an economic agent, shaped by how the issue affects its interests.
+  **Stakeholder**: any group affected by an issue.
+  **Other economic agents**: unions, industry associations, environmental groups, welfare groups, regulators, international organisations (WTO, OECD, UN).
+**The changing labour market**
+  Households as workers: want secure jobs, fair pay and flexibility; unions (ACTU) sought a 6% minimum wage rise in 2026.
+  Households as consumers: benefit from flexible services (gig delivery) but worry about prices if wages rise faster than productivity.
+  Business: wants a flexible workforce and wage growth tied to productivity; employer groups sought a smaller rise.
+  Government: wants low unemployment, rising real wages and higher participation; balances fairness with inflation. The Fair Work Commission (independent) set a 6% rise in the national minimum wage and 4.75% for awards from 1 July 2026.
+**International trade**
+  Households as consumers: gain from cheaper imports and more choice; lose if tariffs raise prices.
+  Households as workers: exporters' workers (mining, farming) gain; workers in import-competing industries (manufacturing) may lose jobs.
+  Business: exporters want open markets and lower tariffs abroad; import-competing firms may want protection or anti-dumping duties.
+  Government: wants export growth, secure supply chains and good relations; negotiates FTAs and uses the WTO for disputes.
+  Others: the WTO promotes open trade; farm and mining lobbies push for market access; unions raise concerns about labour standards.
+**Distribution of income and wealth**
+  Low-income households: want higher welfare payments (JobSeeker), cheaper housing and higher minimum wages.
+  High-income and wealthy households: often oppose higher taxes on income, super or property.
+  Business: may support a skilled, healthy workforce but oppose higher company taxes or wage costs.
+  Government: balances equity with efficiency (high taxes can reduce incentives) and the budget.
+  Others: ACOSS and welfare groups call for higher payments; think tanks argue about tax reform.
+**Environmental sustainability**
+  Households: want lower energy bills and a safe climate; some install solar and batteries; others resist higher costs.
+  Business: renewable firms and investors gain; fossil fuel and heavy industry firms face higher costs; many businesses see opportunities in the transition.
+  Government: aims for net zero by 2050 while protecting jobs, energy security and prices; regions dependent on coal need support.
+  Others: environmental groups want faster action; farmers are exposed to climate risk; young people bear more of the future cost.
+**Worked example**
+  Set out the perspectives on the 6% rise in the national minimum wage (to \$26.44 an hour, \$1 004.90 a week) from 1 July 2026.
+    Low-paid workers: a real pay rise, since inflation was about 3.5–3.8%; higher material living standards.
+    Small businesses (e.g. cafés, retailers): higher labour costs; may raise prices, cut hours or hire fewer.
+    Government: supports fairer pay and narrowing the gender pay gap (many award workers are women), but watches the effect on inflation and jobs.
+    RBA: concerned whether wage rises above productivity growth add to inflation.
+**Going deeper**
+  Perspectives often reflect positive claims (what will happen) and normative values (what is fair). Separating them makes your analysis sharper.
+  The same person has several perspectives: a worker, a consumer, a renter and a future retiree.
+**Common mistakes**
+  Stating a perspective without the reason for it.
+  Treating each group as having one view — businesses differ (exporters vs import-competitors; renewables vs coal).
+**Exam tips**
+  For each agent: their interest → how the issue affects it → their view → evidence (a quote from a submission, a policy position).
+**Connections**
+  Why the issue matters, local to global.
+  Responses and their effectiveness.
+  The traditional view of the consumer, of business and of government (Unit 1).
+**Practice questions**
+  Explain why businesses and workers might hold different views on minimum wage increases.
+    Workers gain higher incomes and living standards; businesses face higher costs that cut profits, so they may prefer smaller rises tied to productivity.
+  Outline the perspectives of consumers and import-competing firms on tariffs.
+    Consumers generally oppose tariffs because they raise prices and reduce choice; import-competing firms may support them because they protect sales and jobs from foreign competition.
+  Why might a coal-mining region see climate policy differently from a capital city?
+    The region's jobs and incomes depend on coal, so it bears concentrated costs from the transition, while the benefits (lower emissions) are spread widely.
+**Flashcards**
+  What shapes an agent's perspective? :: How the issue affects its interests, costs and goals.
+  Minimum wage rise from 1 July 2026? :: 6% (NMW \$26.44/hr); awards +4.75%.
+  Which group represents unions nationally? :: The ACTU.
+  Consumers usually {{oppose}} tariffs because they raise prices.
+  Why do exporters favour free trade? :: Lower foreign tariffs open markets for their goods.
+  Welfare group calling for higher JobSeeker? :: ACOSS.
+  Can one person have several perspectives? :: Yes — worker, consumer, renter, future retiree.
+
+@ 85f74aa7 U2.2.1.5 | Responses and their effectiveness
+**In a sentence**
+  Governments, businesses, households and international bodies respond to each issue in different ways — laws, taxes, subsidies, agreements and changes in behaviour — and the analysis must judge how effective each response is.
+**Key terms**
+  **Economic response**: an action taken by an economic agent to address an issue.
+  **Government policy**: a law, tax, spending program or regulation used by government.
+  **Free trade agreement (FTA)**: a treaty that reduces trade barriers between countries.
+  **Progressive taxation**: higher incomes pay a higher percentage in tax.
+  **Transfer payment**: a government payment with nothing given in return (JobSeeker, Age Pension).
+  **Safeguard Mechanism**: the federal scheme requiring Australia's largest industrial emitters (over 100 000 t CO₂-e a year) to cut emissions below baselines that fall each year.
+**The changing labour market — responses**
+  National: the Fair Work Commission's Annual Wage Review (NMW \$24.95 → \$26.44 an hour from 1 July 2026, +6%; awards +4.75%); Secure Jobs, Better Pay Act 2022 (multi-employer bargaining, pay secrecy bans); Closing Loopholes laws ("same job, same pay" for labour hire; a right to disconnect from 2024); Fee-Free TAFE; Paid Parental Leave rising to 26 weeks by July 2026, with super paid on it; skilled migration settings.
+  Local: Victorian Government programs to retrain Latrobe Valley workers; council job programs.
+  International: ILO labour standards; cooperation on migration and skills recognition.
+  Business and households: training, flexible work, enterprise agreements; workers retraining or moving.
+**International trade — responses**
+  National: FTAs (ChAFTA 2015, Australia–UK 2023, RCEP 2022, CPTPP); WTO dispute action (which helped end China's barley and wine duties by 2024); Export Market Development Grants and Austrade support; Future Made in Australia production tax credits; anti-dumping duties on unfairly cheap imports.
+  International: WTO rules; G20 cooperation; diversifying trade towards India and South-East Asia.
+  Business: finding new markets when one closes (wine exporters moved to other markets during China's duties).
+**Distribution of income and wealth — responses**
+  Progressive income tax (2026–27 resident rates): 0% to \$18 200; 15% from \$18 201 to \$45 000; 30% to \$135 000; 37% to \$190 000; 45% above (plus the 2% Medicare levy). The 16% rate fell to 15% on 1 July 2026 and is legislated to fall to 14% in 2027.
+  Transfer payments: JobSeeker, the Age Pension, Family Tax Benefit, Commonwealth Rent Assistance.
+  Services: Medicare, public schools, social housing, the NDIS.
+  Minimum wages; a 20% cut to student HECS debts (2025).
+  International: UN Sustainable Development Goal 10; OECD global minimum corporate tax (15%).
+  Business and households: philanthropy, living-wage employers; households saving and investing.
+**Environmental sustainability — responses**
+  National targets: emissions 43% below 2005 levels by 2030, 62–70% by 2035, net zero by 2050.
+  Policies: the Safeguard Mechanism (baselines falling about 4.9% a year to 2030); the Capacity Investment Scheme (underwriting new renewables and storage); the New Vehicle Efficiency Standard (2025); the electric car discount (FBT exemption); the Cheaper Home Batteries program (from July 2025).
+  Victoria: net zero by 2045, 95% renewable electricity by 2035; CDS Vic container deposits; Solar Homes rebates; single-use plastics ban (2023).
+  Local: councils' food-and-garden-organics (FOGO) bins, tree-planting, community batteries.
+  International: the Paris Agreement and COP meetings; the EU's carbon border adjustment mechanism.
+  Business and households: renewable power purchase agreements, EVs, rooftop solar.
+**Judging effectiveness**
+  Did it achieve its aim? Use data (e.g. emissions fell; real wages rose or fell; the Gini changed).
+  At what cost (to the budget, to efficiency)?
+  With what side effects (e.g. minimum wage rises and jobs; tariffs and prices)?
+  For whom (equity)? Over what time frame?
+**Worked example**
+  Calculate the income tax (before offsets and the Medicare levy) in 2026–27 on taxable incomes of \$80 000 and \$200 000, and explain how this shows progressive taxation.
+    \$80 000: 15% × (45 000 − 18 200) = 15% × 26 800 = \$4 020; 30% × (80 000 − 45 000) = 30% × 35 000 = \$10 500. Total \$14 520; average rate 14 520 ÷ 80 000 ≈ 18.2%.
+    \$200 000: \$4 020 + 30% × (135 000 − 45 000) = \$27 000; + 37% × (190 000 − 135 000) = \$20 350; + 45% × (200 000 − 190 000) = \$4 500. Total \$55 870; average rate 55 870 ÷ 200 000 ≈ 27.9%.
+    The higher earner pays a larger share of their income (27.9% vs 18.2%), so the tax is progressive and narrows after-tax income gaps.
+**Worked example 2**
+  Evaluate the Safeguard Mechanism as a response to environmental sustainability.
+    Aim: cut emissions from about 215 of the largest industrial facilities (around 28% of national emissions) in line with the 2030 target.
+    Mechanism: baselines fall each year; facilities that beat them earn credits to sell, those that don't must buy credits — an incentive to cut emissions at the lowest cost.
+    Evidence: national emissions were about 25% below 2005 levels by early 2026, mostly from electricity; industrial emissions have fallen more slowly (industrial processes rose in the year to March 2026).
+    Limitations: use of offsets; exemptions and slow progress in some sectors.
+    Judgement: a sound market-based design that is partly effective so far; faster cuts in industry are needed to meet 2030.
+**Going deeper**
+  Responses interact: a carbon price and a subsidy for EVs work in the same direction; a minimum wage rise and a tax cut both lift low incomes but have different costs.
+  Many responses trade efficiency against equity (higher taxes vs incentives) or present costs against future benefits (climate action).
+**Common mistakes**
+  Describing a response without evaluating it.
+  Ignoring local and international responses.
+  Using out-of-date policy details — check the current year.
+**Exam tips**
+  For each response: who acted and at what level → what it does → the economic reasoning for why it should work → evidence of effect → costs and side effects → a judgement.
+**Connections**
+  The factors behind the issue: good responses target the causes.
+  Perspectives of the economic agents.
+  The roles of government (Unit 1): stabilisation, efficiency, redistribution.
+**Practice questions**
+  Explain how transfer payments reduce inequality.
+    They give income to people with low or no market income (the unemployed, pensioners, families with children), funded by progressive taxes, so the gap between high and low disposable incomes narrows.
+  Evaluate free trade agreements as a response to issues in international trade.
+    They lower tariffs and barriers, expanding export markets (e.g. ChAFTA boosted farm exports to China) and cutting import prices for consumers; but they can cost jobs in import-competing industries and don't protect against political trade restrictions, as China's 2020–24 measures showed.
+  Outline two government responses to the changing labour market and their aims.
+    Fee-Free TAFE — to train workers for areas of skills shortage; the Annual Wage Review — to protect the living standards of low-paid workers (6% NMW rise in 2026).
+  Calculate the income tax (2026–27 rates, before offsets and levy) on a taxable income of \$50 000.
+    15% × (45 000 − 18 200) = \$4 020; plus 30% × (50 000 − 45 000) = \$1 500. Total \$5 520.
+**Flashcards**
+  2026–27 tax rate on income from \$18 201 to \$45 000? :: 15% (down from 16%).
+  Top marginal tax rate? :: 45% above \$190 000.
+  Australia's 2030 emissions target? :: 43% below 2005 levels.
+  Australia's 2035 emissions target? :: 62–70% below 2005 levels.
+  What does the Safeguard Mechanism do? :: Requires large emitters to cut emissions below falling baselines.
+  A treaty that lowers trade barriers is a {{free trade agreement}}.
+  Two labour market responses? :: Annual Wage Review and Fee-Free TAFE (also Closing Loopholes laws).
+  Calculate tax on \$80 000 (2026–27, before offsets and levy). :: \$14 520.
+
+@ 59dfe365 U2.2.2.1 | Using economic terms precisely
+**In a sentence**
+  This skill is defining and correctly using the terms of your two issues — from participation rate and real wages to terms of trade, Gini coefficient and negative externality.
+**Key terms**
+  **Precision**: the exact term with its correct meaning, applied to the issue.
+**How to do it**
+  Build a glossary for each of your two issues (definition + current figure + example).
+  Keep pairs apart: unemployment vs underemployment; income vs wealth; balance of trade vs terms of trade; absolute vs comparative advantage; emissions total vs per person.
+  Define the term the first time you use it in an answer, then apply it.
+**Going deeper**
+  Quote measures with their units and dates — "the Gini coefficient for disposable income was about 0.31 in 2022–23" — so the term is anchored in evidence.
+**Worked example**
+  Correct: "The terms of trade is exports minus imports."
+    Corrected: "The balance of trade is exports minus imports; the terms of trade is the ratio of export prices to import prices."
+**Connections**
+  Every key knowledge point in this area.
+  Using economic terms precisely in Unit 1.
+**Practice questions**
+  Distinguish between unemployment and underemployment.
+    Unemployed people have no job but are actively looking and available; underemployed people have a job but want and are available for more hours.
+  Distinguish between the balance of trade and the terms of trade.
+    The balance of trade is the value of exports minus imports; the terms of trade is the ratio of export prices to import prices.
+**Flashcards**
+  Unemployment vs underemployment? :: No job and looking vs a job but wanting more hours.
+  Balance of trade vs terms of trade? :: Exports − imports vs export prices ÷ import prices.
+  Income is a flow; wealth is a {{stock}}.
+  Absolute vs comparative advantage? :: More output vs lower opportunity cost.
+
+@ 1ad38674 U2.2.2.2 | Researching an economic issue
+**In a sentence**
+  This skill is gathering information on an issue from a range of reliable local, national and international sources and combining it into an economic analysis.
+**Key terms**
+  **Range of sources**: official statistics, government and regulator reports, international organisations, research institutes, quality media and stakeholder submissions.
+**How to do it**
+  Labour market: ABS Labour Force and Wage Price Index; Fair Work Commission decisions; Jobs and Skills Australia.
+  Trade: ABS International Trade; DFAT trade statistics; WTO.
+  Inequality: ABS Survey of Income and Housing; ACOSS/UNSW Poverty and Inequality reports; AIHW; OECD.
+  Sustainability: DCCEEW's national greenhouse gas inventory; the Clean Energy Regulator; the Climate Change Authority; the IPCC.
+  Local sources: council reports, regional development bodies, local news.
+  Record figure, date, unit and source; note any bias (an industry lobby's report).
+  Synthesise by the investigation structure: definition and measures → factors → importance → perspectives → responses.
+**Going deeper**
+  Triangulate: check a surprising figure in a second source before using it.
+**Worked example**
+  Plan research on the question "Is Australia's labour market getting better or worse for young people?"
+    Data: youth unemployment 10.8% (Aug 2026, ABS) vs overall 4.6%; underemployment; casual share among young workers.
+    Factors: the 2026 slowdown; entry-level jobs affected by AI; minimum wage changes (junior rates).
+    Perspectives: young workers, employers of juniors, government.
+    Responses: Fee-Free TAFE, apprenticeship incentives, junior pay rate reforms.
+**Connections**
+  Every key knowledge point in this area.
+  Gathering and synthesising economic data (Area of Study 1).
+**Practice questions**
+  Name two reliable sources of data on the distribution of income and wealth.
+    ABS Survey of Income and Housing; ACOSS/UNSW Poverty and Inequality reports (also AIHW and OECD).
+  Why should you check a surprising statistic in a second source?
+    To confirm it is accurate and current, and not a misreading or a biased figure.
+**Flashcards**
+  Official source of Australia's emissions data? :: DCCEEW's National Greenhouse Gas Inventory.
+  Source of minimum wage decisions? :: The Fair Work Commission.
+  Checking a figure in a second source is to {{triangulate}}.
+  Five-part structure for an issue investigation? :: Definition/measures, factors, importance, perspectives, responses.
+
+@ ef3c499e U2.2.2.3 | Drawing conclusions from economic data
+**In a sentence**
+  This skill is identifying trends, patterns, similarities and differences in data about your issues — over time, between groups and between places — and drawing conclusions from them.
+**Key terms**
+  **Trend**: the general direction over time.
+  **Comparison**: similarities and differences between groups, regions or countries.
+  **Conclusion**: a judgement the evidence supports.
+**How to do it**
+  Describe: the direction, size and timing of change, with numbers and dates.
+  Compare: across groups (men vs women, young vs all workers), places (Victoria vs national, Australia vs OECD) or measures.
+  Explain: link the pattern to economic factors.
+  Conclude: what does it show about the issue and living standards?
+**Going deeper**
+  Watch for the difference between percentage changes and percentage-point changes: unemployment rising from 4.0% to 4.6% is a 0.6 percentage-point rise, a 15% increase.
+**Worked example**
+  WPI growth 3.2% vs CPI inflation 3.8% (year to June 2026). What conclusion can be drawn about real wages?
+    Real wage growth ≈ 3.2 − 3.8 = −0.6%.
+    Conclusion: on average, wages bought about 0.6% less than a year earlier — the material living standards of wage earners fell, reversing the small real gains of 2024–25.
+**Connections**
+  Spotting trends in economic data (Area of Study 1).
+  Defining and measuring the issue.
+**Practice questions**
+  Unemployment rose from 4.0% to 4.6%. Express the change in percentage points and as a percentage.
+    A 0.6 percentage-point rise, which is a 15% increase (0.6 ÷ 4.0 × 100).
+  The Gini for income fell from 0.323 (2021–22) to about 0.31 (2022–23). What does this suggest?
+    Income inequality decreased slightly over the year.
+**Flashcards**
+  Real wage growth ≈ ? :: Wage growth − inflation.
+  4.0% to 4.6% is a rise of 0.6 {{percentage points}}.
+  Three kinds of comparison? :: Over time, between groups, between places.
+  Last step in analysing data? :: Draw a conclusion about the issue and living standards.
+
+@ 8727e039 U2.2.2.4 | Evaluating responses to the issue
+**In a sentence**
+  This skill is judging how well the responses of governments, businesses and others address an issue, using evidence and economic criteria to reach a clear conclusion.
+**Key terms**
+  **Evaluate**: make a judgement about value or effectiveness, supported by evidence.
+  **Criteria**: effectiveness in meeting the aim, cost, efficiency, equity, side effects, time frame.
+**How to do it**
+  State the response and its aim.
+  Explain the economic reasoning for why it should work (e.g. a subsidy lowers costs, increasing supply of renewables).
+  Present evidence of outcomes with dates.
+  Weigh costs, side effects and who gains or loses.
+  Conclude: effective, partly effective or ineffective — and what would improve it.
+**Going deeper**
+  Separate the design of a response from its implementation — a sound idea can underperform if it's under-funded or has loopholes.
+**Worked example**
+  Evaluate the 6% minimum wage rise (July 2026) as a response to low-paid workers' living standards.
+    Aim: raise the real incomes of about 2.7 million award and minimum-wage workers.
+    Reasoning: with inflation around 3.5–3.8%, a 6% rise gives minimum-wage workers a real increase of about 2%.
+    Costs and side effects: higher costs for small businesses; possible fewer hours or jobs; may add slightly to inflation.
+    Equity: helps many women and young workers, narrowing gaps.
+    Conclusion: effective in raising real incomes for the low-paid in the short term; its effect on jobs depends on how much the economy slows.
+**Connections**
+  Responses and their effectiveness.
+  Weighing trade-offs, costs and benefits (Unit 1).
+**Practice questions**
+  What criteria should be used to evaluate a response to an economic issue?
+    Whether it achieves its aim (with evidence), its cost and efficiency, its equity (who gains and loses), side effects and its time frame.
+  Why might a well-designed policy still be judged only partly effective?
+    Implementation problems, loopholes, under-funding or offsetting factors (like a slowing economy) can limit its results.
+**Flashcards**
+  What does "evaluate" require? :: A judgement supported by evidence and criteria.
+  Five evaluation criteria? :: Effectiveness, cost/efficiency, equity, side effects, time frame.
+  Approx. real rise from a 6% wage increase with 3.8% inflation? :: About 2%.
+  Every evaluation ends with a {{conclusion}}.

@@ -1,0 +1,822 @@
+% VCE Economics — Unit 1, Area of Study 2: decision-making in markets.
+% Original study notes. Format: see src/courses/notesPack.ts. Money is written \$ (a bare $ starts maths).
+% Running example: Australian supermarkets (groceries). Diagrams are described in words.
+
+@ f197ba44 U1.2.1.1 | Perfect competition
+**In a sentence**
+  Perfect competition is an ideal market with so many sellers of an identical product, and such free entry and full information, that no single firm can influence the price.
+**Key terms**
+  **Market**: any arrangement where buyers and sellers exchange a good or service for a price.
+  **Perfect competition**: a market structure with many buyers and sellers, a homogeneous product, free entry and exit, perfect information and perfect mobility of resources.
+  **Price taker**: a firm that must accept the market price because it is too small to affect it.
+  **Homogeneous product**: one seller's product is identical to every other seller's.
+  **Barriers to entry**: obstacles that stop new firms entering a market (high start-up costs, licences, patents).
+**The assumptions**
+  Many buyers and many sellers, each too small to affect the price.
+  Homogeneous products, so buyers don't care whom they buy from.
+  Free entry and exit: no barriers, so firms enter when profits are high and leave when they're low.
+  Perfect knowledge: buyers and sellers know all prices and qualities.
+  Perfect mobility of resources: land, labour and capital move easily to where they earn most.
+  No government interference in prices, and no collusion between sellers.
+**Why it matters**
+  It is the benchmark: prices are pushed down to the lowest level that covers costs, output is as high as it can efficiently be, and resources go where consumers value them most — so living standards are maximised.
+  Real markets are judged by how far they fall short of it.
+**Real-world approximations**
+  Fresh fruit and vegetable stalls at the Queen Victoria Market: many sellers, similar produce, prices on display.
+  Australian wheat growers: thousands of farms selling a near-identical grain at the world price.
+  Foreign exchange and share markets: huge numbers of traders and near-instant information.
+**Worked example**
+  Explain why a single wheat farmer in the Wimmera is a price taker.
+    There are thousands of wheat growers in Australia and worldwide, all selling a near-identical product.
+    If the farmer asked more than the market price, buyers would simply buy from someone else; charging less would lose revenue for no reason.
+    So the farmer must accept the market (world) price and decides only how much to produce.
+**Going deeper**
+  No real market meets every assumption — even wheat varies in grade, and supermarkets are far from it. Perfect competition is a model, useful because it shows what competition achieves at its strongest.
+  In the long run, free entry drives economic profit to "normal" levels (just enough to keep firms in the industry).
+**Common mistakes**
+  Saying perfectly competitive firms "set" the price. The market sets it; each firm is a price taker.
+  Confusing homogeneous with high-quality. It means identical, not good.
+**Exam tips**
+  Know the assumptions as a list and be ready to test a real market against each one.
+**Connections**
+  The law of demand and The law of supply: the forces that set the price.
+  Market power and market structures: perfect competition is one end of the spectrum.
+  The market mechanism and relative prices.
+**Practice questions**
+  Outline four assumptions of a perfectly competitive market.
+    Many buyers and sellers; a homogeneous product; free entry and exit; perfect information (also perfect resource mobility and no government interference).
+  Why does no real market meet all the assumptions? Use an example.
+    Products usually differ and information isn't perfect. Even at a produce market, stalls differ in quality, location and service, so buyers don't treat them as identical.
+  Explain why perfect competition is thought to maximise living standards.
+    Competition pushes prices down to the level that just covers costs and resources flow to what consumers value most, so output is high and prices low.
+**Flashcards**
+  Six assumptions of perfect competition? :: Many buyers and sellers, homogeneous product, free entry/exit, perfect information, perfect resource mobility, no government interference.
+  What is a price taker? :: A firm too small to affect the market price, so it accepts it.
+  A homogeneous product is {{identical}} whichever firm sells it.
+  Close Australian example of perfect competition? :: Wheat growing or fresh produce at a market.
+  What are barriers to entry? :: Obstacles that stop new firms entering a market.
+  Why is perfect competition a benchmark? :: It shows prices, output and resource allocation under the strongest competition.
+  What happens to high profits under free entry? :: New firms enter until profits fall to normal levels.
+
+@ 7c3377b8 U1.2.1.2 | The law of demand
+**In a sentence**
+  The law of demand says that, other things being equal, as the price of a good rises the quantity demanded falls, and as the price falls the quantity demanded rises — so the demand curve slopes downward.
+**Key terms**
+  **Demand**: the quantity of a good or service consumers are willing and able to buy at each possible price, over a period of time.
+  **Quantity demanded**: the amount bought at one particular price.
+  **Law of demand**: ceteris paribus, price and quantity demanded are inversely related.
+  **Demand schedule**: a table of prices and the quantity demanded at each.
+  **Demand curve**: a graph of the demand schedule, with price on the vertical axis and quantity on the horizontal.
+**Why the curve slopes down**
+  Income effect: a lower price raises consumers' real income (purchasing power), so they can buy more.
+  Substitution effect: when a good becomes cheaper relative to substitutes, consumers switch towards it.
+  Diminishing marginal utility: each extra unit gives less satisfaction, so people buy more only at a lower price.
+**Willing and able**
+  Demand counts only wants backed by the ability to pay. Wanting a house isn't demand unless you can buy one.
+**Worked example**
+  A demand schedule for strawberries (punnets per week at a market): \$2 → 900; \$3 → 700; \$4 → 500; \$5 → 300. Describe the curve and explain what happens if the price rises from \$3 to \$4.
+    Plotting price (vertical) against quantity (horizontal) gives a downward-sloping line.
+    A rise from \$3 to \$4 lowers quantity demanded from 700 to 500 punnets: a movement up along the curve (a contraction of demand).
+    Reasons: some buyers switch to cheaper fruit (substitution effect) and each dollar buys less (income effect).
+**Going deeper**
+  How much quantity responds depends on price elasticity of demand: necessities with few substitutes (petrol, insulin) respond little; luxuries with many substitutes (restaurant meals, a particular brand of chips) respond a lot. (Elasticity is studied in depth in Unit 3.)
+  Rare exceptions exist: some status goods (luxury handbags) may sell more when pricier because the price signals exclusivity.
+**Common mistakes**
+  Writing "demand falls" when price rises. Quantity demanded falls; demand (the whole curve) hasn't changed.
+  Putting quantity on the vertical axis.
+**Exam tips**
+  Always include "ceteris paribus" and one reason (income or substitution effect) when stating the law.
+**Connections**
+  The traditional view of the consumer: diminishing marginal utility.
+  Movement along vs shift of demand.
+  Changes in equilibrium.
+**Practice questions**
+  State the law of demand.
+    Ceteris paribus, as the price of a good rises the quantity demanded falls, and as the price falls the quantity demanded rises.
+  Explain two reasons the demand curve slopes downward.
+    The substitution effect: a cheaper good becomes relatively more attractive than its substitutes. The income effect: a lower price raises consumers' purchasing power so they can afford more.
+  What is the difference between "demand" and "quantity demanded"?
+    Demand is the whole relationship between price and quantity (the curve); quantity demanded is the amount bought at one particular price (a point on it).
+**Flashcards**
+  Law of demand? :: Ceteris paribus, price and quantity demanded are inversely related.
+  Demand means consumers are {{willing and able}} to buy.
+  Income effect? :: A lower price raises purchasing power, so more is bought.
+  Substitution effect? :: A cheaper good is bought instead of relatively dearer substitutes.
+  Which axis is price on? :: The vertical axis.
+  Price rises \$3 → \$4 and quantity falls 700 → 500. What is this called? :: A contraction of demand (movement along the curve).
+  Demand vs quantity demanded? :: The whole curve vs one point on it.
+
+@ 51027179 U1.2.1.3 | What shifts demand
+**In a sentence**
+  Changes in anything other than the good's own price — income, the prices of substitutes and complements, tastes, interest rates, population and confidence — shift the whole demand curve left or right.
+**Key terms**
+  **Non-price factor (condition of demand)**: anything other than the good's own price that affects demand.
+  **Increase in demand**: more is demanded at every price; the curve shifts right.
+  **Decrease in demand**: less is demanded at every price; the curve shifts left.
+  **Disposable income**: income after tax and including transfer payments — what households can spend or save.
+  **Substitute**: a good used in place of another (beef and chicken; Coles and Woolworths groceries).
+  **Complement**: a good used together with another (cars and petrol; printers and ink).
+  **Consumer confidence**: how optimistic households feel about the economy and their finances.
+**The factors**
+  Disposable income: higher income → more demand for most goods (normal goods). A tax cut or wage rise shifts demand right; job losses shift it left.
+  Prices of substitutes: if the price of beef rises, demand for chicken increases.
+  Prices of complements: if petrol prices rise, demand for large SUVs decreases.
+  Tastes and preferences: fashions, advertising and health trends — the shift towards oat and almond milk, or a viral product on TikTok.
+  Interest rates: higher rates raise loan repayments, decreasing demand for goods bought on credit — houses, cars, renovations. The 2026 rate rises to 4.60% cooled the housing market (values fell 3.1% over the three months to August 2026).
+  Population and demographics: migration raises demand for rentals; an ageing population raises demand for aged care and health services.
+  Consumer confidence: optimistic households spend more (demand right); worried ones save.
+**Worked example**
+  Predict the effect on demand for new apartments in Melbourne of each change: (a) interest rates rise; (b) net overseas migration increases; (c) incomes fall in a downturn.
+    (a) Higher mortgage repayments make buying less affordable, so demand decreases — the curve shifts left.
+    (b) More people need housing, so demand increases — the curve shifts right.
+    (c) Lower disposable income reduces the ability to buy, so demand decreases — left.
+**Going deeper**
+  Inferior goods are the exception to the income rule: when incomes rise, demand for cheap substitutes (generic brands, instant noodles, bus travel for some) can fall as people trade up.
+  Expectations matter too: if buyers expect prices to rise, they buy now (demand increases now).
+**Common mistakes**
+  Listing the good's own price as a non-price factor. Own price moves along the curve.
+  Mixing up substitutes and complements.
+  Forgetting that a factor can shift demand either way — say which way and why.
+**Exam tips**
+  Use the chain: factor changes → effect on willingness/ability to buy → demand increases/decreases → curve shifts right/left → (if asked) effect on equilibrium price and quantity.
+**Connections**
+  Movement along vs shift of demand.
+  Changes in equilibrium.
+  What changes aggregate demand (Unit 2): the same factors at the level of the whole economy.
+**Practice questions**
+  Explain how a rise in interest rates would affect demand for new cars.
+    Most cars are bought with loans; higher rates raise repayments, so fewer people are willing or able to buy. Demand decreases and the curve shifts left.
+  If the price of coffee rises sharply, what happens to demand for tea? Explain.
+    Tea is a substitute, so some coffee drinkers switch: demand for tea increases (shifts right).
+  Explain the difference between a substitute and a complement, with an example of each.
+    A substitute is used instead of another good (butter and margarine); a complement is used with it (phones and phone cases).
+  How might falling consumer confidence affect demand for holidays?
+    Worried households save more and delay discretionary spending, so demand for holidays decreases (shifts left).
+**Flashcards**
+  What shifts the demand curve? :: A change in a non-price factor.
+  Seven non-price demand factors? :: Disposable income, substitute prices, complement prices, tastes, interest rates, population/demographics, consumer confidence.
+  Price of beef rises → demand for chicken? :: Increases (shifts right) — substitutes.
+  Petrol price rises → demand for SUVs? :: Decreases (shifts left) — complements.
+  Higher interest rates shift demand for houses to the {{left}}.
+  What is disposable income? :: Income after tax, including transfers — what households can spend or save.
+  An increase in demand shifts the curve to the {{right}}.
+
+@ d8b17950 U1.2.1.4 | Movement along vs shift of demand
+**In a sentence**
+  A change in a good's own price moves consumers along the demand curve (a change in quantity demanded), while a change in any non-price factor shifts the whole curve (a change in demand).
+**Key terms**
+  **Movement along the demand curve**: a change in quantity demanded caused only by a change in the good's own price.
+  **Extension of demand**: a movement down the curve — price falls, quantity demanded rises.
+  **Contraction of demand**: a movement up the curve — price rises, quantity demanded falls.
+  **Shift of the demand curve**: a change in demand at every price caused by a non-price factor.
+**Telling them apart**
+  Ask: did the good's own price change? If yes → movement along. If something else changed → shift.
+  Movement: same curve, different point. Shift: a new curve.
+**Describing the diagram**
+  Movement: one curve D; price falls from P1 to P2 and quantity demanded rises from Q1 to Q2, moving from point A down to point B on D.
+  Shift: D1 moves right to D2 (increase) or left to D3 (decrease); at the same price, the quantity demanded is now higher (or lower).
+**Worked example**
+  For the market for avocados, say whether each is a movement or a shift, and which direction: (a) a bumper harvest lowers the price of avocados; (b) a celebrity diet makes avocados trendy; (c) the price of tomatoes (often eaten with avocado) doubles.
+    (a) Movement along: the avocado's own price has fallen, so quantity demanded rises — an extension. (The harvest shifts supply; demand responds by moving along its curve.)
+    (b) Shift right: tastes have changed, so demand increases at every price.
+    (c) Shift left: a complement is dearer, so demand for avocados decreases.
+**Going deeper**
+  In real markets both happen at once: a demand increase raises price, and that price rise then causes a movement along the supply curve. Keep the cause (shift) and the response (movement) separate in your explanation.
+**Common mistakes**
+  Saying "demand increases" when price falls. That's an increase in quantity demanded (an extension).
+  Shifting the demand curve in response to a supply change.
+**Exam tips**
+  Use the exact words: "extension/contraction of demand" for movements; "increase/decrease in demand" for shifts.
+**Connections**
+  The law of demand: movements along the curve.
+  What shifts demand: the causes of shifts.
+  Changes in equilibrium.
+**Practice questions**
+  Distinguish between a movement along a demand curve and a shift of the curve.
+    A movement is caused by a change in the good's own price and changes quantity demanded; a shift is caused by a change in a non-price factor and changes demand at every price.
+  The price of Netflix subscriptions rises. What happens to the quantity demanded of Netflix, and to demand for Stan (a substitute)?
+    Quantity demanded of Netflix falls — a contraction along its demand curve. Demand for Stan increases — its curve shifts right.
+  What terms describe a movement down the demand curve and a shift to the left?
+    An extension of demand; a decrease in demand.
+**Flashcards**
+  What causes a movement along the demand curve? :: A change in the good's own price.
+  What causes a shift of the demand curve? :: A change in a non-price factor.
+  Price falls, quantity demanded rises: an {{extension}} of demand.
+  Price rises, quantity demanded falls: a {{contraction}} of demand.
+  More demanded at every price? :: An increase in demand (shift right).
+  Tastes turn against a product. Movement or shift? :: Shift left (decrease in demand).
+  Why doesn't a supply change shift demand? :: The price change it causes moves consumers along the existing demand curve.
+
+@ a3ce3f90 U1.2.1.5 | The law of supply
+**In a sentence**
+  The law of supply says that, other things being equal, as the price of a good rises producers supply more of it, and as the price falls they supply less — so the supply curve slopes upward.
+**Key terms**
+  **Supply**: the quantity of a good or service producers are willing and able to offer for sale at each possible price, over a period of time.
+  **Quantity supplied**: the amount offered at one particular price.
+  **Law of supply**: ceteris paribus, price and quantity supplied are positively (directly) related.
+  **Supply schedule / supply curve**: a table / graph of prices and quantities supplied.
+**Why the curve slopes up**
+  Profit incentive: a higher price means more profit per unit, so firms want to sell more.
+  Covering rising costs: producing extra units usually costs more per unit (overtime wages, less suitable land, older machines brought back into use), so firms produce more only at a higher price.
+  Resource movement: higher prices attract resources and new producers into the market (e.g. farmers switching paddocks to a crop whose price has risen).
+**Worked example**
+  A supply schedule for strawberries (punnets per week): \$2 → 300; \$3 → 500; \$4 → 700; \$5 → 900. What happens if the price rises from \$3 to \$4, and why?
+    Quantity supplied rises from 500 to 700 punnets: a movement up along the supply curve (an extension of supply).
+    Growers earn more per punnet, so they pick more, extend their season with greenhouses and may plant more — worthwhile only at the higher price.
+**Going deeper**
+  How much supply responds depends on time and flexibility: in the very short run a farmer can't grow more strawberries, so supply is fixed; over a season or years supply is much more responsive. Price elasticity of supply is covered in Unit 3.
+**Common mistakes**
+  Writing "supply increases" when price rises. Quantity supplied increases (an extension); supply hasn't shifted.
+  Confusing supply (producers) with demand (consumers).
+**Exam tips**
+  State the law with "ceteris paribus" and give the profit-incentive reason.
+**Connections**
+  The traditional view of business: profit maximisation drives supply.
+  Movement along vs shift of supply.
+  Changes in equilibrium.
+**Practice questions**
+  State the law of supply and explain why the supply curve slopes upward.
+    Ceteris paribus, as price rises quantity supplied rises. Higher prices raise profit per unit and allow firms to cover the higher costs of producing extra units, so they offer more.
+  Why might the quantity of strawberries supplied barely change in the week after a price rise?
+    Supply can't respond quickly: crops take time to grow, so in the very short run quantity is almost fixed.
+  Distinguish between supply and quantity supplied.
+    Supply is the whole relationship between price and quantity supplied (the curve); quantity supplied is the amount offered at one price.
+**Flashcards**
+  Law of supply? :: Ceteris paribus, price and quantity supplied are positively related.
+  The supply curve slopes {{upward}}.
+  Main reason higher prices raise quantity supplied? :: More profit per unit (and it covers rising extra costs).
+  Price rises and quantity supplied rises: what is it called? :: An extension of supply (movement along).
+  Supply vs quantity supplied? :: The whole curve vs one point on it.
+  Why is supply less responsive in the very short run? :: Production can't be changed quickly (e.g. crops take time to grow).
+  Calculate: at \$3 supply is 500, at \$4 it is 700. Change in quantity supplied? :: +200 punnets.
+
+@ 01ffb959 U1.2.1.6 | What shifts supply
+**In a sentence**
+  Changes in the costs of production, technology, productivity, climatic conditions and other disruptions shift the whole supply curve — right when producing becomes easier or cheaper, left when it becomes harder or dearer.
+**Key terms**
+  **Non-price factor (condition of supply)**: anything other than the good's own price that affects supply.
+  **Increase in supply**: more is supplied at every price; the curve shifts right.
+  **Decrease in supply**: less is supplied at every price; the curve shifts left.
+  **Costs of production**: the prices of inputs — wages, energy, raw materials, rent, interest, taxes.
+  **Productivity**: output per unit of input (e.g. output per worker per hour).
+  **Technology**: the methods and equipment used in production.
+**The factors**
+  Costs of production: higher wages, energy or raw material prices reduce profit per unit, so supply decreases (left). Fuel costs rose in 2026 as conflict in the Middle East pushed up oil prices, decreasing supply in transport-heavy industries. Taxes act like a cost; subsidies lower costs.
+  Technology: better methods lower costs — robotic milking, GPS-guided tractors, AI in logistics — so supply increases (right).
+  Productivity: more output from the same inputs (better training, better management) lowers cost per unit, so supply increases.
+  Climatic conditions and other disruptions: droughts, floods, bushfires, pandemics, strikes and shipping disruptions cut supply. The 2022 east-coast floods decreased the supply of lettuce so sharply that iceberg lettuces sold for over \$10 each.
+  Also: the number of sellers (new entrants increase supply) and prices of other goods producers could make (if canola prices rise, farmers switch land from wheat — wheat supply decreases).
+**Worked example**
+  Explain the effect on the supply of beef of (a) a severe drought in Queensland; (b) cheaper feed grain; (c) a new vaccine that cuts cattle disease.
+    (a) Less pasture and water: fewer cattle can be raised and some are sold off early, so supply falls over time — the curve shifts left (and there may be a short-run rise as herds are sold off).
+    (b) Lower cost of production: more profit per head, so supply increases — shifts right.
+    (c) Higher productivity: fewer losses per herd, so more beef from the same inputs — supply increases, shifts right.
+**Going deeper**
+  Timing matters: a drought can raise beef supply in the short run (graziers sell stock they can't feed) and cut it for years afterwards (the herd must be rebuilt).
+  Some disruptions hit supply globally at once — COVID in 2020–21, Red Sea shipping attacks in 2024 — so every producer's costs rise together and prices rise across countries.
+**Common mistakes**
+  Listing consumer factors (income, tastes) as supply factors.
+  Saying a cost rise causes a movement along supply — it shifts the curve.
+**Exam tips**
+  Chain: factor → effect on costs or ability to produce → supply increases/decreases → shift right/left → effect on price and quantity.
+**Connections**
+  Movement along vs shift of supply.
+  Businesses and incentives: taxes and subsidies act on costs.
+  What changes aggregate supply (Unit 2).
+**Practice questions**
+  Explain how an improvement in technology affects the supply of a good.
+    New technology lowers the cost of producing each unit or raises output from the same inputs, so firms are willing to supply more at every price: supply increases and the curve shifts right.
+  Why did lettuce prices soar after the 2022 floods?
+    The floods destroyed crops in key growing regions, decreasing supply sharply (a shift left) while demand was unchanged, so the equilibrium price rose.
+  A large rise in electricity prices affects a bakery. Predict the effect on the supply of bread.
+    Higher energy costs reduce profit per loaf, so the bakery (and others) supply less at every price: supply decreases, the curve shifts left.
+**Flashcards**
+  What shifts the supply curve? :: A change in a non-price factor.
+  Four non-price supply factors in the study design? :: Costs of production, technology, productivity, climatic conditions and other disruptions.
+  Higher wages shift supply to the {{left}}.
+  Better technology shifts supply to the {{right}}.
+  What is productivity? :: Output per unit of input.
+  Example of a disruption to supply? :: Floods, drought, bushfires, pandemics, shipping disruptions.
+  Canola prices rise. Effect on wheat supply? :: Decreases — farmers switch land to canola.
+
+@ 1ad528e8 U1.2.1.7 | Movement along vs shift of supply
+**In a sentence**
+  A change in the good's own price moves producers along the supply curve (a change in quantity supplied), while a change in a non-price factor shifts the whole curve (a change in supply).
+**Key terms**
+  **Extension of supply**: a movement up the supply curve — price rises, quantity supplied rises.
+  **Contraction of supply**: a movement down the supply curve — price falls, quantity supplied falls.
+  **Increase in supply**: the curve shifts right — more supplied at every price.
+  **Decrease in supply**: the curve shifts left — less supplied at every price.
+**Telling them apart**
+  Did the good's own price change? → movement along. Did costs, technology, productivity, weather or another non-price factor change? → shift.
+**Describing the diagram**
+  Movement: on one curve S, price rises from P1 to P2 and quantity supplied rises from Q1 to Q2 (point A to point B, up the curve).
+  Shift: S1 moves right to S2 (increase) or left to S3 (decrease). At the same price, the quantity supplied is now higher (or lower).
+**Worked example**
+  In the market for coffee beans, classify: (a) demand for coffee rises and the price of beans rises; (b) frost destroys a large share of Brazil's crop; (c) growers adopt a higher-yielding variety.
+    (a) Movement along supply: the higher price leads to an extension of supply (the demand curve is what shifted).
+    (b) Shift left: a climatic disruption decreases supply.
+    (c) Shift right: higher productivity increases supply.
+**Going deeper**
+  "Supply" in everyday speech often means stock on hand. In economics it means the whole schedule of willingness to sell at each price — keep the technical meaning.
+**Common mistakes**
+  Shifting supply in response to a demand change.
+  Using "increase in supply" for an extension.
+**Exam tips**
+  In a market-change question, identify first which curve shifts and why; then describe the movement along the other curve.
+**Connections**
+  The law of supply: movements.
+  What shifts supply: shifts.
+  Changes in equilibrium.
+**Practice questions**
+  Explain the difference between an extension of supply and an increase in supply.
+    An extension is a movement up the curve caused by a higher price for the good; an increase is a rightward shift of the curve caused by a non-price factor such as lower costs.
+  The price of lithium rises because demand from battery makers surges. Describe what happens to lithium supply.
+    The supply curve doesn't shift; producers respond to the higher price by moving up along it — an extension of supply (more is mined).
+  What would cause a contraction of supply?
+    A fall in the good's own price, so producers offer less.
+**Flashcards**
+  What causes a movement along the supply curve? :: A change in the good's own price.
+  What causes a shift of the supply curve? :: A change in a non-price factor.
+  Price rises, quantity supplied rises: an {{extension}} of supply.
+  More supplied at every price? :: An increase in supply (shift right).
+  A frost destroys crops. Movement or shift? :: Shift left (decrease in supply).
+  Demand rises and price rises. What happens on the supply side? :: An extension of supply — a movement along, no shift.
+  Price falls, quantity supplied falls: a {{contraction}} of supply.
+
+@ 0ec49ab9 U1.2.1.8 | Changes in equilibrium
+**In a sentence**
+  The market settles where quantity demanded equals quantity supplied; when demand or supply shifts, a shortage or surplus appears and the price moves until a new equilibrium is reached.
+**Key terms**
+  **Equilibrium**: the price and quantity at which quantity demanded equals quantity supplied, so the market clears.
+  **Equilibrium price (market-clearing price)**: the price at which the market clears.
+  **Shortage (excess demand)**: quantity demanded exceeds quantity supplied at the current price.
+  **Surplus (excess supply)**: quantity supplied exceeds quantity demanded at the current price.
+**How the market reaches equilibrium**
+  Below equilibrium there is a shortage: buyers compete for scarce goods and sellers raise prices; quantity demanded contracts and quantity supplied extends until they are equal.
+  Above equilibrium there is a surplus: unsold stock builds up and sellers cut prices; quantity demanded extends and quantity supplied contracts until they are equal.
+**The four basic changes**
+  Increase in demand (shift right): price rises, quantity rises.
+  Decrease in demand (shift left): price falls, quantity falls.
+  Increase in supply (shift right): price falls, quantity rises.
+  Decrease in supply (shift left): price rises, quantity falls.
+**Two changes at once**
+  If both curves shift, one of the outcomes is uncertain. Demand and supply both increase: quantity rises, price could go either way (it depends on which shift is bigger). Demand increases while supply decreases: price rises, quantity uncertain.
+**Worked example**
+  Strawberries (kg per week): \$1 → Qd 900, Qs 100; \$2 → 700, 300; \$3 → 500, 500; \$4 → 300, 700; \$5 → 100, 900. (a) Find the equilibrium. (b) What happens at \$2? (c) Demand then rises by 200 kg at every price. Find the new equilibrium.
+    (a) Qd = Qs = 500 kg at \$3: equilibrium price \$3, quantity 500 kg.
+    (b) At \$2, Qd = 700 and Qs = 300: a shortage of 400 kg, so the price rises towards \$3.
+    (c) New Qd: \$3 → 700, \$4 → 500. At \$3 there is a shortage (700 vs 500); at \$4 a surplus (500 vs 700). The new equilibrium lies between: the schedules are straight lines (Qd = 1 300 − 200P, Qs = 200P − 100), so 1 300 − 200P = 200P − 100, giving P = \$3.50 and Q = 600 kg.
+    Sense check: demand rose, so price and quantity both rose — as predicted.
+**Worked example 2**
+  Using demand and supply, explain what happened to the price of lettuce after the 2022 floods and to the price later in the year as crops recovered.
+    The floods destroyed crops, decreasing supply (shift left). At the old price there was a shortage, so the price rose sharply (above \$10 a head) and quantity sold fell.
+    As new crops were harvested, supply increased (shifted back right): at the high price there was a surplus, so the price fell back towards its usual level and quantity rose.
+**Going deeper**
+  Equilibrium is a tendency, not a guarantee: prices can be sticky (menu prices, contracts), and governments sometimes fix prices (a price ceiling below equilibrium causes a persistent shortage — rent controls are the classic example).
+**Common mistakes**
+  Saying "demand rises, so supply rises". Supply doesn't shift — quantity supplied extends in response to the higher price.
+  Getting the direction of price change wrong for supply shifts: a supply decrease raises price.
+  Claiming a definite price change when both curves shift.
+**Exam tips**
+  Structure every market-change answer: (1) which curve shifts and why; (2) the shortage or surplus at the old price; (3) how price moves; (4) the movement along the other curve; (5) the new equilibrium price and quantity.
+**Connections**
+  What shifts demand and What shifts supply.
+  The market mechanism and relative prices: equilibrium prices send signals.
+  Case study: the supermarket market: apply this to supermarkets or housing.
+**Practice questions**
+  Explain the effect of an increase in the cost of fertiliser on the equilibrium price and quantity of wheat.
+    Higher costs decrease supply (shift left). At the old price there is a shortage, so the price rises; quantity demanded contracts. New equilibrium: higher price, lower quantity.
+  What happens in a market when the price is above equilibrium?
+    Quantity supplied exceeds quantity demanded (a surplus), so sellers cut prices until the market clears.
+  Demand for electric vehicles rises while new factories increase their supply. What happens to price and quantity?
+    Quantity rises (both shifts raise it); the effect on price is uncertain — it depends on whether the demand increase or supply increase is larger.
+  Using the strawberry schedule above, what is the surplus at \$5 before the demand change?
+    Qs 900 − Qd 100 = 800 kg surplus.
+**Flashcards**
+  What is equilibrium? :: The price where quantity demanded equals quantity supplied.
+  Price below equilibrium creates a {{shortage}}.
+  Increase in demand: effect on price and quantity? :: Both rise.
+  Decrease in supply: effect on price and quantity? :: Price rises, quantity falls.
+  Increase in supply: effect on price and quantity? :: Price falls, quantity rises.
+  Both demand and supply increase. What's certain? :: Quantity rises; price is uncertain.
+  Calculate: Qd = 1 300 − 200P, Qs = 200P − 100. Equilibrium price? :: \$3.50 (quantity 600).
+  How does a surplus clear? :: Sellers cut prices; quantity demanded extends and quantity supplied contracts.
+
+@ c4ce8b29 U1.2.1.9 | The market mechanism and relative prices
+**In a sentence**
+  In a market economy, changes in relative prices signal where resources are most valued and give producers the incentive to move land, labour and capital there — answering what, how and for whom without anyone planning it.
+**Key terms**
+  **Market mechanism (price mechanism)**: the interaction of demand and supply that sets prices and allocates resources.
+  **Relative price**: the price of one good compared with the prices of other goods.
+  **Resource allocation**: how land, labour and capital are divided among different uses.
+  **Signalling function**: prices tell buyers and sellers what is scarce and what is plentiful.
+  **Incentive function**: price changes give producers a reason to change what and how much they produce.
+  **Rationing function**: prices decide who gets scarce goods — those willing and able to pay.
+**How it works**
+  Demand for a product rises → its price rises relative to other prices → it becomes more profitable to produce → firms expand and new firms enter → land, labour and capital move in from less profitable uses.
+  Demand falls → relative price falls → profits fall → resources move out to where they earn more.
+  Consumers "vote" with their dollars; the invisible hand (Adam Smith, 1776) guides resources without central direction.
+**Relative, not absolute**
+  If all prices rise by 3.5% (general inflation), nothing changes relatively and there's no signal to move resources. What moves resources is a price rising faster than others.
+**Answering the three questions**
+  What and how much: goods whose relative prices and profits rise.
+  How: firms choose the cheapest combination of resources; if wages rise relative to machinery, they automate.
+  For whom: goods go to those willing and able to pay (rationing).
+**Worked example**
+  Global demand for lithium for batteries surged in 2021–22. Trace how the market mechanism reallocated Australian resources.
+    Signal: the price of lithium rose sharply relative to other minerals.
+    Incentive: mining lithium became very profitable, so miners in Western Australia expanded and new mines opened.
+    Resource movement: capital (drilling rigs, processing plants), labour (engineers, drivers) and land moved into lithium from other uses.
+    Later, when lithium prices collapsed in 2023–24 as supply caught up, some mines closed and resources moved out again — the mechanism works both ways.
+**Going deeper**
+  The market mechanism gives efficient allocation only if prices reflect all costs and benefits. With market power, externalities (pollution) or public goods, prices send the wrong signals — market failure, which is why governments intervene (Unit 3).
+  Allocating by ability to pay can conflict with equity: the market rations housing to the highest bidder, not the most in need.
+**Common mistakes**
+  Saying higher prices always mean "the market is failing". Rising relative prices are how the market signals scarcity.
+  Ignoring the word "relative".
+**Exam tips**
+  Use the three functions (signalling, incentive, rationing) and trace a specific example from price change → resource movement.
+**Connections**
+  Economic systems: the market mechanism answers the questions in a market economy.
+  Changes in equilibrium.
+  Market power and market structures: how power distorts price signals.
+**Practice questions**
+  Explain the role of relative prices in allocating resources.
+    When a good's price rises relative to others, producing it becomes more profitable, so firms expand and resources move into it from less profitable uses; when its relative price falls, resources move out. Prices signal scarcity and provide the incentive to reallocate.
+  Why doesn't general inflation reallocate resources?
+    If all prices rise at the same rate, relative prices are unchanged, so no activity becomes relatively more profitable.
+  Outline one weakness of relying on the market mechanism to allocate resources.
+    It allocates by ability to pay, so people on low incomes may miss out on essentials; and if prices don't include external costs like pollution, too much of some goods is produced.
+**Flashcards**
+  What is the market mechanism? :: The interaction of demand and supply that sets prices and allocates resources.
+  What is a relative price? :: A good's price compared with the prices of other goods.
+  Three functions of prices? :: Signalling, incentive and rationing.
+  A rise in relative price signals {{scarcity}} and attracts resources.
+  Who coined the "invisible hand"? :: Adam Smith (1776).
+  Why doesn't 3.5% inflation across all goods move resources? :: Relative prices haven't changed.
+  Example of the mechanism at work in Australia? :: Lithium price boom drew resources into WA lithium mining.
+
+@ 40c223f5 U1.2.1.10 | Market power and market structures
+**In a sentence**
+  Markets range from perfect competition to monopoly, and the more market power firms have, the more they can raise prices and restrict output — usually at the cost of efficiency and consumers' living standards.
+**Key terms**
+  **Market power**: a firm's ability to influence the price of its product.
+  **Market structure**: the characteristics of a market — number and size of firms, type of product, barriers to entry.
+  **Perfect competition**: many firms, identical products, no barriers, no market power.
+  **Monopolistic competition**: many firms selling differentiated products, low barriers, a little market power.
+  **Oligopoly**: a few large firms dominate; high barriers; firms are interdependent.
+  **Monopoly**: a single seller with no close substitutes and very high barriers.
+  **Product differentiation**: making a product seem different from rivals' (brand, quality, service, location).
+  **Concentration ratio**: the share of a market held by its largest firms.
+**The spectrum**
+  Perfect competition: price takers; e.g. wheat, fresh produce.
+  Monopolistic competition: cafés, hairdressers, restaurants, clothing shops — each has loyal customers, but many substitutes limit power.
+  Oligopoly: supermarkets (Coles and Woolworths about 67% of grocery sales, ACCC 2025), the big four banks, telecommunications (Telstra, Optus, TPG), domestic airlines (Qantas group and Virgin), petrol retailing. Firms watch each other, often avoid price wars and compete through advertising, loyalty programs and brands.
+  Monopoly: NBN Co's wholesale network, Melbourne's water retailers in their areas, Australia Post's letter service.
+**Effects of market power**
+  Prices: higher than under competition (firms can mark up above cost).
+  Resource allocation: output is restricted below the level society values, so resources are misallocated (allocative inefficiency); firms may also become lazy about costs (less productive efficiency).
+  Living standards: consumers pay more and have less choice; profits transfer income from consumers to shareholders.
+**The other side**
+  Large firms may achieve economies of scale (lower cost per unit), passing some savings on, and can fund research. Natural monopolies (water pipes, electricity poles) are cheaper with one network — which is why they are usually regulated.
+**Worked example**
+  Assess the degree of competition in Australia's supermarket market and its effect on living standards.
+    Structure: oligopoly — Coles and Woolworths hold about two-thirds of sales, ALDI about a tenth, IGA/Metcash and Costco smaller shares.
+    Barriers: huge scale economies, supply chains, prime sites and loyalty programs make entry hard.
+    Conduct: the ACCC's 2025 inquiry found "little incentive" for the two majors to compete hard on price and rising margins on packaged goods.
+    Effects: higher prices than under stronger competition, and suppliers (farmers) squeezed by buyer power — lowering living standards; but ALDI's entry since 2001 has pushed prices down in some lines.
+**Going deeper**
+  Oligopolies may collude (illegally) or behave as if they had agreed (tacit collusion) — e.g. matching each other's prices on staple items.
+  A firm can have market power as a buyer (monopsony power) — the ACCC found Coles and Woolworths sometimes act as the only buyer for suppliers.
+**Common mistakes**
+  Calling a two-firm-dominated market a monopoly. It's an oligopoly (a duopoly at most).
+  Assuming big firms always mean bad outcomes — mention economies of scale.
+**Exam tips**
+  To "analyse the extent of competition", use criteria: number and size of firms, product differentiation, barriers to entry, pricing behaviour, profits — then state the effect on prices, resource allocation and living standards.
+**Connections**
+  Perfect competition: the benchmark.
+  Strategies to increase profit: what market power allows.
+  Case study: the supermarket market: the supermarket case study.
+**Practice questions**
+  Compare the characteristics of oligopoly and monopolistic competition.
+    Oligopoly: a few large, interdependent firms with high barriers to entry and significant market power (supermarkets). Monopolistic competition: many small firms selling differentiated products with low barriers and little market power (cafés).
+  Explain how a high degree of market power can reduce living standards.
+    Firms with power can charge prices above cost and restrict output, so consumers pay more, have less choice and consume less than they would under competition.
+  Why are natural monopolies usually regulated rather than broken up?
+    One network (e.g. water pipes) is cheaper than several, so splitting it would raise costs; regulation controls prices instead.
+**Flashcards**
+  What is market power? :: A firm's ability to influence the price of its product.
+  Four market structures from least to most power? :: Perfect competition, monopolistic competition, oligopoly, monopoly.
+  Australian example of an oligopoly? :: Supermarkets (also big four banks, telcos, airlines).
+  Example of monopolistic competition? :: Cafés, hairdressers, restaurants.
+  Coles and Woolworths' combined grocery share (ACCC 2025)? :: About 67%.
+  More market power usually means {{higher}} prices and {{lower}} output.
+  A possible benefit of large firms? :: Economies of scale (lower costs per unit).
+  Five criteria for analysing competition? :: Number/size of firms, differentiation, barriers to entry, pricing behaviour, profits.
+
+@ 2e6ca066 U1.2.1.11 | Strategies to increase profit
+**In a sentence**
+  Firms with market power can lift profits by charging different customers different prices, selling several brands to fill the market, or — illegally — acting anti-competitively, which the Competition and Consumer Act 2010 prohibits.
+**Key terms**
+  **Price discrimination**: charging different prices to different customers for the same product, where the difference isn't due to cost.
+  **Multiple branding**: one firm selling several brands of a similar product to target different market segments.
+  **Anti-competitive behaviour**: conduct that substantially lessens competition, such as cartels or misuse of market power.
+  **Competition and Consumer Act 2010 (CCA)**: the federal law that bans anti-competitive conduct and contains the Australian Consumer Law; enforced by the ACCC.
+  **ACCC**: the Australian Competition and Consumer Commission.
+  **Cartel**: an agreement between competitors to fix prices, share markets, rig bids or restrict output.
+**Price discrimination**
+  Examples: student and concession fares, seniors' discounts, cheaper cinema tickets on Tuesdays, airline fares that rise as the flight fills, happy hours, software discounts for schools.
+  Conditions: the firm has market power; it can separate customers into groups willing to pay different amounts; resale between groups can be prevented.
+  Effect: raises profit by charging each group closer to what it is willing to pay; some lower-income groups gain access they wouldn't have at one price.
+**Multiple branding**
+  Examples: Qantas and Jetstar; Toyota and Lexus; Unilever selling many laundry and soap brands; supermarkets' own "home brand" and premium lines alongside national brands.
+  Effect: captures more segments, fills shelf space, deters new entrants and creates an illusion of choice — raising market share and profit.
+**Anti-competitive behaviour under the CCA (Part IV)**
+  Cartel conduct: price fixing, market sharing, bid rigging, restricting output — criminal offences with possible jail for individuals. The Visy–Amcor cardboard cartel led to a then-record \$36 million penalty for Visy in 2007.
+  Misuse of market power (section 46): a firm with substantial power engaging in conduct that substantially lessens competition (e.g. pricing below cost to drive out a rival).
+  Exclusive dealing (s47): e.g. supplying a retailer only if it doesn't stock a rival's product, where this substantially lessens competition.
+  Resale price maintenance (s48): a supplier forcing retailers not to sell below a set price.
+  Anti-competitive mergers (s50): mergers that substantially lessen competition; since 1 January 2026 significant mergers must be notified to the ACCC before they go ahead.
+  Concerted practices: coordinating with rivals (e.g. sharing future pricing) even without a formal agreement.
+  Penalties for companies: up to the greatest of \$50 million, three times the benefit gained, or 30% of turnover during the breach.
+  Misleading conduct is also banned (under the Australian Consumer Law). The Federal Court found in May 2026 that Coles misled shoppers with some "Down Down" price tickets (raising prices briefly, then "discounting" to a price no lower than before); in 2024 Qantas was ordered to pay \$100 million for selling tickets on flights it had already cancelled.
+**Worked example**
+  A cinema charges adults \$22, students \$15 and seniors \$13 for the same session. Explain why this increases profit.
+    The cinema has some market power (it's the only one nearby showing the film) and can separate groups by ID.
+    Students and seniors have lower willingness to pay; at \$22 many wouldn't come, so a lower price fills otherwise empty seats (extra revenue at almost no extra cost).
+    Adults, who are willing to pay more, still pay \$22.
+    Total revenue, and profit, are higher than at any single price.
+**Going deeper**
+  Price discrimination can raise output and access (a single high price would exclude low-income groups), so it isn't always harmful — unlike cartels, which always restrict competition.
+  Dynamic and personalised pricing using online data (Uber surge pricing, ticket sites) is a growing form of price discrimination that regulators are watching.
+**Common mistakes**
+  Calling any price difference price discrimination. Charging more for a bigger size or a better seat reflects cost or quality differences.
+  Treating multiple branding as illegal. It is legal; cartels and misuse of market power are not.
+  Confusing the ACCC (regulator) with the CCA (the law).
+**Exam tips**
+  For a strategy, explain how it raises profit and its effect on consumers and living standards. For anti-competitive conduct, name the conduct and the CCA provision.
+**Connections**
+  Market power and market structures: these strategies need market power.
+  The roles of government: the ACCC and the efficiency role.
+  Business nudges and their effectiveness (behavioural economics).
+**Practice questions**
+  Explain price discrimination and the conditions needed for it to work.
+    Charging different customers different prices for the same product for reasons other than cost. It needs market power, the ability to separate customers by willingness to pay, and the ability to stop resale between groups.
+  How does multiple branding help a firm increase profit?
+    It lets the firm target several segments (budget and premium), occupy more shelf space and make it harder for new entrants, raising market share and profit.
+  Identify two types of conduct banned under the Competition and Consumer Act 2010.
+    Cartel conduct such as price fixing, and misuse of market power (also exclusive dealing, resale price maintenance and anti-competitive mergers).
+  What is the maximum penalty for a company breaching competition law?
+    The greatest of \$50 million, three times the benefit gained, or 30% of turnover during the breach period.
+**Flashcards**
+  What is price discrimination? :: Charging different customers different prices for the same product, not based on cost.
+  Three conditions for price discrimination? :: Market power, separable customer groups, no resale.
+  Example of multiple branding? :: Qantas and Jetstar (or Toyota and Lexus).
+  Price fixing between competitors is {{cartel}} conduct.
+  Which body enforces the Competition and Consumer Act 2010? :: The ACCC.
+  Maximum company penalty under the CCA? :: Greatest of \$50m, 3× the benefit, or 30% of turnover.
+  What did the Federal Court find about Coles in May 2026? :: Some "Down Down" tickets misled shoppers about discounts.
+  Is multiple branding illegal? :: No — it's a legal profit strategy.
+
+@ b062e13a U1.2.1.12 | Case study: the supermarket market
+**In a sentence**
+  Australia's supermarket market is a highly concentrated oligopoly — Coles and Woolworths sell about two-thirds of groceries — so it shows clearly how limited competition affects prices, suppliers and living standards.
+**Key terms**
+  **Market share**: a firm's sales as a percentage of total market sales.
+  **Duopoly**: an oligopoly dominated by two firms.
+  **Monopsony power**: market power as a buyer — the ability to push down the prices paid to suppliers.
+  **Food and Grocery Code of Conduct**: rules for how supermarkets deal with suppliers; mandatory since 1 April 2025.
+**The market**
+  Players (ACCC Supermarkets Inquiry, Feb 2025): Coles and Woolworths together about 67% of grocery sales; ALDI about 10%; IGA stores (supplied by Metcash) about 7%; Costco, Amazon and specialist grocers make up the rest.
+  Products: differentiated by brand, location, range, loyalty programs (Flybuys, Everyday Rewards) and online delivery.
+**Degree of competition**
+  Oligopoly features: few dominant firms, high barriers (large distribution centres, prime sites, scale economies, loyalty data), interdependence (each watches the other's prices), non-price competition (advertising, loyalty points, "Down Down" and "Prices Dropped" campaigns).
+  The ACCC found Coles and Woolworths have "little incentive" to compete vigorously on price, that margins on packaged groceries rose, and that they have monopsony power over some suppliers. It did not recommend breaking them up; it recommended rules on discount claims, unit pricing and loyalty schemes.
+  Legal action: in May 2026 the Federal Court found Coles misled shoppers with some "Down Down" discounts; the case against Woolworths's "Prices Dropped" claims was awaiting judgment.
+**Effects on prices, resources and living standards**
+  Prices: likely higher than under stronger competition, especially where ALDI isn't nearby; food inflation (3.2% a year in July 2026) hits low-income households hardest because food is a larger share of their spending.
+  Resource allocation: suppliers squeezed on price may cut investment or leave farming; limited competition slows innovation in service.
+  Living standards: higher grocery bills reduce material living standards; the majors' convenience, range and online delivery raise them. ALDI's entry (2001) shows how new competition lowers prices in the lines it sells.
+**Government and regulator responses**
+  A mandatory Food and Grocery Code with fines for breaches; unit-pricing rules; ACCC price monitoring and court action; funding for CHOICE price comparisons; talk of making it easier for new entrants to get sites.
+**Worked example**
+  Using criteria, evaluate whether competition in Australian supermarkets is strong or weak.
+    Number and size of firms: two firms with about two-thirds of sales — highly concentrated (weak competition).
+    Barriers to entry: very high — scale, supply chains, sites — only ALDI has entered successfully at scale in decades (weak).
+    Pricing behaviour: similar prices on many staples and allegations of misleading discounts (weak).
+    Profits: rising margins on packaged goods (weak).
+    Counter-evidence: ALDI's growth and price competition in some lines (some competition).
+    Conclusion: competition is limited — an oligopoly with moderate to strong market power.
+**Going deeper**
+  Compare with the UK, where the three largest supermarkets hold about 59% — less concentrated than Australia's top two alone.
+  You could apply the same framework to another market in the study design list — housing, energy, airlines or cryptocurrency — using the same criteria.
+**Common mistakes**
+  Describing the market without evaluating it: always reach a judgement using criteria.
+  Using undated statistics — markets change quickly.
+**Exam tips**
+  Structure: description of the market → structure and degree of competition (criteria) → effects on prices, resource allocation, living standards → responses → judgement.
+**Connections**
+  Market power and market structures.
+  Strategies to increase profit: price discounts, multiple branding (home brands), the "Down Down" case.
+  Business nudges and their effectiveness (behavioural economics): anchoring discounts and loyalty schemes.
+**Practice questions**
+  Identify the market structure of Australian supermarkets and justify your answer.
+    Oligopoly: a few large firms (Coles and Woolworths with about 67% of sales), high barriers to entry, interdependent pricing and non-price competition.
+  Explain one way limited supermarket competition could lower living standards.
+    With less competitive pressure, prices and margins can stay higher than otherwise, so households pay more for groceries and can afford less of other goods.
+  Outline one government response to concerns about supermarket competition.
+    Making the Food and Grocery Code of Conduct mandatory from 1 April 2025, with fines, to limit the misuse of power over suppliers (or ACCC court action over misleading discounts).
+**Flashcards**
+  Market structure of Australian supermarkets? :: Oligopoly (close to a duopoly).
+  Coles and Woolworths' share of grocery sales? :: About 67% (ACCC, 2025).
+  Market power as a buyer is {{monopsony}} power.
+  When did the Food and Grocery Code become mandatory? :: 1 April 2025.
+  Which entrant has most increased supermarket competition? :: ALDI (since 2001).
+  What did the ACCC's 2025 inquiry recommend about break-ups? :: It didn't recommend divestiture.
+  Name two barriers to entry in supermarkets. :: Scale economies/supply chains and prime store sites (also loyalty data).
+
+@ 59dfe365 U1.2.2.1 | Using economic terms precisely
+**In a sentence**
+  This skill is defining the language of markets accurately — demand, quantity demanded, supply, equilibrium, market power — and using each term correctly in context.
+**Key terms**
+  **Precision**: using the exact technical term, not an everyday near-synonym.
+**How to do it**
+  Keep the pairs apart: demand vs quantity demanded; increase in demand vs extension of demand; supply vs quantity supplied; shortage vs scarcity; oligopoly vs monopoly.
+  Define, then apply: "An oligopoly is a market dominated by a few large firms — the Australian supermarket market, where Coles and Woolworths hold about two-thirds of sales."
+  Name the conduct correctly: "price fixing (cartel conduct)", not "price gouging".
+**Going deeper**
+  Markers reward the right term in the right place; a correct idea in loose language ("demand went up because the price fell") loses marks.
+**Worked example**
+  Correct: "The price of avocados fell, so demand increased."
+    Corrected: "The price of avocados fell, so quantity demanded increased — an extension along the demand curve."
+**Connections**
+  Every key knowledge point in this area.
+  Using economic terms precisely in the other areas.
+**Practice questions**
+  Correct the sentence: "Higher wages increased supply, so prices rose."
+    "Higher wages raised costs of production, decreasing supply (a shift left), so the equilibrium price rose."
+  What is the difference between a shortage and scarcity?
+    A shortage is excess demand at a particular price; scarcity is the permanent condition of limited resources relative to wants.
+**Flashcards**
+  Price falls, more bought: "increase in demand" or "extension of demand"? :: Extension of demand.
+  A market dominated by a few large firms is an {{oligopoly}}.
+  Scarcity vs shortage? :: Permanent condition vs excess demand at a price.
+  Correct name for competitors agreeing on prices? :: Price fixing (cartel conduct).
+
+@ 867028cb U1.2.2.2 | Researching market data
+**In a sentence**
+  This skill is gathering and combining information about markets — prices, market shares, inquiry findings — from reliable sources, and using it to analyse how market decisions affect consumers and producers.
+**Key terms**
+  **Market share**: a firm's sales as a percentage of total sales.
+  **Price index**: a measure of how prices change over time (e.g. the CPI, or a grocery price index).
+**How to do it**
+  Useful sources: ACCC inquiries and media releases (supermarkets, electricity, petrol monitoring), ABS CPI (food and fuel prices), RBA (housing credit), Cotality (house prices), company annual reports (profits, margins), CHOICE (price comparisons).
+  Record figure, date, unit and source, and note whether the source has an interest.
+  Combine price and quantity data with a demand-and-supply explanation: what shifted, and why.
+**Going deeper**
+  A single price rise doesn't show market power: compare prices with costs and profits, and look at how competitors behave.
+**Worked example**
+  Use data to explain the fall in dwelling values in mid-2026.
+    Data: the RBA raised the cash rate to 4.35% in May 2026 and 4.60% in September; national dwelling values fell 3.1% over the three months to August 2026 (Cotality), with listings up 18%.
+    Analysis: higher interest rates decreased demand for housing (shift left) while more listings increased supply, so prices fell.
+**Connections**
+  Case study: the supermarket market.
+  Gathering and using economic data (Unit 1 Area of Study 1).
+**Practice questions**
+  Name two sources you could use to research the degree of competition in the supermarket market.
+    The ACCC Supermarkets Inquiry final report (2025) and the companies' annual reports (market share and profit margins).
+  Why isn't a price rise alone evidence of market power?
+    Prices can rise because demand increased or costs rose; you need to compare prices with costs and profits, and look at rivals' behaviour.
+**Flashcards**
+  Main regulator reports on market competition? :: ACCC inquiries and media releases.
+  Source for Australian house prices? :: Cotality (or the ABS).
+  A firm's sales as a percentage of the market is its {{market share}}.
+  Is a price rise alone evidence of market power? :: No — compare with costs and profits.
+
+@ 4256a58e U1.2.2.3 | Drawing demand and supply graphs
+**In a sentence**
+  This skill is constructing accurate demand and supply diagrams and reading them to show and explain changes in markets.
+**Key terms**
+  **Axes**: price (P) on the vertical axis; quantity (Q) on the horizontal, with units and a time period.
+  **Equilibrium point**: where D and S intersect, labelled P1 and Q1.
+**How to do it**
+  Rule the axes, label them (Price \$; Quantity, e.g. kg per week), and title the graph with the market.
+  Draw D sloping down and S sloping up; mark equilibrium E1 with P1 and Q1 dotted to the axes.
+  Show a shift with a new curve (D2 or S2) and an arrow; mark E2, P2 and Q2.
+  Show a shortage or surplus as the horizontal gap between the curves at a given price.
+  Plot schedules accurately to scale when data is given.
+**Going deeper**
+  Keep shifts parallel unless there's a reason not to; draw only the curve that shifted as a new line.
+**Worked example**
+  Describe the graph for "a rise in the price of beef increases demand for chicken".
+    Market: chicken. Draw D1 and S; equilibrium P1, Q1.
+    Draw D2 to the right of D1 with an arrow (increase in demand — beef is a substitute).
+    New equilibrium E2 at a higher price P2 and higher quantity Q2; S doesn't move (the rise from Q1 to Q2 is an extension of supply).
+**Connections**
+  Changes in equilibrium.
+  Movement along vs shift of demand and Movement along vs shift of supply.
+**Practice questions**
+  What labels must every demand and supply graph have?
+    A title naming the market, price on the vertical axis, quantity (with units and time period) on the horizontal, labelled curves (D, S) and equilibrium price and quantity.
+  How is a shortage shown on a demand and supply graph?
+    As the horizontal distance between the demand and supply curves at a price below equilibrium (Qd greater than Qs).
+**Flashcards**
+  Which axis shows price? :: The vertical axis.
+  How do you show an increase in demand? :: Draw D2 to the right of D1 with an arrow.
+  Where is equilibrium on the graph? :: Where D and S intersect.
+  A shortage appears at a price {{below}} equilibrium.
+
+@ ee44d194 U1.2.2.4 | Predicting market outcomes
+**In a sentence**
+  This skill is applying demand and supply to predict how a change in conditions — a drought, a tax, a new technology, a change in tastes — will change price, quantity and the allocation of resources.
+**Key terms**
+  **Condition**: a non-price factor that affects demand or supply.
+  **Ceteris paribus**: other things being equal.
+**How to do it**
+  1. Identify which curve the change affects (consumers → demand; producers → supply) and which way.
+  2. Describe the shortage or surplus at the old price.
+  3. Predict the new price and quantity.
+  4. Explain the effect on producers, consumers and resource allocation (and living standards).
+**Going deeper**
+  Real events often shift both curves. Say which effect you think is bigger and why, and name the outcome that is uncertain.
+**Worked example**
+  Predict the effect on the market for international student places at Victorian universities of a cap on new student visas.
+    A cap limits the number of places that can be sold to overseas students — supply to that market decreases (shift left).
+    At the old fee there is excess demand, so universities can raise fees; the number of students falls.
+    Resources: less revenue for universities may cut jobs and research; local rental demand near campuses falls.
+**Connections**
+  Changes in equilibrium.
+  The market mechanism and relative prices.
+**Practice questions**
+  Predict the effect on the market for umbrellas of a very wet winter.
+    Demand increases (shift right): at the old price there's a shortage, so price and quantity sold rise.
+  Predict the effect of a new tax on sugary drinks on price and quantity in that market.
+    The tax raises producers' costs, decreasing supply (shift left): price rises and quantity falls.
+**Flashcards**
+  Step 1 in predicting a market change? :: Identify which curve shifts and which way.
+  A wet winter and umbrellas? :: Demand increases — price and quantity rise.
+  A tax on a product shifts {{supply}} to the left.
+  If both curves shift, what should you say? :: Which outcome is uncertain, and which shift is likely bigger.
+
+@ 386f5be1 U1.2.2.5 | Investigating a particular market
+**In a sentence**
+  This skill is researching one real market in depth and combining what you find into an economic analysis of how it works and how competitive it is.
+**Key terms**
+  **Case study**: an in-depth investigation of one real example.
+**How to do it**
+  Choose a market from the study design list (e.g. supermarkets, housing, electricity, airlines, cryptocurrency, international education).
+  Describe it: product, buyers, sellers, size, recent prices.
+  Explain recent changes using demand and supply (what shifted and why), with dated data.
+  Analyse structure and competition with criteria; identify strategies firms use (price discrimination, multiple branding, any ACCC action).
+  Conclude on the effects on prices, resource allocation and living standards, and on possible responses.
+**Going deeper**
+  A good case study connects micro detail to the bigger picture — interest rates for housing, global energy prices for electricity.
+**Worked example**
+  Outline a research plan for the Australian domestic airline market.
+    Players and shares: Qantas group (Qantas, Jetstar) and Virgin Australia, after the collapse of Rex's jet services in 2024.
+    Demand and supply: fares rose after COVID as demand recovered faster than capacity.
+    Competition: duopoly, high barriers (airport slots, aircraft); multiple branding (Qantas/Jetstar); ACCC action (\$100 million "ghost flights" penalty, 2024).
+    Conclusion: limited competition keeps fares high; policy responses include airport-slot reform.
+**Connections**
+  Case study: the supermarket market.
+  Market power and market structures.
+**Practice questions**
+  List four things a market investigation should include.
+    A description of the market; demand-and-supply explanation of recent changes with data; analysis of structure and competition using criteria; effects on living standards and a conclusion.
+  Why should a market study use recent, dated data?
+    Market conditions change quickly; dated evidence shows the analysis is current and lets the reader judge it.
+**Flashcards**
+  First step in a market case study? :: Describe the product, buyers, sellers and recent prices.
+  Framework for explaining price changes in a case study? :: Demand and supply — which curve shifted and why.
+  An in-depth study of one real market is a {{case study}}.
+  Australia's domestic airline market structure? :: A duopoly/oligopoly (Qantas group and Virgin).
+
+@ adadd1c8 U1.2.2.6 | Judging the extent of competition
+**In a sentence**
+  This skill is deciding how competitive a market is by testing it against economic criteria and drawing a conclusion about its effect on prices, efficiency and living standards.
+**Key terms**
+  **Economic criteria for competition**: number and size of firms (concentration), product differentiation, barriers to entry, pricing behaviour, profit levels, and the ease with which consumers can switch.
+**How to do it**
+  Apply each criterion with evidence (shares, entry history, price patterns, margins).
+  Place the market on the spectrum (perfect competition → monopolistic competition → oligopoly → monopoly).
+  Conclude: strong, moderate or weak competition — and the likely effect on prices, output, resource allocation and living standards.
+**Going deeper**
+  Markets can be competitive in one part and not another: online groceries vs rural towns with one supermarket.
+**Worked example**
+  Judge the extent of competition among cafés in a Melbourne suburb.
+    Many sellers; products differentiated by coffee, food and atmosphere; low barriers (a lease and a coffee machine); similar prices for a flat white; modest profits and frequent closures.
+    Conclusion: monopolistic competition — fairly strong competition, so prices stay near costs and consumers have choice.
+**Connections**
+  Market power and market structures.
+  Case study: the supermarket market: the supermarket market.
+**Practice questions**
+  Name four criteria used to judge the extent of competition in a market.
+    Number and size of firms; product differentiation; barriers to entry; pricing behaviour and profits.
+  Why do high barriers to entry reduce competition?
+    They stop new firms entering when profits are high, so existing firms can keep prices above cost without losing customers to rivals.
+**Flashcards**
+  Criteria for judging competition? :: Concentration, differentiation, barriers to entry, pricing behaviour, profits, ease of switching.
+  Low barriers and many differentiated sellers suggest {{monopolistic competition}}.
+  Why do high barriers weaken competition? :: New rivals can't enter to compete away high profits.
+  Final step in judging competition? :: Conclude on the effect on prices, efficiency and living standards.

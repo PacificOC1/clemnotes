@@ -62,6 +62,7 @@ import './App.css';
 // are writing, and neither view is needed to write.
 const ReviewView = lazy(() => import('./components/ReviewView').then((m) => ({ default: m.ReviewView })));
 const DictionaryView = lazy(() => import('./components/DictionaryView').then((m) => ({ default: m.DictionaryView })));
+const CoursesView = lazy(() => import('./components/CoursesView').then((m) => ({ default: m.CoursesView })));
 // The PDF reader (#53) and pdf.js behind it load only when a PDF is opened.
 const PdfPane = lazy(() => import('./components/PdfPane').then((m) => ({ default: m.PdfPane })));
 
@@ -551,6 +552,14 @@ function Workspace({ route, navigate }: WorkspaceProps) {
               </button>
               <button
                 type="button"
+                className={`nav-item ${activeTab === 'courses' ? 'active' : ''}`}
+                onClick={() => setActiveTab('courses')}
+              >
+                <span className="nav-icon">⛰</span>
+                <span className="nav-label">Courses</span>
+              </button>
+              <button
+                type="button"
                 className={`nav-item ${activeTab === 'dictionary' ? 'active' : ''}`}
                 onClick={() => setActiveTab('dictionary')}
               >
@@ -715,7 +724,10 @@ function Workspace({ route, navigate }: WorkspaceProps) {
                       isRoot
                     />
                     <BacklinksPanel nodeId={activeRootId} onZoomTo={handleZoomTo} />
-                    <UnlinkedReferences key={activeRootId} nodeId={activeRootId} onZoomTo={handleZoomTo} />
+                    {/* Not the bare id: the outline above already has that key, and two
+                        siblings sharing one made React leave stale copies of the zoomed
+                        rem's title on screen (seen zooming into a rem with no children). */}
+                    <UnlinkedReferences key={`unlinked:${activeRootId}`} nodeId={activeRootId} onZoomTo={handleZoomTo} />
                   </div>
                 ) : (
                   <div className="empty-state">
@@ -735,7 +747,26 @@ function Workspace({ route, navigate }: WorkspaceProps) {
                 )
               )}
               <Suspense fallback={<div className="view-loading">Loading…</div>}>
-                {activeTab === 'review' && <ReviewView onZoomTo={handleZoomTo} />}
+                {activeTab === 'review' && (
+                  <ReviewView
+                    onZoomTo={handleZoomTo}
+                    scope={route.scope ?? null}
+                    onScopeChange={(scope) =>
+                      navigate({ tab: 'review', nodeId: null, ...(scope ? { scope } : {}) }, { replace: true })
+                    }
+                  />
+                )}
+                {activeTab === 'courses' && (
+                  <CoursesView
+                    courseId={route.courseId ?? null}
+                    courseItem={route.courseItem ?? null}
+                    onOpenCourse={(courseId, item) =>
+                      navigate({ tab: 'courses', nodeId: null, ...(courseId ? { courseId } : {}), ...(courseId && item ? { courseItem: item } : {}) })
+                    }
+                    onStudy={(scope) => navigate({ tab: 'review', nodeId: null, scope })}
+                    onZoomTo={handleZoomTo}
+                  />
+                )}
                 {activeTab === 'dictionary' && <DictionaryView />}
               </Suspense>
               </ErrorBoundary>

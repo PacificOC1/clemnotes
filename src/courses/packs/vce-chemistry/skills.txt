@@ -1,0 +1,571 @@
+% VCE Chemistry — Key science skills (all units). Shorter notes: these skills are used inside every area of study.
+% Original study notes. Format: see src/courses/notesPack.ts.
+
+@ d3bc4dd5 S.1.1 | Constructing aims and questions
+**In a sentence**
+  A good investigation starts with a specific, testable question that names what you'll change and what you'll measure.
+**Key ideas**
+  A good investigation question is specific, testable, and names what will be changed and what will be measured.
+    Weak: "Do antacids work?" Better: "How does the mass of CaCO₃ tablet affect the volume of CO₂ produced with 50 mL of 1.0 M HCl?"
+  An aim states what the investigation will do: "To determine…", "To investigate the effect of … on …".
+  Research background chemistry first so the question is meaningful and achievable with school equipment.
+**Practice questions**
+  Improve this question: "Does temperature affect reactions?"
+    "How does the temperature of 1.0 M HCl (20–60 °C) affect the time for 0.10 g of magnesium ribbon to react completely?"
+  Why should a question be achievable with school equipment?
+    Otherwise you can't generate enough reliable data to answer it within the time and resources available.
+**Flashcards**
+  What makes a research question good? :: It is specific and testable, identifying the variable changed and the variable measured, and is achievable.
+  Turn "Is vinegar acidic?" into a better investigation question. :: e.g. "What is the concentration of ethanoic acid in brand X vinegar, determined by titration with standardised NaOH?"
+
+@ 313b7051 S.1.2 | Variables in an experiment
+**In a sentence**
+  Change one thing (independent), measure one thing (dependent), and keep everything else the same (controlled).
+**Key ideas**
+  **Independent variable**: the one you deliberately change.
+  **Dependent variable**: the one you measure (it depends on the independent variable).
+  **Controlled variables**: everything else that could affect the result, kept the same so the test is fair.
+  Example: effect of temperature on the rate of Mg reacting with HCl. Independent: temperature. Dependent: rate (e.g. volume of H₂ per minute). Controlled: acid concentration and volume, mass and surface area of Mg.
+  A **control** (control group) is a separate trial for comparison (e.g. no catalyst) — different from controlled variables.
+**Practice questions**
+  An investigation tests how the mass of antacid affects the volume of CO₂ produced. Identify the variables.
+    Independent: mass of antacid. Dependent: volume of CO₂. Controlled: type of antacid, volume, concentration and temperature of acid, reaction time, collection method.
+  What is the difference between a controlled variable and a control?
+    A controlled variable is kept constant in every trial; a control is a separate comparison trial (e.g. with no antacid).
+**Flashcards**
+  Define the independent variable. :: The variable deliberately changed by the investigator.
+  Define the dependent variable. :: The variable measured, which responds to changes in the independent variable.
+  Why must controlled variables be kept constant? :: So that any change in the dependent variable can be attributed to the independent variable (a fair test).
+  In testing how acid concentration affects CO₂ volume from marble chips, name two controlled variables. :: Mass and size of chips, volume and temperature of acid, type of acid.
+
+@ 51e4a548 S.1.3 | Formulating hypotheses
+**In a sentence**
+  A hypothesis is a testable prediction about how the independent variable affects the dependent variable, with a chemical reason.
+**Key ideas**
+  A hypothesis is a **testable** prediction about the relationship between the independent and dependent variables, based on chemistry.
+  Common form: "If [independent variable changes], then [dependent variable will change in this way], because [chemical reason]."
+  It must be possible for the results to **refute** it.
+**Practice questions**
+  Write a hypothesis for: "How does acid concentration affect the rate of reaction with marble chips?"
+    "If the concentration of HCl increases, then the rate of CO₂ production will increase, because there are more acid particles per volume, so more frequent collisions with the marble surface."
+  Can a hypothesis be useful even if the results don't support it?
+    Yes — refuting a hypothesis is still new knowledge and helps refine understanding.
+**Flashcards**
+  What is the "If … then … because" format for? :: Writing a hypothesis that links the independent and dependent variables and gives a reason.
+  What makes a hypothesis scientific? :: It is testable and could be shown to be false by the results.
+
+@ 38ac95d6 S.1.4 | Predicting possible outcomes
+**In a sentence**
+  Use theory and calculations to predict what should happen, so you can check your method is feasible and have something to compare results against.
+**Key ideas**
+  Use theory and calculations to predict results before doing the experiment: e.g. calculate the expected volume of CO₂ at SLC, or the expected titre.
+  Predicting helps check the method is feasible (volumes fit the equipment) and gives a benchmark to compare results with (percentage error).
+**Practice questions**
+  Predict the mass of CO₂ lost when 2.00 g of CaCO₃ reacts completely with excess acid.
+    n(CaCO₃) = 2.00 ÷ 100.1 = 0.0200 mol = n(CO₂); m = 0.0200 × 44.0 = 0.880 g
+  How can a prediction show that a method won't work before you start?
+    E.g. if the predicted gas volume is 500 mL but the syringe holds only 100 mL, the amounts must be changed.
+**Flashcards**
+  Why calculate a predicted result before an experiment? :: To check the method is feasible and to have an expected value to compare results against.
+  Predict the volume of H₂ at SLC from 0.0243 g of Mg with excess acid. :: n(Mg) = 0.00100 mol → n(H₂) = 0.00100 mol → 0.0248 L (24.8 mL).
+
+@ 60d2a538 S.2.1 | Choosing an investigation methodology
+**In a sentence**
+  Choose the methodology that fits the question: experiment for cause and effect, fieldwork for real-world patterns, literature review for what's already known.
+**The methodologies**
+  Case study; classification and identification; controlled experiment; fieldwork; literature review; modelling; product, process or system development; simulation.
+  **Case study**: an in-depth look at a particular event, situation or example (e.g. a chemical spill and its clean-up).
+  **Literature review**: collating and evaluating published research on a question.
+  (The others are described under Unit 2, Area of Study 3.)
+**Choose to fit the question**
+  Cause-and-effect questions → controlled experiment. What's there / what is it → classification and identification. What's happening in the environment → fieldwork. What is already known → literature review.
+**Practice questions**
+  Which methodology suits "What is known about the health effects of microplastics?"
+    A literature review.
+  Which methodology suits "Is the pH of rainwater lower near a busy road?"
+    Fieldwork (sampling at sites near and far from the road).
+**Flashcards**
+  Which methodology collates and evaluates published research? :: Literature review.
+  What is a case study? :: An in-depth investigation of a particular event, situation or example.
+  Which methodology suits testing whether X causes a change in Y? :: A controlled experiment.
+
+@ 22818340 S.2.2 | Designing an investigation
+**In a sentence**
+  A good design chooses the right equipment, sample and amount of data, and plans ahead for the errors that could creep in.
+**Key ideas**
+  Choose methods, equipment and procedures that fit the methodology and give data of the right type and amount.
+  **Sampling**: take representative samples; enough of them (sample size) to see trends and assess precision; random or systematic sampling in fieldwork.
+  **Equipment**: choose appropriate resolution (burette 0.05 mL, electronic balance 0.01 or 0.001 g, volumetric glassware for accurate volumes).
+  Plan for **error and uncertainty**: repeats (at least three), controls, calibration, minimising heat or gas loss.
+  Decide what qualitative and quantitative data will be recorded, and how many data points (e.g. at least five values of the independent variable for a trend).
+**Practice questions**
+  Why should you choose at least five values for the independent variable?
+    To show a clear trend or relationship; fewer points can hide the shape of the relationship.
+  Suggest how to take a representative water sample from a creek.
+    Sample at several points (and depths), at the same time of day, in clean containers rinsed with creek water, and label each sample.
+**Flashcards**
+  Why use at least five values of the independent variable? :: To establish a clear trend or relationship on a graph.
+  Why do a trial more than once? :: To check repeatability, identify outliers and reduce random error by averaging.
+  What makes a sample representative? :: It reflects the whole population being studied (e.g. taken from several sites or times, not one convenient spot).
+
+@ cd418635 S.2.3 | Working alone and in teams
+**In a sentence**
+  Work well alone and in teams, stay within your constraints, and record any changes you make to the plan and why.
+**Key ideas**
+  Plan your own role and work safely and responsibly; in groups, share tasks fairly and communicate.
+  Work within constraints (time, equipment, safety rules) and **adapt** the method if something doesn't work — e.g. changing a concentration so a reaction is measurable.
+  Record every modification and the reason in your logbook.
+**Practice questions**
+  Give one advantage of collaboration in an investigation.
+    More trials can be done, and ideas and errors can be checked by others.
+  Why must modifications to a method be recorded?
+    They affect the results and must be known to interpret them; the record also authenticates the work.
+**Flashcards**
+  What must you do when you change your method during an investigation? :: Record the change and the reason for it in your logbook.
+  Give an example of adapting a method within constraints. :: Using a lower acid concentration because the reaction was too fast to measure the gas volume.
+
+@ 768f8adc S.3.1 | Risk assessments and safety data sheets
+**In a sentence**
+  Use safety data sheets to identify each chemical's hazards and write a risk assessment that controls them before you start.
+**Key ideas**
+  A **risk assessment** lists each hazard, the risk (likelihood and severity), and control measures to reduce it.
+  **Safety data sheets (SDS)** give each chemical's hazards (e.g. corrosive, flammable, toxic), handling, PPE, first aid, spill and disposal procedures — use them to inform the assessment.
+  Hierarchy of control: eliminate or substitute the hazard (use a safer chemical or lower concentration) before relying on PPE.
+**Practice questions**
+  Name three pieces of information found on an SDS.
+    Hazards, safe handling and storage, PPE, first aid, spill procedures, disposal (any three).
+  Why assess risk rather than just list hazards?
+    Risk considers how likely and how serious harm is in your specific procedure, so you can choose appropriate controls.
+**Flashcards**
+  What does a risk assessment include? :: Hazards, the risk each poses, and the control measures used to reduce the risk.
+  Where do you find a chemical's hazards and first aid information? :: Its safety data sheet (SDS).
+  What's a better control than PPE, where possible? :: Eliminating or substituting the hazard, e.g. using a less concentrated or less toxic chemical.
+
+@ 07d2f53d S.3.2 | Lab health and safety
+**In a sentence**
+  Follow lab safety rules every time: PPE, careful handling, knowing the emergency equipment, and correct disposal.
+**Key ideas**
+  Follow lab rules: safety glasses, enclosed shoes, lab coat, tie back hair; no food or drink.
+  Handle chemicals correctly: add acid to water (never water to concentrated acid); use fume hoods for volatile or toxic substances; heat test tubes pointing away from people.
+  Know emergency equipment (eyewash, safety shower, fire blanket, extinguisher) and report accidents and spills straight away.
+  Dispose of waste as directed (heavy metals and organic solvents in labelled containers).
+**Practice questions**
+  Why should long hair be tied back in the lab?
+    It could catch fire near a Bunsen burner or dip into chemicals.
+  What should you do if you spill a small amount of dilute acid on the bench?
+    Tell the teacher, neutralise or dilute it as directed (e.g. with sodium hydrogen carbonate or water) and wipe it up with PPE on.
+**Flashcards**
+  Why add acid to water rather than water to concentrated acid? :: Dilution releases a lot of heat; adding acid to water keeps the mixture dilute so it doesn't boil and splash.
+  When should a fume hood be used? :: When working with volatile, toxic or strong-smelling substances.
+  What should you do immediately after a chemical splash to the eye? :: Rinse with the eyewash station for at least 15 minutes and report it.
+
+@ a2cd6a79 S.3.3 | Ethical conduct
+**In a sentence**
+  Be honest with data, credit others, and minimise harm to people, animals and the environment.
+**Key ideas**
+  Report all data honestly — including unexpected results and outliers (explain, don't hide them). Never fabricate or falsify.
+  Acknowledge others' work and assistance; don't plagiarise.
+  Respect people (consent and privacy in surveys), animals and the environment (minimal harm in fieldwork, correct disposal).
+**Practice questions**
+  A student leaves out one titre that doesn't match. Is this ethical?
+    Only if the reason is stated (e.g. overshot end point) — silently removing data is unethical.
+  Why is it unethical to copy another group's results?
+    It misrepresents the work as your own and the data wasn't generated by your method.
+**Flashcards**
+  Give two examples of ethical conduct in science. :: Reporting data honestly (no fabrication or selective deletion); acknowledging sources; minimising environmental harm.
+  What should you do with an unexpected result? :: Record and report it, and discuss possible reasons — don't delete it.
+
+@ 6caeab05 S.4.1 | Generating and collating data
+**In a sentence**
+  Generate your own data systematically and collate others' data only from sources you can trust and reference.
+**Key ideas**
+  Generate primary data systematically: follow the planned method, repeat trials, record immediately.
+  Collate secondary data from **reputable** sources: peer-reviewed journals, government databases (e.g. Bureau of Meteorology, EPA water data), scientific organisations; record full references.
+  Judge relevance, currency and reliability of each secondary source.
+**Practice questions**
+  Name a reputable online source of Australian environmental data.
+    The Bureau of Meteorology or a state EPA (e.g. EPA Victoria).
+  What makes data "systematic"?
+    It's collected with a planned, consistent method and recorded straight away.
+**Flashcards**
+  Name two reputable sources of secondary chemical data. :: Peer-reviewed journals; government databases or agencies (EPA, CSIRO, BOM); data books.
+  What does "systematically" generating data mean? :: Following a planned, consistent method, with repeats and immediate recording.
+
+@ 31d49416 S.4.2 | Recording data and the logbook
+**In a sentence**
+  Record every observation and measurement accurately and immediately in your logbook, then summarise it clearly.
+**Key ideas**
+  Record qualitative observations (colours, precipitates, fizzing) and quantitative measurements (with units and appropriate decimal places).
+  Summarise with tables, means and graphs.
+  The **logbook** authenticates generated or collated data: dated, recorded at the time, never erased.
+**Practice questions**
+  How many decimal places should a burette reading have?
+    Two (e.g. 23.45 mL).
+  Why record qualitative observations in a quantitative experiment?
+    They can explain unexpected results (e.g. a colour change, a precipitate, gas escaping).
+**Flashcards**
+  Why record units and the correct number of decimal places with each measurement? :: To show the quantity and the resolution of the instrument used.
+  What makes a logbook an authentic record? :: Dated entries made at the time, raw data included, nothing erased or removed.
+
+@ ddf8d56b S.4.3 | Presenting data
+**In a sentence**
+  Pick the presentation that makes the pattern obvious: tables for raw data, bar charts for categories, line graphs for continuous variables, diagrams for set-ups.
+**Choose the right form**
+  **Schematic diagrams**: simple labelled drawings of apparatus (e.g. gas syringe set-up, galvanic cell).
+  **Flow charts**: steps in a process (e.g. water treatment, recycling).
+  **Tables**: raw and processed data with headings and units.
+  **Bar charts**: categories (e.g. conductivity of different water samples).
+  **Line graphs**: continuous independent variables (e.g. solubility vs temperature).
+  **Calibration curves**: absorbance (or another signal) against known concentrations, used to find unknowns.
+**Graph conventions**
+  Title; independent variable on x-axis; labelled axes with units; even scales; line or curve of best fit.
+**Practice questions**
+  Which type of graph suits pH of five different brands of soft drink?
+    A bar chart (brand is categorical).
+  Which type of graph suits the solubility of KNO₃ from 0 °C to 100 °C?
+    A line graph with a smooth curve of best fit.
+**Flashcards**
+  When should a bar chart be used rather than a line graph? :: When the independent variable is categorical (e.g. different brands), not continuous.
+  What is a calibration curve used for? :: Finding the concentration of an unknown from its measured signal (e.g. absorbance), using standards of known concentration.
+  What should every graph have? :: A title, labelled axes with units, even scales, and a line of best fit where appropriate.
+
+@ 363e0850 S.5.1 | Processing data
+**In a sentence**
+  Turn raw measurements into meaning with the right calculation — means, percentages, percentage change and ratios — carrying units throughout.
+**Key calculations**
+  **Mean**: sum of values ÷ number of values (exclude clear outliers, and say why).
+  **Percentage**: part ÷ whole × 100 (e.g. percentage composition, percentage yield).
+  **Percentage change**: (new − original) ÷ original × 100.
+  **Ratios**: e.g. mole ratios from equations; ratio of water to salt in a hydrate.
+  Always carry units through and convert to consistent units first.
+**Practice questions**
+  Calculate the mean of 4.52, 4.48, 4.55 and 4.49 g.
+    (4.52 + 4.48 + 4.55 + 4.49) ÷ 4 = 4.51 g
+  A sample's mass falls from 12.0 g to 9.0 g. Percentage change?
+    (9.0 − 12.0) ÷ 12.0 × 100 = −25%
+**Flashcards**
+  Formula for percentage change? :: (new − original) ÷ original × 100
+  Mean of titres 20.10, 20.15 and 20.05 mL? :: 20.10 mL
+  Mass of a sample drops from 5.00 g to 4.20 g. Percentage change? :: (4.20 − 5.00) ÷ 5.00 × 100 = −16.0%
+
+@ 0af77f13 S.5.2 | Significant figures
+**In a sentence**
+  Your answer can only be as precise as your least precise measurement, so match significant figures to the data.
+**Rules for counting**
+  All non-zero digits count. Zeros between non-zero digits count (1.05 → 3). Leading zeros don't count (0.0045 → 2). Trailing zeros after a decimal point count (2.50 → 3).
+**In calculations**
+  **Multiplying/dividing**: give the answer to the **fewest** significant figures of the data used.
+  Keep extra figures in intermediate steps; round only the final answer.
+  Use scientific notation to show significant figures clearly (1.20 × 10³).
+**Practice questions**
+  How many significant figures in 3.050 × 10⁻³?
+    Four.
+  Give 0.0045678 to three significant figures.
+    0.00457
+**Flashcards**
+  How many significant figures in 0.02050? :: Four (2, 0, 5, 0)
+  Rule for significant figures when multiplying or dividing? :: Give the answer to the least number of significant figures in the data.
+  Why round only at the end of a multi-step calculation? :: Rounding intermediate values adds rounding error to the final answer.
+  0.0250 mol × 58.44 g mol⁻¹ = ? (correct sig figs) :: 1.46 g (3 significant figures)
+
+@ d6096133 S.5.3 | Graphs and relationships
+**In a sentence**
+  Graphs reveal relationships — straight lines for linear ones, curves for non-linear — and gradients give rates.
+**Key ideas**
+  Plot the independent variable on x and the dependent on y.
+  **Linear**: points lie on a straight line (y = mx + c). **Directly proportional**: straight line through the origin (e.g. absorbance vs concentration).
+  **Non-linear**: a curve (e.g. solubility vs temperature for KNO₃, pH vs volume in a titration).
+  Draw a line or smooth curve of best fit; find the gradient for rates (rise ÷ run, with units); interpolate within the data range, be cautious extrapolating.
+**Practice questions**
+  What does a curve that levels off in a gas volume vs time graph show?
+    The reaction is slowing down and stopping as a reactant is used up.
+  How do you find a rate from a straight-line graph of volume against time?
+    Calculate the gradient: change in volume ÷ change in time, with units (e.g. mL s⁻¹).
+**Flashcards**
+  What does a straight line through the origin tell you? :: The two variables are directly proportional.
+  How is a gradient calculated, and what does it represent in a volume–time graph? :: Rise ÷ run; the rate of gas production (e.g. mL s⁻¹).
+  Difference between interpolation and extrapolation? :: Interpolation reads values within the range of data; extrapolation extends beyond it (less reliable).
+
+@ e9e5861f S.5.4 | Accuracy, precision and errors
+**In a sentence**
+  Know the measurement words exactly — accuracy, precision, repeatability, reproducibility, resolution, validity — and tell random errors from systematic ones.
+**The definitions**
+  **Accuracy**: closeness to the true value. **Precision**: closeness of repeated measurements to each other.
+  **Repeatability**: same person, method, equipment and conditions. **Reproducibility**: different people, equipment or labs.
+  **Resolution**: smallest change an instrument can detect. **Validity**: the method measures what it intends to, fairly.
+**Errors**
+  **Random**: unpredictable scatter; affects precision; reduced by repeats and averaging.
+  **Systematic**: consistent offset in one direction; affects accuracy; reduced by calibration or improved method.
+**Practice questions**
+  A balance reads 0.02 g too high for every measurement. What kind of error, and how is it fixed?
+    Systematic; zero (tare) or calibrate the balance.
+  Why does a thermometer with 0.1 °C resolution help in calorimetry?
+    Temperature changes can be small, and finer resolution reduces the relative uncertainty.
+**Flashcards**
+  Titres of 23.40, 23.45 and 23.40 mL when the true value is 21.00 mL are … :: Precise but not accurate (a systematic error).
+  Which error type does calibrating an instrument reduce? :: Systematic error.
+  What does high reproducibility tell you? :: Different people or labs using the method get similar results, so it is reliable.
+
+@ 1a11b3b3 S.5.5 | Outliers and incomplete data
+**In a sentence**
+  Spot outliers and gaps in data, investigate them, and be clear about what they mean for your conclusion.
+**Key ideas**
+  An **outlier** is a value that differs markedly from the others or from the trend. Check for a mistake; if there's a clear reason, exclude it (and say so); if not, repeat the measurement.
+  **Contradictory** data: results that disagree with each other or with other sources — investigate method and conditions.
+  **Provisional** data: preliminary, not yet confirmed (e.g. a single trial, or new research not yet replicated).
+  **Incomplete** data: gaps that limit what can be concluded (too few points, missing range).
+**Practice questions**
+  Should you always delete an outlier? Explain.
+    No — check for a known mistake first. Exclude it only with a stated reason; otherwise repeat the measurement.
+  What is incomplete data, and why does it matter?
+    Data with gaps (e.g. missing values or too few points), which limits what conclusions can be drawn.
+**Flashcards**
+  What is an outlier? :: A data point that lies well away from the other values or the trend.
+  What should you do with an outlier? :: Check for a mistake; exclude it with a stated reason if justified, or repeat the measurement.
+  What is provisional data? :: Preliminary data that hasn't yet been confirmed or replicated.
+
+@ a4878ed8 S.5.6 | Repeats and precision
+**In a sentence**
+  Repeating measurements shows how precise they are and reduces the effect of random errors on your average.
+**Key ideas**
+  Repeat each measurement (at least three times). The spread (range) of repeats shows the precision; a small spread means high precision.
+  In titrations, repeat until you have three **concordant** titres (within 0.10 mL).
+  Repeating improves precision of the mean and helps identify outliers, but can't remove systematic error.
+**Practice questions**
+  Titres 22.10, 22.15, 22.40, 22.05 mL — which would you average?
+    22.10, 22.15 and 22.05 (within 0.10 mL); average 22.10 mL.
+  What does a large spread between repeats tell you?
+    Precision is low — random errors are large.
+**Flashcards**
+  How do repeated trials show precision? :: A small spread (range) between repeated results indicates high precision.
+  Can repeating an experiment reduce systematic error? :: No — it only reduces the effect of random error.
+
+@ 509d39f3 S.5.7 | Evaluating and improving methods
+**In a sentence**
+  Evaluate your method honestly and suggest specific improvements that target the errors that mattered most.
+**Key ideas**
+  Identify the main sources of error in **your** method and their effect on the result.
+  Suggest **specific** improvements: e.g. use a gas syringe instead of collecting over water (CO₂ dissolves); use a burette with finer resolution; calibrate the pH meter; insulate the calorimeter; increase the number of trials; control temperature with a water bath.
+  Avoid vague suggestions ("be more careful", "use better equipment").
+**Practice questions**
+  Suggest an improvement to a titration where the end point was hard to see.
+    Use a white tile under the flask, add titrant drop by drop near the end point, or use a pH meter to find the equivalence point.
+  Why is "use better equipment" a weak improvement?
+    It's vague — name the equipment and the error it reduces (e.g. "a burette instead of a measuring cylinder, for finer resolution").
+**Flashcards**
+  Suggest an improvement when collecting CO₂ over water gives low volumes. :: Use a gas syringe (CO₂ dissolves in water), or collect over warm or saturated salt water.
+  Why is "be more careful" a poor improvement? :: It's vague and doesn't address a specific source of error.
+  How can temperature be controlled as a variable? :: Use a thermostatted water bath and monitor with a thermometer.
+
+@ 57a1f5a8 S.6.1 | Evidence vs opinion and anecdote
+**In a sentence**
+  Evidence is systematic and checkable; opinions and anecdotes aren't; and scientific ideas are the ones that can be tested.
+**Key ideas**
+  **Evidence**: systematically gathered, checkable data. **Opinion**: a personal view. **Anecdote**: a personal story or single case.
+  **Scientific ideas** are testable, falsifiable and based on evidence; **non-scientific** ideas can't be tested by observation or experiment.
+**Practice questions**
+  Classify: "Nine out of ten dentists recommend…" (an advertisement).
+    Presented as evidence but weak: sample, question and funding are unknown; treat as a marketing claim until supported.
+  Is "this water tastes cleaner" evidence of lower salinity?
+    No — it's a subjective opinion; measure conductivity for evidence.
+**Flashcards**
+  "My grandad drank tank water his whole life and was fine, so it's safe." — What kind of claim is this? :: An anecdote — a single uncontrolled case, not evidence.
+  What makes an idea scientific? :: It can be tested and potentially shown false by observation or experiment.
+
+@ 037b8ee4 S.6.2 | Does the evidence support the aim?
+**In a sentence**
+  Judge how well your data answers the aim, then recommend how the investigation could be modified or extended.
+**Key ideas**
+  Judge how well the data answers the aim: enough data points? Clear trend? Precise and accurate enough? Valid method?
+  Recommend modifications (more trials, wider range, better control of variables) or extensions (a new independent variable, a related question).
+**Practice questions**
+  Only three concentrations were tested and the trend is unclear. Recommend a change.
+    Test more concentrations across a wider range, with repeats at each.
+  Suggest an extension to an investigation of antacid effectiveness.
+    Compare antacids at body temperature (37 °C), or measure how fast each neutralises acid, not just how much.
+**Flashcards**
+  What should you consider when judging whether evidence supports an aim? :: The amount, precision and accuracy of the data, the validity of the method, and whether a clear pattern answers the question.
+  Give an example of an extension to an investigation. :: Testing a new variable (e.g. temperature as well as concentration) or a wider range of values.
+
+@ 8f59e09d S.6.3 | Supporting or refuting a hypothesis
+**In a sentence**
+  Compare your results with your prediction and say clearly whether the evidence supports or refutes the hypothesis — never that it proves it.
+**Key ideas**
+  Compare the observed trend with the prediction: state clearly **supported** or **not supported (refuted)** by the evidence — never "proved".
+  Refer to specific data (values, trend) and consider errors and limitations that affect confidence.
+  A refuted hypothesis is still a useful result.
+**Practice questions**
+  Hypothesis: rate increases with temperature. Results show a clear increase from 20 to 60 °C. Write the conclusion sentence.
+    "The results support the hypothesis: the rate of reaction increased from X to Y as temperature rose from 20 °C to 60 °C."
+  Why is "the results prove the hypothesis" wrong?
+    One investigation can't prove a hypothesis; further evidence could contradict it.
+**Flashcards**
+  Why say a hypothesis is "supported" rather than "proven"? :: One investigation can't prove a hypothesis; new evidence might contradict it.
+  What must you refer to when stating whether a hypothesis is supported? :: Specific results (data and trends) from the investigation.
+
+@ 2fa98a13 S.6.4 | Evidence-based conclusions
+**In a sentence**
+  Make a claim, support it with specific data, and explain the link with chemistry — and don't claim more than the data shows.
+**Key ideas**
+  A conclusion answers the question using the evidence: claim → evidence (data) → reasoning (the chemistry that links them).
+  Keep it consistent with the data and relevant to the question; don't claim more than the data shows.
+**Practice questions**
+  What are the three parts of a scientific argument?
+    Claim, evidence, reasoning.
+  Why is "brand A is better" a weak conclusion?
+    It doesn't say better at what, give the data, or explain why.
+**Flashcards**
+  What three parts make a strong scientific argument? :: A claim, supporting evidence (data), and reasoning that links them using chemical concepts.
+  What is overclaiming? :: Drawing a conclusion that goes beyond what the data can support.
+
+@ db57226d S.6.5 | Limitations of conclusions
+**In a sentence**
+  Every conclusion has limits; state them and say what further evidence would make it stronger.
+**Key ideas**
+  Explain what limits the conclusion: sample size, range tested, uncontrolled variables, assumptions, errors, applicability outside the conditions tested.
+  Identify what further evidence would strengthen it (more trials, other conditions, independent replication).
+**Practice questions**
+  Give a limitation of concluding about all vinegar from three brands.
+    The sample is too small to generalise to all vinegar brands.
+  What further evidence would strengthen a conclusion about creek salinity?
+    Samples from more sites and times (including after rain), and independent measurements.
+**Flashcards**
+  Give two things that can limit how far a conclusion applies. :: Small sample size; narrow range of the independent variable; uncontrolled variables; lab conditions differing from real-world conditions.
+  How could a conclusion be strengthened? :: More trials, a wider range, better control of variables, or independent replication.
+
+@ 1b370dea S.6.6 | Implications of findings
+**In a sentence**
+  Explain what your findings mean in the real world and for future research, including who they affect.
+**Key ideas**
+  Discuss what the findings mean beyond the lab: for health, the environment, industry, sustainability or policy.
+  Consider who is affected and any risks, costs or benefits of acting on the findings.
+**Practice questions**
+  What is an implication of finding one antacid neutralises twice as much acid as another?
+    Fewer tablets may be needed for the same effect, which may be cheaper or have fewer side effects.
+  Why consider implications for different groups of people?
+    A finding can benefit some and disadvantage others (e.g. farmers vs downstream users of a river).
+**Flashcards**
+  What does "implications of findings" mean? :: What the results mean for the real world — people, the environment, industry or future research.
+  Give an implication of finding high salinity in a local creek. :: The water may be unsuitable for stock or irrigation and may harm aquatic life; land management action may be needed.
+
+@ b416c55a S.7.1 | Chemical terminology and conventions
+**In a sentence**
+  Write chemistry the way chemists do: correct formulas, balanced equations with states, IUPAC names, SI units and sensible significant figures.
+**Key ideas**
+  Correct chemical formulas, charges and state symbols; IUPAC names; balanced equations.
+  Standard abbreviations and SI units (g, mol, L, mol L⁻¹, °C, K, kPa); a space between number and unit.
+  Graphing conventions (labelled axes with units); algebraic equations rearranged correctly; appropriate significant figures.
+**Practice questions**
+  Correct: "2 moles of H2O was made at 25C."
+    "2.0 mol of H₂O was produced at 25 °C."
+  Write the unit for molar mass and for concentration.
+    g mol⁻¹ and mol L⁻¹.
+**Flashcards**
+  Write the units of molar concentration and molar mass. :: mol L⁻¹ and g mol⁻¹
+  Name three chemical conventions used in written answers. :: Correct formulas and charges, state symbols in equations, IUPAC names, SI units, significant figures.
+
+@ 1e6c6778 S.7.2 | Connecting chemical ideas
+**In a sentence**
+  Strong answers connect ideas — structure explains bonding, bonding explains properties, properties explain uses.
+**Key ideas**
+  Link ideas across topics: e.g. hydrogen bonding explains water's high boiling point, high specific heat capacity, high latent heat and ice's low density.
+  Show how a theory (e.g. VSEPR) connects to a property (polarity) and then to a behaviour (solubility).
+**Practice questions**
+  Link the structure of graphite to its use in batteries.
+    Each carbon bonds to three others, leaving delocalised electrons that conduct electricity, and the covalent network gives it a very high melting point.
+  Connect hydrogen bonding to two properties of water.
+    High boiling point and ice being less dense than liquid water (also high specific heat and latent heat).
+**Flashcards**
+  Name three properties of water explained by hydrogen bonding. :: High boiling point, high specific heat capacity, high latent heat of vaporisation, ice less dense than water (any three).
+  How does molecular shape link to solubility? :: Shape decides polarity; polarity decides which solvents a substance dissolves in ("like dissolves like").
+
+@ 35df54f0 S.7.3 | Using models and theories
+**In a sentence**
+  Models and theories organise what we observe, but each has limits that you should be able to name.
+**Key ideas**
+  Models make complex phenomena understandable and predictable: the shell model (trends), metallic bonding (properties of metals), ionic lattice (properties of ionic solids), ideal gas (gas behaviour).
+  Every model has limits: the shell model can't explain subshell electron configurations; the ideal gas model fails at high pressure; the "sea of electrons" doesn't explain why some metals are magnetic.
+**Practice questions**
+  Give a limitation of the Lewis structure model.
+    It doesn't show three-dimensional shape or the relative sizes of atoms.
+  Why do chemists use several models of bonding?
+    Each explains some properties well; together they give a fuller picture.
+**Flashcards**
+  Give a limitation of the shell model of the atom. :: It can't explain subshells or the filling order (e.g. 4s before 3d).
+  Give a limitation of the ideal gas model. :: Real gases deviate at high pressure and low temperature because particles have volume and attract each other.
+
+@ e97586de S.7.4 | Evaluating scientific and media texts
+**In a sentence**
+  Judge claims by the quality of their evidence, not by how confidently they're made.
+**Key ideas**
+  Ask: Who is the source and are they expert? Peer reviewed? Who funded it? Is the evidence given, or just claims? Is the sample size adequate? Are correlation and causation confused? Is language sensational?
+  Compare the media report with the original research where possible.
+**Practice questions**
+  A news headline says "Chemical in plastic bottles causes cancer." What should you check?
+    The original study: who did it, whether it was peer reviewed, the dose and exposure studied, sample size, and whether it shows causation or just correlation.
+  Why is a single study not enough to settle a question?
+    Results need to be replicated by others to rule out chance, error or bias.
+**Flashcards**
+  Give three questions to ask when evaluating a media article about chemistry. :: Who wrote or funded it? Is the original research peer reviewed? Is evidence given and is the sample adequate? Is it sensationalised?
+  What is the difference between correlation and causation? :: Correlation means two things vary together; causation means one actually causes the other.
+
+@ ea9ce5e2 S.7.5 | Applying sustainability concepts
+**In a sentence**
+  Apply green chemistry, the Sustainable Development Goals and circular-economy thinking to judge how sustainable a chemical solution really is.
+**Key ideas**
+  Use green chemistry principles, the Sustainable Development Goals and the linear → circular economy transition to evaluate a scenario (e.g. a new plastic, a water treatment method, a fertiliser).
+  Identify which concepts apply, weigh benefits and drawbacks with evidence, and reach a justified judgement.
+**Practice questions**
+  Apply one green chemistry principle to making ethanol by fermentation.
+    Renewable feedstock — sugars from plants rather than ethene from oil. (Or: mild conditions using enzymes, energy efficiency.)
+  How would a circular economy approach reduce plastic packaging waste?
+    Design packaging for reuse or single-material recycling, set up collection and return schemes, and make new packaging from recycled material.
+**Flashcards**
+  Name three sustainability frameworks you can apply to a chemistry scenario. :: Green chemistry principles, the UN Sustainable Development Goals, and the circular economy.
+  How do you structure a sustainability evaluation? :: Identify relevant concepts, apply each with evidence, weigh trade-offs, and make a justified judgement.
+
+@ 45c2a2d9 S.7.6 | Decisions shaped by more than science
+**In a sentence**
+  Real decisions about chemistry balance evidence with social, economic, political, legal and ethical factors.
+**Key ideas**
+  Decisions on chemistry-related issues (fluoridating water, banning a pesticide, approving a mine) also involve **sociocultural, economic, political, legal and ethical** factors, not only scientific evidence.
+  Recognise which factor is driving a decision and whether it conflicts with the evidence.
+**Practice questions**
+  Give an ethical factor in deciding whether to fluoridate drinking water.
+    Individual choice versus community health benefit — people can't opt out of the public supply.
+  Give a political factor that might affect a ban on a pesticide.
+    Pressure from farming groups, election priorities, or trade agreements.
+**Flashcards**
+  List the non-scientific factors that can influence decisions on chemistry issues. :: Sociocultural, economic, political, legal and ethical factors.
+  Give an example where an economic factor might outweigh scientific evidence. :: Continuing to use a cheaper but more polluting process because the cleaner option is costly.
+
+@ 05c43fde S.7.7 | Communicating for your audience
+**In a sentence**
+  Choose the right genre and language for your audience, and say what matters clearly and concisely.
+**Key ideas**
+  Choose the genre: scientific report, poster, presentation, infographic, article.
+  Adapt language to the audience (technical for experts, plain for the public) and keep writing clear, coherent and concise.
+  VCE Unit 4 uses a scientific poster (with a word limit), so practise summarising concisely.
+**Practice questions**
+  How would you describe "exothermic" to a primary school class?
+    "A reaction that gives out heat, so things around it get warmer — like a hand warmer."
+  Why do scientific posters use more visuals than reports?
+    Viewers spend little time on each poster; visuals communicate the key finding quickly.
+**Flashcards**
+  How should communication change for a general audience? :: Plainer language, defined terms, analogies and visuals, focus on relevance.
+  What does "concise" mean in science communication? :: Saying what is needed in as few words as possible, without losing accuracy.
+
+@ 08ada503 S.7.8 | Referencing sources
+**In a sentence**
+  Reference every source and acknowledge help, using a standard style consistently.
+**Key ideas**
+  Reference all sources of information, data, images and ideas using a standard style (e.g. APA): in-text citations plus a reference list.
+  Acknowledge assistance from people (teachers, lab technicians, classmates).
+**Practice questions**
+  What should an in-text citation include in APA style?
+    The author's surname (or organisation) and the year, e.g. (CSIRO, 2023).
+  Do you need to reference data from your teacher's handout?
+    Yes — acknowledge the source of any information or data you didn't generate yourself.
+**Flashcards**
+  Why is referencing important? :: It credits others' work, avoids plagiarism and allows readers to check the evidence.
+  What two parts make up a standard referencing system? :: In-text citations and a full reference list.

@@ -6,7 +6,10 @@ import { useEffect, useState } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { getImage, storeImage } from '../db/imageRepository';
 import type { StoredImage } from '../db/schema';
-import { loadImage } from '../sync/imageSync';
+import { loadImageWithReason } from '../sync/imageSync';
+import { useFileStoreVersion } from '../sync/files/fileStoreState';
+import type { FileStoreKind } from '../sync/files/types';
+import { missingFileMessage } from '../sync/files/messages';
 
 /**
  * An image in a rem.
@@ -100,23 +103,25 @@ export function useRemImage(imageId: string, alt: string): { url: string | null;
     [imageId],
     lastSeen.get(imageId)
   );
-  /** The id we asked cloud storage for and came back empty-handed. */
-  const [missingFor, setMissingFor] = useState<string | null>(null);
+  /** The id we asked cloud storage for and came back empty-handed, and why. */
+  const [missing, setMissing] = useState<{ id: string; needsSignIn: FileStoreKind[] } | null>(null);
+  // Bumped by a OneDrive sign-in (or a change of store): try again.
+  const storeVersion = useFileStoreVersion();
 
   useEffect(() => {
     if (local !== null || !imageId) return;
     let cancelled = false;
-    void loadImage(imageId).then((found) => {
+    void loadImageWithReason(imageId).then((found) => {
       // A found image lands in IndexedDB, and the live query above picks it up.
-      if (!cancelled && !found) setMissingFor(imageId);
+      if (!cancelled && !found.image) setMissing({ id: imageId, needsSignIn: found.needsSignIn });
     });
     return () => {
       cancelled = true;
     };
-  }, [local, imageId]);
+  }, [local, imageId, storeVersion]);
 
   const url = local ? objectUrlFor(local) : null;
-  const fetching = local === null && missingFor !== imageId;
+  const fetching = local === null && missing?.id !== imageId;
 
   let body;
   if (url) {
@@ -124,12 +129,7 @@ export function useRemImage(imageId: string, alt: string): { url: string | null;
   } else if (local === undefined || fetching) {
     body = <div className="rem-image-placeholder">Loading image…</div>;
   } else {
-    body = (
-      <div className="rem-image-placeholder">
-        This image isn’t on this device yet. It appears once the device it was added on has
-        synced, and you’re signed in here.
-      </div>
-    );
+    body = <div className="rem-image-placeholder">{missingFileMessage('image', missing?.needsSignIn ?? [])}</div>;
   }
   return { url, body };
 }
