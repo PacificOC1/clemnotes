@@ -1,0 +1,518 @@
+% VCE Economics — textbook notes for Jacaranda Key Concepts in VCE Economics 1, Units 1 & 2 (12th edition),
+% Topic 6: The economics of international trade (Unit 2 AoS 2, option 2). Format: see src/courses/textbook.ts.
+% Our own summary of what each section teaches, using the book's terms and order — never the book's text.
+% The book's data runs to 2019–22; "Since the textbook" lines bring it up to date (checked October 2026).
+% Money is written \$ (a bare $ starts maths).
+
+@chapter 6 | The economics of international trade
+
+@section 6.1 - | Overview
+**In a sentence**
+  Countries trade because none has every resource it needs: each sells what it is good at producing and buys the rest, which has made nations interdependent and pushed world trade from about 2% of world GDP in 1500 to about 60% today.
+**Key terms**
+  **International economics**: the study of why countries trade, the patterns of trade, how trade is measured, what affects its level and how government policy shapes it.
+  **International trade**: the two-way exchange of goods and services across national borders.
+  **Interdependence**: countries relying on each other for the goods, services and markets they need.
+**Why trade matters in daily life**
+  A Swiss watch, Brazilian coffee, a phone assembled in China, a holiday in Bali, Australian lamb — each is a product of international trade.
+  Trade lets countries specialise in what they produce best, sell the surplus abroad and use the earnings to import what they lack.
+  Example from the book: Sri Lanka's climate suits high-quality tea, so it grows about a fifth of the tea traded worldwide, while countries that can't grow tea import it.
+**What the chapter covers**
+  6.2 and 6.3 — what international trade is and how it is measured (definition, measures and indicators).
+  6.4 — why trade matters for Australia and the world (importance at local, national and international levels).
+  6.5 — what makes exports and imports rise or fall (economic factors).
+  6.6 — free trade versus protectionism (perspectives of consumers, workers, businesses and government).
+  6.7 — what governments and businesses have done about trade (responses and policies).
+  6.8 — review of the whole topic.
+**Going deeper**
+  Trade isn't only goods and services: money also crosses borders as investment and borrowing (your bank may fund home loans with money borrowed overseas). Those flows are part of international economics but the trade topic focuses on goods and services.
+**Connections**
+  Chapter 6.2 Definition, nature and direction of international trade.
+  Resources and needs and wants (Unit 1): trade exists because resources differ between countries.
+  Opportunity cost (Unit 1): the basis of comparative cost advantage in Chapter 6.6.
+**Practice questions**
+  Why has world trade grown so much faster than world output over the past 500 years?
+    Trade is generally beneficial: countries gain by specialising in what they produce best and trading for the rest, so trade has grown from about 2% of world GDP in 1500 to about 60% in recent years.
+  Give two everyday examples of how international trade affects an Australian household.
+    Buying imported goods such as a phone made in China or coffee from Brazil; and Australian exports such as lamb or education earning income that creates local jobs.
+**Flashcards**
+  What is international trade? :: The two-way exchange of goods and services across national borders.
+  World trade as a share of world GDP: about 2% in 1500, about {{60%}} today.
+  What does international economics study? :: Why countries trade, trade patterns, measurement, influences on trade and trade policy.
+  Why are countries interdependent? :: Each relies on others for goods it can't produce well and for markets for its exports.
+
+@section 6.2 U2.2.1.1 | Definition, nature and direction of international trade
+**In a sentence**
+  International trade is Australia selling exports to, and buying imports from, other countries; what we trade (the composition) depends on our resources and competitiveness, and who we trade with (the direction) is dominated by Asia, especially China.
+**Key terms**
+  **International trade**: the two-way exchange of goods and services across national borders — exporting to and importing from other countries.
+  **Exports**: goods and services sold to buyers in other countries (money flows into Australia).
+  **Imports**: goods and services bought from other countries (money flows out of Australia).
+  **Composition of trade**: the types of goods and services a country exports and imports.
+  **Direction of trade**: the countries a nation trades with — its trading partners.
+  **International competitiveness**: the ability of local firms to sell quality goods and services at prices that attract buyers here and overseas, without government help.
+**6.2.1 Why countries trade**
+  Resources differ: countries have different natural, labour and capital resources, so none can produce everything it needs efficiently.
+  Price: it is often cheaper to buy from overseas producers who are more efficient or have cheaper resources.
+  Quality and availability: some foreign goods are better or simply not made locally.
+  Together these decide how internationally competitive each country's sellers are.
+**6.2.2 The composition of Australia's trade**
+  Exports reflect Australia's abundant natural resources: mineral fuels and ores (coal, iron ore, gas), rural goods (wool, wheat, meat), gold, and services (education, tourism, transport, finance).
+  The book's DFAT figures (2019–20): mineral fuels and ores about \$246 billion — by far the largest; services about \$92 billion; manufactures about \$52 billion; rural about \$47 billion; gold about \$26 billion.
+  Imports are mostly goods we lack or can't make as cheaply: intermediate goods and raw materials used by local firms (about \$125 billion), consumption goods such as cars, appliances and clothing (about \$103 billion), services (about \$87 billion) and capital goods such as machinery (about \$73 billion).
+**6.2.3 The direction of Australia's trade**
+  Australia trades with more than 180 countries, but about 80% of exports go to just ten.
+  The book's 2019–20 shares of exports: China about 35%, Japan about 12%, South Korea about 6%, the United States about 6%, the United Kingdom about 4%, India about 4%, then Singapore, New Zealand, Taiwan and Malaysia.
+  Asia dominates because it is close, fast-growing and needs the raw materials and energy Australia has.
+**Since the textbook**
+  China still takes about a third of Australia's goods exports; iron ore, coal and LNG remain the top exports, and international education exports recovered strongly after the COVID border closures.
+**Worked example**
+  Explain why Australia exports iron ore but imports cars.
+    Composition reflects resources: Australia has huge, high-grade iron ore deposits in the Pilbara, so it can mine and ship ore at low cost — it is internationally competitive.
+    Cars need large-scale manufacturing; Australia's small market meant high costs, and local car making ended in 2017, so it is cheaper to import cars from Japan, South Korea, Thailand and China.
+    Direction: much of the iron ore goes to China's steel mills; many cars come from Asian producers.
+**Going deeper**
+  A country's composition of trade can change as its resources and competitiveness change: Australia once relied on wool ("riding on the sheep's back"); minerals and services now dominate.
+  Heavy dependence on one market (China) is a risk if that country slows or restricts trade — a theme of Chapter 6.7.
+**Common mistakes**
+  Confusing composition (what) with direction (to whom).
+  Forgetting services — education and tourism are major exports, and Australians' overseas travel is an import.
+**Exam tips**
+  When defining international trade, include "two-way", "goods and services" and "across national borders".
+**Connections**
+  Chapter 6.3 Measurement of Australia's international transactions.
+  Chapter 6.6: comparative cost advantage explains the composition of trade.
+  Defining and measuring the issue (study design lesson).
+**Practice questions**
+  Define international trade.
+    The two-way exchange of goods and services across national borders: exporting to and importing from other countries.
+  Outline two reasons why most countries trade internationally.
+    Countries have different resources, so they can't produce everything they need efficiently; and imports are often cheaper, better quality or unavailable locally.
+  Distinguish between exports and imports.
+    Exports are goods and services sold to overseas buyers, bringing money into Australia; imports are goods and services bought from overseas, sending money out.
+  List the main types of goods and services that Australia exports and imports.
+    Exports: minerals and energy (iron ore, coal, gas), rural goods (wool, wheat, meat), gold, services (education, tourism). Imports: raw materials and components, consumption goods (cars, appliances, clothing), capital goods (machinery), services (travel, transport).
+**Flashcards**
+  The types of goods and services a country trades is its {{composition}} of trade.
+  The countries a nation trades with is its {{direction}} of trade.
+  Australia's largest export category? :: Mineral fuels and ores (iron ore, coal, gas).
+  Australia's largest export market? :: China (about a third of exports).
+  Share of Australia's exports going to its top ten partners? :: About 80%.
+  What is international competitiveness? :: Selling quality goods and services at attractive prices here and overseas without government help.
+  Two services Australia exports? :: Education and tourism.
+
+@section 6.3 U2.2.1.1 | Measurement of Australia's international transactions
+**In a sentence**
+  Australia measures its trade on the balance on goods and services (BOGS, or balance of trade): export credits minus import debits over a quarter or a year, which gives a surplus, a deficit or an exact balance.
+**Key terms**
+  **Balance on goods and services (BOGS)**: the total value of exports of goods and services minus the total value of imports of goods and services, over a period (a quarter or a year). Also called the balance of trade or trade balance.
+  **Credit**: a transaction that brings money into Australia — payment for our exports (recorded as +).
+  **Debit**: a transaction that sends money out of Australia — payment for our imports (recorded as −).
+  **Trade surplus**: credits for exports exceed debits for imports (BOGS positive).
+  **Trade deficit**: debits for imports exceed credits for exports (BOGS negative).
+  **Trade balance (exact)**: credits equal debits (BOGS = 0).
+**Credits and debits**
+  Exports of goods (minerals, wool) and services (education, tourism) earn money from overseas: credits.
+  Imports of goods (oil, cars, appliances) and services (transport, insurance, overseas holidays) send money abroad: debits.
+  Every transaction is a credit for one country and a debit for the other.
+**The formula**
+  $\text{BOGS} = \text{credits for exports of goods and services} - \text{debits for imports of goods and services}$
+  It can be split into the balance on goods (goods exports − goods imports) and the balance on services (services exports − services imports); the two add to the BOGS.
+**The three outcomes**
+  Surplus: credits \$10 million, debits \$6 million → surplus of \$4 million.
+  Deficit: credits \$8 million, debits \$14 million → deficit of \$6 million.
+  Exact balance: credits \$10 million, debits \$10 million → \$0.
+**Australia's recent record**
+  Australia ran large BOGS surpluses from about 2018, helped by high commodity prices (the book's chart runs to 2022).
+**Since the textbook**
+  Surpluses have continued but narrowed as commodity prices eased: the goods surplus was about \$1.9 billion in July 2026 (ABS), with goods exports of about \$46 billion a month.
+**Worked example**
+  A country's transactions (\$ millions): exports of goods 20, imports of goods 30, exports of services 5, imports of services 10. Calculate (a) the balance on goods, (b) the balance on services, (c) the BOGS.
+    (a) Balance on goods = 20 − 30 = −\$10 million (a deficit on goods).
+    (b) Balance on services = 5 − 10 = −\$5 million (a deficit on services).
+    (c) BOGS = (20 + 5) − (30 + 10) = 25 − 40 = −\$15 million, a trade deficit. Check: −10 + (−5) = −15.
+**Worked example 2**
+  Is each item most likely a credit or a debit for Australia: crude oil, laptops, shoes, iron ore, defence equipment, machinery?
+    Credit (an export, money in): iron ore.
+    Debit (imports, money out): crude oil, laptops, shoes, defence equipment, machinery — Australia lacks the resources or scale to make them as cheaply, so it imports them.
+**Going deeper**
+  A surplus isn't automatically "good" and a deficit "bad": a deficit can reflect strong local spending and imports of machinery that raise future productive capacity; a surplus can reflect weak domestic demand.
+  The BOGS is one part of the wider balance of payments (the current account also includes income flows such as interest and dividends paid overseas) — studied in Units 3–4.
+**Common mistakes**
+  Recording imports as credits. Money for imports leaves Australia, so they are debits.
+  Leaving out services — the BOGS covers goods and services.
+  Getting the sign wrong: a negative BOGS is a deficit.
+**Exam tips**
+  Show the formula, the substitution and the answer with "surplus" or "deficit" and units (\$ millions or billions).
+**Connections**
+  Chapter 6.2 Definition, nature and direction of international trade.
+  Chapter 6.5: the factors that change exports and imports, and so the BOGS.
+  Defining and measuring the issue (study design lesson).
+**Practice questions**
+  Describe what the balance on goods and services measures.
+    The total value of Australia's exports of goods and services (credits) minus the total value of its imports of goods and services (debits) over a quarter or a year.
+  Credits are \$420 billion and debits \$385 billion in a year. Calculate the BOGS and name the outcome.
+    420 − 385 = \$35 billion: a trade surplus.
+  Explain why Australia imports crude oil rather than producing all it needs.
+    Australia's own oil resources are limited and refining capacity is small, so importing oil is cheaper and more reliable than producing it all locally.
+**Flashcards**
+  BOGS = ? :: Credits for exports of goods and services − debits for imports of goods and services.
+  Another name for the BOGS? :: The balance of trade (trade balance).
+  Payment for an export is a {{credit}}; payment for an import is a {{debit}}.
+  Credits exceed debits. What is the outcome? :: A trade surplus.
+  Calculate: credits \$8m, debits \$14m. :: A deficit of \$6 million.
+  Is an Australian's overseas holiday a credit or debit? :: A debit (an import of services).
+  Over what periods is the BOGS measured? :: A quarter (3 months) or a year.
+
+@section 6.4 U2.2.1.2 | The benefits of international trade for Australia and the global economy
+**In a sentence**
+  Trade benefits Australia and the world in five main ways: exports give firms economies of large-scale production, lift aggregate demand and GDP, and create jobs and income; imports give access to resources that expand productive capacity, and their competition keeps inflation low and efficiency high.
+**Key terms**
+  **Economies of large-scale production (economies of scale)**: falls in average cost per unit as a firm produces more, because relatively fixed costs are spread over a larger output.
+  **Fixed costs**: costs that don't rise in proportion to output — machinery, research and design, advertising, management and training.
+  **Average (unit) cost**: total cost ÷ units produced.
+  **Productive capacity (potential GDP)**: the most an economy can produce with its resources — shown by its production possibility frontier.
+  **Purchasing power**: the quantity of goods and services a given income can buy.
+**Benefit 1 — Exports give economies of large-scale production**
+  Many costs are relatively fixed, so producing for a market of nearly 8 billion people rather than about 26 million spreads them much more thinly and cuts the cost per unit.
+  Lower unit costs let Australian firms sell profitably at lower, more competitive prices.
+  The book's illustration: a product costing \$1 million to design and equip would need a price of \$1 million if only one unit sold, but as little as \$1 each if a million sold.
+  Australia's car industry, selling mostly to a small local market, couldn't reach this scale and closed.
+**Benefit 2 — Exports grow aggregate demand and GDP**
+  Exports are an injection into the circular flow: AD = C + I + G + (X − M).
+  Exports are worth over \$480 billion a year — about 20–25% of AD and GDP. Without trade, the economy would be far smaller.
+**Benefit 3 — Exports create jobs and income**
+  Output and employment move together: the export sector supports more than one in five Australian jobs, lowering unemployment and the cost of welfare.
+  Output and income move together too: more GDP means more national income, consumption and material living standards.
+**Benefit 4 — Imports expand productive capacity**
+  Australia exports its surplus resources (minerals, farm goods) and uses the earnings to import what it lacks (oil, machinery, technology, components) at the lowest price.
+  More and better resources shift the production possibility frontier outward (PPF1 to PPF2), raising potential GDP, jobs and incomes.
+**Benefit 5 — Imports boost efficiency and keep inflation low**
+  Import competition forces local firms to cut costs, become more efficient and keep prices down.
+  Consumers get more choice, better quality and lower prices, so the purchasing power of their incomes rises.
+  Competition pushes firms to specialise where they have a cost advantage, getting more output from the same inputs.
+**Benefits for the global economy**
+  Trade raises GDP, jobs and incomes in most countries; for South Korea, Germany, Canada and the European Union, exports are over 30% of GDP.
+  It has helped lift hundreds of millions out of poverty, notably in China.
+**Worked example**
+  A Victorian firm designs a new appliance: fixed costs \$2 million a year, plus \$5 per unit in materials and wages. Compare its average cost if it sells 10 000 units locally with 400 000 units after it starts exporting.
+    Local only: average cost = 2 000 000 ÷ 10 000 + 5 = 200 + 5 = \$205 per unit.
+    With exports: average cost = 2 000 000 ÷ 400 000 + 5 = 5 + 5 = \$10 per unit.
+    Exporting cuts the unit cost from \$205 to \$10 — economies of large-scale production let the firm sell at a far more competitive price.
+**Going deeper**
+  The benefits are spread widely (lower prices for everyone) while the costs are concentrated (workers in industries that lose to imports) — which is why trade is politically contested (Chapter 6.6).
+  Australia's trade-to-GDP ratio is lower than many smaller, open economies; the book's argument is that more trade would mean more scale, efficiency and income.
+**Common mistakes**
+  Treating imports as only a cost. They supply resources, competition and choice that raise living standards.
+  Saying economies of scale come from "producing more" without explaining the fixed-cost mechanism.
+**Exam tips**
+  For each benefit, name it, explain the mechanism and end with the effect on living standards.
+**Connections**
+  Chapter 6.3 Measurement of Australia's international transactions.
+  Aggregate demand and its components (Unit 2 Area of Study 1): exports as an injection.
+  The production possibility frontier (Unit 1): imports of resources shift it outward.
+  Why the issue matters, local to global (study design lesson).
+**Practice questions**
+  Explain how international trade can increase economies of large-scale production.
+    Exporting gives firms access to a much bigger market, so they produce more; their relatively fixed costs (design, equipment, advertising, management) are spread over more units, lowering average cost per unit and letting them sell more cheaply.
+  Explain how exports affect Australia's GDP and employment.
+    Exports are an injection into aggregate demand (about 20–25% of it). Higher exports raise production, so firms hire more workers — the export sector supports more than a fifth of jobs — and national income rises.
+  How can imports help keep inflation low?
+    Competition from cheaper imports forces local firms to cut costs and limit price rises, and consumers can buy cheaper foreign goods, so the general price level rises more slowly.
+  Australia's trade is a smaller share of GDP than the EU's. How might this affect our material living standards?
+    Less trade means fewer economies of scale, less import competition and less access to resources, so output and incomes may be lower than they could be — material living standards are lower than with more trade.
+**Flashcards**
+  Five benefits of trade in the book? :: Economies of scale, higher AD and GDP, more jobs and income, access to resources, lower inflation and greater efficiency.
+  What are economies of large-scale production? :: Lower average cost per unit as output rises, because fixed costs are spread more thinly.
+  Exports are about {{20–25%}} of Australia's AD and GDP.
+  Share of Australian jobs supported by exports? :: More than one in five.
+  How do imports raise productive capacity? :: They supply resources we lack, shifting the PPF outward.
+  How do imports raise purchasing power? :: Competition lowers prices, so incomes buy more.
+  Calculate: fixed costs \$2m, \$5 per unit, 400 000 units. Average cost? :: \$10 per unit.
+  Why did Australia's car industry close? :: It sold to a small market, couldn't gain economies of scale, and couldn't match cheaper imports.
+
+@section 6.5 U2.2.1.3 | The economic factors influencing international trade
+**In a sentence**
+  The value of exports and imports — and so the trade balance — is driven mainly by the exchange rate, economic activity and inflation here and overseas, world commodity prices, and severe weather and pandemics.
+**Key terms**
+  **Exchange rate**: the price of one country's currency when swapped for another's (e.g. how many US dollars one Australian dollar buys).
+  **Foreign exchange market**: where buyers (demand) and sellers (supply) of currencies set exchange rates.
+  **Appreciation**: a rise in the value of a currency (one A\$ buys more foreign currency).
+  **Depreciation**: a fall in the value of a currency (one A\$ buys less foreign currency).
+  **Commodity prices**: world prices for raw materials such as iron ore, coal, gas, gold, wool and wheat.
+**6.5.1 The exchange rate**
+  Overseas buyers of Australian exports must buy Australian dollars to pay us, so exports raise demand for the A\$; Australians buying imports must sell A\$ for foreign currency, so imports raise the supply of A\$.
+  More buyers (demand up) or fewer sellers (supply down) → the A\$ appreciates. More sellers (supply up) or fewer buyers (demand down) → the A\$ depreciates.
+  Factors shifting demand for the A\$ (via exports): growth in our trading partners (China, the US); overseas consumer and business confidence; the price competitiveness of Australian goods.
+  Factors shifting supply of the A\$ (via imports): Australia's own growth; Australian consumer and business confidence; government spending on imported defence equipment and foreign aid.
+  A lower A\$ makes exports cheaper for foreigners and imports dearer for us → exports rise, imports fall → the trade balance strengthens, AD and jobs rise.
+  A higher A\$ does the opposite → the trade balance weakens.
+  So exporters usually prefer a lower dollar and importers a higher one.
+  The book's chart: the A\$ was high in the early 1980s, fell towards 2001, rose to a peak around 2011–13, and has generally been lower since.
+**6.5.2 Economic activity and inflation here and overseas**
+  Strong growth in Australia (confidence, rising incomes) raises spending on imports — luxury cars, equipment, overseas holidays — and faster local inflation makes local goods less attractive than imports. The trade balance weakens.
+  A slowdown in Australia cuts imports, strengthening the trade balance.
+  Strong growth overseas, especially in China, the US and Japan, raises their demand for our commodities and services, strengthening the trade balance; a global slowdown weakens it.
+**6.5.3 World commodity prices**
+  Prices for Australia's commodity exports are set by global demand and supply: a world shortage raises them; a glut lowers them.
+  Higher commodity prices raise the value of exports and strengthen the trade balance — the 2021–22 spike in iron ore and coal prices explains Australia's large recent surpluses.
+**6.5.4 Severe weather events and pandemics**
+  Cyclones, floods, drought and bushfires destroy farms and businesses, cutting productive capacity and the volume available to export.
+  The COVID-19 pandemic disrupted supply chains, caused labour shortages and closed borders to tourists and international students, slashing service exports.
+  Better seasons and reopened borders lift exports again (though Australians travelling overseas raises imports too).
+**Since the textbook**
+  Commodity prices eased from their 2022 peak (lithium prices collapsed in 2023–24), narrowing the surplus. In 2025 the United States put a 10% baseline tariff on most Australian goods and up to 50% on steel and aluminium; in 2026 higher world energy prices from conflict in the Middle East raised the cost of fuel imports.
+**Worked example**
+  The A\$ appreciates from US\$0.65 to US\$0.70. (a) What happens to the US-dollar price of an A\$100 case of Australian wine? (b) What happens to the A\$ cost of a US\$50 imported shirt? (c) Effect on the trade balance?
+    (a) At 0.65 it costs 100 × 0.65 = US\$65; at 0.70 it costs 100 × 0.70 = US\$70 — dearer for US buyers, so wine exports tend to fall.
+    (b) At 0.65 it costs 50 ÷ 0.65 ≈ A\$76.92; at 0.70 it costs 50 ÷ 0.70 ≈ A\$71.43 — cheaper for Australians, so imports tend to rise.
+    (c) Exports fall and imports rise, so the trade balance weakens (other things equal).
+**Worked example 2**
+  Using demand and supply for the A\$, explain the effects of (a) Australia importing oil from Saudi Arabia and (b) Australia selling gas to Japan.
+    (a) Paying for oil means selling A\$ for foreign currency: supply of A\$ increases (S1 shifts right to S2), so the exchange rate falls (depreciates) from ER1 to ER2 and the quantity of A\$ traded rises.
+    (b) Japanese buyers must buy A\$ to pay for gas: demand for A\$ increases (D1 shifts right to D2), so the exchange rate rises (appreciates) from ER1 to ER2 and the quantity traded rises.
+**Going deeper**
+  The exchange rate also responds to interest rates and investment flows (higher Australian interest rates attract foreign savings and raise demand for the A\$) — covered in Units 3–4.
+  Some exporters import inputs (machinery, fuel), so a lower dollar helps them less than it seems.
+**Common mistakes**
+  Getting the direction wrong: exports increase demand for the A\$; imports increase its supply.
+  Saying a high dollar is always good. It helps importers and travellers but hurts exporters and the trade balance.
+**Exam tips**
+  For an exchange rate question, describe the shift (D or S, which way), the new equilibrium (appreciation or depreciation), then the effect on export and import prices and the trade balance.
+**Connections**
+  Chapter 6.3: these factors change the BOGS.
+  Changes in equilibrium (Unit 1): the foreign exchange market is a demand and supply market.
+  What changes aggregate demand (Unit 2 Area of Study 1): net exports.
+  The factors behind the issue (study design lesson).
+**Practice questions**
+  Explain the term exchange rate and outline how Australia's exchange rate is determined.
+    The exchange rate is the price of the A\$ in terms of another currency. It is set in the foreign exchange market by the demand for A\$ (from overseas buyers of our exports and assets) and the supply of A\$ (from Australians paying for imports); where they are equal sets the rate.
+  Outline the effect on Australia's exchange rate of an increase in the value of exports.
+    Overseas buyers must buy more A\$, increasing demand for the currency, so the A\$ appreciates.
+  Explain how a peak in commodity prices (such as 2011–12) and a trough (such as 2015–16) would affect the balance of trade.
+    At the peak, the value of commodity exports rises, so the trade balance strengthens (bigger surplus or smaller deficit); at the trough, export values fall and the balance weakens.
+  Explain how severe weather and the COVID-19 pandemic might affect the balance of trade.
+    Both cut productive capacity and exports — floods and droughts destroy crops, the pandemic closed borders to students and tourists and disrupted supply chains — so export credits fall and the trade balance weakens (unless imports fall by more).
+**Flashcards**
+  Four factors influencing trade in the book? :: The exchange rate; economic activity and inflation here and overseas; commodity prices; severe weather and pandemics.
+  Exports increase the {{demand}} for the A\$; imports increase its {{supply}}.
+  A rise in the A\$'s value is an? :: Appreciation.
+  Effect of a lower A\$ on the trade balance? :: Strengthens it — exports cheaper abroad, imports dearer here.
+  Who usually prefers a lower A\$? :: Exporters.
+  Strong Australian growth → effect on the trade balance? :: Weakens it — more spending on imports.
+  Higher world commodity prices → effect on the trade balance? :: Strengthens it — export values rise.
+  Calculate: US\$50 shirt at A\$1 = US\$0.70. Cost in A\$? :: About A\$71.43.
+
+@section 6.6 U2.2.1.4 | Different perspectives about the issue of international trade
+**In a sentence**
+  People see trade differently depending on how it affects them, and the debate splits into two camps: free trade (open markets, specialisation by comparative cost advantage) and protectionism (tariffs, subsidies and quotas to shield local industry).
+**Key terms**
+  **Free trade**: no tariffs, subsidies, quotas or other restrictions on goods, services and capital moving between countries.
+  **Trade liberalisation**: governments gradually reducing protection — cutting tariffs, abolishing quotas, lowering subsidies.
+  **Protectionism**: government barriers to trade (tariffs, subsidies, import quotas) that limit foreign competition so local firms survive.
+  **Tariff**: an indirect tax added to the price of imports to make them dearer than the local product.
+  **Subsidy**: a government cash payment or tax concession to local producers that covers part of their costs.
+  **Import quota**: a limit on the quantity of a particular import allowed into the country.
+  **Free trade agreement (FTA)**: an agreement to cut or abolish protection — bilateral (usually two countries) or multilateral (many).
+  **Specialisation in production**: a nation concentrating on the goods and services it produces most efficiently given its resources.
+  **Absolute cost advantage**: being the cheapest or most efficient producer of a good in the world.
+  **Comparative cost advantage**: specialising where a nation is relatively most efficient, or where its cost disadvantage is least — minimising opportunity cost.
+  **Infant industry**: a new industry with high costs that, it is argued, needs temporary protection until it becomes efficient.
+**How each agent sees trade**
+  Consumers: like cheaper imports and wider choice.
+  Business owners: gain from selling overseas but may be squeezed by import competition.
+  Workers in import-competing industries: fear their employer closing because local costs (including wages) are higher than overseas.
+  Government: popular with consumers for low prices, but unpopular with voters who lose jobs when local firms close.
+**6.6.1 The case for free trade**
+  Specialisation, efficiency and growth: without protection, market forces move resources to where each country's costs are relatively lowest, so more output (GDP) comes from the same inputs, raising incomes.
+  Bigger markets for exports: FTAs and lower tariffs abroad open markets and give economies of scale; protection invites retaliation. With liberalisation, Australia's exports have grown two to four times faster than GDP.
+  More jobs and income in the long run: about one in four Australian jobs depends directly or indirectly on exports — though retraining is needed for those who lose jobs to imports.
+  Lower inflation, more purchasing power and choice: world average inflation fell from about 24% in 1990 to under 4% in later decades as trade opened up.
+**Absolute and comparative cost advantage**
+  Absolute: if South Korea makes cars most cheaply and Australia mines iron ore most cheaply, each should specialise and trade.
+  Comparative: even a country with no absolute advantage gains by specialising where its disadvantage is least, because that is where its opportunity cost is lowest. This is David Ricardo's theory (1817).
+  Different resources drive specialisation: tropical countries grow tea, coffee, cocoa and sugar; cooler countries import them.
+**6.6.2 The case for protectionism**
+  Infant industries: tariffs help new industries until they are efficient — but some "infants" never grow up (Australia's car industry stayed uncompetitive "even in old age").
+  National security and self-sufficiency: keeping local production of essentials (medicines, medical equipment, fuel, shipbuilding) for wartime or pandemics — at the cost of lower living standards in normal times.
+  Economic stability: less reliance on exports means less exposure to overseas booms and recessions — but by the same logic we'd ban trade between states.
+  Jobs: protection may save jobs in the short term, especially against low-wage imports.
+**The counter-arguments on jobs**
+  Retaliation: other countries raise barriers against our exports, costing export jobs.
+  Higher costs for other firms: tariffs on imported materials and equipment raise costs for the industries that use them.
+  Long run: protecting inefficient, unprofitable industries can't create lasting jobs; specialising in areas of comparative advantage can.
+**Worked example**
+  Hours of work to make one unit: Country A — beef 100, computers 100; Country B — beef 120, computers 200. Who has the absolute and comparative advantage in each good?
+    Absolute: A needs fewer hours for both goods, so A has the absolute advantage in beef and computers.
+    Relative disadvantage of B: beef 120 ÷ 100 = 1.2 times as many hours; computers 200 ÷ 100 = 2 times. B's disadvantage is least in beef.
+    Opportunity cost of one beef: A gives up 100 ÷ 100 = 1 computer; B gives up 120 ÷ 200 = 0.6 computers. B's is lower, so B has the comparative advantage in beef.
+    Opportunity cost of one computer: A gives up 1 beef; B gives up 200 ÷ 120 ≈ 1.67 beef. A's is lower, so A has the comparative advantage in computers.
+    So A should specialise in computers and B in beef, then trade — both can consume more.
+**Going deeper**
+  Most governments, including Australia's, have chosen liberalisation: Australia's average tariff is under 1%, while a few small economies (the Solomon Islands, Palau, Bermuda) still average above 30%.
+  Countries that are more open to trade tend to have higher GDP per person (the World Economic Forum's Enabling Trade Index), though causation runs both ways.
+**Common mistakes**
+  Thinking a country with no absolute advantage can't gain from trade — comparative advantage always exists.
+  Calculating opportunity cost the wrong way round: compare what is given up per unit of the good gained.
+  Treating protection as free: someone pays — consumers (higher prices) or taxpayers (subsidies).
+**Exam tips**
+  In a "discuss free trade and protectionism" answer, give at least two arguments each way, the counter-argument to each protectionist claim, and a judgement on living standards.
+**Connections**
+  Chapter 6.4: the benefits of trade underpin the free-trade case.
+  Chapter 6.7: governments' move towards trade liberalisation.
+  Opportunity cost (Unit 1): the basis of comparative cost advantage.
+  Perspectives of the economic agents (study design lesson).
+**Practice questions**
+  Distinguish protectionism from free trade as government policies.
+    Protectionism uses tariffs, subsidies and import quotas to limit foreign competition and support local industry; free trade removes these barriers so goods and services move freely and countries specialise by comparative advantage.
+  Hours per unit: Portugal — cloth 90, wine 80; England — cloth 100, wine 120. Which country has the absolute and comparative advantage in each good, and can they both gain from trade?
+    Absolute: Portugal uses fewer hours for both, so it has the absolute advantage in cloth and wine. Comparative: Portugal's advantage is greatest in wine (80 vs 120 hours, about a third fewer) and smaller in cloth (90 vs 100); England's disadvantage is least in cloth. Opportunity cost of cloth: Portugal 90 ÷ 80 ≈ 1.13 wine, England 100 ÷ 120 ≈ 0.83 wine — England is lower. So Portugal should specialise in wine, England in cloth, and both gain from trade.
+  Explain two arguments used to support protectionism, and one weakness of each.
+    Infant industries: tariffs help new firms until they become efficient — but some never do and stay dependent. Jobs: protection saves jobs in import-competing industries — but it invites retaliation against our exports and raises costs for other firms, costing jobs elsewhere.
+  Explain how free trade can reduce inflation.
+    Removing tariffs and quotas lets cheaper imports in and increases competition, so local firms must hold down prices and consumers can buy cheaper goods.
+**Flashcards**
+  Three main protectionist tools? :: Tariffs, subsidies and import quotas.
+  A tax on imports is a {{tariff}}.
+  What is comparative cost advantage? :: Specialising where a nation's relative efficiency is greatest or disadvantage least — lowest opportunity cost.
+  Whose theory is comparative advantage? :: David Ricardo's (1817).
+  What is the infant industry argument? :: New, high-cost industries need temporary protection until they become efficient.
+  Four claimed advantages of protection? :: Infant industries, national security/self-sufficiency, economic stability, jobs.
+  Calculate: B makes beef in 120 hours and computers in 200. Opportunity cost of one beef? :: 0.6 computers.
+  Australia's average tariff rate? :: Under 1%.
+
+@section 6.7 U2.2.1.5 | Economic responses and government policies involving international trade
+**In a sentence**
+  Since the 1970s Australia has liberalised trade — cutting tariffs, abolishing quotas, reducing subsidies and signing many FTAs — and backed this with supply-side policies to make local firms internationally competitive, while recent shocks (Brexit, trade wars, COVID-19, war in Ukraine) have made some countries rethink.
+**Key terms**
+  **Trade liberalisation**: gradually reducing protection of local industry by cutting tariffs, abolishing quotas and lowering subsidies.
+  **Bilateral FTA**: an agreement between (usually) two countries to remove protection between them.
+  **Multilateral agreement**: a trade agreement or forum involving many countries.
+  **APEC (Asia–Pacific Economic Cooperation)**: a forum of 21 Pacific-rim economies promoting freer trade.
+  **ASEAN (Association of South-East Asian Nations)**: ten South-East Asian countries cutting tariffs to help their development; Australia is a dialogue partner.
+  **International competitiveness**: local firms selling quality goods and services at low enough prices to compete here and abroad without government help.
+  **Supply-side (aggregate supply) policies**: policies that lower production costs and lift efficiency and productive capacity.
+  **Enterprise bargaining**: pay and conditions negotiated firm by firm, usually tied to worker efficiency.
+  **Centralised wage fixing**: pay and conditions set across the economy by the Fair Work Commission (and its predecessors).
+  **Labour market deregulation**: less government control of wage setting and more reliance on demand, supply and enterprise bargaining.
+  **Structural change**: businesses changing how they operate — cutting costs, closing inefficient operations, adopting new technology — to stay competitive.
+  **Trade war**: rounds of retaliatory tariffs between countries.
+  **World Trade Organization (WTO)**: the international body that promotes free trade, sets trade rules and settles disputes.
+**6.7.1 Australia's trade liberalisation — five policies**
+  1. Tariffs cut: general manufacturing tariffs fell from about 36% in the early 1970s to under 1% now; car tariffs fell from 125% (1985–86) to 10% (2005) and 5% (from 2010); special high tariffs on textiles, clothing and footwear were phased down.
+  2. Import quotas abolished: common in the 1970s–80s on cars, textiles, footwear and clothing; the last (on cheese) ended in 2000–01.
+  3. Subsidies reduced: from about \$25 billion a year in the early 1970s to about \$14 billion by 2020–21 (excluding over \$150 billion of temporary COVID support).
+  4. Local content rules and restrictions on foreign investment eased.
+  5. More FTAs: 17 in operation by mid-2022 — including New Zealand (CER), Singapore, the United States, Thailand, Chile, ASEAN–NZ, Malaysia, Korea, Japan, China (ChAFTA), the CPTPP, Hong Kong, Peru, Indonesia, PACER Plus and RCEP — with agreements with India and the UK signed, and others (the EU, the Gulf states, the UAE) under negotiation.
+  Aims: more efficient use of resources, lower inflation, more exports, faster growth, more jobs in the long run and higher material living standards.
+**Multilateral groupings**
+  APEC: 21 economies with about 60% of world GDP and nearly 40% of the world's population; they buy about 70% of Australia's exports.
+  ASEAN: about 662 million people and GDP of about US\$4 trillion; it takes about 11% of Australia's exports (about \$53 billion in 2020) — collectively our third-largest customer after China and Japan. Exports to ASEAN have risen more than 40-fold since 1970.
+**6.7.2 Overseas policy**
+  The world's average tariff fell from about 34% in 1990 to about 3% by 2021.
+  High-income countries have very low tariffs; parts of Africa, South America, the Middle East and Russia remain more protected. Most countries now have more than 11 FTAs.
+**6.7.3 Making local firms internationally competitive**
+  Cutting company tax: from 49% (1988) to 30% (2002), and 25% for firms with turnover under \$50 million (from July 2021); still above the OECD average of about 21%.
+  Investing in infrastructure: roads (M1), rail (Inland Rail, Melbourne Airport Rail), energy (Snowy 2.0), a new Western Sydney airport, the NBN — \$120 billion over ten years in the 2022–23 budget; Victoria's West Gate Tunnel and rail projects. Better infrastructure cuts business costs and bottlenecks.
+  Investing in R&D, education and training: about \$45 billion on education in 2022–23, the JobTrainer program, about \$12 billion on R&D (CSIRO, universities, medical research).
+  Labour market reform: wages are 60–70% of many firms' costs, so the shift from centralised wage fixing to enterprise bargaining (now covering over 85% of workers) tied pay rises more closely to productivity and slowed labour cost growth.
+**How businesses responded**
+  Structural change: cutting costs and lifting worker efficiency; closing or selling inefficient branches; investing in R&D and new technology; adopting world-best practices; marketing overseas to gain economies of scale.
+**6.7.4 Rethinking liberalisation — four events**
+  Brexit: the UK voted 52–48 in 2016 to leave the EU single market (it left in 2020), partly blaming free trade for lost jobs, low wages and inequality — gaining policy independence but losing access to the bloc.
+  Tensions with China: China (a WTO member since 2001, now roughly a sixth of world GDP) still averages about 7% tariffs and keeps import quotas on over 150 items. The 2018–20 US–China trade war saw the US impose tariffs of 10% then 25% on \$200 billion of Chinese goods, and China retaliate. In 2020–21 China restricted about \$25 billion of Australian exports (barley, wine, beef, lobster, timber, coal and more), and many exporters found new markets.
+  COVID-19: broken supply chains and export bans on masks, ventilators and medicines showed the risk of over-specialisation; some countries are rebuilding local manufacturing for resilience.
+  Russia's invasion of Ukraine (2022): Europe's dependence on Russian energy prompted a push to diversify energy supply.
+**Since the textbook**
+  The UK and India agreements came into force (India in December 2022, the UK in May 2023). China lifted its restrictions on Australian barley (2023), wine (2024) and lobster (late 2024). In 2025 the US imposed a 10% baseline tariff on most Australian goods and up to 50% on steel and aluminium — a sharp turn away from liberalisation that Australia did not retaliate against. Company tax rates are unchanged (25% and 30%).
+**Worked example**
+  Describe the effect of removing a tariff on imported goods in the Australian market, using demand and supply.
+    Before: the tariff raises the price of imports, so total supply in the local market is S1, with equilibrium price P1 and quantity Q1.
+    Removing the tariff makes imports cheaper to bring in, so supply increases (S1 shifts right to S2).
+    At P1 there is now a surplus, so the price falls to P2 and quantity rises to Q2.
+    Consumers gain (lower prices, more choice); efficient firms survive; less efficient local firms may close and some workers must retrain.
+**Worked example 2**
+  A firm earns \$10 million profit. Compare its tax at Australia's 30% rate with the OECD average of about 21%, and explain why it matters for competitiveness.
+    At 30%: 0.30 × 10 = \$3 million tax, \$7 million after tax.
+    At about 21%: 0.21 × 10 ≈ \$2.1 million tax, about \$7.9 million after tax.
+    The Australian firm keeps about \$0.9 million less, so it must charge higher prices or invest less — part of why the government cut company tax rates.
+**Going deeper**
+  Liberalisation and supply-side reform go together: removing protection exposes firms to competition, so governments must also lower costs (tax, infrastructure, skills, wage flexibility) or many firms would collapse.
+  The 2020s show trade policy can reverse: security and resilience now compete with efficiency as goals.
+**Common mistakes**
+  Listing policies without the aim: each should link to efficiency, competitiveness, growth, jobs or living standards.
+  Saying Australia has "no" tariffs — a few remain, averaging under 1%.
+  Confusing APEC (a Pacific forum Australia belongs to) with ASEAN (South-East Asian nations; Australia is a partner, not a member).
+**Exam tips**
+  For an evaluation, state the policy, how it works, evidence of its effect (tariff and FTA trends, export growth), who loses, and a judgement.
+**Connections**
+  Chapter 6.6: the free trade and protectionism debate behind these policies.
+  What changes aggregate supply (Unit 2 Area of Study 1): supply-side policies.
+  Strategies to increase profit (Unit 1): competition policy alongside trade policy.
+  Responses and their effectiveness (study design lesson).
+**Practice questions**
+  Outline the key aspects of the Australian government's policy of trade liberalisation.
+    Cutting tariffs to under 1%, abolishing all import quotas (by 2000–01), reducing subsidies, easing local content and foreign investment rules, and signing many bilateral and multilateral FTAs.
+  Explain how free trade agreements can raise material living standards.
+    They remove tariffs between members, opening bigger export markets (economies of scale, more jobs and income) and bringing cheaper imports and more competition (lower prices, more efficiency), so real incomes rise.
+  Why did the government cut company tax and invest in infrastructure after reducing protection?
+    Without protection, local firms face full foreign competition; lower company tax and better infrastructure reduce their costs and raise efficiency, making them internationally competitive so they survive and grow.
+  Identify two recent events that have made countries reassess trade liberalisation, and explain one.
+    The COVID-19 pandemic and the US–China trade war (also Brexit and Russia's invasion of Ukraine). COVID broke supply chains and some countries banned exports of medical supplies, showing the risks of relying on imports for essentials, so some governments are rebuilding local manufacturing.
+**Flashcards**
+  Five parts of Australia's trade liberalisation? :: Lower tariffs, no import quotas, fewer subsidies, eased local content/foreign investment rules, more FTAs.
+  When were Australia's last import quotas (on cheese) abolished? :: 2000–01.
+  Number of FTAs Australia had in operation by mid-2022? :: 17.
+  Australia's company tax rate for large firms? :: 30% (25% for firms under \$50 million turnover).
+  Enterprise bargaining covers over {{85%}} of workers.
+  APEC vs ASEAN? :: APEC — 21 Pacific-rim economies incl. Australia; ASEAN — ten South-East Asian nations, Australia a partner.
+  Effect of removing a tariff in the local market? :: Supply increases — price falls, quantity rises.
+  Four events prompting a rethink of liberalisation? :: Brexit, tensions with China/trade wars, COVID-19, Russia's invasion of Ukraine.
+
+@section 6.8 U2.2.1.1,U2.2.1.2,U2.2.1.3,U2.2.1.4,U2.2.1.5 | Review
+**In a sentence**
+  International trade is measured by the BOGS, benefits Australia through scale, demand, jobs, resources and competition, is driven by the exchange rate, activity, commodity prices and shocks, is argued over by free traders and protectionists, and has been liberalised by Australian governments for 50 years.
+**Summary by study design point**
+  Definition and measures (6.2–6.3): two-way trade in goods and services; Australia exports minerals, energy, farm goods and services and imports manufactures, capital goods and fuel; China, Japan, Korea, the US and India are key markets; the BOGS = export credits − import debits, recently in surplus.
+  Importance (6.4): economies of large-scale production; exports as about a fifth to a quarter of AD and GDP; more than one in five jobs; imports expand productive capacity; import competition lowers inflation and lifts efficiency.
+  Factors (6.5): exchange rate (lower A\$ strengthens the trade balance); activity and inflation here (weakens it when strong) and overseas (strengthens it when strong); commodity prices; severe weather and pandemics.
+  Perspectives (6.6): consumers, businesses, workers and government gain or lose differently; free trade (specialisation by comparative cost advantage, bigger markets, jobs in the long run, lower inflation) vs protectionism (infant industries, security, stability, short-run jobs).
+  Responses (6.7): tariffs under 1%, quotas gone, subsidies halved, many FTAs, APEC and ASEAN links; supply-side support (company tax cuts, infrastructure, education and R&D, enterprise bargaining); businesses restructured.
+**Key terms**
+  Balance on goods and services (balance of trade), credit, debit, surplus, deficit.
+  Composition and direction of trade.
+  Economies of large-scale production.
+  Exchange rate, foreign exchange market, appreciation, depreciation.
+  Free trade, trade liberalisation, protectionism, tariff, subsidy, import quota, FTA (bilateral, multilateral).
+  Absolute cost advantage, comparative cost advantage, specialisation, infant industry.
+  International competitiveness, structural change, enterprise bargaining, centralised wage fixing, labour market deregulation, infrastructure, worker efficiency (GDP per hour worked).
+  APEC, ASEAN, WTO, trade war.
+**Worked example**
+  Exam-style: "Evaluate trade liberalisation as a response to the issue of international trade" (6 marks) — a model plan.
+    Define it: governments reducing protection — cutting tariffs, removing quotas, lowering subsidies, signing FTAs.
+    Evidence: Australia's tariffs fell from about 36% to under 1%, quotas ended in 2000–01, 17 FTAs by 2022; exports have grown two to four times faster than GDP.
+    Benefits: specialisation and efficiency, economies of scale, lower inflation, more choice, more jobs in export industries.
+    Costs: job losses in import-competing industries (car making ended in 2017), exposure to overseas shocks and coercion (China's 2020–21 restrictions; US tariffs from 2025).
+    Judgement: on balance it has raised material living standards, provided governments support affected workers and diversify markets.
+**Common mistakes**
+  Mixing up the BOGS (a value) with the terms of trade (a ratio of prices).
+  Mixing up which way the exchange rate moves when exports or imports change.
+**Exam tips**
+  The book's topic summary mirrors the five key knowledge points — use them as headings in your own revision notes and practice SAC answers.
+**Connections**
+  Chapter 6.1 Overview — the map of the whole topic.
+  Defining and measuring the issue; Why the issue matters, local to global; The factors behind the issue; Perspectives of the economic agents; Responses and their effectiveness (study design lessons).
+**Practice questions**
+  A country's credits are \$60 billion for goods and \$15 billion for services; its debits are \$55 billion for goods and \$25 billion for services. Calculate the balance on goods, the balance on services and the BOGS.
+    Goods: 60 − 55 = +\$5 billion. Services: 15 − 25 = −\$10 billion. BOGS: (60 + 15) − (55 + 25) = 75 − 80 = −\$5 billion, a trade deficit.
+  Explain how a depreciation of the A\$ and a rise in world iron ore prices would together affect Australia's trade balance.
+    Both strengthen it: the depreciation makes exports cheaper for foreigners and imports dearer for Australians, and higher iron ore prices raise the value of exports, so credits rise relative to debits.
+  Discuss whether Australia should increase protection for its manufacturing industry.
+    For: support for new (infant) industries and supply security for essentials, as COVID-19 showed. Against: higher prices for consumers, higher costs for firms that use imported inputs, likely retaliation against our exports and lower efficiency. Judgement: targeted support for genuinely strategic goods may be justified, but broad protection would likely lower living standards.
+**Flashcards**
+  Five key knowledge headings for the trade issue? :: Definition and measures; importance; factors; perspectives; responses.
+  Calculate the BOGS: credits \$75b, debits \$80b. :: −\$5 billion (a deficit).
+  Measure of worker efficiency? :: GDP (output) per hour worked.
+  The international body that sets trade rules and settles disputes is the {{WTO}}.
+  Rounds of retaliatory tariffs between countries are a? :: Trade war.
+  What is structural change for a business? :: Changing how it operates — cutting costs, closing inefficient parts, new technology — to stay competitive.

@@ -1,13 +1,14 @@
 import { db } from './database';
 import { getAllPages, getBacklinks } from './repository';
 import { ensureFolderNamed, getAllFolders } from './folderRepository';
-import { createPageWithTree, insertTreesUnder } from './treeInsert';
+import { createPageWithTree, insertTreesUnder, type DraftRem } from './treeInsert';
 import { buildTreeIndex } from './cardScope';
 import type { OutlinerNode } from './schema';
 import { CATALOGUE, unitsLabel, type CatalogueSubject } from '../courses/catalogue';
 import { designToDrafts, readRoadmap, type Roadmap } from '../courses/courseTree';
 import { planPack } from '../courses/notesPack';
-import { loadPack } from '../courses/packs';
+import { loadPack, loadTextbook } from '../courses/packs';
+import { chapterDraft, sectionDraft, textbookDraft } from '../courses/textbook';
 import type { StudyDesign } from '../courses/studyDesign';
 import { docFromText } from '../tiptap/docUtils';
 
@@ -129,6 +130,51 @@ export async function addStudyNotes(pageId: string, subject: CatalogueSubject): 
   });
 
   return { added: plan.place.length, skipped: plan.skipped, unmatched: plan.unmatched.length, rems: ids.length };
+}
+
+export interface TextbookNotesResult {
+  /** Sections that got notes. */
+  added: number;
+  /** Sections already in the course (yours or added before), left as they were. */
+  skipped: number;
+  rems: number;
+}
+
+/**
+ * File the subject's textbook notes in the course page, under a
+ * "Textbook: <book>" heading, one heading per chapter and one lesson per
+ * section. Chapters and sections already there are left alone, so pressing it
+ * again only adds what's new (a chapter added to the pack later). One undo.
+ */
+export async function addTextbookNotes(pageId: string, subject: CatalogueSubject): Promise<TextbookNotesResult> {
+  if (!subject.textbook) throw new Error(`${subject.title} has no textbook notes.`);
+  const chapters = await loadTextbook(subject.id);
+  const [nodes, cards] = await Promise.all([db.nodes.toArray(), db.cards.toArray()]);
+  const roadmap = readRoadmap(pageId, nodes, cards, Date.now(), buildTreeIndex(nodes));
+  if (!roadmap) throw new Error("That course isn't in your notes any more.");
+
+  const all = chapters.reduce((n, c) => n + c.sections.length, 0);
+  const items: Array<{ parentId: string; drafts: DraftRem[] }> = [];
+  let added = 0;
+  if (!roadmap.textbook) {
+    items.push({ parentId: pageId, drafts: [textbookDraft(subject.textbook.title, chapters)] });
+    added = all;
+  } else {
+    const book = roadmap.textbook;
+    for (const chapter of chapters) {
+      const there = book.chapters.find((c) => c.number === chapter.number);
+      if (!there) {
+        items.push({ parentId: book.id, drafts: [chapterDraft(chapter)] });
+        added += chapter.sections.length;
+        continue;
+      }
+      const missing = chapter.sections.filter((s) => !there.sections.some((t) => t.number === s.number));
+      if (missing.length > 0) items.push({ parentId: there.id, drafts: missing.map(sectionDraft) });
+      added += missing.length;
+    }
+  }
+  const ids = await insertTreesUnder(items, 'Add textbook notes');
+  return { added, skipped: all - added, rems: ids.length };
 }
 
 export interface LessonRem {

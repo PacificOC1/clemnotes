@@ -86,6 +86,7 @@ function roadmapWith(points: Array<{ id: string; text: string }>, skills: Array<
       },
     ],
     skills: skills.length ? { id: 's', tally, groups: [{ id: 'sg', title: 'S', points: skills.map(p) }] } : null,
+    textbook: null,
     tally,
     next: null,
   };

@@ -1,4 +1,5 @@
 import { parsePack, type PackEntry } from '../notesPack';
+import { parseTextbook, type TextbookChapterEntry } from '../textbook';
 
 /**
  * Study-note packs by catalogue subject id. Each is a lazy chunk of plain
@@ -56,4 +57,23 @@ export async function loadPack(subjectId: string): Promise<PackEntry[]> {
 /** The pack's short title for each learning point, by `pointKey` of its wording. */
 export async function loadPackTitles(subjectId: string): Promise<Map<string, string>> {
   return new Map((await loadPack(subjectId)).map((e) => [e.key, e.label]));
+}
+
+/**
+ * Textbook packs: notes that follow a book's chapters (`textbook.ts`), one file
+ * per chapter, each a lazy chunk like the study-note packs.
+ */
+const TEXTBOOKS: Record<string, () => Promise<string[]>> = {
+  'vce-economics': () =>
+    Promise.all([import('./vce-economics/textbook/chapter-6.txt?raw')]).then((modules) => modules.map((m) => m.default)),
+};
+
+export function hasTextbook(subjectId: string): boolean {
+  return subjectId in TEXTBOOKS;
+}
+
+export async function loadTextbook(subjectId: string): Promise<TextbookChapterEntry[]> {
+  const load = TEXTBOOKS[subjectId];
+  if (!load) return [];
+  return (await load()).flatMap((text) => parseTextbook(text)).sort((a, b) => a.number - b.number);
 }

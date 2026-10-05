@@ -1,12 +1,35 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { db } from './database';
-import { COURSES_FOLDER_NAME, addStudyNotes, findCoursePage, getCourses, importStudyDesign, loadRoadmap } from './courseRepository';
+import { COURSES_FOLDER_NAME, addStudyNotes, addTextbookNotes, findCoursePage, getCourses, importStudyDesign, loadRoadmap } from './courseRepository';
 import { parsePack, pointKey } from '../courses/notesPack';
+import { parseTextbook } from '../courses/textbook';
 import { undoLast } from './undo';
+
+// The textbook the mock serves; a test can add a section to it to stand for a later pack.
+const BOOK = {
+  extra: '',
+  text: () =>
+    [
+      '@chapter 2 | Fizz in practice',
+      '@section 2.1 - | Overview',
+      '**In a sentence**',
+      '  Practice makes fizz.',
+      '@chapter 1 | All about bubbles',
+      '@section 1.2 U1.1.1.2 | Surface tension',
+      'Tension :: skin',
+      '@section 1.1 U1.1.1.1,U1.1.1.2 | Gases',
+      '**Key ideas**',
+      '  Warm water holds less gas.',
+      'Warm water, gas? :: Less dissolves.',
+      BOOK.extra,
+    ].join('\n'),
+};
 
 // A small pack for the made-up design below; the real one is checked in notesPack.test.ts.
 vi.mock('../courses/packs', () => ({
   hasPack: () => true,
+  hasTextbook: () => true,
+  loadTextbook: async () => parseTextbook(BOOK.text()).sort((a, b) => a.number - b.number),
   loadPack: async () =>
     parsePack(
       [
@@ -289,5 +312,59 @@ describe('materialIds', () => {
 
     const ids = materialIds(a.id, buildTreeIndex(await db.nodes.toArray()));
     expect([...ids].sort()).toEqual([a.id, b.id, c.id].sort());
+  });
+});
+
+describe('textbook notes', () => {
+  beforeEach(async () => {
+    await resetDatabase();
+    BOOK.extra = '';
+  });
+  const ECON = catalogueSubject('vce-economics')!;
+
+  it('files chapters and sections under a Textbook heading, in the book\'s order', async () => {
+    const { pageId } = await importStudyDesign(ECON, DESIGN);
+    const before = (await loadRoadmap(pageId))!;
+    expect(before.textbook).toBeNull();
+
+    const result = await addTextbookNotes(pageId, ECON);
+    expect(result).toMatchObject({ added: 3, skipped: 0 });
+
+    const roadmap = (await loadRoadmap(pageId))!;
+    const book = roadmap.textbook!;
+    expect(book.title).toBe(ECON.textbook!.title);
+    expect(book.chapters.map((c) => [c.number, c.title, c.sections.map((s) => `${s.number} ${s.title}`)])).toEqual([
+      [1, 'All about bubbles', ['1.1 Gases', '1.2 Surface tension']],
+      [2, 'Fizz in practice', ['2.1 Overview']],
+    ]);
+    // A section is a lesson: its notes and cards count for it, not for the study design.
+    expect(book.chapters[0]!.sections.find((s) => s.number === '1.1')).toMatchObject({ status: 'cards', cards: 1 });
+    expect(book.tally).toMatchObject({ points: 3, cards: 2 });
+    expect(roadmap.tally).toMatchObject({ points: 5, cards: 0 });
+    expect(roadmap.units).toHaveLength(2);
+
+    // The headings read as the book does.
+    const page = (await db.nodes.toArray()).filter((n) => n.parentId === book.chapters[0]!.id).map((n) => n.plainText);
+    expect(page.sort()).toEqual(['Chapter 1.1 Gases', 'Chapter 1.2 Surface tension']);
+  });
+
+  it('adds only what is missing the second time, and is one undo', async () => {
+    const { pageId } = await importStudyDesign(ECON, DESIGN);
+    await addTextbookNotes(pageId, ECON);
+    const count = await db.nodes.count();
+    expect(await addTextbookNotes(pageId, ECON)).toMatchObject({ added: 0, skipped: 3, rems: 0 });
+    expect(await db.nodes.count()).toBe(count);
+
+    BOOK.extra = ['@chapter 3 | Later', '@section 3.1 - | New', '**In a sentence**', '  Added later.'].join('\n');
+    expect(await addTextbookNotes(pageId, ECON)).toMatchObject({ added: 1, skipped: 3 });
+    expect((await loadRoadmap(pageId))!.textbook!.chapters.map((c) => c.number)).toEqual([1, 2, 3]);
+
+    await undoLast();
+    expect((await loadRoadmap(pageId))!.textbook!.chapters.map((c) => c.number)).toEqual([1, 2]);
+  });
+
+  it('refuses a subject without a textbook', async () => {
+    const pageId = await importChem();
+    await expect(addTextbookNotes(pageId, CHEM)).rejects.toThrow(/no textbook/);
   });
 });

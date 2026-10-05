@@ -4,6 +4,9 @@ import { CATALOGUE, unitsLabel, type CatalogueSubject } from '../courses/catalog
 import {
   isStudied,
   type AreaProgress,
+  type ChapterProgress,
+  type SectionProgress,
+  type TextbookProgress,
   type GroupProgress,
   type PointProgress,
   type PointStatus,
@@ -11,10 +14,19 @@ import {
   type Tally,
   type UnitProgress,
 } from '../courses/courseTree';
-import { hasPack, loadPackTitles } from '../courses/packs';
+import { hasPack, hasTextbook, loadPackTitles, loadTextbook } from '../courses/packs';
+import { sectionHeading, type TextbookChapterEntry } from '../courses/textbook';
 import { pointKey } from '../courses/notesPack';
 import { deriveTitle } from '../courses/titles';
-import { addStudyNotes, loadLesson, loadRoadmap, type LessonRem, type StudyNotesResult } from '../db/courseRepository';
+import {
+  addStudyNotes,
+  addTextbookNotes,
+  loadLesson,
+  loadRoadmap,
+  type LessonRem,
+  type StudyNotesResult,
+  type TextbookNotesResult,
+} from '../db/courseRepository';
 import { extractClozeIndices, parseDoc, splitOnSeparator, type DocNode } from '../tiptap/docUtils';
 import { ReadOnlyDoc } from './ReadOnlyDoc';
 
@@ -158,7 +170,10 @@ type Place =
   | { kind: 'unit'; unit: UnitProgress }
   | { kind: 'area'; unit: UnitProgress; area: AreaProgress }
   | { kind: 'skills'; skills: NonNullable<Roadmap['skills']> }
-  | { kind: 'point'; point: PointProgress; group: GroupProgress; unit: UnitProgress | null; area: AreaProgress | null };
+  | { kind: 'point'; point: PointProgress; group: GroupProgress; unit: UnitProgress | null; area: AreaProgress | null }
+  | { kind: 'textbook'; book: TextbookProgress }
+  | { kind: 'chapter'; book: TextbookProgress; chapter: ChapterProgress }
+  | { kind: 'section'; book: TextbookProgress; chapter: ChapterProgress; section: SectionProgress };
 
 function locate(roadmap: Roadmap, item: string | null): Place {
   if (!item) return { kind: 'overview' };
@@ -177,7 +192,63 @@ function locate(roadmap: Roadmap, item: string | null): Place {
     const point = group.points.find((p) => p.id === item);
     if (point) return { kind: 'point', point, group, unit: null, area: null };
   }
+  const book = roadmap.textbook;
+  if (book) {
+    if (book.id === item) return { kind: 'textbook', book };
+    for (const chapter of book.chapters) {
+      if (chapter.id === item) return { kind: 'chapter', book, chapter };
+      const section = chapter.sections.find((s) => s.id === item);
+      if (section) return { kind: 'section', book, chapter, section };
+    }
+  }
   return { kind: 'overview' };
+}
+
+/** Study-design position ("U2.2.1.1", "S.1.2") of every learning point, as packs number them. */
+function positionsOf(roadmap: Roadmap): Map<string, PointProgress> {
+  const out = new Map<string, PointProgress>();
+  for (const unit of roadmap.units) {
+    for (const area of unit.areas) {
+      area.groups.forEach((g, gi) => g.points.forEach((p, pi) => out.set(`U${unit.number}.${area.number}.${gi + 1}.${pi + 1}`, p)));
+    }
+  }
+  roadmap.skills?.groups.forEach((g, gi) => g.points.forEach((p, pi) => out.set(`S.${gi + 1}.${pi + 1}`, p)));
+  return out;
+}
+
+/** The subject's textbook pack (which section covers which learning points), loaded once. */
+function useTextbookPack(subject: CatalogueSubject | undefined): TextbookChapterEntry[] | null {
+  const [chapters, setChapters] = useState<TextbookChapterEntry[] | null>(null);
+  useEffect(() => {
+    let live = true;
+    if (subject && hasTextbook(subject.id)) {
+      void loadTextbook(subject.id).then((c) => {
+        if (live) setChapters(c);
+      });
+    }
+    return () => {
+      live = false;
+    };
+  }, [subject]);
+  return chapters;
+}
+
+/** Section number → the learning points it covers, and point id → the sections that cover it. */
+function textbookLinks(roadmap: Roadmap, pack: TextbookChapterEntry[] | null) {
+  const byPosition = positionsOf(roadmap);
+  const pointsOf = new Map<string, PointProgress[]>();
+  const sectionsOf = new Map<string, SectionProgress[]>();
+  const present = new Map((roadmap.textbook?.chapters ?? []).flatMap((c) => c.sections.map((s) => [s.number, s] as const)));
+  for (const chapter of pack ?? []) {
+    for (const entry of chapter.sections) {
+      const points = entry.covers.map((pos) => byPosition.get(pos)).filter((p): p is PointProgress => p !== undefined);
+      pointsOf.set(entry.number, points);
+      const section = present.get(entry.number);
+      if (!section) continue;
+      for (const p of points) sectionsOf.set(p.id, [...(sectionsOf.get(p.id) ?? []), section]);
+    }
+  }
+  return { pointsOf, sectionsOf };
 }
 
 /** Every learning point in order — key knowledge, then separately the skills — for previous/next. */
@@ -193,7 +264,9 @@ function sequenceFor(roadmap: Roadmap, inSkills: boolean): PointProgress[] {
 export function CourseBrowser({ pageId, item, onOpen, onBackToCourses, onStudy, onZoomTo }: CourseBrowserProps) {
   const roadmap = useLiveQuery(() => loadRoadmap(pageId), [pageId]);
   const roadmapTitle = roadmap?.title.toLowerCase();
-  const titles = useTitles(CATALOGUE.find((s) => s.title.toLowerCase() === roadmapTitle));
+  const subject = CATALOGUE.find((s) => s.title.toLowerCase() === roadmapTitle);
+  const titles = useTitles(subject);
+  const textbookPack = useTextbookPack(subject);
 
   // A new level starts at its top, not wherever the last one was scrolled to.
   useEffect(() => {
@@ -221,6 +294,9 @@ export function CourseBrowser({ pageId, item, onOpen, onBackToCourses, onStudy, 
   }
   if (place.kind === 'point' && place.area) crumbs.push({ label: `Area of Study ${place.area.number}`, to: place.area.id });
   if (place.kind === 'point' && !place.area && roadmap.skills) crumbs.push({ label: 'Key science skills', to: roadmap.skills.id });
+  if (place.kind === 'chapter' || place.kind === 'section') crumbs.push({ label: 'Textbook', to: place.book.id });
+  if (place.kind === 'section') crumbs.push({ label: `Chapter ${place.chapter.number}`, to: place.chapter.id });
+  const links = textbookLinks(roadmap, textbookPack);
 
   return (
     <div className={`courses course-browser course-${place.kind}`}>
@@ -240,7 +316,15 @@ export function CourseBrowser({ pageId, item, onOpen, onBackToCourses, onStudy, 
       </nav>
 
       {place.kind === 'overview' && (
-        <CourseOverview roadmap={roadmap} pageId={pageId} titles={titles} onOpen={onOpen} onStudy={onStudy} onZoomTo={onZoomTo} />
+        <CourseOverview
+          roadmap={roadmap}
+          pageId={pageId}
+          titles={titles}
+          textbookPack={textbookPack}
+          onOpen={onOpen}
+          onStudy={onStudy}
+          onZoomTo={onZoomTo}
+        />
       )}
       {place.kind === 'unit' && <UnitView unit={place.unit} titles={titles} onOpen={onOpen} onStudy={onStudy} />}
       {place.kind === 'area' && (
@@ -253,6 +337,20 @@ export function CourseBrowser({ pageId, item, onOpen, onBackToCourses, onStudy, 
           place={place}
           titles={titles}
           sequence={sequenceFor(roadmap, place.unit === null)}
+          inTextbook={links.sectionsOf.get(place.point.id) ?? []}
+          onOpen={onOpen}
+          onStudy={onStudy}
+          onZoomTo={onZoomTo}
+        />
+      )}
+      {place.kind === 'textbook' && <TextbookView book={place.book} onOpen={onOpen} onStudy={onStudy} />}
+      {place.kind === 'chapter' && <ChapterView chapter={place.chapter} onOpen={onOpen} onStudy={onStudy} />}
+      {place.kind === 'section' && (
+        <SectionView
+          key={place.section.id}
+          place={place}
+          covers={links.pointsOf.get(place.section.number) ?? []}
+          titles={titles}
           onOpen={onOpen}
           onStudy={onStudy}
           onZoomTo={onZoomTo}
@@ -270,6 +368,7 @@ function CourseOverview({
   roadmap,
   pageId,
   titles,
+  textbookPack,
   onOpen,
   onStudy,
   onZoomTo,
@@ -277,6 +376,7 @@ function CourseOverview({
   roadmap: Roadmap;
   pageId: string;
   titles: Titles;
+  textbookPack: TextbookChapterEntry[] | null;
   onOpen: (item: string | null) => void;
   onStudy: (scope: string) => void;
   onZoomTo: (nodeId: string) => void;
@@ -289,6 +389,25 @@ function CourseOverview({
   const allPoints = roadmap.units.flatMap((u) => u.areas.flatMap((a) => a.groups.flatMap((g) => g.points)));
   const emptyPoints = allPoints.filter((p) => p.notes === 0 && p.cards === 0).length;
   const canAddNotes = subject !== undefined && hasPack(subject.id) && emptyPoints > 0;
+
+  const [addingBook, setAddingBook] = useState(false);
+  const [addedBook, setAddedBook] = useState<TextbookNotesResult | null>(null);
+  const inBook = new Set((roadmap.textbook?.chapters ?? []).flatMap((c) => c.sections.map((s) => s.number)));
+  const bookMissing = (textbookPack ?? []).reduce((n, c) => n + c.sections.filter((s) => !inBook.has(s.number)).length, 0);
+  const canAddBook = subject?.textbook !== undefined && bookMissing > 0;
+
+  async function fillTextbook() {
+    if (!subject) return;
+    setAddingBook(true);
+    setAddError(null);
+    try {
+      setAddedBook(await addTextbookNotes(pageId, subject));
+    } catch (err) {
+      setAddError(err instanceof Error ? err.message : String(err));
+    } finally {
+      setAddingBook(false);
+    }
+  }
 
   async function fillNotes() {
     if (!subject) return;
@@ -326,6 +445,17 @@ function CourseOverview({
               {adding ? 'Adding notes…' : 'Add study notes'}
             </button>
           )}
+          {canAddBook && (
+            <button
+              type="button"
+              className="ghost-btn"
+              disabled={addingBook}
+              onClick={() => void fillTextbook()}
+              title={`Notes and flashcards that follow ${subject!.textbook!.title}, section by section`}
+            >
+              {addingBook ? 'Adding textbook notes…' : roadmap.textbook ? `Add ${bookMissing} textbook sections` : 'Add textbook notes'}
+            </button>
+          )}
           <button
             type="button"
             className="primary-btn"
@@ -343,6 +473,12 @@ function CourseOverview({
           Added notes and flashcards to {added.added} learning point{added.added === 1 ? '' : 's'}.
           {added.skipped > 0 && ` ${added.skipped} already had your own notes, so they were left alone.`}
           {added.unmatched > 0 && ` ${added.unmatched} didn't match a learning point in this course.`} Undo with ⌘Z / Ctrl+Z.
+        </p>
+      )}
+      {addedBook && (
+        <p className="roadmap-added" role="status">
+          Added {addedBook.added} textbook section{addedBook.added === 1 ? '' : 's'} — open <strong>Textbook</strong> below. Undo with ⌘Z /
+          Ctrl+Z.
         </p>
       )}
       {addError && <p className="import-error">{addError}</p>}
@@ -421,6 +557,28 @@ function CourseOverview({
           </li>
         )}
       </ol>
+
+      {roadmap.textbook && (
+        <>
+          <h2 className="course-section-title">By textbook chapter</h2>
+          <ol className="tl tl-single">
+            <li className="tl-item">
+              <Ring tally={roadmap.textbook.tally} label="❡" />
+              <button type="button" className="tl-card tl-card-textbook" onClick={() => onOpen(roadmap.textbook!.id)}>
+                <span className="tl-kicker">Textbook</span>
+                <span className="tl-title">{roadmap.textbook.title}</span>
+                <span className="tl-desc">
+                  {roadmap.textbook.chapters.map((c) => `Chapter ${c.number}: ${c.title}`).join(' · ') || 'No chapters yet.'}
+                </span>
+                <span className="tl-meta">
+                  {roadmap.textbook.tally.points} section{roadmap.textbook.tally.points === 1 ? '' : 's'} · {tallyLine(roadmap.textbook.tally)}
+                  <DueNew t={roadmap.textbook.tally} />
+                </span>
+              </button>
+            </li>
+          </ol>
+        </>
+      )}
 
       {roadmap.skills && roadmap.skills.tally.points > 0 && (
         <>
@@ -651,6 +809,7 @@ function LessonView({
   place,
   titles,
   sequence,
+  inTextbook,
   onOpen,
   onStudy,
   onZoomTo,
@@ -658,6 +817,7 @@ function LessonView({
   place: Extract<Place, { kind: 'point' }>;
   titles: Titles;
   sequence: PointProgress[];
+  inTextbook: SectionProgress[];
   onOpen: (item: string | null) => void;
   onStudy: (scope: string) => void;
   onZoomTo: (nodeId: string) => void;
@@ -701,6 +861,16 @@ function LessonView({
             {hasBody ? 'Edit notes' : 'Write notes'}
           </button>
         </div>
+        {inTextbook.length > 0 && (
+          <div className="lesson-links">
+            <span className="lesson-wording-label">In the textbook</span>
+            {inTextbook.map((s) => (
+              <button key={s.id} type="button" className="lesson-link-chip" onClick={() => onOpen(s.id)}>
+                {sectionHeading(s)}
+              </button>
+            ))}
+          </div>
+        )}
       </header>
 
       {lesson === undefined ? (
@@ -740,6 +910,196 @@ function LessonView({
           <button type="button" className="lesson-nav-btn lesson-nav-next" onClick={() => onOpen(next.id)}>
             <span className="course-kicker">Next →</span>
             <span>{titles.point(next)}</span>
+          </button>
+        ) : (
+          <span />
+        )}
+      </nav>
+    </>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// The textbook: its chapters → a chapter's sections → a section as a lesson
+// ---------------------------------------------------------------------------
+
+function TextbookView({ book, onOpen, onStudy }: { book: TextbookProgress; onOpen: (item: string) => void; onStudy: (scope: string) => void }) {
+  return (
+    <>
+      <header className="course-head">
+        <div className="course-head-text">
+          <span className="course-kicker">Textbook</span>
+          <h1>{book.title}</h1>
+          <p className="course-question">The same course, chapter by chapter in the book's order.</p>
+        </div>
+        <div className="course-head-actions">
+          <button type="button" className="primary-btn" disabled={book.tally.cards === 0} onClick={() => onStudy(book.id)}>
+            {book.tally.due > 0 ? `Study textbook · ${book.tally.due} due` : 'Study textbook'}
+          </button>
+        </div>
+      </header>
+      <div className="course-summary course-summary-slim">
+        <span>
+          {tallyLine(book.tally)}
+          <DueNew t={book.tally} />
+        </span>
+        <ProgressBar tally={book.tally} />
+      </div>
+      <h2 className="course-section-title">Chapters</h2>
+      <ol className="tl">
+        {book.chapters.map((chapter) => (
+          <li key={chapter.id} className="tl-item">
+            <Ring tally={chapter.tally} label={String(chapter.number)} />
+            <button type="button" className="tl-card" onClick={() => onOpen(chapter.id)}>
+              <span className="tl-kicker">Chapter {chapter.number}</span>
+              <span className="tl-title">{chapter.title}</span>
+              <span className="tl-meta">
+                {chapter.sections.length} section{chapter.sections.length === 1 ? '' : 's'} · {tallyLine(chapter.tally)}
+                <DueNew t={chapter.tally} />
+              </span>
+            </button>
+          </li>
+        ))}
+      </ol>
+    </>
+  );
+}
+
+function ChapterView({ chapter, onOpen, onStudy }: { chapter: ChapterProgress; onOpen: (item: string) => void; onStudy: (scope: string) => void }) {
+  return (
+    <>
+      <header className="course-head">
+        <div className="course-head-text">
+          <span className="course-kicker">Textbook · Chapter {chapter.number}</span>
+          <h1>{chapter.title}</h1>
+        </div>
+        <div className="course-head-actions">
+          <button type="button" className="primary-btn" disabled={chapter.tally.cards === 0} onClick={() => onStudy(chapter.id)}>
+            {chapter.tally.due > 0 ? `Study chapter · ${chapter.tally.due} due` : 'Study chapter'}
+          </button>
+        </div>
+      </header>
+      <div className="course-summary course-summary-slim">
+        <span>
+          {tallyLine(chapter.tally)}
+          <DueNew t={chapter.tally} />
+        </span>
+        <ProgressBar tally={chapter.tally} />
+      </div>
+      <h2 className="course-section-title">Sections</h2>
+      <div className="course-points">
+        <ol className="tl tl-steps">
+          {chapter.sections.map((section) => (
+            <li key={section.id} className={`tl-item status-${section.status}`}>
+              <span className="tl-step" aria-hidden="true">
+                {isStudied(section.status) ? '✓' : section.number}
+              </span>
+              <button type="button" className="tl-card tl-card-point" onClick={() => onOpen(section.id)}>
+                <span className="tl-point-title">{sectionHeading(section)}</span>
+                <span className="tl-meta">
+                  <StatusIcon status={section.status} /> {STATUS_LABEL[section.status]}
+                  {section.cards > 0 && ` · ${section.cards} card${section.cards === 1 ? '' : 's'}`}
+                  <DueNew t={section} />
+                </span>
+              </button>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </>
+  );
+}
+
+function SectionView({
+  place,
+  covers,
+  titles,
+  onOpen,
+  onStudy,
+  onZoomTo,
+}: {
+  place: Extract<Place, { kind: 'section' }>;
+  covers: PointProgress[];
+  titles: Titles;
+  onOpen: (item: string | null) => void;
+  onStudy: (scope: string) => void;
+  onZoomTo: (nodeId: string) => void;
+}) {
+  const { book, chapter, section } = place;
+  const lesson = useLiveQuery(() => loadLesson(section.id), [section.id]);
+  const sequence = book.chapters.flatMap((c) => c.sections);
+  const at = sequence.findIndex((s) => s.id === section.id);
+  const prev = at > 0 ? sequence[at - 1] : undefined;
+  const next = at >= 0 ? sequence[at + 1] : undefined;
+  const hasBody = lesson?.body.some((r) => hasContent(r)) ?? false;
+
+  return (
+    <>
+      <header className="lesson-head">
+        <span className="course-kicker">
+          Chapter {chapter.number} · {chapter.title}
+        </span>
+        <h1>{sectionHeading(section)}</h1>
+        {covers.length > 0 && (
+          <div className="lesson-links">
+            <span className="lesson-wording-label">Study design</span>
+            {covers.map((p) => (
+              <button key={p.id} type="button" className="lesson-link-chip" onClick={() => onOpen(p.id)}>
+                {titles.point(p)}
+              </button>
+            ))}
+          </div>
+        )}
+        <div className="lesson-status">
+          <span className={`lesson-chip status-${section.status}`}>
+            <StatusIcon status={section.status} /> {STATUS_LABEL[section.status]}
+          </span>
+          {section.cards > 0 && (
+            <span className="subject-dim">
+              {section.cards} flashcard{section.cards === 1 ? '' : 's'}
+              <DueNew t={section} />
+            </span>
+          )}
+        </div>
+        <div className="lesson-actions">
+          {section.cards > 0 && (
+            <button type="button" className="primary-btn" onClick={() => onStudy(section.id)}>
+              {section.fresh > 0
+                ? `Learn ${section.fresh} card${section.fresh === 1 ? '' : 's'}`
+                : section.due > 0
+                  ? `Review ${section.due}`
+                  : 'Practise cards'}
+            </button>
+          )}
+          <button type="button" className="ghost-btn" onClick={() => onZoomTo(section.id)}>
+            {hasBody ? 'Edit notes' : 'Write notes'}
+          </button>
+        </div>
+      </header>
+
+      {lesson === undefined ? (
+        <div className="view-loading">Loading…</div>
+      ) : !hasBody ? (
+        <div className="lesson-empty">
+          <p>No notes for this section yet.</p>
+        </div>
+      ) : (
+        <LessonBody body={lesson!.body} />
+      )}
+
+      <nav className="lesson-nav" aria-label="Other sections">
+        {prev ? (
+          <button type="button" className="lesson-nav-btn" onClick={() => onOpen(prev.id)}>
+            <span className="course-kicker">← Previous</span>
+            <span>{sectionHeading(prev)}</span>
+          </button>
+        ) : (
+          <span />
+        )}
+        {next ? (
+          <button type="button" className="lesson-nav-btn lesson-nav-next" onClick={() => onOpen(next.id)}>
+            <span className="course-kicker">Next →</span>
+            <span>{sectionHeading(next)}</span>
           </button>
         ) : (
           <span />

@@ -25,6 +25,11 @@ export interface CatalogueSubject {
    * above the study design's question. Anything missing falls back to the question.
    */
   shortNames?: Readonly<Record<string, string>>;
+  /**
+   * A textbook whose chapters have notes of their own (`src/courses/packs/<id>/textbook/`),
+   * added by "Add textbook notes". Only the title is here — never the book's text.
+   */
+  textbook?: { title: string };
 }
 
 export const CATALOGUE: readonly CatalogueSubject[] = [
@@ -114,6 +119,7 @@ export const CATALOGUE: readonly CatalogueSubject[] = [
       'U2.1': 'Economic activity, growth and the business cycle',
       'U2.2': 'Investigating two economic issues',
     },
+    textbook: { title: 'Jacaranda Key Concepts in VCE Economics 1, Units 1 & 2 (12th edition)' },
   },
 ];
 

@@ -97,16 +97,32 @@ const HEADER = /^@\s+([0-9a-f]{8})\s+((?:U\d+\.\d+\.\d+\.\d+)|(?:S\.\d+\.\d+))\s
 
 export function parsePack(source: string): PackEntry[] {
   const entries: PackEntry[] = [];
-  let current: PackEntry | null = null;
+  parseOutline(source, (line) => {
+    const header = HEADER.exec(line);
+    if (!header) return null;
+    const entry: PackEntry = { key: header[1]!, position: header[2]!, label: header[3]!.trim(), drafts: [] };
+    entries.push(entry);
+    return entry.drafts;
+  });
+  return entries;
+}
+
+/**
+ * The shared reader behind every pack format: comments and blank lines are
+ * skipped; a line `header` recognises starts a new entry (it returns the list
+ * the entry's rems go into); every other line is a rem, two spaces deeper per
+ * level. Used for study-note packs and for textbook packs (`textbook.ts`).
+ */
+export function parseOutline(source: string, header: (line: string, lineNumber: number) => DraftRem[] | null): void {
+  let current: DraftRem[] | null = null;
   // The open rem at each depth, so a deeper line becomes its child.
   let stack: DraftRem[] = [];
 
   source.split(/\r?\n/).forEach((raw, i) => {
     if (!raw.trim() || raw.startsWith('% ')) return;
-    const header = HEADER.exec(raw.trim());
-    if (header) {
-      current = { key: header[1]!, position: header[2]!, label: header[3]!.trim(), drafts: [] };
-      entries.push(current);
+    const opened = raw.startsWith('@') ? header(raw.trim(), i + 1) : null;
+    if (opened) {
+      current = opened;
       stack = [];
       return;
     }
@@ -120,12 +136,11 @@ export function parsePack(source: string): PackEntry[] {
       throw new Error(`Pack line ${i + 1}: unmatched "$" — write \\$ for a dollar sign.`);
     }
     const rem: DraftRem = { doc: lineToDoc(raw.trim()) };
-    if (depth === 0) (current as PackEntry).drafts.push(rem);
+    if (depth === 0) (current as DraftRem[]).push(rem);
     else (stack[depth - 1]!.children ??= []).push(rem);
     stack = stack.slice(0, depth);
     stack.push(rem);
   });
-  return entries;
 }
 
 // ---------------------------------------------------------------------------

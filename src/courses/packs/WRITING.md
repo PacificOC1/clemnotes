@@ -219,3 +219,33 @@ scenario where it fits, Practice questions (2–3), Flashcards (2–4).
 3. Create `src/courses/packs/<id>/` with one file per area plus `skills.txt` if the study has them,
    using `@ ________ <position> | title` headers, and register the files in `packs/index.ts`.
 4. Fill keys with the script, then follow §9.
+
+## 11. Textbook packs (notes that follow a book's chapters)
+
+Some subjects also have notes that follow a textbook section by section (VCE Economics: Jacaranda Key
+Concepts in VCE Economics 1, 12th edition). They are added by **Add textbook notes** on the course page,
+filed under a `## Textbook: <book>` heading, and browsed in the course's **Textbook** view (chapter →
+section → lesson). Format and reader: `src/courses/textbook.ts`; files: `src/courses/packs/<id>/textbook/
+chapter-N.txt`, registered in `TEXTBOOKS` in `packs/index.ts`; the book's title goes in the catalogue entry's
+`textbook`.
+
+```
+@chapter 6 | The economics of international trade
+@section 6.1 - | Overview                         ← "-": covers no dot point
+@section 6.2 U2.2.1.1 | Definition, nature …      ← the study-design positions the book says it covers
+**In a sentence**                                ← body exactly as in a study-notes pack (§2, §4)
+```
+
+- **Lesson titles are the book's**: "Chapter 6.2 Definition, nature and direction of international trade" —
+  the section number and heading as printed, so a student can find the page. Sub-headings follow the book's
+  numbering ("6.2.1 …") where it helps, but stay ≤ 60 characters (longer bold lines don't draw as headings).
+- **Covers** comes from the book's own "what you will learn" table. Positions only (no hash keys): nothing
+  is filed under the dot points, the lesson just links both ways ("Study design" chips on the section,
+  "In the textbook" chips on the learning point).
+- **The book's terms and definitions, in our words.** Never copy sentences, figures' captions or questions.
+  Paraphrase definitions so they match the book's meaning and vocabulary; facts and data are fine with their
+  year ("the book's 2019–20 DFAT figures"). The repo is public and the book is copyright.
+- **Same shape as §4**, plus an optional **Since the textbook** section that updates the book's dated figures
+  and events (dated and sourced). The Review section has a summary per study-design point.
+- Shipped-pack checks: `src/courses/textbook.test.ts` (shape, cards ≥ 4, answered practice questions, no
+  stray markup, KaTeX, covers are real positions — add the subject's positions to `POSITIONS`).

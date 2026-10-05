@@ -3,6 +3,7 @@ import type { Flashcard, OutlinerNode } from '../db/schema';
 import { buildTreeIndex, materialIds, type TreeIndex } from '../db/cardScope';
 import { parseDoc, type DocNode } from '../tiptap/docUtils';
 import type { KeyKnowledgeGroup, StudyDesign } from './studyDesign';
+import { TEXTBOOK_PREFIX, compareSectionNumbers, readChapterHeading, readSectionHeading } from './textbook';
 
 /**
  * A course is an ordinary page — "everything is a rem" — laid out the way a
@@ -152,11 +153,37 @@ export interface UnitProgress {
   tally: Tally;
 }
 
+/** A textbook section — a lesson of its own — with the same progress as a dot point. */
+export interface SectionProgress extends PointProgress {
+  /** "6.2" */
+  number: string;
+  /** The section's own title, without "Chapter 6.2". */
+  title: string;
+}
+
+export interface ChapterProgress {
+  id: string;
+  number: number;
+  title: string;
+  sections: SectionProgress[];
+  tally: Tally;
+}
+
+export interface TextbookProgress {
+  id: string;
+  /** The book, without the "Textbook: " prefix. */
+  title: string;
+  chapters: ChapterProgress[];
+  tally: Tally;
+}
+
 export interface Roadmap {
   pageId: string;
   title: string;
   units: UnitProgress[];
   skills: { id: string; groups: GroupProgress[]; tally: Tally } | null;
+  /** Notes that follow a textbook's chapters (`textbook.ts`); not counted in `tally`. */
+  textbook: TextbookProgress | null;
   tally: Tally;
   /** The first dot point not yet studied (every card reviewed), in study-design order. */
   next: { point: PointProgress; unit: UnitProgress; area: AreaProgress } | null;
@@ -289,6 +316,7 @@ export function readRoadmap(
 
   const units: UnitProgress[] = [];
   let skills: Roadmap['skills'] = null;
+  let textbook: Roadmap['textbook'] = null;
 
   for (const top of index.children.get(pageId) ?? []) {
     if (!isHeadingRem(top)) continue;
@@ -320,6 +348,8 @@ export function readRoadmap(
     } else if (SKILLS_TEXT.test(text) && !skills) {
       const { groups } = readGroups(top.id, index, pointOf);
       skills = { id: top.id, groups, tally: tallyGroups(groups) };
+    } else if (text.startsWith(TEXTBOOK_PREFIX.trim()) && !textbook) {
+      textbook = readTextbook(top, index, pointOf);
     }
   }
 
@@ -339,5 +369,25 @@ export function readRoadmap(
     }
   }
 
-  return { pageId, title: page.plainText.trim() || 'Untitled', units, skills, tally, next };
+  return { pageId, title: page.plainText.trim() || 'Untitled', units, skills, textbook, tally, next };
+}
+
+/** `## Textbook: …` → its `### Chapter N: …` headings → their `#### Chapter N.M …` sections. */
+function readTextbook(top: OutlinerNode, index: TreeIndex, pointOf: (node: OutlinerNode) => PointProgress): TextbookProgress {
+  const chapters: ChapterProgress[] = [];
+  for (const child of index.children.get(top.id) ?? []) {
+    const chapter = isHeadingRem(child) ? readChapterHeading(child.plainText) : null;
+    if (!chapter) continue;
+    const sections: SectionProgress[] = [];
+    for (const rem of index.children.get(child.id) ?? []) {
+      const section = isHeadingRem(rem) ? readSectionHeading(rem.plainText) : null;
+      if (section) sections.push({ ...pointOf(rem), number: section.number, title: section.title });
+    }
+    sections.sort((a, b) => compareSectionNumbers(a.number, b.number));
+    chapters.push({ id: child.id, number: chapter.number, title: chapter.title, sections, tally: tallyGroups([{ id: null, title: null, points: sections }]) });
+  }
+  chapters.sort((a, b) => a.number - b.number);
+  const tally = emptyTally();
+  for (const c of chapters) add(tally, c.tally);
+  return { id: top.id, title: top.plainText.trim().slice(TEXTBOOK_PREFIX.trim().length).replace(/^\s*/, ''), chapters, tally };
 }

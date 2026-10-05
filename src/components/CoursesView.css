@@ -958,3 +958,28 @@ button.tl-card:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* Links between the study design and the textbook view. */
+.lesson-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 4px;
+}
+.lesson-links .lesson-wording-label {
+  margin-right: 2px;
+}
+.lesson-link-chip {
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--accent-text);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.lesson-link-chip:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
