@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../db/database';
 import { backupFilename, backupFromTables, buildBackup, serializeBackup } from '../export/backup';
@@ -12,6 +12,7 @@ import { downloadText, timestampSlug } from '../export/download';
 import { importBackup, isFromNewerSchema, parseBackup, type ImportReport } from '../export/importBackup';
 import { pagesToMarkdown } from '../export/markdown';
 import { buildExportTrees } from '../export/tree';
+import { persistState, requestPersistentStorage, type PersistState } from '../storagePersistence';
 
 type Busy = 'json' | 'markdown' | 'import' | 'sweep' | null;
 
@@ -29,6 +30,22 @@ export function BackupPanel() {
   const [error, setError] = useState<string | null>(null);
   const fileInput = useRef<HTMLInputElement>(null);
   const [diagnosticsOpen, setDiagnosticsOpen] = useState(false);
+  const [persist, setPersist] = useState<PersistState | null>(null);
+
+  useEffect(() => {
+    if (expanded) void persistState().then(setPersist);
+  }, [expanded]);
+
+  async function handleKeepStorage() {
+    const state = await requestPersistentStorage();
+    setPersist(state);
+    if (state !== 'persisted') {
+      setMessage(null);
+      setError(
+        "The browser said no. Chrome and Edge decide for themselves — installing Clemnotes as an app or bookmarking it usually changes their mind."
+      );
+    }
+  }
 
   const noteCount = useLiveQuery(
     async () => (await db.nodes.toArray()).filter((n) => n.deletedAt === null).length,
@@ -170,6 +187,21 @@ export function BackupPanel() {
             {typeof noteCount === 'number' ? ` — ${noteCount} rem${noteCount === 1 ? '' : 's'} right now` : ''}.
             Keep one somewhere that isn't this browser.
           </p>
+
+          {persist === 'persisted' && (
+            <p className="backup-note backup-storage">
+              ✓ This browser keeps your notes permanently. Only clearing site data — by hand, or a
+              "clear on exit" setting — removes them.
+            </p>
+          )}
+          {persist === 'best-effort' && (
+            <p className="backup-note backup-storage backup-storage-warn">
+              This browser may clear your notes to free up space.{' '}
+              <button type="button" className="link-btn" onClick={() => void handleKeepStorage()}>
+                Ask it to keep them
+              </button>
+            </p>
+          )}
 
           <div className="backup-actions">
             <button

@@ -56,6 +56,50 @@ const CLOCK_SLACK_MS = 60_000;
 /** `in` on more than a few hundred ids makes a URL PostgREST rejects outright. */
 const ID_BATCH = 200;
 
+/**
+ * Rows asked for per select. Supabase's PostgREST returns at most `max-rows`
+ * (1000 by default) from any one request, however many match — so a table
+ * bigger than that has to be read in pages, or a fresh browser gets back only
+ * part of your notes. Pages run in `id` order and continue after the last id
+ * seen, and reading stops only at an empty page, so a project whose
+ * `max-rows` is set lower than this still gets everything.
+ */
+const SELECT_PAGE = 1000;
+
+/** Rows per upsert: one course is thousands of rems, too big for one request body. */
+const UPSERT_BATCH = 500;
+
+type PageResult = PromiseLike<{ data: unknown[] | null; error: unknown }>;
+
+/**
+ * Every row a query matches, read a page at a time. `page(afterId)` builds
+ * the query for the rows after `afterId` (null for the first page); it must
+ * order by `id` and filter `id > afterId` when given one.
+ */
+async function selectAllPages<R>(page: (afterId: string | null) => PageResult): Promise<R[]> {
+  const out: R[] = [];
+  let afterId: string | null = null;
+  for (;;) {
+    const { data, error } = await page(afterId);
+    if (error) throw error;
+    const rows = (data ?? []) as Array<{ id: string }>;
+    if (rows.length === 0) return out;
+    out.push(...(rows as unknown as R[]));
+    const lastId = rows[rows.length - 1]!.id;
+    // A page that doesn't move forward would loop for ever; stop instead.
+    if (lastId === afterId) return out;
+    afterId = lastId;
+  }
+}
+
+/** Upsert in requests of `UPSERT_BATCH` rows. */
+async function upsertInBatches(supabase: SupabaseClient, remoteTable: string, rows: object[]): Promise<void> {
+  for (let i = 0; i < rows.length; i += UPSERT_BATCH) {
+    const { error } = await supabase.from(remoteTable).upsert(rows.slice(i, i + UPSERT_BATCH));
+    if (error) throw error;
+  }
+}
+
 function stripUserId<T>(rows: unknown[]): T[] {
   return rows.map((row) => {
     const { userId: _drop, ...rest } = row as { userId?: string };
@@ -113,11 +157,13 @@ async function syncTable<T extends Syncable>(
     else purgedRemotely = count ?? 0;
   }
 
-  let query = supabase.from(remoteTable).select('*').eq('userId', userId);
-  if (!reconciled) query = query.gt('updatedAt', cursor.pulledThrough);
-  const { data: remoteRows, error } = await query;
-  if (error) throw error;
-  const remote = stripUserId<T>(remoteRows ?? []);
+  const remoteRows = await selectAllPages<unknown>((afterId) => {
+    let query = supabase.from(remoteTable).select('*').eq('userId', userId);
+    if (!reconciled) query = query.gt('updatedAt', cursor.pulledThrough);
+    if (afterId !== null) query = query.gt('id', afterId);
+    return query.order('id').limit(SELECT_PAGE);
+  });
+  const remote = stripUserId<T>(remoteRows);
 
   let plan: MergePlan<T>;
   let localSeen: T[];
@@ -181,10 +227,7 @@ async function syncTable<T extends Syncable>(
   }
 
   if (plan.toUpload.length > 0) {
-    const { error: upErr } = await supabase
-      .from(remoteTable)
-      .upsert(plan.toUpload.map((row) => ({ ...forRemote(row), userId })));
-    if (upErr) throw upErr;
+    await upsertInBatches(supabase, remoteTable, plan.toUpload.map((row) => ({ ...forRemote(row), userId })));
   }
 
   if (plan.toDownload.length > 0) {
@@ -245,12 +288,12 @@ async function syncAppendOnlyTable<T extends Syncable>(
   const reconciled = needsReconcile(cursor, now);
   const startedAt = now;
 
-  let idQuery = supabase.from(remoteTable).select('id,updatedAt').eq('userId', userId);
-  if (!reconciled) idQuery = idQuery.gt('updatedAt', cursor.pulledThrough);
-  const { data: remoteIdRows, error } = await idQuery;
-  if (error) throw error;
-
-  const remoteStubs = (remoteIdRows ?? []) as Array<{ id: string; updatedAt: number }>;
+  const remoteStubs = await selectAllPages<{ id: string; updatedAt: number }>((afterId) => {
+    let idQuery = supabase.from(remoteTable).select('id,updatedAt').eq('userId', userId);
+    if (!reconciled) idQuery = idQuery.gt('updatedAt', cursor.pulledThrough);
+    if (afterId !== null) idQuery = idQuery.gt('id', afterId);
+    return idQuery.order('id').limit(SELECT_PAGE);
+  });
   const remoteIds = remoteStubs.map((row) => row.id);
 
   let toUpload: T[];
@@ -267,10 +310,7 @@ async function syncAppendOnlyTable<T extends Syncable>(
   }
 
   if (toUpload.length > 0) {
-    const { error: upErr } = await supabase
-      .from(remoteTable)
-      .upsert(toUpload.map((row) => ({ ...row, userId })));
-    if (upErr) throw upErr;
+    await upsertInBatches(supabase, remoteTable, toUpload.map((row) => ({ ...row, userId })));
   }
 
   let pulled = 0;

@@ -12,6 +12,7 @@ import { applyStoredTheme } from './theme'
 import { captureGlobalErrors, logEvent } from './diagnostics'
 import { isSignInResponse } from './sync/files/oneDriveConfig'
 import { isGoogleSignInResponse } from './sync/files/googleDriveConfig'
+import { requestPersistentStorageAtStartup } from './storagePersistence'
 
 // Before anything is drawn, so the first paint is already the right theme.
 applyStoredTheme()
@@ -68,6 +69,8 @@ async function launch() {
   const { default: App } = await import('./App.tsx')
   render(<App />)
   registerServiceWorker()
+  // Ask the browser not to clear your notes to free up space.
+  void requestPersistentStorageAtStartup()
 }
 
 /**

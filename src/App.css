@@ -3195,6 +3195,14 @@
   color: var(--text-faint);
 }
 
+.backup-storage {
+  margin-bottom: 8px;
+}
+
+.backup-storage-warn {
+  color: var(--text-dim);
+}
+
 .backup-actions {
   display: flex;
   flex-direction: column;
